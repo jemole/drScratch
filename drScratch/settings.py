@@ -1,6 +1,6 @@
 from django.conf import global_settings
 """
-Django settings for DrScratch project.
+Django settings for drScratch project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -53,7 +53,7 @@ ALLOWED_HOSTS = ['localhost', '193.147.51.252','drscratchpre.programamos.es']
 # Application definition
 
 INSTALLED_APPS = (
-    'DrScratchApp',
+    'app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,9 +72,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'DrScratch.urls'
+ROOT_URLCONF = 'drScratch.urls'
 
-WSGI_APPLICATION = 'DrScratch.wsgi.application'
+WSGI_APPLICATION = 'drScratch.wsgi.application'
 
 
 # Database
