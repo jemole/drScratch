@@ -29,7 +29,7 @@ def main(request):
     # The first time one user enters
     # Create the dashboards associated to users
     createDashboards()
-    return render_to_response("main/main.html",
+    return render_to_response("main.html",
                                 {'user':user},
                                 context_instance=RC(request))
 
@@ -53,7 +53,7 @@ def loginUser(request):
                     return HttpResponseRedirect('/myDashboard')
             else:
                 flag = True
-                return render_to_response("main/main.html", 
+                return render_to_response("main.html", 
                                             {'flag': flag},
                                             context_instance=RC(request))
 
@@ -90,7 +90,7 @@ def myDashboard(request):
         beginner = mydashboard.project_set.filter(level="beginner")
         developing = mydashboard.project_set.filter(level="developing")
         advanced = mydashboard.project_set.filter(level="advanced")
-        return render_to_response("myDashboard/content-dashboard.html", 
+        return render_to_response("content-dashboard.html", 
                                     {'user': user,
                                     'beginner': beginner,
                                     'developing': developing,
@@ -107,7 +107,7 @@ def myProjects(request):
         user = request.user.username
         mydashboard = Dashboard.objects.get(user=user)
         projects = mydashboard.project_set.all()
-        return render_to_response("myProjects/content-projects.html", 
+        return render_to_response("content-projects.html", 
                                 {'projects': projects},
                                 context_instance=RC(request))
     else:
@@ -118,7 +118,7 @@ def myRoles(request):
     """Show the roles in Doctor Scratch"""
     if request.user.is_authenticated():
         user = request.user.username
-        return render_to_response("myRoles/content-roles.html",
+        return render_to_response("content-roles.html",
                                 context_instance=RC(request))   
     else:
         return HttpResponseRedirect("/") 
@@ -131,7 +131,7 @@ def myHistoric(request):
         user = request.user.username
         mydashboard = Dashboard.objects.get(user=user)
         projects = mydashboard.project_set.all()
-        return render_to_response("myHistoric/content-historic.html", 
+        return render_to_response("content-historic.html", 
                                     {'projects': projects},
                                     context_instance=RC(request))
     else:
@@ -189,7 +189,7 @@ def uploadUnregistered(request):
         # Analyze the scratch project
         d = analyzeProject(file_name)
         # Redirect to dashboard for unregistered user
-        return render_to_response("upload/dashboard-unregistered.html", d)
+        return render_to_response("dashboard-unregistered.html", d)
     else:
         return HttpResponseRedirect('/')
 
