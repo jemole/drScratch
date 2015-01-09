@@ -7,9 +7,9 @@ from django.core.cache import cache
 from django.shortcuts import render_to_response
 from django.template import RequestContext as RC
 from django.contrib.auth import logout, login, authenticate
-from DrScratchApp.models import Project, Dashboard, Attribute
-from DrScratchApp.models import Dead, Sprite, Mastery, Duplicate, File
-from DrScratchApp.forms import UploadFileForm, UserForm
+from app.models import Project, Dashboard, Attribute
+from app.models import Dead, Sprite, Mastery, Duplicate, File
+from app.forms import UploadFileForm, UserForm
 from django.contrib.auth.models import User
 from datetime import datetime, date
 import requests
