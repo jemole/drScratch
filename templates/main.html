@@ -1,103 +1,125 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+<html lan="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dr. Scratch - automatic analysis of Scratch projects to assess the development of computational thinking</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.ico"/>
+		
+		<!-- Bootstrap core CSS -->
+	    <link href="/resources/css/bootstrap.css" rel="stylesheet">
+	    <!-- Add custom CSS here -->
+	    <link href="/resources/css/sb-admin.css" rel="stylesheet">
+	    <link rel="stylesheet" href="/resources/font-awesome/css/font-awesome.min.css">
+	    <link rel="stylesheet" type="text/css" href="/resources/custom/business-plate.css">
 
-    <title>Jumbotron Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<!--Librería jQuery requerida para los plugins de Javascript-->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<!--Todos los plugins Javascript de bootStrap-->
+		<script src="/resources/js/bootstrap.min.js"></script>
+		<script src="/resources/js/bootstrap-filestyle.js"></script>
+			
+	</head>	
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top" role="nanavbar-inversevigation">
+	      	<div class="container">
+	        	<div class="navbar-header">
+		          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button>
+	          	<a class="navbar-brand" href="#">Doctor Scratch (beta version)</a>
+	        	</div>
+		        <div color="#ff0" class="navbar-collapse collapse">
+	          		<form class="navbar-form navbar-right" role="form" method="post" action="/login">
+	          			{% csrf_token %}
+	            		<div class="form-group">
+	              		<input type="text" name="username" placeholder="Username" class="form-control">
+	            		</div>
+	            		<div class="form-group">
+	              		<input type="password" name="password" placeholder="Password" class="form-control">
+	           			</div>
+	            		<button type="submit" class="btn btn-success">Sign in</button>
+	          		</form>
+	        	</div><!--/.navbar-collapse -->
+      		</div>
+    	</div>
 
-    <!-- Custom styles for this template -->
-    <link href="resources/css/jumbotron.css" rel="stylesheet">
 
-    <script source="resources/js/Chart.js"></script>
 
-    <script type="text/javascript">
-    function myFunction(){
-      var ctx = document.getElementById("mychart").getContext("2d");
-      var mynewChart = new Chart(ctx).PolarArea(data);
-    }
-
-    </script>
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Dr. Scratch</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form" action="/login">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+	    <!-- Main jumbotron for a primary marketing message or call to action -->
+	    <div class="jumbotron">
+            <div class="container">
+                <div class="blockquote-reverse">
+                    <div class="has-error help-block  has-feedback">
+                        {% if flag %}
+                        <p>User not found: Please try again!</p>
+                        {% endif %}
+                      
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
+	        <div class="container">
+		<img src="/resources/images/logo_main.png">
+        <h1></h1>
+		<p>Welcome to the Dr. Scratch website, an analytical tool that evaluates your Scratch projects in a variety of computational areas. We provide feedback on aspects such as abstraction, logical thinking, synchronization, parallelization, flow control, user interactivity and data representation. </p>
+		<p>This analyzer is a helpful tool to evaluate your own projects, or those of your Scratch students.</p>
+	    	<form method="post" enctype="multipart/form-data" accept-charset="utf-8" action="/uploadUnregistered">
+				{% csrf_token %}
+                <br></br>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Dr. Scratch</h1>
-        <p>This is a web application that have as aid to show metrics of code of Scratch Language.</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
+				<div class="col-md-4">
+					<input name="zipFile" type="file" class="filestyle" data-buttonName="btn btn-primary">
+					<input name = "prueba" type="submit" value="Submit" class="btn btn-primary">
+				</div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <form method="post" enctype="multipart/form-data" action="/upload">
-        {% csrf_token %}
-          Please, select only one file <input type="file" name="zipFile">
-          <input type="submit" value="Send">
-      </form> 
+			</form>
+	      </div>
+	    </div>
 
-    <div class="container">
-      <canvas id="mychart" width="400" height="400"</canvas>
+	    <div class="serviceBlock">
+		<div class="container">
+					
+				<div class="row">
+					<div class="col-md-4">
+						<div class="clearfix">
+							<i class="fa fa-info-circle"></i>
+							<div class="desc">								
+								<h4>Help</h4>
+								<p><a href="http://programamos.es/web/wp-content/uploads/2014/08/DrScratch1.pdf">Slides used in Scratch Conference, MIT 2014</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="clearfix">
+							<i class="fa fa-folder-open-o"></i>
+							<div class="desc">
+								<h4>Contact</h4>
+								<p>If you have any questions, comments or ideas to improve Dr. Scratch, please feel free to contact us:</p>
+								<p>jesus.moreno (at) programamos.es</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="clearfix">
+							<i class="fa fa-male"></i>
+							<div class="desc">
+								<h4>Community</h4>
+								<p>Join us! Meet other users and share experiences</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
-    </div>
-
-   
-
-
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
-    </div> <!-- /container -->
+				<hr>
+		</div>
+		</div>		
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="resources/js/bootstrap.min.js"></script>
-  </body>
+	</body>
+
 </html>
