@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lan="es">
+<html lan="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Dr. Scratch - automatic analysis of Scratch projects to assess the development of computational thinking</title>
-        <link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.ico"/>
 		
 		<!-- Bootstrap core CSS -->
 	    <link href="/resources/css/bootstrap.css" rel="stylesheet">
@@ -13,7 +12,9 @@
 	    <link href="/resources/css/sb-admin.css" rel="stylesheet">
 	    <link rel="stylesheet" href="/resources/font-awesome/css/font-awesome.min.css">
 	    <link rel="stylesheet" type="text/css" href="/resources/custom/business-plate.css">
-
+	    <!-- Page Specific CSS -->
+	    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+	    <link rel="stylesheet" type="text/css" href="/resources/css/doctor.css">
 
 		<!--Librería jQuery requerida para los plugins de Javascript-->
 		<script src="http://code.jquery.com/jquery.js"></script>
@@ -23,7 +24,7 @@
 			
 	</head>	
 	<body>
-		<div class="navbar navbar-inverse navbar-fixed-top" role="nanavbar-inversevigation">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	      	<div class="container">
 	        	<div class="navbar-header">
 		          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -32,9 +33,9 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		          </button>
-	          	<a class="navbar-brand" href="#">Doctor Scratch (beta version)</a>
+	          	<a class="navbar-brand" href="#">Doctor Scratch (alpha version)</a>
 	        	</div>
-		        <div color="#ff0" class="navbar-collapse collapse">
+		        <div class="navbar-collapse collapse">
 	          		<form class="navbar-form navbar-right" role="form" method="post" action="/login">
 	          			{% csrf_token %}
 	            		<div class="form-group">
@@ -49,32 +50,18 @@
       		</div>
     	</div>
 
-
-
 	    <!-- Main jumbotron for a primary marketing message or call to action -->
 	    <div class="jumbotron">
-            <div class="container">
-                <div class="blockquote-reverse">
-                    <div class="has-error help-block  has-feedback">
-                        {% if flag %}
-                        <p>User not found: Please try again!</p>
-                        {% endif %}
-                      
-                    </div>
-                </div>
-            </div>
-	        <div class="container">
-		<img src="/resources/images/logo_main.png">
-        <h1></h1>
+	      <div class="container">
+	        <h1>Dr. Scratch (alpha version)</h1>
+		<p>Analyze your Scratch projects here! </p>
 		<p>Welcome to the Dr. Scratch website, an analytical tool that evaluates your Scratch projects in a variety of computational areas. We provide feedback on aspects such as abstraction, logical thinking, synchronization, parallelization, flow control, user interactivity and data representation. </p>
 		<p>This analyzer is a helpful tool to evaluate your own projects, or those of your Scratch students.</p>
-	    	<form method="post" enctype="multipart/form-data" accept-charset="utf-8" action="/uploadUnregistered">
+	    	<form method="post" enctype="multipart/form-data" action="/upload">
 				{% csrf_token %}
-                <br></br>
-
 				<div class="col-md-4">
-					<input name="zipFile" type="file" class="filestyle" data-buttonName="btn btn-primary">
-					<input name = "prueba" type="submit" value="Submit" class="btn btn-primary">
+					<input type="file" class="filestyle" data-buttonName="btn btn-primary" name="zipFile">
+					<input type="submit" value="Send" class="btn btn-primary">
 				</div>
 
 			</form>
@@ -119,6 +106,28 @@
 		</div>
 		</div>		
 
+<!--
+		<div id="page-wrapper">
+		<div class="row">
+
+          <div class="col-lg-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Do you want to have a try?</h3>
+              </div>
+              <div class="panel-body">
+        	    <div class="wrapper-file-input">
+			      <form method="post" enctype="multipart/form-data" action="/upload">
+			        {% csrf_token %}
+			          Please, select only one file <input type="file" name="zipFile">
+			          <input type="submit" value="Send" class="btn btn-primary">
+			      </form> 
+			    </div>
+              </div>
+            </div>
+          </div>
+      	</div>
+      </div>-->
 
 	</body>
 

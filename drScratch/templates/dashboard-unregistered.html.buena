@@ -61,7 +61,7 @@
           </div>
           </div><!-- /.row -->
 
-        <!-- Mastery -->
+
         <div class="row">
           <div class="col-xs-12">
             <div class="panel panel-info">
@@ -72,7 +72,8 @@
                   </div>
 
                   <div class="col-xs-6">
-                    <p class="announcement-heading">CT Score: {{ mastery.points }}/{{ mastery.maxi }}</p>
+                    <p class="announcement-heading">{{ mastery.scoring}}</p>
+                    <p class="announcement-text">CT Score</p>
                   </div>
                 </div>
               </div>
@@ -80,9 +81,9 @@
                   <div class="row">
                     <div class="col-xs-6">
                       <h4><p class="text-center">Your level: 
-		      {% if mastery.points >= 15 %}
+		      {% if mastery.scoring >= 15 %}
                       <span class="label label-default">Master</span></p></h4>
-		      {% elif mastery.points > 7 %}    	
+		      {% elif mastery.scoring > 7 %}    	
                       <span class="label label-default">Developing</span></p></h4>
 		      {% else %}     
                       <span class="label label-default">Basic</span></p></h4>
@@ -94,10 +95,120 @@
           </div>
         </div><!-- /.row -->
 
-        <!-- Mastery -->
+
+          <div class="row">
+          <div class="col-lg-3">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-bell fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ duplicate }}</p>
+                    <p class="announcement-text">Duplicated Scripts</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+			<p>
+                        </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-exclamation-triangle fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ numSprite }}</p>
+                    <p class="announcement-text">Sprites naming</p>
+                  </div>
+                </div>
+              </div>   
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="list-group">
+                      {% for item in sprite %}
+                        <p class="list-group-item">
+                          <i class="fa fa-check"></i> Incorrect name: {{ item }}
+                        </p>
+                      {% endfor%}
+                   </div>
+                
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-times-circle fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ numDeads }}</p>
+                    <p class="announcement-text">Dead Code</p>
+                  </div>
+                </div>
+              </div>
+              
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="list-group">
+                      {% for item in ldeads %}
+                        <p class="list-group-item">
+                          <i class="fa fa-check"></i> {{ item }}
+                        </p>
+                      {% endfor%}
+                   </div>
+                 </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-exclamation-circle fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ numIncorrects }}</p>
+                    <p class="announcement-text">Sprite atributes initialization</p>
+                  </div>
+                </div>
+              </div>
+              
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="list-group">
+                      {% for item in lattributes %}
+                        <p class="list-group-item">
+                          <i class="fa fa-check"></i> {{ item }}
+                        </p>
+                      {% endfor%}
+                   </div>
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+
         <div class="row">
           <div class="col-xs-12">
-            <h2>CT Score in detail:</h2>
+            <h2>Computational Thinking Score:</h2>
             <div class="table-responsive">
               <table class="table table-hover tablesorter">
                 <thead>
@@ -109,141 +220,20 @@
                 <tbody>
                   {% for key, value in mastery.items %}
                   {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
-                  {% if key != "points" %}
-                  {% if key != "maxi" %}
-                        <td>{{ key }}</td>
-                        <td>{{ value }}/3</td>
-                  {% endif %}
-                  {% endif %}                  
+                  {% if key == "scoring" %}
+                    <td>CT global score</td>
+                  {% else %}
+                    <td>{{ key }}</td>
+                  {% endif %}                   
+                    <td>{{ value }}</td>
                   {% if forloop.counter|divisibleby:1 or forloop.last %}</tr>{% endif %}
                   {% endfor %}
                 </tbody>
               </table>
             </div>
           </div>
-	    </div>
-
-          <div class="row">
-          <div class="col-xs-12">
-            <h2>Possible issues to watch out:</h2>    
-	      </div>
-	      </div> 
-
-          <!-- Duplicate Script -->
-          <div class="row">
-          <div class="col-lg-3">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-6">
-                    <i class="fa fa-bell fa-5x"></i>
-                  </div>
-                  <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">{{ duplicateScript.number }}</p>
-                    <p class="announcement-text">Duplicated Scripts</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Sprite Naming -->
-          
-          <div class="col-lg-3">
-            <div class="panel panel-warning">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-6">
-                    <i class="fa fa-exclamation-triangle fa-5x"></i>
-                  </div>
-                  <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">{{ spriteNaming.number }}</p>
-                    <p class="announcement-text">Sprites naming</p>
-                  </div>
-                </div>
-              </div>   
-                <div class="panel-footer announcement-bottom">
-                  <div class="row">
-                    <div class="list-group">
-                      {% for item in spriteNaming.sprite %}
-                        <p class="list-group-item">
-                          <i class="fa fa-check"></i> Incorrect name: {{ item }}
-                        </p>
-                      {% endfor%}
-                   </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- Dead Code -->
-          <div class="col-lg-3">
-            <div class="panel panel-danger">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-6">
-                    <i class="fa fa-times-circle fa-5x"></i>
-                  </div>
-                  <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">{{ deadCode.number }}</p>
-                    <p class="announcement-text">Dead Code</p>
-                  </div>
-                </div>
-              </div>
-                <div class="panel-footer announcement-bottom">
-                  <div class="row">
-                    <div class="list-group">
-                      {% for key,value in deadCode.items %}
-                      {% if key != "number" %}
-                      {% if key != "deadCode" %}
-                        <p class="list-group-item">
-                          <i class="fa fa-check"></i>{{ key }} : {{ value }} blocks 
-                        </p>
-                      {% endif %}
-                      {% endif %}
-                      {% endfor%}
-                   </div>
-                 </div>
-                </div>
-              </div>
-          </div>
-
-
-          <!-- Attribute Initialization -->
-          <div class="col-lg-3">
-            <div class="panel panel-success">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col-xs-6">
-                    <i class="fa fa-exclamation-circle fa-5x"></i>
-                  </div>
-                  <div class="col-xs-6 text-right">
-                    <p class="announcement-heading">{{ initialization.number }}</p>
-                    <p class="announcement-text">Sprite atributes initialization</p>
-                  </div>
-                </div>
-              </div>
-                <div class="panel-footer announcement-bottom">
-                  <div class="row">
-                    <div class="list-group">
-                      {% for key,value in initialization.items %}
-                        {% if value|length > 0 %}
-                         {% if key != "number" %}
-                        <p class="list-group-item">
-                          <i class="fa fa-check"></i> {{ key }}: ({{ value }}) 
-                           modified but not initialized correctly.     
-                        </p>
-                         {% endif %}
-                        {% endif %}
-                      {% endfor %}
-                   </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div><!-- /.row -->
-   
+        
+        
       </div>
       
       </div><!-- /#page-wrapper -->
