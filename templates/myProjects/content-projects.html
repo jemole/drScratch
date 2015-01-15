@@ -1,0 +1,174 @@
+{% extends "dashboard.html"%}        
+
+{% block content %}
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Dashboard <small>Overview</small></h1>
+            <ol class="breadcrumb">
+              <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+            </ol>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              Statics of your project!
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-star fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6">
+                    <p class="announcement-heading">{{ scoring }}</p>
+                    <p class="announcement-text">Scoring</p>
+                  </div>
+                </div>
+              </div>
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                      <h4><p class="text-center">Level: <span class="label label-default">{{ project.level }}</span></p></h4>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Puntuation</h2>
+            <div class="table-responsive">
+              <table class="table table-condensed tablesorter">
+                <thead>
+                  <tr>
+                    <th>Concept<i class="fa fa-sort"></i></th>
+                    <th>Points<i class="fa fa-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for key, value in dmastery.items %}
+                  {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                  {% if forloop.counter|divisibleby:1 or forloop.last %}</tr>{% endif %}
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        <div id="checker" onclick="changeState()"><p>Do you want to see the metrics?</p></div>
+
+        <div id="metrics" class="hide">
+
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-comments fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ numduplicate }}</p>
+                    <p class="announcement-text">Duplicate Scripts</p>
+                  </div>
+                </div>
+              </div>
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      No comments
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-check fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ dsprite|length }}</p>
+                    <p class="announcement-text">Sprite</p>
+                  </div>
+                </div>
+              </div>
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="list-group">
+                      {% for x in dsprite %}
+                      <p class="list-group-item">
+                        <i class="fa fa-check"></i> {{ x.character }}
+                      </p> 
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div> 
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-tasks fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ ddead|length}}</p>
+                    <p class="announcement-text">Dead Code</p>
+                  </div>
+                </div>
+              </div>
+                <div class="panel-footer announcement-bottom">
+                   <div class="row">
+                    <div class="list-group">
+                      {% for x in ddead %}
+                      <p class="list-group-item">
+                        <i class="fa fa-check"></i> {{ x.character }} with {{ x.blocks }} blocks
+                      </p> 
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-comments fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ lattribute|length }}</p>
+                    <p class="announcement-text">Incorrect initialization</p>
+                  </div>
+                </div>
+              </div>
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="list-group">
+                      {% for x in lattribute %}
+                      <p class="list-group-item">
+                        <i class="fa fa-check"></i>{{ x }}
+                      </p> 
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div>  
+
+{% endblock %}

@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es">
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>El primer script</title>
+
+        <script type="text/javascript" src="/resources/js/progress-bar.js"></script>
+		<!-- Bootstrap core CSS -->
+	    <link href="/resources/css/bootstrap.css" rel="stylesheet">
+	    <!-- Add custom CSS here -->
+	    <link href="/resources/css/sb-admin.css" rel="stylesheet">
+	    <link rel="stylesheet" href="/resources/font-awesome/css/font-awesome.min.css">
+	    <link rel="stylesheet" type="text/css" href="/resources/custom/business-plate.css">
+
+
+		<!--Librería jQuery requerida para los plugins de Javascript-->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<!--Todos los plugins Javascript de bootStrap-->
+		<script src="/resources/js/bootstrap.min.js"></script>
+		<script src="/resources/js/bootstrap-filestyle.js"></script>
+</head>
+ 
+<body>
+<noscript>Esta página <strong>requiere</strong> el uso de JavaScript y parece que está desactivado</noscript>
+
+
+<div class="container">
+        <p>
+            <h1>
+                Wait a moment please
+            </h1>
+        </p>
+</div>
+
+<div class="container">
+    <img src="/resources/images/logo_main.png">
+</div>
+
+<div class="container">   
+    <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-danger" role="progressbar"
+            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+            style="width: 80%">
+            80%
+            <span class="sr-only">80% completado</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
