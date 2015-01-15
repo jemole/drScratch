@@ -1,9 +1,0 @@
-from django import forms
-
-class UploadFileForm(forms.Form):
-	filename = forms.FileField(label='Selec a file')
-
-class UserForm(forms.Form):
-	username = forms.CharField(max_length=50)
-	password = forms.CharField(max_length=50)
-
