@@ -1,2 +1,0 @@
-FileName: ws.sb2	ID: 1
-FileName: Testing.sb2	ID: 2
