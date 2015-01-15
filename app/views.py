@@ -29,7 +29,11 @@ def main(request):
     # The first time one user enters
     # Create the dashboards associated to users
     createDashboards()
+<<<<<<< HEAD
     return render_to_response("main/main.html",
+=======
+    return render_to_response("main.html",
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
                                 {'user':user},
                                 context_instance=RC(request))
 
@@ -53,7 +57,11 @@ def loginUser(request):
                     return HttpResponseRedirect('/myDashboard')
             else:
                 flag = True
+<<<<<<< HEAD
                 return render_to_response("main/main.html", 
+=======
+                return render_to_response("main.html", 
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
                                             {'flag': flag},
                                             context_instance=RC(request))
 
@@ -90,7 +98,11 @@ def myDashboard(request):
         beginner = mydashboard.project_set.filter(level="beginner")
         developing = mydashboard.project_set.filter(level="developing")
         advanced = mydashboard.project_set.filter(level="advanced")
+<<<<<<< HEAD
         return render_to_response("myDashboard/content-dashboard.html", 
+=======
+        return render_to_response("content-dashboard.html", 
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
                                     {'user': user,
                                     'beginner': beginner,
                                     'developing': developing,
@@ -107,7 +119,11 @@ def myProjects(request):
         user = request.user.username
         mydashboard = Dashboard.objects.get(user=user)
         projects = mydashboard.project_set.all()
+<<<<<<< HEAD
         return render_to_response("myProjects/content-projects.html", 
+=======
+        return render_to_response("content-projects.html", 
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
                                 {'projects': projects},
                                 context_instance=RC(request))
     else:
@@ -118,7 +134,11 @@ def myRoles(request):
     """Show the roles in Doctor Scratch"""
     if request.user.is_authenticated():
         user = request.user.username
+<<<<<<< HEAD
         return render_to_response("myRoles/content-roles.html",
+=======
+        return render_to_response("content-roles.html",
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
                                 context_instance=RC(request))   
     else:
         return HttpResponseRedirect("/") 
@@ -131,7 +151,11 @@ def myHistoric(request):
         user = request.user.username
         mydashboard = Dashboard.objects.get(user=user)
         projects = mydashboard.project_set.all()
+<<<<<<< HEAD
         return render_to_response("myHistoric/content-historic.html", 
+=======
+        return render_to_response("content-historic.html", 
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
                                     {'projects': projects},
                                     context_instance=RC(request))
     else:
@@ -151,7 +175,11 @@ def upload_progress(request):
         A view to report back on upload progress.
         Return JSON object with information about the progress of an upload.
         """
+<<<<<<< HEAD
         print "LA PETICIÓN ES: \n" + str(request) + "\n"
+=======
+        print "LA PETICIÓN ES: \n" + request + "\n"
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
         #import ipdb
         #ipdb.set_trace()
         progress_id = ''
@@ -160,6 +188,10 @@ def upload_progress(request):
         elif 'X-Progress-ID' in request.META:
             progress_id = request.META['X-Progress-ID']
         if progress_id:
+<<<<<<< HEAD
+=======
+            from django.utils import simplejson
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
             cache_key = "%s_%s" % (request.META['REMOTE_ADDR'], progress_id)
             data = cache.get(cache_key)
             return HttpResponse(simplejson.dumps(data))
@@ -188,7 +220,11 @@ def uploadUnregistered(request):
         # Analyze the scratch project
         d = analyzeProject(file_name)
         # Redirect to dashboard for unregistered user
+<<<<<<< HEAD
         return render_to_response("upload/dashboard-unregistered.html", d)
+=======
+        return render_to_response("dashboard-unregistered.html", d)
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
     else:
         return HttpResponseRedirect('/')
 
@@ -322,6 +358,7 @@ def procDeadCode(lines):
         dic["deadCode"][lcharacter[i]] = literator[i]
   
     return dic
+<<<<<<< HEAD
 
 
 def procInitialization(lines):
@@ -492,6 +529,178 @@ def idProject(request, idProject):
     
 
 
+=======
+
+
+def procInitialization(lines):
+    """Initialization"""
+    dic = {}
+    lLines = lines.split('.sb2')
+    d = ast.literal_eval(lLines[1])
+    keys = d.keys()
+    values = d.values()
+    items = d.items()
+    number = 0
+    
+    for keys, values in items:
+        list = []
+        attribute = ""
+        internalkeys = values.keys()
+        internalvalues = values.values()
+        internalitems = values.items()
+        flag = False
+        counterFlag = False
+        i = 0
+        for internalkeys, internalvalues in internalitems:
+            if internalvalues == 1:
+                counterFlag = True
+                for value in list:
+                    if internalvalues == value:
+                        flag = True
+                if not flag:
+                    list.append(internalkeys)
+                    if len(list) < 2:
+                        attribute = str(internalkeys)
+                    else:
+                        attribute = attribute + ", " + str(internalkeys)
+        if counterFlag:
+            number = number + 1
+        d[keys] = attribute
+        
+    dic["initialization"] = d
+    dic["initialization"]["number"] = number
+
+    return dic
+
+# ___________________ PROCESSORS OF PLUG-INS NOT USED YET ___________________#
+
+#def procBlockCounts(lines):
+#    """CountLines"""
+#    dic = {}
+#    dic["countLines"] = lines
+
+#    print "BLOCK COUNTS: " + str(dic)
+#    return dic
+
+
+#def procBroadcastReceive(lines):
+#    """Return the number of lost messages"""
+#    dic = {}
+#    lLines = lines.split('\n')
+    # messages never received or broadcast
+#    laux = lLines[1]
+#    laux = laux.split(':')[0]
+#    dic["neverRB"] = dic
+#    dic["neverRB"]["neverReceive"] = laux
+#    laux = lLines[3]
+#    laux = laux.split(':')[0]
+#    dic["neverRB"]["neverBroadcast"] = laux
+    
+#    return dic
+
+#___________________________ UNDER DEVELOPMENT _________________________#
+
+#UNDER DEVELOPMENT: Children!!!Carefull
+def registration(request):
+    """Registration a user in the app"""
+    return render_to_response("formulary.html")
+
+
+#UNDER DEVELOPMENT: Children!!!Carefull
+def profileSettings(request):
+    """Main page for registered user"""
+    return render_to_response("profile.html")
+
+#UNDER DEVELOPMENT:
+#TO REGISTERED USER
+def uploadRegistered(request):
+    """Upload and save the zip"""
+    if request.user.is_authenticated():
+        user = request.user.username
+    else:
+        return HttpResponseRedirect('/')
+        
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST)
+        # Analyze the scratch project and save in our server files
+        fileName = handle_uploaded_file(request.FILES['zipFile'])
+        # Analize project and to save in database the metrics
+        d = analyzeProject(fileName)
+        fupdate = datetime.now()
+        # Get the short name
+        shortName = fileName.split('/')[-1]
+        # Get the dashboard of user
+        myDashboard = Dashboard.objects.get(user=user)    
+        # Save the project
+        newProject = Project(name=shortName, version=1, score=0, path=fileName, fupdate=fupdate, dashboard=myDashboard)
+        newProject.save()
+        # Save the metrics    
+        dmaster = d["mastery"]
+        newMastery = Mastery(myproject=newProject, abstraction=dmaster["Abstraction"], paralel=dmaster["Parallelization"], logic=dmaster["Logic"], synchronization=dmaster["Synchronization"], flowcontrol=dmaster["FlowControl"], interactivity=dmaster["UserInteractivity"], representation=dmaster["DataRepresentation"], TotalPoints=dmaster["TotalPoints"])
+        newMastery.save()
+        newProject.score = dmaster["Total{% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}Points"]
+        print "Puntos:" 
+        print newProject.score
+        if newProject.score > 15:
+            newProject.level = "advanced"
+        elif newProject.score > 7:
+            newProject.level = "developing"
+        else:
+            newProject.level = "beginner"
+        newProject.save()
+        
+        for charx, dmetrics in d["attribute"].items():
+            if charx != 'stage':
+                newAttribute = Attribute(myproject=newProject, character=charx, orientation=dmetrics["orientation"], position=dmetrics["position"], costume=dmetrics["costume"], visibility=dmetrics["visibility"], size=dmetrics["size"])
+            newAttribute.save()
+
+        iterator = 0
+        for deadx in d["dead"]:
+            if (iterator % 2) == 0:
+                newDead = Dead(myproject=newProject, character=deadx, blocks=0)
+            else:
+                newDead.blocks = deadx
+            newDead.save()
+            iterator += 1
+        
+        newDuplicate = Duplicate(myproject=newProject, numduplicates=d["duplicate"][0])
+        newDuplicate.save()
+        for charx in d["sprite"]:
+            newSprite = Sprite(myproject=newProject, character=charx)
+            newSprite.save()
+            print newSprite.character
+        return HttpResponseRedirect('/myprojects')
+
+#_____ ID/BUILDERS ____________#
+
+def idProject(request, idProject):
+    """Resource uniquemastery of project"""
+    if request.user.is_authenticated():
+        user = request.user.username
+    else:
+        user = None
+    dmastery = {}
+    project = Project.objects.get(id=idProject)
+    item = Mastery.objects.get(myproject=project)
+    dmastery = buildMastery(item)
+    TotalPoints = dmastery["TotalPoints"]
+    dsprite = Sprite.objects.filter(myproject=project)
+    ddead = Dead.objects.filter(myproject=project)
+    dattribute = Attribute.objects.filter(myproject=project)
+    listAttribute = buildAttribute(dattribute)
+    numduplicate = Duplicate.objects.filter(myproject=project)[0].numduplicates
+    return render_to_response("project.html", {'project': project,
+                                                'dmastery': dmastery,
+                                                'lattribute': listAttribute,
+                                                'numduplicate': numduplicate,
+                                                'dsprite': dsprite,
+                                                'Total points': TotalPoints,
+                                                'ddead': ddead},
+                                                context_instance=RequestContext(request))
+    
+
+
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
 
 def buildMastery(item):
     """Generate the dictionary with mastery"""
@@ -518,6 +727,7 @@ def buildAttribute(qattribute):
     return listInfo
 
 #_______BUILDERS'S HELPERS ________#
+<<<<<<< HEAD
 
 def writeErrorAttribute(dic):
     """Write in a list the form correct of attribute plugin"""
@@ -556,4 +766,43 @@ def uncompress_zip(zip_file):
         if file_path == 'project.json':
             file_content = unziped.read(file_path)
     show_file(file_content)
+=======
 
+def writeErrorAttribute(dic):
+    """Write in a list the form correct of attribute plugin"""
+    lErrors = []
+    for key in dic.keys():
+        text = ''
+        dx = dic[key]
+        if key != 'stage':
+            if dx["orientation"] == 1:
+                text = 'orientation,'
+            if dx["position"] == 1:
+                text += ' position, '
+            if dx["visibility"] == 1:
+                text += ' visibility,'
+            if dx["costume"] == 1:
+                text += 'costume,'
+            if dx["size"] == 1:
+                text += ' size'
+            if text != '':
+                text = key + ': ' + text + ' modified but not initialized correctly'
+                lErrors.append(text)
+            text = None
+        else:
+            if dx["background"] == 1:
+                text = key + ' background modified but not initialized correctly'
+                lErrors.append(text)
+    return lErrors
+
+
+
+# _________________________  _______________________________ #
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
+
+def uncompress_zip(zip_file):
+    unziped = ZipFile(zip_file, 'r')
+    for file_path in unziped.namelist():
+        if file_path == 'project.json':
+            file_content = unziped.read(file_path)
+    show_file(file_content)

@@ -3,7 +3,11 @@ from django.db import models
 # Models of drScratch
 
 class File(models.Model):
+<<<<<<< HEAD
     filename = models.CharField(max_length=100)
+=======
+	filename = models.CharField(max_length=100)
+>>>>>>> c27e7480b09df45e2fcaef660b35f5b02f8dd680
 
 class Dashboard(models.Model):
 	user = models.TextField()
