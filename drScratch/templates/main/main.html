@@ -44,6 +44,8 @@
 	              		<input type="password" name="password" placeholder="Password" class="form-control">
 	           			</div>
 	            		<button type="submit" class="btn btn-success">Sign in</button>
+	            		<!--Button Trigger Modal-->
+	            		<button type="button" data-toggle="modal" class="btn btn-danger"data-target="#myModal">Sign up</button>
 	          		</form>
 	        	</div><!--/.navbar-collapse -->
       		</div>
@@ -78,6 +80,10 @@
 				</div>
 
 			</form>
+			<!--Button Trigger Modal-->
+    		<button type="button" data-toggle="modal" class="btn btn-warning" data-target="#myModalURL">Introduce URL</button>
+
+			
 	      </div>
 	    </div>
 
@@ -118,6 +124,64 @@
 				<hr>
 		</div>
 		</div>		
+
+
+<!-- Modals for the forms of register and URL -->
+
+		<!--Modal to register new user-->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  			<div class="modal-dialog">
+    			<div class="modal-content">
+      				<div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        			<h4 class="modal-title" id="myModalLabel">Sign Up to Dr. Scratch</h4>
+      				</div>
+		     		<div class="modal-body">
+		       			<form role="form" method="post" action="/createUser">
+		       				{% csrf_token %}
+		       				<div class="form-group">
+		       					<label for="inputNick">Put your nickname. Please no real names.</label>
+		       					<input type="nick" class="form-control" id="inputNick" name="nickname" placeholder="Nickname">
+		       				</div>
+		       				<div class="form-group">
+		       					<label for="inputPassword">Password</label>
+		       					<input type="password" class="form-control" id="inputPassword" name="passUser" placeholder="Password">
+		       				</div>
+		       				<div class="form-group">
+		       					<label for="inputEmail">Put a email. In case that users under 18 years of age is required the parent email account for reset the password.</label>
+		       					<input type="email" class="form-control" id="inputEmail" name="emailUser" placeholder="Email">
+		       				</div>
+		       				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		       				<button type="submit" class="btn btn-primary">Sign Up</button>
+		       			</form>	
+		      		</div>
+    			</div>
+  			</div>
+		</div>
+
+	<!--Modal to introduce the URL-->
+		<div class="modal fade" id="myModalURL" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  			<div class="modal-dialog">
+    			<div class="modal-content">
+      				<div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        			<h4 class="modal-title" id="myModalLabel">Dr. Scratch</h4>
+      				</div>
+		     		<div class="modal-body">
+		       			<form role="form" method="post" action="/sendUrlProject">
+		       				{% csrf_token %}
+		       				<div class="form-group">
+		       					<label for="inputUrl">Introduce la URL</label>
+		       					<input type="url" class="form-control" id="inputUrl" name="urlProject" placeholder="URL">
+		       				</div>
+		       				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		       				<button type="submit" class="btn btn-primary">Send</button>
+		       			</form>	
+		      		</div>
+    			</div>
+  			</div>
+		</div>
+
 
 
 	</body>
