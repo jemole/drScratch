@@ -139,6 +139,34 @@ def myHistoric(request):
 
 
 #__________________________ FILES _______________________________________#
+
+def progressBar(request):
+    if request.method == 'POST':
+        return render_to_response("prueba.html")
+    else:
+        return HttpResponseRedirect('/')
+
+def upload_progress(request):
+        """
+        A view to report back on upload progress.
+        Return JSON object with information about the progress of an upload.
+        """
+        print "LA PETICIÓN ES: \n" + str(request) + "\n"
+        #import ipdb
+        #ipdb.set_trace()
+        progress_id = ''
+        if 'X-Progress-ID' in request.GET:
+            progress_id = request.GET['X-Progress-ID']
+        elif 'X-Progress-ID' in request.META:
+            progress_id = request.META['X-Progress-ID']
+        if progress_id:
+            cache_key = "%s_%s" % (request.META['REMOTE_ADDR'], progress_id)
+            data = cache.get(cache_key)
+            return HttpResponse(simplejson.dumps(data))
+        else:
+            return HttpResponseServerError(
+                'Server Error: You must provide X-Progress-ID header or query param.')
+
 #TO UNREGISTERED USER
 def uploadUnregistered(request):
     """Upload file from form POST"""
