@@ -430,8 +430,7 @@ def procInitialization(lines):
                         attribute = attribute + ", " + str(internalkeys)
         if counterFlag:
             number = number + 1
-        d[keys] = attribute
-        
+        d[keys] = attribute      
     dic["initialization"] = d
     dic["initialization"]["number"] = number
 
