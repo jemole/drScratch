@@ -68,43 +68,43 @@ def logoutUser(request):
     return HttpResponseRedirect('/')
 
 def createUser(request):
-	"""Method for to sign up in the platform"""
-	logout(request)
-	if request.method == "POST":
-		form = NewUserForm(request.POST)
-		if form.is_valid():
-			nickName = form.cleaned_data['nickname']
-			emailUser = form.cleaned_data['emailUser']
-			passUser = form.cleaned_data['passUser']
-			user = User.objects.create_user(nickName, emailUser, passUser)
-			return render_to_response("profile.html", {'user': user}, context_instance=RC(request))
+    """Method for to sign up in the platform"""
+    logout(request)
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            nickName = form.cleaned_data['nickname']
+            emailUser = form.cleaned_data['emailUser']
+            passUser = form.cleaned_data['passUser']
+            user = User.objects.create_user(nickName, emailUser, passUser)
+            return render_to_response("profile.html", {'user': user}, context_instance=RC(request))
 
 #________________________ PROFILE ____________________________# 
 
 
 def updateProfile(request):
-	"""Update the pass, email and avatar"""
-	if request.user.is_authenticated():
-		user = request.user.username
-	else:
-		user = None
-	if request.method == "POST":
-		form = UpdateForm(request.POST)
-		if form.is_valid():
-			newPass = form.cleaned_data['newPass']
-			newEmail = form.cleaned_data['newEmail']
-			choiceField = forms.ChoiceField(widget=forms.RadioSelect())
-			print newPass, newEmail, choiceField.widget.choices, choiceField
-			return HttpResponseRedirect('/mydashboard')
-		else:
-			print 'movida'
+    """Update the pass, email and avatar"""
+    if request.user.is_authenticated():
+        user = request.user.username
+    else:
+        user = None
+    if request.method == "POST":
+        form = UpdateForm(request.POST)
+        if form.is_valid():
+            newPass = form.cleaned_data['newPass']
+            newEmail = form.cleaned_data['newEmail']
+            choiceField = forms.ChoiceField(widget=forms.RadioSelect())
+            print newPass, newEmail, choiceField.widget.choices, choiceField
+            return HttpResponseRedirect('/mydashboard')
+        else:
+            return HttpResponseRedirect('/')
 
 
 def changePassword(request, new_password):
-	"""Change the password of user"""
-	user = User.objects.get(username=current_user)
-	user.set_password(new_password)
-	user.save()
+    """Change the password of user"""
+    user = User.objects.get(username=current_user)
+    user.set_password(new_password)
+    user.save()
 
 
 
@@ -182,34 +182,6 @@ def myHistoric(request):
 
 #__________________________ FILES _______________________________________#
 
-'''
-def progressBar(request):
-    if request.method == 'POST':
-        return render_to_response("prueba.html")
-    else:
-        return HttpResponseRedirect('/')
-
-def upload_progress(request):
-        """
-        A view to report back on upload progress.
-        Return JSON object with information about the progress of an upload.
-        """
-        print "LA PETICIÓN ES: \n" + str(request) + "\n"
-        #import ipdb
-        #ipdb.set_trace()
-        progress_id = ''
-        if 'X-Progress-ID' in request.GET:
-            progress_id = request.GET['X-Progress-ID']
-        elif 'X-Progress-ID' in request.META:
-            progress_id = request.META['X-Progress-ID']
-        if progress_id:
-            cache_key = "%s_%s" % (request.META['REMOTE_ADDR'], progress_id)
-            data = cache.get(cache_key)
-            return HttpResponse(simplejson.dumps(data))
-        else:
-            return HttpResponseServerError(
-                'Server Error: You must provide X-Progress-ID header or query param.')
-'''
 #TO UNREGISTERED USER
 def uploadUnregistered(request):
     """Upload file from form POST for unregistered users"""
@@ -220,7 +192,6 @@ def uploadUnregistered(request):
         fileName.save()
         dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
         fileSaved = dir_zips + str(fileName.id) + ".sb2"
-        print "FICHERO GUARDADO EN: " + fileSaved
         pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
         logFile = open (pathLog + "logFile.txt", "a")
         logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
@@ -261,57 +232,57 @@ def handle_uploaded_file(file, fileSaved, counter):
 
 
 def processFormURL(request):
-	"""Process Request of form URL"""		
-	if request.method == "POST":
-		form = UrlForm(request.POST)
-		if form.is_valid():
-			url = form.cleaned_data['urlProject']
-			idProjectScratch = processStringUrl(url)
-			if idProjectScratch == 'error':
-				return HttpResponse('la url es incorrecta')
-			else:
-				fileName = sendRequestgetSB2(idProjectScratch)
-				print 'hola mundo!!!'
-				print fileName
-				pathProject = '/home/test/github-desarrollo/drScratch/drScratch/repo/' + fileName	
-				dicMetrics = analyzeProject(pathProject)
-				print dicMetrics
-				# Redirect to dashboard for unregistered user
-				return render_to_response("upload/dashboard-unregistered.html", dicMetrics)				
-				
+    """Process Request of form URL"""        
+    if request.method == "POST":
+        form = UrlForm(request.POST)
+        if form.is_valid():
+            url = form.cleaned_data['urlProject']
+            idProjectScratch = processStringUrl(url)
+            if idProjectScratch == 'error':
+                return HttpResponse('la url es incorrecta')
+            else:
+                fileName = sendRequestgetSB2(idProjectScratch)
+                pathProject = os.path.dirname(os.path.dirname(__file__)) + '/repo/' + fileName    
+                dicMetrics = analyzeProject(pathProject)
+                # Redirect to dashboard for unregistered user
+                return render_to_response("upload/dashboard-unregistered.html", dicMetrics)
+    else:
+        return HttpResponseRedirect('/')
+                     
+                
 def processStringUrl(url):
-	"""Process String of URL from Form"""
-	idProject = ''
-	auxString = url.split("/")[-1]
-	if auxString == '':
-		# we need to get the other argument	
-		possibleId = url.split("/")[-2]
-		if possibleId == '#editor':
-			idProject = url.split("/")[-3]
-		else:
-			idProject = possibleId
-	else:
-		if auxString == '#editor':
-			idProject = url.split("/")[-2]
-		else:
-			# To get the id project
-			idProject = auxString
-	try:
-		checkInt = int(idProject)
-	except ValueError:
-		idProject = 'error'
-	return idProject
+    """Process String of URL from Form"""
+    idProject = ''
+    auxString = url.split("/")[-1]
+    if auxString == '':
+        # we need to get the other argument    
+        possibleId = url.split("/")[-2]
+        if possibleId == '#editor':
+            idProject = url.split("/")[-3]
+        else:
+            idProject = possibleId
+    else:
+        if auxString == '#editor':
+            idProject = url.split("/")[-2]
+        else:
+            # To get the id project
+            idProject = auxString
+    try:
+        checkInt = int(idProject)
+    except ValueError:
+        idProject = 'error'
+    return idProject
 
 def sendRequestgetSB2(idProject):
-	"""First request to getSB2"""
-	getRequestSb2 = "http://getsb2.herokuapp.com/" + idProject
-	nameFile = idProject + '.sb2'
-	outputFile = 'repo/' + nameFile
-	sb2File = urllib2.urlopen(getRequestSb2)
-	output = open(outputFile, 'wb')
-	output.write(sb2File.read())
-	output.close()
-	return nameFile
+    """First request to getSB2"""
+    getRequestSb2 = "http://getsb2.herokuapp.com/" + idProject
+    nameFile = idProject + '.sb2'
+    outputFile = 'repo/' + nameFile
+    sb2File = urllib2.urlopen(getRequestSb2)
+    output = open(outputFile, 'wb')
+    output.write(sb2File.read())
+    output.close()
+    return nameFile
 
 
 
@@ -320,40 +291,39 @@ def sendRequestgetSB2(idProject):
 def analyzeProject(file_name):
     dictionary = {}
     if os.path.exists(file_name):
-		#Request to hairball
-		metricMastery = "hairball -p mastery.Mastery " + file_name
-		metricDuplicateScript = "hairball -p \
-				                duplicate.DuplicateScripts " + file_name
-		metricSpriteNaming = "hairball -p convention.SpriteNaming " + file_name
-		metricDeadCode = "hairball -p blocks.DeadCode " + file_name 
-		metricInitialization = "hairball -p \
-				           initialization.AttributeInitialization " + file_name
+        #Request to hairball
+        metricMastery = "hairball -p mastery.Mastery " + file_name
+        metricDuplicateScript = "hairball -p \
+                                duplicate.DuplicateScripts " + file_name
+        metricSpriteNaming = "hairball -p convention.SpriteNaming " + file_name
+        metricDeadCode = "hairball -p blocks.DeadCode " + file_name 
+        metricInitialization = "hairball -p \
+                           initialization.AttributeInitialization " + file_name
 
-		#Plug-ins not used yet
-		#metricBroadcastReceive = "hairball -p 
-		#                          checks.BroadcastReceive " + file_name
-		#metricBlockCounts = "hairball -p blocks.BlockCounts " + file_name
-		#Response from hairball
-		resultMastery = os.popen(metricMastery).read()
-		resultDuplicateScript = os.popen(metricDuplicateScript).read()
-		resultSpriteNaming = os.popen(metricSpriteNaming).read()
-		resultDeadCode = os.popen(metricDeadCode).read()
-		resultInitialization = os.popen(metricInitialization).read()
-		print resultInitialization
-		#Plug-ins not used yet
-		#resultBlockCounts = os.popen(metricBlockCounts).read()
-		#resultBroadcastReceive = os.popen(metricBroadcastReceive).read()
+        #Plug-ins not used yet
+        #metricBroadcastReceive = "hairball -p 
+        #                          checks.BroadcastReceive " + file_name
+        #metricBlockCounts = "hairball -p blocks.BlockCounts " + file_name
+        #Response from hairball
+        resultMastery = os.popen(metricMastery).read()
+        resultDuplicateScript = os.popen(metricDuplicateScript).read()
+        resultSpriteNaming = os.popen(metricSpriteNaming).read()
+        resultDeadCode = os.popen(metricDeadCode).read()
+        resultInitialization = os.popen(metricInitialization).read()
+        #Plug-ins not used yet
+        #resultBlockCounts = os.popen(metricBlockCounts).read()
+        #resultBroadcastReceive = os.popen(metricBroadcastReceive).read()
 
-		#Create a dictionary with necessary information
-		dictionary.update(procMastery(resultMastery))
-		dictionary.update(procDuplicateScript(resultDuplicateScript))
-		dictionary.update(procSpriteNaming(resultSpriteNaming))
-		dictionary.update(procDeadCode(resultDeadCode))
-		dictionary.update(procInitialization(resultInitialization))
-		#Plug-ins not used yet
-		#dictionary.update(procBroadcastReceive(resultBroadcastReceive))
-		#dictionary.update(procBlockCounts(resultBlockCounts))
-		return dictionary
+        #Create a dictionary with necessary information
+        dictionary.update(procMastery(resultMastery))
+        dictionary.update(procDuplicateScript(resultDuplicateScript))
+        dictionary.update(procSpriteNaming(resultSpriteNaming))
+        dictionary.update(procDeadCode(resultDeadCode))
+        dictionary.update(procInitialization(resultInitialization))
+        #Plug-ins not used yet
+        #dictionary.update(procBroadcastReceive(resultBroadcastReceive))
+        #dictionary.update(procBlockCounts(resultBlockCounts))
+        return dictionary
     else:
         return HttpResponseRedirect('/')
 
@@ -431,7 +401,6 @@ def procInitialization(lines):
     """Initialization"""
     dic = {}
     lLines = lines.split('.sb2')
-	print lLines
     d = ast.literal_eval(lLines[1])
     keys = d.keys()
     values = d.values()
