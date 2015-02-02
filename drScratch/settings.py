@@ -26,7 +26,7 @@ STATIC_ROOT = '/resources/'
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b&0vhl+ghtc+31i7xmq@$t)n^)*8p3a9!p8=pk2z9tb5om*(&l'
+SECRET_KEY = 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,7 +47,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_DIRS = ('templates',)
 
-ALLOWED_HOSTS = ['localhost', '193.147.51.252','drscratchpre.programamos.es']
+ALLOWED_HOSTS = [...]
 
 
 # Application definition
@@ -82,8 +82,8 @@ WSGI_APPLICATION = 'drScratch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': '',
+        'NAME': ...,
     }
 }
 
