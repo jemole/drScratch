@@ -19,7 +19,7 @@ import json
 import sys
 import urllib2
 
-#_______________________ MAIN _______________________________#
+############################ MAIN #############################
 
 def main(request):
     """Main page"""
@@ -30,15 +30,156 @@ def main(request):
     # The first time one user enters
     # Create the dashboards associated to users
     createDashboards()
-    return render_to_response("main/main.html",
+    return render_to_response('main/main.html',
                                 {'user':user},
-                                context_instance=RC(request))
+                                RC(request))
 
 def redirectMain(request):
     """Page not found redirect to main"""
     return HttpResponseRedirect('/')
 
-#________________________ REGISTRY __________________________#
+
+###################### TO UNREGISTERED USER ########################
+
+def selector(request):
+    if request.method == 'POST':
+        error = False
+        if "_upload" in request.POST:
+            d = uploadUnregistered(request)
+            if d['Error'] == 'MultiValueDict':
+                error = True
+                return render_to_response('main/main.html',
+                            {'error':error},
+                            RC(request))
+            else:    
+                return render_to_response("upload/dashboard-unregistered.html", d)
+        elif '_url' in request.POST:
+            d = urlUnregistered(request)
+            if d['Error'] == 'MultiValueDict':
+                error = True
+                return render_to_response('main/main.html',
+                            {'error':error},
+                            RC(request))
+            return render_to_response("upload/dashboard-unregistered.html", d)
+    else:
+        return HttpResponseRedirect('/')
+
+#_______________________Project Analysis Project___________________#
+
+def uploadUnregistered(request):
+    """Upload file from form POST for unregistered users"""
+    if request.method == 'POST':
+        # Create BS of files
+        try:
+            file = request.FILES['zipFile']
+        except:
+            d = {'Error': 'MultiValueDict'}
+            return  d
+
+    
+        fileName = File (filename = file.name.encode('utf-8'))
+        fileName.save()
+        dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
+        fileSaved = dir_zips + str(fileName.id) + ".sb2"
+        pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
+        logFile = open (pathLog + "logFile.txt", "a")
+        logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
+        str(fileName.id) + "\n")
+        # Save file in server
+        counter = 0
+        file_name = handle_uploaded_file(file, fileSaved, counter)
+        # Analyze the scratch project
+        d = analyzeProject(file_name)
+        d['Error'] = 'None'
+        # Redirect to dashboard for unregistered user
+        return d
+
+    else:
+        return HttpResponseRedirect('/')
+
+
+def handle_uploaded_file(file, fileSaved, counter):
+    """ Necessary to uploadUnregistered"""
+    # If file exists,it will save it with new name: name(x)
+    if os.path.exists(fileSaved):
+        counter = counter + 1
+        if counter == 1:
+            fileSaved = fileSaved.split(".")[0] + "(1).sb2"
+        else:
+            fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb2"
+        
+
+        fileName = handle_uploaded_file(file, fileSaved, counter)
+        return fileName
+    else:
+        with open(fileSaved, 'wb+') as destination:
+            for chunk in file.chunks():
+                destination.write(chunk)
+        return fileSaved
+
+
+#_______________________URL Analysis Project_________________________________#
+
+
+def urlUnregistered(request):
+    """Process Request of form URL"""        
+    if request.method == "POST":
+        form = UrlForm(request.POST)
+        if form.is_valid():
+            url = form.cleaned_data['urlProject']
+            idProjectScratch = processStringUrl(url)
+            if idProjectScratch == 'error':
+                return HttpResponse('la url es incorrecta')
+            else:
+                fileName = sendRequestgetSB2(idProjectScratch)
+                pathProject = os.path.dirname(os.path.dirname(__file__)) + '/repo/' + fileName    
+                d = analyzeProject(pathProject)
+                # Redirect to dashboard for unregistered user
+                d['Error'] = 'None'
+                return d
+        else:
+            d = {'Error': 'MultiValueDict'}
+            return  d
+    else:
+        return HttpResponseRedirect('/')
+                     
+                
+def processStringUrl(url):
+    """Process String of URL from Form"""
+    idProject = ''
+    auxString = url.split("/")[-1]
+    if auxString == '':
+        # we need to get the other argument    
+        possibleId = url.split("/")[-2]
+        if possibleId == '#editor':
+            idProject = url.split("/")[-3]
+        else:
+            idProject = possibleId
+    else:
+        if auxString == '#editor':
+            idProject = url.split("/")[-2]
+        else:
+            # To get the id project
+            idProject = auxString
+    try:
+        checkInt = int(idProject)
+    except ValueError:
+        idProject = 'error'
+    return idProject
+
+def sendRequestgetSB2(idProject):
+    """First request to getSB2"""
+    getRequestSb2 = "http://getsb2.herokuapp.com/" + idProject
+    nameFile = idProject + '.sb2'
+    outputFile = 'repo/' + nameFile
+    sb2File = urllib2.urlopen(getRequestSb2)
+    output = open(outputFile, 'wb')
+    output.write(sb2File.read())
+    output.close()
+    return nameFile
+    
+
+#________________________ TO REGISTERED USER __________________________#
 
 def loginUser(request):
     """Log in app to user"""
@@ -179,126 +320,20 @@ def myHistoric(request):
     else:
         return HttpResponseRedirect("/")
 
-
-#__________________________ FILES _______________________________________#
-
-#TO UNREGISTERED USER
-def uploadUnregistered(request):
-    """Upload file from form POST for unregistered users"""
-    if request.method == 'POST':
-        # Create BS of files
-        file = request.FILES['zipFile']
-        fileName = File (filename = file.name.encode('utf-8'))
-        fileName.save()
-        dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
-        fileSaved = dir_zips + str(fileName.id) + ".sb2"
-        pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
-        logFile = open (pathLog + "logFile.txt", "a")
-        logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
-        str(fileName.id) + "\n")
-        # Save file in server
-        counter = 0
-        file_name = handle_uploaded_file(file, fileSaved, counter)
-        # Analyze the scratch project
-        d = analyzeProject(file_name)
-        # Redirect to dashboard for unregistered user
-        return render_to_response("upload/dashboard-unregistered.html", d)
-    else:
-        return HttpResponseRedirect('/')
-
-
-
-def handle_uploaded_file(file, fileSaved, counter):
-    # If file exists,it will save it with new name: name(x)
-    if os.path.exists(fileSaved):
-        counter = counter + 1
-        if counter == 1:
-            fileSaved = fileSaved.split(".")[0] + "(1).sb2"
-        else:
-            fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb2"
-        
-
-        fileName = handle_uploaded_file(file, fileSaved, counter)
-        return fileName
-    else:
-        with open(fileSaved, 'wb+') as destination:
-            for chunk in file.chunks():
-                destination.write(chunk)
-        return fileSaved
-
-
-
-#_______________________URL Analysis Project_________________________________#
-
-
-def processFormURL(request):
-    """Process Request of form URL"""        
-    if request.method == "POST":
-        form = UrlForm(request.POST)
-        if form.is_valid():
-            url = form.cleaned_data['urlProject']
-            idProjectScratch = processStringUrl(url)
-            if idProjectScratch == 'error':
-                return HttpResponse('la url es incorrecta')
-            else:
-                fileName = sendRequestgetSB2(idProjectScratch)
-                pathProject = os.path.dirname(os.path.dirname(__file__)) + '/repo/' + fileName    
-                dicMetrics = analyzeProject(pathProject)
-                # Redirect to dashboard for unregistered user
-                return render_to_response("upload/dashboard-unregistered.html", dicMetrics)
-    else:
-        return HttpResponseRedirect('/')
-                     
-                
-def processStringUrl(url):
-    """Process String of URL from Form"""
-    idProject = ''
-    auxString = url.split("/")[-1]
-    if auxString == '':
-        # we need to get the other argument    
-        possibleId = url.split("/")[-2]
-        if possibleId == '#editor':
-            idProject = url.split("/")[-3]
-        else:
-            idProject = possibleId
-    else:
-        if auxString == '#editor':
-            idProject = url.split("/")[-2]
-        else:
-            # To get the id project
-            idProject = auxString
-    try:
-        checkInt = int(idProject)
-    except ValueError:
-        idProject = 'error'
-    return idProject
-
-def sendRequestgetSB2(idProject):
-    """First request to getSB2"""
-    getRequestSb2 = "http://getsb2.herokuapp.com/" + idProject
-    nameFile = idProject + '.sb2'
-    outputFile = 'repo/' + nameFile
-    sb2File = urllib2.urlopen(getRequestSb2)
-    output = open(outputFile, 'wb')
-    output.write(sb2File.read())
-    output.close()
-    return nameFile
-
-
-
 #_______________________ AUTOMATIC ANALYSIS _________________________________#
 
 def analyzeProject(file_name):
     dictionary = {}
     if os.path.exists(file_name):
         #Request to hairball
-        metricMastery = "hairball -p mastery.Mastery " + file_name
+        metricMastery = "hairball -p mastery.Mastery " + file_name     
         metricDuplicateScript = "hairball -p \
                                 duplicate.DuplicateScripts " + file_name
         metricSpriteNaming = "hairball -p convention.SpriteNaming " + file_name
-        metricDeadCode = "hairball -p blocks.DeadCode " + file_name 
+        metricDeadCode = "hairball -p blocks.DeadCode " + file_name
         metricInitialization = "hairball -p \
                            initialization.AttributeInitialization " + file_name
+
 
         #Plug-ins not used yet
         #metricBroadcastReceive = "hairball -p 
@@ -310,6 +345,7 @@ def analyzeProject(file_name):
         resultSpriteNaming = os.popen(metricSpriteNaming).read()
         resultDeadCode = os.popen(metricDeadCode).read()
         resultInitialization = os.popen(metricInitialization).read()
+
         #Plug-ins not used yet
         #resultBlockCounts = os.popen(metricBlockCounts).read()
         #resultBroadcastReceive = os.popen(metricBroadcastReceive).read()

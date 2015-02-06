@@ -1,4 +1,5 @@
 from django.conf import global_settings
+
 """
 Django settings for drScratch project.
 
@@ -31,13 +32,8 @@ SECRET_KEY =
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
-
-FILE_UPLOAD_HANDLERS = ('django.conf.UploadProgressCachedHandler.UploadProgressCachedHandler', ) + \
-    global_settings.FILE_UPLOAD_HANDLERS
-
-
 TEMPLATE_DEBUG = True
+
 
 TEMPLATE_LOADERS = (
 'django.template.loaders.filesystem.Loader',
@@ -47,7 +43,6 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_DIRS = ('templates',)
 
-ALLOWED_HOSTS = [...]
 
 
 # Application definition
@@ -63,8 +58,9 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -82,8 +78,8 @@ WSGI_APPLICATION = 'drScratch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': '',
-        'NAME': ,
+        'ENGINE': ,
+        'NAME': ),
     }
 }
 
@@ -96,7 +92,19 @@ MEDIA_ROOT = 'resources'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+
+_ = lambda s: s
+
+LANGUAGES = (
+    ('es', _('Spanish')),
+    ('en', _('English')),
+)
+
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 TIME_ZONE = 'UTC'
 
@@ -110,4 +118,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/resources/'

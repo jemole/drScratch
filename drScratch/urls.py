@@ -1,8 +1,9 @@
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 
-urlpatterns = [
+urlpatterns = (
     # Examples:
     # url(r'^$', 'drScratch.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -22,7 +23,8 @@ urlpatterns = [
     url(r'^myProjects', 'app.views.myProjects',),
 	url(r'^myRoles', 'app.views.myRoles',),
 	url(r'^sendUrlProject', 'app.views.processFormURL',),
+    url(r'^selector', 'app.views.selector',),
     url(r'^$', 'app.views.main',),
-    url(r'^.*', 'app.views.redirectMain'),
+    url(r'^.*', 'app.views.redirectMain',),
     
-]
+)
