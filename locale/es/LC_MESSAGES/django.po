@@ -213,7 +213,7 @@ msgstr "Recibirás realimentación para mejorar tus habilidades de programación
 msgid ""
 "You can keep on improving your programming skills by yourself even from home."
 msgstr ""
-"Puedes seguir mejorando tus habilidades como programador por tí mismo, "
+"Puedes seguir mejorando tus habilidades como programador por ti mismo, "
 "incluso desde casa."
 
 #: templates/main/main.html:370
