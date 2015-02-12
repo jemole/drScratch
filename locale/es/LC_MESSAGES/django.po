@@ -44,7 +44,7 @@ msgstr "Contacto"
 
 #: templates/main/main.html:95
 msgid "Sign up"
-msgstr "Registrate"
+msgstr "Regístrate"
 
 #: templates/main/main.html:106 templates/main/main.html.py:128
 msgid "Remember me"
@@ -60,7 +60,7 @@ msgstr "Empezar"
 
 #: templates/main/main.html:165
 msgid "Analyze your Scratch projects"
-msgstr "Analiza tus proyectos de Scratch"
+msgstr "Analiza tus proyectos Scratch"
 
 #: templates/main/main.html:167
 msgid ""
@@ -164,8 +164,8 @@ msgid ""
 "We're continually enhancing the features of Dr. Scratch, and we'd love to "
 "hear your thoughts"
 msgstr ""
-"Tratamos de mejorar continuamente las características de Dr.Scratch, y nos "
-"gustaría oir tus opiniones"
+"Tratamos de mejorar continuamente las características de Dr.Scratch, por "
+"lo que nos gustaría escuchar tus opiniones"
 
 #: templates/main/main.html:336
 msgid "How"
@@ -261,7 +261,7 @@ msgid ""
 "Teachers will be able to group (and follow) their students to keep track of "
 "their progress in a fast and simple way."
 msgstr ""
-"Los profesores podrán agrupar(y seguir) a sus estudiantes y realizar un "
+"Los profesores podrán agrupar (y seguir) a sus estudiantes para realizar un "
 "seguimiento de sus progresos de una forma rápida y simple."
 
 #: templates/main/main.html:440
