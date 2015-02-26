@@ -1,0 +1,9 @@
+{% for key,value in deadCode.items %}
+                        {% if key != "number" %}
+                        {% if key != "deadCode" %}
+                          <p>
+                            <i class="fa fa-check"></i>{{ key }} : {{ value }} blocks 
+                          </p>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor%}

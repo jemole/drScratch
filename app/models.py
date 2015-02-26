@@ -4,6 +4,8 @@ from django.db import models
 
 class File(models.Model):
     filename = models.CharField(max_length=100)
+    method = models.CharField(max_length=100)
+    
 
 class Dashboard(models.Model):
 	user = models.TextField()
