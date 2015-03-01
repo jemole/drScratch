@@ -82,7 +82,7 @@ msgstr "Contacto"
 
 #: templates/main/main.html:107
 msgid "Analyze your Scratch projects"
-msgstr "Analiza tus proyectos de Scratch"
+msgstr "Analiza tus proyectos Scratch"
 
 #: templates/main/main.html:109
 msgid ""
@@ -91,7 +91,7 @@ msgid ""
 "helpful tool to evaluate your own projects, or those of your Scratch "
 "students."
 msgstr ""
-"Bienvenido a la Web de Dr.Scratch, es una aplicación que evalúa proyectos "
+"Bienvenido a la Web de Dr.Scratch, una aplicación que evalúa proyectos "
 "Scratch en relación a varios aspectos del pensamiento computacional. Este "
 "analizador es una herramienta muy útil tanto para evaluar tus proyectos "
 "Scratch como los de tus estudiantes."
