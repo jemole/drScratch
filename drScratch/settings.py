@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': ...,
         'NAME': ...,
 	'USER': ...,
-	'PASSWORD': 'Mysql.drscratch',
+	'PASSWORD': ...,
 	'HOST': '',
 	'PORT': '',
     }
