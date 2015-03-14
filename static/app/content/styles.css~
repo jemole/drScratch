@@ -73,7 +73,7 @@ html {
 }
 
 body {
-	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+	font-family: 'Purisan,Bold','Open Sans', Helvetica Neue, Sans-serif;
 	font-size: 16px;
 	line-height: 28px;
 	font-weight: 300;
@@ -247,6 +247,11 @@ h5 {
 }
 
 /* BUTTONS */
+#url,
+#upload{
+	font-size:20px;
+}
+
 .standard-button {
 	font-weight: 600;
 }
@@ -300,6 +305,11 @@ strong,
 /*---------------------------------------
    2.2 BUTTONS       
 -----------------------------------------*/
+#url,
+#upload{
+	font-size:10px;
+}
+
 .standard-button {
 	border-radius: 3px;
 	text-transform: uppercase;
@@ -655,7 +665,7 @@ strong,
 
 .client-logos li {
 	display: inline-block;
-
+	margin: 25px 25px 25px 25px;
 	vertical-align: middle;
 }
 
@@ -668,7 +678,6 @@ strong,
 	opacity: 1;
 	cursor: pointer;
 }
-
 
 /*---------------------------------------
    3.3 SECTION: SERVICES    
@@ -1262,37 +1271,6 @@ strong,
 
 .social-icons li a:hover .transparent-text-dark {
 	color: #313131;
-}
-
-/* ------------------- PROGRESS BAR ----------------------*/
-
-@font-face {
-font-family: Purisa,Bold;
-src: url(fonts/glyphicons-halflings-regular.ttf) format("truetype");
-}
-
-#pb{
-    font-family: Purisa,Bold, sans-serif !important;
-    color: black;
-    background-color: white;
-}
-
-#pb .navbar-inverse{
-   background-color: #235;
-
-}
-
-#pb .jumbotron{
-    color:black;
-    
-}
-
-#upload{
-    font-size:10px;
-}
-
-#url{
-    font-size:10px;
 }
 
 /*---------------------------------------

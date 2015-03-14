@@ -18,14 +18,14 @@
      FAV AND TOUCH ICONS AND FONT  
     ============================== -->
     <link rel="icon" href="static/app/images/favicon.ico">
-    <link rel="stylesheet" href="static/app/content/icons.css">  
+    <link rel="stylesheet" href="static/app/icons/icons.css">  
     <link type="text/css" rel="stylesheet" href="static/app/content/css_002.css">
     <link type="text/css" rel="stylesheet" href="static/app/content/css.css">
     <!-- =========================
      STYLESHEETS   
     ============================== -->
     <!-- BOOTSTRAP AND ANIMATION -->
-    <link rel="stylesheet" href="static/app/content/bootstrap.min.css">
+    <link rel="stylesheet" href="static/app/content/bootstrap-main.css">
     <link rel="stylesheet" href="static/app/content/animate.css">
 
     <!-- CAROUSEL AND LIGHTBOX -->
@@ -68,7 +68,7 @@
                     <!-- TOP BAR -->
                     <div class="navbar-collapse collapse" id="stamp-navigation">
                     <!-- NAVIGATION LINK -->
-                      <a class="navbar-brand" href="http:/localhost:1234">
+                      <a class="navbar-brand" href="/">
                         <img src="static/app/images/logo_main.png" alt="">
                       </a>
                       <ul class="nav navbar-nav navbar-left main-navigation small-text">
@@ -130,10 +130,11 @@
                                 {% csrf_token %}
                                     {% trans '<input name="urlProject" id="cf-name" class="form-control input-box placeholder" placeholder="http:/scratch.mit.edu/projects/your_number" type="text">' %}
                                     <button id="url" name='_url' type="submit" class="btn btn-primary standard-button">{% trans "Add project URL" %}</button>
+                                    {% csrf_token %}
                                     <br></br>
                                     {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose Project'>" %}
                                     <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Add a .sb2 file" %}</button>
-                                    
+                                    {% csrf_token %}                                    
 
                                 </form>
                                 
@@ -292,36 +293,36 @@
                     <div class="colored-line-left">
                     </div>
                     <p class="text-left">
-                        <h3><em>{% trans "There are two options to analyze a Sratch project with Dr.Scratch" %}</em></h3>
+                        <p><em>{% trans "There are two options to analyze a Sratch project with Dr.Scratch" %}</em></p>
                         <img src="static/app/images/{% trans 'project.png' %}"></img>
-                    <h5 align=justify>
+                    <p align=justify>
                         {% trans "You can upload an sb2 file or just provide the project url, avoiding the need to previously download the project to your computer. By analyzing your projects with Dr.Scratch, you can easily check your Computational Thinking Score." %}
-                    </h5>
+                    </p>
                     </p>
                     <!-- FEATURE LIST -->
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <ul class="feature-list text-left">
-                              <li><h5>
+                              <li><p>
                                 <span class="icon-basic-clessidre colored-text"></span>
                                 {% trans "It is extremely easy to use, both for begginers and expert programmers." %}
-                              </h5></li>
-                              <li><h5>
+                              </p></li>
+                              <li><p>
                                 <span class="icon-basic-lightbulb colored-text"></span>
                                 {% trans "You receive feedback to improve your coding skills." %}
-                              <h5></li>
+                              <p></li>
                             </ul>
                         </div>
                         <div class="col-md-6 col-sm-6">
                           <ul class="feature-list text-left">
-                            <li><h5>
+                            <li><p>
                               <span class="icon-basic-home colored-text"></span> 
                               {% trans "You can keep on improving your programming skills by yourself even from home." %}
-                            <h5></li>
-                            <li><h5>
+                            <p></li>
+                            <li><p>
                               <span class="icon-ecommerce-graph3 colored-text"></span> 
                               {% trans "You can track your progress through charts and stats." %} 
-                            <h5></li>
+                            <p></li>
                           </ul>
                         </div>
                     </div>
@@ -545,16 +546,6 @@
     <footer class="footer grey-bg">
        {% trans "©2014 Dr.Scratch is powered by" %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
-        <!-- OPTIONAL FOOTER LINKS -->
-     <!--   <ul class="footer-links small-text">
-            <li><a href="" class="dark-text">{% trans "Contact us" %}</a>
-            </li>
-            <li><a href="" class="dark-text">{% trans "Terms" %}</a>
-            </li>
-            <li><a href="" class="dark-text">{% trans "Privacy" %}</a>
-            </li>
-        </ul>
-
         <!-- SOCIAL ICONS -->
         <ul class="social-icons">
             <li><a href="https:/twitter.com/drscratchtool"><span class="icon-social-twitter transparent-text-dark"></span></a>
@@ -571,7 +562,7 @@
     <div class="container">
             <p>
                 <h2>
-                    Wait a moment please
+                    {% trans "Wait a moment please" %}
                 </h2>
             </p>
     </div>
@@ -589,7 +580,7 @@
                 <div class="progress-bar progress-bar-danger" role="progressbar"
                     aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"
                     style="width: 99%">
-                    <span style="width: 99%">loading...</span>
+                    <span style="width: 99%">{% trans "loading..." %}</span>
                 </div>
             </div>
     </div>
@@ -613,13 +604,11 @@
             jQuery(".preloader").delay(1000).fadeOut("slow");
         })
     </script>
-    <script src="static/app/scripts/prueba.js"></script>
     <script type="text/javascript" src="static/app/scripts/bootstrap-filestyle.js"> </script>
     <script src="static/app/scripts/smoothscroll.js"></script>
     <script src="static/app/scripts/bootstrap.min.js"></script>
     <script src="static/app/scripts/jquery.nav.js"></script>
     <script src="static/app/scripts/ie-emulation-modes-warning.js"></script>
-    <script src="static/app/scripts/form.js"></script>
     <script src="static/app/scripts/wow.js"></script>
     <script src="static/app/scripts/nivo-lightbox.js"></script>
     <script src="static/app/scripts/owl.js"></script>

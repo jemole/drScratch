@@ -10,6 +10,7 @@ from django.core.context_processors import csrf
 from django.core.cache import cache  
 from django.shortcuts import render_to_response
 from django.template import RequestContext as RC
+from django.template import Context, loader
 from django.contrib.auth import logout, login, authenticate
 from django.utils.translation import ugettext as _
 from app.models import Project, Dashboard, Attribute
@@ -22,6 +23,7 @@ import ast
 import json
 import sys
 import urllib2
+import shutil
 
 ############################ MAIN #############################
 
@@ -42,6 +44,18 @@ def redirectMain(request):
     """Page not found redirect to main"""
     return HttpResponseRedirect('/')
 
+############################## ERROR ###############################
+
+def error404(request):
+    response = render_to_response('404.html', {},
+                                  context_instance = RC(request))
+    response.status_code = 404
+    return response
+
+def error505(request):
+    response = render_to_response('500.html', {},
+                                  context_instance = RC(request))
+    return response
 
 ###################### TO UNREGISTERED USER ########################
 
@@ -52,21 +66,27 @@ def selector(request):
         no_exists = False
         if "_upload" in request.POST:
             d = uploadUnregistered(request)
-            if d['Error'] == 'MultiValueDict':
+            if d['Error'] == 'analyzing':
+                return render_to_response('error/analyzing.html',
+                                          RC(request))   
+            elif d['Error'] == 'MultiValueDict':
                 error = True
                 return render_to_response('main/main.html',
                             {'error':error},
                             RC(request))
             else:    
                 if d["mastery"]["points"] >= 15:
-                    return render_to_response("upload/dashboard-unregistered-master.html", d)
+                    return render_to_response("upload/dashboard-unregistered.html", d)
                 elif d["mastery"]["points"] > 7:
-                    return render_to_response("upload/dashboard-unregistered-developing.html", d)
+                    return render_to_response("upload/dashboard-unregistered.html", d)
                 else:
-                    return render_to_response("upload/dashboard-unregistered-basic.html", d)
+                    return render_to_response("upload/dashboard-unregistered.html", d)
         elif '_url' in request.POST:
             d = urlUnregistered(request)
-            if d['Error'] == 'MultiValueDict':
+            if d['Error'] == 'analyzing':
+                return render_to_response('error/analyzing.html',
+                                          RC(request))             
+            elif d['Error'] == 'MultiValueDict':
                 error = True
                 return render_to_response('main/main.html',
                             {'error':error},
@@ -83,11 +103,11 @@ def selector(request):
                     RC(request))
             else:
                 if d["mastery"]["points"] >= 15:
-                    return render_to_response("upload/dashboard-unregistered-master.html", d)
+                    return render_to_response("upload/dashboard-unregistered.html", d)
                 elif d["mastery"]["points"] > 7:
-                    return render_to_response("upload/dashboard-unregistered-developing.html", d)
+                    return render_to_response("upload/dashboard-unregistered.html", d)
                 else:
-                    return render_to_response("upload/dashboard-unregistered-basic.html", d)
+                    return render_to_response("upload/dashboard-unregistered.html", d)
     else:
         return HttpResponseRedirect('/')
 
@@ -142,7 +162,21 @@ def uploadUnregistered(request):
                 destination.write(chunk)
     
         # Analyze the scratch project
-        d = analyzeProject(request, file_name)
+        try:
+            d = analyzeProject(request, file_name)
+        except:
+            #There ir an error with kutz or hairball
+            #We save the project in folder called error_analyzing
+            fileName.method = 'project/error'
+            fileName.save()
+            oldPathProject = fileSaved
+            newPathProject = fileSaved.split("/uploads/")[0] + \
+                             "/error_analyzing/" + \
+                             fileSaved.split("/uploads/")[1]
+            shutil.copy(oldPathProject, newPathProject)
+            print "NUEVO PATH:" + str(newPathProject)
+            d = {'Error': 'analyzing'}
+            return d
         # Show the dashboard
         # Redirect to dashboard for unregistered user
         d['Error'] = 'None'
@@ -171,12 +205,24 @@ def urlUnregistered(request):
             else:
                 #WHEN YOUR PROJECT DOESN'T EXIST
                 try:
-                    pathProject = sendRequestgetSB2(idProject)
+                    (pathProject, file) = sendRequestgetSB2(idProject)
                 except:
                     d = {'Error': 'no_exists'}
                     return d             
-                
-                d = analyzeProject(request, pathProject)
+                try:
+                    d = analyzeProject(request, pathProject)
+                except:
+                    #There ir an error with kutz or hairball
+                    #We save the project in folder called error_analyzing
+                    file.method = 'url/error'
+                    file.save()
+                    oldPathProject = pathProject
+                    newPathProject = pathProject.split("/uploads/")[0] + \
+                                     "/error_analyzing/" + \
+                                     pathProject.split("/uploads/")[1]
+                    shutil.copy(oldPathProject, newPathProject)
+                    d = {'Error': 'analyzing'}
+                    return d
                 # Redirect to dashboard for unregistered user
                 d['Error'] = 'None'            
                 return d
@@ -232,7 +278,7 @@ def sendRequestgetSB2(idProject):
     sb2File = urllib2.urlopen(getRequestSb2)
     outputFile.write(sb2File.read())
     outputFile.close()
-    return file_name
+    return (file_name, fileName)
 
 #________________________ LEARN MORE __________________________________#
 
