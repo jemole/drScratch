@@ -97,7 +97,7 @@
 
             </div>
             <div>
-            {% trans '<a class="twitter-share-button pull-right" data-text="I have just obtained {{ mastery.points }} points analyzing my project in Dr. Scratch! Beat it!@DrScratchTool"href="https://twitter.com/share">Tweet</a>' %}
+            <a class="twitter-share-button pull-right" data-text="{% blocktrans with points=mastery.points %}I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it!@DrScratchTool{% endblocktrans %}"  href="https://twitter.com/share">{{ master.points }}</a>
           </div>
           </div>
         </div><!-- /.row -->
@@ -131,6 +131,8 @@
           </div>
 	    </div> 
 
+	<h2>{% trans "Possible issues to watch out:" %}</h2>
+	
           <!-- Duplicate Script -->
           <div class="row">
           <div class="col-lg-3">

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-13 12:27+0000\n"
+"POT-Creation-Date: 2015-03-27 02:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,7 +78,7 @@ msgstr ""
 "trabajando en ello."
 
 #: templates/learn/attribute-initialization.html:6
-#: templates/upload/dashboard-unregistered.html:237
+#: templates/upload/dashboard-unregistered.html:239
 msgid "modified but not initialized correctly."
 msgstr "ha sido modificado pero no inicializado correctamente."
 
@@ -404,6 +404,7 @@ msgstr "cargando..."
 #: templates/upload/dashboard-unregistered-basic.html:13
 #: templates/upload/dashboard-unregistered-developing.html:13
 #: templates/upload/dashboard-unregistered-master.html:13
+#: templates/upload/dashboard-unregistered.html:10
 msgid "Project results"
 msgstr "Resultados"
 
@@ -520,7 +521,7 @@ msgstr "Algunos consejos:"
 #: templates/upload/dashboard-unregistered-developing.html:88
 #: templates/upload/dashboard-unregistered-master.html:145
 msgid "Sprites Naming"
-msgstr "Nombres Inadecuados"
+msgstr "Nombres no personalizados"
 
 #: templates/upload/dashboard-unregistered-developing.html:91
 #: templates/upload/dashboard-unregistered-developing.html:101
@@ -533,10 +534,8 @@ msgstr "Aprende Más"
 
 #: templates/upload/dashboard-unregistered-developing.html:98
 #: templates/upload/dashboard-unregistered-master.html:165
-#, fuzzy
-#| msgid "Sprite Attributes"
 msgid "Sprite Atributes"
-msgstr "Atributos Inadecuados"
+msgstr "Atributos no inicializados correctamente"
 
 #: templates/upload/dashboard-unregistered-developing.html:119
 #: templates/upload/dashboard-unregistered-master.html:74
@@ -565,18 +564,19 @@ msgid "You're the master of the universe!!!"
 msgstr "¡¡¡Eres el master del universo!!!"
 
 #: templates/upload/dashboard-unregistered-master.html:121
+#: templates/upload/dashboard-unregistered.html:134
 msgid "Possible issues to watch out:"
-msgstr "Posibles cuestiones a tener en cuenta:"
+msgstr "Posibles problemas a tener en cuenta:"
 
 #: templates/upload/dashboard-unregistered-master.html:135
-#: templates/upload/dashboard-unregistered.html:145
+#: templates/upload/dashboard-unregistered.html:147
 msgid "Duplicated Scripts"
-msgstr "Scripts Duplicados"
+msgstr "Programas duplicados"
 
 #: templates/upload/dashboard-unregistered-master.html:155
-#: templates/upload/dashboard-unregistered.html:192
+#: templates/upload/dashboard-unregistered.html:194
 msgid "Dead Code"
-msgstr "Código Muerto"
+msgstr "Código muerto"
 
 #: templates/upload/dashboard-unregistered.html:47
 #: templates/upload/dashboard-unregistered.html:56
@@ -613,30 +613,29 @@ msgid "Basic"
 msgstr "Básico"
 
 #: templates/upload/dashboard-unregistered.html:100
+#, python-format
 msgid ""
-"<a class=\"twitter-share-button pull-right\" data-text=\"I have just "
-"obtained {{ mastery.points }} points analyzing my project in Dr. Scratch! "
-"Beat it!@DrScratchTool\"href=\"https://twitter.com/share\">Tweet</a>"
+"I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
+"Beat it!@DrScratchTool"
 msgstr ""
-"<a class=\"twitter-share-button pull-right\" data-text=\"Acabo de obtener "
-"{{ mastery.points }} puntos analizando mi proyecto en Dr. Scratch!¡A ver si "
-"lo superas!@DrScratchTool\"href=\"https://twitter.com/share\">Tweet</a>"
+"¡He conseguido %(points)s puntos analizando mi proyecto en Dr. Scratch! "
+"¡A ver si lo superas!@DrScratchTool"
 
-#: templates/upload/dashboard-unregistered.html:164
+#: templates/upload/dashboard-unregistered.html:166
 msgid "Sprites naming"
-msgstr "Nombres Inadecuados"
+msgstr "Nombres no personalizados"
 
-#: templates/upload/dashboard-unregistered.html:173
+#: templates/upload/dashboard-unregistered.html:175
 msgid "Incorrect name:"
 msgstr "Nombres incorrectos:"
 
-#: templates/upload/dashboard-unregistered.html:203
+#: templates/upload/dashboard-unregistered.html:205
 msgid "blocks"
 msgstr "bloques"
 
-#: templates/upload/dashboard-unregistered.html:225
+#: templates/upload/dashboard-unregistered.html:227
 msgid "Sprite attributes initialization"
-msgstr "Atributos Inadecuados"
+msgstr "Atributos no inicializados correctamente"
 
 #~ msgid "Terms"
 #~ msgstr "Condiciones"
