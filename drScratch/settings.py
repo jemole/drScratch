@@ -1,5 +1,4 @@
 from django.conf import global_settings
-
 """
 Django settings for drScratch project.
 
@@ -14,26 +13,31 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-STATIC_URL = '/static/'
+STATIC_URL = '/resources/'
 
 STATICFILES_DIRS = (
-os.path.join(BASE_DIR, 'static'),
+os.path.join(BASE_DIR, 'resources'),
 )
 
-STATIC_ROOT = '/static/'
+STATIC_ROOT = '/resources/'
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '...'
+SECRET_KEY = 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
 
+
+FILE_UPLOAD_HANDLERS = ('django.conf.UploadProgressCachedHandler.UploadProgressCachedHandler', ) + \
+    global_settings.FILE_UPLOAD_HANDLERS
+
+
+TEMPLATE_DEBUG = True
 
 TEMPLATE_LOADERS = (
 'django.template.loaders.filesystem.Loader',
@@ -43,7 +47,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_DIRS = ('templates',)
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = [...]
 
 
 # Application definition
@@ -59,9 +63,8 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -79,8 +82,8 @@ WSGI_APPLICATION = 'drScratch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': '',
+        'NAME': ...,
     }
 }
 
@@ -88,24 +91,12 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = 'static'
+MEDIA_ROOT = 'resources'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en'
-
-_ = lambda s: s
-
-LANGUAGES = (
-    ('es', _('Spanish')),
-    ('en', _('English')),
-)
-
-
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
-)
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -115,3 +106,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.7/howto/static-files/
+
+STATIC_URL = '/resources/'
