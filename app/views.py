@@ -24,17 +24,7 @@ import json
 import sys
 import urllib2
 import shutil
-import csv
-import kurt
-import zipfile
-from zipfile import ZipFile
-
-# Global variables
-pMastery = "hairball -p mastery.Mastery "
-pDuplicateScript = "hairball -p duplicate.DuplicateScripts " 
-pSpriteNaming = "hairball -p convention.SpriteNaming "
-pDeadCode = "hairball -p blocks.DeadCode "
-pInitialization = "hairball -p initialization.AttributeInitialization "
+import unicodedata
 
 ############################ MAIN #############################
 
@@ -77,6 +67,7 @@ def selector(request):
         no_exists = False
         if "_upload" in request.POST:
             d = uploadUnregistered(request)
+            print d
             if d['Error'] == 'analyzing':
                 return render_to_response('error/analyzing.html',
                                           RC(request))   
@@ -129,18 +120,10 @@ def handler_upload(fileSaved, counter):
     # If file exists,it will save it with new name: name(x)
     if os.path.exists(fileSaved): 
         counter = counter + 1
-        #Check the version of Scratch 1.4Vs2.0
-        version = checkVersion(fileSaved)
-        if version == "2.0":
-            if counter == 1:
-                fileSaved = fileSaved.split(".")[0] + "(1).sb2"
-            else:
-                fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb2"
+        if counter == 1:
+            fileSaved = fileSaved.split(".")[0] + "(1).sb2"
         else:
-            if counter == 1:
-                fileSaved = fileSaved.split(".")[0] + "(1).sb"
-            else:
-                fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb"
+            fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb2"
         
 
         file_name = handler_upload(fileSaved, counter)
@@ -148,15 +131,6 @@ def handler_upload(fileSaved, counter):
     else:   
         file_name = fileSaved
         return file_name
-
-
-def checkVersion(fileName):
-    extension = fileName.split('.')[-1]
-    if extension == 'sb2':
-        version = '2.0'
-    else:
-        version = '1.4'
-    return version
 
 
 #_______________________Project Analysis Project___________________#
@@ -171,20 +145,11 @@ def uploadUnregistered(request):
         except:
             d = {'Error': 'MultiValueDict'}
             return  d
-
         # Create DB of files
         fileName = File (filename = file.name.encode('utf-8'), method = "project")
         fileName.save()
         dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
-
-        # Version of Scratch 1.4Vs2.0
-        version = checkVersion(fileName.filename)
-        if version == "1.4":
-            fileSaved = dir_zips + str(fileName.id) + ".sb"
-        else:
-            fileSaved = dir_zips + str(fileName.id) + ".sb2"
-
-        # Create log
+        fileSaved = dir_zips + str(fileName.id) + ".sb2"
         pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
         logFile = open (pathLog + "logFile.txt", "a")
         logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
@@ -197,9 +162,6 @@ def uploadUnregistered(request):
         with open(file_name, 'wb+') as destination:
             for chunk in file.chunks():
                 destination.write(chunk)
-
-        #Create 2.0Scratch's File
-        file_name = changeVersion(request, file_name)
     
         # Analyze the scratch project
         try:
@@ -214,6 +176,7 @@ def uploadUnregistered(request):
                              "/error_analyzing/" + \
                              fileSaved.split("/uploads/")[1]
             shutil.copy(oldPathProject, newPathProject)
+            print "NUEVO PATH:" + str(newPathProject)
             d = {'Error': 'analyzing'}
             return d
         # Show the dashboard
@@ -223,12 +186,10 @@ def uploadUnregistered(request):
     else:
         return HttpResponseRedirect('/')
 
-def changeVersion(request, file_name):
-        p = kurt.Project.load(file_name)
-        p.convert("scratch20")
-        p.save()
-        file_name = file_name.split('.')[0] + '.sb2'
-        return file_name
+
+   
+        
+
 
 #_______________________URL Analysis Project_________________________________#
 
@@ -323,12 +284,30 @@ def sendRequestgetSB2(idProject):
 
 #________________________ LEARN MORE __________________________________#
 
-def learn(request):
+def learn(request,page):
+    #unicode to string(page)
+    page = unicodedata.normalize('NFKD',page).encode('ascii','ignore')
+
+    dic = {'Logica':'Logic',
+           'Paralelismo':'Parallelization',
+          'Representacion':'DataRepresentation',
+          'Sincronismo':'Synchronization',
+          'Interactividad':'UserInteractivity',
+          'Control':'FlowControl',
+          'Abstraccion':'Abstraction'}
+
+    if page in dic:
+        page = dic[page]
+
+    page = "learn/" + page + ".html"
+
     if request.user.is_authenticated():
-        return render_to_response("learn/learn-unregistered.html",
+     
+        return render_to_response(page,
                                 RC(request))
     else:
-        return render_to_response("learn/learn-unregistered.html",
+       
+        return render_to_response(page,
                                 RC(request))
     
 #________________________ TO REGISTERED USER __________________________#
@@ -387,6 +366,7 @@ def updateProfile(request):
             newPass = form.cleaned_data['newPass']
             newEmail = form.cleaned_data['newEmail']
             choiceField = forms.ChoiceField(widget=forms.RadioSelect())
+            print newPass, newEmail, choiceField.widget.choices, choiceField
             return HttpResponseRedirect('/mydashboard')
         else:
             return HttpResponseRedirect('/')
@@ -477,6 +457,7 @@ def analyzeProject(request,file_name):
     dictionary = {}
     if os.path.exists(file_name):
         list_file = file_name.split('(')
+        print str(list_file)
         if len(list_file) > 1:
             file_name = list_file[0] + '\(' + list_file[1]
             list_file = file_name.split(')')
@@ -521,17 +502,19 @@ def analyzeProject(request,file_name):
 
 def translate(request,d):
     if request.LANGUAGE_CODE == "es":
+        print "ESPAÑOL"
         dictionary = {}
         dictionary['Abstracción'] = d['Abstraction']
         dictionary['Paralelismo'] = d['Parallelization']
-        dictionary['Pensamiento lógico'] = d['Logic']
-        dictionary['Sincronización'] = d['Synchronization']
-        dictionary['Control de flujo'] = d['FlowControl']
-        dictionary['Interactividad con el usuario'] = d['UserInteractivity']
-        dictionary['Representación de la información'] = d['DataRepresentation']
+        dictionary['Lógica'] = d['Logic']
+        dictionary['Sincronismo'] = d['Synchronization']
+        dictionary['Control del Flujo'] = d['FlowControl']
+        dictionary['Interactividad del Usuario'] = d['UserInteractivity']
+        dictionary['Representación de los Datos'] = d['DataRepresentation']
         #d_translate = _('%(d)s') % {'d':dictionary}
         return dictionary
     else:
+        print "INGLÉS"
         return d
 
 
@@ -647,6 +630,31 @@ def procInitialization(lines):
 
     return dic
 
+# ___________________ PROCESSORS OF PLUG-INS NOT USED YET ___________________#
+
+#def procBlockCounts(lines):
+#    """CountLines"""
+#    dic = {}
+#    dic["countLines"] = lines
+
+#    print "BLOCK COUNTS: " + str(dic)
+#    return dic
+
+
+#def procBroadcastReceive(lines):
+#    """Return the number of lost messages"""
+#    dic = {}
+#    lLines = lines.split('\n')
+    # messages never received or broadcast
+#    laux = lLines[1]
+#    laux = laux.split(':')[0]
+#    dic["neverRB"] = dic
+#    dic["neverRB"]["neverReceive"] = laux
+#    laux = lLines[3]
+#    laux = laux.split(':')[0]
+#    dic["neverRB"]["neverBroadcast"] = laux
+    
+#    return dic
 
 
 #_____________________ CREATE STATS OF ANALYSIS PERFORMED ___________#
@@ -701,6 +709,8 @@ def uploadRegistered(request):
         newMastery = Mastery(myproject=newProject, abstraction=dmaster["Abstraction"], paralel=dmaster["Parallelization"], logic=dmaster["Logic"], synchronization=dmaster["Synchronization"], flowcontrol=dmaster["FlowControl"], interactivity=dmaster["UserInteractivity"], representation=dmaster["DataRepresentation"], TotalPoints=dmaster["TotalPoints"])
         newMastery.save()
         newProject.score = dmaster["Total{% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}Points"]
+        print "Puntos:" 
+        print newProject.score
         if newProject.score > 15:
             newProject.level = "advanced"
         elif newProject.score > 7:
@@ -728,6 +738,7 @@ def uploadRegistered(request):
         for charx in d["sprite"]:
             newSprite = Sprite(myproject=newProject, character=charx)
             newSprite.save()
+            print newSprite.character
         return HttpResponseRedirect('/myprojects')
 
 #_____ ID/BUILDERS ____________#
