@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="static/app/content/carousel-developing.css" type="text/css" />
 
     <!-- Font icons -->
-    <link rel="stylesheet" href="static/app/icons/icons.css">
+    <link rel="stylesheet" href="static/app/content/icons.css">
 
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -87,7 +87,7 @@
                     <div class="carousel-caption">
                       <h1><strong>{% trans "Sprites Naming" %} </strong></h1>
                       <h1><code>{{ spriteNaming.number }}</code></h1>
-                      <p><a class="btn btn-lg btn-primary" href="/learn" role="button">
+                      <p><a class="btn btn-lg btn-primary" href="http://drscratchpre.programamos.es/learn/sprite-naming" role="button">
                         <strong>{% trans "Learn more" %}</strong></a></p>
                     </div> 
                 </div>
@@ -140,19 +140,11 @@
                                   </td>
                                   <td>{{ value }}/3
                             {% if value == 0 %}
-                                 <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level0" aria-hidden="true">
+                                 <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="http://drscratchpre.programamos.es/learn/{{ key }}" aria-hidden="true">
                                     {% trans "Learn more!!!" %}
                                  </a></tr>
-                            {% elif value == 1 %}
-                                <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level1" aria-hidden="true">
-                                    {% trans "Learn more!!!" %}
-                                 </a></tr>
-                            {% elif value == 2 %}
-                                <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level2" aria-hidden="true">
-                                    {% trans "Learn more!!!" %}
-                                 </a></tr>
-                            
-                            {% elif value == 3 %}
+                            {% endif %}
+                            {% if value == 3 %}
                                   <span class="glyphicon-chevron-left icon icon-star-alt" aria-hidden="true">{% trans "Well done!!!" %} </span>
                             {% endif %}
                             </td>     

@@ -5,12 +5,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-06 15:52+0000\n"
+"POT-Creation-Date: 2015-04-06 15:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,9 +51,9 @@ msgstr "Empezar"
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70
 #: templates/learn/learn-unregistered.html:67 templates/main/main.html:547
-#: templates/upload/dashboard-unregistered-basic.html:189
-#: templates/upload/dashboard-unregistered-developing.html:187
-#: templates/upload/dashboard-unregistered-master.html:207
+#: templates/upload/dashboard-unregistered-basic.html:173
+#: templates/upload/dashboard-unregistered-developing.html:179
+#: templates/upload/dashboard-unregistered-master.html:195
 msgid "©2014 Dr.Scratch is powered by"
 msgstr "©2014 Dr.Scratch implementado con "
 
@@ -77,858 +77,8 @@ msgstr ""
 "Algunas veces tenemos problemas analizando determinados proyectos. Estamos "
 "trabajando en ello."
 
-#: templates/learn/Abstraction.html:70
-msgid "Abstraction"
-msgstr "Abstracción"
-
-#: templates/learn/Abstraction.html:75
-msgid ""
-"The ability of abstraction and decomposition of problems helps you to break "
-"a problem into smaller parts that are easier to understand, program and "
-"debug."
-msgstr ""
-"La capacidad de abstracción y descomposición de problemas te ayuda a dividir "
-"un problema en partes más pequeñas que serán más fáciles de comprender, "
-"programar y depurar."
-
-#: templates/learn/Abstraction.html:81
-#: templates/learn/DataRepresentation.html:81
-#: templates/learn/FlowControl.html:81 templates/learn/Logic.html:79
-#: templates/learn/Parallelization.html:81
-#: templates/learn/Synchronization.html:81
-#: templates/learn/UserInteractivity.html:89
-msgid "If you get 0 points..."
-msgstr "Si has sacado 0 puntos..."
-
-#: templates/learn/Abstraction.html:83
-msgid ""
-"When you start programming with Scratch, sometimes it may seem that the "
-"simplest solution is to program all the behavior of a character in a single "
-"program. However, ideally is that character behavior is controlled by "
-"different programs and each of these programs deal with a particular issue. "
-"Here's an example:"
-msgstr ""
-"Cuando se comienza a programar con Scratch, en ocasiones puede parecer que "
-"la solución más sencilla es programar todo el comportamiento de un personaje "
-"en un único programa. Sin embargo, lo ideal es que el comportamiento del "
-"personaje sea controlado por diferentes programas y que cada uno de estos "
-"programas se ocupe de una cuestión concreta. Veamos un ejemplo:"
-
-#: templates/learn/Abstraction.html:88
-msgid ""
-"This project, which paints a picture on the screen, has been programmed in a "
-"single program that draws the two lines that make up the drawing. Although "
-"it is a valid option, a simpler option to program and maintain the program "
-"is divided into two parts, so that we have two different programs, one to "
-"paint the front and another to paint the second:"
-msgstr ""
-"Este proyecto, que pinta un dibujo en la pantalla, ha sido programado en un "
-"único programa que dibuja las dos líneas que componen el dibujo. Aunque es "
-"una opción válida, una opción más sencilla de programar y de mantener es "
-"dividir el programa en dos partes, de forma que tengamos dos programas "
-"diferentes, uno para pintar la primera línea y otro para pintar la segunda:"
-
-#: templates/learn/Abstraction.html:92
-msgid ""
-"Thus, if we make any changes eg in one of the lines drawn, it is much easier "
-"to know which part of the program we need to go to carry out the changes."
-msgstr ""
-"De este modo, si queremos por ejemplo realizar alguna modificación en una de "
-"las líneas dibujadas, es mucho más sencillo saber a qué parte del programa "
-"tenemos que dirigirnos para llevar a cabo los cambios."
-
-#: templates/learn/Abstraction.html:99
-#: templates/learn/DataRepresentation.html:124
-#: templates/learn/FlowControl.html:95 templates/learn/Logic.html:94
-#: templates/learn/Parallelization.html:94
-#: templates/learn/Synchronization.html:95
-#: templates/learn/UserInteractivity.html:103
-msgid "If you get 1 point..."
-msgstr "Si has sacado 1 punto..."
-
-#: templates/learn/Abstraction.html:100
-msgid ""
-"Scratch allows new user-defined blocks that consist of a sequence of "
-"instructions. These abstractions allow you to create simple programs to "
-"read, program and maintain. Here's an example:"
-msgstr ""
-"Scratch permite crear nuevos bloques definidos por los usuarios que se "
-"componen de una secuencia de instrucciones. Estas abstracciones permiten "
-"crear programas más sencillos de leer, de programar y de mantener. Veamos un "
-"ejemplo:"
-
-#: templates/learn/Abstraction.html:106
-msgid ""
-"This Scratch project draws two orange lines of different length  on the "
-"screen. Rather than repeat the code 2 times, as shown in the example, you "
-"can define a 'DrawOrange' block consisting of blocks that paint an orange "
-"line on the screen and that you can tell what is the length of the line. For "
-"this you go to the category 'More Blocks' and press the Create button a "
-"block:"
-msgstr ""
-"Este proyecto Scratch dibuja dos líneas naranjas de diferente longitud en la "
-"pantalla. En lugar de repetir el código 2 veces, tal como vemos en el "
-"ejemplo, es posible definir un bloque “PintaNaranja” que se compone de los "
-"bloques que pintan una línea naranja en la pantalla y al que se le puede "
-"indicar cuál es la longitud de la línea. Para ello hay que irse a la "
-"categoría “Más Bloques” y pulsar en el botón Crear un bloque:"
-
-#: templates/learn/Abstraction.html:112
-msgid ""
-"Having defined the block 'DrawOrange' it can be used in any program of the "
-"project, as we see below:"
-msgstr ""
-"Una vez definido el bloque “PintaNaranja” es posible utilizarlo en cualquier "
-"programa del proyecto, tal como vemos a continuación:"
-
-#: templates/learn/Abstraction.html:116
-msgid ""
-"In this way, we avoid repeating code, which makes our projects easier to "
-"program and maintain. As can be seen, the first time the block is used "
-"DrawOrange prompted a length of 100 steps, whereas the second time length is "
-"200 steps."
-msgstr ""
-"De este modo, evitamos la repetición de código, lo que hace que nuestros "
-"proyectos sean más fáciles de programar y mantener. Tal como se puede "
-"observar, la primera vez que se usa el bloque PintaNaranja se le indica una "
-"longitud de 100 pasos, mientras que la segunda vez la longitud es de 200 "
-"pasos."
-
-#: templates/learn/Abstraction.html:122
-#: templates/learn/DataRepresentation.html:139
-#: templates/learn/FlowControl.html:110 templates/learn/Logic.html:107
-#: templates/learn/Parallelization.html:112
-#: templates/learn/Synchronization.html:108
-#: templates/learn/UserInteractivity.html:114
-msgid "If you get 2 points..."
-msgstr "Si has sacado 2 puntos..."
-
-#: templates/learn/Abstraction.html:123
-msgid ""
-"In some Scratch projects we have many identical characters that exactly "
-"perform the same actions. The first idea that comes to mind to do this is to "
-"create a character, schedule all his behavior and once you're ready, make as "
-"many copies as you need. Therefore, if we want 20 Martians, create 20 "
-"identical objects. However, what if I want to change the program? Would have "
-"to go object by object performing this modification."
-msgstr ""
-"En algunos proyectos Scratch queremos tener muchos personajes iguales que "
-"realizan exacatamente las mismas acciones. La primera idea que se nos ocurre "
-"para conseguirlo es crear un personaje, programar todo su comportamiento y, "
-"una vez que está listo, crear tantas copias como necesitemos. Por tanto, si "
-"queremos 20 marcianitos, hay que crear 20 objetos iguales. Sin embargo, ¿qué "
-"ocurriría si quiero realizar un cambio en un programa? Tendría que ir objeto "
-"por objeto realizando esa modificación."
-
-#: templates/learn/Abstraction.html:125
-msgid ""
-"For such situations it is preferable to use clones, a type of abstraction "
-"that helps us to program a single object, and dynamically create exact "
-"copies with the same behavior."
-msgstr ""
-"Para este tipo de situaciones es preferible utilizar clones, un tipo de "
-"abstracción que nos ayuda a poder programar un solo objeto, y crear de forma "
-"dinámica copias exactas con el mismo comportamiento. "
-
-#: templates/learn/Abstraction.html:126
-msgid ""
-"Let's see how it works with an example. Imagine you want to pretend that it "
-"is snowing on a project. We can draw an object that is a snowflake, and once "
-"you start implementing the project, constantly be creating clones appear at "
-"the top of the screen and they will fall to the bottom:"
-msgstr ""
-"Veamos cómo funcionan con un ejemplo. Imagina que queremos simular que está "
-"nevando en un proyecto. Podemos dibujar un objeto que sea un copo de nive, y "
-"una vez que comience la ejecución del proyecto, ir creando clones "
-"constantemente que aparezcan en la parte superior de la pantalla y vayan "
-"cayendo hasta la parte inferior:"
-
-#: templates/learn/Abstraction.html:130
-msgid ""
-"Thus, just by programming a character, we can have infinite clones  which "
-"are created at a particular time of project implementation and are deleted "
-"when they are no longer needed."
-msgstr ""
-"De este modo, tan solo programando un personaje podemos tener infinitos "
-"clones, que se crean en un momento determinado de la ejecución del proyecto "
-"y se borran cuando ya no son necesarios."
-
-#: templates/learn/DataRepresentation.html:70
-msgid "Data Representation"
-msgstr "Representación de los datos"
-
-#: templates/learn/DataRepresentation.html:75
-msgid ""
-"Every Scratch project needs a set of information about the characters in "
-"order to run properly. For example, we need to know the position of each "
-"character, the direction it is pointing, size, etc. In addition, programmers "
-"can create new information repositories to store other data such as the "
-"level at which we find ourselves, elapsed time, the rating, the lives, the "
-"rewards collected ..."
-msgstr ""
-"Cada proyecto Scratch necesita un conjunto de información sobre los "
-"personajes para poder ejecutarse correctamente. Por ejemplo, necesita "
-"conocer la posición de cada personaje, la dirección a la que está apuntando, "
-"su tamaño, etc. Además, los programadores podemos crear nuevos depósitos de "
-"información para guardar otro tipo de datos, como el nivel en el que nos "
-"encontramos, el tiempo transcurrido, la puntación, las vidas, las "
-"recompensas recogidas... "
-
-#: templates/learn/DataRepresentation.html:83
-msgid ""
-"Each character of a Scratch project has a number of features, or attributes, "
-"that every moment of the project have value, and can be modified by "
-"programs. For example, a character has a certain size that can be modified "
-"by block 'resize for 10', making the character appear slightly larger. "
-"Following is the list of attributes that each character and blocks that can "
-"be used to modify:"
-msgstr ""
-"Cada personaje de un proyecto Scratch tiene una serie de características, o "
-"atributos, que en cada momento de ejecución del proyecto tienen un valor, y "
-"que pueden ser modificadas por los programas. Por ejemplo, un personaje "
-"tiene un tamaño determinado que puede ser  modificado por el bloque “cambiar "
-"tamaño por 10”, haciendo que el personaje aparezca un poco más grande. A "
-"continuación mostramos la lista de atributos que tiene cada personaje y los "
-"bloques que pueden utilizarse para modificarlos:"
-
-#: templates/learn/DataRepresentation.html:86
-msgid "Position:"
-msgstr "Posición:"
-
-#: templates/learn/DataRepresentation.html:93
-msgid "Size:"
-msgstr "Tamaño:"
-
-#: templates/learn/DataRepresentation.html:100
-msgid "Orientation:"
-msgstr "Orientación:"
-
-#: templates/learn/DataRepresentation.html:107
-msgid "Costume:"
-msgstr "Disfraz:"
-
-#: templates/learn/DataRepresentation.html:112
-msgid "Visibility:"
-msgstr "Visibilidad:"
-
-#: templates/learn/DataRepresentation.html:125
-msgid ""
-"In addition to modifying the attributes of the characters, programmers can "
-"use other mechanisms to store information on a Scratch project. One of these "
-"mechanisms are variables that can store a value to store different types of "
-"data that may need: at what level we are, how many lives you have left, how "
-"many points we, how is called the user ..."
-msgstr ""
-"Además de modificar los atributos de los personajes, los programadores "
-"podemos utilizar otros mecanismos para almacenar información en un proyecto "
-"Scratch. Uno de estos mecanismos son las variables, que permiten almacenar "
-"un valor para guardar distintos tipos de datos que podemos necesitar: en qué "
-"nivel nos encontramos, cuántas vidas nos quedan, cuántos puntos llevamos, "
-"cómo se llama el usuario..."
-
-#: templates/learn/DataRepresentation.html:127
-msgid ""
-"To create a variable you have to go to the category of data, click on "
-"'Create a variable' and give a name. In the example shown below we have "
-"given the name 'Points' as use it to store the number of points you get our "
-"character."
-msgstr ""
-"Para crear una variable hay que irse a la categoría de Datos, pinchar sobre "
-"“Crear una variable” y darle un nombre. En el ejemplo que mostramos a "
-"continuación le hemos dado el nombre “Puntos”, ya que la utilizaremos para "
-"guardar el número de puntos que consigue nuestro personaje."
-
-#: templates/learn/DataRepresentation.html:133
-msgid ""
-"In the program of the left, we assign the number of points that we want the "
-"character has to the beginning of the game, in this case 0, for which we use "
-"the block 'fixing points at 0'.  However in the program of the right, what "
-"we do is that when the character touches the blue color, that could be a "
-"target, you will add a point, for which we use the block 'change Points by "
-"1'. In this case, the block 'change' would check the current value of the "
-"variable points would add 1: If set to 0, I add 1 and is now worth 1; when "
-"set to 1, I add 1 and is now worth 2 ..."
-msgstr ""
-"En el prorgrama de la izquierda asignamos el número de puntos con los que "
-"queremos que el personaje comience la partida, en este caso 0, para lo que "
-"utilizamos el bloque “fijar Puntos a 0”. Sin embargo en el programa de la "
-"derecha lo que hacemos es que cuando el personaje toque el color azul, que "
-"podría ser el de un objetivo, le vamos a sumar un punto, para lo que "
-"utilizamos el bloque “cambiar Puntos por 1”. En este caso, el bloque "
-"'cambiar' comprobaría el valor actual de la variable Puntos y le sumaría 1: "
-"si vale 0, le sumo 1 y ahora vale 1; si vale 1, le sumo 1 y ahora vale 2..."
-
-#: templates/learn/DataRepresentation.html:140
-msgid ""
-"In addition to the variables, Scratch lets you use another data type to "
-"store project information: The lists. The lists can store more than one "
-"value at the same time, so they are ideal for storing rewards have been "
-"recovered by a character or set of names, raise a couple of examples."
-msgstr ""
-"Además de las variables, Scratch permite utilizar otro tipo de datos para "
-"guardar información de un proyecto: las listas. Las listas permiten "
-"almacenar más de un valor al mismo tiempo, por lo que son ideales para "
-"guardar las recompensas que han sido recuperadas por un personaje, o un "
-"conjunto de nombres, por plantear un par de ejemplos."
-
-#: templates/learn/DataRepresentation.html:142
-msgid ""
-"To create a list, you have to go to the data category, click on 'Create a "
-"List' and give a name. In the example, we have named our 'Students' list:"
-msgstr ""
-"Para crear una lista, hay que irse a la categoría de Datos, pinchar sobre "
-"“Crear una lista” y darle un nombre. En el ejemplo, nosotros hemos llamado a "
-"nuestra lista “Estudiantes”:"
-
-#: templates/learn/DataRepresentation.html:148
-msgid ""
-"What have we done with this program? The first thing we do is, to start "
-"execution, delete all items from the list Estudiantes, to empty it "
-"completely and  not appear elements of an previous project implementation. "
-"Then we ask three times the user to enter a name, and each name entered "
-"insert it in the last position in the list Students."
-msgstr ""
-"¿Qué hemos hecho con este programa? Lo primero que hacemos al comenzar la "
-"ejecución es borrar todos los elementos de la lista Estudiantes, para "
-"vaciarla completamente y que no aparezcan elementos de una ejecución "
-"anterior del proyecto. A continuación le pedimos tres veces al usuario que "
-"introduzca un nombre, y cada nombre introducido lo insertamos en la última "
-"posición de la lista Estudiantes."
-
-#: templates/learn/DataRepresentation.html:150
-msgid ""
-"What we do with the list? We could, for example, use it to get a volunteer "
-"to carry out an exercise to the whiteboard. Look at the new instructions "
-"added to the program:"
-msgstr ""
-"¿Qué podemos hacer con la lista? Podríamos, por ejemplo, utilizarla para "
-"sacar a un voluntario a realizar un ejercicio a la pizarra digital. Fijaos "
-"en las nuevas instrucciones que añadimos al programa:"
-
-#: templates/learn/DataRepresentation.html:156
-msgid ""
-"We generated a random number between 1 and 3, which are the elements in the "
-"list, we selected the element that occupies that position in the list. "
-"Sometimes we take the name that is in position 1, others that it is in "
-"position 2 and the other at 3."
-msgstr ""
-"Hemos generado un número al azar entre 1 y 3, que son los elementos que hay "
-"en la lista, y hemos seleccionado al elemento que ocupa esa posición en la "
-"lista. Unas veces cogeremos el nombre que está en la posición 1, otras al "
-"que está en la posición 2 y otras al de la posición 3."
-
-#: templates/learn/DataRepresentation.html:158
-msgid ""
-"Lists have many possibilities and many available operations ... you dare to "
-"investigate how they work?"
-msgstr ""
-"Las listas tienen muchas posibilidades y muchas operaciones disponibles... "
-"¿te animas a investigar cómo funcionan?"
-
-#: templates/learn/FlowControl.html:70
-msgid "Flow Control"
-msgstr "Control de flujo"
-
-#: templates/learn/FlowControl.html:75
-msgid ""
-"Instructions related to algorithmic notions of flow control can help you to "
-"control the behavior of your characters, making, for example, certain blocks "
-"that are repeated a number of times,  or until a situation arises."
-msgstr ""
-"Las instrucciones relacionadas con las nociones algorítmicas de control de "
-"flujo pueden ayudarte a controlar el comportamiento de tus personajes, "
-"haciendo, por ejemplo, que repitan ciertos bloques un número de veces "
-"concreto o que lo repitan hasta que se produzca una situación."
-
-#: templates/learn/FlowControl.html:83
-msgid ""
-"The most basic way to control the behavior of your characters is creating a "
-"program composed of a set of blocks are executed one after another, as we "
-"see in the picture:"
-msgstr ""
-"La forma más básica de controlar el comportamiento de tus personajes es "
-"creando un programa computesto por un conjunto de bloques que se ejecutan "
-"uno detrás de otro, tal como vemos en la imagen:"
-
-#: templates/learn/FlowControl.html:88
-msgid ""
-"How does this program works? When the user click on the green flag run "
-"behind one another all blocks that have been included in the program. Start "
-"with the first block 'say I'm a cat dancing for 2 seconds', then run 'move "
-"10 steps' then 'turn 15 degrees right', and so on to the last block of the "
-"program."
-msgstr ""
-"¿Cómo funciona este programa? Cuando el usuario presione sobre la bandera "
-"verde se ejecutarán uno detras de otro todos los bloques que se han incluido "
-"en el programa. Comenzará por el primero “decir soy un gato que baila por 2 "
-"segundos”, luego ejecutará “mover 10 pasos”, a continuación “girar 15 grados "
-"a la derecha”, y así hasta llegar al último bloque del programa."
-
-#: templates/learn/FlowControl.html:96
-msgid ""
-"Sometimes when we want a set of blocks is constantly repeated, instead of "
-"repeating the same blocks over and over again, you can use a repeat "
-"instruction allowing achieve the same effect, but more comfortable and "
-"manageable way. Consider a couple of examples:"
-msgstr ""
-"En ocasiones, cuando queremos que un conjunto de bloques se repita "
-"constantemente, en lugar de repetir los mismos bloques una y otra vez, es "
-"posible utilizar instrucciones de repetición que permiten conseguir el mismo "
-"efecto, pero de forma más cómoda y manejable. Veamos un par de ejemplos:"
-
-#: templates/learn/FlowControl.html:100
-msgid "How these control blocks works?"
-msgstr "¿Cómo funciona estos bloques de control?"
-
-#: templates/learn/FlowControl.html:102
-msgid ""
-"In the block 'repeat' when execution reaches this point is repeated as often "
-"as has been indicated in the parameter block 'repeat', in the example would "
-"be 3 times, all blocks included within this block. We can see that the block "
-"'repeat' has an arrow at the bottom indicating that when they finish "
-"executing the blocks back again up."
-msgstr ""
-"En el bloque “repetir”, cuando la ejecución llega a este punto se repetirán "
-"tantas veces como se haya indicado en el parámetro del bloque 'repetir', en "
-"el ejemplo serían 3 veces, todos los bloques incluidos dentro de este "
-"bloque. Podemos ver que el bloque 'repetir' tiene una flechita en la parte "
-"inferior que indica que cuando se terminan de ejecutar los bloques se vuelve "
-"otra vez para arriba."
-
-#: templates/learn/FlowControl.html:104
-msgid ""
-"The block 'forever' works like the 'repeat' but never finish executing the "
-"blocks containing in its interior."
-msgstr ""
-"El bloque “por siempre” funciona igual que el 'repetir' pero sin terminar "
-"nunca de ejecutar los bloques que contiene en su interior."
-
-#: templates/learn/FlowControl.html:111
-msgid ""
-"Sometimes we don't know previously  the number of times you want a set of "
-"blocks is executed, as this depends on a given situation. In these cases, "
-"the block 'repeat until ...' is really useful. Here's an example:"
-msgstr ""
-"En algunas ocasiones no sabemos previamente el número de veces que queremos "
-"que un conjunto de bloques se ejecute, ya que esto depende de una "
-"determinada situación. En estas ocasiones, el bloque 'repetir hasta que...' "
-"es realmente útil. Veamos un ejemplo:"
-
-#: templates/learn/FlowControl.html:115
-msgid ""
-"In the example, the character will constantly repeat the instruction 'say "
-"You don't caught me...' while he don't touch the enemy. At the time that the "
-"condition is met instruction 'repeat until ...', the contents inside will "
-"finish run and will jump to the next instruction, in this case 'say You "
-"caught me!'."
-msgstr ""
-"En el ejemplo, el personaje repetirá constantemente la instrucción 'Decir No "
-"me pillas...' mientras no esté tocando al enemigo. En el momento que se "
-"cumpla la condición de la instrucción 'repetir hasta que...', terminará de "
-"ejecutarse el bloque contenido en su interior y saltará a la siguiente "
-"instrucción, en este caso 'decir Me pillaste!'."
-
-#: templates/learn/Logic.html:68
-msgid "Logic"
-msgstr "Lógica"
-
-#: templates/learn/Logic.html:73
-msgid ""
-"Instructions related to logical thinking can help your projects are dynamic, "
-"so that they behave differently depending on the situation. In the stories, "
-"for example, these instructions are not as important as they usually have a "
-"linear structure we always want to run the same way, but in other projects, "
-"such as video games are essential to perform different actions depending on "
-"the situation."
-msgstr ""
-"Las instrucciones relacionadas con el pensamiento lógico pueden ayudarte a "
-"que tus proyectos sean dinámicos, de forma que se comporten de modo distinto "
-"en función de la situación. En las historias, por ejemplo, este tipo de "
-"instrucciones no son tan importantes, ya que suelen tener una estrucutura "
-"lineal que siempre queremos que se ejecute del mismo modo, pero en otro tipo "
-"de proyectos, como los videojuegos, son fundamentales para ejecutar acciones "
-"diferentes dependiendo de la situación."
-
-#: templates/learn/Logic.html:81
-msgid "The most basic block you can start working logical thinking is this:"
-msgstr ""
-"El bloque más básico con el que puedes comenzar a trabajar el pensamiento "
-"lógico es éste:"
-
-#: templates/learn/Logic.html:86
-msgid ""
-"How this block works? When execution reaches this point, the condition on "
-"the block is evaluated, and if this is true, the set of blocks that are "
-"within the if executed."
-msgstr ""
-"¿Cómo funciona este bloque? Cuando la ejecución llega a este punto, se "
-"evalúa la condición que aparece en el bloque, y si ésta es verdadera, se "
-"ejecuta el conjunto de bloques que están dentro del si."
-
-#: templates/learn/Logic.html:87
-msgid ""
-"In the example, if the character is touching the blue color, he says 'I "
-"reached the goal.'"
-msgstr ""
-"En el ejemplo, si el personaje está tocando el color azul diría “Llegué a la "
-"meta”."
-
-#: templates/learn/Logic.html:95
-msgid ""
-"Now that you know the instructions if, perhaps you can start using blocks "
-"if / else, which can be very practical in many types of projects. The blocks "
-"if / else are very similar to the block if, but contain two sets of blocks "
-"inside."
-msgstr ""
-"Ahora que conoces las instrucciones si, quizás puedas comenzar a utilizar "
-"bloques si/sino, que pueden ser muy prácticos en muchos tipos de proyectos. "
-"Los bloques si/sino son muy parecidos a los bloque si, pero contienen dos "
-"conjuntos de bloques en su interior."
-
-#: templates/learn/Logic.html:99
-msgid ""
-"How this block works? When execution reaches this point, the condition on "
-"the block is evaluated, and if this is true, the set of blocks that are "
-"within the 'if' is executed, but if the condition is false, then the set of  "
-"blocks that are within the 'else' is executed."
-msgstr ""
-"¿Cómo funciona este bloque? Cuando la ejecución llega a este punto, se "
-"evalúa la condición que aparece en el bloque, y si ésta es verdadera, se "
-"ejecuta el conjunto de bloques que están dentro del si."
-
-#: templates/learn/Logic.html:101
-msgid ""
-"In the example, if the character is touching the blue color, he says  'I "
-"reached the goal!', but ,if you are not touching the purple color, says 'I "
-"have not reached the goal'."
-msgstr ""
-"En el ejemplo, si el personaje está tocando el color azul diría “Llegué a la "
-"meta”,pero si no está tocando el color morado diría “Aún no he llegado a la "
-"meta”"
-
-#: templates/learn/Logic.html:108
-msgid ""
-"To make decisions on some projects sometimes is necessary to evaluate more "
-"than one condition at the same time to know what to execute. In these "
-"situations it is very helpful to use logical operations that combine the "
-"conditions. Logical operations are available in Scratch AND, OR and No."
-msgstr ""
-"Para tomar decisiones en algunos proyectos en ocasiones se requiere evaluar "
-"más de una condición al mismo tiempo para saber qué hay que ejecutar. En "
-"esas situaciones es muy útil utilizar operaciones lógicas que permiten "
-"combinar las condiciones. Las operaciones lógicas disponibles en Scratch son "
-"Y, O y No."
-
-#: templates/learn/Logic.html:113
-msgid ""
-"The operation AND is true when both conditions are true evaluated. The OR "
-"operation is true when one of two conditions are true evaluated. And the "
-"operation otherwise not worth the condition, ie, if the condition is true, "
-"not returns false and vice versa."
-msgstr ""
-"La operación Y es verdadera cuando las dos condiciones de evaluadas son "
-"verdaderas. La operación O es verdadera cuando una de las dos condiciones "
-"evaluadas son verdaderas. Y la operación No valdrá lo contrario de la "
-"condición, es decir, si la condición es verdadera, No devuelve falso y "
-"viceversa."
-
-#: templates/learn/Parallelization.html:70
-msgid "Parallelization"
-msgstr "Paralelismo"
-
-#: templates/learn/Parallelization.html:75
-msgid ""
-"In most Scratch creations a certain level of parallelism is required. But "
-"what means parallelism? Parallelism is the possibility that several things "
-"occur simultaneously. For example, two characters perform an action while a "
-"character or do several things at once."
-msgstr ""
-"En la mayoría de las creaciones Scratch se requiere un cierto nivel de "
-"paralelismo. Pero, ¿qué es el paralelismo? El paralelismo es la posibilidad "
-"de que varias cosas ocurran al mismo tiempo. Por ejemplo, que dos personajes "
-"realicen una acción al mismo tiempo, o que un personaje haga varias cosas a "
-"la vez."
-
-#: templates/learn/Parallelization.html:83
-msgid ""
-"The most basic and most obvious way to achieve parallelism is to have "
-"several programs that start with 'When green flag is clicked':"
-msgstr ""
-"La forma más básica y más evidente de conseguir paralelismo es tener varios "
-"programas que comienzan con “Al presionar la bandera verde”:"
-
-#: templates/learn/Parallelization.html:87
-msgid ""
-"Thus, when the user clicking on the green flag, all programs that start with "
-"this block would begin to run simultaneously, or in parallel, as can also be "
-"said. You could have several programs that start with this block in the same "
-"character, if you want it to do several things at once, or in programs of "
-"different characters, if you want everyone to undertake an action at "
-"beginning of execution."
-msgstr ""
-"De este modo, cuando el usuario pinchase sobre la bandera verde, todos los "
-"programas que comienzan con este bloque comenzarían a ejecutarse al mismo "
-"tiempo, o en paralelo, como también puede decirse.  Podrías tener varios "
-"programas que comiencen con este bloque en un mismo personaje, si quieres "
-"que haga varias cosas a la vez, o en programas de diferentes personajes, si "
-"quieres que todos comiencen a realizar una acción al comenzar la ejecución."
-
-#: templates/learn/Parallelization.html:95
-msgid ""
-"Another way to achieve parallelism in your program is doing several things "
-"occur when the user presses a key or clicks on an object. Consider a couple "
-"of examples:"
-msgstr ""
-"Otra forma de conseguir paralelismo en tus programas es haciendo que ocurran "
-"varias cosas cuando el usuario presiona una tecla o hace click sobre un "
-"objeto.  Veamos un par de ejemplos:"
-
-#: templates/learn/Parallelization.html:101
-msgid "How these blocks works?"
-msgstr "¿Cómo funcionan estos bloques de control?"
-
-#: templates/learn/Parallelization.html:103
-msgid ""
-"In the first example, we see two different characters that, when a key is "
-"pressed, perform a certain action. Therefore, when the user press the a key, "
-"in this case, both the cat and the child run at the same time 'say A for 2 "
-"seconds'"
-msgstr ""
-"En el primer ejemplo, en la izquierda, vemos que hay dos personajes "
-"diferentes que, cuando se pulsa una tecla, realizan una determinada acción. "
-"Por tanto, cuando el usuario pulse la tecla a, en este caso, tanto el gato "
-"como el niño ejecutarán al mismo tiempo “decir A por 2 segundos”."
-
-#: templates/learn/Parallelization.html:105
-msgid ""
-"In the second example we see that a character has two programs that begin "
-"with 'when clicking this object'. Therefore, when the user clicks on this "
-"character, both programs will begin to run simultaneously, in parallel."
-msgstr ""
-"En el segundo ejemplo vemos que un personaje tiene dos programas que "
-"comienzan con “al clickear este objeto”. Por tanto, cuando el usuario haga "
-"click sobre este personaje, ambos programas comenzarán a ejecutarse al mismo "
-"tiempo, en paralelo."
-
-#: templates/learn/Parallelization.html:113
-msgid "There are several events more that can achieve parallelism:"
-msgstr "Existen varios eventos más que permiten conseguir paralelismo:"
-
-#: templates/learn/Parallelization.html:117
-msgid ""
-"As you see, you could create several programs that begin to run when "
-"changing the background to a given scenario, or to receive a particular "
-"message, or when the room volume exceeds a certain threshold, when the video "
-"motion is greater than a number pixel concrete or when the timer has "
-"exceeded the value you want. Therefore, there are many possibilities to make "
-"things happen in your programs simultaneously. Do you dare to investigate "
-"how works?"
-msgstr ""
-"Como ves, podrías crear varios programas que comenzaran a ejecutarse al "
-"cambiar el fondo a un determinado escenario, o al recibir un mensaje "
-"concreto, o cuando el volumen del ambiente sea superior a un determinado "
-"umbral, cuando el movimiento del vídeo se mayor que un número de pixels "
-"concreto o cuando el cronómetro haya superado el valor que tú quieras. Por "
-"tanto, existen muchas posibilidades para conseguir que en tus programas "
-"ocurran cosas al mismo tiempo. ¿Te animas a probar algunas de ellas?"
-
-#: templates/learn/Synchronization.html:70
-msgid "Synchronization"
-msgstr "Sincronización"
-
-#: templates/learn/Synchronization.html:75
-msgid ""
-"Instructions related to synchronization allow our characters to organize "
-"things happen in the order we want."
-msgstr ""
-"Las instrucciones relacionadas con la sincronización permiten organizar a "
-"nuestros personajes para que las cosas ocurran en el orden que nosotros "
-"deseamos."
-
-#: templates/learn/Synchronization.html:83
-msgid ""
-"The easiest way to synchronize the behavior of your characters is using a "
-"'wait' block, which makes the character waits the number of seconds you "
-"write as a parameter block. An example of how this block can be used to "
-"synchronize two characters:"
-msgstr ""
-"La forma más sencilla de sincronizar el comportamiento de tus personajes es "
-"utilizando un bloque  “esperar”, que hace que el personaje espere el número "
-"de segundos que escribamos como parámetro del bloque. Veamos un ejemplo de "
-"cómo puede utilizarse este bloque para sincronizar a dos personajes:"
-
-#: templates/learn/Synchronization.html:88
-msgid ""
-"In this case it uses blocks 'wait' to synchronize these two characters to "
-"maintain a conversation, so that while one speaks, the other character "
-"waits, and vice versa. Note that the number of seconds that each character "
-"expected, are equal to the number of seconds that the other character "
-"speaks, so they never talk at the same time."
-msgstr ""
-"En este caso se han utilizado los bloques “esperar” para sincronizar a estos "
-"dos personajes para que mantengan una conversación, de forma que mientras "
-"uno habla, el otro espera, y viceversa. Fíjate en que el número de segundos "
-"que cada personaje espera, son iguales al número de segundos que el otro "
-"personaje habla, de manera que nunca hablan al mismo tiempo."
-
-#: templates/learn/Synchronization.html:96
-msgid ""
-"Synchronization using blocks 'wait' is very simple when programs are small "
-"and have few characters, but when are larger, or when we have several "
-"characters, or when conditions to generate a reaction can not be measured "
-"previously, it is more efficient to use other modes of synchronization and "
-"messages. Here's an example:"
-msgstr ""
-"La sincronización mediante bloques “esperar” es muy sencilla cuando los "
-"programas son pequeños y tenemos pocos personajes, pero cuando son más "
-"grandes, o cuando tenemos varios personajes, o cuando las condiciones para "
-"generar una reacción no pueden ser medidas previamente, es más eficiente "
-"utilizar otros modos de sincronización como los mensajes. Veamos un ejemplo:"
-
-#: templates/learn/Synchronization.html:101
-msgid ""
-"How do these syncblocks work? When a situation occurs in a character we want "
-"to cause a reaction in another character, we can use messaging. In the "
-"example, when the mouse touches the cat, the message 'Caught!', which will "
-"be sent to all the characters of the project is sent. Thus, when the "
-"butterfly receives the message 'Caught!', the instructions on the block "
-"'when receive 'caught!''. Therefore, when the user touches the cat whit the "
-"mouse, butterfly says, 'You caught my companion. Now you have to catch me!'."
-msgstr ""
-"¿Cómo funciona estos bloques de sincronización? Cuando se produce una "
-"situación en un personaje que queremos que provoque una reacción en otro "
-"personaje, podemos hacer uso del envío de mensajes. En el ejemplo, cuando el "
-"ratón toca al gato, se envía el mensaje “Pillado”, que será enviado a todos "
-"los personajes del proyecto. Así, cuando la mariposa recibe el mensaje "
-"“Pillado”, se ejecutan las instrucciones incluidas bajo el bloque “al "
-"recibir Pillado”. Por tanto, cuando el usuario toque con el ratón al gato, "
-"la mariposa dirá: “Has pillado a mi compañero. Ahora tienes que pillarme a "
-"mí”."
-
-#: templates/learn/Synchronization.html:109
-msgid ""
-"In addition to sending messages, you can synchronize characters to make "
-"things happen in the order we want, using other blocks, such as 'wait until' "
-"or 'when the background changes to ...'."
-msgstr ""
-"Además del envío de mensajes, es posible sincronizar personajes para que las "
-"cosas ocurran en el orden que nosotros deseamos utilizando otro tipo de "
-"bloques, como “esperar hasta que” o “cuando el fondo cambie a...”."
-
-#: templates/learn/Synchronization.html:114
-msgid ""
-"In the first example, when program execution reaches that point will stop "
-"until the condition is met in this case, until life is equal to 0. When "
-"lives equal to 0, then continue execution of the remaining blocks, this "
-"case, 'said Game Over' and 'stop all', which ends the execution of the "
-"project."
-msgstr ""
-"En el primer ejemplo, cuando la ejecución del programa llegue a ese punto se "
-"detendrá hasta que se cumpla la condición, en este caso hasta que vidas sea "
-"igual a 0. Cuando vidas valga 0, entonces continuará la ejecución del resto "
-"de bloques, en este caso “decir Game Over” y“detener todos”, lo que "
-"finalizará la ejecución del proyecto. "
-
-#: templates/learn/Synchronization.html:116
-msgid ""
-"In the second example, the moment when the scene changes to the backdrop "
-"with the name 'Spring', the character will execute the blocks placed after "
-"the instruction 'when the backdrop changes to Spring', ie to be displayed "
-"and will say 'spring has come!'."
-msgstr ""
-"En el segundo ejemplo, en el momento en el que el escenario cambie al fondo "
-"con el nombre “Primavera”, el personaje ejecutará los bloques colocados a "
-"continuación de la instrucción “cuando el fondo cambia a Primavera”, es "
-"decir, que se mostrará y dirá “¡Ha llegado la primavera”."
-
-#: templates/learn/UserInteractivity.html:78
-msgid "User interactivity"
-msgstr "Interactividad del usuario"
-
-#: templates/learn/UserInteractivity.html:83
-msgid ""
-"The instructions related to user interactivity can help your Scratch "
-"projects be more interactive, ie the person who is running it can perform "
-"actions that provoke new situations in the project. For example, I can use "
-"the keyboard or mouse to move a character, you can answer questions or "
-"playing computer webcam, among many other possibilities."
-msgstr ""
-"Las instrucciones relacionadas con la interactividad con el usuario pueden "
-"ayudarte a que tus proyectos Scratch sean más interactivos, es decir, que la "
-"persona que esté ejecutándolo pueda realizar acciones que provoquen nuevas "
-"situaciones en el proyecto. Por ejemplo, puedo utilizar el teclado o el "
-"ratón para mover un personaje, puede contestar preguntas o jugar con la "
-"webcam del ordenador, entre otras muchas posibilidades."
-
-#: templates/learn/UserInteractivity.html:91
-msgid ""
-"The most basic block you can start working interactivity with the user is "
-"'when green flag clicked'."
-msgstr ""
-"El bloque más básico con el que puedes comenzar a trabajar la interactividad "
-"con el usuario es “Al presionar la bandera verde”"
-
-#: templates/learn/UserInteractivity.html:96
-msgid ""
-"How this block works? When the user who wants to run your project Scratch "
-"clicks on the green flag, all blocks were placed under the block 'when green "
-"flag clicked' begin to run. You can have as many programs as you need to "
-"start with this block."
-msgstr ""
-"¿Cómo funciona este bloque? Cuando el usuario que quiere ejecutar tu "
-"proyecto Scratch pinche en la bandera verde, comenzarán a ejecutarse todos "
-"los bloques que se hayan colocado bajo el bloque “al presionar la bandera "
-"verde”. Puedes tener tantos programas como necesites que comiencen con este "
-"bloque."
-
-#: templates/learn/UserInteractivity.html:104
-msgid ""
-"Now that you have begun to interact with the user running your Scratch "
-"project, perhaps you can try some of the following blocks:"
-msgstr ""
-"Ahora que has comenzado a interactuar con el usuario que ejecute tu proyecto "
-"Scratch, quizás puedes probar algunos de los siguientes bloques:"
-
-#: templates/learn/UserInteractivity.html:108
-msgid ""
-"As you see, you can allow users to interact with your characters by pressing "
-"keys to move, writing answers to questions and your characters use user "
-"responses, move characters with the mouse, or perform actions when the user "
-"clicks an object."
-msgstr ""
-"Como ves, es posible permitir a los usuarios interactuar con tus personajes "
-"presionando teclas para que se muevan, escribiendo respuestas a preguntas y "
-"que tus personajes usen las respuestas del usuario, mover a los personajes "
-"con el ratón, o realizar acciones cuando el usuario pincha sobre un objeto."
-
-#: templates/learn/UserInteractivity.html:115
-msgid ""
-"One of the funniest Scratch possibilities in terms of user interactivity is "
-"the possibility that the user can use your webcam or microphone to interact "
-"with characters from Scratch or sound to trigger certain actions."
-msgstr ""
-"Una de las posibilidades más divertidas de Scratch en cuanto a la "
-"interactividad con el usuario es la posibilidad de que el usuario pueda "
-"utilizar su webcam o el micrófono para interactuar con los personajes de "
-"Scratch o el sonido para provocar ciertas acciones."
-
-#: templates/learn/UserInteractivity.html:119
-msgid ""
-"As you can see in the examples, we can make certain sets of blocks are "
-"executed when the ambient sound captured by the microphone is greater than a "
-"certain threshold, or when video motion occurs over an object or background. "
-"The possibilities of these blocks are very large and allows your creations "
-"Scratch are fully interactive with users."
-msgstr ""
-"Como ves en los ejemplos, podemos hacer que ciertos conjuntos de bloques se "
-"ejecuten cuando el sonido ambiente capturado por el micrófono sea mayor que "
-"un determinado umbral, o cuando se produce movimiento del vídeo encima de un "
-"objeto o del fondo. Las posibilidades de estos bloques son muy grandes y "
-"permitirán que tus creaciones Scratch sean totalmente interactivas con los "
-"usuarios."
-
 #: templates/learn/attribute-initialization.html:6
-#: templates/upload/dashboard-unregistered.html:254
+#: templates/upload/dashboard-unregistered.html:239
 msgid "modified but not initialized correctly."
 msgstr "ha sido modificado pero no inicializado correctamente."
 
@@ -1015,12 +165,12 @@ msgstr ""
 "Proyecto'>"
 
 #: templates/main/main.html:136
-msgid "Add a .sb or .sb2 file"
-msgstr "Elige un fichero .sb o .sb2"
+msgid "Add a .sb2 or .sb file"
+msgstr "Elige un fichero .sb2 o .sb"
 
 #: templates/main/main.html:143 templates/main/main.html.py:146
-msgid "Error! Please choose a .sb or .sb2 file or input an url"
-msgstr "¡Error! Por favor elige un fichero .sb o .sb2 o pon una url"
+msgid "Error! Please choose a sb2 file or input an url"
+msgstr "¡Error! Por favor elige un fichero sb2 o pon una url"
 
 #: templates/main/main.html:150
 msgid "Error! Your project id is wrong"
@@ -1295,80 +445,60 @@ msgstr "Necesitas mejorar en:"
 #: templates/upload/dashboard-unregistered-basic.html:77
 #: templates/upload/dashboard-unregistered-developing.html:125
 #: templates/upload/dashboard-unregistered-master.html:80
-#: templates/upload/dashboard-unregistered.html:114
+#: templates/upload/dashboard-unregistered.html:113
 msgid "Concept"
 msgstr "Concepto"
 
 #: templates/upload/dashboard-unregistered-basic.html:78
 #: templates/upload/dashboard-unregistered-developing.html:126
 #: templates/upload/dashboard-unregistered-master.html:81
-#: templates/upload/dashboard-unregistered.html:115
+#: templates/upload/dashboard-unregistered.html:114
 msgid "Points"
 msgstr "Puntos"
 
 #: templates/upload/dashboard-unregistered-basic.html:88
-#: templates/upload/dashboard-unregistered-developing.html:137
-#: templates/upload/dashboard-unregistered-master.html:91
-#, python-format
-msgid ""
-"\n"
-"                                    %(key)s\n"
-"                                    "
-msgstr ""
-
-#: templates/upload/dashboard-unregistered-basic.html:95
-#: templates/upload/dashboard-unregistered-basic.html:99
-#: templates/upload/dashboard-unregistered-basic.html:103
 #: templates/upload/dashboard-unregistered-developing.html:144
-#: templates/upload/dashboard-unregistered-developing.html:148
-#: templates/upload/dashboard-unregistered-developing.html:152
-#: templates/upload/dashboard-unregistered-master.html:98
-#: templates/upload/dashboard-unregistered-master.html:102
-#: templates/upload/dashboard-unregistered-master.html:106
-#: templates/upload/dashboard-unregistered.html:127
-#: templates/upload/dashboard-unregistered.html:131
-#: templates/upload/dashboard-unregistered.html:135
+#: templates/upload/dashboard-unregistered-master.html:93
 msgid "Learn more!!!"
 msgstr "¡¡¡Aprende más!!!"
 
-#: templates/upload/dashboard-unregistered-basic.html:107
-#: templates/upload/dashboard-unregistered-developing.html:156
-#: templates/upload/dashboard-unregistered-master.html:110
-#: templates/upload/dashboard-unregistered.html:139
+#: templates/upload/dashboard-unregistered-basic.html:92
+#: templates/upload/dashboard-unregistered-developing.html:148
+#: templates/upload/dashboard-unregistered-master.html:97
 msgid "Well done!!!"
 msgstr "¡¡¡Bien hecho!!!"
 
-#: templates/upload/dashboard-unregistered-basic.html:130
+#: templates/upload/dashboard-unregistered-basic.html:114
 msgid "Little tricks:"
 msgstr "Pequeños trucos:"
 
-#: templates/upload/dashboard-unregistered-basic.html:143
+#: templates/upload/dashboard-unregistered-basic.html:127
 msgid "Personalize the name of the characters"
 msgstr "Personaliza el nombre de los personajes"
 
-#: templates/upload/dashboard-unregistered-basic.html:151
+#: templates/upload/dashboard-unregistered-basic.html:135
 msgid "Chose the rotation mode of your characters"
 msgstr "Escoge el modo de rotación de tus personajes"
 
-#: templates/upload/dashboard-unregistered-basic.html:160
+#: templates/upload/dashboard-unregistered-basic.html:144
 msgid "Make your interactive programs!"
 msgstr "¡Haz tus programas interactivos!"
 
-#: templates/upload/dashboard-unregistered-basic.html:168
+#: templates/upload/dashboard-unregistered-basic.html:152
 #: templates/upload/dashboard-unregistered-developing.html:108
-#: templates/upload/dashboard-unregistered-master.html:186
+#: templates/upload/dashboard-unregistered-master.html:174
 msgid "Previous"
 msgstr "Previo"
 
-#: templates/upload/dashboard-unregistered-basic.html:172
+#: templates/upload/dashboard-unregistered-basic.html:156
 #: templates/upload/dashboard-unregistered-developing.html:112
-#: templates/upload/dashboard-unregistered-master.html:190
+#: templates/upload/dashboard-unregistered-master.html:178
 msgid "Next"
 msgstr "Siguiente"
 
-#: templates/upload/dashboard-unregistered-basic.html:191
-#: templates/upload/dashboard-unregistered-developing.html:189
-#: templates/upload/dashboard-unregistered-master.html:209
+#: templates/upload/dashboard-unregistered-basic.html:175
+#: templates/upload/dashboard-unregistered-developing.html:181
+#: templates/upload/dashboard-unregistered-master.html:197
 msgid "Back to top"
 msgstr "Subir"
 
@@ -1389,31 +519,37 @@ msgid "Some advices:"
 msgstr "Algunos consejos:"
 
 #: templates/upload/dashboard-unregistered-developing.html:88
-#: templates/upload/dashboard-unregistered-master.html:157
+#: templates/upload/dashboard-unregistered-master.html:145
 msgid "Sprites Naming"
-msgstr "Nombres Inadecuados"
+msgstr "Nombres no personalizados"
 
 #: templates/upload/dashboard-unregistered-developing.html:91
 #: templates/upload/dashboard-unregistered-developing.html:101
-#: templates/upload/dashboard-unregistered-master.html:150
-#: templates/upload/dashboard-unregistered-master.html:160
-#: templates/upload/dashboard-unregistered-master.html:170
-#: templates/upload/dashboard-unregistered-master.html:180
+#: templates/upload/dashboard-unregistered-master.html:138
+#: templates/upload/dashboard-unregistered-master.html:148
+#: templates/upload/dashboard-unregistered-master.html:158
+#: templates/upload/dashboard-unregistered-master.html:168
 msgid "Learn more"
 msgstr "Aprende Más"
 
 #: templates/upload/dashboard-unregistered-developing.html:98
-#: templates/upload/dashboard-unregistered-master.html:177
-#, fuzzy
-#| msgid "Sprite Attributes"
+#: templates/upload/dashboard-unregistered-master.html:165
 msgid "Sprite Atributes"
-msgstr "Atributos Inadecuados"
+msgstr "Atributos no inicializados correctamente"
 
 #: templates/upload/dashboard-unregistered-developing.html:119
 #: templates/upload/dashboard-unregistered-master.html:74
-#: templates/upload/dashboard-unregistered.html:109
+#: templates/upload/dashboard-unregistered.html:108
 msgid "CT Score in detail:"
 msgstr "Puntuación en detalle:"
+
+#: templates/upload/dashboard-unregistered-developing.html:137
+#, python-format
+msgid ""
+"\n"
+"                                    %(key)s\n"
+"                                    "
+msgstr ""
 
 #: templates/upload/dashboard-unregistered-master.html:59
 msgid ""
@@ -1427,106 +563,79 @@ msgstr ""
 msgid "You're the master of the universe!!!"
 msgstr "¡¡¡Eres el master del universo!!!"
 
-#: templates/upload/dashboard-unregistered-master.html:133
+#: templates/upload/dashboard-unregistered-master.html:121
+#: templates/upload/dashboard-unregistered.html:134
 msgid "Possible issues to watch out:"
-msgstr "Posibles cuestiones a tener en cuenta:"
+msgstr "Posibles problemas a tener en cuenta:"
 
-#: templates/upload/dashboard-unregistered-master.html:147
-#: templates/upload/dashboard-unregistered.html:162
+#: templates/upload/dashboard-unregistered-master.html:135
+#: templates/upload/dashboard-unregistered.html:147
 msgid "Duplicated Scripts"
-msgstr "Scripts Duplicados"
+msgstr "Programas duplicados"
 
-#: templates/upload/dashboard-unregistered-master.html:167
-#: templates/upload/dashboard-unregistered.html:209
+#: templates/upload/dashboard-unregistered-master.html:155
+#: templates/upload/dashboard-unregistered.html:194
 msgid "Dead Code"
-msgstr "Código Muerto"
+msgstr "Código muerto"
 
-#: templates/upload/dashboard-unregistered.html:48
-#: templates/upload/dashboard-unregistered.html:57
-#: templates/upload/dashboard-unregistered.html:59
+#: templates/upload/dashboard-unregistered.html:47
+#: templates/upload/dashboard-unregistered.html:56
+#: templates/upload/dashboard-unregistered.html:58
 msgid "Dashboard"
 msgstr "Resultados"
 
-#: templates/upload/dashboard-unregistered.html:57
+#: templates/upload/dashboard-unregistered.html:56
 msgid "Overview"
 msgstr " "
 
-#: templates/upload/dashboard-unregistered.html:63
+#: templates/upload/dashboard-unregistered.html:62
 msgid "Welcome to Doctor Scratch. Project results."
 msgstr "Bienvenido a Doctor Scratch. Resultados del proyecto."
 
-#: templates/upload/dashboard-unregistered.html:79
+#: templates/upload/dashboard-unregistered.html:78
 msgid "CT Score:"
 msgstr "Puntuación:"
 
-#: templates/upload/dashboard-unregistered.html:86
+#: templates/upload/dashboard-unregistered.html:85
 msgid "Your level:"
 msgstr "Tu nivel:"
 
-#: templates/upload/dashboard-unregistered.html:88
+#: templates/upload/dashboard-unregistered.html:87
 msgid "Master"
 msgstr "Avanzado"
 
-#: templates/upload/dashboard-unregistered.html:90
+#: templates/upload/dashboard-unregistered.html:89
 msgid "Developing"
 msgstr "Medio"
 
-#: templates/upload/dashboard-unregistered.html:92
+#: templates/upload/dashboard-unregistered.html:91
 msgid "Basic"
 msgstr "Básico"
 
-#: templates/upload/dashboard-unregistered.html:101
+#: templates/upload/dashboard-unregistered.html:100
 #, python-format
 msgid ""
 "I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
-"Beat it! @DrScratchTool "
+"Beat it!@DrScratchTool"
 msgstr ""
-"He conseguido %(points)s puntos analizando mi proyecto en Dr. Scratch!¡A ver "
-"si lo superas! @DrScratchTool"
+"¡He conseguido %(points)s puntos analizando mi proyecto en Dr. Scratch! ¡A "
+"ver si lo superas!@DrScratchTool"
 
-#: templates/upload/dashboard-unregistered.html:181
+#: templates/upload/dashboard-unregistered.html:166
 msgid "Sprites naming"
-msgstr "Nombres Inadecuados"
+msgstr "Nombres no personalizados"
 
-#: templates/upload/dashboard-unregistered.html:190
+#: templates/upload/dashboard-unregistered.html:175
 msgid "Incorrect name:"
 msgstr "Nombres incorrectos:"
 
-#: templates/upload/dashboard-unregistered.html:220
+#: templates/upload/dashboard-unregistered.html:205
 msgid "blocks"
 msgstr "bloques"
 
-#: templates/upload/dashboard-unregistered.html:242
+#: templates/upload/dashboard-unregistered.html:227
 msgid "Sprite attributes initialization"
-msgstr "Atributos Inadecuados"
-
-#~ msgid ""
-#~ "In the program of the left, we assign the number of points that we want "
-#~ "the character has to the beginning of the game, in this case 0, for which "
-#~ "we use the block "
-#~ msgstr ""
-#~ "Para crear una variable hay que irse a la categoría de Datos, pinchar "
-#~ "sobre “Crear una variable” y darle un nombre. En el ejemplo que mostramos "
-#~ "a continuación le hemos dado el nombre “Puntos”, ya que la utilizaremos "
-#~ "para guardar el número de puntos que consigue nuestro personaje."
-
-#~ msgid ""
-#~ "In the example, if the character is touching the blue color, he says  "
-#~ msgstr ""
-#~ "En el ejemplo, si el personaje está tocando el color azul diría “Llegué a "
-#~ "la meta”, pero si no está tocando el color morado diría “Aún no he "
-#~ "llegado a la meta”."
-
-#~ msgid ""
-#~ "How this block works? When execution reaches this point, the condition on "
-#~ "the block is evaluated, and if this is true, the set of blocks that are "
-#~ "within the "
-#~ msgstr ""
-#~ "¿Cómo funciona este bloque? Cuando la ejecución llega a este punto, se "
-#~ "evalúa la condición que aparece en el bloque, y si ésta es verdadera, se "
-#~ "ejecuta el conjunto de bloques que están dentro del si, pero si la "
-#~ "condición es falsa, entonces se ejecuta el conjunto de bloques que están "
-#~ "dentro del sino."
+msgstr "Atributos no inicializados correctamente"
 
 #~ msgid "Terms"
 #~ msgstr "Condiciones"

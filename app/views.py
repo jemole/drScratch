@@ -24,13 +24,19 @@ import json
 import sys
 import urllib2
 import shutil
-import unicodedata
 import csv
 import kurt
 import zipfile
 from zipfile import ZipFile
 
-#_____________________________ MAIN ______________________________________#
+# Global variables
+pMastery = "hairball -p mastery.Mastery "
+pDuplicateScript = "hairball -p duplicate.DuplicateScripts " 
+pSpriteNaming = "hairball -p convention.SpriteNaming "
+pDeadCode = "hairball -p blocks.DeadCode "
+pInitialization = "hairball -p initialization.AttributeInitialization "
+
+############################ MAIN #############################
 
 def main(request):
     """Main page"""
@@ -49,7 +55,7 @@ def redirectMain(request):
     """Page not found redirect to main"""
     return HttpResponseRedirect('/')
 
-#_______________________________ ERROR ___________________________________#
+############################## ERROR ###############################
 
 def error404(request):
     response = render_to_response('404.html', {},
@@ -62,7 +68,7 @@ def error505(request):
                                   context_instance = RC(request))
     return response
 
-#_______________________ TO UNREGISTERED USER ___________________________#
+###################### TO UNREGISTERED USER ########################
 
 def selector(request):
     if request.method == 'POST':
@@ -165,11 +171,11 @@ def uploadUnregistered(request):
         except:
             d = {'Error': 'MultiValueDict'}
             return  d
+
         # Create DB of files
         fileName = File (filename = file.name.encode('utf-8'), method = "project")
         fileName.save()
         dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
-        fileSaved = dir_zips + str(fileName.id) + ".sb2"
 
         # Version of Scratch 1.4Vs2.0
         version = checkVersion(fileName.filename)
@@ -217,16 +223,12 @@ def uploadUnregistered(request):
     else:
         return HttpResponseRedirect('/')
 
-
-
 def changeVersion(request, file_name):
-    p = kurt.Project.load(file_name)
-    p.convert("scratch20")
-    p.save()
-    file_name = file_name.split('.')[0] + '.sb2'
-    return file_name   
-        
-
+        p = kurt.Project.load(file_name)
+        p.convert("scratch20")
+        p.save()
+        file_name = file_name.split('.')[0] + '.sb2'
+        return file_name
 
 #_______________________URL Analysis Project_________________________________#
 
@@ -297,7 +299,7 @@ def processStringUrl(url):
 
 def sendRequestgetSB2(idProject):
     """First request to getSB2"""
-    getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
+    getRequestSb2 = "http://getsb2-drscratch.herokuapp.com/" + idProject
     fileURL = idProject + ".sb2"
 
     # Create DB of files
@@ -321,30 +323,12 @@ def sendRequestgetSB2(idProject):
 
 #________________________ LEARN MORE __________________________________#
 
-def learn(request,page):
-    #unicode to string(page)
-    page = unicodedata.normalize('NFKD',page).encode('ascii','ignore')
-
-    dic = {'Logica':'Logic',
-           'Paralelismo':'Parallelization',
-          'Representacion':'DataRepresentation',
-          'Sincronismo':'Synchronization',
-          'Interactividad':'UserInteractivity',
-          'Control':'FlowControl',
-          'Abstraccion':'Abstraction'}
-
-    if page in dic:
-        page = dic[page]
-
-    page = "learn/" + page + ".html"
-
+def learn(request):
     if request.user.is_authenticated():
-     
-        return render_to_response(page,
+        return render_to_response("learn/learn-unregistered.html",
                                 RC(request))
     else:
-       
-        return render_to_response(page,
+        return render_to_response("learn/learn-unregistered.html",
                                 RC(request))
     
 #________________________ TO REGISTERED USER __________________________#
@@ -540,11 +524,11 @@ def translate(request,d):
         dictionary = {}
         dictionary['Abstracción'] = d['Abstraction']
         dictionary['Paralelismo'] = d['Parallelization']
-        dictionary['Lógica'] = d['Logic']
-        dictionary['Sincronismo'] = d['Synchronization']
-        dictionary['Control del Flujo'] = d['FlowControl']
-        dictionary['Interactividad del Usuario'] = d['UserInteractivity']
-        dictionary['Representación de los Datos'] = d['DataRepresentation']
+        dictionary['Pensamiento lógico'] = d['Logic']
+        dictionary['Sincronización'] = d['Synchronization']
+        dictionary['Control de flujo'] = d['FlowControl']
+        dictionary['Interactividad con el usuario'] = d['UserInteractivity']
+        dictionary['Representación de la información'] = d['DataRepresentation']
         #d_translate = _('%(d)s') % {'d':dictionary}
         return dictionary
     else:
@@ -663,31 +647,6 @@ def procInitialization(lines):
 
     return dic
 
-# ___________________ PROCESSORS OF PLUG-INS NOT USED YET ___________________#
-
-#def procBlockCounts(lines):
-#    """CountLines"""
-#    dic = {}
-#    dic["countLines"] = lines
-
-#    print "BLOCK COUNTS: " + str(dic)
-#    return dic
-
-
-#def procBroadcastReceive(lines):
-#    """Return the number of lost messages"""
-#    dic = {}
-#    lLines = lines.split('\n')
-    # messages never received or broadcast
-#    laux = lLines[1]
-#    laux = laux.split(':')[0]
-#    dic["neverRB"] = dic
-#    dic["neverRB"]["neverReceive"] = laux
-#    laux = lLines[3]
-#    laux = laux.split(':')[0]
-#    dic["neverRB"]["neverBroadcast"] = laux
-    
-#    return dic
 
 
 #_____________________ CREATE STATS OF ANALYSIS PERFORMED ___________#

@@ -17,7 +17,7 @@ urlpatterns = (
     url(r'^logout', 'app.views.logoutUser',),
     url(r'^500', 'app.views.error500',),
     url(r'^404', 'app.views.error404',),
-    url(r'^learn/(\w+)', 'app.views.learn',),
+    url(r'^learn', 'app.views.learn',),
     url(r'^createUser', 'app.views.createUser',),
     url(r'^uploadRegistered', 'app.views.uploadRegistered',),
     url(r'^myDashboard', 'app.views.myDashboard',),
