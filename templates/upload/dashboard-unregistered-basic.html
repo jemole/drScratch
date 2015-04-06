@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="static/app/content/carousel-basic.css" type="text/css" />
 
     <!-- Font icons -->
-    <link rel="stylesheet" href="static/app/content/icons.css">
+    <link rel="stylesheet" href="static/app/icons/icons.css">
 
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -83,16 +83,32 @@
                             {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
                             {% if key != "points" %}
                             {% if key != "maxi" %}
+                                  
+                                  <td>
+                                    {% blocktrans %}
+                                    {{ key }}
+                                    {% endblocktrans %}
+                                  </td>
+                                  <td>{{ value }}/3
                             {% if value == 0 %}
-                                  <td>{{ key }}</td>
-                                  <td>{{ value }}/3    <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="http://drscratchpre.programamos.es/learn" aria-hidden="true">{% trans "Learn more!!!" %}</a></td>
+                                 <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level0" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            {% elif value == 1 %}
+                                <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level1" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            {% elif value == 2 %}
+                                <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level2" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            
+                            {% elif value == 3 %}
+                                  <span class="glyphicon-chevron-left icon icon-star-alt" aria-hidden="true">{% trans "Well done!!!" %} </span>
                             {% endif %}
-                            {% if value == 3 %}
-                                  <td>{{ key }}</td>
-                                  <td>{{ value }}/3  <span class="glyphicon-chevron-left icon icon-arrows-circle-left" aria-hidden="true">{% trans "Well done!!!" %}</span></td>  
+                            </td>     
                             {% endif %}
-                            {% endif %}
-                            {% endif %}               
+                            {% endif %}         
                             {% if forloop.counter|divisibleby:1 or forloop.last %}
                             </tr>{% endif %}
                             {% endfor %}

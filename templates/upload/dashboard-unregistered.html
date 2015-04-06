@@ -10,18 +10,19 @@
     <title>{% trans "Project results" %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="static/app/content/bootstrap-dashboard.css" rel="stylesheet">
+    <link href="../../static/app/content/bootstrap-dashboard.css" rel="stylesheet">
     <!-- Add custom CSS here -->
-    <link href="static/app/content/sb-admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="static/app/content/font-awesome.min.css">
-    <link rel="stylesheet" href="static/app/content/red.css">
+    <link href="../../static/app/content/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/app/content/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+    <link rel="stylesheet" href="static/app/icons/icons.css">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-    <script src="static/app/scripts/twitter.js"></script>
+    <script src="../../static/app/scripts/twitter.js"></script>
   </head>
 
   <body>
@@ -59,7 +60,7 @@
             </ol>
             <div class="alert alert-success alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              {% trans "Welcome to Doctor Scratch. Project results." %}
+              {% trans "Welcome to Doctor Scratch. Project results." %} 
             </div>
           </div>
           </div><!-- /.row -->
@@ -97,7 +98,7 @@
 
             </div>
             <div>
-            <a class="twitter-share-button pull-right" data-text="{% blocktrans with points=mastery.points %}I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it!@DrScratchTool{% endblocktrans %}"  href="https://twitter.com/share">{{ master.points }}</a>
+          <a class="twitter-share-button pull-right" data-text="{% blocktrans with points=mastery.points %}I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a>
           </div>
           </div>
         </div><!-- /.row -->
@@ -120,7 +121,23 @@
                   {% if key != "points" %}
                   {% if key != "maxi" %}
                         <td>{{ key }}</td>
-                        <td>{{ value }}/3</td>
+                        <td>{{ value }}/3
+                        {% if value == 0 %}
+                        <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level0" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            {% elif value == 1 %}
+                                <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level1" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            {% elif value == 2 %}
+                                <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level2" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            
+                            {% elif value == 3 %}
+                                  <span class="glyphicon-chevron-left icon icon-star-alt" aria-hidden="true">{% trans "Well done!!!" %} </span>
+                            {% endif %}</td>
                   {% endif %}
                   {% endif %}                  
                   {% if forloop.counter|divisibleby:1 or forloop.last %}</tr>{% endif %}
@@ -131,8 +148,6 @@
           </div>
 	    </div> 
 
-	<h2>{% trans "Possible issues to watch out:" %}</h2>
-	
           <!-- Duplicate Script -->
           <div class="row">
           <div class="col-lg-3">
@@ -255,15 +270,15 @@
     </div><!-- /#wrapper -->
 
     <!-- JavaScript -->
-    <script src="static/app/scripts/jquery-1.10.2.js"></script>
-    <script src="static/app/scripts/bootstrap.js"></script>
+    <script src="../../static/app/scripts/jquery-1.10.2.js"></script>
+    <script src="../../static/app/scripts/bootstrap.js"></script>
 
     <!-- Page Specific Plugins -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
     <script src="static/app/scripts/morris/chart-data-morris.js"></script>
-    <script src="static/app/scripts/tablesorter/jquery.tablesorter.js"></script>
-    <script src="static/app/scripts/tablesorter/tables.js"></script>
+    <script src="../../static/app/scripts/tablesorter/jquery.tablesorter.js"></script>
+    <script src="../../static/app/scripts/tablesorter/tables.js"></script>
 
 
     
