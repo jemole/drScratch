@@ -1,0 +1,162 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Responsive Bootstrap 3 Startup and Multipurpose Template">
+    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="author" content="Programamos URJC Libresoft FECyT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <link rel="stylesheet" href="../../static/app/content/scratchblocks2.css">
+    <script src="../../static/app/scripts/scratchblocks2.js"></script>
+
+    <!-- SITE TITLE -->
+    <title>Dr.Scratch</title>
+
+
+    <link rel="stylesheet" href="../../static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT  
+    ============================== -->
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">  
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <!-- =========================
+     STYLESHEETS   
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="../../static/app/content/styles.css">
+    <link rel="stylesheet" href="../../static/app/content/cloud.css">
+
+    
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+    <script>
+    $(document).ready(function() {
+        scratchblocks2.parse();
+    });
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+        <div class="container">          
+        <!-- TOP BAR -->
+            <div class="navbar-collapse collapse" id="stamp-navigation">
+                <!-- NAVIGATION LINK -->
+                <a class="navbar-brand" href="http:/localhost:1234">
+                    <img src="../../static/app/images/logo_main.png" alt="">
+                </a>
+            </div>
+            <!-- /END TOP BAR -->
+        </div>
+                <!-- /END CONTAINER -->
+    </div>
+            <!-- /END STICKY NAVIGATION -->
+    <!-- JUMBOTRON -->
+    <div id = "cloud"><h2>{% trans "Data Representation" %}</h2><span class='shadow'></span></div>
+    <!-- /END JUMBOTRON -->
+    <!-- PANEL-->
+    <div class="panel panel-default">
+    <div class="panel-body col-lg-10 col-lg-offset-1">
+   {% trans "Every Scratch project needs a set of information about the characters in order to run properly. For example, we need to know the position of each character, the direction it is pointing, size, etc. In addition, programmers can create new information repositories to store other data such as the level at which we find ourselves, elapsed time, the rating, the lives, the rewards collected ..." %}
+    </div>
+    </div>
+    <div class="panel panel-default">
+    <div class="panel-body col-lg-10 col-lg-offset-1">
+    <section id="level0">
+    <h3>{% trans "If you get 0 points..." %}</h3>
+
+    {% trans "Each character of a Scratch project has a number of features, or attributes, that every moment of the project have value, and can be modified by programs. For example, a character has a certain size that can be modified by block 'resize for 10', making the character appear slightly larger. Following is the list of attributes that each character and blocks that can be used to modify:" %}
+<br>
+<br>
+{% trans "Position:" %}
+    <br>
+<br>
+<div class="text-center">
+    <img src="../../static/app/images/DataRep1.png" >
+</div>
+<br>
+{% trans "Size:" %}
+<br>
+<br>
+    <div class="text-center">
+    <img src="../../static/app/images/DataRep2.png" >
+</div>
+<br>
+{% trans "Orientation:" %}
+<br>
+<br>
+    <div class="text-center">
+    <img src="../../static/app/images/DataRep3.png" >
+    </div>
+<br>
+{% trans "Costume:" %}
+<br><br>
+    <div class="text-center">
+    <img src="../../static/app/images/DataRep4.png" >
+</div>
+{% trans "Visibility:" %}
+<br><br>
+<div class="text-center">
+    <img src="../../static/app/images/DataRep5.png" >
+</div>
+    
+    </div>
+    </div>
+    </section>
+    <div class="panel panel-default">
+    <div class="panel-body col-lg-10 col-lg-offset-1">
+    <section id="level1">
+    <h3>{% trans "If you get 1 point..." %}</h3>
+   {% trans "In addition to modifying the attributes of the characters, programmers can use other mechanisms to store information on a Scratch project. One of these mechanisms are variables that can store a value to store different types of data that may need: at what level we are, how many lives you have left, how many points we, how is called the user ..." %}
+
+{% trans "To create a variable you have to go to the category of data, click on 'Create a variable' and give a name. In the example shown below we have given the name 'Points' as use it to store the number of points you get our character." %}
+<br><br>
+    <div class="text-center">
+    <img src="../../static/app/images/DataRep6.png" >
+    </div>
+<br>
+{% trans "In the program of the left, we assign the number of points that we want the character has to the beginning of the game, in this case 0, for which we use the block 'fixing points at 0'.  However in the program of the right, what we do is that when the character touches the blue color, that could be a target, you will add a point, for which we use the block 'change Points by 1'. In this case, the block 'change' would check the current value of the variable points would add 1: If set to 0, I add 1 and is now worth 1; when set to 1, I add 1 and is now worth 2 ..." %}
+    </div>
+    </div>
+    <div class="panel panel-default">
+    <div class="panel-body col-lg-10 col-lg-offset-1">
+        <section id="level2">
+        <h3>{% trans "If you get 2 points..." %}</h3>
+{% trans "In addition to the variables, Scratch lets you use another data type to store project information: The lists. The lists can store more than one value at the same time, so they are ideal for storing rewards have been recovered by a character or set of names, raise a couple of examples." %}
+
+{% trans "To create a list, you have to go to the data category, click on 'Create a List' and give a name. In the example, we have named our 'Students' list:" %}
+<br><br>
+        <div class="text-center">
+            <img src="../../static/app/images/DataRep7.png" >
+        </div>
+<br>
+{% trans "What have we done with this program? The first thing we do is, to start execution, delete all items from the list Estudiantes, to empty it completely and  not appear elements of an previous project implementation. Then we ask three times the user to enter a name, and each name entered insert it in the last position in the list Students." %}
+
+{% trans "What we do with the list? We could, for example, use it to get a volunteer to carry out an exercise to the whiteboard. Look at the new instructions added to the program:" %}
+<br><br>
+        <div class="text-center">
+            <img src="../../static/app/images/DataRep8.png" >
+        </div>
+<br>
+{% trans "We generated a random number between 1 and 3, which are the elements in the list, we selected the element that occupies that position in the list. Sometimes we take the name that is in position 1, others that it is in position 2 and the other at 3." %}
+
+{% trans "Lists have many possibilities and many available operations ... you dare to investigate how they work?" %}
+<br>
+<br>
+</body>
+</html>
