@@ -71,7 +71,6 @@ def selector(request):
         no_exists = False
         if "_upload" in request.POST:
             d = uploadUnregistered(request)
-            print d
             if d['Error'] == 'analyzing':
                 return render_to_response('error/analyzing.html',
                                           RC(request))   
@@ -209,7 +208,6 @@ def uploadUnregistered(request):
                              "/error_analyzing/" + \
                              fileSaved.split("/uploads/")[1]
             shutil.copy(oldPathProject, newPathProject)
-            print "NUEVO PATH:" + str(newPathProject)
             d = {'Error': 'analyzing'}
             return d
         # Show the dashboard
@@ -405,7 +403,6 @@ def updateProfile(request):
             newPass = form.cleaned_data['newPass']
             newEmail = form.cleaned_data['newEmail']
             choiceField = forms.ChoiceField(widget=forms.RadioSelect())
-            print newPass, newEmail, choiceField.widget.choices, choiceField
             return HttpResponseRedirect('/mydashboard')
         else:
             return HttpResponseRedirect('/')
@@ -496,7 +493,6 @@ def analyzeProject(request,file_name):
     dictionary = {}
     if os.path.exists(file_name):
         list_file = file_name.split('(')
-        print str(list_file)
         if len(list_file) > 1:
             file_name = list_file[0] + '\(' + list_file[1]
             list_file = file_name.split(')')
@@ -541,7 +537,6 @@ def analyzeProject(request,file_name):
 
 def translate(request,d):
     if request.LANGUAGE_CODE == "es":
-        print "ESPAÑOL"
         dictionary = {}
         dictionary['Abstracción'] = d['Abstraction']
         dictionary['Paralelismo'] = d['Parallelization']
@@ -553,7 +548,6 @@ def translate(request,d):
         #d_translate = _('%(d)s') % {'d':dictionary}
         return dictionary
     else:
-        print "INGLÉS"
         return d
 
 
@@ -748,8 +742,6 @@ def uploadRegistered(request):
         newMastery = Mastery(myproject=newProject, abstraction=dmaster["Abstraction"], paralel=dmaster["Parallelization"], logic=dmaster["Logic"], synchronization=dmaster["Synchronization"], flowcontrol=dmaster["FlowControl"], interactivity=dmaster["UserInteractivity"], representation=dmaster["DataRepresentation"], TotalPoints=dmaster["TotalPoints"])
         newMastery.save()
         newProject.score = dmaster["Total{% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}Points"]
-        print "Puntos:" 
-        print newProject.score
         if newProject.score > 15:
             newProject.level = "advanced"
         elif newProject.score > 7:
@@ -777,7 +769,6 @@ def uploadRegistered(request):
         for charx in d["sprite"]:
             newSprite = Sprite(myproject=newProject, character=charx)
             newSprite.save()
-            print newSprite.character
         return HttpResponseRedirect('/myprojects')
 
 #_____ ID/BUILDERS ____________#

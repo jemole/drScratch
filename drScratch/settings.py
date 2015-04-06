@@ -43,7 +43,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_DIRS = ('templates',)
 
-ALLOWED_HOSTS = [...]
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -79,12 +79,8 @@ WSGI_APPLICATION = 'drScratch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': '',
-        'NAME': ...,
-	'USER': '',
-	'PASSWORD':'',
-	'HOST': '',
-	'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

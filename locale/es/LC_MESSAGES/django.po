@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-06 14:02+0000\n"
+"POT-Creation-Date: 2015-04-06 15:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: drScratch/settings.py:105
+#: drScratch/settings.py:101
 msgid "Spanish"
 msgstr "Español"
 
-#: drScratch/settings.py:106
+#: drScratch/settings.py:102
 msgid "English"
 msgstr "Inglés"
 
@@ -948,6 +948,10 @@ msgstr "Nuevas funcionalidades"
 msgid "We're working on this and would be pleased to receive your feedback"
 msgstr "Estamos trabajando en esto y nos gustaría conocer tu opinión"
 
+#: templates/learn/sprite-naming.html:2
+msgid "Incorrect names: "
+msgstr "Nombres incorrectos:"
+
 #: templates/main/main.html:75
 msgid "Why?"
 msgstr "¿Por qué?"
@@ -1523,9 +1527,6 @@ msgstr "Atributos Inadecuados"
 #~ "ejecuta el conjunto de bloques que están dentro del si, pero si la "
 #~ "condición es falsa, entonces se ejecuta el conjunto de bloques que están "
 #~ "dentro del sino."
-
-#~ msgid "Incorrect names: "
-#~ msgstr "Nombres incorrectos:"
 
 #~ msgid "Terms"
 #~ msgstr "Condiciones"
