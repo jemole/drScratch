@@ -260,7 +260,7 @@ def processStringUrl(url):
 
 def sendRequestgetSB2(idProject):
     """First request to getSB2"""
-    getRequestSb2 = "http://getsb2-drscratch.herokuapp.com/" + idProject
+    getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
     fileURL = idProject + ".sb2"
 
     # Create DB of files
