@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-05 22:50+0000\n"
+"POT-Creation-Date: 2015-04-06 14:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,7 +182,6 @@ msgstr ""
 "programa del proyecto, tal como vemos a continuación:"
 
 #: templates/learn/Abstraction.html:116
-
 msgid ""
 "In this way, we avoid repeating code, which makes our projects easier to "
 "program and maintain. As can be seen, the first time the block is used "
@@ -1012,12 +1011,12 @@ msgstr ""
 "Proyecto'>"
 
 #: templates/main/main.html:136
-msgid "Add a .sb2 file"
-msgstr "Elige un fichero .sb2"
+msgid "Add a .sb or .sb2 file"
+msgstr "Elige un fichero .sb o .sb2"
 
 #: templates/main/main.html:143 templates/main/main.html.py:146
-msgid "Error! Please choose a sb2 file or input an url"
-msgstr "¡Error! Por favor elige un fichero sb2 o pon una url"
+msgid "Error! Please choose a .sb or .sb2 file or input an url"
+msgstr "¡Error! Por favor elige un fichero .sb o .sb2 o pon una url"
 
 #: templates/main/main.html:150
 msgid "Error! Your project id is wrong"
@@ -1473,13 +1472,13 @@ msgid "Basic"
 msgstr "Básico"
 
 #: templates/upload/dashboard-unregistered.html:101
+#, python-format
 msgid ""
 "I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
 "Beat it! @DrScratchTool "
 msgstr ""
-"He conseguido %(points)s puntos analizando mi proyecto en"
-" Dr. Scratch!¡A ver si lo superas!"
-" @DrScratchTool"
+"He conseguido %(points)s puntos analizando mi proyecto en Dr. Scratch!¡A ver "
+"si lo superas! @DrScratchTool"
 
 #: templates/upload/dashboard-unregistered.html:181
 msgid "Sprites naming"
