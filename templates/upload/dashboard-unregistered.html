@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,19 +7,22 @@
     <meta name="description" content="Dashboard">
     <meta name="author" content="Cristian Chushig">
 
-    <title>Project results</title>
+    <title>{% trans "Project results" %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="resources/css/bootstrap.css" rel="stylesheet">
+    <link href="../../static/app/content/bootstrap-dashboard.css" rel="stylesheet">
     <!-- Add custom CSS here -->
-    <link href="resources/css/sb-admin.css" rel="stylesheet">
-    <link rel="stylesheet" href="resources/font-awesome/css/font-awesome.min.css">
+    <link href="../../static/app/content/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/app/content/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+    <link rel="stylesheet" href="static/app/icons/icons.css">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-   <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <script src="../../static/app/scripts/twitter.js"></script>
   </head>
 
   <body>
@@ -41,7 +45,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li class="active"><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active"><a href="/"><i class="fa fa-dashboard"></i>{% trans "Dashboard" %}</a></li>
           </ul>
 
         </div><!-- /.navbar-collapse -->
@@ -50,13 +54,13 @@
       <div id="page-wrapper">
           <div class="row">
           <div class="col-lg-12">
-            <h1>Dashboard <small>Overview</small></h1>
+            <h1>{% trans "Dashboard" %}<small>{% trans "Overview" %}</small></h1>
             <ol class="breadcrumb">
-              <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+              <li class="active"><i class="fa fa-dashboard"></i> {% trans "Dashboard" %}</li>
             </ol>
             <div class="alert alert-success alert-dismissable">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              Welcome to Doctor Scratch. Project results.
+              {% trans "Welcome to Doctor Scratch. Project results." %} 
             </div>
           </div>
           </div><!-- /.row -->
@@ -72,38 +76,43 @@
                   </div>
 
                   <div class="col-xs-6">
-                    <p class="announcement-heading">CT Score: {{ mastery.points }}/{{ mastery.maxi }}</p>
+                    <p class="announcement-heading">{% trans "CT Score:" %} {{ mastery.points }}/{{ mastery.maxi }}</p>
                   </div>
                 </div>
               </div>
                 <div class="panel-footer announcement-bottom">
                   <div class="row">
                     <div class="col-xs-6">
-                      <h4><p class="text-center">Your level: 
+                      <h4><p class="text-center">{% trans "Your level:" %} 
 		      {% if mastery.points >= 15 %}
-                      <span class="label label-default">Master</span></p></h4>
+                      <span class="label label-default">{% trans "Master" %}</span></p></h4>
 		      {% elif mastery.points > 7 %}    	
-                      <span class="label label-default">Developing</span></p></h4>
+                      <span class="label label-default">{% trans "Developing" %}</span></p></h4>
 		      {% else %}     
-                      <span class="label label-default">Basic</span></p></h4>
+                      <span class="label label-default">{% trans "Basic" %}</span></p></h4>
 		      {% endif %} 
                     </div>
                   </div>
                 </div>
+
+
             </div>
+            <div>
+          <a class="twitter-share-button pull-right" data-text="{% blocktrans with points=mastery.points %}I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a>
+          </div>
           </div>
         </div><!-- /.row -->
 
         <!-- Mastery -->
         <div class="row">
           <div class="col-xs-12">
-            <h2>CT Score in detail:</h2>
+            <h2>{% trans "CT Score in detail:" %}</h2>
             <div class="table-responsive">
               <table class="table table-hover tablesorter">
                 <thead>
                   <tr>
-                    <th>Concept<i class="fa fa-sort"></i></th>
-                    <th>Points<i class="fa fa-sort"></i></th>
+                    <th>{% trans "Concept" %}<i class="fa fa-sort"></i></th>
+                    <th>{% trans "Points" %}<i class="fa fa-sort"></i></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -112,7 +121,23 @@
                   {% if key != "points" %}
                   {% if key != "maxi" %}
                         <td>{{ key }}</td>
-                        <td>{{ value }}/3</td>
+                        <td>{{ value }}/3
+                        {% if value == 0 %}
+                        <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level0" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            {% elif value == 1 %}
+                                <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level1" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            {% elif value == 2 %}
+                                <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level2" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            
+                            {% elif value == 3 %}
+                                  <span class="glyphicon-chevron-left icon icon-star-alt" aria-hidden="true">{% trans "Well done!!!" %} </span>
+                            {% endif %}</td>
                   {% endif %}
                   {% endif %}                  
                   {% if forloop.counter|divisibleby:1 or forloop.last %}</tr>{% endif %}
@@ -121,13 +146,7 @@
               </table>
             </div>
           </div>
-	    </div>
-
-          <div class="row">
-          <div class="col-xs-12">
-            <h2>Possible issues to watch out:</h2>    
-	      </div>
-	      </div> 
+	    </div> 
 
           <!-- Duplicate Script -->
           <div class="row">
@@ -140,7 +159,7 @@
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading">{{ duplicateScript.number }}</p>
-                    <p class="announcement-text">Duplicated Scripts</p>
+                    <p class="announcement-text">{% trans "Duplicated Scripts" %}</p>
                   </div>
                 </div>
               </div>
@@ -159,7 +178,7 @@
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading">{{ spriteNaming.number }}</p>
-                    <p class="announcement-text">Sprites naming</p>
+                    <p class="announcement-text">{% trans "Sprites naming" %}</p>
                   </div>
                 </div>
               </div>   
@@ -168,7 +187,7 @@
                     <div class="list-group">
                       {% for item in spriteNaming.sprite %}
                         <p class="list-group-item">
-                          <i class="fa fa-check"></i> Incorrect name: {{ item }}
+                          <i class="fa fa-check"></i>{% trans "Incorrect name:" %} {{ item }}
                         </p>
                       {% endfor%}
                    </div>
@@ -187,7 +206,7 @@
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading">{{ deadCode.number }}</p>
-                    <p class="announcement-text">Dead Code</p>
+                    <p class="announcement-text">{% trans "Dead Code" %}</p>
                   </div>
                 </div>
               </div>
@@ -198,7 +217,7 @@
                       {% if key != "number" %}
                       {% if key != "deadCode" %}
                         <p class="list-group-item">
-                          <i class="fa fa-check"></i>{{ key }} : {{ value }} blocks 
+                          <i class="fa fa-check"></i>{{ key }} : {{ value }} {% trans "blocks" %} 
                         </p>
                       {% endif %}
                       {% endif %}
@@ -220,7 +239,7 @@
                   </div>
                   <div class="col-xs-6 text-right">
                     <p class="announcement-heading">{{ initialization.number }}</p>
-                    <p class="announcement-text">Sprite atributes initialization</p>
+                    <p class="announcement-text">{% trans "Sprite attributes initialization" %}</p>
                   </div>
                 </div>
               </div>
@@ -232,7 +251,7 @@
                          {% if key != "number" %}
                         <p class="list-group-item">
                           <i class="fa fa-check"></i> {{ key }}: ({{ value }}) 
-                           modified but not initialized correctly.     
+                           {% trans "modified but not initialized correctly." %}     
                         </p>
                          {% endif %}
                         {% endif %}
@@ -251,15 +270,15 @@
     </div><!-- /#wrapper -->
 
     <!-- JavaScript -->
-    <script src="resources/jsDashboard/jquery-1.10.2.js"></script>
-    <script src="resources/jsDashboard/bootstrap.js"></script>
+    <script src="../../static/app/scripts/jquery-1.10.2.js"></script>
+    <script src="../../static/app/scripts/bootstrap.js"></script>
 
     <!-- Page Specific Plugins -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-    <script src="resources/jsDashboard/morris/chart-data-morris.js"></script>
-    <script src="resources/jsDashboard/tablesorter/jquery.tablesorter.js"></script>
-    <script src="resources/jsDashboard/tablesorter/tables.js"></script>
+    <script src="static/app/scripts/morris/chart-data-morris.js"></script>
+    <script src="../../static/app/scripts/tablesorter/jquery.tablesorter.js"></script>
+    <script src="../../static/app/scripts/tablesorter/tables.js"></script>
 
 
     

@@ -1,24 +1,36 @@
 #!/usr/bin/env python
+# -*- encoding: utf-8 -*-
 # -*- coding: utf-8 -*-
+
+
+
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.http import HttpResponse, HttpResponseServerError
 from django.core.context_processors import csrf
 from django.core.cache import cache  
 from django.shortcuts import render_to_response
 from django.template import RequestContext as RC
+from django.template import Context, loader
 from django.contrib.auth import logout, login, authenticate
+from django.utils.translation import ugettext as _
 from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File
-from app.forms import UploadFileForm, UserForm
+from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm
 from django.contrib.auth.models import User
 from datetime import datetime, date
-import requests
 import os
 import ast
 import json
 import sys
+import urllib2
+import shutil
+import unicodedata
+import csv
+import kurt
+import zipfile
+from zipfile import ZipFile
 
-#_______________________ MAIN _______________________________#
+#_____________________________ MAIN ______________________________________#
 
 def main(request):
     """Main page"""
@@ -29,15 +41,315 @@ def main(request):
     # The first time one user enters
     # Create the dashboards associated to users
     createDashboards()
-    return render_to_response("main/main.html",
+    return render_to_response('main/main.html',
                                 {'user':user},
-                                context_instance=RC(request))
+                                RC(request))
 
 def redirectMain(request):
     """Page not found redirect to main"""
     return HttpResponseRedirect('/')
 
-#________________________ REGISTRY __________________________#
+#_______________________________ ERROR ___________________________________#
+
+def error404(request):
+    response = render_to_response('404.html', {},
+                                  context_instance = RC(request))
+    response.status_code = 404
+    return response
+
+def error505(request):
+    response = render_to_response('500.html', {},
+                                  context_instance = RC(request))
+    return response
+
+#_______________________ TO UNREGISTERED USER ___________________________#
+
+def selector(request):
+    if request.method == 'POST':
+        error = False
+        id_error = False
+        no_exists = False
+        if "_upload" in request.POST:
+            d = uploadUnregistered(request)
+            print d
+            if d['Error'] == 'analyzing':
+                return render_to_response('error/analyzing.html',
+                                          RC(request))   
+            elif d['Error'] == 'MultiValueDict':
+                error = True
+                return render_to_response('main/main.html',
+                            {'error':error},
+                            RC(request))
+            else:    
+                if d["mastery"]["points"] >= 15:
+                    return render_to_response("upload/dashboard-unregistered.html", d)
+                elif d["mastery"]["points"] > 7:
+                    return render_to_response("upload/dashboard-unregistered.html", d)
+                else:
+                    return render_to_response("upload/dashboard-unregistered.html", d)
+        elif '_url' in request.POST:
+            d = urlUnregistered(request)
+            if d['Error'] == 'analyzing':
+                return render_to_response('error/analyzing.html',
+                                          RC(request))             
+            elif d['Error'] == 'MultiValueDict':
+                error = True
+                return render_to_response('main/main.html',
+                            {'error':error},
+                            RC(request))
+            elif d['Error'] == 'id_error':
+                id_error = True
+                return render_to_response('main/main.html',
+                            {'id_error':id_error},
+                            RC(request))
+            elif d['Error'] == 'no_exists':
+                no_exists = True
+                return render_to_response('main/main.html',
+                    {'no_exists':no_exists},
+                    RC(request))
+            else:
+                if d["mastery"]["points"] >= 15:
+                    return render_to_response("upload/dashboard-unregistered.html", d)
+                elif d["mastery"]["points"] > 7:
+                    return render_to_response("upload/dashboard-unregistered.html", d)
+                else:
+                    return render_to_response("upload/dashboard-unregistered.html", d)
+    else:
+        return HttpResponseRedirect('/')
+
+
+
+def handler_upload(fileSaved, counter):
+    """ Necessary to uploadUnregistered"""
+    # If file exists,it will save it with new name: name(x)
+    if os.path.exists(fileSaved): 
+        counter = counter + 1
+        #Check the version of Scratch 1.4Vs2.0
+        version = checkVersion(fileSaved)
+        if version == "2.0":
+            if counter == 1:
+                fileSaved = fileSaved.split(".")[0] + "(1).sb2"
+            else:
+                fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb2"
+        else:
+            if counter == 1:
+                fileSaved = fileSaved.split(".")[0] + "(1).sb"
+            else:
+                fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb"
+        
+
+        file_name = handler_upload(fileSaved, counter)
+        return file_name
+    else:   
+        file_name = fileSaved
+        return file_name
+
+
+def checkVersion(fileName):
+    extension = fileName.split('.')[-1]
+    if extension == 'sb2':
+        version = '2.0'
+    else:
+        version = '1.4'
+    return version
+
+
+#_______________________Project Analysis Project___________________#
+
+def uploadUnregistered(request):
+    """Upload file from form POST for unregistered users"""
+    if request.method == 'POST':
+        #Revise the form in main
+        #If user doesn't complete all the fields,it'll show a warning
+        try:
+            file = request.FILES['zipFile']
+        except:
+            d = {'Error': 'MultiValueDict'}
+            return  d
+        # Create DB of files
+        fileName = File (filename = file.name.encode('utf-8'), method = "project")
+        fileName.save()
+        dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
+        fileSaved = dir_zips + str(fileName.id) + ".sb2"
+
+        # Version of Scratch 1.4Vs2.0
+        version = checkVersion(fileName.filename)
+        if version == "1.4":
+            fileSaved = dir_zips + str(fileName.id) + ".sb"
+        else:
+            fileSaved = dir_zips + str(fileName.id) + ".sb2"
+
+        # Create log
+        pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
+        logFile = open (pathLog + "logFile.txt", "a")
+        logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
+        str(fileName.id) + "\t" + "Method: " + str(fileName.method) + "\n")
+
+        # Save file in server
+        counter = 0
+        file_name = handler_upload(fileSaved, counter)
+        
+        with open(file_name, 'wb+') as destination:
+            for chunk in file.chunks():
+                destination.write(chunk)
+
+        #Create 2.0Scratch's File
+        file_name = changeVersion(request, file_name)
+    
+        # Analyze the scratch project
+        try:
+            d = analyzeProject(request, file_name)
+        except:
+            #There ir an error with kutz or hairball
+            #We save the project in folder called error_analyzing
+            fileName.method = 'project/error'
+            fileName.save()
+            oldPathProject = fileSaved
+            newPathProject = fileSaved.split("/uploads/")[0] + \
+                             "/error_analyzing/" + \
+                             fileSaved.split("/uploads/")[1]
+            shutil.copy(oldPathProject, newPathProject)
+            print "NUEVO PATH:" + str(newPathProject)
+            d = {'Error': 'analyzing'}
+            return d
+        # Show the dashboard
+        # Redirect to dashboard for unregistered user
+        d['Error'] = 'None'
+        return d
+    else:
+        return HttpResponseRedirect('/')
+
+
+
+def changeVersion(request, file_name):
+    p = kurt.Project.load(file_name)
+    p.convert("scratch20")
+    p.save()
+    file_name = file_name.split('.')[0] + '.sb2'
+    return file_name   
+        
+
+
+#_______________________URL Analysis Project_________________________________#
+
+
+def urlUnregistered(request):
+    """Process Request of form URL"""        
+    if request.method == "POST":
+        form = UrlForm(request.POST)
+        if form.is_valid():
+            url = form.cleaned_data['urlProject']
+            idProject = processStringUrl(url)
+            if idProject == "error":
+                d = {'Error': 'id_error'}
+                return d
+            else:
+                #WHEN YOUR PROJECT DOESN'T EXIST
+                try:
+                    (pathProject, file) = sendRequestgetSB2(idProject)
+                except:
+                    d = {'Error': 'no_exists'}
+                    return d             
+                try:
+                    d = analyzeProject(request, pathProject)
+                except:
+                    #There ir an error with kutz or hairball
+                    #We save the project in folder called error_analyzing
+                    file.method = 'url/error'
+                    file.save()
+                    oldPathProject = pathProject
+                    newPathProject = pathProject.split("/uploads/")[0] + \
+                                     "/error_analyzing/" + \
+                                     pathProject.split("/uploads/")[1]
+                    shutil.copy(oldPathProject, newPathProject)
+                    d = {'Error': 'analyzing'}
+                    return d
+                # Redirect to dashboard for unregistered user
+                d['Error'] = 'None'            
+                return d
+        else:
+            d = {'Error': 'MultiValueDict'}
+            return  d
+    else:
+        return HttpResponseRedirect('/')
+                     
+                
+def processStringUrl(url):
+    """Process String of URL from Form"""
+    idProject = ''
+    auxString = url.split("/")[-1]
+    if auxString == '':
+        # we need to get the other argument    
+        possibleId = url.split("/")[-2]
+        if possibleId == "#editor":
+            idProject = url.split("/")[-3]
+        else:
+            idProject = possibleId
+    else:
+        if auxString == "#editor":
+            idProject = url.split("/")[-2]
+        else:
+            # To get the id project
+            idProject = auxString
+    try:
+        checkInt = int(idProject)
+    except ValueError:
+        idProject = "error"
+    return idProject
+
+def sendRequestgetSB2(idProject):
+    """First request to getSB2"""
+    getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
+    fileURL = idProject + ".sb2"
+
+    # Create DB of files
+    fileName = File (filename = fileURL, method = "url")
+    fileName.save()
+    dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
+    fileSaved = dir_zips + str(fileName.id) + ".sb2"
+    pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
+    logFile = open (pathLog + "logFile.txt", "a")
+    logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
+    str(fileName.id) + "\t" + "Method: " + str(fileName.method) + "\n")
+
+    # Save file in server
+    counter = 0
+    file_name = handler_upload(fileSaved, counter)
+    outputFile = open(file_name, 'wb')
+    sb2File = urllib2.urlopen(getRequestSb2)
+    outputFile.write(sb2File.read())
+    outputFile.close()
+    return (file_name, fileName)
+
+#________________________ LEARN MORE __________________________________#
+
+def learn(request,page):
+    #unicode to string(page)
+    page = unicodedata.normalize('NFKD',page).encode('ascii','ignore')
+
+    dic = {'Logica':'Logic',
+           'Paralelismo':'Parallelization',
+          'Representacion':'DataRepresentation',
+          'Sincronismo':'Synchronization',
+          'Interactividad':'UserInteractivity',
+          'Control':'FlowControl',
+          'Abstraccion':'Abstraction'}
+
+    if page in dic:
+        page = dic[page]
+
+    page = "learn/" + page + ".html"
+
+    if request.user.is_authenticated():
+     
+        return render_to_response(page,
+                                RC(request))
+    else:
+       
+        return render_to_response(page,
+                                RC(request))
+    
+#________________________ TO REGISTERED USER __________________________#
 
 def loginUser(request):
     """Log in app to user"""
@@ -65,6 +377,47 @@ def logoutUser(request):
     """Method for logging out"""
     logout(request)
     return HttpResponseRedirect('/')
+
+def createUser(request):
+    """Method for to sign up in the platform"""
+    logout(request)
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            nickName = form.cleaned_data['nickname']
+            emailUser = form.cleaned_data['emailUser']
+            passUser = form.cleaned_data['passUser']
+            user = User.objects.create_user(nickName, emailUser, passUser)
+            return render_to_response("profile.html", {'user': user}, context_instance=RC(request))
+
+#________________________ PROFILE ____________________________# 
+
+
+def updateProfile(request):
+    """Update the pass, email and avatar"""
+    if request.user.is_authenticated():
+        user = request.user.username
+    else:
+        user = None
+    if request.method == "POST":
+        form = UpdateForm(request.POST)
+        if form.is_valid():
+            newPass = form.cleaned_data['newPass']
+            newEmail = form.cleaned_data['newEmail']
+            choiceField = forms.ChoiceField(widget=forms.RadioSelect())
+            print newPass, newEmail, choiceField.widget.choices, choiceField
+            return HttpResponseRedirect('/mydashboard')
+        else:
+            return HttpResponseRedirect('/')
+
+
+def changePassword(request, new_password):
+    """Change the password of user"""
+    user = User.objects.get(username=current_user)
+    user.set_password(new_password)
+    user.save()
+
+
 
 #________________________ DASHBOARD ____________________________# 
 
@@ -137,58 +490,17 @@ def myHistoric(request):
     else:
         return HttpResponseRedirect("/")
 
-
-#__________________________ FILES _______________________________________#
-#TO UNREGISTERED USER
-def uploadUnregistered(request):
-    """Upload file from form POST"""
-    if request.method == 'POST':
-        # Create BS of files
-        file = request.FILES['zipFile']
-        fileName = File (filename = file.name.encode('utf-8'))
-        fileName.save()
-        dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
-        fileSaved = dir_zips + str(fileName.id) + ".sb2"
-        print "FICHERO GUARDADO EN: " + fileSaved
-        pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
-        logFile = open (pathLog + "logFile.txt", "a")
-        logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
-        str(fileName.id) + "\n")
-        # Save file in server
-        counter = 0
-        file_name = handle_uploaded_file(file, fileSaved, counter)
-        # Analyze the scratch project
-        d = analyzeProject(file_name)
-        # Redirect to dashboard for unregistered user
-        return render_to_response("upload/dashboard-unregistered.html", d)
-    else:
-        return HttpResponseRedirect('/')
-
-
-
-def handle_uploaded_file(file, fileSaved, counter):
-    # If file exists,it will save it with new name: name(x)
-    if os.path.exists(fileSaved):
-        counter = counter + 1
-        if counter == 1:
-            fileSaved = fileSaved.split(".")[0] + "(1).sb2"
-        else:
-            fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb2"
-        
-
-        fileName = handle_uploaded_file(file, fileSaved, counter)
-        return fileName
-    else:
-        with open(fileSaved, 'wb+') as destination:
-            for chunk in file.chunks():
-                destination.write(chunk)
-        return fileSaved
-
 #_______________________ AUTOMATIC ANALYSIS _________________________________#
 
-def analyzeProject(file_name):
+def analyzeProject(request,file_name):
     dictionary = {}
     if os.path.exists(file_name):
+        list_file = file_name.split('(')
+        print str(list_file)
+        if len(list_file) > 1:
+            file_name = list_file[0] + '\(' + list_file[1]
+            list_file = file_name.split(')')
+            file_name = list_file[0] + '\)' + list_file[1]
         #Request to hairball
         metricMastery = "hairball -p mastery.Mastery " + file_name
         metricDuplicateScript = "hairball -p \
@@ -197,13 +509,12 @@ def analyzeProject(file_name):
         metricDeadCode = "hairball -p blocks.DeadCode " + file_name 
         metricInitialization = "hairball -p \
                            initialization.AttributeInitialization " + file_name
-        
+
         #Plug-ins not used yet
         #metricBroadcastReceive = "hairball -p 
         #                          checks.BroadcastReceive " + file_name
         #metricBlockCounts = "hairball -p blocks.BlockCounts " + file_name
-
-        #Response from hairball     
+        #Response from hairball
         resultMastery = os.popen(metricMastery).read()
         resultDuplicateScript = os.popen(metricDuplicateScript).read()
         resultSpriteNaming = os.popen(metricSpriteNaming).read()
@@ -214,7 +525,7 @@ def analyzeProject(file_name):
         #resultBroadcastReceive = os.popen(metricBroadcastReceive).read()
 
         #Create a dictionary with necessary information
-        dictionary.update(procMastery(resultMastery))
+        dictionary.update(procMastery(request,resultMastery))
         dictionary.update(procDuplicateScript(resultDuplicateScript))
         dictionary.update(procSpriteNaming(resultSpriteNaming))
         dictionary.update(procDeadCode(resultDeadCode))
@@ -226,18 +537,41 @@ def analyzeProject(file_name):
     else:
         return HttpResponseRedirect('/')
 
+# __________________________ TRANSLATE MASTERY ______________________#
+
+def translate(request,d):
+    if request.LANGUAGE_CODE == "es":
+        print "ESPAÑOL"
+        dictionary = {}
+        dictionary['Abstracción'] = d['Abstraction']
+        dictionary['Paralelismo'] = d['Parallelization']
+        dictionary['Lógica'] = d['Logic']
+        dictionary['Sincronismo'] = d['Synchronization']
+        dictionary['Control del Flujo'] = d['FlowControl']
+        dictionary['Interactividad del Usuario'] = d['UserInteractivity']
+        dictionary['Representación de los Datos'] = d['DataRepresentation']
+        #d_translate = _('%(d)s') % {'d':dictionary}
+        return dictionary
+    else:
+        print "INGLÉS"
+        return d
+
 
 # __________________________ PROCESSORS _____________________________#
 
-def procMastery(lines):
+def procMastery(request,lines):
     """Mastery"""
     dic = {}
     lLines = lines.split('\n')
+    d = {}
     d = ast.literal_eval(lLines[1])
     lLines = lLines[2].split(':')[1]
     points = int(lLines.split('/')[0])
     maxi = int(lLines.split('/')[1])
-    dic["mastery"] = d
+    
+    d_translated = translate(request,d)
+
+    dic["mastery"] = d_translated
     dic["mastery"]["points"] = points
     dic["mastery"]["maxi"] = maxi
     return dic
@@ -329,8 +663,7 @@ def procInitialization(lines):
                         attribute = attribute + ", " + str(internalkeys)
         if counterFlag:
             number = number + 1
-        d[keys] = attribute
-        
+        d[keys] = attribute      
     dic["initialization"] = d
     dic["initialization"]["number"] = number
 
@@ -362,6 +695,18 @@ def procInitialization(lines):
     
 #    return dic
 
+
+#_____________________ CREATE STATS OF ANALYSIS PERFORMED ___________#
+
+def createStats(file_name, dictionary):
+    flag = True
+
+
+    return flag
+
+
+
+
 #___________________________ UNDER DEVELOPMENT _________________________#
 
 #UNDER DEVELOPMENT: Children!!!Carefull
@@ -389,7 +734,7 @@ def uploadRegistered(request):
         # Analyze the scratch project and save in our server files
         fileName = handle_uploaded_file(request.FILES['zipFile'])
         # Analize project and to save in database the metrics
-        d = analyzeProject(fileName)
+        d = analyzeProject(request,fileName)
         fupdate = datetime.now()
         # Get the short name
         shortName = fileName.split('/')[-1]

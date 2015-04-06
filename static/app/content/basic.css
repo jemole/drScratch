@@ -1,0 +1,104 @@
+@font-face {
+font-family: Purisa,Bold;
+src: url(fonts/glyphicons-halflings-regular.ttf) format("truetype");
+}
+
+body{
+    font-family: Purisa,Bold, sans-serif !important;
+    color: white;
+    background-color: #57CF55;
+}
+
+a{
+    color:#57CF55;
+}
+
+a:hover,
+a:focus{
+    color:white;
+}
+.navbar-inverse{
+   background-color: #0B5D22;
+
+}
+
+.jumbotron{
+    color:black;
+    
+}
+
+
+.dark-text{
+    color:#2B782A;
+}
+
+.dark-text:hover{
+    color:#098B2E;
+}
+
+.btn{
+    background-color:#2B782A;
+    border-color: #57CF55;
+
+}
+
+.btn:hover,
+.btn:focus{
+  color: #fff;
+  border-color: #57CF55;
+  background-color:#098B2E;
+  text-decoration: none;
+}
+
+
+#myCarrousel{
+    border-style: double;
+}
+
+#blackboard .jumbotron{
+    border-style: double;
+    margin-top: 50px;
+    padding: 0px;
+    padding-bottom: 10px;
+    border-width: 15px; 
+}
+
+#dashboard .jumbotron{
+    background-color: #0B5D22;
+    border-style: dotted;
+    color: #fff;
+    border-width: 10px; 
+    padding-top:10px;
+}
+
+#dashboard .jumbotron h4{
+    color:black;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+#CT{
+    color:white;
+    font-weight:bold;
+    font-size: 28px;
+}
+
+#issues{
+    color: #2B782A;
+    font-weight:bold;
+    font-size:28px;
+}
+
+#score{
+    font-weight:bold;
+    color:#2B782A;
+    font-size:34px;
+}
+
+#footer{
+    color: #222;
+
+}
+
+

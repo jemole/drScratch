@@ -1,0 +1,80 @@
+@font-face {
+font-family: Purisa,Bold;
+src: url(fonts/glyphicons-halflings-regular.ttf) format("truetype");
+}
+
+body{
+    font-family: Purisa,Bold, sans-serif !important;
+    color: white;
+    background-color: #819FF7;
+}
+
+.navbar-inverse{
+   background-color: #235;
+
+}
+
+.jumbotron{
+    color:black;
+    
+}
+
+
+.dark-text:hover{
+    color:#235;
+}
+
+
+
+
+#myCarrousel{
+    border-style: double;
+}
+
+#blackboard .jumbotron{
+    border-style: double;
+    margin-top: 50px;
+    padding: 0px;
+    padding-bottom: 10px;
+    border-width: 15px; 
+}
+
+#dashboard .jumbotron{
+    background-color: #235;
+    border-style: dotted;
+    color: #fff;
+    border-width: 10px; 
+    padding-top:10px;
+}
+
+#dashboard .jumbotron h4{
+    color:black;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+#CT{
+    color:white;
+    font-weight:bold;
+    font-size: 34px;
+}
+
+#issues{
+    color: #235;
+    font-weight:bold;
+    font-size:34px;
+}
+
+#score{
+    font-weight:bold;
+    color:#235;
+    font-size:34px;
+}
+
+#footer{
+    color: #222;
+
+}
+
+

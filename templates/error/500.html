@@ -1,0 +1,78 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html class="nivo-lightbox-notouch" lang="en">
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{% trans "Error" %} </title>
+
+        <link rel="icon" href="../../static/app/images/favicon.ico">
+		<!-- Bootstrap core CSS -->
+	    <link href="../../static/app/content/bootstrap.min.css" rel="stylesheet">
+	    <!-- Add custom CSS here -->
+	    <link href="../../static/app/content/sb-admin.css" rel="stylesheet">
+
+        <link rel='stylesheet' href='../../static/app/content/learn.css'>
+        <link rel="stylesheet" href="../../static/app/content/red.css" type="text/css" />
+		<!--Librería jQuery requerida para los plugins de Javascript-->
+		<script src="../../static/app/scripts/jquery.js"></script>
+		<!--Todos los plugins Javascript de bootStrap-->
+		<script src="../../static/app/scripts/bootstrap.min.js"></script>
+		<script src="../../static/app/scripts/bootstrap-filestyle.js"></script>
+        <!-- Font icons -->
+        <link rel="stylesheet" href="../../static/app/icons/icons.css">
+
+
+</head>
+ 
+<body id="learn">
+<!-- Header -->
+<div class="jumbotron">
+    <div class="container">
+            <p>
+                <h1 class="text-center">
+                     {% trans "500 - Internal Server Error" %}
+                </h1>
+                <h2 class="text-center">
+                     {% trans  "We apologize for this inconvenience" %} 
+                </h2>
+            </p>
+    </div>
+    <div class="container">
+        <img src="../../static/app/images/logo_main.png"/>
+    </div>
+
+</div>
+<!-- End Header -->
+
+<!-- Sign up -->
+<div class="pager">
+        <h4>
+              <a href="/"><span class="icon-basic-home colored-text"></span></a>
+              <a href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a>
+              <a href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a>
+        </h4>
+</div>
+<div class="pager">
+    <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/" class="btn btn-primary standard-button" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Get Started" %}</a>
+</div>
+<!-- Sign up -->
+
+
+<!-- Footer -->
+<div id="footer" class="container">
+    <footer class="footer grey-bg">
+       {% trans "©2014 Dr.Scratch is powered by" %} <a href="https://github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+       <a href
+    </footer>
+</div>
+<!-- End Footer -->
+
+
+
+</body>
+</html>
+
+
