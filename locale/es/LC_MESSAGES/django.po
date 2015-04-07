@@ -1387,7 +1387,7 @@ msgstr "Algunos consejos:"
 #: templates/upload/dashboard-unregistered-developing.html:88
 #: templates/upload/dashboard-unregistered-master.html:157
 msgid "Sprites Naming"
-msgstr "Nombres Inadecuados"
+msgstr "Nombres no personalizados"
 
 #: templates/upload/dashboard-unregistered-developing.html:91
 #: templates/upload/dashboard-unregistered-developing.html:101
@@ -1400,10 +1400,8 @@ msgstr "Aprende Más"
 
 #: templates/upload/dashboard-unregistered-developing.html:98
 #: templates/upload/dashboard-unregistered-master.html:177
-#, fuzzy
-#| msgid "Sprite Attributes"
 msgid "Sprite Atributes"
-msgstr "Atributos Inadecuados"
+msgstr "Atributos no inicializados correctamente"
 
 #: templates/upload/dashboard-unregistered-developing.html:119
 #: templates/upload/dashboard-unregistered-master.html:74
@@ -1430,7 +1428,7 @@ msgstr "Posibles cuestiones a tener en cuenta:"
 #: templates/upload/dashboard-unregistered-master.html:147
 #: templates/upload/dashboard-unregistered.html:162
 msgid "Duplicated Scripts"
-msgstr "Scripts Duplicados"
+msgstr "Programas Duplicados"
 
 #: templates/upload/dashboard-unregistered-master.html:167
 #: templates/upload/dashboard-unregistered.html:209
@@ -1482,11 +1480,11 @@ msgstr ""
 
 #: templates/upload/dashboard-unregistered.html:181
 msgid "Sprites naming"
-msgstr "Nombres Inadecuados"
+msgstr "Nombres inadecuados"
 
 #: templates/upload/dashboard-unregistered.html:190
 msgid "Incorrect name:"
-msgstr "Nombres incorrectos:"
+msgstr "Nombres no personalizados"
 
 #: templates/upload/dashboard-unregistered.html:220
 msgid "blocks"
@@ -1494,7 +1492,7 @@ msgstr "bloques"
 
 #: templates/upload/dashboard-unregistered.html:242
 msgid "Sprite attributes initialization"
-msgstr "Atributos Inadecuados"
+msgstr "Atributos no inicializados correctamente"
 
 #~ msgid ""
 #~ "In the program of the left, we assign the number of points that we want "
