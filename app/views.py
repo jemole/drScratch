@@ -25,8 +25,12 @@ import sys
 import urllib2
 import shutil
 import unicodedata
+import csv
+import kurt
+import zipfile
+from zipfile import ZipFile
 
-############################ MAIN #############################
+#_____________________________ MAIN ______________________________________#
 
 def main(request):
     """Main page"""
@@ -45,7 +49,7 @@ def redirectMain(request):
     """Page not found redirect to main"""
     return HttpResponseRedirect('/')
 
-############################## ERROR ###############################
+#_______________________________ ERROR ___________________________________#
 
 def error404(request):
     response = render_to_response('404.html', {},
@@ -58,7 +62,7 @@ def error505(request):
                                   context_instance = RC(request))
     return response
 
-###################### TO UNREGISTERED USER ########################
+#_______________________ TO UNREGISTERED USER ___________________________#
 
 def selector(request):
     if request.method == 'POST':
@@ -78,11 +82,11 @@ def selector(request):
                             RC(request))
             else:    
                 if d["mastery"]["points"] >= 15:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-master.html", d)
                 elif d["mastery"]["points"] > 7:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-developing.html", d)
                 else:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-basic.html", d)
         elif '_url' in request.POST:
             d = urlUnregistered(request)
             if d['Error'] == 'analyzing':
@@ -105,11 +109,11 @@ def selector(request):
                     RC(request))
             else:
                 if d["mastery"]["points"] >= 15:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-master.html", d)
                 elif d["mastery"]["points"] > 7:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-developing.html", d)
                 else:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-basic.html", d)
     else:
         return HttpResponseRedirect('/')
 
@@ -120,10 +124,18 @@ def handler_upload(fileSaved, counter):
     # If file exists,it will save it with new name: name(x)
     if os.path.exists(fileSaved): 
         counter = counter + 1
-        if counter == 1:
-            fileSaved = fileSaved.split(".")[0] + "(1).sb2"
+        #Check the version of Scratch 1.4Vs2.0
+        version = checkVersion(fileSaved)
+        if version == "2.0":
+            if counter == 1:
+                fileSaved = fileSaved.split(".")[0] + "(1).sb2"
+            else:
+                fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb2"
         else:
-            fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb2"
+            if counter == 1:
+                fileSaved = fileSaved.split(".")[0] + "(1).sb"
+            else:
+                fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb"
         
 
         file_name = handler_upload(fileSaved, counter)
@@ -131,6 +143,15 @@ def handler_upload(fileSaved, counter):
     else:   
         file_name = fileSaved
         return file_name
+
+
+def checkVersion(fileName):
+    extension = fileName.split('.')[-1]
+    if extension == 'sb2':
+        version = '2.0'
+    else:
+        version = '1.4'
+    return version
 
 
 #_______________________Project Analysis Project___________________#
@@ -150,6 +171,15 @@ def uploadUnregistered(request):
         fileName.save()
         dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
         fileSaved = dir_zips + str(fileName.id) + ".sb2"
+
+        # Version of Scratch 1.4Vs2.0
+        version = checkVersion(fileName.filename)
+        if version == "1.4":
+            fileSaved = dir_zips + str(fileName.id) + ".sb"
+        else:
+            fileSaved = dir_zips + str(fileName.id) + ".sb2"
+
+        # Create log
         pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
         logFile = open (pathLog + "logFile.txt", "a")
         logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
@@ -162,6 +192,9 @@ def uploadUnregistered(request):
         with open(file_name, 'wb+') as destination:
             for chunk in file.chunks():
                 destination.write(chunk)
+
+        #Create 2.0Scratch's File
+        file_name = changeVersion(request, file_name)
     
         # Analyze the scratch project
         try:
@@ -187,7 +220,13 @@ def uploadUnregistered(request):
         return HttpResponseRedirect('/')
 
 
-   
+
+def changeVersion(request, file_name):
+    p = kurt.Project.load(file_name)
+    p.convert("scratch20")
+    p.save()
+    file_name = file_name.split('.')[0] + '.sb2'
+    return file_name   
         
 
 
