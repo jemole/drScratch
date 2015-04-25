@@ -82,11 +82,11 @@ def selector(request):
                             RC(request))
             else:    
                 if d["mastery"]["points"] >= 15:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-master.html", d)
                 elif d["mastery"]["points"] > 7:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-developing.html", d)
                 else:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-basic.html", d)
         elif '_url' in request.POST:
             d = urlUnregistered(request)
             if d['Error'] == 'analyzing':
@@ -109,11 +109,11 @@ def selector(request):
                     RC(request))
             else:
                 if d["mastery"]["points"] >= 15:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-master.html", d)
                 elif d["mastery"]["points"] > 7:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-developing.html", d)
                 else:
-                    return render_to_response("upload/dashboard-unregistered.html", d)
+                    return render_to_response("upload/dashboard-unregistered-basic.html", d)
     else:
         return HttpResponseRedirect('/')
 
