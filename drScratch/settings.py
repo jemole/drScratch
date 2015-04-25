@@ -27,7 +27,7 @@ STATIC_ROOT = '/static/'
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '...'
+SECRET_KEY = 'b&0vhl+ghtc+31i7xmq@$t)n^)*8p3a9!p8=pk2z9tb5om*(&l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,9 +41,10 @@ TEMPLATE_LOADERS = (
 #'django.template.loaders.eggs.Loader',
 )
 
+
 TEMPLATE_DIRS = ('templates',)
 
-ALLOWED_HOSTS = [...]
+ALLOWED_HOSTS = ['localhost', '193.147.51.252','drscratchpre.programamos.es']
 
 
 # Application definition
@@ -73,18 +74,20 @@ ROOT_URLCONF = 'drScratch.urls'
 
 WSGI_APPLICATION = 'drScratch.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': '',
-        'NAME': ...,
-	'USER': '',
-	'PASSWORD':'',
-	'HOST': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'drscratch',
+	'USER': 'root',
+	'PASSWORD': 'Mysql.drscratch',
+	'HOST': 'localhost',
 	'PORT': '',
+	'OPTIONS':{
+		'autocommit': True,
+	}
     }
 }
 
@@ -95,9 +98,10 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 MEDIA_ROOT = 'static'
 
 # Internationalization
+
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'en-us'
 
 _ = lambda s: s
 
