@@ -173,7 +173,8 @@ def uploadUnregistered(request):
             return  d
 
         # Create DB of files
-        fileName = File (filename = file.name.encode('utf-8'), method = "project")
+        now = datetime.now()
+        fileName = File (filename = file.name.encode('utf-8'), method = "project" , time = now)
         fileName.save()
         dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
 
@@ -187,8 +188,8 @@ def uploadUnregistered(request):
         # Create log
         pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
         logFile = open (pathLog + "logFile.txt", "a")
-        logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
-        str(fileName.id) + "\t" + "Method: " + str(fileName.method) + "\n")
+        logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
+        str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + "TIME: " str(fileName.time) + "\n")
 
         # Save file in server
         counter = 0
@@ -303,14 +304,16 @@ def sendRequestgetSB2(idProject):
     fileURL = idProject + ".sb2"
 
     # Create DB of files
-    fileName = File (filename = fileURL, method = "url")
+    now = datetime.now()
+    fileName = File (filename = fileURL, method = "url", time = now)
     fileName.save()
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
     pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
     logFile = open (pathLog + "logFile.txt", "a")
-    logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
-    str(fileName.id) + "\t" + "Method: " + str(fileName.method) + "\n")
+    logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
+    str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
+    "TIME: " str(fileName.time) + "\n")
 
     # Save file in server
     counter = 0
@@ -647,31 +650,6 @@ def procInitialization(lines):
 
     return dic
 
-# ___________________ PROCESSORS OF PLUG-INS NOT USED YET ___________________#
-
-#def procBlockCounts(lines):
-#    """CountLines"""
-#    dic = {}
-#    dic["countLines"] = lines
-
-#    print "BLOCK COUNTS: " + str(dic)
-#    return dic
-
-
-#def procBroadcastReceive(lines):
-#    """Return the number of lost messages"""
-#    dic = {}
-#    lLines = lines.split('\n')
-    # messages never received or broadcast
-#    laux = lLines[1]
-#    laux = laux.split(':')[0]
-#    dic["neverRB"] = dic
-#    dic["neverRB"]["neverReceive"] = laux
-#    laux = lLines[3]
-#    laux = laux.split(':')[0]
-#    dic["neverRB"]["neverBroadcast"] = laux
-    
-#    return dic
 
 
 #_____________________ CREATE STATS OF ANALYSIS PERFORMED ___________#

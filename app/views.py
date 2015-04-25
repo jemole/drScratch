@@ -189,7 +189,7 @@ def uploadUnregistered(request):
         pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
         logFile = open (pathLog + "logFile.txt", "a")
         logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
-        str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + "TIME: " str(fileName.time) + "\n")
+        str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + "Time: " str(fileName.time) + "\n")
 
         # Save file in server
         counter = 0
@@ -313,7 +313,7 @@ def sendRequestgetSB2(idProject):
     logFile = open (pathLog + "logFile.txt", "a")
     logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
     str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
-    "TIME: " str(fileName.time) + "\n")
+    "Time: " str(fileName.time) + "\n")
 
     # Save file in server
     counter = 0
