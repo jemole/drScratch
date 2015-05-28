@@ -12,6 +12,7 @@ urlpatterns = (
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
     #url(r'^profile', 'DrScratchApp.views.profileSettings',),
     url(r'^selector', 'app.views.selector',),
+    #url(r'^admin/upload_progress/$', 'app.views.upload_progress', name="admin-upload-progress"),
     url(r'^login', 'app.views.loginUser',),
     url(r'^logout', 'app.views.logoutUser',),
     url(r'^500', 'app.views.error500',),

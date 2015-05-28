@@ -552,6 +552,10 @@ def translate(request,d):
         d_translate_es['Interactividad con el usuario'] = d['UserInteractivity']
         d_translate_es['Representación de la información'] = d['DataRepresentation']
         return d_translate_es
+    else if request.LANGUAGE_CODE == "ca":
+    else if request.LANGUAGE_CODE == "an":
+    else if request.LANGUAGE_CODE == "eu":
+    else if request.LANGUAGE_CODE == "gl":
     else:
         return d
 
