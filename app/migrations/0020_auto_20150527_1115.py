@@ -7,14 +7,14 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('DrScratchApp', '0003_auto_20141125_1055'),
+        ('app', '0019_auto_20150527_1114'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='file',
-            name='docfile',
-            field=models.FileField(upload_to=b''),
+            name='duplicatedScript',
+            field=models.CharField(max_length=10),
             preserve_default=True,
         ),
     ]

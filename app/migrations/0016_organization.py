@@ -7,15 +7,15 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('DrScratchApp', '0001_initial'),
+        ('app', '0015_auto_20150521_0839'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='File',
+            name='Organization',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('filename', models.TextField()),
+                ('name', models.TextField()),
             ],
             options={
             },

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Models of drScratch
 
@@ -6,7 +7,38 @@ class File(models.Model):
     filename = models.CharField(max_length=100)
     method = models.CharField(max_length=100)
     time = models.TextField()
-    
+    score = models.IntegerField()
+    abstraction = models.IntegerField()
+    parallelization = models.IntegerField()
+    logic = models.IntegerField()
+    synchronization = models.IntegerField()
+    flowControl = models.IntegerField()
+    userInteractivity = models.IntegerField()
+    dataRepresentation = models.IntegerField()
+    spriteNaming = models.IntegerField()
+    initialization = models.IntegerField()
+    deadCode = models.IntegerField()
+    duplicateScript = models.IntegerField()
+
+class Student(models.Model):
+    student = models.ForeignKey(User, unique=True)  
+
+class Classroom(models.Model):
+    name = models.CharField(max_length=100)
+    #student = models.ManyToManyField(Student)
+
+
+class Teacher(models.Model):
+    teacher = models.ForeignKey(User, unique=True)
+    username = models.TextField()
+    password = models.TextField()
+    email = models.TextField()
+    hashkey = models.TextField()
+    #classroom = models.ManyToManyField(Classroom)
+
+
+class Organization(models.Model):
+    name = models.TextField()  
 
 class Dashboard(models.Model):
 	user = models.TextField()
@@ -62,7 +94,3 @@ class Comment(models.Model):
 class Activity(models.Model):
 	text = models.TextField()
 	date = models.DateField()
-
-
-
-	

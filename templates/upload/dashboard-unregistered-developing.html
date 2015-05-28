@@ -38,7 +38,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container">
              <div class="icon">                    
-              <a class="navbar-brand" href="http://drscratchpre.programamos.es"><span class="icon-basic-home colored-text">{% trans "HOME" %}</span></a>
+              <a class="navbar-brand" href="/"><span class="icon-basic-home colored-text">{% trans "HOME" %}</span></a>
               
             
               <a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a> 
@@ -97,7 +97,7 @@
                     <div class="carousel-caption">
                       <h1>{% trans "Sprite Atributes" %}</h1>
                       <h1><code>{{ initialization.number }}</code></h1>
-                      <p><a class="btn btn-lg btn-primary" href="http://drscratchpre.programamos.es/learn/attribute-initialization" role="button">
+                      <p><a class="btn btn-lg btn-primary" href="/learn" role="button">
                         <strong>{% trans "Learn more" %}</strong></a></p>
                     </div>
                 </div>
@@ -134,9 +134,7 @@
                             {% if key != "maxi" %}
                                   
                                   <td>
-                                    {% blocktrans %}
                                     {{ key }}
-                                    {% endblocktrans %}
                                   </td>
                                   <td>{{ value }}/3
                             {% if value == 0 %}
@@ -167,7 +165,7 @@
 
                   </div>
 <div>
-    <a class="twitter-share-button" data-text="Acabo de obtener {{ mastery.points }} puntos analizando mi proyecto en Dr. Scratch!¡A ver si lo superas!@DrScratchTool"href="https://twitter.com/share">Tweet</a>
+    <a class="twitter-share-button pull-right" data-text="{% blocktrans with points=mastery.points %}I have just obtained {{ points }} points analyzing my project in Dr.Scratch! Beat it!@DrScratchTool{% endblocktrans %}"href="https://twitter.com/share"></a>
     <script>
 window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
 </script>
@@ -184,7 +182,7 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
     <!-- Footer -->
     <div id="footer" class="container">
         <footer class="footer grey-bg">
-           {% trans "©2014 Dr.Scratch is powered by" %} <a href="https://github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+           {% trans "©2014 Dr.Scratch is powered by " %} <a href="https://github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
          
             <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="#" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated pull-right" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Back to top" %}</a>
         </footer>

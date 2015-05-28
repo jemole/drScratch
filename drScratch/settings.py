@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
 from django.conf import global_settings
 
 """
@@ -38,6 +42,7 @@ TEMPLATE_DEBUG = True
 TEMPLATE_LOADERS = (
 'django.template.loaders.filesystem.Loader',
 'django.template.loaders.app_directories.Loader',
+
 #'django.template.loaders.eggs.Loader',
 )
 
@@ -47,11 +52,14 @@ TEMPLATE_DIRS = ('templates',)
 ALLOWED_HOSTS = ['localhost', '193.147.51.252','drscratchpre.programamos.es']
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = (
     'app',
     'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -106,8 +114,11 @@ LANGUAGE_CODE = 'en-us'
 _ = lambda s: s
 
 LANGUAGES = (
-    ('es', _('Spanish')),
+    ('es', _('Español')),
     ('en', _('English')),
+    ('ca', _('Catalán')),
+    ('gl', _('Gallego')),
+    ('eu', _('Vasco')),
 )
 
 
