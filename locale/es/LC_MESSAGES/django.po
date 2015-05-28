@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-06 15:59+0000\n"
+"POT-Creation-Date: 2015-05-28 19:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: drScratch/settings.py:101
+#: drScratch/settings.py:109
 msgid "Spanish"
 msgstr "Español"
 
-#: drScratch/settings.py:102
+#: drScratch/settings.py:110
 msgid "English"
 msgstr "Inglés"
 
@@ -42,15 +42,13 @@ msgid "Ops! This page doesn't exist"
 msgstr "Ops! Esta página no existe"
 
 #: templates/error/404.html:59 templates/error/500.html:59
-#: templates/error/analyzing.html:62
-#: templates/learn/learn-unregistered.html:59 templates/main/main.html:84
+#: templates/error/analyzing.html:62 templates/main/main.html:84
 #: templates/main/main.html.py:536
 msgid "Get Started"
 msgstr "Empezar"
 
 #: templates/error/404.html:67 templates/error/500.html:67
-#: templates/error/analyzing.html:70
-#: templates/learn/learn-unregistered.html:67 templates/main/main.html:547
+#: templates/error/analyzing.html:70 templates/main/main.html:547
 #: templates/upload/dashboard-unregistered-basic.html:173
 #: templates/upload/dashboard-unregistered-developing.html:179
 #: templates/upload/dashboard-unregistered-master.html:195
@@ -76,31 +74,6 @@ msgid ""
 msgstr ""
 "Algunas veces tenemos problemas analizando determinados proyectos. Estamos "
 "trabajando en ello."
-
-#: templates/learn/attribute-initialization.html:6
-#: templates/upload/dashboard-unregistered.html:239
-msgid "modified but not initialized correctly."
-msgstr "ha sido modificado pero no inicializado correctamente."
-
-#: templates/learn/learn-unregistered.html:9
-msgid "Learn"
-msgstr "Aprende"
-
-#: templates/learn/learn-unregistered.html:36
-msgid "If you want to learn more, you'll must to sign up in..."
-msgstr "Si quieres continuar aprendiendo, debes registrarte en..."
-
-#: templates/learn/learn-unregistered.html:51
-msgid "New features"
-msgstr "Nuevas funcionalidades"
-
-#: templates/learn/learn-unregistered.html:53
-msgid "We're working on this and would be pleased to receive your feedback"
-msgstr "Estamos trabajando en esto y nos gustaría conocer tu opinión"
-
-#: templates/learn/sprite-naming.html:2
-msgid "Incorrect names: "
-msgstr "Nombres incorrectos:"
 
 #: templates/main/main.html:75
 msgid "Why?"
@@ -636,6 +609,25 @@ msgstr "bloques"
 #: templates/upload/dashboard-unregistered.html:227
 msgid "Sprite attributes initialization"
 msgstr "Atributos no inicializados correctamente"
+
+#: templates/upload/dashboard-unregistered.html:239
+msgid "modified but not initialized correctly."
+msgstr "ha sido modificado pero no inicializado correctamente."
+
+#~ msgid "Learn"
+#~ msgstr "Aprende"
+
+#~ msgid "If you want to learn more, you'll must to sign up in..."
+#~ msgstr "Si quieres continuar aprendiendo, debes registrarte en..."
+
+#~ msgid "New features"
+#~ msgstr "Nuevas funcionalidades"
+
+#~ msgid "We're working on this and would be pleased to receive your feedback"
+#~ msgstr "Estamos trabajando en esto y nos gustaría conocer tu opinión"
+
+#~ msgid "Incorrect names: "
+#~ msgstr "Nombres incorrectos:"
 
 #~ msgid "Terms"
 #~ msgstr "Condiciones"
