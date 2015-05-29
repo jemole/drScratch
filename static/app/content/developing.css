@@ -5,12 +5,11 @@ src: url(fonts/glyphicons-halflings-regular.ttf) format("truetype");
 
 body{
     font-family: Purisa,Bold, sans-serif !important;
-    color: #F2F5A9;
-    background-color: #F2F5A9;
+    background-color: white !important;
 }
 
 a{
-    color:#B40404;
+    color:white;
 }
 
 a:hover,
@@ -18,34 +17,27 @@ a:focus{
     color:black;
 }
 
-.navbar-inverse{
-   background-color: yellow;
-
-}
-
-.navbar .navbar-brand{
-    color:#FFBF00;
-}
-.navbar .navbar-brand:hover{
-   color: #B40404;
-
-}
 
 .jumbotron{
-    color:black;
-    
+    color:white;
+    background-color: white;
+    padding: 20px !important;
+   
 }
 
+.white{
+     color:white;
+    }
 .dark-text:hover{
-    color:yellow;
+    color: #FFBF00;
 }
 
 
 #footer .btn,
 .btn{
     color:#B40404;
-    background-color:yellow;
-    border-color:#B40404;
+    background-color:#F9B966;
+    border-color:#ECE9CB;
 }
 
 .btn:hover,
@@ -63,21 +55,38 @@ a:focus{
     border-style: double;
 }
 
-#blackboard .jumbotron{
-    border-style: double;
-    margin-top: 50px;
-    padding: 0px;
-    padding-bottom: 10px;
-    border-width: 15px; 
+.devpanel{
+    padding-top: 90px;
+    
+
+}
+#improve{
+    border-color:#FFEDBE;
+    -webkit-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+}
+#devpanel{
+        background-color: #FFEDBE;
+        border-color:#FFEDBE;
+        -webkit-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+}
+
+#dashboard{
+
+padding-top:90px;
 }
 
 #dashboard .jumbotron{
-    background-color: yellow;
     border-style: dotted;
-    border-color: white;
-    color: grey;
+    border-color: #FFEDBE;
     border-width: 10px; 
-    padding-top:10px;
+    -webkit-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    
 }
 
 #dashboard .jumbotron h4{
@@ -88,13 +97,13 @@ a:focus{
 }
 
 #CT{
-    color:#FFBF00;
+
     font-weight:bold;
     font-size: 34px;
 }
 
 #issues{
-    color: #B40404;
+    color: #DD5D26;
     font-weight:bold;
     font-size:34px;
 }
