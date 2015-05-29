@@ -555,7 +555,7 @@ def analyzeProject(request,file_name, fileName):
 
 # __________________________ TRANSLATE MASTERY ______________________#
 
-def translate(request,d, fileName):
+def translate(request,d):
     if request.LANGUAGE_CODE == "es":
         d_translate_es = {}
         d_translate_es['Abstracción'] = d['Abstraction']
@@ -596,7 +596,7 @@ def procMastery(request,lines, fileName):
     fileName.save()
 
     #Translation
-    d_translated = translate(request,d, fileName)
+    d_translated = translate(request,d)
 
     dic["mastery"] = d_translated
     dic["mastery"]["points"] = points
