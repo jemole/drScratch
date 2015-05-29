@@ -565,6 +565,8 @@ def translate(request,d):
         d_translate_es['Control de flujo'] = d['FlowControl']
         d_translate_es['Interactividad con el usuario'] = d['UserInteractivity']
         d_translate_es['Representación de la información'] = d['DataRepresentation']
+        fileName.language = "es"
+        fileName.save()
         return d_translate_es
     else:
         return d

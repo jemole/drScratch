@@ -7,6 +7,7 @@ class File(models.Model):
     filename = models.CharField(max_length=100)
     method = models.CharField(max_length=100)
     time = models.TextField()
+    language = models.TextField(default="en")
     score = models.IntegerField()
     abstraction = models.IntegerField()
     parallelization = models.IntegerField()
