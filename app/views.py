@@ -2,8 +2,6 @@
 # -*- encoding: utf-8 -*-
 # -*- coding: utf-8 -*-
 
-
-
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.http import HttpResponse, HttpResponseServerError
 from django.core.context_processors import csrf
@@ -15,9 +13,15 @@ from django.contrib.auth import logout, login, authenticate
 from django.utils.translation import ugettext as _
 from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File
-from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm
+from app.models import Teacher, Student, Classroom
+from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
+from app.forms import OrganizationForm
 from django.contrib.auth.models import User
 from datetime import datetime, date
+from django.contrib.auth.decorators import login_required
+from email.MIMEText import MIMEText
+import smtplib
+import email.utils
 import os
 import ast
 import json
@@ -29,6 +33,13 @@ import csv
 import kurt
 import zipfile
 from zipfile import ZipFile
+
+#Global variables
+pMastery = "hairball -p mastery.Mastery "
+pDuplicateScript = "hairball -p duplicate.DuplicateScripts " 
+pSpriteNaming = "hairball -p convention.SpriteNaming "
+pDeadCode = "hairball -p blocks.DeadCode "
+pInitialization = "hairball -p initialization.AttributeInitialization "
 
 #_____________________________ MAIN ______________________________________#
 
@@ -45,6 +56,8 @@ def main(request):
                                 {'user':user},
                                 RC(request))
 
+#___________________________ REDIRECT ____________________________________#
+
 def redirectMain(request):
     """Page not found redirect to main"""
     return HttpResponseRedirect('/')
@@ -57,7 +70,7 @@ def error404(request):
     response.status_code = 404
     return response
 
-def error505(request):
+def error500(request):
     response = render_to_response('500.html', {},
                                   context_instance = RC(request))
     return response
@@ -71,7 +84,6 @@ def selector(request):
         no_exists = False
         if "_upload" in request.POST:
             d = uploadUnregistered(request)
-            print d
             if d['Error'] == 'analyzing':
                 return render_to_response('error/analyzing.html',
                                           RC(request))   
@@ -167,7 +179,14 @@ def uploadUnregistered(request):
             d = {'Error': 'MultiValueDict'}
             return  d
         # Create DB of files
-        fileName = File (filename = file.name.encode('utf-8'), method = "project")
+        now = datetime.now()
+        fileName = File (filename = file.name.encode('utf-8'), 
+                        method = "project" , time = now, 
+                        score = 0, abstraction = 0, parallelization = 0,
+                        logic = 0, synchronization = 0, flowControl = 0,
+                        userInteractivity = 0, dataRepresentation = 0,
+                        spriteNaming = 0 ,initialization = 0,
+                        deadCode = 0, duplicateScript = 0)
         fileName.save()
         dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
         fileSaved = dir_zips + str(fileName.id) + ".sb2"
@@ -182,8 +201,9 @@ def uploadUnregistered(request):
         # Create log
         pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
         logFile = open (pathLog + "logFile.txt", "a")
-        logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
-        str(fileName.id) + "\t" + "Method: " + str(fileName.method) + "\n")
+        logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
+        str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
+        "Time: " + str(fileName.time) + "\n")
 
         # Save file in server
         counter = 0
@@ -198,7 +218,7 @@ def uploadUnregistered(request):
     
         # Analyze the scratch project
         try:
-            d = analyzeProject(request, file_name)
+            d = analyzeProject(request, file_name, fileName)
         except:
             #There ir an error with kutz or hairball
             #We save the project in folder called error_analyzing
@@ -209,7 +229,6 @@ def uploadUnregistered(request):
                              "/error_analyzing/" + \
                              fileSaved.split("/uploads/")[1]
             shutil.copy(oldPathProject, newPathProject)
-            print "NUEVO PATH:" + str(newPathProject)
             d = {'Error': 'analyzing'}
             return d
         # Show the dashboard
@@ -237,21 +256,22 @@ def urlUnregistered(request):
     """Process Request of form URL"""        
     if request.method == "POST":
         form = UrlForm(request.POST)
-        if form.is_valid():
+        if form.is_valid():          
+            d = {}
             url = form.cleaned_data['urlProject']
             idProject = processStringUrl(url)
             if idProject == "error":
                 d = {'Error': 'id_error'}
                 return d
             else:
-                #WHEN YOUR PROJECT DOESN'T EXIST
                 try:
                     (pathProject, file) = sendRequestgetSB2(idProject)
                 except:
+                    #When your project doesn't exist
                     d = {'Error': 'no_exists'}
                     return d             
                 try:
-                    d = analyzeProject(request, pathProject)
+                    d = analyzeProject(request, pathProject, file)
                 except:
                     #There ir an error with kutz or hairball
                     #We save the project in folder called error_analyzing
@@ -264,6 +284,10 @@ def urlUnregistered(request):
                     shutil.copy(oldPathProject, newPathProject)
                     d = {'Error': 'analyzing'}
                     return d
+
+                #Create Json
+                djson = createJson(d)
+
                 # Redirect to dashboard for unregistered user
                 d['Error'] = 'None'            
                 return d
@@ -299,18 +323,20 @@ def processStringUrl(url):
 
 def sendRequestgetSB2(idProject):
     """First request to getSB2"""
-    getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
+    getRequestSb2 = "http://getsb2-drscratch.herokuapp.com/" + idProject
     fileURL = idProject + ".sb2"
 
     # Create DB of files
-    fileName = File (filename = fileURL, method = "url")
+    now = datetime.now()
+    fileName = File (filename = fileURL, method = "url", time = now)
     fileName.save()
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
     pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
     logFile = open (pathLog + "logFile.txt", "a")
-    logFile.write("FileName: " + str(fileName.filename) + "\t" + "ID: " + \
-    str(fileName.id) + "\t" + "Method: " + str(fileName.method) + "\n")
+    logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
+    str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
+    "Time: " + str(fileName.time) + "\n")
 
     # Save file in server
     counter = 0
@@ -321,16 +347,24 @@ def sendRequestgetSB2(idProject):
     outputFile.close()
     return (file_name, fileName)
 
+
+
+#________________________ CREATE JSON _________________________________#
+
+def createJson(d):
+    flagsPlugin = {"Mastery":0, "DeadCode":0, "SpriteNaming":1, "Initialization":0, "DuplicateScripts":0}
+    
+
 #________________________ LEARN MORE __________________________________#
 
 def learn(request,page):
-    #unicode to string(page)
+    #Unicode to string(page)
     page = unicodedata.normalize('NFKD',page).encode('ascii','ignore')
 
-    dic = {'Logica':'Logic',
+    dic = {'Pensamiento':'Logic',
            'Paralelismo':'Parallelization',
           'Representacion':'DataRepresentation',
-          'Sincronismo':'Synchronization',
+          'Sincronizacion':'Synchronization',
           'Interactividad':'UserInteractivity',
           'Control':'FlowControl',
           'Abstraccion':'Abstraction'}
@@ -348,8 +382,101 @@ def learn(request,page):
        
         return render_to_response(page,
                                 RC(request))
+
+def learnUnregistered(request):
+   	
+    return render_to_response("learn/learn-unregistered.html",)
+
+
+#________________________ TO REGISTER ORGANIZATION __________________#
+
+def signUpOrganization(request):
+    form = OrganizationForm(request.POST or None) 
+    if request.method == 'POST': 
+        if form.is_valid():       
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            email = form.cleaned_data['email']
+            print email
+            hashkey = form.cleaned_data['hashkey']
+            #classroom = form.cleaned_data['classroom']
+            invite(request, username, email, hashkey)
+            teacher = Teacher(teacher = request.user, username = username,
+                              password = password, email = email,
+                              hashkey = hashkey)
+            teacher.save()
+            return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/')
+            
+    elif request.method == 'GET':
+        return render_to_response("sign/createOrganization.html", context_instance = RC(request))
     
-#________________________ TO REGISTERED USER __________________________#
+   
+        
+#________________________ TO REGISTER USER __________________________#
+
+def createUser(request):
+    """Method for to sign up in the platform"""
+    logout(request)
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            nickName = form.cleaned_data['nickname']
+            emailUser = form.cleaned_data['emailUser']
+            passUser = form.cleaned_data['passUser']
+            user = User.objects.create_user(nickName, emailUser, passUser)
+            return render_to_response("profile.html", {'user': user}, context_instance=RC(request))
+
+def signUpUser(request):
+    form = TeacherForm(request.POST or None) 
+    if request.method == 'POST': 
+        if form.is_valid():       
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            email = form.cleaned_data['email']
+            print email
+            hashkey = form.cleaned_data['hashkey']
+            #classroom = form.cleaned_data['classroom']
+            invite(request, username, email, hashkey)
+            teacher = Teacher(teacher = request.user, username = username,
+                              password = password, email = email,
+                              hashkey = hashkey)
+            teacher.save()
+            return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/')
+            
+    elif request.method == 'GET':
+        return render_to_response("sign/createhash.html", context_instance = RC(request))
+        
+
+
+def invite(request, username, email, hashkey):
+    emisor = "drscratch.website@gmail.com"
+    receptor = "inanna17@gmail.com"
+    try:
+        mensaje = MIMEText("correo enviado desde Python")
+        mensaje['From']=emisor
+        mensaje['To']=receptor
+        mensaje['Subject']="Asunto del correo"
+    except:
+        "PROBLEMA MIMEtext"
+    try: 
+        serverSMTP = smtplib.SMTP('smtp.gmail.com',587)
+        serverSMTP.ehlo()
+        serverSMTP.starttls()
+        serverSMTP.ehlo()
+        serverSMTP.login(emisor,"GA.drscratch")
+    except:
+        print "LA LIBRERIA smtplib"
+    try:
+        serverSMTP.sendmail(emisor,receptor,mensaje.as_string())
+ 
+        serverSMTP.close() 
+        print "Correo enviado" 
+    except: 
+        print """Error: el mensaje no pudo enviarse. 
+        Compruebe que sendmail se encuentra instalado en su sistema"""
+ 
 
 def loginUser(request):
     """Log in app to user"""
@@ -378,46 +505,241 @@ def logoutUser(request):
     logout(request)
     return HttpResponseRedirect('/')
 
-def createUser(request):
-    """Method for to sign up in the platform"""
-    logout(request)
-    if request.method == "POST":
-        form = NewUserForm(request.POST)
-        if form.is_valid():
-            nickName = form.cleaned_data['nickname']
-            emailUser = form.cleaned_data['emailUser']
-            passUser = form.cleaned_data['passUser']
-            user = User.objects.create_user(nickName, emailUser, passUser)
-            return render_to_response("profile.html", {'user': user}, context_instance=RC(request))
 
-#________________________ PROFILE ____________________________# 
+#_______________________ AUTOMATIC ANALYSIS _________________________________#
 
+def analyzeProject(request,file_name, fileName):
+    dictionary = {}
+    if os.path.exists(file_name):
+        list_file = file_name.split('(')
+        if len(list_file) > 1:
+            file_name = list_file[0] + '\(' + list_file[1]
+            list_file = file_name.split(')')
+            file_name = list_file[0] + '\)' + list_file[1]
+        #Request to hairball
+        metricMastery = "hairball -p mastery.Mastery " + file_name
+        metricDuplicateScript = "hairball -p \
+                                duplicate.DuplicateScripts " + file_name
+        metricSpriteNaming = "hairball -p convention.SpriteNaming " + file_name
+        metricDeadCode = "hairball -p blocks.DeadCode " + file_name 
+        metricInitialization = "hairball -p \
+                           initialization.AttributeInitialization " + file_name
 
-def updateProfile(request):
-    """Update the pass, email and avatar"""
-    if request.user.is_authenticated():
-        user = request.user.username
+        #Plug-ins not used yet
+        #metricBroadcastReceive = "hairball -p 
+        #                          checks.BroadcastReceive " + file_name
+        #metricBlockCounts = "hairball -p blocks.BlockCounts " + file_name
+        #Response from hairball
+        resultMastery = os.popen(metricMastery).read()
+        resultDuplicateScript = os.popen(metricDuplicateScript).read()
+        resultSpriteNaming = os.popen(metricSpriteNaming).read()
+        resultDeadCode = os.popen(metricDeadCode).read()
+        resultInitialization = os.popen(metricInitialization).read()
+        #Plug-ins not used yet
+        #resultBlockCounts = os.popen(metricBlockCounts).read()
+        #resultBroadcastReceive = os.popen(metricBroadcastReceive).read()
+
+        #Create a dictionary with necessary information
+        dictionary.update(procMastery(request,resultMastery, fileName))
+        dictionary.update(procDuplicateScript(resultDuplicateScript, fileName))
+        dictionary.update(procSpriteNaming(resultSpriteNaming, fileName))
+        dictionary.update(procDeadCode(resultDeadCode, fileName))
+        dictionary.update(procInitialization(resultInitialization, fileName))
+        #Plug-ins not used yet
+        #dictionary.update(procBroadcastReceive(resultBroadcastReceive))
+        #dictionary.update(procBlockCounts(resultBlockCounts))
+        
+        return dictionary
     else:
-        user = None
-    if request.method == "POST":
-        form = UpdateForm(request.POST)
-        if form.is_valid():
-            newPass = form.cleaned_data['newPass']
-            newEmail = form.cleaned_data['newEmail']
-            choiceField = forms.ChoiceField(widget=forms.RadioSelect())
-            print newPass, newEmail, choiceField.widget.choices, choiceField
-            return HttpResponseRedirect('/mydashboard')
-        else:
-            return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/')
+
+# __________________________ TRANSLATE MASTERY ______________________#
+
+def translate(request,d):
+    if request.LANGUAGE_CODE == "es":
+        d_translate_es = {}
+        d_translate_es['Abstracción'] = d['Abstraction']
+        d_translate_es['Paralelismo'] = d['Parallelization']
+        d_translate_es['Pensamiento lógico'] = d['Logic']
+        d_translate_es['Sincronización'] = d['Synchronization']
+        d_translate_es['Control de flujo'] = d['FlowControl']
+        d_translate_es['Interactividad con el usuario'] = d['UserInteractivity']
+        d_translate_es['Representación de la información'] = d['DataRepresentation']
+        return d_translate_es
+    else:
+        return d
 
 
-def changePassword(request, new_password):
-    """Change the password of user"""
-    user = User.objects.get(username=current_user)
-    user.set_password(new_password)
-    user.save()
+# __________________________ PROCESSORS _____________________________#
+
+def procMastery(request,lines, fileName):
+    """Mastery"""
+    dic = {}
+    lLines = lines.split('\n')
+    d = {}
+    d = ast.literal_eval(lLines[1])
+    lLines = lLines[2].split(':')[1]
+    points = int(lLines.split('/')[0])
+    maxi = int(lLines.split('/')[1])
+    
+    #Save in DB 
+    fileName.score = points
+    fileName.abstraction = d["Abstraction"]
+    fileName.parallelization = d["Parallelization"]
+    fileName.logic = d["Logic"]
+    fileName.synchronization = d["Synchronization"]
+    fileName.flowControl = d["FlowControl"]
+    fileName.userInteractivity = d["UserInteractivity"]
+    fileName.dataRepresentation = d["DataRepresentation"]
+    fileName.save()
+
+    #Translation
+    d_translated = translate(request,d)
+
+    dic["mastery"] = d_translated
+    dic["mastery"]["points"] = points
+    dic["mastery"]["maxi"] = maxi   
+    return dic
+
+def procDuplicateScript(lines, fileName):
+    """Return number of duplicate scripts"""
+    dic = {}
+    number = 0
+    lLines = lines.split('\n')
+    if len(lLines) > 2:
+        number = lLines[1][0]
+    dic["duplicateScript"] = dic
+    dic["duplicateScript"]["number"] = number
+
+    #Save in DB 
+    fileName.duplicateScript = number
+    fileName.save()
 
 
+    return dic
+
+
+def procSpriteNaming(lines, fileName):
+    """Return the number of default spring"""
+    dic = {}
+    lLines = lines.split('\n')
+    number = lLines[1].split(' ')[0]
+    lObjects = lLines[2:]
+    lfinal = lObjects[:-1]
+    dic['spriteNaming'] = dic
+    dic['spriteNaming']['number'] = str(number)
+    dic['spriteNaming']['sprite'] = lfinal
+
+    #Save in DB 
+    fileName.spriteNaming = str(number)
+    fileName.save()
+
+    return dic
+
+
+def procDeadCode(lines, fileName):
+    """Number of dead code with characters and blocks"""
+    lLines = lines.split('\n')
+    lLines = lLines[1:]
+    lcharacter = []
+    literator = []
+    iterator = 0
+    for frame in lLines:
+        if '[kurt.Script' in frame:
+            # Found an object
+            name = frame.split("'")[1]         
+            lcharacter.append(name)
+            if iterator != 0:
+                literator.append(iterator)
+                iterator = 0
+        if 'kurt.Block' in frame:
+            iterator += 1
+    literator.append(iterator)
+
+    number = len(lcharacter)
+    dic = {}
+    dic["deadCode"] = dic  
+    dic["deadCode"]["number"] = number
+    for i in range(number):
+        dic["deadCode"][lcharacter[i]] = literator[i]
+
+    #Save in DB 
+    fileName.deadCode = number
+    fileName.save()
+  
+    return dic
+
+
+def procInitialization(lines, fileName):
+    """Initialization"""
+    dic = {}
+    lLines = lines.split('.sb2')
+    d = ast.literal_eval(lLines[1])
+    keys = d.keys()
+    values = d.values()
+    items = d.items()
+    number = 0
+    
+    for keys, values in items:
+        list = []
+        attribute = ""
+        internalkeys = values.keys()
+        internalvalues = values.values()
+        internalitems = values.items()
+        flag = False
+        counterFlag = False
+        i = 0
+        for internalkeys, internalvalues in internalitems:
+            if internalvalues == 1:
+                counterFlag = True
+                for value in list:
+                    if internalvalues == value:
+                        flag = True
+                if not flag:
+                    list.append(internalkeys)
+                    if len(list) < 2:
+                        attribute = str(internalkeys)
+                    else:
+                        attribute = attribute + ", " + str(internalkeys)
+        if counterFlag:
+            number = number + 1
+        d[keys] = attribute      
+    dic["initialization"] = d
+    dic["initialization"]["number"] = number
+
+    #Save in DB 
+    fileName.initialization = number
+    fileName.save()
+
+    return dic
+
+
+
+#_________________________CSV File____________________________#
+def exportCsvFile(request):
+	"""Export a CSV File"""
+	response = HttpResponse(content_type='text/csv')
+	response['Content-Disposition'] = 'attachment; filename="some.csv"'
+	d = {"Abstraction": 2, "level": " Developing", "Parallelization": 1, "Logic": 1, "Synchronization": 2, "FlowControl": 2, "UserInteractivity": 1, "maxPoints": 21, "DataRepresentation": 1, "points": 10}
+	writer = csv.writer(response)
+	for key, value in d.items():
+   		writer.writerow([key, value])
+
+	"""
+	writer = csv.writer(response)
+	writer.writerow(['First row', 'Paco', '21', 'Madrid'])
+	writer.writerow(['Second row', 'Lucia', '25', 'Quito'])
+	"""
+	return response
+
+
+
+
+
+
+##############################################################################
+#                           UNDER DEVELOPMENT                                   
+##############################################################################
 
 #________________________ DASHBOARD ____________________________# 
 
@@ -461,7 +783,8 @@ def myProjects(request):
         mydashboard = Dashboard.objects.get(user=user)
         projects = mydashboard.project_set.all()
         return render_to_response("myProjects/content-projects.html", 
-                                {'projects': projects},
+                                {'projects': projects,
+                                 'user':user},
                                 context_instance=RC(request))
     else:
         return HttpResponseRedirect("/")
@@ -490,184 +813,32 @@ def myHistoric(request):
     else:
         return HttpResponseRedirect("/")
 
-#_______________________ AUTOMATIC ANALYSIS _________________________________#
 
-def analyzeProject(request,file_name):
-    dictionary = {}
-    if os.path.exists(file_name):
-        list_file = file_name.split('(')
-        print str(list_file)
-        if len(list_file) > 1:
-            file_name = list_file[0] + '\(' + list_file[1]
-            list_file = file_name.split(')')
-            file_name = list_file[0] + '\)' + list_file[1]
-        #Request to hairball
-        metricMastery = "hairball -p mastery.Mastery " + file_name
-        metricDuplicateScript = "hairball -p \
-                                duplicate.DuplicateScripts " + file_name
-        metricSpriteNaming = "hairball -p convention.SpriteNaming " + file_name
-        metricDeadCode = "hairball -p blocks.DeadCode " + file_name 
-        metricInitialization = "hairball -p \
-                           initialization.AttributeInitialization " + file_name
+#________________________ PROFILE ____________________________# 
 
-        #Plug-ins not used yet
-        #metricBroadcastReceive = "hairball -p 
-        #                          checks.BroadcastReceive " + file_name
-        #metricBlockCounts = "hairball -p blocks.BlockCounts " + file_name
-        #Response from hairball
-        resultMastery = os.popen(metricMastery).read()
-        resultDuplicateScript = os.popen(metricDuplicateScript).read()
-        resultSpriteNaming = os.popen(metricSpriteNaming).read()
-        resultDeadCode = os.popen(metricDeadCode).read()
-        resultInitialization = os.popen(metricInitialization).read()
-        #Plug-ins not used yet
-        #resultBlockCounts = os.popen(metricBlockCounts).read()
-        #resultBroadcastReceive = os.popen(metricBroadcastReceive).read()
 
-        #Create a dictionary with necessary information
-        dictionary.update(procMastery(request,resultMastery))
-        dictionary.update(procDuplicateScript(resultDuplicateScript))
-        dictionary.update(procSpriteNaming(resultSpriteNaming))
-        dictionary.update(procDeadCode(resultDeadCode))
-        dictionary.update(procInitialization(resultInitialization))
-        #Plug-ins not used yet
-        #dictionary.update(procBroadcastReceive(resultBroadcastReceive))
-        #dictionary.update(procBlockCounts(resultBlockCounts))
-        return dictionary
+def updateProfile(request):
+    """Update the pass, email and avatar"""
+    if request.user.is_authenticated():
+        user = request.user.username
     else:
-        return HttpResponseRedirect('/')
-
-# __________________________ TRANSLATE MASTERY ______________________#
-
-def translate(request,d):
-    if request.LANGUAGE_CODE == "es":
-        print "ESPAÑOL"
-        dictionary = {}
-        dictionary['Abstracción'] = d['Abstraction']
-        dictionary['Paralelismo'] = d['Parallelization']
-        dictionary['Lógica'] = d['Logic']
-        dictionary['Sincronismo'] = d['Synchronization']
-        dictionary['Control del Flujo'] = d['FlowControl']
-        dictionary['Interactividad del Usuario'] = d['UserInteractivity']
-        dictionary['Representación de los Datos'] = d['DataRepresentation']
-        #d_translate = _('%(d)s') % {'d':dictionary}
-        return dictionary
-    else:
-        print "INGLÉS"
-        return d
+        user = None
+    if request.method == "POST":
+        form = UpdateForm(request.POST)
+        if form.is_valid():
+            newPass = form.cleaned_data['newPass']
+            newEmail = form.cleaned_data['newEmail']
+            choiceField = forms.ChoiceField(widget=forms.RadioSelect())
+            return HttpResponseRedirect('/mydashboard')
+        else:
+            return HttpResponseRedirect('/')
 
 
-# __________________________ PROCESSORS _____________________________#
-
-def procMastery(request,lines):
-    """Mastery"""
-    dic = {}
-    lLines = lines.split('\n')
-    d = {}
-    d = ast.literal_eval(lLines[1])
-    lLines = lLines[2].split(':')[1]
-    points = int(lLines.split('/')[0])
-    maxi = int(lLines.split('/')[1])
-    
-    d_translated = translate(request,d)
-
-    dic["mastery"] = d_translated
-    dic["mastery"]["points"] = points
-    dic["mastery"]["maxi"] = maxi
-    return dic
-
-def procDuplicateScript(lines):
-    """Return number of duplicate scripts"""
-    dic = {}
-    number = 0
-    lLines = lines.split('\n')
-    if len(lLines) > 2:
-        number = lLines[1][0]
-    dic["duplicateScript"] = dic
-    dic["duplicateScript"]["number"] = number
-    return dic
-
-
-def procSpriteNaming(lines):
-    """Return the number of default spring"""
-    dic = {}
-    lLines = lines.split('\n')
-    number = lLines[1].split(' ')[0]
-    lObjects = lLines[2:]
-    lfinal = lObjects[:-1]
-    dic['spriteNaming'] = dic
-    dic['spriteNaming']['number'] = str(number)
-    dic['spriteNaming']['sprite'] = lfinal
-    return dic
-
-
-def procDeadCode(lines):
-    """Number of dead code with characters and blocks"""
-    lLines = lines.split('\n')
-    lLines = lLines[1:]
-    lcharacter = []
-    literator = []
-    iterator = 0
-    for frame in lLines:
-        if '[kurt.Script' in frame:
-            # Found an object
-            name = frame.split("'")[1]         
-            lcharacter.append(name)
-            if iterator != 0:
-                literator.append(iterator)
-                iterator = 0
-        if 'kurt.Block' in frame:
-            iterator += 1
-    literator.append(iterator)
-
-    number = len(lcharacter)
-    dic = {}
-    dic["deadCode"] = dic  
-    dic["deadCode"]["number"] = number
-    for i in range(number):
-        dic["deadCode"][lcharacter[i]] = literator[i]
-  
-    return dic
-
-
-def procInitialization(lines):
-    """Initialization"""
-    dic = {}
-    lLines = lines.split('.sb2')
-    d = ast.literal_eval(lLines[1])
-    keys = d.keys()
-    values = d.values()
-    items = d.items()
-    number = 0
-    
-    for keys, values in items:
-        list = []
-        attribute = ""
-        internalkeys = values.keys()
-        internalvalues = values.values()
-        internalitems = values.items()
-        flag = False
-        counterFlag = False
-        i = 0
-        for internalkeys, internalvalues in internalitems:
-            if internalvalues == 1:
-                counterFlag = True
-                for value in list:
-                    if internalvalues == value:
-                        flag = True
-                if not flag:
-                    list.append(internalkeys)
-                    if len(list) < 2:
-                        attribute = str(internalkeys)
-                    else:
-                        attribute = attribute + ", " + str(internalkeys)
-        if counterFlag:
-            number = number + 1
-        d[keys] = attribute      
-    dic["initialization"] = d
-    dic["initialization"]["number"] = number
-
-    return dic
+def changePassword(request, new_password):
+    """Change the password of user"""
+    user = User.objects.get(username=current_user)
+    user.set_password(new_password)
+    user.save()
 
 # ___________________ PROCESSORS OF PLUG-INS NOT USED YET ___________________#
 
@@ -675,8 +846,6 @@ def procInitialization(lines):
 #    """CountLines"""
 #    dic = {}
 #    dic["countLines"] = lines
-
-#    print "BLOCK COUNTS: " + str(dic)
 #    return dic
 
 
@@ -700,8 +869,6 @@ def procInitialization(lines):
 
 def createStats(file_name, dictionary):
     flag = True
-
-
     return flag
 
 
@@ -748,8 +915,6 @@ def uploadRegistered(request):
         newMastery = Mastery(myproject=newProject, abstraction=dmaster["Abstraction"], paralel=dmaster["Parallelization"], logic=dmaster["Logic"], synchronization=dmaster["Synchronization"], flowcontrol=dmaster["FlowControl"], interactivity=dmaster["UserInteractivity"], representation=dmaster["DataRepresentation"], TotalPoints=dmaster["TotalPoints"])
         newMastery.save()
         newProject.score = dmaster["Total{% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}Points"]
-        print "Puntos:" 
-        print newProject.score
         if newProject.score > 15:
             newProject.level = "advanced"
         elif newProject.score > 7:
@@ -777,7 +942,6 @@ def uploadRegistered(request):
         for charx in d["sprite"]:
             newSprite = Sprite(myproject=newProject, character=charx)
             newSprite.save()
-            print newSprite.character
         return HttpResponseRedirect('/myprojects')
 
 #_____ ID/BUILDERS ____________#

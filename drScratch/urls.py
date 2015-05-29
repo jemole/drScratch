@@ -1,7 +1,8 @@
 from django.conf.urls import include, url, patterns
-from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = (
     # Examples:
@@ -12,11 +13,14 @@ urlpatterns = (
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
     #url(r'^profile', 'DrScratchApp.views.profileSettings',),
     url(r'^selector', 'app.views.selector',),
-    #url(r'^admin/upload_progress/$', 'app.views.upload_progress', name="admin-upload-progress"),
     url(r'^login', 'app.views.loginUser',),
     url(r'^logout', 'app.views.logoutUser',),
-    url(r'^500', 'app.views.error500',),
-    url(r'^404', 'app.views.error404',),
+    url(r'^users$', 'app.views.signUpUser',),
+    url(r'^organizations$', 'app.views.signUpOrganization',),
+    url(r'^organization/(\w+)', 'app.views.organization',),
+    #url(r'^500', 'app.views.error500',),
+    #url(r'^404', 'app.views.error404',),
+    url(r'learn$', 'app.views.learnUnregistered',),
     url(r'^learn/(\w+)', 'app.views.learn',),
     url(r'^createUser', 'app.views.createUser',),
     url(r'^uploadRegistered', 'app.views.uploadRegistered',),

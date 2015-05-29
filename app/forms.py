@@ -19,3 +19,18 @@ class UpdateForm(forms.Form):
 	newPass = forms.CharField(max_length=50)
 	newEmail = forms.CharField(max_length=50)
 #	choiceAvatar = forms.ChoiceField(choices=AVATAR_CHOICES, widget=forms.RadioSelect()
+
+class TeacherForm(forms.Form):
+    username = forms.CharField(max_length=50)
+    password = forms.CharField(max_length=50)
+    email = forms.CharField(max_length=50)  
+    hashkey = forms.CharField(max_length=50)
+    #classroom = forms.CharField(max_length=50)
+
+
+class OrganizationForm(forms.Form):
+    name = forms.CharField(max_length=50)
+    password = forms.CharField(max_length=50)
+    email = forms.CharField(max_length=50)  
+    hashkey = forms.CharField(max_length=50)
+    

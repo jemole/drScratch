@@ -1,4 +1,0 @@
-FileName: Testing.sb2	ID: 1	Method: project
-FileName: scratch.sb	ID: 2	Method: project
-FileName: scratch.sb	ID: 3	Method: project
-FileName: scratch.sb	ID: 4	Method: project
