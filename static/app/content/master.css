@@ -5,49 +5,91 @@ src: url(fonts/glyphicons-halflings-regular.ttf) format("truetype");
 
 body{
     font-family: Purisa,Bold, sans-serif !important;
-    color: white;
-    background-color: #819FF7;
+    background-color: white !important;
 }
 
-#typ{
-font-family: Purisa,Bold, sans-serif !important;
+a{
+    color:white;
 }
-.navbar-inverse{
-   background-color: #235;
 
+a:hover,
+a:focus{
+    color:black;
 }
+
 
 .jumbotron{
-    color:black;
-    
+    color:white;
+    background-color: white;
+    padding: 20px !important;
+   
+}
+.modal-backdrop{
+    background-color: red;
 }
 
-
+.white{
+     color:white;
+    }
 .dark-text:hover{
-    color:#235;
+    color: #1792A4;
 }
 
 
+#footer .btn,
+.btn{
+    color:#B40404;
+    background-color:#F9B966;
+    border-color:#ECE9CB;
+}
+
+.btn:hover,
+.btn:focus,
+#footer .btn:hover,
+#footer .btn:focus{
+  color:white;
+  border-color: white ;
+  background-color:#FACC2E;
+  text-decoration: none;
+}
 
 
 #myCarrousel{
     border-style: double;
 }
 
-#blackboard .jumbotron{
-    border-style: double;
-    margin-top: 50px;
-    padding: 0px;
-    padding-bottom: 10px;
-    border-width: 15px; 
+.devpanel{
+    padding-top: 90px;
+    
+
+}
+#improve{
+    border-color:#A3D5D1;
+    -webkit-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+}
+#devpanel{
+        background-color: #A3D5D1;
+        border-color:#A3D5D1;
+        -webkit-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+}
+
+#dashboard{
+
+padding-top:90px;
 }
 
 #dashboard .jumbotron{
-    background-color: #235;
     border-style: dotted;
-    color: #fff;
+    border-color: #A3D5D1;
     border-width: 10px; 
-    padding-top:10px;
+    -webkit-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    
 }
 
 #dashboard .jumbotron h4{
@@ -58,23 +100,34 @@ font-family: Purisa,Bold, sans-serif !important;
 }
 
 #CT{
-    color:white;
+
     font-weight:bold;
     font-size: 34px;
 }
 
 #issues{
-    color: #235;
+    color: #DD5D26;
     font-weight:bold;
     font-size:34px;
 }
 
 #score{
     font-weight:bold;
-    color:#235;
+    color: #1792A4;
     font-size:34px;
 }
 
+#footer{
+    color: #222;
 
+}
 
+#footer a{
+    color:#FFBF00;
+    font-weight:bold;
+}
+
+#footer a:hover{
+    color:#B40404;
+}
 
