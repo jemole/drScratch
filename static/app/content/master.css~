@@ -9,7 +9,7 @@ body{
     background-color: #819FF7;
 }
 
-#typ{
+.typ{
 font-family: Purisa,Bold, sans-serif !important;
 }
 .navbar-inverse{
