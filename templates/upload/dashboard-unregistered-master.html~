@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
     <link rel="stylesheet" href="../../static/app/content/scratchblocks2.css">
-    <script src="../../static/app/scripts/scratchblocks2.js"></script>
+    <script src="../../static/app/scripts/bootstrap-modal.js"></script>
+    
 
     <!-- SITE TITLE -->
     <title>Dr.Scratch</title>
@@ -37,7 +38,8 @@
 
     <!-- CUSTOM STYLESHEETS -->
     <link rel="stylesheet" href="../../static/app/content/styles.css">
-    <link rel="stylesheet" href="../../static/app/content/basic.css">
+    <link rel="stylesheet" href="../../static/app/content/master.css">
+    <link rel="stylesheet" href="../../static/app/content/magnific-popup.css">
     <!-- RESPONSIVE FIXES -->
     <link rel="stylesheet" href="../../static/app/content/responsive.css">
 
@@ -45,8 +47,10 @@
     <link rel="stylesheet" href="../../static/app/content/red.css">
 
     <script>
-                    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-                    </script>
+        window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+
+
 </head>
 <body>
     <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
@@ -80,8 +84,8 @@
                         </div>
                         <div class="panel-body">
                             <div class="container">
-                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></h3></img>" %}
-                            <p class='text-left dark-text'> {% trans "You're at the first of a great adventure . . .<br> Continue that way!" %}</p>
+                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></h3></img>" %}
+                            <p class='text-left dark-text'> {% trans "You're the master of the universe!!!" %}</p>
                             </div>
                         </div>
                     </div>
@@ -98,26 +102,34 @@
                                 {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
                                 {% if key != "points" %}
                                 {% if key != "maxi" %}
-                                {% if value != 2 %}
                                       {% if value == 0 %}
-                                  <a  href="/learn/{{ key }}/#level0">
+                                  <a  data-toggle="modal" data-target="#example" id="changeModalWindow" onclick="change('{{ key }}','{{ value }}')">
                                     <img src="static/app/images/favicon.ico" alt="">
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
-                                 </a><br>
+                                 </a>
+                                <br>
                                    
                                 </tr>
                             {% elif value == 1 %}
-                                <a href="/learn/{{ key }}/#level1">
+                               <a  data-toggle="modal" data-target="#example" id="changeModalWindow" onclick="change('{{ key }}','{{ value }}')">
                                     <img src="static/app/images/favicon.ico" alt=""> 
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
-                                 </a><br>
-                            
-                            
-                            {% endif %}
+                                
+                                 </a>
+                        <br></tr>
+                            {% elif value == 2 %}
+                                <a data-toggle="modal" data-target="#example" id="changeModalWindow" onclick="change('{{ key }}','{{ value }}')">
+                                    <img src="static/app/images/favicon.ico" alt=""> 
+                                        {% blocktrans %}
+                                        {{ key }}
+                                        {% endblocktrans %}
+                                 
+                                 </a>
+                            <br></tr>
                             {% endif %}   
                                 {% endif %}
                                 {% endif %}         
@@ -126,12 +138,39 @@
                                 {% endfor %}
                                 
                     </div>
+
+                    
+                    
+                    <div class="panel-heading">
+                        <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
+                    </div>
+                    <div class="panel-body text-left typ">
+                        <a class="glyphicon glyphicon-repeat"> {{ duplicateScript.number }} {% trans " duplicated scripts." %}</a><br>
+                        <a class="glyphicon glyphicon-pencil"> {{ spriteNaming.number }}{% trans " sprites naming." %} </a><br>
+                        <a class="glyphicon glyphicon-remove-sign"> {{ deadCode.number }} {% trans " dead code." %}</a><br>
+                        <a class="glyphicon glyphicon-exclamation-sign"> {{ initialization.number }} {% trans " sprite atributes." %}</a>
+                    </div>
                 </div>
             </div>
 
             </section>    
 
 
+
+<div id="example" class="modal fade " role="dialog" tabindex="-1" aria-labelledby="example" aria-hidden="true">
+                                 <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <a data-dismiss="modal" class="close">×</a>
+                                        <h3 id="key">{{ key }}</h3>
+                                     </div>
+                                     <div class="modal-body" id="body-learn">
+                                       <p id="plearn"> </p>                 
+                                    </div>
+                                    
+                                    </div>
+                                    </div>
+                                </div>
   <!-- Score in detail -->
     <div class="col-md-7">
         <section id="dashboard">
@@ -199,7 +238,7 @@
         </section>
      </div>
     <footer class="footer grey-bg">
-           {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+           {% trans "©2014 Dr.Scratch is powered by" %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
             <!-- SOCIAL ICONS -->
             <ul class="social-icons">
@@ -212,6 +251,7 @@
 
     </footer>
 
-
+<script src="../../static/app/scripts/learn_constructor.js"></script>
+<script src="../../static/app/scripts/jquery.magnific-popup.js"></script>
 </body>
 </html>

@@ -6,11 +6,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{% trans "Error" %} </title>
+        <title>{% trans "Learn" %} </title>
 
         <link rel="icon" href="../../static/app/images/favicon.ico">
 		<!-- Bootstrap core CSS -->
-	    <link href="../../static/app/content/bootstrap-main.css" rel="stylesheet">
+	    <link href="../../static/app/content/bootstrap.min.css" rel="stylesheet">
 	    <!-- Add custom CSS here -->
 	    <link href="../../static/app/content/sb-admin.css" rel="stylesheet">
 
@@ -32,11 +32,8 @@
 <div class="jumbotron">
     <div class="container">
             <p>
-                <h1 class="text-center">
-                     {% trans "ERROR 404 - Page Not Found" %}
-                </h1>
-                <h2 class="text-center">
-                     {% trans  "Ops! This page doesn't exist" %} 
+                <h2>
+                   {% trans "If you want to learn more, you'll must to sign up in..." %}
                 </h2>
             </p>
     </div>
@@ -49,11 +46,14 @@
 
 <!-- Sign up -->
 <div class="pager">
-        <h4>          
-              <a href="/"><span class="icon-basic-home colored-text"></span></a>
+        <h3>
+            <h2>
+               {% trans "New features" %}
+            </h2>
+               {% trans "We're working on this and would be pleased to receive your feedback" %} 
               <a href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a>
               <a href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a>
-        </h4>
+        </h3>
 </div>
 <div class="pager">
     <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/" class="btn btn-primary standard-button" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Get Started" %}</a>
@@ -64,7 +64,7 @@
 <!-- Footer -->
 <div id="footer" class="container">
     <footer class="footer grey-bg">
-       {% trans "©2014 Dr.Scratch is powered by " %} <a href="https://github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+       {% trans "©2014 Dr.Scratch is powered by" %} <a href="https://github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
        <a href
     </footer>
 </div>

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="static/app/icons/icons.css">  
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <link rel="stylesheet" href="../../static/app/content/magnific-popup.css">
     <!-- =========================
      STYLESHEETS   
     ============================== -->
@@ -37,7 +38,7 @@
 
     <!-- CUSTOM STYLESHEETS -->
     <link rel="stylesheet" href="../../static/app/content/styles.css">
-    <link rel="stylesheet" href="../../static/app/content/basic.css">
+    <link rel="stylesheet" href="../../static/app/content/developing.css">
     <!-- RESPONSIVE FIXES -->
     <link rel="stylesheet" href="../../static/app/content/responsive.css">
 
@@ -80,8 +81,8 @@
                         </div>
                         <div class="panel-body">
                             <div class="container">
-                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></h3></img>" %}
-                            <p class='text-left dark-text'> {% trans "You're at the first of a great adventure . . .<br> Continue that way!" %}</p>
+                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>DEVELOPING! </strong></h3></img>" %}
+                            <p class='text-left dark-text'> {% trans "You're doing a great job. Keep it up!!!" %}</p>
                             </div>
                         </div>
                     </div>
@@ -100,21 +101,49 @@
                                 {% if key != "maxi" %}
                                 {% if value != 2 %}
                                       {% if value == 0 %}
+
+                                  <a class="popup-modal" href="#test-modal"><img src="static/app/images/favicon.ico" alt="">
+                                        {% blocktrans %}
+                                        {{ key }}
+                                        {% endblocktrans %}</a>
+
+                                    <div id="test-modal" class="white-popup-block mfp-hide">
+	                                    <h1>Modal dialog</h1>
+	                                    <p>You won't be able to dismiss this by usual means (escape or
+		                                    click button), but you can close it programatically based on
+		                                    user choices or actions.</p>
+	                                    <p><a class="popup-modal-dismiss" href="#">Dismiss</a></p>
+                                    </div>
+                    <!--
                                   <a  href="/learn/{{ key }}/#level0">
                                     <img src="static/app/images/favicon.ico" alt="">
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
-                                 </a><br>
+                                 </a>--><br>
                                    
                                 </tr>
                             {% elif value == 1 %}
+
+                                <a class="popup-modal" href="#test-modal"><img src="static/app/images/favicon.ico" alt="">
+                                        {% blocktrans %}
+                                        {{ key }}
+                                        {% endblocktrans %}</a>
+
+                                    <div id="test-modal" class="white-popup-block mfp-hide">
+	                                    <h1>Modal dialog</h1>
+	                                    <p>You won't be able to dismiss this by usual means (escape or
+		                                    click button), but you can close it programatically based on
+		                                    user choices or actions.</p>
+	                                    <p><a class="popup-modal-dismiss" href="#">Dismiss</a></p>
+                                    </div>
+<!--
                                 <a href="/learn/{{ key }}/#level1">
                                     <img src="static/app/images/favicon.ico" alt=""> 
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
-                                 </a><br>
+                                 </a>--><br>
                             
                             
                             {% endif %}
@@ -199,7 +228,7 @@
         </section>
      </div>
     <footer class="footer grey-bg">
-           {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+           {% trans "©2014 Dr.Scratch is powered by" %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
             <!-- SOCIAL ICONS -->
             <ul class="social-icons">
@@ -212,6 +241,6 @@
 
     </footer>
 
-
+<script src="../../static/app/scripts/jquery.magnific-popup.js"></script>
 </body>
-</html>
+</html>s
