@@ -9,6 +9,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
     <link rel="stylesheet" href="../../static/app/content/scratchblocks2.css">
     <script src="../../static/app/scripts/bootstrap-modal.js"></script>
+    <script src="../../static/app/scripts/scratchblocks2.js"></script>
+    <script src="../../static/app/scripts/translations.js"></script>
     
 
     <!-- SITE TITLE -->
@@ -39,7 +41,6 @@
     <!-- CUSTOM STYLESHEETS -->
     <link rel="stylesheet" href="../../static/app/content/styles.css">
     <link rel="stylesheet" href="../../static/app/content/master.css">
-    <link rel="stylesheet" href="../../static/app/content/magnific-popup.css">
     <!-- RESPONSIVE FIXES -->
     <link rel="stylesheet" href="../../static/app/content/responsive.css">
 
@@ -47,15 +48,29 @@
     <link rel="stylesheet" href="../../static/app/content/red.css">
 
     <script>
+    $(document).ready(function() {
+        scratchblocks2.parse();
+    });
+var choose_lang = x=window.navigator.language||navigator.browserLanguage;
+    choose_lang = choose_lang.split("-")[0];
+    console.log(choose_lang);
+
+    scratchblocks2.reset_languages();
+    var lang_dict = scratchblocks2._translations[choose_lang];
+      console.log(lang_dict.blocks);
+      if (lang_dict) scratchblocks2.load_language(lang_dict);
+    </script>
+    <script>
         window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-</script>
+    </script>
 
 
 </head>
 <body>
+    <!-- TOP BAR -->
+<div id="wrap">
     <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
         <div class="container">          
-                    <!-- TOP BAR -->
             <div class="navbar-collapse collapse" id="stamp-navigation">
                     <!-- NAVIGATION LINK -->
                 <a class="navbar-brand" href="/">
@@ -65,32 +80,34 @@
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr.Scratch(Beta Version)" %}</a></li>
-                      </ul>
+                </ul>
             </div>
-                    <!-- /END TOP BAR -->
         </div>
-                <!-- /END CONTAINER -->
     </div>
+    <!-- /END TOP BAR -->
     
-            <!-- /END STICKY NAVIGATION -->
-    <!-- JUMBOTRON -->
-            <section id="blackboard" class="services col-md-5">
-                <div class="devpanel">
-                    <div class="panel panel-success" id="devpanel">
-                        <div class="panel-heading">
-                            <h2 id="score" class="panel-title dark-text"><strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}
+<div class="container">
+    <!-- BODY -->
+    <section id="blackboard" class="services col-md-5">
+    <!-- POINTS PANEL -->
+        <div class="devpanel">
+            <div class="panel panel-success" id="devpanel">
+                <div class="panel-heading">
+                    <h2 id="score" class="panel-title dark-text"><strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}
                             <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>
                         
-                        </div>
-                        <div class="panel-body">
-                            <div class="container">
-                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></h3></img>" %}
+                </div>
+                <div class="panel-body">
+                    <div class="container">
+                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></h3>" %}
                             <p class='text-left dark-text'> {% trans "You're the master of the universe!!!" %}</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <!-- HOW TO IMPROVE -->
+            </div>
+        </div>
+    <!-- /POINTS PANNEL -->
+
+    <!-- HOW TO IMPROVE -->
             <div class="improve">
                 <div class="panel panel-success" id="improve">
                     <div class="panel-heading">
@@ -103,7 +120,7 @@
                                 {% if key != "points" %}
                                 {% if key != "maxi" %}
                                       {% if value == 0 %}
-                                  <a  data-toggle="modal" data-target="#example" id="changeModalWindow" onclick="change('{{ key }}','{{ value }}')">
+                                  <a  href="/learn/{{ key }}/#level0">
                                     <img src="static/app/images/favicon.ico" alt="">
                                         {% blocktrans %}
                                         {{ key }}
@@ -112,24 +129,26 @@
                                 <br>
                                    
                                 </tr>
-                            {% elif value == 1 %}
-                               <a  data-toggle="modal" data-target="#example" id="changeModalWindow" onclick="change('{{ key }}','{{ value }}')">
+                                    {% elif value == 1 %}
+                                <a  href="/learn/{{ key }}/#level1">
                                     <img src="static/app/images/favicon.ico" alt=""> 
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
                                 
                                  </a>
-                        <br></tr>
-                            {% elif value == 2 %}
-                                <a data-toggle="modal" data-target="#example" id="changeModalWindow" onclick="change('{{ key }}','{{ value }}')">
+                                <br>
+                                </tr>
+                                    {% elif value == 2 %}
+                                 <a  href="/learn/{{ key }}/#level2">
                                     <img src="static/app/images/favicon.ico" alt=""> 
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
                                  
                                  </a>
-                            <br></tr>
+                                <br>
+                                </tr>
                             {% endif %}   
                                 {% endif %}
                                 {% endif %}         
@@ -145,32 +164,38 @@
                         <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
                     </div>
                     <div class="panel-body text-left typ">
-                        <a class="glyphicon glyphicon-repeat"> {{ duplicateScript.number }} {% trans " duplicated scripts." %}</a><br>
-                        <a class="glyphicon glyphicon-pencil"> {{ spriteNaming.number }}{% trans " sprites naming." %} </a><br>
-                        <a class="glyphicon glyphicon-remove-sign"> {{ deadCode.number }} {% trans " dead code." %}</a><br>
-                        <a class="glyphicon glyphicon-exclamation-sign"> {{ initialization.number }} {% trans " sprite atributes." %}</a>
+                        <a class="glyphicon glyphicon-repeat"/><a> {{ duplicateScript.number }} {% trans " duplicated scripts." %}
+</a><br>
+                        <a class="glyphicon glyphicon-pencil"/> <a> {{ spriteNaming.number }}{% trans " sprites naming:" %}
+                        {% for value in spriteNaming.sprite %}
+
+                        {{ value }}.
+
+                        {% endfor %} </a><br>
+                        <a class="glyphicon glyphicon-remove-sign"/><a> {{ deadCode.number }} {% trans " dead code:" %}
+                        {% for key,value in deadCode.items%}
+                        {% if key != "deadCode" %}
+                        {% if key != "number" %}
+                        {{ key }}({{ value }})
+                        {% endif%}
+                        {% endif%}
+                        {% endfor%}</a><br>
+                        <a class="glyphicon glyphicon-exclamation-sign"/><a> {{ initialization.number }} {% trans " sprite atributes:" %}
+                        {% for key,value in initialization.items%}
+                        {% if value|length > 0 %}
+                        {% if key != "number" %}
+                        <p>{{ key }}({{ value }})</p>
+                        {% endif%}
+                        {% endif%}
+                        {% endfor%}
+</a>
                     </div>
                 </div>
             </div>
 
             </section>    
+<!-- /HOW TO IMPROVE -->
 
-
-
-<div id="example" class="modal fade " role="dialog" tabindex="-1" aria-labelledby="example" aria-hidden="true">
-                                 <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                    <div class="modal-header">
-                                        <a data-dismiss="modal" class="close">×</a>
-                                        <h3 id="key">{{ key }}</h3>
-                                     </div>
-                                     <div class="modal-body" id="body-learn">
-                                       <p id="plearn"> </p>                 
-                                    </div>
-                                    
-                                    </div>
-                                    </div>
-                                </div>
   <!-- Score in detail -->
     <div class="col-md-7">
         <section id="dashboard">
@@ -237,8 +262,11 @@
                 </div>
         </section>
      </div>
+</div>
+
     <footer class="footer grey-bg">
-           {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+        <div class="container">
+           {% trans "©2014 Dr.Scratch is powered by" %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
             <!-- SOCIAL ICONS -->
             <ul class="social-icons">
@@ -248,10 +276,7 @@
                 </li>
                 
             </ul>
-
+        </div>
     </footer>
-
-<script src="../../static/app/scripts/learn_constructor.js"></script>
-<script src="../../static/app/scripts/jquery.magnific-popup.js"></script>
 </body>
 </html>

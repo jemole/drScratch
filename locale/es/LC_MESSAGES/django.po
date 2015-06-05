@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-03 18:30+0000\n"
+"POT-Creation-Date: 2015-06-05 11:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: drScratch/settings.py:109
+#: drScratch/settings.py:105
 msgid "Spanish"
 msgstr "Español"
 
-#: drScratch/settings.py:110
+#: drScratch/settings.py:106
 msgid "English"
 msgstr "Inglés"
 
@@ -51,9 +51,6 @@ msgstr "Empezar"
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70
 #: templates/learn/learn-unregistered.html:67 templates/main/main.html:548
-#: templates/upload/dashboard-unregistered-basic.html:202
-#: templates/upload/dashboard-unregistered-developing.html:231
-#: templates/upload/dashboard-unregistered-master.html:241
 msgid "©2014 Dr.Scratch is powered by "
 msgstr "©2014 Dr.Scratch implementado con "
 
@@ -1271,25 +1268,22 @@ msgstr "Espere un momento, por favor."
 msgid "loading..."
 msgstr "cargando..."
 
-#: templates/upload/dashboard-unregistered-basic.html:63
-#: templates/upload/dashboard-unregistered-developing.html:64
-#: templates/upload/dashboard-unregistered-master.html:67
+#: templates/upload/dashboard-unregistered-basic.html:64
+#: templates/upload/dashboard-unregistered-developing.html:65
+#: templates/upload/dashboard-unregistered-master.html:83
 msgid "Dr.Scratch(Beta Version)"
 msgstr "Versión Beta"
 
-#: templates/upload/dashboard-unregistered-basic.html:77
-#: templates/upload/dashboard-unregistered-developing.html:78
-#: templates/upload/dashboard-unregistered-master.html:81
+#: templates/upload/dashboard-unregistered-basic.html:79
+#: templates/upload/dashboard-unregistered-developing.html:79
+#: templates/upload/dashboard-unregistered-master.html:97
 msgid "Score:"
 msgstr "Puntuación:"
 
-#: templates/upload/dashboard-unregistered-basic.html:78
-#: templates/upload/dashboard-unregistered-developing.html:79
-#: templates/upload/dashboard-unregistered-master.html:82
-#, fuzzy, python-format
-#| msgid ""
-#| "I have just obtained %(points)s points analyzing my project in Dr. "
-#| "Scratch! Beat it! @DrScratchTool "
+#: templates/upload/dashboard-unregistered-basic.html:80
+#: templates/upload/dashboard-unregistered-developing.html:80
+#: templates/upload/dashboard-unregistered-master.html:98
+#, python-format
 msgid ""
 " I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
 "Beat it! @DrScratchTool "
@@ -1297,42 +1291,35 @@ msgstr ""
 "He conseguido %(points)s puntos analizando mi proyecto en Dr. Scratch!¡A ver "
 "si lo superas! @DrScratchTool"
 
-#: templates/upload/dashboard-unregistered-basic.html:83
-#, fuzzy
-#| msgid ""
-#| "<h1 class='text-left dark-text'><small>Your level is</small><img "
-#| "src='static/app/images/B.png'><strong>ASIC </strong></h1></img>"
+#: templates/upload/dashboard-unregistered-basic.html:85
 msgid ""
 "<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></"
-"h3></img>"
+"h3>"
 msgstr ""
-"<h1 class='text-left dark-text'><small>Tu nivel es</small><img src='static/"
-"app/images/B.png'><strong>ÁSICO </strong></h1></img>"
+"<h3 class='text-left dark-text'>Tu nivel es...<strong>BÁSICO </"
+"strong></h3>"
 
-#: templates/upload/dashboard-unregistered-basic.html:84
-#, fuzzy
-#| msgid "You're at the first of a great adventure . . . Continue that way!"
+#: templates/upload/dashboard-unregistered-basic.html:86
 msgid "You're at the first of a great adventure . . .<br> Continue that way!"
-msgstr "Estas al principio de una gran aventura. . . ¡Continúa así!"
+msgstr "Estás al principio de una gran aventura. . . <br>¡Continúa así!"
 
-#: templates/upload/dashboard-unregistered-basic.html:93
-#: templates/upload/dashboard-unregistered-developing.html:94
-#: templates/upload/dashboard-unregistered-master.html:97
+#: templates/upload/dashboard-unregistered-basic.html:95
+#: templates/upload/dashboard-unregistered-developing.html:95
+#: templates/upload/dashboard-unregistered-master.html:115
 msgid "How to improve my score:"
-msgstr ""
+msgstr "Cómo mejorar mi puntuación:"
 
-#: templates/upload/dashboard-unregistered-basic.html:105
-#: templates/upload/dashboard-unregistered-basic.html:114
-#: templates/upload/dashboard-unregistered-basic.html:156
+#: templates/upload/dashboard-unregistered-basic.html:107
+#: templates/upload/dashboard-unregistered-basic.html:116
+#: templates/upload/dashboard-unregistered-basic.html:158
 #: templates/upload/dashboard-unregistered-developing.html:106
-#: templates/upload/dashboard-unregistered-developing.html:120
-#: templates/upload/dashboard-unregistered-developing.html:129
-#: templates/upload/dashboard-unregistered-developing.html:143
-#: templates/upload/dashboard-unregistered-developing.html:185
-#: templates/upload/dashboard-unregistered-master.html:108
-#: templates/upload/dashboard-unregistered-master.html:118
-#: templates/upload/dashboard-unregistered-master.html:127
-#: templates/upload/dashboard-unregistered-master.html:195
+#: templates/upload/dashboard-unregistered-developing.html:116
+#: templates/upload/dashboard-unregistered-developing.html:124
+#: templates/upload/dashboard-unregistered-developing.html:165
+#: templates/upload/dashboard-unregistered-master.html:126
+#: templates/upload/dashboard-unregistered-master.html:136
+#: templates/upload/dashboard-unregistered-master.html:146
+#: templates/upload/dashboard-unregistered-master.html:221
 #, python-format
 msgid ""
 "\n"
@@ -1340,78 +1327,68 @@ msgid ""
 "                                        "
 msgstr ""
 
-#: templates/upload/dashboard-unregistered-basic.html:145
-#: templates/upload/dashboard-unregistered-developing.html:174
-#: templates/upload/dashboard-unregistered-master.html:184
+#: templates/upload/dashboard-unregistered-basic.html:147
+#: templates/upload/dashboard-unregistered-developing.html:154
+#: templates/upload/dashboard-unregistered-master.html:210
 #: templates/upload/dashboard-unregistered.html:114
 msgid "Concept"
 msgstr "Concepto"
 
-#: templates/upload/dashboard-unregistered-basic.html:146
-#: templates/upload/dashboard-unregistered-developing.html:175
-#: templates/upload/dashboard-unregistered-master.html:185
+#: templates/upload/dashboard-unregistered-basic.html:148
+#: templates/upload/dashboard-unregistered-developing.html:155
+#: templates/upload/dashboard-unregistered-master.html:211
 #: templates/upload/dashboard-unregistered.html:115
 msgid "Points"
 msgstr "Puntos"
 
-#: templates/upload/dashboard-unregistered-developing.html:84
-#, fuzzy
-#| msgid ""
-#| "<h1 class='text-left dark-text'><small>Your level is</small> <img "
-#| "src='static/app/images/D.png'><strong>EVELOPING </strong></h1></img>"
-msgid ""
-"<h3 class='text-left dark-text'>Your level is...  <strong>DEVELOPING! </"
-"strong></h3></img>"
-msgstr ""
-"<h1 class='text-left dark-text'><small>Tu nivel es</small> <img src='static/"
-"app/images/Mes.png'><strong>EDIO </strong></h1></img>"
+#: templates/upload/dashboard-unregistered-basic.html:207
+#: templates/upload/dashboard-unregistered-developing.html:214
+#: templates/upload/dashboard-unregistered-master.html:270
+msgid "©2014 Dr.Scratch is powered by"
+msgstr "©2014 Dr.Scratch implementado con "
 
 #: templates/upload/dashboard-unregistered-developing.html:85
-msgid "You're doing a great job. Keep it up!!!"
-msgstr "Estas haciendo un gran trabajo. ¡¡¡Sigue así!!!"
+msgid ""
+"<h3 class='text-left dark-text'>Your level is...  <strong>DEVELOPING! </"
+"strong></h3>"
+msgstr ""
+"<h3 class='text-left dark-text'>Tu nivel es...<strong>MEDIO </"
+"strong></h3>"
 
-#: templates/upload/dashboard-unregistered-master.html:87
-#, fuzzy
-#| msgid ""
-#| "<h1 class='text-left dark-text'><small>Your level is</small> <img "
-#| "src='static/app/images/M.png'><strong>ASTER </strong></h1></img>"
+#: templates/upload/dashboard-unregistered-developing.html:86
+msgid "You're doing a great job. Keep it up!!!"
+msgstr "Estás haciendo un gran trabajo. ¡¡¡Sigue así!!!"
+
+#: templates/upload/dashboard-unregistered-master.html:103
+
 msgid ""
 "<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></"
-"h3></img>"
+"h3>"
 msgstr ""
-"<h1 class='text-left dark-text'><small>Tu nivel es</small> <img src='static/"
-"app/images/Aes.png'><strong>LTO</strong></h1></img>"
+"<h3 class='text-left dark-text'>Tu nivel es <strong>ALTO!</strong></h3>"
 
-#: templates/upload/dashboard-unregistered-master.html:88
+#: templates/upload/dashboard-unregistered-master.html:104
 msgid "You're the master of the universe!!!"
 msgstr "¡¡¡Eres el master del universo!!!"
 
-#: templates/upload/dashboard-unregistered-master.html:145
+#: templates/upload/dashboard-unregistered-master.html:165
 msgid "Details to fix:"
-msgstr ""
+msgstr "Detalles a corregir:"
 
-#: templates/upload/dashboard-unregistered-master.html:148
-#, fuzzy
-#| msgid "Duplicated Scripts"
+#: templates/upload/dashboard-unregistered-master.html:168
 msgid " duplicated scripts."
 msgstr "Programas Duplicados"
 
-#: templates/upload/dashboard-unregistered-master.html:149
-#, fuzzy
-#| msgid "Sprites naming"
-msgid " sprites naming."
+#: templates/upload/dashboard-unregistered-master.html:170
+msgid " sprites naming:"
 msgstr "Nombres inadecuados"
 
-#: templates/upload/dashboard-unregistered-master.html:150
-#, fuzzy
-#| msgid "Dead Code"
-msgid " dead code."
+#: templates/upload/dashboard-unregistered-master.html:176
+msgid " dead code:"
 msgstr "Código Muerto"
 
-#: templates/upload/dashboard-unregistered-master.html:151
-#, fuzzy
-#| msgid "Sprite Atributes"
-msgid " sprite atributes."
+#: templates/upload/dashboard-unregistered-master.html:184
+msgid " sprite atributes:"
 msgstr "Atributos no inicializados correctamente"
 
 #: templates/upload/dashboard-unregistered.html:10

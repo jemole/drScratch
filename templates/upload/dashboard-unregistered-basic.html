@@ -49,6 +49,7 @@
                     </script>
 </head>
 <body>
+<div id="wrap">
     <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
         <div class="container">          
                     <!-- TOP BAR -->
@@ -70,6 +71,7 @@
     
             <!-- /END STICKY NAVIGATION -->
     <!-- JUMBOTRON -->
+<div class="container">
             <section id="blackboard" class="services col-md-5">
                 <div class="devpanel">
                     <div class="panel panel-success" id="devpanel">
@@ -80,7 +82,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="container">
-                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></h3></img>" %}
+                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></h3>" %}
                             <p class='text-left dark-text'> {% trans "You're at the first of a great adventure . . .<br> Continue that way!" %}</p>
                             </div>
                         </div>
@@ -198,8 +200,11 @@
                 </div>
         </section>
      </div>
+</div>
+</div>
     <footer class="footer grey-bg">
-           {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+ <div class="container">
+           {% trans "©2014 Dr.Scratch is powered by" %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
             <!-- SOCIAL ICONS -->
             <ul class="social-icons">
@@ -208,7 +213,7 @@
                 <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
                 </li>
                 
-            </ul>
+        </div>    </ul>
 
     </footer>
 

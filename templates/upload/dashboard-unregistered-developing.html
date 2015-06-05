@@ -50,6 +50,7 @@
                     </script>
 </head>
 <body>
+    <div id="wrap">
     <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
         <div class="container">          
                     <!-- TOP BAR -->
@@ -68,7 +69,7 @@
         </div>
                 <!-- /END CONTAINER -->
     </div>
-    
+    <div class="container">
             <!-- /END STICKY NAVIGATION -->
     <!-- JUMBOTRON -->
             <section id="blackboard" class="services col-md-5">
@@ -81,7 +82,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="container">
-                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>DEVELOPING! </strong></h3></img>" %}
+                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>DEVELOPING! </strong></h3>" %}
                             <p class='text-left dark-text'> {% trans "You're doing a great job. Keep it up!!!" %}</p>
                             </div>
                         </div>
@@ -99,55 +100,34 @@
                                 {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
                                 {% if key != "points" %}
                                 {% if key != "maxi" %}
-                                {% if value != 2 %}
                                       {% if value == 0 %}
-
-                                  <a class="popup-modal" href="#test-modal"><img src="static/app/images/favicon.ico" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}</a>
-
-                                    <div id="test-modal" class="white-popup-block mfp-hide">
-	                                    <h1>Modal dialog</h1>
-	                                    <p>You won't be able to dismiss this by usual means (escape or
-		                                    click button), but you can close it programatically based on
-		                                    user choices or actions.</p>
-	                                    <p><a class="popup-modal-dismiss" href="#">Dismiss</a></p>
-                                    </div>
-                    <!--
                                   <a  href="/learn/{{ key }}/#level0">
                                     <img src="static/app/images/favicon.ico" alt="">
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
-                                 </a>--><br>
+                                 </a><br>
                                    
                                 </tr>
                             {% elif value == 1 %}
 
-                                <a class="popup-modal" href="#test-modal"><img src="static/app/images/favicon.ico" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}</a>
-
-                                    <div id="test-modal" class="white-popup-block mfp-hide">
-	                                    <h1>Modal dialog</h1>
-	                                    <p>You won't be able to dismiss this by usual means (escape or
-		                                    click button), but you can close it programatically based on
-		                                    user choices or actions.</p>
-	                                    <p><a class="popup-modal-dismiss" href="#">Dismiss</a></p>
-                                    </div>
-<!--
                                 <a href="/learn/{{ key }}/#level1">
                                     <img src="static/app/images/favicon.ico" alt=""> 
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
-                                 </a>--><br>
-                            
+                                 </a><br>
+                             {% elif value == 2 %}
+
+                                <a href="/learn/{{ key }}/#level2">
+                                    <img src="static/app/images/favicon.ico" alt=""> 
+                                        {% blocktrans %}
+                                        {{ key }}
+                                        {% endblocktrans %}
+                                 </a><br>
                             
                             {% endif %}
-                            {% endif %}   
+ 
                                 {% endif %}
                                 {% endif %}         
                                 {% if forloop.counter|divisibleby:1 or forloop.last %}
@@ -227,8 +207,11 @@
                 </div>
         </section>
      </div>
+</div>
+</div>
     <footer class="footer grey-bg">
-           {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+    <div class="container">
+           {% trans "©2014 Dr.Scratch is powered by" %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
             <!-- SOCIAL ICONS -->
             <ul class="social-icons">
@@ -238,9 +221,9 @@
                 </li>
                 
             </ul>
-
+</div>
     </footer>
 
 <script src="../../static/app/scripts/jquery.magnific-popup.js"></script>
 </body>
-</html>s
+</html>
