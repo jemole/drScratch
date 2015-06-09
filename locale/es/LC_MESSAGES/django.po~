@@ -1470,7 +1470,8 @@ msgstr "bloques"
 msgid "Sprite attributes initialization"
 msgstr "Atributos no inicializados correctamente"
 
-
+#~ msgid "©2014 Dr.Scratch is powered by"
+#~ msgstr "©2014 Dr.Scratch implementado con "
 
 #~ msgid "Español"
 #~ msgstr "Español"

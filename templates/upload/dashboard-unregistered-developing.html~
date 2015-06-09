@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="static/app/icons/icons.css">  
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <link rel="stylesheet" href="../../static/app/content/magnific-popup.css">
     <!-- =========================
      STYLESHEETS   
     ============================== -->
@@ -37,7 +38,7 @@
 
     <!-- CUSTOM STYLESHEETS -->
     <link rel="stylesheet" href="../../static/app/content/styles.css">
-    <link rel="stylesheet" href="../../static/app/content/basic.css">
+    <link rel="stylesheet" href="../../static/app/content/developing.css">
     <!-- RESPONSIVE FIXES -->
     <link rel="stylesheet" href="../../static/app/content/responsive.css">
 
@@ -49,7 +50,7 @@
                     </script>
 </head>
 <body>
-<div id="wrap">
+    <div id="wrap">
     <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
         <div class="container">          
                     <!-- TOP BAR -->
@@ -68,10 +69,9 @@
         </div>
                 <!-- /END CONTAINER -->
     </div>
-    
+    <div class="container">
             <!-- /END STICKY NAVIGATION -->
     <!-- JUMBOTRON -->
-<div class="container">
             <section id="blackboard" class="services col-md-5">
                 <div class="devpanel">
                     <div class="panel panel-success" id="devpanel">
@@ -82,8 +82,8 @@
                         </div>
                         <div class="panel-body">
                             <div class="container">
-                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></h3>" %}
-                            <p class='text-left dark-text'> {% trans "You're at the first of a great adventure . . .<br> Continue that way!" %}</p>
+                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>DEVELOPING! </strong></h3>" %}
+                            <p class='text-left dark-text'> {% trans "You're doing a great job. Keep it up!!!" %}</p>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,6 @@
                                 {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
                                 {% if key != "points" %}
                                 {% if key != "maxi" %}
-                                {% if value != 2 %}
                                       {% if value == 0 %}
                                   <a  href="/learn/{{ key }}/#level0">
                                     <img src="static/app/images/favicon.ico" alt="">
@@ -111,16 +110,24 @@
                                    
                                 </tr>
                             {% elif value == 1 %}
+
                                 <a href="/learn/{{ key }}/#level1">
                                     <img src="static/app/images/favicon.ico" alt=""> 
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
                                  </a><br>
-                            
+                             {% elif value == 2 %}
+
+                                <a href="/learn/{{ key }}/#level2">
+                                    <img src="static/app/images/favicon.ico" alt=""> 
+                                        {% blocktrans %}
+                                        {{ key }}
+                                        {% endblocktrans %}
+                                 </a><br>
                             
                             {% endif %}
-                            {% endif %}   
+ 
                                 {% endif %}
                                 {% endif %}         
                                 {% if forloop.counter|divisibleby:1 or forloop.last %}
@@ -203,8 +210,8 @@
 </div>
 </div>
     <footer class="footer grey-bg">
- <div class="container">
-           {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+    <div class="container">
+           {% trans "©2014 Dr.Scratch is powered by" %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
             <!-- SOCIAL ICONS -->
             <ul class="social-icons">
@@ -213,10 +220,10 @@
                 <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
                 </li>
                 
-        </div>    </ul>
-
+            </ul>
+</div>
     </footer>
 
-
+<script src="../../static/app/scripts/jquery.magnific-popup.js"></script>
 </body>
 </html>
