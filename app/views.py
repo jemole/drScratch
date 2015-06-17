@@ -323,7 +323,7 @@ def processStringUrl(url):
 
 def sendRequestgetSB2(idProject):
     """First request to getSB2"""
-    getRequestSb2 = "http://getsb2-drscratch.herokuapp.com/" + idProject
+    getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
     fileURL = idProject + ".sb2"
 
     # Create DB of files
@@ -386,6 +386,12 @@ def learn(request,page):
 def learnUnregistered(request):
    	
     return render_to_response("learn/learn-unregistered.html",)
+
+#________________________ COLLABORATORS _____________________________#
+
+def collaborators(request):
+   	
+    return render_to_response("main/collaborators.html",)
 
 
 #________________________ TO REGISTER ORGANIZATION __________________#

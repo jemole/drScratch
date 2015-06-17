@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-09 11:46+0000\n"
+"POT-Creation-Date: 2015-06-17 21:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,14 +43,17 @@ msgstr "Ops! Esta página no existe"
 
 #: templates/error/404.html:59 templates/error/500.html:59
 #: templates/error/analyzing.html:62
-#: templates/learn/learn-unregistered.html:59 templates/main/main.html:85
-#: templates/main/main.html.py:537 templates/sign/createOrganization.html:71
+#: templates/learn/learn-unregistered.html:59
+#: templates/main/collaborators.html:499 templates/main/main.html:85
+#: templates/main/main.html.py:551 templates/sign/createOrganization.html:84
 msgid "Get Started"
 msgstr "Empezar"
 
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70
-#: templates/learn/learn-unregistered.html:67 templates/main/main.html:548
+#: templates/learn/learn-unregistered.html:67
+#: templates/main/collaborators.html:510 templates/main/main.html:562
+#: templates/sign/createOrganization.html:269
 #: templates/upload/dashboard-unregistered-basic.html:207
 #: templates/upload/dashboard-unregistered-developing.html:214
 #: templates/upload/dashboard-unregistered-master.html:269
@@ -78,12 +81,10 @@ msgstr ""
 "trabajando en ello."
 
 #: templates/learn/Abstraction.html:70
-#: templates/sign/createOrganization.html:86
 msgid "Abstraction"
 msgstr "Abstracción"
 
 #: templates/learn/Abstraction.html:75
-#: templates/sign/createOrganization.html:91
 msgid ""
 "The ability of abstraction and decomposition of problems helps you to break "
 "a problem into smaller parts that are easier to understand, program and "
@@ -99,12 +100,10 @@ msgstr ""
 #: templates/learn/Parallelization.html:81
 #: templates/learn/Synchronization.html:81
 #: templates/learn/UserInteractivity.html:89
-#: templates/sign/createOrganization.html:97
 msgid "If you get 0 points..."
 msgstr "Si has sacado 0 puntos..."
 
 #: templates/learn/Abstraction.html:83
-#: templates/sign/createOrganization.html:99
 msgid ""
 "When you start programming with Scratch, sometimes it may seem that the "
 "simplest solution is to program all the behavior of a character in a single "
@@ -119,7 +118,6 @@ msgstr ""
 "programas se ocupe de una cuestión concreta. Veamos un ejemplo:"
 
 #: templates/learn/Abstraction.html:88
-#: templates/sign/createOrganization.html:104
 msgid ""
 "This project, which paints a picture on the screen, has been programmed in a "
 "single program that draws the two lines that make up the drawing. Although "
@@ -134,7 +132,6 @@ msgstr ""
 "diferentes, uno para pintar la primera línea y otro para pintar la segunda:"
 
 #: templates/learn/Abstraction.html:92
-#: templates/sign/createOrganization.html:108
 msgid ""
 "Thus, if we make any changes eg in one of the lines drawn, it is much easier "
 "to know which part of the program we need to go to carry out the changes."
@@ -149,12 +146,10 @@ msgstr ""
 #: templates/learn/Parallelization.html:94
 #: templates/learn/Synchronization.html:95
 #: templates/learn/UserInteractivity.html:103
-#: templates/sign/createOrganization.html:115
 msgid "If you get 1 point..."
 msgstr "Si has sacado 1 punto..."
 
 #: templates/learn/Abstraction.html:100
-#: templates/sign/createOrganization.html:116
 msgid ""
 "Scratch allows new user-defined blocks that consist of a sequence of "
 "instructions. These abstractions allow you to create simple programs to "
@@ -166,7 +161,6 @@ msgstr ""
 "ejemplo:"
 
 #: templates/learn/Abstraction.html:106
-#: templates/sign/createOrganization.html:122
 msgid ""
 "This Scratch project draws two orange lines of different length  on the "
 "screen. Rather than repeat the code 2 times, as shown in the example, you "
@@ -183,7 +177,6 @@ msgstr ""
 "categoría “Más Bloques” y pulsar en el botón Crear un bloque:"
 
 #: templates/learn/Abstraction.html:112
-#: templates/sign/createOrganization.html:128
 msgid ""
 "Having defined the block 'DrawOrange' it can be used in any program of the "
 "project, as we see below:"
@@ -192,7 +185,6 @@ msgstr ""
 "programa del proyecto, tal como vemos a continuación:"
 
 #: templates/learn/Abstraction.html:116
-#: templates/sign/createOrganization.html:132
 msgid ""
 "In this way, we avoid repeating code, which makes our projects easier to "
 "program and maintain. As can be seen, the first time the block is used "
@@ -211,12 +203,10 @@ msgstr ""
 #: templates/learn/Parallelization.html:112
 #: templates/learn/Synchronization.html:108
 #: templates/learn/UserInteractivity.html:114
-#: templates/sign/createOrganization.html:138
 msgid "If you get 2 points..."
 msgstr "Si has sacado 2 puntos..."
 
 #: templates/learn/Abstraction.html:123
-#: templates/sign/createOrganization.html:139
 msgid ""
 "In some Scratch projects we have many identical characters that exactly "
 "perform the same actions. The first idea that comes to mind to do this is to "
@@ -234,7 +224,6 @@ msgstr ""
 "por objeto realizando esa modificación."
 
 #: templates/learn/Abstraction.html:125
-#: templates/sign/createOrganization.html:141
 msgid ""
 "For such situations it is preferable to use clones, a type of abstraction "
 "that helps us to program a single object, and dynamically create exact "
@@ -245,7 +234,6 @@ msgstr ""
 "dinámica copias exactas con el mismo comportamiento. "
 
 #: templates/learn/Abstraction.html:126
-#: templates/sign/createOrganization.html:142
 msgid ""
 "Let's see how it works with an example. Imagine you want to pretend that it "
 "is snowing on a project. We can draw an object that is a snowflake, and once "
@@ -259,7 +247,6 @@ msgstr ""
 "cayendo hasta la parte inferior:"
 
 #: templates/learn/Abstraction.html:130
-#: templates/sign/createOrganization.html:146
 msgid ""
 "Thus, just by programming a character, we can have infinite clones  which "
 "are created at a particular time of project implementation and are deleted "
@@ -968,109 +955,53 @@ msgstr "Estamos trabajando en esto y nos gustaría conocer tu opinión"
 msgid "Incorrect names: "
 msgstr "Nombres incorrectos:"
 
-#: templates/main/main.html:75 templates/sign/createOrganization.html:65
-msgid "Why?"
-msgstr "¿Por qué?"
-
-#: templates/main/main.html:76
-msgid "How?"
-msgstr "¿Cómo?"
-
-#: templates/main/main.html:77
-msgid "Working on"
-msgstr "Próximamente"
-
-#: templates/main/main.html:78 templates/sign/createOrganization.html:66
-msgid "Contact us"
-msgstr "Contacto"
-
-#: templates/main/main.html:79
-msgid "Organizations"
-msgstr "Organizaciones"
-
-#: templates/main/main.html:108
-msgid "Analyze your Scratch projects"
-msgstr "Analiza tus proyectos de Scratch"
-
-#: templates/main/main.html:110
-msgid ""
-"Welcome to the Dr. Scratch website, an analytical tool that evaluates your "
-"Scratch projects in a variety of computational areas. This analyzer is a "
-"helpful tool to evaluate your own projects, or those of your Scratch "
-"students."
+#: templates/main/collaborators.html:75
+msgid "Traducción"
 msgstr ""
-"Bienvenido a la Web de Dr.Scratch, es una aplicación que evalúa proyectos "
-"Scratch en relación a varios aspectos del pensamiento computacional. Este "
-"analizador es una herramienta muy útil tanto para evaluar tus proyectos "
-"Scratch como los de tus estudiantes."
 
-#: templates/main/main.html:114
-msgid "Learn More"
-msgstr "Aprende Más"
-
-#: templates/main/main.html:128
-msgid "Analyze your Scratch Project now!"
-msgstr "¡Analiza tus Proyectos de Scratch ahora!"
-
-#: templates/main/main.html:132
-msgid ""
-"<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
-"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
-"type=\"text\">"
+#: templates/main/collaborators.html:76
+msgid "Talleres"
 msgstr ""
-"<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
-"placeholder\" placeholder=\"http://scratch.mit.edu/projects/tu_número\" type="
-"\"text\">"
 
-#: templates/main/main.html:133
-msgid "Add project URL"
-msgstr "Introduce la URL del proyecto"
-
-#: templates/main/main.html:136
-msgid ""
-"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
-"Project'>"
+#: templates/main/collaborators.html:77
+msgid "Más agredecimientos"
 msgstr ""
-"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Elige "
-"Proyecto'>"
 
-#: templates/main/main.html:137
-msgid "Add a .sb or .sb2 file"
-msgstr "Elige un fichero .sb o .sb2"
+#: templates/main/collaborators.html:83
+msgid "Subir"
+msgstr ""
 
-#: templates/main/main.html:144 templates/main/main.html.py:147
-msgid "Error! Please choose a .sb or .sb2 file or input an url"
-msgstr "¡Error! Por favor elige un fichero .sb o .sb2 o pon una url"
+#: templates/main/collaborators.html:105
+msgid "Thanks all of you!"
+msgstr "¡Gracias a todos!"
 
-#: templates/main/main.html:151
-msgid "Error! Your project id is wrong"
-msgstr "¡Error! El identificador de tu proyecto es incorrecto"
-
-#: templates/main/main.html:155
-msgid "Error! Your project doesn't exist in Scratch's servers"
-msgstr "¡Error! Tu proyecto no existe en los servidores de Scratch"
-
-#: templates/main/main.html:208
+#: templates/main/collaborators.html:161 templates/main/main.html:213
+#: templates/sign/createOrganization.html:174
 msgid "WHY?"
 msgstr "¿Por qué?"
 
-#: templates/main/main.html:210
+#: templates/main/collaborators.html:163 templates/main/main.html:215
+#: templates/sign/createOrganization.html:176
 msgid "Why "
 msgstr "Por qué "
 
-#: templates/main/main.html:210
+#: templates/main/collaborators.html:163 templates/main/main.html:215
+#: templates/sign/createOrganization.html:176
 msgid "you’ll love Dr.Scratch"
 msgstr "te encantará Dr.Scratch"
 
-#: templates/main/main.html:214
+#: templates/main/collaborators.html:167 templates/main/main.html:219
+#: templates/sign/createOrganization.html:180
 msgid "A powerful tool to analyze your Scratch projects"
 msgstr "Analiza tus proyectos de Scratch"
 
-#: templates/main/main.html:226
+#: templates/main/collaborators.html:179 templates/main/main.html:231
+#: templates/sign/createOrganization.html:192
 msgid "Simple & Fun"
 msgstr "Fácil & Divertido"
 
-#: templates/main/main.html:228
+#: templates/main/collaborators.html:181 templates/main/main.html:233
+#: templates/sign/createOrganization.html:194
 msgid ""
 "Your students can easily learn how to improve their programming skills in a "
 "fun way."
@@ -1078,11 +1009,13 @@ msgstr ""
 "Tus estudiantes pueden aprender fácilmente cómo mejorar sus habilidades de "
 "programación de una forma divertida."
 
-#: templates/main/main.html:239
+#: templates/main/collaborators.html:192 templates/main/main.html:244
+#: templates/sign/createOrganization.html:205
 msgid "Improve your skills"
 msgstr "Mejora tus habilidades"
 
-#: templates/main/main.html:241
+#: templates/main/collaborators.html:194 templates/main/main.html:246
+#: templates/sign/createOrganization.html:207
 msgid ""
 "We provide feedback on several aspects which are related to Computational "
 "Thinking."
@@ -1090,11 +1023,13 @@ msgstr ""
 "Dr.Scratch ofrece realimentación en aspectos relacionados con el Pensamiento "
 "Computacional ayudándote a mejorarlos."
 
-#: templates/main/main.html:252
+#: templates/main/collaborators.html:205 templates/main/main.html:257
+#: templates/sign/createOrganization.html:218
 msgid "Always improving"
 msgstr "Mejorando constantemente"
 
-#: templates/main/main.html:254
+#: templates/main/collaborators.html:207 templates/main/main.html:259
+#: templates/sign/createOrganization.html:220
 msgid ""
 "We're continually enhancing the features of Dr. Scratch, and we'd love to "
 "hear your thoughts"
@@ -1102,27 +1037,27 @@ msgstr ""
 "Intentamos mejorar continuamente, por lo que nos gustaría escuchar tus "
 "opiniones."
 
-#: templates/main/main.html:291
+#: templates/main/collaborators.html:244 templates/main/main.html:296
 msgid "How"
 msgstr "Cómo"
 
-#: templates/main/main.html:293
+#: templates/main/collaborators.html:246 templates/main/main.html:298
 msgid "How "
 msgstr "Cómo "
 
-#: templates/main/main.html:293
+#: templates/main/collaborators.html:246 templates/main/main.html:298
 msgid "it works"
 msgstr "funciona"
 
-#: templates/main/main.html:297
+#: templates/main/collaborators.html:250 templates/main/main.html:302
 msgid "There are two options to analyze a Scratch project with Dr.Scratch"
 msgstr "Hay dos opciones para anlizar un proyecto de Scratch con Dr.Scratch"
 
-#: templates/main/main.html:298
+#: templates/main/collaborators.html:251 templates/main/main.html:303
 msgid "project.png"
 msgstr "proyecto.png"
 
-#: templates/main/main.html:300
+#: templates/main/collaborators.html:253 templates/main/main.html:305
 msgid ""
 "You can upload an sb2 file or just provide the project url, avoiding the "
 "need to previously download the project to your computer. By analyzing your "
@@ -1134,50 +1069,50 @@ msgstr ""
 "Mediante el análisis de Dr.Scratch, puedes conocer fácilmente tu Nivel de "
 "Pensamiento Computacional."
 
-#: templates/main/main.html:309
+#: templates/main/collaborators.html:262 templates/main/main.html:314
 msgid "It is extremely easy to use, both for begginers and expert programmers."
 msgstr ""
 "Es increiblemente fácil de usar, tanto si eres principiante como si eres un "
 "programador experto."
 
-#: templates/main/main.html:313
+#: templates/main/collaborators.html:266 templates/main/main.html:318
 msgid "You receive feedback to improve your coding skills."
 msgstr "Recibirás realimentación para mejorar tus habilidades de programación."
 
-#: templates/main/main.html:321
+#: templates/main/collaborators.html:274 templates/main/main.html:326
 msgid ""
 "You can keep on improving your programming skills by yourself even from home."
 msgstr ""
 "Puedes seguir mejorando tus habilidades como programador por ti mismo, "
 "incluso desde casa."
 
-#: templates/main/main.html:325
+#: templates/main/collaborators.html:278 templates/main/main.html:330
 msgid "You can track your progress through charts and stats."
 msgstr ""
 "Puedes realizar un seguimiento de tu progreso a través de gráficos y "
 "estadísticas."
 
-#: templates/main/main.html:344
+#: templates/main/collaborators.html:297 templates/main/main.html:349
 msgid "NEW FEATURES"
 msgstr "NUEVAS FUNCIONALIDADES"
 
-#: templates/main/main.html:346
+#: templates/main/collaborators.html:299 templates/main/main.html:351
 msgid "Coming "
 msgstr "Próximas "
 
-#: templates/main/main.html:346
+#: templates/main/collaborators.html:299 templates/main/main.html:351
 msgid "Soon"
 msgstr "Funcionalidades"
 
-#: templates/main/main.html:350
+#: templates/main/collaborators.html:303 templates/main/main.html:355
 msgid "We are working on new features to improve Dr.Scratch"
 msgstr "Estamos trabajando en nuevas características que mejoren Dr.Scratch"
 
-#: templates/main/main.html:365
+#: templates/main/collaborators.html:318 templates/main/main.html:370
 msgid "Multilingual Website"
 msgstr "Web Multilenguaje"
 
-#: templates/main/main.html:369
+#: templates/main/collaborators.html:322 templates/main/main.html:374
 msgid ""
 "We know the importance of receiving feedback on your own language to "
 "understand every little detail or hint, so we'll translate Dr. Scratch to "
@@ -1187,11 +1122,11 @@ msgstr ""
 "tu propio idioma, por ello traduciremos Dr.Scratch para facilitar el "
 "aprendizaje del mayor número de personas posible."
 
-#: templates/main/main.html:380
+#: templates/main/collaborators.html:333 templates/main/main.html:385
 msgid "Teacher Accounts"
 msgstr "Cuentas para profesores"
 
-#: templates/main/main.html:384
+#: templates/main/collaborators.html:337 templates/main/main.html:389
 msgid ""
 "Teachers will be able to group (and follow) their students to keep track of "
 "their progress in a fast and simple way."
@@ -1199,11 +1134,11 @@ msgstr ""
 "Los profesores podrán agrupar(y seguir) a sus estudiantes y realizar un "
 "seguimiento de sus progresos de una forma rápida y simple."
 
-#: templates/main/main.html:395
+#: templates/main/collaborators.html:348 templates/main/main.html:400
 msgid "Cloud Platform"
 msgstr "Plataforma en la Nube"
 
-#: templates/main/main.html:399
+#: templates/main/collaborators.html:352 templates/main/main.html:404
 msgid ""
 "We are in the process of migrating our servers to the Cloud with the aim of "
 "providing a better performance."
@@ -1211,7 +1146,7 @@ msgstr ""
 "Estamos migrando nuestros servidores a la Nube con el objetivo de ofrecer un "
 "mejor rendimiento."
 
-#: templates/main/main.html:424
+#: templates/main/collaborators.html:377 templates/main/main.html:429
 msgid ""
 "With Dr.Scratch plug-ins for Chrome and Firefox, students will analyze their "
 "project WHILE programming on the Scratch website."
@@ -1219,11 +1154,11 @@ msgstr ""
 "Con los plugins de Dr.Scratch para Chrome y Firefox, los estudiantes podrán "
 "analizar sus proyectos MIENTRAS programan en la web de Scratch."
 
-#: templates/main/main.html:435
+#: templates/main/collaborators.html:388 templates/main/main.html:440
 msgid "Gamification"
 msgstr "Gamificación"
 
-#: templates/main/main.html:439
+#: templates/main/collaborators.html:392 templates/main/main.html:444
 msgid ""
 "We'd like to take learners curiosity one step further. Do you have cool "
 "ideas to gamify our platform?"
@@ -1231,11 +1166,11 @@ msgstr ""
 "Nos gustaría conseguir motivar la curiosidad de los estudiantes. ¿Tienes "
 "ideas interesantes para gamificar nuestra plataforma?"
 
-#: templates/main/main.html:450
+#: templates/main/collaborators.html:403 templates/main/main.html:455
 msgid "Social Network"
 msgstr "Red Social"
 
-#: templates/main/main.html:454
+#: templates/main/collaborators.html:407 templates/main/main.html:459
 msgid ""
 "The new social network funcionalities will allow users to communicate with "
 "each other to exchange ideas and challenges."
@@ -1243,33 +1178,152 @@ msgstr ""
 "Las funcionalidades de red social que incluiremos permitirán a los usuarios "
 "comunicarse entre ellos e intercambiar ideas y retos. "
 
-#: templates/main/main.html:474
+#: templates/main/collaborators.html:427 templates/main/main.html:479
 msgid "Contact"
 msgstr "Contacto"
 
-#: templates/main/main.html:476
+#: templates/main/collaborators.html:429 templates/main/main.html:481
 msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
 msgstr "<strong>Contacta </strong>con el equipo Dr. Scratch</h2>"
 
-#: templates/main/main.html:480
+#: templates/main/collaborators.html:433 templates/main/main.html:485
 msgid "We would be pleased to receive your feedback"
 msgstr "Nos gustaría conocer tu opinión y escuchar tus ideas"
 
-#: templates/main/main.html:532
+#: templates/main/collaborators.html:475 templates/main/main.html:527
+msgid "Collaborators"
+msgstr "Colaboradores"
+
+#: templates/main/collaborators.html:494 templates/main/main.html:546
 msgid "Are you a Dr.Scratch user?"
 msgstr "¿Eres usuario de Dr.Scratch?"
 
-#: templates/main/main.html:535
+#: templates/main/collaborators.html:497 templates/main/main.html:549
 msgid "Join now!"
 msgstr "¡Pruébalo!"
 
-#: templates/main/main.html:566
+#: templates/main/collaborators.html:528 templates/main/main.html:580
 msgid "Wait a moment please"
 msgstr "Espere un momento, por favor."
 
-#: templates/main/main.html:584
+#: templates/main/collaborators.html:546 templates/main/main.html:598
 msgid "loading..."
 msgstr "cargando..."
+
+#: templates/main/main.html:75 templates/sign/createOrganization.html:76
+msgid "Why?"
+msgstr "¿Por qué?"
+
+#: templates/main/main.html:76 templates/sign/createOrganization.html:77
+msgid "How?"
+msgstr "¿Cómo?"
+
+#: templates/main/main.html:77
+msgid "Working on"
+msgstr "Próximamente"
+
+#: templates/main/main.html:78
+msgid "Contact us"
+msgstr "Contacto"
+
+#: templates/main/main.html:79
+msgid "Organizations"
+msgstr "Organizaciones"
+
+#: templates/main/main.html:108
+msgid "Analyze your Scratch projects"
+msgstr "Analiza tus proyectos de Scratch"
+
+#: templates/main/main.html:110 templates/sign/createOrganization.html:109
+msgid ""
+"Welcome to the Dr. Scratch website, an analytical tool that evaluates your "
+"Scratch projects in a variety of computational areas. This analyzer is a "
+"helpful tool to evaluate your own projects, or those of your Scratch "
+"students."
+msgstr ""
+"Bienvenido a la Web de Dr.Scratch, es una aplicación que evalúa proyectos "
+"Scratch en relación a varios aspectos del pensamiento computacional. Este "
+"analizador es una herramienta muy útil tanto para evaluar tus proyectos "
+"Scratch como los de tus estudiantes."
+
+#: templates/main/main.html:114 templates/sign/createOrganization.html:113
+msgid "Learn More"
+msgstr "Aprende Más"
+
+#: templates/main/main.html:128
+msgid "There are two options to analyze your Scratch project now!"
+msgstr "Hay dos opciones para anlizar un proyecto de Scratch ahora!"
+
+#: templates/main/main.html:133
+msgid ""
+"1. Introduce the <span class='colored-text'><a href='/url'>url</a></span> of "
+"your Scratch project, you don't have to download it:"
+msgstr ""
+"1. Introduce la <span class='colored-text'><a href='/url'>url</a></span> de "
+"tu proyecto de Scratch, así no tendrás que descargarlo:"
+
+#: templates/main/main.html:134
+msgid ""
+"<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
+"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
+"type=\"text\">"
+msgstr ""
+"<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
+"placeholder\" placeholder=\"http://scratch.mit.edu/projects/tu_número\" type="
+"\"text\">"
+
+#: templates/main/main.html:135
+msgid "Analyze by url"
+msgstr "Analiza mediante url"
+
+#: templates/main/main.html:140
+msgid ""
+"2. If you have your <span class='colored-text'><a href='/url'>project</a></"
+"span> downloaded in the computer you can analyze it here:"
+msgstr ""
+"2. Si tienes tu <span class='colored-text'><a href='/url'>proyecto</a></"
+"span> descargado en tu ordenador puedes analizarlo aquí:"
+
+#: templates/main/main.html:141
+msgid ""
+"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
+"Project'>"
+msgstr ""
+"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Elige "
+"Proyecto'>"
+
+#: templates/main/main.html:142
+msgid "Analyze my project"
+msgstr "Analiza mi proyecto"
+
+#: templates/main/main.html:149 templates/main/main.html.py:152
+msgid "Error! Please choose a .sb or .sb2 file or input an url"
+msgstr "¡Error! Por favor elige un fichero .sb o .sb2 o pon una url"
+
+#: templates/main/main.html:156
+msgid "Error! Your project id is wrong"
+msgstr "¡Error! El identificador de tu proyecto es incorrecto"
+
+#: templates/main/main.html:160
+msgid "Error! Your project doesn't exist in Scratch's servers"
+msgstr "¡Error! Tu proyecto no existe en los servidores de Scratch"
+
+#: templates/main/main.html:524
+msgid ""
+"We would like to thank many people for their collaboration and we have done "
+"one special section."
+msgstr ""
+"Nos gustaría agradecer la colaboración de numerosas personas y para ello "
+"hemos creado una sección especial."
+
+
+#: templates/sign/createOrganization.html:78
+msgid "Sign up!"
+msgstr ""
+
+#: templates/sign/createOrganization.html:107
+msgid "Dr.Scratch para Organizaciones"
+msgstr ""
 
 #: templates/upload/dashboard-unregistered-basic.html:64
 #: templates/upload/dashboard-unregistered-developing.html:65
@@ -1469,152 +1523,3 @@ msgstr "bloques"
 #: templates/upload/dashboard-unregistered.html:242
 msgid "Sprite attributes initialization"
 msgstr "Atributos no inicializados correctamente"
-
-
-
-#~ msgid "Español"
-#~ msgstr "Español"
-
-#~ msgid "Catalán"
-#~ msgstr "Catalán"
-
-#~ msgid "Gallego"
-#~ msgstr "Gallego"
-
-#~ msgid "Vasco"
-#~ msgstr "Vasco"
-
-#~ msgid "HOME"
-#~ msgstr "Dr.Scratch"
-
-#~ msgid "You need to improve:"
-#~ msgstr "Necesitas mejorar en:"
-
-#~ msgid ""
-#~ "I have just obtained %(points)s points analyzing my project in Dr."
-#~ "Scratch! Beat it!@DrScratchTool"
-#~ msgstr ""
-#~ "He conseguido %(points)s puntos analizando mi proyecto en Dr.Scratch!¡A "
-#~ "ver si lo superas! @DrScratchTool"
-
-#~ msgid "Little tricks:"
-#~ msgstr "Pequeños trucos:"
-
-#~ msgid "Personalize the name of the characters"
-#~ msgstr "Personaliza el nombre de los personajes"
-
-#~ msgid "Chose the rotation mode of your characters"
-#~ msgstr "Escoge el modo de rotación de tus personajes"
-
-#~ msgid "Make your interactive programs!"
-#~ msgstr "¡Haz tus programas interactivos!"
-
-#~ msgid "Previous"
-#~ msgstr "Previo"
-
-#~ msgid "Next"
-#~ msgstr "Siguiente"
-
-#~ msgid "Back to top"
-#~ msgstr "Subir"
-
-#~ msgid "Some advices:"
-#~ msgstr "Algunos consejos:"
-
-#~ msgid "Sprites Naming"
-#~ msgstr "Nombres no personalizados"
-
-#~ msgid "Learn more"
-#~ msgstr "Aprende Más"
-
-#~ msgid "Possible issues to watch out:"
-#~ msgstr "Posibles cuestiones a tener en cuenta:"
-
-#~ msgid "Today is %(month)s %(day)s."
-#~ msgstr "Hoy es %(day)s de %(month)s."
-
-#~ msgid "%(d)s"
-#~ msgstr "%(d)s"
-
-#~ msgid ""
-#~ "In the program of the left, we assign the number of points that we want "
-#~ "the character has to the beginning of the game, in this case 0, for which "
-#~ "we use the block "
-#~ msgstr ""
-#~ "Para crear una variable hay que irse a la categoría de Datos, pinchar "
-#~ "sobre “Crear una variable” y darle un nombre. En el ejemplo que mostramos "
-#~ "a continuación le hemos dado el nombre “Puntos”, ya que la utilizaremos "
-#~ "para guardar el número de puntos que consigue nuestro personaje."
-
-#~ msgid ""
-#~ "In the example, if the character is touching the blue color, he says  "
-#~ msgstr ""
-#~ "En el ejemplo, si el personaje está tocando el color azul diría “Llegué a "
-#~ "la meta”, pero si no está tocando el color morado diría “Aún no he "
-#~ "llegado a la meta”."
-
-#~ msgid ""
-#~ "How this block works? When execution reaches this point, the condition on "
-#~ "the block is evaluated, and if this is true, the set of blocks that are "
-#~ "within the "
-#~ msgstr ""
-#~ "¿Cómo funciona este bloque? Cuando la ejecución llega a este punto, se "
-#~ "evalúa la condición que aparece en el bloque, y si ésta es verdadera, se "
-#~ "ejecuta el conjunto de bloques que están dentro del si, pero si la "
-#~ "condición es falsa, entonces se ejecuta el conjunto de bloques que están "
-#~ "dentro del sino."
-
-#~ msgid "Terms"
-#~ msgstr "Condiciones"
-
-#~ msgid "Privacy"
-#~ msgstr "Privacidad"
-
-#~ msgid "First trick"
-#~ msgstr "Primer truco"
-
-#~ msgid "You need to be registered."
-#~ msgstr "Necesitas estar registrado."
-
-#~ msgid "Second trick"
-#~ msgstr "Segundo truco"
-
-#~ msgid "We're working on this feature."
-#~ msgstr "Estamos trabajando en esta característica."
-
-#~ msgid "Third trick"
-#~ msgstr "Tercer truco"
-
-#~ msgid "We would like receive your feedback."
-#~ msgstr "Nos gustaría conocer tu feedback."
-
-#~ msgid "First Advice"
-#~ msgstr "Primer consejo"
-
-#~ msgid "Second Advice"
-#~ msgstr "Segundo Consejo"
-
-#~ msgid "Third Advice"
-#~ msgstr "Tercer Consejo"
-
-#~ msgid "Fourth Advice"
-#~ msgstr "Cuarto Consejo"
-
-#~ msgid ""
-#~ "We provide feedback on aspects as varied as abstraction, logical "
-#~ "thinking, synchronization, parallelization, flow control, user "
-#~ "interactivity and data representation."
-#~ msgstr ""
-#~ "Aportamos información sobre una gran variedad de aspectos tales como la "
-#~ "capacidad de abstracción, el pensamiento lógico, la sincronización, la "
-#~ "paralelización, el control de flujo, la interactividad con el usuario y "
-#~ "la representación de la información."
-
-#~ msgid "Beta Version"
-#~ msgstr "Versión Beta"
-
-#~ msgid "Team"
-#~ msgstr "Equipo"
-
-#~ msgid " Team"
-#~ msgstr " Equipo"

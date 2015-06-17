@@ -16,6 +16,7 @@ urlpatterns = (
     url(r'^login', 'app.views.loginUser',),
     url(r'^logout', 'app.views.logoutUser',),
     url(r'^users$', 'app.views.signUpUser',),
+    url(r'^collaborators$', 'app.views.collaborators',),
     url(r'^organizations$', 'app.views.signUpOrganization',),
     url(r'^organization/(\w+)', 'app.views.organization',),
     #url(r'^500', 'app.views.error500',),
