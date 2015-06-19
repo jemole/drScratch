@@ -515,7 +515,7 @@ strong,
    3.1 SECTION: HOME / HEADER         
 -----------------------------------------*/
 .header {
-	background: url(../images/background_collaborators.png) no-repeat center top fixed;
+	background: url(../images/background_organizations.jpg) no-repeat center top fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -807,7 +807,7 @@ strong,
    3.5 SECTION: STATS 
 -----------------------------------------*/
 .stats {
-	background: url(../images/fondo2.png) no-repeat center top fixed;
+	background: url('../images/background_organizations.jpg') no-repeat center top fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -963,7 +963,7 @@ strong,
    3.8 SECTION: SCREENSHOTS   
 -----------------------------------------*/
 .features {
-	background: url(../images/fondo2.png) no-repeat top center fixed;
+	background: url('../images/background_organizations.jpg') no-repeat top center fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -1163,7 +1163,7 @@ strong,
    3.12 SECTION: CALL TO ACTION
 -----------------------------------------*/
 .call-to-action {
-    background: url('../images/fondo2.png') fixed no-repeat top center;
+    background: url('../images/background_organizations.jpg') fixed no-repeat top center;
     -webkit-background-size: cover;
     background-size: cover;
 }
