@@ -1,3 +1,0 @@
-FileName: Testing.sb2			ID: 15			Method: project			Time: 2015-06-17 10:36:10.553388
-FileName: Testing.sb2			ID: 16			Method: project			Time: 2015-06-17 10:36:28.550028
-FileName: scratch.sb			ID: 17			Method: project			Time: 2015-06-17 11:56:07.737147

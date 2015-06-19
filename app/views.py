@@ -324,15 +324,26 @@ def processStringUrl(url):
 def sendRequestgetSB2(idProject):
     """First request to getSB2"""
     getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
+    print getRequestSb2
     fileURL = idProject + ".sb2"
 
     # Create DB of files
     now = datetime.now()
-    fileName = File (filename = fileURL, method = "url", time = now)
+    print now
+    fileName = File (filename = fileURL, 
+                     method = "url" , time = now, 
+                     score = 0, abstraction = 0, parallelization = 0,
+                     logic = 0, synchronization = 0, flowControl = 0,
+                     userInteractivity = 0, dataRepresentation = 0,
+                     spriteNaming = 0 ,initialization = 0,
+                     deadCode = 0, duplicateScript = 0)
     fileName.save()
+    print "HOLA"
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
+    print str(dir_zips)
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
     pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
+    print str(pathLog)
     logFile = open (pathLog + "logFile.txt", "a")
     logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
     str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
@@ -342,7 +353,9 @@ def sendRequestgetSB2(idProject):
     counter = 0
     file_name = handler_upload(fileSaved, counter)
     outputFile = open(file_name, 'wb')
+    print str(file_name)
     sb2File = urllib2.urlopen(getRequestSb2)
+    print "SI"
     outputFile.write(sb2File.read())
     outputFile.close()
     return (file_name, fileName)
