@@ -584,6 +584,9 @@
                 <h2 class="dark-text">{% trans "<strong>More thanks</strong></h2>" %}
                 <div class="colored-line">
                 </div>
+                <div class="sub-heading">
+                    <h3><em>{% trans "We would like give thanks for another things that we explain." %}</em></h3>
+                </div>
             </div>
 
 

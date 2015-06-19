@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-19 12:40+0000\n"
+"POT-Creation-Date: 2015-06-19 12:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgstr "Empezar"
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70
 #: templates/learn/learn-unregistered.html:67
-#: templates/main/collaborators.html:593 templates/main/main.html:562
+#: templates/main/collaborators.html:596 templates/main/main.html:562
 #: templates/sign/createOrganization.html:269
 #: templates/upload/dashboard-unregistered-basic.html:207
 #: templates/upload/dashboard-unregistered-developing.html:214
@@ -1083,8 +1083,14 @@ msgid "Teacher: Jorge Lobo"
 msgstr "Profesor: Jorge Lobo"
 
 #: templates/main/collaborators.html:584
+#, fuzzy
+#| msgid "<strong>More Thanks</strong></h2>"
 msgid "<strong>More thanks</strong></h2>"
 msgstr "<strong>Más agradecimientos </strong></h2>"
+
+#: templates/main/collaborators.html:588
+msgid "We would like give thanks for another things that we explain."
+msgstr "Nos gustaría dar las gracias por muchas otras cosas a muchas personas."
 
 #: templates/main/main.html:75 templates/sign/createOrganization.html:76
 msgid "Why?"
@@ -1613,7 +1619,3 @@ msgstr "bloques"
 #: templates/upload/dashboard-unregistered.html:242
 msgid "Sprite attributes initialization"
 msgstr "Atributos no inicializados correctamente"
-
-#~ msgid "We would like give thanks for another things that we explain."
-#~ msgstr ""
-#~ "Nos gustaría dar las gracias por muchas otras cosas a muchas personas."

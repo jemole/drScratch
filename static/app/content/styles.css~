@@ -653,7 +653,7 @@ strong,
 }
 
 .container .col-md-5 .vertical-project-form{
-    margin-top: 70px;
+    margin-top: 80px;
 }
 
 @media (min-width: 1200px) {

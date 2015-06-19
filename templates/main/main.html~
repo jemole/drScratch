@@ -548,7 +548,7 @@
 
                         <h3 style="visibility: visible; animation-duration: 2s; animation-name: fadeInLeft;" class="white-text strong wow fadeInLeft animated" data-wow-duration="2s" data-wow-offset="10">{% trans "Join now!" %}</h3>
 
-                        <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="#home" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Get Started" %}</a>
+                        <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Get Started" %}</a>
 
                     </div>
 

@@ -515,7 +515,7 @@ strong,
    3.1 SECTION: HOME / HEADER         
 -----------------------------------------*/
 .header {
-	background: url(../images/fondo.jpg) no-repeat center top fixed;
+	background: url(../images/drScratch_logo.png) no-repeat center top fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -631,8 +631,6 @@ strong,
 }
 
 /* VERTICAL PROJECT FORM */
-
-
 .vertical-project-form {
 	background: #ffffff;
 	padding: 15px 32px 32px 32px;
@@ -650,10 +648,6 @@ strong,
 .vertical-project-form form button {
 	margin-top: 2px;
 	width: 100%;
-}
-
-.container .col-md-5 .vertical-project-form{
-    margin-top: 70px;
 }
 
 @media (min-width: 1200px) {
