@@ -1,5 +1,4 @@
 {% load i18n %}
-{% load i18n %}
 <!DOCTYPE html>
 <html class="nivo-lightbox-notouch" lang="en">
 
@@ -73,8 +72,6 @@
                         <img src="static/app/images/logo_main.png" alt="">
                       </a>
                       <ul class="nav navbar-nav navbar-left main-navigation small-text">
-                        <li class="navbar-brand"><a href="#section1"><em>{% trans "Why?" %}</em></a></li>
-                        <li class="navbar-brand"><a href="#section2"><em>{% trans "How?" %}</em></a></li>
                         <li class="navbar-brand"><a href="#section2"><em>{% trans "Sign up!" %}</em></a></li>
                       </ul>
 
@@ -104,23 +101,16 @@
                         <div class="intro-section">
 
                             <!-- WELCOM MESSAGE -->
-                            <h1 class="intro white-text">{% trans "Dr.Scratch para Organizaciones" %}</h1>
+                            <h1 class="intro white-text">{% trans "Dr.Scratch for Organizations" %}</h1>
                             
-                            <h4 align=justify class="transparent-text"><strong>{% trans "Welcome to the Dr. Scratch website, an analytical tool that evaluates your Scratch projects in a variety of computational areas. This analyzer is a helpful tool to evaluate your own projects, or those of your Scratch students." %} </strong></h4>
-                         
-                            <!-- BUTTON -->
-                            <div class="button hidden-xs">
-                                <a href="#section1" class="btn btn-primary secondary-button">{% trans "Learn More" %}</a>
-                            </div>
-                            <!-- /END BUTTON -->
-                            
-                        </div>
-
-                    </div>
-                        <div class="container">
-                    <div class="col-md-5">
-                        
-                        <!-- VERTICAL PROJECT FORM -->
+                            <h4 align=justify class="transparent-text"><strong>{% trans "Welcome to the Dr.Scratch website (version for organizations), an analytical tool that evaluates your Scratch projects in a variety of computational areas. This analyzer is a helpful tool to evaluate your students' Scratch projects. You'll have a smart dashboard where you can see the most important information about your students and their development." %} </strong></h4>
+                            <div class="intro-section">
+                                <!-- BUTTON -->
+                                <div class="button hidden-xs">
+                                    <a href="#section1" class="btn btn-primary secondary-button">{% trans "Sign up!" %}</a>
+                                </div>
+                                <!-- /END BUTTON -->
+                            </div>                            
                         </div>
                     </div>
 

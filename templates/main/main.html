@@ -130,14 +130,14 @@
                                 <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/selector">
                                 {% csrf_token %}   
                                                             
-                                    {% trans "1. Introduce the <span class='colored-text'><a href='/url'>url</a></span> of your Scratch project, you don't have to download it:" %}
+                                    {% trans "1. Introduce the <span class='colored-text'><a data-toggle='modal' href='#modalUrl'>url</a></span> of your Scratch project, you don't have to download it:" %}
                                     {% trans '<input name="urlProject" id="cf-name" class="form-control input-box placeholder" placeholder="http:/scratch.mit.edu/projects/your_number" type="text">' %}
                                     <button id="url" name='_url' type="submit" class="btn btn-primary standard-button">{% trans "Analyze by url" %}</button>
                                     
                               
                                     {% csrf_token %}
                                     <br></br>
-                                    {% trans "2. If you have your <span class='colored-text'><a href='/url'>project</a></span> downloaded in the computer you can analyze it here:" %}
+                                    {% trans "2. If you have your <span class='colored-text'><a data-toggle='modal' href='#modalProject'>project</a></span> downloaded in the computer you can analyze it here:" %}
                                     {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose Project'>" %}
                                     <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my project" %}</button>
                                     {% csrf_token %}                                    
@@ -572,6 +572,66 @@
 
     </footer>
     </div>
+
+    <!-- =========================
+            MODALS
+    ============================== -->
+
+     <!-- Modal Url -->
+    <div id="modalUrl" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+            <div class="small-text-medium uppercase colored-text">
+                {% trans "What is an url?" %}
+            </div>
+            <h4 class="modal-title"><strong>{% trans "How I can know my Scratch project's url?" %}</strong></h4>
+            <div class="colored-line"></div> 
+          </div>
+          <div class="modal-body">
+            {% trans "<img class='framed' src='static/app/images/url-en.png' />" %}
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+         <!-- Modal Project -->
+    <div id="modalProject" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+            <div class="small-text-medium uppercase colored-text">
+                {% trans "I want to download my project from Scratch!" %}
+            </div>
+            <h4 class="modal-title"><strong>{% trans "How I can download my Scratch project to my computer?" %}</strong></h4>
+            <div class="colored-line"></div> 
+          </div>
+          <div class="modal-body">
+            {% trans "<img class='framed' src='static/app/images/project-en.png' />" %}
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+        <!-- =========================
+              PROGRESS BAR   
+    ============================== -->
+
+    
 
     <div id="pb" class="jumbotron"> 
     <div class="container">
