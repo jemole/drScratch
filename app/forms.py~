@@ -29,10 +29,8 @@ class TeacherForm(forms.Form):
     #classroom = forms.CharField(max_length=50)
 
 
-class OrganizationForm(forms.ModelForm):   
-    
-    class Meta:
-        model = Organization    
+class OrganizationForm(forms.Form):   
+        
     #name = forms.CharField(max_length=50)
     #email = forms.CharField(max_length=50)  
     #password = forms.CharField(max_length=50)
