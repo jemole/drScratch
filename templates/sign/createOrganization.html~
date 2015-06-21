@@ -200,7 +200,7 @@
       </div>
     </div>
             <div class="registration-buttom">      
-                        <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Sign up!" %}</a>
+                        <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/collaborators" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Sign up!" %}</a>
     
             </div>
     </form>

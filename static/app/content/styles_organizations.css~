@@ -593,6 +593,10 @@ strong,
 }
 /* INTRO */
 
+.registration-buttom{
+	margin-top: 140px;
+}
+
 .intro-section {
 	margin-top: 110px;
 }
@@ -607,11 +611,6 @@ strong,
 }
 
 /* VERTICAL REGISTRATION FORM */
-
-.registration-buttom{
-	margin-top: 140px;
-}
-
 .vertical-registration-form {
 	background: #ffffff;
 	padding: 15px 32px 32px 32px;

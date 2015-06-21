@@ -1470,6 +1470,8 @@ msgstr ""
 "además verás toda la información relevante en un vistazo."
 
 #: templates/sign/createOrganization.html:183
+#, fuzzy
+#| msgid "Organizations"
 msgid "Organization's name"
 msgstr "Nombre de la organización"
 
