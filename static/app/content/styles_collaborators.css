@@ -515,7 +515,7 @@ strong,
    3.1 SECTION: HOME / HEADER         
 -----------------------------------------*/
 .header {
-	background: url(../images/background.jpg) no-repeat center top fixed;
+	background: url(../images/background_collaborators.png) no-repeat center top fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -631,8 +631,6 @@ strong,
 }
 
 /* VERTICAL PROJECT FORM */
-
-
 .vertical-project-form {
 	background: #ffffff;
 	padding: 15px 32px 32px 32px;
@@ -650,10 +648,6 @@ strong,
 .vertical-project-form form button {
 	margin-top: 2px;
 	width: 100%;
-}
-
-.container .col-md-5 .vertical-project-form{
-    margin-top: 70px;
 }
 
 @media (min-width: 1200px) {
@@ -813,7 +807,7 @@ strong,
    3.5 SECTION: STATS 
 -----------------------------------------*/
 .stats {
-	background: url(../images/background_organizations.png) no-repeat center top fixed;
+	background: url(../images/fondo2.png) no-repeat center top fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -969,7 +963,7 @@ strong,
    3.8 SECTION: SCREENSHOTS   
 -----------------------------------------*/
 .features {
-	background: url(../images/background_organizations.jpg) no-repeat top center fixed;
+	background: url(../images/fondo2.png) no-repeat top center fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -1101,6 +1095,7 @@ strong,
 
 .member-pic img {
 	width: 100%;
+    
 }
 
 .member-pic img:hover {
@@ -1168,7 +1163,7 @@ strong,
    3.12 SECTION: CALL TO ACTION
 -----------------------------------------*/
 .call-to-action {
-    background: url('../images/background_organizations.jpg') fixed no-repeat top center;
+    background: url('../images/fondo2.png') fixed no-repeat top center;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -1187,11 +1182,6 @@ strong,
 
 .modal-content button {
 	width: 100%;
-}
-
-
-.framed{
-    box-shadow: 2px 2px 3px 3px #001; 
 }
 
 /*---------------------------------------

@@ -1,4 +1,5 @@
 from django import forms
+from models import Organization
 
 class UploadFileForm(forms.Form):
 	filename = forms.CharField(max_length=50)
@@ -28,9 +29,12 @@ class TeacherForm(forms.Form):
     #classroom = forms.CharField(max_length=50)
 
 
-class OrganizationForm(forms.Form):
-    name = forms.CharField(max_length=50)
-    password = forms.CharField(max_length=50)
-    email = forms.CharField(max_length=50)  
-    hashkey = forms.CharField(max_length=50)
+class OrganizationForm(forms.ModelForm):   
+    
+    class Meta:
+        model = Organization    
+    #name = forms.CharField(max_length=50)
+    #email = forms.CharField(max_length=50)  
+    #password = forms.CharField(max_length=50)
+    #hashkey = forms.CharField(max_length=50)
     

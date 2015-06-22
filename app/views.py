@@ -323,16 +323,27 @@ def processStringUrl(url):
 
 def sendRequestgetSB2(idProject):
     """First request to getSB2"""
-    getRequestSb2 = "http://getsb2-drscratch.herokuapp.com/" + idProject
+    getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
+    print getRequestSb2
     fileURL = idProject + ".sb2"
 
     # Create DB of files
     now = datetime.now()
-    fileName = File (filename = fileURL, method = "url", time = now)
+    print now
+    fileName = File (filename = fileURL, 
+                     method = "url" , time = now, 
+                     score = 0, abstraction = 0, parallelization = 0,
+                     logic = 0, synchronization = 0, flowControl = 0,
+                     userInteractivity = 0, dataRepresentation = 0,
+                     spriteNaming = 0 ,initialization = 0,
+                     deadCode = 0, duplicateScript = 0)
     fileName.save()
+    print "HOLA"
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
+    print str(dir_zips)
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
     pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
+    print str(pathLog)
     logFile = open (pathLog + "logFile.txt", "a")
     logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
     str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
@@ -342,7 +353,9 @@ def sendRequestgetSB2(idProject):
     counter = 0
     file_name = handler_upload(fileSaved, counter)
     outputFile = open(file_name, 'wb')
+    print str(file_name)
     sb2File = urllib2.urlopen(getRequestSb2)
+    print "SI"
     outputFile.write(sb2File.read())
     outputFile.close()
     return (file_name, fileName)
@@ -387,31 +400,38 @@ def learnUnregistered(request):
    	
     return render_to_response("learn/learn-unregistered.html",)
 
+#________________________ COLLABORATORS _____________________________#
+
+def collaborators(request):
+   	
+    return render_to_response("main/collaborators.html",)
+
 
 #________________________ TO REGISTER ORGANIZATION __________________#
 
 def signUpOrganization(request):
-    form = OrganizationForm(request.POST or None) 
-    if request.method == 'POST': 
-        if form.is_valid():       
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            email = form.cleaned_data['email']
-            print email
-            hashkey = form.cleaned_data['hashkey']
-            #classroom = form.cleaned_data['classroom']
-            invite(request, username, email, hashkey)
-            teacher = Teacher(teacher = request.user, username = username,
-                              password = password, email = email,
-                              hashkey = hashkey)
-            teacher.save()
-            return HttpResponseRedirect('/')
-        return HttpResponseRedirect('/')
-            
+    if request.method == 'POST':
+        print "ENTRA AL POST"
+        form = OrganizationForm(request.POST)      
+        if form.is_valid(): 
+            form.save()
+            print "GUARDADO"     
+            name = form.cleaned_data['name']
+            print name
+            #password = form.cleaned_data['password']
+            #email = form.cleaned_data['email']
+            #hashkey = form.cleaned_data['hashkey']
+            return HttpResponseRedirect('/organizations/' + name)
+
+        print "FORM NO VÁLIDO"                
     elif request.method == 'GET':
         return render_to_response("sign/createOrganization.html", context_instance = RC(request))
     
-   
+#_________________________ TO SHOW ORGANIZATION'S DASHBOARD ___________#
+
+def organizations(request, name):
+    if request.method == 'GET':
+        return render_to_response("main/main_organizations.html", context_instance = RC(request))
         
 #________________________ TO REGISTER USER __________________________#
 

@@ -39,7 +39,10 @@ class Teacher(models.Model):
 
 
 class Organization(models.Model):
-    name = models.TextField()  
+    name = models.TextField()
+    email = models.TextField()
+    password = models.TextField()
+    hashkey = models.TextField()
 
 class Dashboard(models.Model):
 	user = models.TextField()

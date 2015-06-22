@@ -515,7 +515,7 @@ strong,
    3.1 SECTION: HOME / HEADER         
 -----------------------------------------*/
 .header {
-	background: url(../images/background.jpg) no-repeat center top fixed;
+	background: url(../images/background_organizations.jpg) no-repeat center top fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -527,6 +527,7 @@ strong,
 }
 
 /* STICKY NAVIGATION AND LOGO */
+
 .appear-on-scroll {
 	opacity: 0;
 }
@@ -591,6 +592,7 @@ strong,
 	max-width: 80px;
 }
 /* INTRO */
+
 .intro-section {
 	margin-top: 110px;
 }
@@ -605,6 +607,11 @@ strong,
 }
 
 /* VERTICAL REGISTRATION FORM */
+
+.registration-buttom{
+	margin-top: 140px;
+}
+
 .vertical-registration-form {
 	background: #ffffff;
 	padding: 15px 32px 32px 32px;
@@ -631,8 +638,6 @@ strong,
 }
 
 /* VERTICAL PROJECT FORM */
-
-
 .vertical-project-form {
 	background: #ffffff;
 	padding: 15px 32px 32px 32px;
@@ -650,10 +655,6 @@ strong,
 .vertical-project-form form button {
 	margin-top: 2px;
 	width: 100%;
-}
-
-.container .col-md-5 .vertical-project-form{
-    margin-top: 70px;
 }
 
 @media (min-width: 1200px) {
@@ -813,7 +814,7 @@ strong,
    3.5 SECTION: STATS 
 -----------------------------------------*/
 .stats {
-	background: url(../images/background_organizations.png) no-repeat center top fixed;
+	background: url('../images/background_organizations.jpg') no-repeat center top fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -969,7 +970,7 @@ strong,
    3.8 SECTION: SCREENSHOTS   
 -----------------------------------------*/
 .features {
-	background: url(../images/background_organizations.jpg) no-repeat top center fixed;
+	background: url('../images/background_organizations.jpg') no-repeat top center fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -1101,6 +1102,7 @@ strong,
 
 .member-pic img {
 	width: 100%;
+    
 }
 
 .member-pic img:hover {
@@ -1187,11 +1189,6 @@ strong,
 
 .modal-content button {
 	width: 100%;
-}
-
-
-.framed{
-    box-shadow: 2px 2px 3px 3px #001; 
 }
 
 /*---------------------------------------
