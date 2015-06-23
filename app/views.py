@@ -325,12 +325,10 @@ def processStringUrl(url):
 def sendRequestgetSB2(idProject):
     """First request to getSB2"""
     getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
-    print getRequestSb2
     fileURL = idProject + ".sb2"
 
     # Create DB of files
     now = datetime.now()
-    print now
     fileName = File (filename = fileURL, 
                      method = "url" , time = now, 
                      score = 0, abstraction = 0, parallelization = 0,
@@ -339,12 +337,9 @@ def sendRequestgetSB2(idProject):
                      spriteNaming = 0 ,initialization = 0,
                      deadCode = 0, duplicateScript = 0)
     fileName.save()
-    print "HOLA"
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
-    print str(dir_zips)
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
     pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
-    print str(pathLog)
     logFile = open (pathLog + "logFile.txt", "a")
     logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
     str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
@@ -354,9 +349,7 @@ def sendRequestgetSB2(idProject):
     counter = 0
     file_name = handler_upload(fileSaved, counter)
     outputFile = open(file_name, 'wb')
-    print str(file_name)
     sb2File = urllib2.urlopen(getRequestSb2)
-    print "SI"
     outputFile.write(sb2File.read())
     outputFile.close()
     return (file_name, fileName)
@@ -408,6 +401,7 @@ def collaborators(request):
     return render_to_response("main/collaborators.html",)
 
 
+
 #________________________ TO REGISTER ORGANIZATION __________________#
 
 def registerOrganization(request):
@@ -426,27 +420,36 @@ def createOrganizationHash(request):
     if request.method == "POST":
         form = OrganizationHashForm(request.POST)
         if form.is_valid():
-            hashkey = form.cleaned_data['hashkey']
             form.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/createOrganizationHash')
     elif request.method == 'GET':
         return render_to_response("sign/createOrganizationHash.html", context_instance = RC(request))
 
 def signUpOrganization(request):
+    flagHash = 0
+    flagName = 0
     if request.method == 'POST':
-        form = OrganizationForm(request.POST)      
-        if form.is_valid(): 
+        form = OrganizationForm(request.POST)    
+        if form.is_valid():
             name = form.cleaned_data['name']
             password = form.cleaned_data['password']
             email = form.cleaned_data['email']
             hashkey = form.cleaned_data['hashkey']
             try:
-                tableHashkey = OrganizationHash.objects.get(hashkey=hashkey)            
-                tableHashkey.delete()          
-                form.save()
-                return HttpResponseRedirect('/organization/' + name)
+                organization = Organization.objects.get(name=name)
+                flagName = 1            
             except:
-                return HttpResponseRedirect('/createOrganization')                
+                try:
+                    organizationHashkey = OrganizationHash.objects.get(hashkey=hashkey)            
+                    organizationHashkey.delete()          
+                    form.save()
+                    return HttpResponseRedirect('/organization/' + name)
+                except:
+                    print "Doesn't exist this hash"
+                    flagHash = 1
+                    return HttpResponseRedirect('/createOrganizationHash')
+
+            return render_to_response("sign/createOrganization.html", context_instance = RC(request))                    
     elif request.method == 'GET':
         return render_to_response("sign/createOrganization.html", context_instance = RC(request))
     
@@ -480,8 +483,12 @@ def logoutOrganization(request):
     return HttpResponseRedirect('/')
 
 def organization(request, name):
-    if request.method == 'GET':
-        
+    if request.method == 'GET':  
+        try:
+            organization = Organization.objects.get(name=name)
+        except:
+            return HttpResponseRedirect("/")
+            
         return render_to_response("main/main_organization.html", context_instance = RC(request))
         
 #________________________ TO REGISTER USER __________________________#
@@ -507,7 +514,6 @@ def signUpUser(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             email = form.cleaned_data['email']
-            print email
             hashkey = form.cleaned_data['hashkey']
             #classroom = form.cleaned_data['classroom']
             invite(request, username, email, hashkey)
@@ -540,12 +546,12 @@ def invite(request, username, email, hashkey):
         serverSMTP.ehlo()
         serverSMTP.login(emisor,"GA.drscratch")
     except:
-        print "LA LIBRERIA smtplib"
+        print "smtplib"
     try:
         serverSMTP.sendmail(emisor,receptor,mensaje.as_string())
  
         serverSMTP.close() 
-        print "Correo enviado" 
+        print "Email sended" 
     except: 
         print """Error: el mensaje no pudo enviarse. 
         Compruebe que sendmail se encuentra instalado en su sistema"""

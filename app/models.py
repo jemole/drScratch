@@ -39,13 +39,13 @@ class Teacher(models.Model):
 
 
 class Organization(models.Model):
-    name = models.TextField()
-    email = models.TextField()
-    password = models.TextField()
-    hashkey = models.TextField()
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    hashkey = models.CharField(max_length=100)
 
 class OrganizationHash(models.Model):
-    hashkey = models.TextField()
+    hashkey = models.CharField(max_length=100)
 
 class Dashboard(models.Model):
 	user = models.TextField()

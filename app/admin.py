@@ -4,6 +4,7 @@ from django.contrib import admin
 from app.models import Teacher, Student
 from app.models import Project, Attribute, Sprite, Mastery, Dead, Dashboard
 from app.models import Duplicate, Comment, Activity, File
+from app.models import Organization, OrganizationHash
 
 admin.site.register(Student)
 admin.site.register(Teacher)
