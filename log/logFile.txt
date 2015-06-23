@@ -1,6 +1,0 @@
-FileName: 17896669.sb2			ID: 24			Method: url			Time: 2015-06-23 07:28:44.665517
-FileName: 59495374.sb2			ID: 25			Method: url			Time: 2015-06-23 07:41:29.789692
-FileName: Testing.sb2			ID: 26			Method: project			Time: 2015-06-23 07:50:09.355577
-FileName: Testing.sb2			ID: 27			Method: project			Time: 2015-06-23 07:51:33.968551
-FileName: Testing.sb2			ID: 28			Method: project			Time: 2015-06-23 07:51:47.939793
-FileName: Testing.sb2			ID: 29			Method: project			Time: 2015-06-23 08:50:45.065852
