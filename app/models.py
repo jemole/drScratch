@@ -44,6 +44,9 @@ class Organization(models.Model):
     password = models.TextField()
     hashkey = models.TextField()
 
+    def __str__(self):
+        return self.name + " " + self.email + " " + self.password + " " + self.hashkey
+
 class Dashboard(models.Model):
 	user = models.TextField()
 	frelease = models.DateField()
@@ -98,3 +101,8 @@ class Comment(models.Model):
 class Activity(models.Model):
 	text = models.TextField()
 	date = models.DateField()
+class Hashkey(models.Model):
+    hashkey = models.TextField()
+    def __str__(self):
+        return self.hashkey
+

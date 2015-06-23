@@ -31,10 +31,10 @@ class TeacherForm(forms.Form):
 
 class OrganizationForm(forms.ModelForm):   
     
-    class Meta:
-        model = Organization    
-    #name = forms.CharField(max_length=50)
-    #email = forms.CharField(max_length=50)  
-    #password = forms.CharField(max_length=50)
-    #hashkey = forms.CharField(max_length=50)
+    #class Meta:
+    #    model = Organization    
+    name = forms.CharField(max_length=50)
+    email = forms.CharField(max_length=50)  
+    password = forms.CharField(max_length=50)
+    hashkey = forms.CharField(max_length=50)
     

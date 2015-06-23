@@ -3,7 +3,7 @@
 from django.contrib import admin
 from app.models import Teacher, Student
 from app.models import Project, Attribute, Sprite, Mastery, Dead, Dashboard
-from app.models import Duplicate, Comment, Activity, File
+from app.models import Duplicate, Comment, Activity, File, Hashkey, Organization
 
 admin.site.register(Student)
 admin.site.register(Teacher)
@@ -17,3 +17,5 @@ admin.site.register(Duplicate)
 admin.site.register(File)
 admin.site.register(Comment)
 admin.site.register(Activity)
+admin.site.register(Hashkey)
+admin.site.register(Organization)

@@ -14,7 +14,7 @@ from django.utils.translation import ugettext as _
 from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File
 from app.models import Teacher, Student, Classroom
-from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
+from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm,OrganizationForm
 from app.forms import OrganizationForm
 from django.contrib.auth.models import User
 from datetime import datetime, date
@@ -409,6 +409,17 @@ def collaborators(request):
 
 #________________________ TO REGISTER ORGANIZATION __________________#
 
+def registerOrganization(request):
+    if request.method == "POST":
+        form = OrganizationForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            pwd = form.cleaned_data['password']
+            user = User.objects.create_user(nickName, emailUser, passUser)
+    else:
+        return render_to_response("sign/registerOrganization.html",)
+
 def signUpOrganization(request):
     if request.method == 'POST':
         print "ENTRA AL POST"
@@ -418,9 +429,11 @@ def signUpOrganization(request):
             print "GUARDADO"     
             name = form.cleaned_data['name']
             print name
-            #password = form.cleaned_data['password']
-            #email = form.cleaned_data['email']
-            #hashkey = form.cleaned_data['hashkey']
+            password = form.cleaned_data['password']
+            email = form.cleaned_data['email']
+            hashkey = form.cleaned_data['hashkey']
+            org = authenticate(name=name,password=password,email=email,hashkey=hashkey)
+
             return HttpResponseRedirect('/organizations/' + name)
 
         print "FORM NO VÁLIDO"                
@@ -432,7 +445,7 @@ def signUpOrganization(request):
 def organizations(request, name):
     if request.method == 'GET':
         return render_to_response("main/main_organizations.html", context_instance = RC(request))
-        
+   
 #________________________ TO REGISTER USER __________________________#
 
 def createUser(request):
@@ -444,7 +457,7 @@ def createUser(request):
             nickName = form.cleaned_data['nickname']
             emailUser = form.cleaned_data['emailUser']
             passUser = form.cleaned_data['passUser']
-            user = User.objects.create_user(nickName, emailUser, passUser)
+            user = c(nickName, emailUser, passUser)
             return render_to_response("profile.html", {'user': user}, context_instance=RC(request))
 
 def signUpUser(request):
