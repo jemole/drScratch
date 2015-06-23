@@ -14,8 +14,9 @@ from django.utils.translation import ugettext as _
 from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File
 from app.models import Teacher, Student, Classroom
+from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
-from app.forms import OrganizationForm
+from app.forms import OrganizationForm, OrganizationHashForm
 from django.contrib.auth.models import User
 from datetime import datetime, date
 from django.contrib.auth.decorators import login_required
@@ -409,33 +410,83 @@ def collaborators(request):
 
 #________________________ TO REGISTER ORGANIZATION __________________#
 
+def registerOrganization(request):
+    if request.method == "POST":
+        form = OrganizationForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            pwd = form.cleaned_data['password']
+            user = User.objects.create_user(name, email, pwd)
+    else:
+        return render_to_response("sign/registerOrganization.html",)
+
+def createOrganizationHash(request):
+    """Method for to sign up in the platform"""
+    if request.method == "POST":
+        form = OrganizationHashForm(request.POST)
+        if form.is_valid():
+            hashkey = form.cleaned_data['hashkey']
+            form.save()
+            return HttpResponseRedirect('/')
+    elif request.method == 'GET':
+        return render_to_response("sign/createOrganizationHash.html", context_instance = RC(request))
+
 def signUpOrganization(request):
     if request.method == 'POST':
-        print "ENTRA AL POST"
         form = OrganizationForm(request.POST)      
         if form.is_valid(): 
-            form.save()
-            print "GUARDADO"     
             name = form.cleaned_data['name']
-            print name
-            #password = form.cleaned_data['password']
-            #email = form.cleaned_data['email']
-            #hashkey = form.cleaned_data['hashkey']
-            return HttpResponseRedirect('/organizations/' + name)
-
-        print "FORM NO VÁLIDO"                
+            password = form.cleaned_data['password']
+            email = form.cleaned_data['email']
+            hashkey = form.cleaned_data['hashkey']
+            try:
+                tableHashkey = OrganizationHash.objects.get(hashkey=hashkey)            
+                tableHashkey.delete()          
+                form.save()
+                return HttpResponseRedirect('/organization/' + name)
+            except:
+                return HttpResponseRedirect('/createOrganization')                
     elif request.method == 'GET':
         return render_to_response("sign/createOrganization.html", context_instance = RC(request))
     
 #_________________________ TO SHOW ORGANIZATION'S DASHBOARD ___________#
 
-def organizations(request, name):
+def loginOrganization(request):
+    """Log in app to user"""
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            organizationName = form.cleaned_data['organizationName']
+            password = form.cleaned_data['password']
+            organization = authenticate(organizationName=name, password=password)
+            if organization is not None:
+                if user.is_active:
+                    login(request, user)
+                    return HttpResponseRedirect('/myDashboard')
+            else:
+                flag = True
+                return render_to_response("main/main.html", 
+                                            {'flag': flag},
+                                            context_instance=RC(request))
+
+    else:
+        return HttpResponseRedirect("/")
+
+
+def logoutOrganization(request):
+    """Method for logging out"""
+    logout(request)
+    return HttpResponseRedirect('/')
+
+def organization(request, name):
     if request.method == 'GET':
-        return render_to_response("main/main_organizations.html", context_instance = RC(request))
+        
+        return render_to_response("main/main_organization.html", context_instance = RC(request))
         
 #________________________ TO REGISTER USER __________________________#
 
-def createUser(request):
+def createUserHash(request):
     """Method for to sign up in the platform"""
     logout(request)
     if request.method == "POST":
@@ -446,6 +497,8 @@ def createUser(request):
             passUser = form.cleaned_data['passUser']
             user = User.objects.create_user(nickName, emailUser, passUser)
             return render_to_response("profile.html", {'user': user}, context_instance=RC(request))
+    elif request.method == 'GET':
+        return render_to_response("sign/createUserHash.html", context_instance = RC(request))
 
 def signUpUser(request):
     form = TeacherForm(request.POST or None) 
@@ -466,7 +519,7 @@ def signUpUser(request):
         return HttpResponseRedirect('/')
             
     elif request.method == 'GET':
-        return render_to_response("sign/createhash.html", context_instance = RC(request))
+        return render_to_response("sign/createUser.html", context_instance = RC(request))
         
 
 

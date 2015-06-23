@@ -44,6 +44,9 @@ class Organization(models.Model):
     password = models.TextField()
     hashkey = models.TextField()
 
+class OrganizationHash(models.Model):
+    hashkey = models.TextField()
+
 class Dashboard(models.Model):
 	user = models.TextField()
 	frelease = models.DateField()

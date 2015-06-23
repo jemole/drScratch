@@ -167,6 +167,7 @@
                 <div class="sub-heading">
                     <h3><em>{% trans "You'll evaluate the projects of all your student in few time. Also, you'll see all the relevant information in a view." %}</em></h3>
                 </div>
+                    {% trans "If you want to be one of the ten first organizations which prove Dr.Scratch send us an email to " %}<a href="mailto:team@drscratch.org" class="strong">team@drscratch.org</a>{% trans  " and we'll give you your hash to can sign up in the web" %}
             </div>
 
         </div>
@@ -177,7 +178,7 @@
         
         <div class="container">
         <img src="static/app/images/drScratch.png" alt=""  width="200" height="200" />
-        <form action="/organizations" method="post" class="vertical-registration-form" role="form">
+        <form action="/organization" method="post" class="vertical-registration-form" role="form">
        {% csrf_token %}     
        <div class="col-lg-8">
         <label class="col-md-6 text-left control-label">{% trans "Organization's name" %}</label>
@@ -205,7 +206,7 @@
       </div>
     </div>
             <div class="registration-buttom">      
-            <button style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/organizations" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="submit">{% trans "Sign up!" %}</button>
+            <button style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/organization" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="submit">{% trans "Sign up!" %}</button>
     
             </div>
     </form>
