@@ -80,7 +80,7 @@
                             <h6 class="colored-text" >{% trans "Logged in as " %} {{ username }} </h6>
                             <form accept-charset="UTF-8" action="/logoutOrganization" method="post">
                                 {% csrf_token %}  
-                                <span><button id="upload" name='_upload' type="submit" class="btn btn-primary small-button">{% trans "LOGOUT" %}</button></span>
+                                <span><button id="logout" type="submit" class="btn btn-primary small-button">{% trans "LOGOUT" %}</button></span>
                             </form>
                         </li>
                     </ul>

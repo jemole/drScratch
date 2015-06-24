@@ -22,6 +22,7 @@ urlpatterns = (
     url(r'^organization/(\w+)', 'app.views.organization',),
     url(r'^loginOrganization$', 'app.views.loginOrganization',),
     url(r'^logoutOrganization$', 'app.views.logoutOrganization',),
+    url(r'^analyzeCSV$', 'app.views.analyzeCSV',),
     #url(r'^500', 'app.views.error500',),
     #url(r'^404', 'app.views.error404',),
     url(r'learn$', 'app.views.learnUnregistered',),

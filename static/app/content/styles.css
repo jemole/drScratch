@@ -248,7 +248,8 @@ h5 {
 
 /* BUTTONS */
 #url,
-#upload{
+#upload,
+#logout{
 	font-size:20px;
 }
 
@@ -322,7 +323,8 @@ strong,
    2.2 BUTTONS       
 -----------------------------------------*/
 #url,
-#upload{
+#upload,
+#logout{
 	font-size:10px;
 }
 

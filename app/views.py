@@ -501,6 +501,14 @@ def organization(request, name):
         return render_to_response("sign/organization.html", context_instance = RC(request))
     else:
         return HttpResponseRedirect("/")
+
+#________________________ ANALYZE CSV FOR ORGANIZATIONS ____________#
+
+def analyzeCSV(request):
+    if request.method =='POST':
+
+    else:
+        return HttpResponseRedirect("/organization")
               
 #________________________ TO REGISTER USER __________________________#
 
