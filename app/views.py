@@ -433,9 +433,12 @@ def signUpOrganization(request):
         form = OrganizationForm(request.POST)    
         if form.is_valid():
             print "FORMULARIO VALIDO"
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
             hashkey = form.cleaned_data['hashkey']
             try:
-                organization = Organization.objects.get(name=name)
+                organization = Organization.objects.get(username=username)
                 print "The name already exists"                
                 flagName = 1            
             except:
@@ -444,18 +447,14 @@ def signUpOrganization(request):
                     organizationHashkey = OrganizationHash.objects.get(hashkey=hashkey)            
                     organizationHashkey.delete()                                                
                     print "CONSIGUE COGER LA HASH Y LA BORRA"  
-                    print name
+                    print username
                     print email
                     print password                  
-                    user = User.objects.create_user(name, email, password)
-                    user.save()
+                    user = Organization.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
                     print "CREA EL USER"
-                    organization = Organization(user = user, kashkey = kashkey)
                     print "CREA LA ORGANIAZCION"                 
-                    organization.save()
                     print "LA SALVA"
-                    print name
-                    return HttpResponseRedirect('/organization/' + name)
+                    return HttpResponseRedirect('/organization/' + username)
                 except:
                     print "Doesn't exist this hash"
                     flagHash = 1
@@ -496,13 +495,17 @@ def logoutOrganization(request):
 
 def organization(request, name):
     if request.method == 'GET':
-        print name
-        try:
-            organization = Organization.objects.get(name=name)
-        except:
-            return HttpResponseRedirect("/")
-            
-        return render_to_response("main/main_organization.html", context_instance = RC(request))
+        if request.user.is_authenticated():
+            print str(request.user.is_authenticated())
+            logged = "Logged in as " + request.user.username + "."
+            print name
+            try:
+                organization = Organization.objects.get(username=name)
+            except:
+                return HttpResponseRedirect("/")
+                
+            return render_to_response("main/main_organization.html", context_instance = RC(request))
+
         
 #________________________ TO REGISTER USER __________________________#
 

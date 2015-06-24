@@ -38,8 +38,7 @@ class Teacher(models.Model):
     #classroom = models.ManyToManyField(Classroom)
 
 
-class Organization(models.Model):
-    user = models.OneToOneField(User)
+class Organization(User):
     hashkey = models.TextField()
 
 class OrganizationHash(models.Model):

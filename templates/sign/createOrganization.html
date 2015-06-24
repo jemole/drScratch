@@ -182,8 +182,9 @@
        {% csrf_token %}     
        <div class="col-lg-8">
         <label class="col-md-6 text-left control-label">{% trans "Organization's name" %}</label>
-          <input class='form-control' name='name' placeholder='ID'>
+          <input class='form-control' name='username' placeholder='ID'>
         </div>
+        {{ form.as_p }}
     
         <div class="col-lg-8">
         <label for="ejemplo_email_3" class="col-md-6 text-left control-label">E-mail</label>
@@ -191,6 +192,9 @@
           <input type="email" class="form-control" name="email"
                  placeholder="E-mail">
       </div>
+
+        {{ form.as_p }}
+
       <div class="form-group">
         <div class="col-lg-8">
         <label class="col-lg-2 control-label">{% trans "Password" %}</label>
@@ -198,13 +202,19 @@
         {% trans "<input type='password' class='form-control' name='password' placeholder='Password'>" %}
       </div>
 
+        {{ form.as_p }}
+
      <div class="form-group">
         <div class="col-lg-8">
         <label class="col-lg-2 control-label">{% trans "Hashkey" %}</label>
         
         {% trans "<input type='password' class='form-control' name='hashkey' placeholder='Password'>" %}
       </div>
+
+        {{ form.as_p }}
     </div>
+
+        
             <div class="registration-buttom">      
             <button style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="submit">{% trans "Sign up!" %}</button>
     

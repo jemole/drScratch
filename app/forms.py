@@ -33,9 +33,10 @@ class TeacherForm(forms.Form):
 
 
 class OrganizationForm(forms.Form):
-    class Meta:
-        model = Organization
-        fields = ['hashkey']     
+    username = forms.CharField(max_length=50)
+    email = forms.CharField(max_length=50) 
+    password = forms.CharField(max_length=50) 
+    hashkey = forms.CharField(max_length=70)  
 
 class OrganizationHashForm(ModelForm):
     class Meta:
