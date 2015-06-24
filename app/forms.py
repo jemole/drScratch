@@ -1,3 +1,4 @@
+from django.forms import ModelForm
 from django import forms
 from models import Organization, OrganizationHash
 
@@ -31,12 +32,12 @@ class TeacherForm(forms.Form):
     #classroom = forms.CharField(max_length=50)
 
 
-class OrganizationForm(forms.ModelForm):   
-    
+class OrganizationForm(forms.Form):
     class Meta:
         model = Organization
+        fields = ['hashkey']     
 
-class OrganizationHashForm(forms.ModelForm):
-   
+class OrganizationHashForm(ModelForm):
     class Meta:
         model = OrganizationHash
+        fields = ['hashkey']

@@ -404,16 +404,16 @@ def collaborators(request):
 
 #________________________ TO REGISTER ORGANIZATION __________________#
 
-def registerOrganization(request):
-    if request.method == "POST":
-        form = OrganizationForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            pwd = form.cleaned_data['password']
-            user = User.objects.create_user(name, email, pwd)
-    else:
-        return render_to_response("sign/registerOrganization.html",)
+#def registerOrganization(request):
+#    if request.method == "POST":
+#        form = OrganizationForm(request.POST)
+#        if form.is_valid():
+#            name = form.cleaned_data['name']
+#            email = form.cleaned_data['email']
+#            pwd = form.cleaned_data['password']
+#            user = User.objects.create_user(name, email, pwd)
+#    else:
+#        return render_to_response("sign/registerOrganization.html",)
 
 def createOrganizationHash(request):
     """Method for to sign up in the platform"""
@@ -429,20 +429,32 @@ def signUpOrganization(request):
     flagHash = 0
     flagName = 0
     if request.method == 'POST':
+        print "ENTRA EN EL POST"
         form = OrganizationForm(request.POST)    
         if form.is_valid():
-            name = form.cleaned_data['name']
-            password = form.cleaned_data['password']
-            email = form.cleaned_data['email']
+            print "FORMULARIO VALIDO"
             hashkey = form.cleaned_data['hashkey']
             try:
                 organization = Organization.objects.get(name=name)
+                print "The name already exists"                
                 flagName = 1            
             except:
                 try:
+                    print "ENTRA"
                     organizationHashkey = OrganizationHash.objects.get(hashkey=hashkey)            
-                    organizationHashkey.delete()          
-                    form.save()
+                    organizationHashkey.delete()                                                
+                    print "CONSIGUE COGER LA HASH Y LA BORRA"  
+                    print name
+                    print email
+                    print password                  
+                    user = User.objects.create_user(name, email, password)
+                    user.save()
+                    print "CREA EL USER"
+                    organization = Organization(user = user, kashkey = kashkey)
+                    print "CREA LA ORGANIAZCION"                 
+                    organization.save()
+                    print "LA SALVA"
+                    print name
                     return HttpResponseRedirect('/organization/' + name)
                 except:
                     print "Doesn't exist this hash"
@@ -483,7 +495,8 @@ def logoutOrganization(request):
     return HttpResponseRedirect('/')
 
 def organization(request, name):
-    if request.method == 'GET':  
+    if request.method == 'GET':
+        print name
         try:
             organization = Organization.objects.get(name=name)
         except:
