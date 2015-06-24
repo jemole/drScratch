@@ -13,36 +13,36 @@
     <title>Dr.Scratch</title>
 
 
-    <link rel="stylesheet" href="static/app/content/style.css">
+    <link rel="stylesheet" href="../../static/app/content/style.css">
     <!-- =========================
      FAV AND TOUCH ICONS AND FONT  
     ============================== -->
-    <link rel="icon" href="static/app/images/favicon.ico">
-    <link rel="stylesheet" href="static/app/icons/icons.css">  
-    <link type="text/css" rel="stylesheet" href="static/app/content/css_002.css">
-    <link type="text/css" rel="stylesheet" href="static/app/content/css.css">
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">  
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
     <!-- =========================
      STYLESHEETS   
     ============================== -->
     <!-- BOOTSTRAP AND ANIMATION -->
-    <link rel="stylesheet" href="static/app/content/bootstrap-main.css">
-    <link rel="stylesheet" href="static/app/content/animate.css">
+    <link rel="stylesheet" href="../../static/app/content/bootstrap-main.css">
+    <link rel="stylesheet" href="../../static/app/content/animate.css">
 
     <!-- CAROUSEL AND LIGHTBOX -->
-    <link rel="stylesheet" href="static/app/content/owl_002.css">
-    <link rel="stylesheet" href="static/app/content/owl.css">
-    <link rel="stylesheet" href="static/app/content/nivo-lightbox.css">
-    <link rel="stylesheet" href="static/app/content/default.css">
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
 
     <!-- CUSTOM STYLESHEETS -->
-    <link rel="stylesheet" href="static/app/content/styles_organizations.css">
+    <link rel="stylesheet" href="../../static/app/content/styles_organizations.css">
 
     
     <!-- RESPONSIVE FIXES -->
-    <link rel="stylesheet" href="static/app/content/responsive.css">
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
 
     <!-- DEFAULT COLOR/ CURRENTLY USING -->
-    <link rel="stylesheet" href="static/app/content/red.css">
+    <link rel="stylesheet" href="../../static/app/content/red.css">
 </head>
 
 <body>
@@ -69,14 +69,34 @@
                     <div class="navbar-collapse collapse" id="stamp-navigation">
                     <!-- NAVIGATION LINK -->
                       <a class="navbar-brand" href="/">
-                        <img src="static/app/images/logo_main.png" alt="" />
+                        <img src="../../static/app/images/logo_main.png" alt="" />
                       </a>
-                      <ul class="nav navbar-nav navbar-left main-navigation small-text">
-                      <!--  <li class="navbar-brand"><a href="#section1"><em>{% trans "Sign up!" %}</em></a></li> -->
-                      </ul>
 
                     <!-- LOGIN REGISTER -->
-                    <ul class="nav navbar-nav navbar-right login-register small-text">                
+                    <!-- LOGIN REGISTER -->
+                    <ul class="nav navbar-nav navbar-right login-register small-text">  
+                        <li style="display: block;" class="login js-login dropdown">
+                          <a aria-expanded="false" role="button" href="#" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign in" %} 
+                            <span class="caret"></span>
+                          </a>
+					                <ul role="menu" class="dropdown-menu">
+						                <li>        
+						                <div style="padding: 15px; padding-bottom: 0px;">
+							                <form accept-charset="UTF-8" action="/loginOrganization" method="post">
+                                            {% csrf_token %}
+								                <input type="text" name="username" id="username" placeholder="Username" style="margin-bottom: 15px;">
+								                <input type="password" name="password" id="password" placeholder="Password" style="margin-bottom: 15px;">
+								                <input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;">
+								                <label for="sign-in" class="string optional">{% trans "Remember me" %}</label>
+                                                <div class="centre">
+								                    <input type="submit" value="Sign In" id="sign-in" class="btn-group btn-group-justified colored-text">
+                                                </div>							                
+                                            </form>
+						                </div>            
+						                </li>
+						                </ul>
+					                </li> 
+             
                             <li style="display: none;" class="register-button js-register inpage-scroll">
                                 <a href="#home" class="navbar-register-button">{% trans "Get Started" %}</a>
                             </li>
@@ -127,23 +147,23 @@
         <ul class="client-logos">
             <li>
                 <a href="http://programamos.es">
-                <img src="static/app/images/logoProgramamos.png" alt="">
+                <img src="../../static/app/images/logoProgramamos.png" alt="">
                 </a>            
             </li>
             <li>
                 <a href="http://www.urjc.es">
-                <img src="static/app/images/logoURJC.jpg" alt="">
+                <img src="../../static/app/images/logoURJC.jpg" alt="">
                 </a>
             </li>
             <li>
                 <a href="http://libresoft.es">
-                <img src="static/app/images/logoLibresoft.jpeg" alt="">
+                <img src="../../static/app/images/logoLibresoft.jpeg" alt="">
                 </a>
             </li>
 
             <li>
                 <a href="http://www.fecyt.es">
-                <img src="static/app/images/logoFECYT.png" alt="">
+                <img src="../../static/app/images/logoFECYT.png" alt="">
                 </a>
             </li>
 
@@ -167,6 +187,7 @@
                 <div class="sub-heading">
                     <h3><em>{% trans "You'll evaluate the projects of all your student in few time. Also, you'll see all the relevant information in a view." %}</em></h3>
                 </div>
+                    {% trans "If you want to be one of the ten first organizations which prove Dr.Scratch send us an email to " %}<a href="mailto:team@drscratch.org" class="strong">team@drscratch.org</a>{% trans  " and we'll give you your hash to can sign up in the web" %}
             </div>
 
         </div>
@@ -176,13 +197,14 @@
     <!-- FORM -->
         
         <div class="container">
-        <img src="static/app/images/drScratch.png" alt=""  width="200" height="200" />
-        <form action="/organizations" method="post" class="vertical-registration-form" role="form">
+        <img src="../../static/app/images/drScratch.png" alt=""  width="200" height="200" />
+        <form action="/organization" method="post" class="vertical-registration-form" role="form">
        {% csrf_token %}     
        <div class="col-lg-8">
         <label class="col-md-6 text-left control-label">{% trans "Organization's name" %}</label>
-          <input class='form-control' name='name' placeholder='ID'>
+          <input class='form-control' name='username' placeholder='ID'>
         </div>
+        {{ form.as_p }}
     
         <div class="col-lg-8">
         <label for="ejemplo_email_3" class="col-md-6 text-left control-label">E-mail</label>
@@ -190,6 +212,9 @@
           <input type="email" class="form-control" name="email"
                  placeholder="E-mail">
       </div>
+
+        {{ form.as_p }}
+
       <div class="form-group">
         <div class="col-lg-8">
         <label class="col-lg-2 control-label">{% trans "Password" %}</label>
@@ -197,15 +222,21 @@
         {% trans "<input type='password' class='form-control' name='password' placeholder='Password'>" %}
       </div>
 
+        {{ form.as_p }}
+
      <div class="form-group">
         <div class="col-lg-8">
         <label class="col-lg-2 control-label">{% trans "Hashkey" %}</label>
         
         {% trans "<input type='password' class='form-control' name='hashkey' placeholder='Password'>" %}
       </div>
+
+        {{ form.as_p }}
     </div>
+
+        
             <div class="registration-buttom">      
-            <button style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/organizations" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="submit">{% trans "Sign up!" %}</button>
+            <button style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="submit">{% trans "Sign up!" %}</button>
     
             </div>
     </form>
@@ -267,7 +298,7 @@
    <!-- =========================
      SCRIPTS   
     ============================== -->
-    <script src="static/app/scripts/jquery.min.js"></script>
+    <script src="../../static/app/scripts/jquery.min.js"></script>
     <script>
         /* PRE LOADER */
         jQuery(window).load(function () {
@@ -276,17 +307,17 @@
             jQuery(".preloader").delay(1000).fadeOut("slow");
         })
     </script>
-    <script type="text/javascript" src="static/app/scripts/bootstrap-filestyle.js"> </script>
-    <script src="static/app/scripts/smoothscroll.js"></script>
-    <script src="static/app/scripts/bootstrap.min.js"></script>
-    <script src="static/app/scripts/jquery.nav.js"></script>
-    <script src="static/app/scripts/ie-emulation-modes-warning.js"></script>
-    <script src="static/app/scripts/wow.js"></script>
-    <script src="static/app/scripts/nivo-lightbox.js"></script>
-    <script src="static/app/scripts/owl.js"></script>
-    <script src="static/app/scripts/jquery_main.js"></script>
-    <script src="static/app/scripts/jquery.ajaxchimp.min.js"></script>
-    <script src="static/app/scripts/progress-bar.js"></script>
+    <script type="text/javascript" src="../../static/app/scripts/bootstrap-filestyle.js"> </script>
+    <script src="../../static/app/scripts/smoothscroll.js"></script>
+    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+    <script src="../../static/app/scripts/jquery.nav.js"></script>
+    <script src="../../static/app/scripts/ie-emulation-modes-warning.js"></script>
+    <script src="../../static/app/scripts/wow.js"></script>
+    <script src="../../static/app/scripts/nivo-lightbox.js"></script>
+    <script src="../../static/app/scripts/owl.js"></script>
+    <script src="../../static/app/scripts/jquery_main.js"></script>
+    <script src="../../static/app/scripts/jquery.ajaxchimp.min.js"></script>
+    <script src="../../static/app/scripts/progress-bar.js"></script>
 
     <!-- GOGLE MAP -->
     <!--
@@ -294,5 +325,5 @@
 -->
 
     <!-- CUSTOM JS  -->
-    <script src="static/app/scripts/custom.js"></script>
+    <script src="../../static/app/scripts/custom.js"></script>
 </body></html>

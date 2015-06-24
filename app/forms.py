@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from models import Organization, OrganizationHash
+from models import OrganizationHash
 
 class UploadFileForm(forms.Form):
 	filename = forms.CharField(max_length=50)
@@ -42,3 +42,8 @@ class OrganizationHashForm(ModelForm):
     class Meta:
         model = OrganizationHash
         fields = ['hashkey']
+
+class LoginOrganizationForm(forms.Form):
+    username = forms.CharField(max_length=50) 
+    password = forms.CharField(max_length=50) 
+    

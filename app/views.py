@@ -16,7 +16,7 @@ from app.models import Dead, Sprite, Mastery, Duplicate, File
 from app.models import Teacher, Student, Classroom
 from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
-from app.forms import OrganizationForm, OrganizationHashForm
+from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
 from django.contrib.auth.models import User
 from datetime import datetime, date
 from django.contrib.auth.decorators import login_required
@@ -402,37 +402,33 @@ def collaborators(request):
 
 
 
+
+
+
+
+
+
+
+
+
 #________________________ TO REGISTER ORGANIZATION __________________#
 
-#def registerOrganization(request):
-#    if request.method == "POST":
-#        form = OrganizationForm(request.POST)
-#        if form.is_valid():
-#            name = form.cleaned_data['name']
-#            email = form.cleaned_data['email']
-#            pwd = form.cleaned_data['password']
-#            user = User.objects.create_user(name, email, pwd)
-#    else:
-#        return render_to_response("sign/registerOrganization.html",)
-
-def createOrganizationHash(request):
+def organizationHash(request):
     """Method for to sign up in the platform"""
     if request.method == "POST":
         form = OrganizationHashForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/createOrganizationHash')
+            return HttpResponseRedirect('/organizationHash')
     elif request.method == 'GET':
-        return render_to_response("sign/createOrganizationHash.html", context_instance = RC(request))
+        return render_to_response("sign/organizationHash.html", context_instance = RC(request))
 
 def signUpOrganization(request):
     flagHash = 0
     flagName = 0
     if request.method == 'POST':
-        print "ENTRA EN EL POST"
         form = OrganizationForm(request.POST)    
         if form.is_valid():
-            print "FORMULARIO VALIDO"
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
@@ -443,50 +439,48 @@ def signUpOrganization(request):
                 flagName = 1            
             except:
                 try:
-                    print "ENTRA"
                     organizationHashkey = OrganizationHash.objects.get(hashkey=hashkey)            
-                    organizationHashkey.delete()                                                
-                    print "CONSIGUE COGER LA HASH Y LA BORRA"  
-                    print username
-                    print email
-                    print password                  
-                    user = Organization.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
-                    print "CREA EL USER"
-                    print "CREA LA ORGANIAZCION"                 
-                    print "LA SALVA"
-                    return HttpResponseRedirect('/organization/' + username)
+                    organizationHashkey.delete()
+                    organization = Organization.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
+                    organization = authenticate(username=username, password=password)
+                    return HttpResponseRedirect('/organization/' + organization.username)
                 except:
                     print "Doesn't exist this hash"
                     flagHash = 1
-                    return HttpResponseRedirect('/createOrganizationHash')
+                    return HttpResponseRedirect('/organizationHash')
 
-            return render_to_response("sign/createOrganization.html", context_instance = RC(request))                    
+            return render_to_response("sign/organization.html", context_instance = RC(request))                    
     elif request.method == 'GET':
-        return render_to_response("sign/createOrganization.html", context_instance = RC(request))
+        if request.user.is_authenticated():
+            return HttpResponseRedirect('/organization/' + request.user.username)
+        else:
+            return render_to_response("sign/organization.html", context_instance = RC(request))
     
 #_________________________ TO SHOW ORGANIZATION'S DASHBOARD ___________#
 
 def loginOrganization(request):
     """Log in app to user"""
     if request.method == 'POST':
-        form = UserForm(request.POST)
+        flag = False
+        form = LoginOrganizationForm(request.POST)
         if form.is_valid():
-            organizationName = form.cleaned_data['organizationName']
+            username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-            organization = authenticate(organizationName=name, password=password)
+            organization = authenticate(username=username, password=password)
             if organization is not None:
-                if user.is_active:
-                    login(request, user)
-                    return HttpResponseRedirect('/myDashboard')
+                if organization.is_active:
+                    login(request, organization)
+                    return HttpResponseRedirect('/organization/' + organization.username)
+                    
             else:
                 flag = True
-                return render_to_response("main/main.html", 
+                return render_to_response("sign/organization.html", 
                                             {'flag': flag},
                                             context_instance=RC(request))
-
+    
     else:
         return HttpResponseRedirect("/")
-
+    
 
 def logoutOrganization(request):
     """Method for logging out"""
@@ -494,19 +488,20 @@ def logoutOrganization(request):
     return HttpResponseRedirect('/')
 
 def organization(request, name):
-    if request.method == 'GET':
+    if request.method == 'GET': 
         if request.user.is_authenticated():
-            print str(request.user.is_authenticated())
-            logged = "Logged in as " + request.user.username + "."
-            print name
-            try:
-                organization = Organization.objects.get(username=name)
-            except:
-                return HttpResponseRedirect("/")
-                
-            return render_to_response("main/main_organization.html", context_instance = RC(request))
-
-        
+            username = request.user.username
+            if username == name:
+                return render_to_response("main/main_organization.html",
+                        {'username':username}, 
+                        context_instance = RC(request))
+            else:     
+                return render_to_response("sign/organization.html",
+                                        context_instance = RC(request))
+        return render_to_response("sign/organization.html", context_instance = RC(request))
+    else:
+        return HttpResponseRedirect("/")
+              
 #________________________ TO REGISTER USER __________________________#
 
 def createUserHash(request):

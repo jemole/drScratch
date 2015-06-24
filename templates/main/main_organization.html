@@ -75,11 +75,15 @@
                       </ul>
 
                     <!-- LOGIN REGISTER -->
-                    <ul class="nav navbar-nav navbar-right login-register small-text">                
-                            <li style="display: none;" class="register-button js-register inpage-scroll">
-                                <a href="#home" class="navbar-register-button">{% trans "Get Started" %}</a>
-                            </li>
-                        </ul>
+                    <ul class="nav navbar-nav navbar-right login-register small-text">
+                        <li>
+                            <h6 class="colored-text" >{% trans "Logged in as " %} {{ username }} </h6>
+                            <form accept-charset="UTF-8" action="/logoutOrganization" method="post">
+                                {% csrf_token %}  
+                                <span><button id="upload" name='_upload' type="submit" class="btn btn-primary small-button">{% trans "LOGOUT" %}</button></span>
+                            </form>
+                        </li>
+                    </ul>
 
                     </div>
                     <!-- /END TOP BAR -->
@@ -95,23 +99,12 @@
         <!-- ONLY LOGO ON HEADER -->
                 <div class="row">
                     <div class="col-md-6 text-left">
-
                         <!-- HEADING AND BUTTONS -->
                         <div class="intro-section">
-
                             <!-- WELCOM MESSAGE -->
-                            <h1 class="intro white-text">{% trans "Analyze your Scratch projects" %}</h1>
-                            
-                            <h4 align=justify class="transparent-text"><strong>{% trans "Welcome to the Dr. Scratch website, an analytical tool that evaluates your Scratch projects in a variety of computational areas. This analyzer is a helpful tool to evaluate your own projects, or those of your Scratch students." %} </strong></h4>
-                         
-                            <!-- BUTTON -->
-                            <div class="button hidden-xs">
-                                <a href="#section1" class="btn btn-primary secondary-button">{% trans "Learn More" %}</a>
-                            </div>
-                            <!-- /END BUTTON -->
-                            
+                            <h2 class="intro white-text">{% trans "Welcome to the Dr. Scratch website, " %}{{ username }} !!!</h2>
+                            <h4 align=justify class="transparent-text"><strong> </strong></h4>
                         </div>
-
                     </div>
                     <div class="container">
                     <div class="col-md-5">
@@ -119,22 +112,14 @@
                         <!-- VERTICAL PROJECT FORM -->
 
                             <div class="vertical-project-form">
+            
+                                <h5 class="dark-text form-heading"><strong>{% trans "You can analyze at the same time all the Scratch proyects of your students!" %}</strong></h5>
                                 
-                                <h5 class="dark-text form-heading"><strong>{% trans "There are two options to analyze your Scratch project now!" %}</strong></h5>
-                                
-                                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/selector">
-                                {% csrf_token %}   
-                                                            
-                                    {% trans "1. Introduce the <span class='colored-text'><a data-toggle='modal' href='#modalUrl'>url</a></span> of your Scratch project, you don't have to download it:" %}
-                                    {% trans '<input name="urlProject" id="cf-name" class="form-control input-box placeholder" placeholder="http:/scratch.mit.edu/projects/your_number" type="text">' %}
-                                    <button id="url" name='_url' type="submit" class="btn btn-primary standard-button">{% trans "Analyze by url" %}</button>
-                                    
-                              
+                                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/analyzeCSV">
                                     {% csrf_token %}
-                                    <br></br>
-                                    {% trans "2. If you have your <span class='colored-text'><a data-toggle='modal' href='#modalProject'>project</a></span> downloaded in the computer you can analyze it here:" %}
-                                    {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose Project'>" %}
-                                    <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my project" %}</button>
+                                    {% trans "Only you have to put a file CSV with the " %}<span class='colored-text'><a data-toggle='modal' href='#modalUrl'>urls</a></span>{% trans " of the Scratch projects you want to analyze:" %}
+                                    {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose File .csv'>" %}
+                                    <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my projects" %}</button>
                                     {% csrf_token %}                                    
                                 
                                 </form>
