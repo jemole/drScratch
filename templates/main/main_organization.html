@@ -118,7 +118,7 @@
                                 <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/analyzeCSV">
                                     {% csrf_token %}
                                     {% trans "Only you have to put a file CSV with the " %}<span class='colored-text'><a data-toggle='modal' href='#modalUrl'>urls</a></span>{% trans " of the Scratch projects you want to analyze:" %}
-                                    {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose File .csv'>" %}
+                                    {% trans "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose File .csv'>" %}
                                     <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my projects" %}</button>
                                     {% csrf_token %}                                    
                                 

@@ -181,8 +181,9 @@ def uploadUnregistered(request):
             return  d
         # Create DB of files
         now = datetime.now()
+        method = "project"
         fileName = File (filename = file.name.encode('utf-8'), 
-                        method = "project" , time = now, 
+                        method = method , time = now, 
                         score = 0, abstraction = 0, parallelization = 0,
                         logic = 0, synchronization = 0, flowControl = 0,
                         userInteractivity = 0, dataRepresentation = 0,
@@ -266,7 +267,8 @@ def urlUnregistered(request):
                 return d
             else:
                 try:
-                    (pathProject, file) = sendRequestgetSB2(idProject)
+                    method = "url"
+                    (pathProject, file) = sendRequestgetSB2(idProject, method)
                 except:
                     #When your project doesn't exist
                     d = {'Error': 'no_exists'}
@@ -322,21 +324,23 @@ def processStringUrl(url):
         idProject = "error"
     return idProject
 
-def sendRequestgetSB2(idProject):
+def sendRequestgetSB2(idProject, method):
     """First request to getSB2"""
     getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
     fileURL = idProject + ".sb2"
-
+    print getRequestSb2
+    print fileURL
     # Create DB of files
     now = datetime.now()
     fileName = File (filename = fileURL, 
-                     method = "url" , time = now, 
+                     method = method , time = now, 
                      score = 0, abstraction = 0, parallelization = 0,
                      logic = 0, synchronization = 0, flowControl = 0,
                      userInteractivity = 0, dataRepresentation = 0,
                      spriteNaming = 0 ,initialization = 0,
                      deadCode = 0, duplicateScript = 0)
     fileName.save()
+    print "fileName Saved"
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
     pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
@@ -344,7 +348,7 @@ def sendRequestgetSB2(idProject):
     logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
     str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
     "Time: " + str(fileName.time) + "\n")
-
+    print "log saved"
     # Save file in server
     counter = 0
     file_name = handler_upload(fileSaved, counter)
@@ -352,6 +356,7 @@ def sendRequestgetSB2(idProject):
     sb2File = urllib2.urlopen(getRequestSb2)
     outputFile.write(sb2File.read())
     outputFile.close()
+    print "file saved"
     return (file_name, fileName)
 
 
@@ -506,7 +511,26 @@ def organization(request, name):
 
 def analyzeCSV(request):
     if request.method =='POST':
-
+        file = request.FILES['csvFile']
+        dir_csvs = os.path.dirname(os.path.dirname(__file__)) + "/csvs/" + file.name.encode('utf-8')
+        #Save file .csv
+        with open(dir_csvs, 'wb+') as destination:
+            for chunk in file.chunks():
+                destination.write(chunk)
+        infile = open(dir_csvs, 'r')
+        dictionary = {}
+        for line in infile:
+            line = line.split("\n")[0]
+            method = "csv"
+            (pathProject, file) = sendRequestgetSB2(line, method)   
+            d = analyzeProject(request, pathProject, file)
+            dic = {}
+            dic[line] = d
+            dictionary.update(dic)       
+        infile.close()
+        print str(dictionary)
+        return HttpResponseRedirect("/organization")
+        #return render_to_response("upload/dashboard-unregistered-master.html", d)
     else:
         return HttpResponseRedirect("/organization")
               
