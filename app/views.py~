@@ -531,6 +531,7 @@ def analyzeCSV(request):
         infile.close()
         print str(dictionary)
         response = generatorCSV(request, dictionary, file_name)
+        return response
         return HttpResponseRedirect("/organization")
         #return render_to_response("upload/dashboard-unregistered-master.html", d)
     else:
