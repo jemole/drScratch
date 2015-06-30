@@ -12,7 +12,7 @@ from django.template import Context, loader
 from django.contrib.auth import logout, login, authenticate
 from django.utils.translation import ugettext as _
 from app.models import Project, Dashboard, Attribute
-from app.models import Dead, Sprite, Mastery, Duplicate, File
+from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
 from app.models import Teacher, Student, Classroom
 from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
@@ -21,6 +21,7 @@ from django.contrib.auth.models import User
 from datetime import datetime, date
 from django.contrib.auth.decorators import login_required
 from email.MIMEText import MIMEText
+from django.utils.encoding import smart_str
 import smtplib
 import email.utils
 import os
@@ -41,6 +42,7 @@ pDuplicateScript = "hairball -p duplicate.DuplicateScripts "
 pSpriteNaming = "hairball -p convention.SpriteNaming "
 pDeadCode = "hairball -p blocks.DeadCode "
 pInitialization = "hairball -p initialization.AttributeInitialization "
+
 
 #_____________________________ MAIN ______________________________________#
 
@@ -328,8 +330,6 @@ def sendRequestgetSB2(idProject, method):
     """First request to getSB2"""
     getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
     fileURL = idProject + ".sb2"
-    print getRequestSb2
-    print fileURL
     # Create DB of files
     now = datetime.now()
     fileName = File (filename = fileURL, 
@@ -340,7 +340,6 @@ def sendRequestgetSB2(idProject, method):
                      spriteNaming = 0 ,initialization = 0,
                      deadCode = 0, duplicateScript = 0)
     fileName.save()
-    print "fileName Saved"
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
     pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
@@ -348,7 +347,6 @@ def sendRequestgetSB2(idProject, method):
     logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
     str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
     "Time: " + str(fileName.time) + "\n")
-    print "log saved"
     # Save file in server
     counter = 0
     file_name = handler_upload(fileSaved, counter)
@@ -356,7 +354,6 @@ def sendRequestgetSB2(idProject, method):
     sb2File = urllib2.urlopen(getRequestSb2)
     outputFile.write(sb2File.read())
     outputFile.close()
-    print "file saved"
     return (file_name, fileName)
 
 
@@ -511,28 +508,63 @@ def organization(request, name):
 
 def analyzeCSV(request):
     if request.method =='POST':
-        file = request.FILES['csvFile']
-        file_name = file.name.encode('utf-8')
-        dir_csvs = os.path.dirname(os.path.dirname(__file__)) + "/csvs/" + file_name
-        #Save file .csv
-        with open(dir_csvs, 'wb+') as destination:
-            for chunk in file.chunks():
-                destination.write(chunk)
-        infile = open(dir_csvs, 'r')
-        dictionary = {}
-        for line in infile:
-            line = line.split("\n")[0]
-            method = "csv"
-            (pathProject, file) = sendRequestgetSB2(line, method)   
-            d = analyzeProject(request, pathProject, file)
-            dic = {}
-            dic[line] = d
-            dictionary.update(dic)       
-        infile.close()
-        print str(dictionary)
-        response = generatorCSV(request, dictionary, file_name)
-        return HttpResponseRedirect("/organization")
-        #return render_to_response("upload/dashboard-unregistered-master.html", d)
+        if "_upload" in request.POST:
+            flag_csv = False
+            file = request.FILES['csvFile']
+            file_name = file.name.encode('utf-8')
+            dir_csvs = os.path.dirname(os.path.dirname(__file__)) + "/csvs/" + file_name
+            #Save file .csv
+            with open(dir_csvs, 'wb+') as destination:
+                for chunk in file.chunks():
+                    destination.write(chunk)
+            infile = open(dir_csvs, 'r')
+            dictionary = {}
+            for line in infile:
+                line = line.split("\n")[0]
+                method = "csv"
+                (pathProject, file) = sendRequestgetSB2(line, method)   
+                d = analyzeProject(request, pathProject, file)
+                dic = {}
+                dic[line] = d
+                dictionary.update(dic)       
+            infile.close()
+            try:
+                csv_data = generatorCSV(request, dictionary, file_name)
+                flag_csv = True
+            except:
+                flag_csv = False
+
+            if request.user.is_authenticated():
+                username = request.user.username
+
+            csv_save = CSVs(filename = file_name, directory = csv_data, organization = username)
+            csv_save.save()                
+
+            return render_to_response("upload/dashboard-organization.html", 
+                                    {'username': username,
+                                     'flag_csv': flag_csv,},
+                                     context_instance=RC(request))
+        
+        elif "_download" in request.POST:
+            """Export a CSV File"""
+            if request.user.is_authenticated():
+                username = request.user.username
+            csv = CSVs.objects.latest('date')
+            #csv_directory = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/"
+            #csv_data = csv_directory + csv.filename
+            #print csv_data
+            #response = HttpResponse(content_type='text/csv')
+            #response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(csv.filename)
+            #response['X-Sendfile'] = smart_str(csv_data)
+
+            path_to_file = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/" + csv.filename
+            csv_data = open(path_to_file, 'r')
+            response = HttpResponse(csv_data, content_type='text/csv')
+            response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(csv.filename)
+            return response
+
+            #return response
+
     else:
         return HttpResponseRedirect("/organization")
 
@@ -540,19 +572,19 @@ def analyzeCSV(request):
 #_________________________GENERATOR CSV FOR ORGANIZATION____________________________#
 
 def generatorCSV(request, dictionary, file_name):
-    """Export a CSV File"""
-    fileName = file_name + ".csv"
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename=Dr.Scratch.csv'
-    #d = {"Abstraction": 2, "level": " Developing", "Parallelization": 1, "Logic": 1, "Synchronization": 2, "FlowControl": 2, "UserInteractivity": 1, "maxPoints": 21, "DataRepresentation": 1, "points": 10}
-    writer = csv.writer(response)
+    """Generator of a csv file"""
+
+    csv_directory = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/"
+    csv_data = csv_directory + file_name
+    writer = csv.writer(open(csv_data, "wb"))
+
     for key, value in dictionary.items():
         writer.writerow([key, value])
-    return response
 
-def downloadCSV(request, response):
-    print "ENTRA"
-    return response
+
+    return csv_data
+
+
               
 #________________________ TO REGISTER USER __________________________#
 

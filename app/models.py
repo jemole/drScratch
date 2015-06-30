@@ -1,7 +1,17 @@
+import datetime
 from django.db import models
 from django.contrib.auth.models import User
 
 # Models of drScratch
+
+class CSVs(models.Model):
+    filename = models.CharField(max_length=100)
+    directory = models.CharField(max_length=100)
+    organization = models.CharField(max_length=100)
+    date = models.DateTimeField(default=datetime.datetime.now)
+
+    class Meta:
+        get_latest_by = 'date'
 
 class File(models.Model):
     filename = models.CharField(max_length=100)

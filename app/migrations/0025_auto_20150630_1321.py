@@ -9,10 +9,22 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('app', '0027_auto_20150623_1932'),
+        ('app', '0024_organizationhash'),
     ]
 
     operations = [
+        migrations.CreateModel(
+            name='CSVs',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('filename', models.CharField(max_length=100)),
+                ('directory', models.CharField(max_length=100)),
+                ('organization', models.CharField(max_length=100)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
         migrations.AlterModelOptions(
             name='organization',
             options={'verbose_name': 'user', 'verbose_name_plural': 'users'},
@@ -36,7 +48,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='organization',
             name='user_ptr',
-            field=models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, default=1, serialize=False, to=settings.AUTH_USER_MODEL),
+            field=models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, default=10000, serialize=False, to=settings.AUTH_USER_MODEL),
             preserve_default=False,
         ),
     ]
