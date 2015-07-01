@@ -403,16 +403,6 @@ def collaborators(request):
     return render_to_response("main/collaborators.html",)
 
 
-
-
-
-
-
-
-
-
-
-
 #________________________ TO REGISTER ORGANIZATION __________________#
 
 def organizationHash(request):
@@ -579,8 +569,39 @@ def generatorCSV(request, dictionary, file_name):
     writer = csv.writer(open(csv_data, "wb"))
 
     for key, value in dictionary.items():
-        writer.writerow([key, value])
-
+        total = 0
+        writer.writerow(['PROJECT',key])
+        writer.writerow([" "," "])
+        writer.writerow(['Code smells:',])        
+        for key, subvalue in value.items():
+            if key == "duplicateScript":
+                for key, sub2value in subvalue.items():
+                    if key == "number":
+                        writer.writerow(["Duplicate scripts", sub2value])
+            elif key == "deadCode":
+                for key, sub2value in subvalue.items():
+                    if key == "number":
+                        writer.writerow(["Dead code", sub2value])
+            elif key == "initialization":
+                for key, sub2value in subvalue.items():
+                    if key == "number":
+                        writer.writerow(["Initialization", sub2value])
+            elif key == "spriteNaming":
+                for key, sub2value in subvalue.items():
+                    if key == "number":
+                        writer.writerow(["Sprite naming", sub2value])
+        
+        writer.writerow([" "," "])
+        writer.writerow(['Skills of Computational Thinking:',])        
+        for key, value in value.items():
+            if key == "mastery":
+                for key, subvalue in value.items():
+                    if key!="maxi" and key!="points":         
+                        writer.writerow([key, subvalue])
+                        total = total + subvalue
+                writer.writerow(["SCORE:", total])
+        writer.writerow([" "," "])
+        writer.writerow([" "," "])
 
     return csv_data
 

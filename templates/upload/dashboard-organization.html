@@ -117,7 +117,7 @@
 
           <div class="vertical-project-form">
             
-                                <h5 class="dark-text form-heading"><strong>{% trans "You can download your results. Do click in the following button:" %}</strong></h5>                                
+                                <h5 class="dark-text form-heading"><strong>{% trans "You can download your results. You do click in the following button:" %}</strong></h5>                                
 
                                   <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/analyzeCSV">
                                     <button  name="_download" type="submit" class="btn btn-primary standard-button">{% trans "Download .csv file" %}</button>    
@@ -127,7 +127,7 @@
                                      
                                 <br></br>
                                      
-                                {% trans "You can analyze another file with more projects:" %}
+                                {% trans "Or...you can analyze another file with more projects:" %}
 
                                 <form name="form" class="project-form" enctype="multipart/form-data" method="get" action="/organization">
                                     <button  name="_download" type="submit" class="btn btn-primary standard-button">{% trans "Analyze again!" %}</button>    
