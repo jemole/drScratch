@@ -104,9 +104,9 @@
                       
                                                                        
 
-<li class="navbar-brand" style="padding-top: 23px;" >
+<li class="nav navbar-nav navbar-right login-register small-text" >
                              
-    <button type="button" class="btn btn-default btn-lg">
+    <button type="button" class="btn btn-default configure-button">
                                   <div class="icon-container" >
                                 <span class="icon-basic-gear colored-text"></span>
                             </div>

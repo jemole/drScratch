@@ -328,13 +328,27 @@ strong,
 }
 
 .small-button {
-	border-radius: 3px;
+	border-radius: 20px;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 	font-size: 13px;
 	line-height: 1.6;
 	border: none;
 	padding: 6px 25px 6px 25px;
+	color: #ffffff;
+	-webkit-transition: none;
+	transition: none;
+    padding-bottom: 10px;
+}
+
+.configure-button {
+	border-radius: 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 35px;
+	line-height: 1.7;
+	border: none;
+	padding: 5px 20px 5px 20px;
 	color: #ffffff;
 	-webkit-transition: none;
 	transition: none;
