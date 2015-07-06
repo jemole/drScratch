@@ -84,6 +84,33 @@
                    
                        
                     <ul class="nav navbar-nav navbar-right login-register small-text">
+                        <li style="display: block;" class="login js-login dropdown">
+
+                          <a aria-expanded="false" role="button" href="#modalSign" data-toggle="dropdown" class="btn btn-default configure-button">
+                              <div class="icon-container" >
+                                <span class="icon-basic-gear"></span>
+                              </div>
+                          </a> 
+
+                            <ul role="menu" class="dropdown-menu">
+                                <li>        
+						        <div style="padding: 15px; padding-bottom: 0px;">
+							      <form accept-charset="UTF-8" action="/login" method="post">
+                                  {% csrf_token %}
+					                <buttom type="submit" data-toggle="modal" href="#modalPWD" id="sign-up" style="margin-bottom: 15px;" class="btn btn-primary small-button center-block">
+                                        Change password                                    
+                                    </buttom>
+                                    <buttom type="submit" data-toggle="modal" href="#modalEMAIL" id="sign-up" style="margin-bottom: 15px;" class="btn btn-primary small-button text-centre">
+                                        Change email                                  
+                                    </buttom>
+							      </form>
+						        </div>            
+						        </li>
+						     </ul>
+                         </li>
+
+
+
                         <li>
                             <h6 class="colored-text" >{% trans "Logged in as " %} {{ username }} </h6>
 
@@ -97,30 +124,8 @@
 
                         
                     </ul>
-
-
-                                    <ul class="nav navbar-nav navbar-right">
-
-                      
-                                                                       
-
-<li class="nav navbar-nav navbar-right login-register small-text" >
-                             
-    <button type="button" class="btn btn-default configure-button">
-                                  <div class="icon-container" >
-                                <span class="icon-basic-gear colored-text"></span>
-                            </div>
-    </button>                 
-
-                        </li>
-
-                    </ul>
                 </div>
-
-
-
-
-                    </div>
+              </div>
                     <!-- /END TOP BAR -->
                 </div>
                 <!-- /END CONTAINER -->
@@ -236,11 +241,10 @@
             MODALS
     ============================== -->
 
-     <!-- Modal Url -->
+     <!-- Modal CSV -->
     <div id="modalCSV" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
-        <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
@@ -253,6 +257,70 @@
           <div class="modal-body">
             <img class='framed' src='../../static/app/images/csv.png' />
           </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modal PWD-->
+    <div id="modalPWD" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+            <div class="small-text-medium uppercase colored-text">
+                {% trans "Change your password" %}
+            </div>
+            <h4 class="modal-title"><strong>{% trans "Choose another password" %}</strong></h4>
+            <div class="colored-line"></div> 
+          </div>
+          <div class="modal-body">
+	         <form accept-charset="UTF-8" action="/change" method="post">
+             {% csrf_token %}
+                <div>
+                <input type="password" name="new_password" id="new_password" placeholder="New password" style="margin-bottom: 15px;">
+                </div>
+                <div>              
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" style="margin-bottom: 15px;">
+                </div>
+                <input type="submit" value="Change password" id="change-password" class="btn btn-primary standard-button">
+            </form>
+            </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modal EMAIL-->
+    <div id="modalEMAIL" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+            <div class="small-text-medium uppercase colored-text">
+                {% trans "Change your email" %}
+            </div>
+            <h4 class="modal-title"><strong>{% trans "Choose another email" %}</strong></h4>
+            <div class="colored-line"></div> 
+          </div>
+          <div class="modal-body">
+	         <form accept-charset="UTF-8" action="/change" method="post">
+             {% csrf_token %}
+                <div>
+                <input type="password" name="new_email" id="new_email" placeholder="New email" style="margin-bottom: 15px;">
+                </div>
+                <div>              
+                <input type="password" name="confirm_email" id="confirm_email" placeholder="Confirm email" style="margin-bottom: 15px;">
+                </div>
+                <input type="submit" value="Change email" id="change-email" class="btn btn-primary standard-button">
+            </form>
+            </div>
           <div class="modal-footer">
           </div>
         </div>

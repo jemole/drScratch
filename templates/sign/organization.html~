@@ -90,7 +90,7 @@
                                                 </div>
                                                 
                                                 <div class="colored-line" style="margin-top:15px"></div> 
-                                                <p class="small-text text-center"> Did you forget your password?</p>	
+                                                <p class="small-text colored-text text-center"> Did you forget your password?</p>	
                                                 <div class="centre">
 								                    <input type="submit" value="Change password" id="change-password" class="btn-group btn-group-justified colored-text">
                                                 </div>		                
