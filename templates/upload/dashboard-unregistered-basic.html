@@ -6,9 +6,10 @@
     <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
     <meta name="author" content="Programamos URJC Libresoft FECyT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-    <link rel="stylesheet" href="../../static/app/content/scratchblocks2.css">
-    <script src="../../static/app/scripts/scratchblocks2.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link rel="stylesheet" href="../../static/app/content/bootstrap-tour.css">
+    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+    <script src="../../static/app/scripts/bootstrap-tour.js"></script>
 
     <!-- SITE TITLE -->
     <title>Dr.Scratch</title>
@@ -47,10 +48,42 @@
     <script>
                     window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
                     </script>
+
+    <script>
+    // Instance the tour
+    var tour = new Tour({
+      storage: false,
+      steps: [
+      {
+        element: "#stepone",
+        title: "Puntuación",
+        content: "Éste apartado muestra la puntuación total obtenida."
+      },
+      {
+        element: "#steptwo",
+        title: "Mejorar puntuación",
+        content: "¿No te gusta la puntuación que has sacado? ¡Sigue nuestros consejos para subirla!"
+      },
+      {
+        element: "#stepthree",
+        title: "Puntuación detallada",
+        content: "Aquí mostramos la puntuación de cada habilidad de programación, se evalúa del 0 a 3.",
+        placement:'left'
+      }
+    ]});
+    tour.init();
+    // Initialize the tour
+    $(document).ready(function(){
+        $("#tour").click(function(){
+            tour.start();
+
+        });
+});
+    </script>
 </head>
 <body>
 <div id="wrap">
-    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation" role="navigation">
         <div class="container">          
                     <!-- TOP BAR -->
             <div class="navbar-collapse collapse" id="stamp-navigation">
@@ -61,6 +94,7 @@
                 <ul class="nav navbar-nav navbar-right main-navigation ">
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
+                         <li class="navbar-brand"><a class="btn btn-default" id="tour">TOUR</a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr.Scratch(Beta Version)" %}</a></li>
                       </ul>
             </div>
@@ -73,7 +107,7 @@
     <!-- JUMBOTRON -->
 <div class="container">
             <section id="blackboard" class="services col-md-5">
-                <div class="devpanel">
+                <div class="devpanel" id="stepone">
                     <div class="panel panel-success" id="devpanel">
                         <div class="panel-heading">
                             <h2 id="score" class="panel-title dark-text"><strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}
@@ -91,8 +125,8 @@
                 <!-- HOW TO IMPROVE -->
             <div class="improve">
                 <div class="panel panel-success" id="improve">
-                    <div class="panel-heading">
-                        <h2 id="score" class="panel-title dark-text">{% trans "How to improve my score:"%}</h2>
+                    <div class="panel-heading" id="steptwo">
+                        <h2 id="score" class="panel-title dark-text">{% trans "Want to level up?"%}</h2>
                     </div>
                     <div class="panel-body text-left">
 
@@ -137,7 +171,7 @@
   <!-- Score in detail -->
     <div class="col-md-7">
         <section id="dashboard">
-            <div class="container-fluid">
+            <div class="container-fluid" id="stepthree">
                 <div class="row marketing">
                     <div class="jumbotron">
                         <div class="table-responsive">

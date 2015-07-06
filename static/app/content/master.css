@@ -3,6 +3,38 @@ font-family: Purisa,Bold;
 src: url(fonts/glyphicons-halflings-regular.ttf) format("truetype");
 }
 
+ html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
+}
+#footer {
+  background-color: #eee;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+#footer {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+}
 body{
     font-family: Purisa,Bold, sans-serif !important;
     background-color: white !important;
@@ -131,3 +163,26 @@ padding-top:90px;
     color:#B40404;
 }
 
+ /* Popover */
+  .popover {
+      border: 2px dotted #E42D40;
+  }
+  /* Popover Header */
+  .popover-title {
+      background-color: #E47C5D; 
+      color: #FFFFFF; 
+      font-size: 20px;
+      text-align:center;
+      font-family: Purisa,Bold, sans-serif !important;
+  }
+  /* Popover Body */
+  .popover-content {
+      background-color: #C8E5E3;
+      color: #142B3B;
+      padding: 18px;
+      font-family: Purisa,Bold, sans-serif !important;
+  }
+  /* Popover Arrow */
+  .arrow {
+      border-right-color: red !important;
+  }

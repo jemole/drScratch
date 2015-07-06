@@ -11,26 +11,27 @@
     <script src="../../static/app/scripts/bootstrap-modal.js"></script>
     <script src="../../static/app/scripts/scratchblocks2.js"></script>
     <script src="../../static/app/scripts/translations.js"></script>
+    <script src="../../static/app/scripts/bootstrap.js"></script>
     
 
     <!-- SITE TITLE -->
     <title>Dr.Scratch</title>
 
 
-    <link rel="stylesheet" href="../../static/app/content/style.css">
+    <link rel="stylesheet" href="/static/app/content/style.css">
     <!-- =========================
      FAV AND TOUCH ICONS AND FONT  
     ============================== -->
-    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="icon" href="/static/app/images/favicon.ico">
     <link rel="stylesheet" href="static/app/icons/icons.css">  
-    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
-    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <link type="text/css" rel="stylesheet" href="/static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="/static/app/content/css.css">
     <!-- =========================
      STYLESHEETS   
     ============================== -->
     <!-- BOOTSTRAP AND ANIMATION -->
-    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/app/content/animate.css">
+    <link rel="stylesheet" href="/static/app/content/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/app/content/animate.css">
 
     <!-- CAROUSEL AND LIGHTBOX -->
     <link rel="stylesheet" href="../../static/app/content/owl_002.css">
@@ -40,7 +41,7 @@
 
     <!-- CUSTOM STYLESHEETS -->
     <link rel="stylesheet" href="../../static/app/content/styles.css">
-    <link rel="stylesheet" href="../../static/app/content/master.css">
+    <link rel="stylesheet" href="/static/app/content/master.css">
     <!-- RESPONSIVE FIXES -->
     <link rel="stylesheet" href="../../static/app/content/responsive.css">
 
@@ -63,8 +64,11 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
     <script>
         window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
     </script>
-
-
+    <script>
+        $(document).ready(function () {
+            $('.desplegable').popover();
+    });
+    </script>
 </head>
 <body>
     <!-- TOP BAR -->
@@ -111,7 +115,7 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
             <div class="improve">
                 <div class="panel panel-success" id="improve">
                     <div class="panel-heading">
-                        <h2 id="score" class="panel-title dark-text">{% trans "How to improve my score:"%}</h2>
+                        <h2 id="score" class="panel-title dark-text">{% trans "Want to level up?"%}</h2>
                     </div>
                     <div class="panel-body text-left">
 
@@ -164,30 +168,26 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                         <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
                     </div>
                     <div class="panel-body text-left typ">
-                        <a class="glyphicon glyphicon-repeat"/><a> {{ duplicateScript.number }} {% trans " duplicated scripts." %}
+                        <a class="glyphicon glyphicon-repeat"/><a class="desplegable" data-toggle="popover" title="{% trans 'Duplicated scripts' %}" data-content="Prueba" data-trigger="hover"> {{ duplicateScript.number }} {% trans " duplicated scripts." %}
 </a><br>
-                        <a class="glyphicon glyphicon-pencil"/> <a> {{ spriteNaming.number }}{% trans " sprites naming:" %}
-                        {% for value in spriteNaming.sprite %}
-
-                        {{ value }}.
-
-                        {% endfor %} </a><br>
-                        <a class="glyphicon glyphicon-remove-sign"/><a> {{ deadCode.number }} {% trans " dead code:" %}
-                        {% for key,value in deadCode.items%}
-                        {% if key != "deadCode" %}
-                        {% if key != "number" %}
+                        <a class="glyphicon glyphicon-pencil"/> <a class="desplegable" data-toggle="popover" title="{% trans 'Sprite naming' %}" data-content=" {% for value in spriteNaming.sprite %}{{ value }}.{% endfor %}" data-trigger="hover"> {{ spriteNaming.number }} {% trans " sprites naming." %}
+                       </a><br>
+                        <a class="glyphicon glyphicon-remove-sign"/><a class="desplegable" data-toggle="popover" title="{% trans 'Dead code' %}" data-content="{% for key,value in deadCode.items%}
+                        {% if key != 'deadCode' %}
+                        {% if key != 'number' %}
                         {{ key }}({{ value }})
                         {% endif%}
                         {% endif%}
-                        {% endfor%}</a><br>
-                        <a class="glyphicon glyphicon-exclamation-sign"/><a> {{ initialization.number }} {% trans " sprite atributes:" %}
-                        {% for key,value in initialization.items%}
+                        {% endfor%}" data-trigger="hover"> {{ deadCode.number }} {% trans " dead code." %}
+                       </a><br>
+                        <a class="glyphicon glyphicon-exclamation-sign"/><a class="desplegable" data-toggle="popover" title="{% trans 'Sprites attributes' %}" data-content=" {% for key,value in initialization.items%}
                         {% if value|length > 0 %}
-                        {% if key != "number" %}
-                        <p>{{ key }}({{ value }})</p>
+                        {% if key != 'number' %}
+                        {{ key }}({{ value }})
                         {% endif%}
                         {% endif%}
-                        {% endfor%}
+                        {% endfor%}" data-trigger="hover"> {{ initialization.number }} {% trans " sprite attributes." %}
+                        
 </a>
                     </div>
                 </div>
@@ -278,5 +278,6 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
             </ul>
         </div>
     </footer>
+
 </body>
 </html>

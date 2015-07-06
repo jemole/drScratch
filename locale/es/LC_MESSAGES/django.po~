@@ -1375,7 +1375,7 @@ msgstr "¡¡¡Eres el master del universo!!!"
 
 #: templates/upload/dashboard-unregistered-master.html:118
 msgid "Want to level up?"
-msgstr "¿Quieres subir de nivel?"
+msgstr ""
 
 #: templates/upload/dashboard-unregistered-master.html:168
 msgid "Details to fix:"
