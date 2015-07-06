@@ -334,7 +334,7 @@ strong,
 	font-size: 13px;
 	line-height: 1.6;
 	border: none;
-	padding: 6px 25px 6px 25px;
+	padding: 6px 20px 6px 20px;
 	color: #ffffff;
 	-webkit-transition: none;
 	transition: none;
