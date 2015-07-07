@@ -66,14 +66,6 @@ a:focus{
     color: #FFBF00;
 }
 
-
-#footer .btn,
-.btn{
-    color:#B40404;
-    background-color:#F9B966;
-    border-color:#ECE9CB;
-}
-
 .btn:hover,
 .btn:focus,
 #footer .btn:hover,
@@ -161,4 +153,27 @@ padding-top:90px;
 #footer a:hover{
     color:#B40404;
 }
+
+/* Popover */
+  .popover {
+      border: 5px dotted #1792a4;
+  }
+  /* Popover Header */
+  .popover-title {
+      background-color: #F9B966; 
+      color: #FFFFFF; 
+      font-size: 20px;
+      text-align:center;
+      font-family: Purisa,Bold, sans-serif !important;
+  }
+  /* Popover Body */
+  .popover-content {
+      background-color: #ECE9CB;
+      color: #142B3B;
+      padding: 25px;
+      font-family: Purisa,Bold, sans-serif !important;
+  }
+  /* Popover Arrow */
+  .arrow {
+      border-right-color: red !important;
 

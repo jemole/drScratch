@@ -53,6 +53,7 @@
     // Instance the tour
     var tour = new Tour({
       storage: false,
+      backdrop: true,
       steps: [
       {
         element: "#stepone",
@@ -107,9 +108,11 @@
     <!-- JUMBOTRON -->
 <div class="container">
             <section id="blackboard" class="services col-md-5">
-                <div class="devpanel" id="stepone">
+                
+                <div class="devpanel">
                     <div class="panel panel-success" id="devpanel">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="stepone">
+                            <img src="static/app/images/ferret.png" class="img-responsive col-md-4">
                             <h2 id="score" class="panel-title dark-text"><strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}
                             <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>
                         
@@ -125,6 +128,7 @@
                 <!-- HOW TO IMPROVE -->
             <div class="improve">
                 <div class="panel panel-success" id="improve">
+
                     <div class="panel-heading" id="steptwo">
                         <h2 id="score" class="panel-title dark-text">{% trans "Want to level up?"%}</h2>
                     </div>
@@ -162,9 +166,10 @@
                                 {% endfor %}
                                 
                     </div>
+                    
                 </div>
             </div>
-
+            
             </section>    
 
 
@@ -235,9 +240,9 @@
         </section>
      </div>
 </div>
-</div>
+
     <footer class="footer grey-bg">
- <div class="container">
+        <div class="container">
            {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
             <!-- SOCIAL ICONS -->
@@ -246,8 +251,9 @@
                 </li>
                 <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
                 </li>
+            </ul>
                 
-        </div>    </ul>
+        </div>    
 
     </footer>
 

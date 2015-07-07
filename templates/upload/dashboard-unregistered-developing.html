@@ -6,9 +6,10 @@
     <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
     <meta name="author" content="Programamos URJC Libresoft FECyT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-    <link rel="stylesheet" href="../../static/app/content/scratchblocks2.css">
-    <script src="../../static/app/scripts/scratchblocks2.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link rel="stylesheet" href="../../static/app/content/bootstrap-tour.css">
+    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+    <script src="../../static/app/scripts/bootstrap-tour.js"></script>
 
     <!-- SITE TITLE -->
     <title>Dr.Scratch</title>
@@ -44,7 +45,38 @@
 
     <!-- DEFAULT COLOR/ CURRENTLY USING -->
     <link rel="stylesheet" href="../../static/app/content/red.css">
+<script>
+    // Instance the tour
+    var tour = new Tour({
+      storage: false,
+      backdrop: true,
+      steps: [
+      {
+        element: "#stepone",
+        title: "Puntuación",
+        content: "Éste apartado muestra la puntuación total obtenida."
+      },
+      {
+        element: "#steptwo",
+        title: "Mejorar puntuación",
+        content: "¿No te gusta la puntuación que has sacado? ¡Sigue nuestros consejos para subirla!"
+      },
+      {
+        element: "#stepthree",
+        title: "Puntuación detallada",
+        content: "Aquí mostramos la puntuación de cada habilidad de programación, se evalúa del 0 a 3.",
+        placement:'left'
+      }
+    ]});
+    tour.init();
+    // Initialize the tour
+    $(document).ready(function(){
+        $("#tour").click(function(){
+            tour.start();
 
+        });
+});
+    </script>
     <script>
                     window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
                     </script>
@@ -62,6 +94,7 @@
                 <ul class="nav navbar-nav navbar-right main-navigation ">
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
+                        <li class="navbar-brand"><a class="btn btn-default" id="tour">TOUR</a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr.Scratch(Beta Version)" %}</a></li>
                       </ul>
             </div>
@@ -75,7 +108,8 @@
             <section id="blackboard" class="services col-md-5">
                 <div class="devpanel">
                     <div class="panel panel-success" id="devpanel">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="stepone">
+                            <img src="static/app/images/monkey.png" class="img-responsive col-md-4">
                             <h2 id="score" class="panel-title dark-text"><strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}
                             <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>
                         
@@ -89,7 +123,7 @@
                     </div>
                 </div>
                 <!-- HOW TO IMPROVE -->
-            <div class="improve">
+            <div class="improve" id="steptwo">
                 <div class="panel panel-success" id="improve">
                     <div class="panel-heading">
                         <h2 id="score" class="panel-title dark-text">{% trans "How to improve my score:"%}</h2>
@@ -144,7 +178,7 @@
   <!-- Score in detail -->
     <div class="col-md-7">
         <section id="dashboard">
-            <div class="container-fluid">
+            <div class="container-fluid" id="stepthree">
                 <div class="row marketing">
                     <div class="jumbotron">
                         <div class="table-responsive">
@@ -208,20 +242,20 @@
         </section>
      </div>
 </div>
-</div>
-    <footer class="footer grey-bg">
-    <div class="container">
-           {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
-            <!-- SOCIAL ICONS -->
-            <ul class="social-icons">
-                <li><a href="https:/twitter.com/drscratchtool"><span class="icon-social-twitter transparent-text-dark"></span></a>
-                </li>
-                <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
-                </li>
-                
-            </ul>
-</div>
+    <footer class="footer grey-bg">
+        <div class="container">
+               {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+
+                <!-- SOCIAL ICONS -->
+                <ul class="social-icons">
+                    <li><a href="https:/twitter.com/drscratchtool"><span class="icon-social-twitter transparent-text-dark"></span></a>
+                    </li>
+                    <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+                    </li>
+                    
+                </ul>
+        </div>
     </footer>
 
 </body>

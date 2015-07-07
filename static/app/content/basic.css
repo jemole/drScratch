@@ -64,12 +64,7 @@ a:focus{
 }
 
 
-#footer .btn,
-.btn{
-    color:#B40404;
-    background-color:#F9B966;
-    border-color:#ECE9CB;
-}
+
 
 .btn:hover,
 .btn:focus,
@@ -154,5 +149,29 @@ padding-top:90px;
 
 #footer a:hover{
     color:#B40404;
+}
+
+/* Popover */
+  .popover {
+      border: 5px dotted #1792a4;
+  }
+  /* Popover Header */
+  .popover-title {
+      background-color: #5FB677; 
+      color: #FFFFFF; 
+      font-size: 20px;
+      text-align:center;
+      font-family: Purisa,Bold, sans-serif !important;
+  }
+  /* Popover Body */
+  .popover-content {
+      background-color: #E0EBc2;
+      color: #142B3B;
+      padding: 25px;
+      font-family: Purisa,Bold, sans-serif !important;
+  }
+  /* Popover Arrow */
+  .arrow {
+      border-right-color: red !important;
 }
 
