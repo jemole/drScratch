@@ -1,115 +1,65 @@
+{% extends 'learn/base.html' %}
 {% load i18n %}
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="description" content="Responsive Bootstrap 3 Startup and Multipurpose Template">
-    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
-    <meta name="author" content="Programamos URJC Libresoft FECyT">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-    <link rel="stylesheet" href="../../static/app/content/scratchblocks2.css">
-    <script src="../../static/app/scripts/scratchblocks2.js"></script>
-
-    <!-- SITE TITLE -->
-    <title>Dr.Scratch</title>
-
-
-    <link rel="stylesheet" href="../../static/app/content/style.css">
-    <!-- =========================
-     FAV AND TOUCH ICONS AND FONT  
-    ============================== -->
-    <link rel="icon" href="../../static/app/images/favicon.ico">
-    <link rel="stylesheet" href="../../static/app/content/icons.css">  
-    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
-    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
-    <!-- =========================
-     STYLESHEETS   
-    ============================== -->
-    <!-- BOOTSTRAP AND ANIMATION -->
-    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/app/content/animate.css">
-
-    <!-- CAROUSEL AND LIGHTBOX -->
-    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
-    <link rel="stylesheet" href="../../static/app/content/owl.css">
-    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
-    <link rel="stylesheet" href="../../static/app/content/default.css">
-
-    <!-- CUSTOM STYLESHEETS -->
-    <link rel="stylesheet" href="../../static/app/content/styles.css">
-    <link rel="stylesheet" href="../../static/app/content/cloud.css">
-    <!-- RESPONSIVE FIXES -->
-    <link rel="stylesheet" href="../../static/app/content/responsive.css">
-
-    <!-- DEFAULT COLOR/ CURRENTLY USING -->
-    <link rel="stylesheet" href="../../static/app/content/red.css">
-    <script>
-    $(document).ready(function() {
-        scratchblocks2.parse();
-    });
-    </script>
-</head>
-<body>
-    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
-        <div class="container">          
-        <!-- TOP BAR -->
-            <div class="navbar-collapse collapse" id="stamp-navigation">
-                <!-- NAVIGATION LINK -->
-                <a class="navbar-brand" href="http:/localhost:1234">
-                    <img src="../../static/app/images/logo_main.png" alt="">
-                </a>
-            </div>
-            <!-- /END TOP BAR -->
-        </div>
-                <!-- /END CONTAINER -->
-    </div>
-            <!-- /END STICKY NAVIGATION -->
     <!-- JUMBOTRON -->
-    <div id = "cloud"><h2>{% trans "Logic" %}</h2><span class='shadow'></span></div>
+    <div id = "cloud"><h2>{% block title %}{% trans "Logic" %}{% endblock %}</h2><span class='shadow'></span></div>
     <!-- /END JUMBOTRON -->
     <!-- PANEL-->
+    {% block content %}
     <div class="panel panel-default">
-    <div class="panel-body col-lg-10 col-lg-offset-1">
-    {% trans "Instructions related to logical thinking can help your projects are dynamic, so that they behave differently depending on the situation. In the stories, for example, these instructions are not as important as they usually have a linear structure we always want to run the same way, but in other projects, such as video games are essential to perform different actions depending on the situation." %}
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+    {% trans "Instructions related to logical thinking can help your projects are dynamic, <b>so that they behave differently depending on the situation</b>. In the stories, for example, these instructions are not as important as they usually have a linear structure we always want to run the same way, but in other projects, such as video games are essential to perform different actions depending on the situation." %}
+        </div>
     </div>
-    </div>
-    <div class="panel panel-default">
-    <div class="panel-body col-lg-10 col-lg-offset-1">
-    <section id="level0">
-    <h3>{% trans "If you get 0 points..." %}</h3>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body col-lg-10 col-lg-offset-1">
+                <section id="level0">
+                    <h3>{% trans "If you get 0 points..." %}</h3>
 
     {% trans "The most basic block you can start working logical thinking is this:" %} <br><br>
 
-     <div class="text-center">
-            <img src="../../static/app/images/Logic1.png" >
-        </div><br>
+                    <pre class='blocks'>   {% trans "if &lt; touching color [#0000FF]?&gt; then" %}
+                                            {% trans "say [I have reached the goal!] for (2) secs" %}</pre><br>
     {% trans "How this block works? When execution reaches this point, the condition on the block is evaluated, and if this is true, the set of blocks that are within the if executed." %}
 {% trans "In the example, if the character is touching the blue color, he says 'I reached the goal.'" %}<br>
-    </div>
-    </div>
-    </section>
+                </section>    
+            </div>
+        </div>
+    
     <div class="panel panel-default">
-    <div class="panel-body col-lg-10 col-lg-offset-1">
-    <section id="level1">
-    <h3>{% trans "If you get 1 point..." %}</h3>
-    {% trans "Now that you know the instructions if, perhaps you can start using blocks if / else, which can be very practical in many types of projects. The blocks if / else are very similar to the block if, but contain two sets of blocks inside." %}<br><br>
-     <div class="text-center">
-            <img src="../../static/app/images/Logic2.png" >
-        </div><br>
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level1">
+                <h3>{% trans "If you get 1 point..." %}</h3>
+    {% trans "Now that you know the instructions <i>if</i>, perhaps you can start using blocks <i>if / else</i>, which can be very practical in many types of projects. The blocks <i>if / else</i> are very similar to the block <i>if</i>, but contain two sets of blocks inside." %}<br><br>
+                <pre class='blocks'>   {% trans "if &lt; touching color [#0000FF]? &gt;" %}
+                                       {% trans "say [I have reached the goal!] for (2) secs" %}
+                                       {% trans "else" %}
+                                       {% trans "say [I have reached the goal!] for (2) secs" %}</pre><br>  
 {% trans "How this block works? When execution reaches this point, the condition on the block is evaluated, and if this is true, the set of blocks that are within the 'if' is executed, but if the condition is false, then the set of  blocks that are within the 'else' is executed." %}
 
 {% trans "In the example, if the character is touching the blue color, he says  'I reached the goal!', but ,if you are not touching the purple color, says 'I have not reached the goal'." %}
-    </div>
+            </section>
+        </div>
     </div>
     <div class="panel panel-default">
-    <div class="panel-body col-lg-10 col-lg-offset-1">
-        <section id="level2">
-        <h3>{% trans "If you get 2 points..." %}</h3>
-{% trans "To make decisions on some projects sometimes is necessary to evaluate more than one condition at the same time to know what to execute. In these situations it is very helpful to use logical operations that combine the conditions. Logical operations are available in Scratch AND, OR and No." %}<br><br>
-         <div class="text-center">
-            <img src="../../static/app/images/Logic3.png" >
-        </div><br>
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level2">
+                <h3>{% trans "If you get 2 points..." %}</h3>
+{% trans "To make decisions on some projects sometimes is necessary to evaluate more than one condition at the same time to know what to execute. In these situations it is very helpful to use <b>logical operations</b> that combine the conditions. Logical operations are available in Scratch <i>AND, OR and No</i>." %}<br><br>
+                <pre class='blocks'>   {% trans "if &lt;&lt; touching [Enemy v]? &gt; and &lt;(lives) = [0]&gt;&gt;then" %}
+                                       {% trans "say [Game over]" %}
+                                       {% trans "stop [all v]" %}
+                                       {% trans "end" %}
+                                       {% trans "if &lt;&lt; touching [edge v]? &gt; or &lt; touching [Enemy v]? &gt;&gt;then" %}
+                                       {% trans "change [lives v] by (-1)" %}
+                                       {% trans "end" %}
+                                       {% trans "if &lt;not&lt; (level) = (5)&gt;&gt;then" %}
+                                       {% trans "say [You still have undiscovered levels] for (2) secs" %}
+                                       {% trans "end" %}</pre><br>
 
-{% trans "The operation AND is true when both conditions are true evaluated. The OR operation is true when one of two conditions are true evaluated. And the operation otherwise not worth the condition, ie, if the condition is true, not returns false and vice versa." %}<br><br>
-</body>
-</html>
+{% trans "The operation <i>AND</i> is true when both conditions are true evaluated. The <i>OR</i> operation is true when one of two conditions are true evaluated. And the operation otherwise not worth the condition, ie, if the condition is true, not returns false and vice versa." %}<br><br>
+            </section>
+        </div>
+    </div>
+</div>
+ {% endblock %}
