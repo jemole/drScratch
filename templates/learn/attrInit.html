@@ -1,0 +1,35 @@
+{% extends 'learn/base.html' %}
+{% load i18n %}
+    <!-- JUMBOTRON -->
+    <div id = "cloud"><h2>{% block title %}{% trans "Attribute Initialization" %}{% endblock %}</h2><span class='shadow'></span></div>
+    <!-- /END JUMBOTRON -->
+    <!-- PANEL-->
+{% block content %}
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+        {% trans " One of the mistakes that many programmers repeat when they learn to program is not initialize correctly the objects's attributes. What are the attributes? They are character's features that can be modified in the execution of a project, like their position, their size, their color, their orientation..." %}
+        <br><Br>
+{% trans "When you have blocks than modify character's feature, you should always have a program which, when the program begins, asigns the value that we want to start. For example, if it modifies the position of a character, we should have the block 'go to' under the block 'when green flag clicked', in order to place the character in its initial position." %}
+<br><br>
+            <pre class="blocks col-lg-6">{% trans "when [right arrow v] key pressed //Not initialized correctly."  %}
+                                {% trans "change x by (10)" %} 
+                                {% trans "when [left arrow v] key pressed" %}
+                                {% trans "change x by (-10)" %}
+                                            
+            </pre>
+            <pre class="blocks col-lg-5">{% trans "when [right arrow v] key pressed  //Initialized correctly." %}
+                                {% trans "change x by (10)" %} 
+                                {% trans "when [left arrow v] key pressed" %}
+                                {% trans "change x by (-10)" %}
+                                {% trans "when gf clicked" %}
+                                {% trans "go to x:(0) y:(0)" %}
+            </pre>
+        </div>
+    
+     
+
+    </div>
+   
+</div>
+{% endblock %}
