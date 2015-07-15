@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="static/app/icons/icons.css">  
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
-    <link rel="stylesheet" href="../../static/app/content/magnific-popup.css">
+  
     <!-- =========================
      STYLESHEETS   
     ============================== -->
@@ -47,6 +47,9 @@
     <link rel="stylesheet" href="../../static/app/content/red.css">
 <script>
     // Instance the tour
+    // Initialize the tour
+    $(document).ready(function(){
+        $("#tour").click(function(){
     var tour = new Tour({
       storage: false,
       backdrop: true,
@@ -69,9 +72,7 @@
       }
     ]});
     tour.init();
-    // Initialize the tour
-    $(document).ready(function(){
-        $("#tour").click(function(){
+    
             tour.start();
 
         });
@@ -126,7 +127,10 @@
             <div class="improve" id="steptwo">
                 <div class="panel panel-success" id="improve">
                     <div class="panel-heading">
-                        <h2 id="score" class="panel-title dark-text">{% trans "How to improve my score:"%}</h2>
+                        <h2 id="score" class="panel-title dark-text">{% trans "Want to level up?"%}</h2>
+                         {% if url != "" %}
+                        <a href="{{ url }}" target="_blank"><span class="glyphicon glyphicon-hand-right"></span>{% trans "Click here to go to your project." %}</a>
+                        {% endif %}
                     </div>
                     <div class="panel-body text-left">
 
@@ -196,6 +200,9 @@
                                 {% if key != "maxi" %}
                                       
                                       <td>
+                                        {% if value = 3 %}
+                                        <span class="glyphicon glyphicon-star" id="star"></span>
+                                        {% endif %}
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
