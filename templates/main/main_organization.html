@@ -43,6 +43,7 @@
 
     <!-- DEFAULT COLOR/ CURRENTLY USING -->
     <link rel="stylesheet" href="../../static/app/content/red.css">
+     
 </head>
 
 <body>
@@ -75,62 +76,31 @@
                       </ul>
 
                     <!-- LOGIN REGISTER -->
+                    <ul class="nav navbar-nav navbar-right">
 
-
-
-                    <div class="navbar-collapse collapse" id="stamp-navigation">
-
-
-                   
-                       
-                    <ul class="nav navbar-nav navbar-right login-register small-text">
-                        <li style="display: block;" class="login js-login dropdown">
-
-                          <a aria-expanded="false" role="button" href="#modalSign" data-toggle="dropdown" class="btn btn-default configure-button">
-                              <div class="icon-container" >
-                                <span class="icon-basic-gear"></span>
-                              </div>
-                          </a> 
-
-                            <ul role="menu" class="dropdown-menu">
-                                <li>        
-						        <div style="padding: 15px; padding-bottom: 0px;">
-							      <form accept-charset="UTF-8" action="/login" method="post">
-                                  {% csrf_token %}
-					                <buttom type="submit" data-toggle="modal" href="#modalPWD" id="sign-up" style="margin-bottom: 15px;" class="btn btn-primary small-button center-block">
-                                        Change password                                    
-                                    </buttom>
-                                    <buttom type="submit" data-toggle="modal" href="#modalEMAIL" id="sign-up" style="margin-bottom: 15px;" class="btn btn-primary small-button center-block">
-                                        Change email                                  
-                                    </buttom>
-							      </form>
-						        </div>            
-						        </li>
-						     </ul>
-                         </li>
-
-
-
-                        <li>
-                            <h6 class="colored-text" >{% trans "Logged in as " %} {{ username }} </h6>
-
-     
-                            <form accept-charset="UTF-8" action="/logoutOrganization" method="post">
-                                {% csrf_token %}  
-                                <span><button id="logout" type="submit" class="btn btn-primary small-button">{% trans "LOGOUT" %}</button></span>
-                            </form>
+                        <li class="dropdown">
+                                <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
+                                <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li> <a href='/changePwd'>{% trans "Change password" %}</a> </li>
+                                    <li>
+                                        <a id="logout" type="submit" href="/logoutOrganization">{% trans "LOGOUT" %}</a>
+                                    </li>
+                                    
+                                </ul>
                         </li>
-
-
-                        
-                    </ul>
-                </div>
-              </div>
+                    </div>
                     <!-- /END TOP BAR -->
                 </div>
                 <!-- /END CONTAINER -->
             </div>
             <!-- /END STICKY NAVIGATION -->
+              <!-- =========================
+    ALERT  
+    ============================== -->
+    <div class="alert alert-warning alert-dismissable" id="myalert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        Te hemos mandado un correo para que puedas cambiar la contraseña.
+    </div>
 
 
             <!-- CONTAINER -->
@@ -157,7 +127,7 @@
                                 
                                 <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/analyzeCSV">
                                     {% csrf_token %}
-                                    {% trans "Only you have to put a " %}<span class='colored-text'><a data-toggle='modal' href='#modalCSV'>{% trans "file CSV" %}</a></span>{% trans " with the urls of the Scratch projects you want to analyze:" %}
+                                    {% trans "Only you have to put a " %}<span class='colored-text'><a data-toggle='modal' href='#modalCSV'>{% trans "file CSV " %}</a></span>{% trans " with the urls of the Scratch projects you want to analyze:" %}
                                     {% trans "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose File .csv'>" %}
                                     <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my projects" %}</button>
                                     {% csrf_token %}                                    
@@ -241,10 +211,11 @@
             MODALS
     ============================== -->
 
-     <!-- Modal CSV -->
+     <!-- Modal Url -->
     <div id="modalCSV" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
+        <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
@@ -257,70 +228,6 @@
           <div class="modal-body">
             <img class='framed' src='../../static/app/images/csv.png' />
           </div>
-          <div class="modal-footer">
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Modal PWD-->
-    <div id="modalPWD" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
-            <div class="small-text-medium uppercase colored-text">
-                {% trans "Change your password" %}
-            </div>
-            <h4 class="modal-title"><strong>{% trans "Choose another password" %}</strong></h4>
-            <div class="colored-line"></div> 
-          </div>
-          <div class="modal-body">
-	         <form accept-charset="UTF-8" action="/change" method="post">
-             {% csrf_token %}
-                <div>
-                <input type="password" name="new_password" id="new_password" placeholder="New password" style="margin-bottom: 15px;">
-                </div>
-                <div>              
-                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" style="margin-bottom: 15px;">
-                </div>
-                <input type="submit" value="Change password" id="change-password" class="btn btn-primary standard-button">
-            </form>
-            </div>
-          <div class="modal-footer">
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Modal EMAIL-->
-    <div id="modalEMAIL" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
-            <div class="small-text-medium uppercase colored-text">
-                {% trans "Change your email" %}
-            </div>
-            <h4 class="modal-title"><strong>{% trans "Choose another email" %}</strong></h4>
-            <div class="colored-line"></div> 
-          </div>
-          <div class="modal-body">
-	         <form accept-charset="UTF-8" action="/change" method="post">
-             {% csrf_token %}
-                <div>
-                <input type="password" name="new_email" id="new_email" placeholder="New email" style="margin-bottom: 15px;">
-                </div>
-                <div>              
-                <input type="password" name="confirm_email" id="confirm_email" placeholder="Confirm email" style="margin-bottom: 15px;">
-                </div>
-                <input type="submit" value="Change email" id="change-email" class="btn btn-primary standard-button">
-            </form>
-            </div>
           <div class="modal-footer">
           </div>
         </div>
@@ -369,7 +276,8 @@
 	
 
         </div>
-
+   
+ 
     <!-- =========================
      SCRIPTS   
     ============================== -->
@@ -393,6 +301,15 @@
     <script src="../../static/app/scripts/jquery_main.js"></script>
     <script src="../../static/app/scripts/jquery.ajaxchimp.min.js"></script>
     <script src="../../static/app/scripts/progress-bar.js"></script>
+    <script>
+    
+    $(document).ready(function(){
+        $("#myalert").hide();
+        $("#alert").click(function(){
+            $("#myalert").slideToggle("slow");
+        });
+    });
+    </script>
 
     <!-- GOGLE MAP -->
     <!--

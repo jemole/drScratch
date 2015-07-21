@@ -5,12 +5,18 @@
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.http import HttpResponse, HttpResponseServerError
 from django.core.context_processors import csrf
-from django.core.cache import cache  
+from django.core.cache import cache
+from django.core.mail import EmailMessage
 from django.shortcuts import render_to_response
 from django.template import RequestContext as RC
 from django.template import Context, loader
-from django.contrib.auth import logout, login, authenticate
+from django.template.loader import render_to_string
+from django.contrib import messages
+from django.contrib.auth import logout, login, authenticate,get_user_model
+from django.contrib.auth.tokens import default_token_generator
 from django.utils.translation import ugettext as _
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
 from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
 from app.models import Teacher, Student, Classroom
@@ -96,6 +102,9 @@ def selector(request):
                             {'error':error},
                             RC(request))
             else:    
+
+                dic = {'url': ""}
+                d.update(dic)
                 if d["mastery"]["points"] >= 15:
                     return render_to_response("upload/dashboard-unregistered-master.html", d)
                 elif d["mastery"]["points"] > 7:
@@ -123,6 +132,10 @@ def selector(request):
                     {'no_exists':no_exists},
                     RC(request))
             else:
+                form = UrlForm(request.POST)
+                url = request.POST['urlProject']
+                dic = {'url': url}
+                d.update(dic)
                 if d["mastery"]["points"] >= 15:
                     return render_to_response("upload/dashboard-unregistered-master.html", d)
                 elif d["mastery"]["points"] > 7:
@@ -223,6 +236,7 @@ def uploadUnregistered(request):
         # Analyze the scratch project
         try:
             d = analyzeProject(request, file_name, fileName)
+   
         except:
             #There ir an error with kutz or hairball
             #We save the project in folder called error_analyzing
@@ -453,38 +467,25 @@ def signUpOrganization(request):
 def loginOrganization(request):
     """Log in app to user"""
     if request.method == 'POST':
-        if "sign-in" in request.POST:
-            error = False 
-            error_id = False
-            form = LoginOrganizationForm(request.POST)
-            if form.is_valid():
-                username = form.cleaned_data['username']
-                password = form.cleaned_data['password']
-                organization = authenticate(username=username, password=password)
-                if organization is not None:
-                    if organization.is_active:
-                        login(request, organization)
-                        return HttpResponseRedirect('/organization/' + organization.username)
-                        
-                else:
-                    error_id = True
-                    return render_to_response("sign/organization.html", 
-                                                {'error_id': error_id},
-                                                context_instance=RC(request))
+        flag = False
+        form = LoginOrganizationForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            organization = authenticate(username=username, password=password)
+            if organization is not None:
+                if organization.is_active:
+                    login(request, organization)
+                    return HttpResponseRedirect('/organization/' + organization.username)
+                    
             else:
-                error = True
+                flag = True
                 return render_to_response("sign/organization.html", 
-                                                {'error': error},
-                                                context_instance=RC(request))
-        
-        elif "change-password" in request.POST:
-            return render_to_response("sign/organization.html",
-                                context_instance=RC(request))
-            
+                                            {'flag': flag},
+                                            context_instance=RC(request))
     
     else:
         return HttpResponseRedirect("/")
-
     
 
 def logoutOrganization(request):
@@ -516,6 +517,7 @@ def analyzeCSV(request):
             file = request.FILES['csvFile']
             file_name = file.name.encode('utf-8')
             dir_csvs = os.path.dirname(os.path.dirname(__file__)) + "/csvs/" + file_name
+            print dir_csvs
             #Save file .csv
             with open(dir_csvs, 'wb+') as destination:
                 for chunk in file.chunks():
@@ -553,11 +555,20 @@ def analyzeCSV(request):
             if request.user.is_authenticated():
                 username = request.user.username
             csv = CSVs.objects.latest('date')
+            #csv_directory = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/"
+            #csv_data = csv_directory + csv.filename
+            #print csv_data
+            #response = HttpResponse(content_type='text/csv')
+            #response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(csv.filename)
+            #response['X-Sendfile'] = smart_str(csv_data)
+
             path_to_file = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/" + csv.filename
             csv_data = open(path_to_file, 'r')
             response = HttpResponse(csv_data, content_type='text/csv')
             response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(csv.filename)
             return response
+
+            #return response
 
     else:
         return HttpResponseRedirect("/organization")
@@ -704,6 +715,64 @@ def logoutUser(request):
     logout(request)
     return HttpResponseRedirect('/')
 
+def changePwd(request):
+    if request.method == 'POST':
+        receptor = request.POST['email']
+        user=Organization.objects.get(email=receptor)
+        uid = urlsafe_base64_encode(force_bytes(user.pk))
+        token=default_token_generator.make_token(user)
+            
+        c = {
+                'email':receptor,
+                'uid':uid,
+                'token':token}
+
+        body = render_to_string("password/email.html",c)
+        print "FUNCIONA"
+        try:
+            subject = "Dr.Scratch :: Did you forget your password?"
+            sender ="evahugarres@gmail.com"
+            to = [receptor]
+            email = EmailMessage(subject,body,sender,to)
+            email.attach_file("static/app/images/logo_main.png")
+            email.send()
+            print "MENSAJE ENVIADO"
+            return render_to_response("password/email_sended.html",
+                                    {}, context_instance=RC(request))
+
+        except:
+             messages.error(request,"No user is associated with this email address.")
+             return render_to_response("password/user_doesntexist.html",
+                                    {}, context_instance=RC(request))
+            
+        
+    else:
+        return render_to_response("password/password.html",
+                                {}, context_instance=RC(request))
+
+def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
+    UserModel = get_user_model()
+    try:
+        uid=urlsafe_base64_decode(uidb64)
+        user=Organization._default_manager.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, UserModel.DoesNotExist):
+        user = None
+    if request.method == "POST":
+        if user is not None and default_token_generator.check_token(user, token):
+            print "TODO VA BIEN"
+            new_password= request.POST['password']
+            user.set_password(new_password)
+            user.save()
+            return render_to_response("password/new_password.html",
+                                    {}, context_instance=RC(request))
+                
+    else:
+         return render_to_response("password/new_password.html",
+                                    {}, context_instance=RC(request))
+        
+
+    
+
 
 #_______________________ AUTOMATIC ANALYSIS _________________________________#
 
@@ -744,10 +813,12 @@ def analyzeProject(request,file_name, fileName):
         dictionary.update(procSpriteNaming(resultSpriteNaming, fileName))
         dictionary.update(procDeadCode(resultDeadCode, fileName))
         dictionary.update(procInitialization(resultInitialization, fileName))
+        #code = {'dupCode':DuplicateScriptToScratchBlock(resultDuplicateScript)}
+        #dictionary.update(code)
         #Plug-ins not used yet
         #dictionary.update(procBroadcastReceive(resultBroadcastReceive))
         #dictionary.update(procBlockCounts(resultBlockCounts))
-        
+        #print code
         return dictionary
     else:
         return HttpResponseRedirect('/')
@@ -913,6 +984,12 @@ def procInitialization(lines, fileName):
     fileName.save()
 
     return dic
+def DuplicateScriptToScratchBlock(code):
+    code = code.split("\n")[2:][0]
+    code = code[1:-1].split(",")
+    print code
+    return code
+    
 
 
 

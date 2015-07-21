@@ -1,0 +1,25 @@
+{% extends 'password/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <div class="col-md-7 col-lg-offset-2">
+        <section id="dashboard">
+            <div class="container-fluid">
+                <div class="row marketing">
+                    <div class="jumbotron">
+                        <h4> {% trans "Reset password"%}</h4>
+                        <p>  {% trans "You're receiving this email because you requested a password reset for your user account at Dr.Scratch."%}</p>
+                        <p>{% trans "Please, go to the following page and choose a new password:"%}</p>
+                        drscratch-programamos.es{% url 'reset_password_confirm' uidb64=uid token=token %}
+                        {% block reset_link %}
+                        {% endblock %}
+                        <p> {% trans "Thanks for using our website!"%}</p>
+                        <p> {% trans "The Dr.Scratch team"%}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
