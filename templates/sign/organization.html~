@@ -89,7 +89,7 @@
 								                <!--<input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;"> -->                    
 								                <!-- <label for="sign-in" class="string optional">{% trans "Remember me" %}</label> -->
                                                 <div class="small-text">
-                                                    <span class='colored-text'><a class='mariluz' href="/changePwd">I forgot my password</a></span>
+                                                    <span class='colored-text'><a class='message' href="/changePwd">I forgot my password</a></span>
                                                 </div>                                                
                                                 <div class="centre">
 								                    <input type="submit" value="Sign In" id="sign-in" class="btn-group btn-group-justified colored-text">
