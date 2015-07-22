@@ -73,6 +73,7 @@
                       </a>
 
                     <!-- LOGIN REGISTER -->
+                    <!-- LOGIN REGISTER -->
                     <ul class="nav navbar-nav navbar-right login-register small-text">  
                         <li style="display: block;" class="login js-login dropdown">
                           <a aria-expanded="false" role="button" href="#" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign in" %} 
@@ -85,27 +86,15 @@
                                             {% csrf_token %}
 								                <input type="text" name="username" id="username" placeholder="Username" style="margin-bottom: 15px;">
 								                <input type="password" name="password" id="password" placeholder="Password" style="margin-bottom: 15px;">
+								                <!--<input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;"> -->                    
+								                <!-- <label for="sign-in" class="string optional">{% trans "Remember me" %}</label> -->
+                                                <div class="small-text">
+                                                    <span class='colored-text'><a class='message' href="/changePwd">I forgot my password</a></span>
+                                                </div>                                                
                                                 <div class="centre">
 								                    <input type="submit" value="Sign In" id="sign-in" class="btn-group btn-group-justified colored-text">
-                                                </div>
-                                                
-                                                <div class="colored-line" style="margin-top:15px"></div> 
-                                                <p class="small-text text-center"> Did you forget your password?</p>	
-                                                <div class="centre">
-								                    <input type="submit" value="Change password" id="change-password" class="btn-group btn-group-justified colored-text">
-                                                </div>		                
+                                                </div>							                
                                             </form>
-                                            <!-- FORM SUBMIT SUCCESS / ERROR MESSAGES -->
-                                            <p class="file-error dark-text small-text">
-                                            {% if error %}
-                                            <br></br>
-                                            <p><span class="icon icon-close-alt2"></span> {% trans "Error! Please write a  username and password." %}</p>
-                                            {% endif %}
-                                            {% if error_id %}
-                                            <br></br>
-                                            <p><span class="icon icon-close-alt2"></span> {% trans "Error! Your username or password is incorrect. Try again!" %}</p>
-                                            {% endif %}
-                            
 						                </div>            
 						                </li>
 						                </ul>
@@ -177,7 +166,7 @@
 
             <li>
                 <a href="http://www.fecyt.es">
-                <img src="../../static/app/images/logoFECYT.png" alt="">
+                <img src="../../static/app/images/logoFECYT.jpg" alt="">
                 </a>
             </li>
 

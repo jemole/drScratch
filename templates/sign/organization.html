@@ -86,9 +86,11 @@
                                             {% csrf_token %}
 								                <input type="text" name="username" id="username" placeholder="Username" style="margin-bottom: 15px;">
 								                <input type="password" name="password" id="password" placeholder="Password" style="margin-bottom: 15px;">
-								                <input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;">                     
-								                <label for="sign-in" class="string optional">{% trans "Remember me" %}</label>
-                                                <a href="/changePwd">I forgot my password</a>
+								                <!--<input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;"> -->                    
+								                <!-- <label for="sign-in" class="string optional">{% trans "Remember me" %}</label> -->
+                                                <div class="small-text">
+                                                    <span class='colored-text'><a class='mariluz' href="/changePwd">I forgot my password</a></span>
+                                                </div>                                                
                                                 <div class="centre">
 								                    <input type="submit" value="Sign In" id="sign-in" class="btn-group btn-group-justified colored-text">
                                                 </div>							                
@@ -164,7 +166,7 @@
 
             <li>
                 <a href="http://www.fecyt.es">
-                <img src="../../static/app/images/logoFECYT.png" alt="">
+                <img src="../../static/app/images/logoFECYT.jpg" alt="">
                 </a>
             </li>
 
