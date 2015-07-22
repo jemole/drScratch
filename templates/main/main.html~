@@ -1,4 +1,4 @@
-{% load i18n %}
+{% lºoad i18n %}
 <!DOCTYPE html>
 <html class="nivo-lightbox-notouch" lang="en">
 
