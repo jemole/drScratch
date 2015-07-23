@@ -162,6 +162,7 @@ a:hover {
     background-color: #fc3b3b;
     color: #fff !important;
 }
-.sticky-navigation .login-register li.open a:hover {
+
+/*.sticky-navigation .login-register li.open a:hover {
 	color: #fff !important;
-}
+}*/

@@ -63,7 +63,18 @@
         </script>
 </head>
 <body>
-   <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+    <div id="mywrapper">
+    <!-- =========================
+     PRE LOADER       
+    ============================== -->
+    <div style="display: none;" class="preloader">
+        <div style="display: none;" class="status">
+            &nbsp;
+        </div>
+    </div>
+    
+
+   <div class="navbar navbar-inverse bs-docs-nav  sticky-navigation" role="navigation">
         <div class="container">          
                     <!-- TOP BAR -->
             <div class="navbar-collapse collapse" id="stamp-navigation">
@@ -88,7 +99,7 @@
     <!-- PANEL-->
    {% block content %}
     {% endblock %}
- <footer class="footer grey-bg">
+ <footer class="footer grey-bg navbar-fixed-bottom">
         <div class="container">
                {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 

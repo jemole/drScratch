@@ -121,6 +121,26 @@ a:hover {
 	text-decoration: underline;
 }
 
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #090209;
+    background-color: transparent;
+}
+
+.down{
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    height:50%;
+    width:100%;
+
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* remove the gap between inline(-block) elements */
+
+}
+
 /*---------------------------------------
    1.4 MISC FIXES         
 -----------------------------------------*/

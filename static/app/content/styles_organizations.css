@@ -117,9 +117,16 @@ a {
 	transition: all ease 0.25s;
 }
 
-a:hover {
-	text-decoration: underline;
+.message {
+    text-decoration: none;
+    font-size: 8.8px;
 }
+
+.message:hover{
+    text-decoration: underline;
+}
+
+
 
 /*---------------------------------------
    1.4 MISC FIXES         
@@ -567,10 +574,12 @@ strong,
 	margin-top: 0;
 }
 
+
 .sticky-navigation .login-register .login a {
 	text-transform: uppercase;
 	line-height: 34px;
 	padding: 18px;
+
 }
 
 .sticky-navigation .login-register .register-button {

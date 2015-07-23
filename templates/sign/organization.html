@@ -73,12 +73,13 @@
                       </a>
 
                     <!-- LOGIN REGISTER -->
-                    <!-- LOGIN REGISTER -->
                     <ul class="nav navbar-nav navbar-right login-register small-text">  
                         <li style="display: block;" class="login js-login dropdown">
                           <a aria-expanded="false" role="button" href="#" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign in" %} 
                             <span class="caret"></span>
                           </a>
+                        
+                  
 					                <ul role="menu" class="dropdown-menu">
 						                <li>        
 						                <div style="padding: 15px; padding-bottom: 0px;">
@@ -88,8 +89,8 @@
 								                <input type="password" name="password" id="password" placeholder="Password" style="margin-bottom: 15px;">
 								                <!--<input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;"> -->                    
 								                <!-- <label for="sign-in" class="string optional">{% trans "Remember me" %}</label> -->
-                                                <div class="small-text">
-                                                    <span class='colored-text'><a class='mariluz' href="/changePwd">I forgot my password</a></span>
+                                                <div>
+                                                    <a class="message" href="/changePwd">{% trans "I forgot my password" %}</a>
                                                 </div>                                                
                                                 <div class="centre">
 								                    <input type="submit" value="Sign In" id="sign-in" class="btn-group btn-group-justified colored-text">
@@ -125,8 +126,8 @@
 
                             <!-- WELCOM MESSAGE -->
                             <h1 class="intro white-text">{% trans "Dr.Scratch for Organizations" %}</h1>
-                            
-                            <h4 align=justify class="transparent-text"><strong>{% trans "Welcome to the Dr.Scratch website (version for organizations), an analytical tool that evaluates your Scratch projects in a variety of computational areas. This analyzer is a helpful tool to evaluate your students' Scratch projects. You'll have a smart dashboard where you can see the most important information about your students and their development." %} </strong></h4>
+                            <h3 class="transparent-text"><b>{% trans "Welcome to the organizations version of Dr.Scratch" %}</b></h3>
+                            <h4 align=justify class="transparent-text"><strong>{% trans "Dr.Scratch for organizations is an analytical tool that can help you evaluate the Scratch projects of the students participating in your initiatives to asses their progression in terms of coding and computational thinking skills. " %} </strong></h4>
                             <div class="intro-section">
                                 <!-- BUTTON -->
                                 <div class="button hidden-xs">
@@ -185,13 +186,11 @@
                 <div class="small-text-medium uppercase colored-text">
                     {% trans "Dr.Scratch for Organizations" %}
                 </div>
-                <h2 class="dark-text"><strong>{% trans "Why " %} </strong>{% trans "you’ll love Dr.Scratch" %}</h2>
+                <h2 class="dark-text"><strong>{% trans "How " %} </strong>{% trans "to join Dr.Scratch for organizations?" %}</h2>
                 <div class="colored-line"></div>
                 <div class="sub-heading">
-                    <h3><em>{% trans "You'll evaluate the projects of all your student in few time. Also, you'll see all the relevant information in a view." %}</em></h3>
-                </div>
-                    {% trans "If you want to be one of the ten first organizations which prove Dr.Scratch send us an email to " %}<a href="mailto:team@drscratch.org" class="strong">team@drscratch.org</a>{% trans  " and we'll give you your hash to can sign up in the web" %}
-            </div>
+                    <h3><em>{% trans "Would you like to be one of the 10 first organizations testing this new feature? Just drop us a line at " %}<a href="mailto:team@drscratch.org" class="strong">team@drscratch.org</a>{% trans  " and we'll send you a hash key that will allow you to sign up in the web" %}</em></h3>
+
 
         </div>
         </div>
