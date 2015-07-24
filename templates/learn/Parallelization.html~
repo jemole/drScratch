@@ -1,7 +1,7 @@
 {% extends 'learn/base.html' %}
 {% load i18n %}
     <!-- JUMBOTRON -->
-    <div id ="cloud"><h2>{% block title %}{% trans "Parallelism" %}{% endblock %}</h2><span class='shadow'></span></div>
+    <div id ="cloud"><h2>{% block title %}{% trans "Parallelization" %}{% endblock %}</h2><span class='shadow'></span></div>
     <!-- /END JUMBOTRON -->
     <!-- PANEL-->
     {% block content %}

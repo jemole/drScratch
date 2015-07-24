@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="../../static/app/content/red.css">
 <script>
     // Instance the tour
+    // Initialize the tour
     $(document).ready(function(){
         $("#tour").click(function(){
     var tour = new Tour({
@@ -65,29 +66,17 @@
       },
       {
         element: "#stepthree",
-        title: "Malos hábitos en programación",
-        content:"Corregir los malos hábitos te ayudará a programar de una forma más limpia."
-      },
-      {
-        element: "#stepfour",
         title: "Puntuación detallada",
         content: "Aquí mostramos la puntuación de cada habilidad de programación, se evalúa del 0 a 3.",
         placement:'left'
       }
     ]});
-     tour.init();
-    // Initialize the tour
+    tour.init();
     
-           
             tour.start();
 
         });
 });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('.desplegable').popover();
-    });
     </script>
     <script>
                     window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
@@ -129,18 +118,18 @@
                         <div class="panel-body">
                             <div class="container">
                             {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>DEVELOPING! </strong></h3>" %}
-                            <p class='text-left dark-text'> {% trans "You're doing a great job.<br> Keep it up!!!" %}</p>
+                            <p class='text-left dark-text'> {% trans "You're doing a great job. Keep it up!!!" %}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- HOW TO IMPROVE -->
-            <div class="improve" >
+            <div class="improve" id="steptwo">
                 <div class="panel panel-success" id="improve">
-                    <div class="panel-heading" id="steptwo">
+                    <div class="panel-heading">
                         <h2 id="score" class="panel-title dark-text">{% trans "Want to level up?"%}</h2>
                          {% if url != "" %}
-                        <a href="{{ url }}" target="_blank"><span class="glyphicon glyphicon-hand-right"></span>{% trans "Come back to your Scratch project." %}</a>
+                        <a href="{{ url }}" target="_blank"><span class="glyphicon glyphicon-hand-right"></span>{% trans "Click here to go to your project." %}</a>
                         {% endif %}
                     </div>
                     <div class="panel-body text-left">
@@ -184,33 +173,7 @@
                                 {% endfor %}
                                 
                     </div>
-                    <div id="stepthree">
-                    
-                    <div class="panel-heading" >
-                        <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
-                    </div>
-                    <div class="panel-body text-left typ">
-                         <a class="glyphicon glyphicon-exclamation-sign"/><a class="desplegable" data-toggle="popover" title="{% trans 'Sprites attributes' %}" data-content=" {% for key,value in initialization.items%}
-                        {% if value|length > 0 %}
-                        {% if key != 'number' %}
-                        {% if initialization.number == 0 %}
-                        {% trans 'Your project does not have uninitialized attributes, good job!'%}
-                        {% else %}
-                        {{ key }}({{ value }})
-                        {% endif %}
-                        {% endif%}
-                        {% endif%}
-                        {% endfor%}" data-trigger="hover" href="learn/attrInit"> {{ initialization.number }} {% trans " sprite attributes." %}
-                        
-</a><br>
-                        <a class="glyphicon glyphicon-pencil"/> <a class="desplegable" data-toggle="popover" title="{% trans 'Sprite naming' %}" data-content=" {% for value in spriteNaming.sprite %}
-                                    {{ value }}.
-                                   {% endfor %}" data-trigger="hover" href="learn/spriteNaming"> {{ spriteNaming.number }} {% trans " sprites naming." %}
-                       </a><br>
-                 </div>
                 </div>
-                </div>
-                
             </div>
 
             </section>    
@@ -219,7 +182,7 @@
   <!-- Score in detail -->
     <div class="col-md-7">
         <section id="dashboard">
-            <div class="container-fluid" id="stepfour">
+            <div class="container-fluid" id="stepthree">
                 <div class="row marketing">
                     <div class="jumbotron">
                         <div class="table-responsive">

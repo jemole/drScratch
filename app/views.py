@@ -24,7 +24,7 @@ from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
 from django.contrib.auth.models import User
-from datetime import datetime, date
+import datetime
 from django.contrib.auth.decorators import login_required
 from email.MIMEText import MIMEText
 from django.utils.encoding import smart_str
@@ -39,7 +39,7 @@ import shutil
 import unicodedata
 import csv
 import kurt
-import zipfile
+import zipfile  
 from zipfile import ZipFile
 
 #Global variables
@@ -195,7 +195,7 @@ def uploadUnregistered(request):
             d = {'Error': 'MultiValueDict'}
             return  d
         # Create DB of files
-        now = datetime.now()
+        now = datetime.datetime.now()
         method = "project"
         fileName = File (filename = file.name.encode('utf-8'), 
                         method = method , time = now, 
@@ -480,7 +480,7 @@ def loginOrganization(request):
                     
             else:
                 flag = True
-                return render_to_response("sign/organization.html", 
+                return render_to_response("password/user_doesntexist.html", 
                                             {'flag': flag},
                                             context_instance=RC(request))
     
@@ -702,7 +702,7 @@ def loginUser(request):
                     return HttpResponseRedirect('/myDashboard')
             else:
                 flag = True
-                return render_to_response("main/main.html", 
+                return render_to_response("password/user_doesntexist.html", 
                                             {'flag': flag},
                                             context_instance=RC(request))
 
@@ -718,34 +718,35 @@ def logoutUser(request):
 def changePwd(request):
     if request.method == 'POST':
         receptor = request.POST['email']
-        user=Organization.objects.get(email=receptor)
-        uid = urlsafe_base64_encode(force_bytes(user.pk))
-        token=default_token_generator.make_token(user)
-            
-        c = {
-                'email':receptor,
-                'uid':uid,
-                'token':token}
-
-        body = render_to_string("password/email.html",c)
-        print "FUNCIONA"
         try:
-            subject = "Dr.Scratch :: Did you forget your password?"
-            sender ="evahugarres@gmail.com"
-            to = [receptor]
-            email = EmailMessage(subject,body,sender,to)
-            email.attach_file("static/app/images/logo_main.png")
-            email.send()
-            print "MENSAJE ENVIADO"
-            return render_to_response("password/email_sended.html",
-                                    {}, context_instance=RC(request))
+            user=Organization.objects.get(email=receptor)
+            uid = urlsafe_base64_encode(force_bytes(user.pk))
+            token=default_token_generator.make_token(user)
+                
+            c = {
+                    'email':receptor,
+                    'uid':uid,
+                    'token':token}
 
+            body = render_to_string("password/email.html",c)
+            print "FUNCIONA"
+            try:
+                subject = "Dr.Scratch :: Did you forget your password?"
+                sender ="evahugarres@gmail.com"
+                to = [receptor]
+                email = EmailMessage(subject,body,sender,to)
+                email.attach_file("static/app/images/logo_main.png")
+                email.send()
+                print "MENSAJE ENVIADO"
+                return render_to_response("password/email_sended.html",
+                                        {}, context_instance=RC(request))
+
+            except:
+                 return render_to_response("password/user_doesntexist.html",
+                                        {}, context_instance=RC(request))
         except:
-             messages.error(request,"No user is associated with this email address.")
-             return render_to_response("password/user_doesntexist.html",
-                                    {}, context_instance=RC(request))
-            
-        
+            return render_to_response("password/user_doesntexist.html",
+                                        {}, context_instance=RC(request))
     else:
         return render_to_response("password/password.html",
                                 {}, context_instance=RC(request))
@@ -759,7 +760,6 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
         user = None
     if request.method == "POST":
         if user is not None and default_token_generator.check_token(user, token):
-            print "TODO VA BIEN"
             new_password= request.POST['password']
             user.set_password(new_password)
             user.save()
@@ -770,8 +770,44 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
          return render_to_response("password/new_password.html",
                                     {}, context_instance=RC(request))
         
+#_______________________ STATISTICS _________________________________#
 
+def date_range(start, end):
+    r = (end+datetime.timedelta(days=1)-start).days
+    return [start+datetime.timedelta(days=i) for i in range(r)]
+
+def statistics(request):
+
+    start = datetime.date(2015,3,1)
+    end = datetime.datetime.today()
+    y = end.year
+    m = end.month
+    d = end.day
+    end = datetime.date(y,m,d)
+    dateList = date_range(start, end)
+    x = {}
+    mylist=[]
+    mydates=[]
+    scores = list(File.objects.all().values_list("score"))
+    print scores
     
+    for n in dateList:
+        mydates.append(n.strftime("%d/%m"))
+        points = File.objects.filter(time=n)
+        for i in points:
+            mylist.append(i.score)
+        if len(mylist) != 0:
+            x[str(n.strftime("%d/%m/%y"))] =(sum(mylist)/len(mylist))    
+        else:
+            x[str(n.strftime("%d/%m/%y"))] = 0
+        mylist=[]
+
+      
+    date = {"date":mydates,"list":x.values}
+    #print date
+    return render_to_response("statistics/statistics.html",
+                                    date, context_instance=RC(request))
+
 
 
 #_______________________ AUTOMATIC ANALYSIS _________________________________#
