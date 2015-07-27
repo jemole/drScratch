@@ -24,8 +24,7 @@ from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
 from django.contrib.auth.models import User
-from datetime import datetime, date, timedelta
-#import datetime
+import datetime
 from django.contrib.auth.decorators import login_required
 from email.MIMEText import MIMEText
 from django.utils.encoding import smart_str
@@ -107,6 +106,7 @@ def selector(request):
                 dic = {'url': ""}
                 d.update(dic)
                 if d["mastery"]["points"] >= 15:
+                    print d
                     return render_to_response("upload/dashboard-unregistered-master.html", d)
                 elif d["mastery"]["points"] > 7:
                     return render_to_response("upload/dashboard-unregistered-developing.html", d)
@@ -175,7 +175,6 @@ def handler_upload(fileSaved, counter):
 
 
 def checkVersion(fileName):
-    """Check the version of the project(2.0 Vs 1.4)"""
     extension = fileName.split('.')[-1]
     if extension == 'sb2':
         version = '2.0'
@@ -261,7 +260,6 @@ def uploadUnregistered(request):
 
 
 def changeVersion(request, file_name):
-    """Change the version of the project from 1.4 to 2.0"""
     p = kurt.Project.load(file_name)
     p.convert("scratch20")
     p.save()
@@ -400,19 +398,23 @@ def learn(request,page):
 
     page = "learn/" + page + ".html"
 
-    if request.user.is_authenticated():  
+    if request.user.is_authenticated():
+     
         return render_to_response(page,
                                 RC(request))
-    else:      
+    else:
+       
         return render_to_response(page,
                                 RC(request))
 
-def learnUnregistered(request):     
+def learnUnregistered(request):
+       
     return render_to_response("learn/learn-unregistered.html",)
 
 #________________________ COLLABORATORS _____________________________#
 
-def collaborators(request):     
+def collaborators(request):
+       
     return render_to_response("main/collaborators.html",)
 
 
@@ -466,6 +468,7 @@ def signUpOrganization(request):
 def loginOrganization(request):
     """Log in app to user"""
     if request.method == 'POST':
+        flag = False
         form = LoginOrganizationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
@@ -477,12 +480,10 @@ def loginOrganization(request):
                     return HttpResponseRedirect('/organization/' + organization.username)
                     
             else:
-                return render_to_response("password/user_doesntexist.html",
+                flag = True
+                return render_to_response("password/user_doesntexist.html", 
+                                            {'flag': flag},
                                             context_instance=RC(request))
-        else:
-            return render_to_response("password/wrong_form.html",
-                                        context_instance=RC(request))
-
     
     else:
         return HttpResponseRedirect("/")
@@ -517,6 +518,7 @@ def analyzeCSV(request):
             file = request.FILES['csvFile']
             file_name = file.name.encode('utf-8')
             dir_csvs = os.path.dirname(os.path.dirname(__file__)) + "/csvs/" + file_name
+            print dir_csvs
             #Save file .csv
             with open(dir_csvs, 'wb+') as destination:
                 for chunk in file.chunks():
@@ -554,11 +556,20 @@ def analyzeCSV(request):
             if request.user.is_authenticated():
                 username = request.user.username
             csv = CSVs.objects.latest('date')
+            #csv_directory = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/"
+            #csv_data = csv_directory + csv.filename
+            #print csv_data
+            #response = HttpResponse(content_type='text/csv')
+            #response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(csv.filename)
+            #response['X-Sendfile'] = smart_str(csv_data)
+
             path_to_file = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/" + csv.filename
             csv_data = open(path_to_file, 'r')
             response = HttpResponse(csv_data, content_type='text/csv')
             response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(csv.filename)
             return response
+
+            #return response
 
     else:
         return HttpResponseRedirect("/organization")
@@ -636,6 +647,7 @@ def signUpUser(request):
             password = form.cleaned_data['password']
             email = form.cleaned_data['email']
             hashkey = form.cleaned_data['hashkey']
+            #classroom = form.cleaned_data['classroom']
             invite(request, username, email, hashkey)
             teacher = Teacher(teacher = request.user, username = username,
                               password = password, email = email,
@@ -704,8 +716,6 @@ def logoutUser(request):
     logout(request)
     return HttpResponseRedirect('/')
 
-# ___________________________ CHANGE PASSWORD _______________________________#
-
 def changePwd(request):
     if request.method == 'POST':
         receptor = request.POST['email']
@@ -713,13 +723,14 @@ def changePwd(request):
             user=Organization.objects.get(email=receptor)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token=default_token_generator.make_token(user)
-             
+                
             c = {
                     'email':receptor,
                     'uid':uid,
                     'token':token}
 
             body = render_to_string("password/email.html",c)
+            print "FUNCIONA"
             try:
                 subject = "Dr.Scratch :: Did you forget your password?"
                 sender ="evahugarres@gmail.com"
@@ -727,6 +738,7 @@ def changePwd(request):
                 email = EmailMessage(subject,body,sender,to)
                 email.attach_file("static/app/images/logo_main.png")
                 email.send()
+                print "MENSAJE ENVIADO"
                 return render_to_response("password/email_sended.html",
                                         {}, context_instance=RC(request))
 
@@ -762,39 +774,55 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
 #_______________________ STATISTICS _________________________________#
 
 def date_range(start, end):
-    r = (end+timedelta(days=1)-start).days
-    return [start+timedelta(days=i) for i in range(r)]
+    r = (end+datetime.timedelta(days=1)-start).days
+    return [start+datetime.timedelta(days=i) for i in range(r)]
 
 def statistics(request):
 
-    start = date(2015,3,1)
-    end = datetime.today()
+    start = datetime.date(2015,3,1)
+    end = datetime.datetime.today()
     y = end.year
     m = end.month
     d = end.day
-    end = date(y,m,d)
+    end = datetime.date(y,m,d)
     dateList = date_range(start, end)
     x = {}
     mylist=[]
     mydates=[]
+    point_list = []
     scores = list(File.objects.all().values_list("score"))
+    print scores
     
     for n in dateList:
         mydates.append(n.strftime("%d/%m"))
         points = File.objects.filter(time=n)
         for i in points:
             mylist.append(i.score)
+            point_list.append(i.score)
         if len(mylist) != 0:
             x[str(n.strftime("%d/%m/%y"))] =(sum(mylist)/len(mylist))    
         else:
             x[str(n.strftime("%d/%m/%y"))] = 0
         mylist=[]
 
-      
-    datelist = {"date":mydates,"list":x.values}
+    master = 0
+    development = 0
+    basic = 0
+    print point_list
+    for i in point_list:
+        if i >= 15:
+            master = master + 1
+        elif i > 7:
+            development = development + 1
+        else:
+            basic = basic + 1
+    levels = {"basic":basic*100/len(point_list),
+              "development":development*100/len(point_list),
+              "master":master*100/len(point_list)}
+    date = {"date":mydates,"list":x.values,"levels":levels}
     #print date
     return render_to_response("statistics/statistics.html",
-                                    datelist, context_instance=RC(request))
+                                    date, context_instance=RC(request))
 
 
 
@@ -837,8 +865,11 @@ def analyzeProject(request,file_name, fileName):
         dictionary.update(procSpriteNaming(resultSpriteNaming, fileName))
         dictionary.update(procDeadCode(resultDeadCode, fileName))
         dictionary.update(procInitialization(resultInitialization, fileName))
-        #code = {'dupCode':DuplicateScriptToScratchBlock(resultDuplicateScript)}
-        #dictionary.update(code)
+        code = {'dupCode':DuplicateScriptToScratchBlock(resultDuplicateScript)}
+        dictionary.update(code)
+        code = {'dCode':DeadCodeToScratchBlock(resultDeadCode)}
+        dictionary.update(code)
+        print DuplicateScriptToScratchBlock(resultDeadCode)
         #Plug-ins not used yet
         #dictionary.update(procBroadcastReceive(resultBroadcastReceive))
         #dictionary.update(procBlockCounts(resultBlockCounts))
@@ -1011,6 +1042,13 @@ def procInitialization(lines, fileName):
 def DuplicateScriptToScratchBlock(code):
     code = code.split("\n")[2:][0]
     code = code[1:-1].split(",")
+    return code
+
+def DeadCodeToScratchBlock(code):
+    code = code.split("\n")[2:-1]
+    for n in code:
+        n = n[15:-2]
+        print n
     return code
     
 

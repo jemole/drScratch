@@ -85,6 +85,49 @@ $(function () {
         }]
     });
 });
+$(function () {
+    $('#pie-chart').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Porcentaje de niveles de proyectos analizados en 2015'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: "Brands",
+            colorByPoint: true,
+            data: [{
+                name: '{% trans "Basic" %}',
+                y: parseInt("{{ levels.basic }}"),
+            }, {
+                name: '{% trans "Development" %}',
+                y: parseInt("{{ levels.development }}"),
+            }, {
+                name: '{% trans "Master" %}',
+                y: parseInt("{{ levels.master }}")
+            }]
+        }]
+    });
+});
 </script>
 
 </head>
@@ -119,9 +162,14 @@ $(function () {
          <div class="panel panel-success">
         <div class="panel-body" id ="chart-panel" style="height:350px;">
         </div>
-     </div>
+      </div>
     </div>
-
+     <div class="container">
+             <div class="panel panel-success">
+            <div class="panel-body" id ="pie-chart" style="height:350px;">
+            </div>
+          </div>
+        </div>
  <footer class="footer grey-bg">
         <div class="container">
                {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
