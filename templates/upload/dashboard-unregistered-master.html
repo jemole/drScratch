@@ -74,23 +74,23 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
       steps: [
       {
         element: "#stepone",
-        title: "Puntuación",
-        content: "Éste apartado muestra la puntuación total obtenida."
+        title: "{% trans 'Score' %}",
+        content: "{% trans 'This section shows the total score.' %}"
       },
       {
-        element: "#steptwo",
-        title: "Mejorar puntuación",
-        content: "¿No te gusta la puntuación que has sacado? ¡Sigue nuestros consejos para subirla!"
+         element: "#steptwo",
+        title: "{% trans 'Improve your score' %}",
+        content: "{% trans 'You don't like the score that you got? Follor our tips for improve!' %}"
+      },
+      {
+         element: "#stepthree",
+        title: "{% trans 'Bad habits in programming' %}",
+        content:"{% trans 'Correct bad habits will help you to programming a cleaner way.' %}"
       },
       {
         element: "#stepthree",
-        title: "Malos hábitos en programación",
-        content:"Corregir los malos hábitos te ayudará a programar de una forma más limpia."
-      },
-      {
-        element: "#stepfour",
-        title: "Puntuación detallada",
-        content: "Aquí mostramos la puntuación de cada habilidad de programación, se evalúa del 0 a 3.",
+        title: "{% trans 'Score in detail' %}",
+        content: "{% trans 'This is the score on each programming skill, evaluated from 0 to 3.' %}",
         placement:'left'
       }
     ]});
@@ -109,6 +109,22 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
     <script>
         $(document).ready(function () {
             $('.desplegable').popover();
+    });
+    </script>
+    <script>
+        $(document).ready(function () {
+            str = "{{ dupCode }}".split(",");
+           // str = str.split("&#39;&quot;")
+            for (n in str){
+
+                if(n == 0){str[n] = str[n].slice(12,-11)}
+                else if(n == str.length-1) { str[n] = str[n].slice(13,-12)}
+                else{
+                str[n] = str[n].slice(13,-11)};
+            };
+           // alert(
+            $("#dupCode").attr("data-content",str.join("\n"));
+
     });
     </script>
 </head>
@@ -218,11 +234,7 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                         <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
                     </div>
                     <div class="panel-body text-left typ">
-                        <a class="glyphicon glyphicon-repeat"/><a class="desplegable" data-toggle="popover" title="{% trans 'Duplicated scripts' %}" data-content=" 
-                                 {% for n in dupCode|length %}
-                                  {{ dupCode.n }}
-                                 {% endfor %}
-                                       " data-trigger="hover" href="learn/duplicatedScripts"> {{ duplicateScript.number }} {% trans " duplicated scripts." %}
+                        <a class="glyphicon glyphicon-repeat"/><a class="desplegable" id="dupCode" data-toggle="popover" title="{% trans 'Duplicated scripts' %}" data-content="" data-trigger="hover" href="learn/duplicatedScripts"> {{ duplicateScript.number }} {% trans " duplicated scripts." %}
 </a><br>
                         <a class="glyphicon glyphicon-pencil"/> <a class="desplegable" data-toggle="popover" title="{% trans 'Sprite naming' %}" data-content=" {% for value in spriteNaming.sprite %}
                                     {{ value }}.
@@ -234,11 +246,12 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                         {% if deadCode.number == 0 %}
                         {% trans 'Your project does not have dead code, good job!' %}
                         {% else %} 
-                        {{ key }}({{ value }})
+                        {% trans 'You have dead code in ' %}{{ key }}({{ value }}):
                         {% endif %}
                         {% endif%}
                         {% endif%}
-                        {% endfor%}" data-trigger="hover" href="learn/deadCode"> {{ deadCode.number }} {% trans " dead code." %}
+                        {% endfor%}
+                        {{ dCode }}" data-trigger="hover" href="learn/deadCode"> {{ deadCode.number }} {% trans " dead code." %}
                        </a><br>
                         <a class="glyphicon glyphicon-exclamation-sign"/><a class="desplegable" data-toggle="popover" title="{% trans 'Sprites attributes' %}" data-content=" {% for key,value in initialization.items%}
                         {% if value|length > 0 %}
