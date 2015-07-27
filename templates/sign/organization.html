@@ -85,15 +85,15 @@
 						                <div style="padding: 15px; padding-bottom: 0px;">
 							                <form accept-charset="UTF-8" action="/loginOrganization" method="post">
                                             {% csrf_token %}
-								                <input type="text" name="username" id="username" placeholder="Username" style="margin-bottom: 15px;">
-								                <input type="password" name="password" id="password" placeholder="Password" style="margin-bottom: 15px;">
+								                {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
+								                {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
 								                <!--<input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;"> -->                    
 								                <!-- <label for="sign-in" class="string optional">{% trans "Remember me" %}</label> -->
                                                 <div>
                                                     <a class="message" href="/changePwd">{% trans "I forgot my password" %}</a>
                                                 </div>                                                
                                                 <div class="centre">
-								                    <input type="submit" value="Sign In" id="sign-in" class="btn-group btn-group-justified colored-text">
+								                    {% trans "<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-justified colored-text'>" %}
                                                 </div>							                
                                             </form>
 						                </div>            

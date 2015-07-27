@@ -24,7 +24,8 @@ from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
 from django.contrib.auth.models import User
-import datetime
+from datetime import datetime, date, timedelta
+#import datetime
 from django.contrib.auth.decorators import login_required
 from email.MIMEText import MIMEText
 from django.utils.encoding import smart_str
@@ -174,6 +175,7 @@ def handler_upload(fileSaved, counter):
 
 
 def checkVersion(fileName):
+    """Check the version of the project(2.0 Vs 1.4)"""
     extension = fileName.split('.')[-1]
     if extension == 'sb2':
         version = '2.0'
@@ -259,6 +261,7 @@ def uploadUnregistered(request):
 
 
 def changeVersion(request, file_name):
+    """Change the version of the project from 1.4 to 2.0"""
     p = kurt.Project.load(file_name)
     p.convert("scratch20")
     p.save()
@@ -397,23 +400,19 @@ def learn(request,page):
 
     page = "learn/" + page + ".html"
 
-    if request.user.is_authenticated():
-     
+    if request.user.is_authenticated():  
         return render_to_response(page,
                                 RC(request))
-    else:
-       
+    else:      
         return render_to_response(page,
                                 RC(request))
 
-def learnUnregistered(request):
-       
+def learnUnregistered(request):     
     return render_to_response("learn/learn-unregistered.html",)
 
 #________________________ COLLABORATORS _____________________________#
 
-def collaborators(request):
-       
+def collaborators(request):     
     return render_to_response("main/collaborators.html",)
 
 
@@ -467,7 +466,6 @@ def signUpOrganization(request):
 def loginOrganization(request):
     """Log in app to user"""
     if request.method == 'POST':
-        flag = False
         form = LoginOrganizationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
@@ -479,10 +477,12 @@ def loginOrganization(request):
                     return HttpResponseRedirect('/organization/' + organization.username)
                     
             else:
-                flag = True
-                return render_to_response("password/user_doesntexist.html", 
-                                            {'flag': flag},
+                return render_to_response("password/user_doesntexist.html",
                                             context_instance=RC(request))
+        else:
+            return render_to_response("password/wrong_form.html",
+                                        context_instance=RC(request))
+
     
     else:
         return HttpResponseRedirect("/")
@@ -517,7 +517,6 @@ def analyzeCSV(request):
             file = request.FILES['csvFile']
             file_name = file.name.encode('utf-8')
             dir_csvs = os.path.dirname(os.path.dirname(__file__)) + "/csvs/" + file_name
-            print dir_csvs
             #Save file .csv
             with open(dir_csvs, 'wb+') as destination:
                 for chunk in file.chunks():
@@ -555,20 +554,11 @@ def analyzeCSV(request):
             if request.user.is_authenticated():
                 username = request.user.username
             csv = CSVs.objects.latest('date')
-            #csv_directory = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/"
-            #csv_data = csv_directory + csv.filename
-            #print csv_data
-            #response = HttpResponse(content_type='text/csv')
-            #response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(csv.filename)
-            #response['X-Sendfile'] = smart_str(csv_data)
-
             path_to_file = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/" + csv.filename
             csv_data = open(path_to_file, 'r')
             response = HttpResponse(csv_data, content_type='text/csv')
             response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(csv.filename)
             return response
-
-            #return response
 
     else:
         return HttpResponseRedirect("/organization")
@@ -646,7 +636,6 @@ def signUpUser(request):
             password = form.cleaned_data['password']
             email = form.cleaned_data['email']
             hashkey = form.cleaned_data['hashkey']
-            #classroom = form.cleaned_data['classroom']
             invite(request, username, email, hashkey)
             teacher = Teacher(teacher = request.user, username = username,
                               password = password, email = email,
@@ -715,6 +704,8 @@ def logoutUser(request):
     logout(request)
     return HttpResponseRedirect('/')
 
+# ___________________________ CHANGE PASSWORD _______________________________#
+
 def changePwd(request):
     if request.method == 'POST':
         receptor = request.POST['email']
@@ -722,14 +713,13 @@ def changePwd(request):
             user=Organization.objects.get(email=receptor)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token=default_token_generator.make_token(user)
-                
+             
             c = {
                     'email':receptor,
                     'uid':uid,
                     'token':token}
 
             body = render_to_string("password/email.html",c)
-            print "FUNCIONA"
             try:
                 subject = "Dr.Scratch :: Did you forget your password?"
                 sender ="evahugarres@gmail.com"
@@ -737,7 +727,6 @@ def changePwd(request):
                 email = EmailMessage(subject,body,sender,to)
                 email.attach_file("static/app/images/logo_main.png")
                 email.send()
-                print "MENSAJE ENVIADO"
                 return render_to_response("password/email_sended.html",
                                         {}, context_instance=RC(request))
 
@@ -773,23 +762,22 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
 #_______________________ STATISTICS _________________________________#
 
 def date_range(start, end):
-    r = (end+datetime.timedelta(days=1)-start).days
-    return [start+datetime.timedelta(days=i) for i in range(r)]
+    r = (end+timedelta(days=1)-start).days
+    return [start+timedelta(days=i) for i in range(r)]
 
 def statistics(request):
 
-    start = datetime.date(2015,3,1)
-    end = datetime.datetime.today()
+    start = date(2015,3,1)
+    end = datetime.today()
     y = end.year
     m = end.month
     d = end.day
-    end = datetime.date(y,m,d)
+    end = date(y,m,d)
     dateList = date_range(start, end)
     x = {}
     mylist=[]
     mydates=[]
     scores = list(File.objects.all().values_list("score"))
-    print scores
     
     for n in dateList:
         mydates.append(n.strftime("%d/%m"))
@@ -803,10 +791,10 @@ def statistics(request):
         mylist=[]
 
       
-    date = {"date":mydates,"list":x.values}
+    datelist = {"date":mydates,"list":x.values}
     #print date
     return render_to_response("statistics/statistics.html",
-                                    date, context_instance=RC(request))
+                                    datelist, context_instance=RC(request))
 
 
 
@@ -1023,7 +1011,6 @@ def procInitialization(lines, fileName):
 def DuplicateScriptToScratchBlock(code):
     code = code.split("\n")[2:][0]
     code = code[1:-1].split(",")
-    print code
     return code
     
 

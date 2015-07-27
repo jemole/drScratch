@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-22 07:59+0000\n"
+"POT-Creation-Date: 2015-07-27 09:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: drScratch/settings.py:105
+#: drScratch/settings.py:109
 msgid "Spanish"
 msgstr "Español"
 
-#: drScratch/settings.py:106
+#: drScratch/settings.py:110
 msgid "English"
 msgstr "Inglés"
 
@@ -42,24 +42,23 @@ msgid "Ops! This page doesn't exist"
 msgstr "Ops! Esta página no existe"
 
 #: templates/error/404.html:59 templates/error/500.html:59
-#: templates/error/analyzing.html:62
-#: templates/learn/learn-unregistered.html:59 templates/login/login.html:104
+#: templates/error/analyzing.html:62 templates/login/login.html:104
 #: templates/login/login.html.py:525 templates/main/collaborators.html:84
 #: templates/main/main.html:85 templates/main/main.html.py:551
 #: templates/sign/createOrganization.html:81 templates/sign/createUser.html:81
-#: templates/sign/organization.html:102
+#: templates/sign/organization.html:105
 #: templates/sign/registerOrganization.html:81
 msgid "Get Started"
 msgstr "Empezar"
 
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70 templates/learn/base.html:94
-#: templates/learn/learn-unregistered.html:67 templates/login/login.html:536
-#: templates/main/collaborators.html:593 templates/main/main.html:562
-#: templates/main/main_organization.html:196 templates/password/base.html:93
-#: templates/sign/createOrganization.html:256
-#: templates/sign/createUser.html:255 templates/sign/organization.html:287
+#: templates/login/login.html:536 templates/main/collaborators.html:593
+#: templates/main/main.html:562 templates/main/main_organization.html:196
+#: templates/password/base.html:104 templates/sign/createOrganization.html:256
+#: templates/sign/createUser.html:255 templates/sign/organization.html:288
 #: templates/sign/registerOrganization.html:255
+#: templates/statistics/statistics.html:127
 #: templates/upload/dashboard-organization.html:221
 #: templates/upload/dashboard-unregistered-basic.html:257
 #: templates/upload/dashboard-unregistered-developing.html:292
@@ -489,7 +488,9 @@ msgid "change size by (10)"
 msgstr "cambiar tamaño por (-1)"
 
 #: templates/learn/DataRepresentation.html:43
-msgid "set size to (120)%"
+#, fuzzy, python-format
+#| msgid "set size to (120)%"
+msgid "set size to (120) %%"
 msgstr "fijar tamaño a (120)%"
 
 #: templates/learn/DataRepresentation.html:47
@@ -1470,7 +1471,8 @@ msgstr "cambiar x por (-10)"
 msgid "when [right arrow v] key pressed  //Initialized correctly."
 msgstr "al presionar tecla [flecha derecha v] // Inicializado correctamente"
 
-#: templates/learn/base.html:77 templates/password/base.html:77
+#: templates/learn/base.html:77 templates/password/base.html:88
+#: templates/statistics/statistics.html:105
 #: templates/upload/dashboard-unregistered-basic.html:101
 #: templates/upload/dashboard-unregistered-developing.html:110
 #: templates/upload/dashboard-unregistered-master.html:129
@@ -1601,22 +1603,6 @@ msgstr ""
 "De este modo, si se quiere realizar una modificación, tan solo hay que ir al "
 "bloque definido por el programador."
 
-#: templates/learn/learn-unregistered.html:9
-msgid "Learn"
-msgstr "Aprende"
-
-#: templates/learn/learn-unregistered.html:36
-msgid "If you want to learn more, you'll must to sign up in..."
-msgstr "Si quieres continuar aprendiendo, debes registrarte en..."
-
-#: templates/learn/learn-unregistered.html:51
-msgid "New features"
-msgstr "Nuevas funcionalidades"
-
-#: templates/learn/learn-unregistered.html:53
-msgid "We're working on this and would be pleased to receive your feedback"
-msgstr "Estamos trabajando en esto y nos gustaría conocer tu opinión"
-
 #: templates/learn/spriteNaming.html:5
 msgid "Incorrect names"
 msgstr "Nombres inadecuados"
@@ -1639,25 +1625,25 @@ msgstr ""
 "proyectos, ya que nuestros programas se leerán mejor y se programarán más "
 "rápidamente. ¡Evita los nombres por defecto!"
 
-#: templates/login/login.html:81 templates/sign/organization.html:79
+#: templates/login/login.html:81 templates/sign/organization.html:78
 msgid "Sign in"
 msgstr "Ingresar"
 
-#: templates/login/login.html:92 templates/sign/organization.html:90
+#: templates/login/login.html:92 templates/sign/organization.html:91
 msgid "Remember me"
 msgstr "Recordarme"
 
 #: templates/login/login.html:127 templates/sign/createOrganization.html:104
 #: templates/sign/createOrganization.html:163
 #: templates/sign/createUser.html:104 templates/sign/createUser.html.py:163
-#: templates/sign/organization.html:125 templates/sign/organization.html:184
+#: templates/sign/organization.html:128 templates/sign/organization.html:187
 #: templates/sign/registerOrganization.html:104
 #: templates/sign/registerOrganization.html:163
 msgid "Dr.Scratch for Organizations"
 msgstr "Dr.Scratch para Organizaciones"
 
 #: templates/login/login.html:129 templates/sign/createOrganization.html:106
-#: templates/sign/createUser.html:106 templates/sign/organization.html:127
+#: templates/sign/createUser.html:106
 #: templates/sign/registerOrganization.html:106
 msgid ""
 "Welcome to the Dr.Scratch website (version for organizations), an analytical "
@@ -1676,8 +1662,8 @@ msgstr ""
 #: templates/sign/createOrganization.html:110
 #: templates/sign/createOrganization.html:209
 #: templates/sign/createUser.html:75 templates/sign/createUser.html.py:110
-#: templates/sign/createUser.html:208 templates/sign/organization.html:131
-#: templates/sign/organization.html:240
+#: templates/sign/createUser.html:208 templates/sign/organization.html:134
+#: templates/sign/organization.html:241
 #: templates/sign/registerOrganization.html:75
 #: templates/sign/registerOrganization.html:110
 #: templates/sign/registerOrganization.html:208
@@ -1690,14 +1676,14 @@ msgstr "¿Por qué?"
 
 #: templates/login/login.html:189 templates/main/main.html:215
 #: templates/sign/createOrganization.html:165
-#: templates/sign/createUser.html:165 templates/sign/organization.html:186
+#: templates/sign/createUser.html:165
 #: templates/sign/registerOrganization.html:165
 msgid "Why "
 msgstr "Por qué "
 
 #: templates/login/login.html:189 templates/main/main.html:215
 #: templates/sign/createOrganization.html:165
-#: templates/sign/createUser.html:165 templates/sign/organization.html:186
+#: templates/sign/createUser.html:165
 #: templates/sign/registerOrganization.html:165
 msgid "you’ll love Dr.Scratch"
 msgstr "te encantará Dr.Scratch"
@@ -1747,6 +1733,7 @@ msgid "How"
 msgstr "Cómo"
 
 #: templates/login/login.html:272 templates/main/main.html:298
+#: templates/sign/organization.html:189
 msgid "How "
 msgstr "Cómo "
 
@@ -2255,18 +2242,43 @@ msgstr ""
 
 #: templates/password/email.html:13
 msgid "Please, go to the following page and choose a new password:"
-msgstr ""
+msgstr "Por favor, ve a la siguiente página y elige una nueva contraseña:"
 
 #: templates/password/email.html:17
 msgid "Thanks for using our website!"
-msgstr ""
+msgstr "¡Gracias por usar nuestra web!"
 
 #: templates/password/email.html:18
 msgid "The Dr.Scratch team"
 msgstr "El equipo de Dr.Scratch"
 
+#: templates/password/email_sended.html:12
+msgid "We sended to you an email."
+msgstr "Te  hemos enviado un email."
+
+#: templates/password/password.html:13
+msgid "Have you forgotten your password? Please introduce your email:"
+msgstr "¿Has olvidado tu contraseña? Por favor, escribe tu email:"
+
+#: templates/password/password.html:19
+msgid "Send"
+msgstr "Enviar"
+
+#: templates/password/user_doesntexist.html:12
+msgid "User doesn't exist."
+msgstr "El usuario no existe."
+
+#: templates/password/user_doesntexist.html:14
+#: templates/password/wrong_form.html:14
+msgid "Retry"
+msgstr "Reintentar"
+
+#: templates/password/wrong_form.html:12
+msgid "You must to complete all the fields."
+msgstr "Debes completar todos los campos correctamente."
+
 #: templates/sign/createOrganization.html:168
-#: templates/sign/createUser.html:168 templates/sign/organization.html:189
+#: templates/sign/createUser.html:168
 #: templates/sign/registerOrganization.html:168
 msgid ""
 "You'll evaluate the projects of all your student in few time. Also, you'll "
@@ -2276,7 +2288,6 @@ msgstr ""
 "verás la información más inportante de una pasada."
 
 #: templates/sign/createOrganization.html:170
-#: templates/sign/organization.html:191
 msgid ""
 "If you want to be one of the ten first organizations which prove Dr.Scratch "
 "send us an email to "
@@ -2285,24 +2296,23 @@ msgstr ""
 "envíanos un email a "
 
 #: templates/sign/createOrganization.html:170
-#: templates/sign/organization.html:191
 msgid " and we'll give you your hash to can sign up in the web"
 msgstr " y te daremos una clave para poder registrarte en la web"
 
 #: templates/sign/createOrganization.html:184
-#: templates/sign/createUser.html:183 templates/sign/organization.html:205
+#: templates/sign/createUser.html:183 templates/sign/organization.html:206
 #: templates/sign/registerOrganization.html:183
 msgid "Organization's name"
 msgstr "Nombre de la organización"
 
 #: templates/sign/createOrganization.html:196
-#: templates/sign/createUser.html:195 templates/sign/organization.html:221
+#: templates/sign/createUser.html:195 templates/sign/organization.html:222
 #: templates/sign/registerOrganization.html:195
 msgid "Password"
 msgstr "Contraseña"
 
 #: templates/sign/createOrganization.html:198
-#: templates/sign/createUser.html:197 templates/sign/organization.html:223
+#: templates/sign/createUser.html:197 templates/sign/organization.html:224
 #: templates/sign/registerOrganization.html:197
 msgid ""
 "<input type='password' class='form-control' name='password' "
@@ -2312,13 +2322,13 @@ msgstr ""
 "placeholder='Contraseña'>"
 
 #: templates/sign/createOrganization.html:203
-#: templates/sign/createUser.html:202 templates/sign/organization.html:230
+#: templates/sign/createUser.html:202 templates/sign/organization.html:231
 #: templates/sign/registerOrganization.html:202
 msgid "Hashkey"
 msgstr "Clave"
 
 #: templates/sign/createOrganization.html:205
-#: templates/sign/createUser.html:204 templates/sign/organization.html:232
+#: templates/sign/createUser.html:204 templates/sign/organization.html:233
 #: templates/sign/registerOrganization.html:204
 msgid ""
 "<input type='password' class='form-control' name='hashkey' "
@@ -2326,6 +2336,67 @@ msgid ""
 msgstr ""
 "<input type='password' class='form-control' name='hashkey' "
 "placeholder='Clave'>"
+
+#: templates/sign/organization.html:88
+msgid ""
+"<input type='text' name='username' id='username' placeholder='Username' "
+"style='margin-bottom: 15px;'>"
+msgstr ""
+"<input type='text' name='username' id='username' placeholder='Nombre de "
+"usuario' style='margin-bottom: 15px;'>"
+
+#: templates/sign/organization.html:89
+msgid ""
+"<input type='password' name='password' id='password' placeholder='Password' "
+"style='margin-bottom: 15px;'>"
+msgstr ""
+"<input type='password' class='form-control' name='password' "
+"placeholder='Contraseña'>"
+
+#: templates/sign/organization.html:93
+msgid "I forgot my password"
+msgstr "¿Has olvidado tu contraseña?"
+
+#: templates/sign/organization.html:96
+msgid ""
+"<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-"
+"justified colored-text'>"
+msgstr ""
+"<input type='submit' value='Ingresar' id='sign-in' class='btn-group btn-"
+"group-justified colored-text'>"
+
+#: templates/sign/organization.html:129
+msgid "Welcome to the organizations version of Dr.Scratch"
+msgstr "Bienvenido a la versión de Dr.Scratch para organizaciones"
+
+#: templates/sign/organization.html:130
+msgid ""
+"Dr.Scratch for organizations is an analytical tool that can help you "
+"evaluate the Scratch projects of the students participating in your "
+"initiatives to asses their progression in terms of coding and computational "
+"thinking skills. "
+msgstr ""
+"Dr.Scratch para organizaciones es una herramienta analítica que te ayuda a "
+"evaluar los proyectos Scratch de los estudiantes que participan en tus "
+"iniciativas y te permite controlar su progresión haciendo hincapié en el "
+"código y habilidades de pensamiento computacional."
+
+#: templates/sign/organization.html:189
+msgid "to join Dr.Scratch for organizations?"
+msgstr "disfrutar Dr.Scratch para organizaciones."
+
+#: templates/sign/organization.html:192
+msgid ""
+"Would you like to be one of the 10 first organizations testing this new "
+"feature? Just drop us a line at "
+msgstr ""
+"Si quieres ser una de las 10 primeras organizaciones que prueban Dr.Scratch "
+"envíanos un email a "
+
+#: templates/sign/organization.html:192
+msgid ""
+" and we'll send you a hash key that will allow you to sign up in the web"
+msgstr " y te daremos una clave para poder registrarte en la web"
 
 #: templates/upload/dashboard-organization.html:120
 msgid "You can download your results. You do click in the following button:"
@@ -2395,6 +2466,7 @@ msgstr "¿Quieres subir de nivel?"
 
 #: templates/upload/dashboard-unregistered-basic.html:137
 #: templates/upload/dashboard-unregistered-developing.html:143
+#: templates/upload/dashboard-unregistered-master.html:167
 msgid "Come back to your Scratch project."
 msgstr "Vuelve a tu proyecto Scratch"
 
@@ -2481,10 +2553,6 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-master.html:152
 msgid "You're the master of the universe!!! "
 msgstr "¡¡¡Eres el master del universo!!!"
-
-#: templates/upload/dashboard-unregistered-master.html:167
-msgid "Click here to go to your project."
-msgstr "Pulsa aquí para volver a tu proyecto Scratch."
 
 #: templates/upload/dashboard-unregistered-master.html:221
 msgid "Duplicated scripts"
@@ -2586,6 +2654,24 @@ msgstr "Atributos no inicializados correctamente"
 #: templates/upload/dashboard-unregistered.html:254
 msgid "modified but not initialized correctly."
 msgstr "ha sido modificado pero no inicializado correctamente."
+
+#~ msgid "Back"
+#~ msgstr "Volver"
+
+#~ msgid "Learn"
+#~ msgstr "Aprende"
+
+#~ msgid "If you want to learn more, you'll must to sign up in..."
+#~ msgstr "Si quieres continuar aprendiendo, debes registrarte en..."
+
+#~ msgid "New features"
+#~ msgstr "Nuevas funcionalidades"
+
+#~ msgid "We're working on this and would be pleased to receive your feedback"
+#~ msgstr "Estamos trabajando en esto y nos gustaría conocer tu opinión"
+
+#~ msgid "Click here to go to your project."
+#~ msgstr "Pulsa aquí para volver a tu proyecto Scratch."
 
 #~ msgid "How to improve my score:"
 #~ msgstr "Cómo mejorar mi puntuación:"
