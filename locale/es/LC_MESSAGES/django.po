@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-27 09:18+0000\n"
+"POT-Creation-Date: 2015-07-27 13:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: drScratch/settings.py:109
+#: drScratch/settings.py:105
 msgid "Spanish"
 msgstr "Español"
 
-#: drScratch/settings.py:110
+#: drScratch/settings.py:106
 msgid "English"
 msgstr "Inglés"
 
@@ -58,11 +58,11 @@ msgstr "Empezar"
 #: templates/password/base.html:104 templates/sign/createOrganization.html:256
 #: templates/sign/createUser.html:255 templates/sign/organization.html:288
 #: templates/sign/registerOrganization.html:255
-#: templates/statistics/statistics.html:127
+#: templates/statistics/statistics.html:175
 #: templates/upload/dashboard-organization.html:221
 #: templates/upload/dashboard-unregistered-basic.html:257
 #: templates/upload/dashboard-unregistered-developing.html:292
-#: templates/upload/dashboard-unregistered-master.html:337
+#: templates/upload/dashboard-unregistered-master.html:350
 msgid "©2014 Dr.Scratch is powered by "
 msgstr "©2014 Dr.Scratch implementado con "
 
@@ -489,7 +489,7 @@ msgstr "cambiar tamaño por (-1)"
 
 #: templates/learn/DataRepresentation.html:43
 #, fuzzy, python-format
-#| msgid "set size to (120)%"
+#| msgid "set size to (120) %"
 msgid "set size to (120) %%"
 msgstr "fijar tamaño a (120)%"
 
@@ -1472,15 +1472,15 @@ msgid "when [right arrow v] key pressed  //Initialized correctly."
 msgstr "al presionar tecla [flecha derecha v] // Inicializado correctamente"
 
 #: templates/learn/base.html:77 templates/password/base.html:88
-#: templates/statistics/statistics.html:105
+#: templates/statistics/statistics.html:148
 #: templates/upload/dashboard-unregistered-basic.html:101
 #: templates/upload/dashboard-unregistered-developing.html:110
-#: templates/upload/dashboard-unregistered-master.html:129
+#: templates/upload/dashboard-unregistered-master.html:145
 msgid "Dr.Scratch(Beta Version)"
 msgstr "Versión Beta"
 
 #: templates/learn/deadCode.html:4
-#: templates/upload/dashboard-unregistered-master.html:231
+#: templates/upload/dashboard-unregistered-master.html:243
 msgid "Dead code"
 msgstr "Código Muerto"
 
@@ -2398,6 +2398,41 @@ msgid ""
 " and we'll send you a hash key that will allow you to sign up in the web"
 msgstr " y te daremos una clave para poder registrarte en la web"
 
+#: templates/statistics/statistics.html:66
+msgid "Daily average score"
+msgstr ""
+
+#: templates/statistics/statistics.html:74
+msgid " points"
+msgstr " puntos"
+
+#: templates/statistics/statistics.html:83
+msgid "Total score"
+msgstr "Puntuación total"
+
+#: templates/statistics/statistics.html:97
+msgid "Percent levels"
+msgstr "Porcentaje de niveles"
+
+#: templates/statistics/statistics.html:119
+#: templates/upload/dashboard-unregistered.html:92
+msgid "Basic"
+msgstr "Básico"
+
+#: templates/statistics/statistics.html:122
+#: templates/upload/dashboard-unregistered.html:90
+msgid "Developing"
+msgstr "Medio"
+
+#: templates/statistics/statistics.html:125
+#: templates/upload/dashboard-unregistered.html:88
+msgid "Master"
+msgstr "Avanzado"
+
+#: templates/statistics/statistics.html:158
+msgid "Statistics"
+msgstr "Estadísticas"
+
 #: templates/upload/dashboard-organization.html:120
 msgid "You can download your results. You do click in the following button:"
 msgstr "Puedes descargar tus resultados. Haz click en el siguiente botón:"
@@ -2430,15 +2465,54 @@ msgstr "<img class='framed' src='../../static/app/images/url-es.png' />"
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
 msgstr "<img class='framed' src='../../static/app/images/project-es.png' />"
 
+#: templates/upload/dashboard-unregistered-basic.html:63
+#: templates/upload/dashboard-unregistered-developing.html:58
+#: templates/upload/dashboard-unregistered-master.html:77
+msgid "Score"
+msgstr "Puntuación"
+
+#: templates/upload/dashboard-unregistered-basic.html:64
+#: templates/upload/dashboard-unregistered-developing.html:59
+#: templates/upload/dashboard-unregistered-master.html:78
+msgid "This section shows the total score."
+msgstr "Esta sección muestra la "
+
+#: templates/upload/dashboard-unregistered-basic.html:68
+#: templates/upload/dashboard-unregistered-developing.html:63
+#: templates/upload/dashboard-unregistered-master.html:82
+msgid "Improve your score"
+msgstr "Mejora tus habilidades"
+
+#: templates/upload/dashboard-unregistered-basic.html:69
+#: templates/upload/dashboard-unregistered-developing.html:64
+#: templates/upload/dashboard-unregistered-master.html:83
+msgid "You do not like the score that you got? Follow our tips for improve!"
+msgstr ""
+"¿No te gusta la puntuación que has obtenido? ¡Sigue nuestros consejos para "
+"mejorarla!"
+
+#: templates/upload/dashboard-unregistered-basic.html:73
+#: templates/upload/dashboard-unregistered-developing.html:73
+#: templates/upload/dashboard-unregistered-master.html:92
+msgid "Score in detail"
+msgstr "Puntuación en detalle:"
+
+#: templates/upload/dashboard-unregistered-basic.html:74
+#: templates/upload/dashboard-unregistered-developing.html:74
+#: templates/upload/dashboard-unregistered-master.html:93
+msgid "This is the score on each programming skill, evaluated from 0 to 3."
+msgstr ""
+"Ésta es la puntuación de cada habilidad de programación, evaluada de 0 a 3."
+
 #: templates/upload/dashboard-unregistered-basic.html:118
 #: templates/upload/dashboard-unregistered-developing.html:125
-#: templates/upload/dashboard-unregistered-master.html:145
+#: templates/upload/dashboard-unregistered-master.html:161
 msgid "Score:"
 msgstr "Puntuación:"
 
 #: templates/upload/dashboard-unregistered-basic.html:119
 #: templates/upload/dashboard-unregistered-developing.html:126
-#: templates/upload/dashboard-unregistered-master.html:146
+#: templates/upload/dashboard-unregistered-master.html:162
 #, python-format
 msgid ""
 " I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
@@ -2460,13 +2534,13 @@ msgstr "Estás al principio de una gran aventura. . . <br>¡Continúa así!"
 
 #: templates/upload/dashboard-unregistered-basic.html:135
 #: templates/upload/dashboard-unregistered-developing.html:141
-#: templates/upload/dashboard-unregistered-master.html:165
+#: templates/upload/dashboard-unregistered-master.html:181
 msgid "Want to level up?"
 msgstr "¿Quieres subir de nivel?"
 
 #: templates/upload/dashboard-unregistered-basic.html:137
 #: templates/upload/dashboard-unregistered-developing.html:143
-#: templates/upload/dashboard-unregistered-master.html:167
+#: templates/upload/dashboard-unregistered-master.html:183
 msgid "Come back to your Scratch project."
 msgstr "Vuelve a tu proyecto Scratch"
 
@@ -2477,10 +2551,10 @@ msgstr "Vuelve a tu proyecto Scratch"
 #: templates/upload/dashboard-unregistered-developing.html:165
 #: templates/upload/dashboard-unregistered-developing.html:173
 #: templates/upload/dashboard-unregistered-developing.html:243
-#: templates/upload/dashboard-unregistered-master.html:179
-#: templates/upload/dashboard-unregistered-master.html:189
-#: templates/upload/dashboard-unregistered-master.html:199
-#: templates/upload/dashboard-unregistered-master.html:288
+#: templates/upload/dashboard-unregistered-master.html:195
+#: templates/upload/dashboard-unregistered-master.html:205
+#: templates/upload/dashboard-unregistered-master.html:215
+#: templates/upload/dashboard-unregistered-master.html:301
 #, python-format
 msgid ""
 "\n"
@@ -2490,17 +2564,29 @@ msgstr ""
 
 #: templates/upload/dashboard-unregistered-basic.html:191
 #: templates/upload/dashboard-unregistered-developing.html:229
-#: templates/upload/dashboard-unregistered-master.html:274
+#: templates/upload/dashboard-unregistered-master.html:287
 #: templates/upload/dashboard-unregistered.html:114
 msgid "Concept"
 msgstr "Concepto"
 
 #: templates/upload/dashboard-unregistered-basic.html:192
 #: templates/upload/dashboard-unregistered-developing.html:230
-#: templates/upload/dashboard-unregistered-master.html:275
+#: templates/upload/dashboard-unregistered-master.html:288
 #: templates/upload/dashboard-unregistered.html:115
 msgid "Points"
 msgstr "Puntos"
+
+#: templates/upload/dashboard-unregistered-developing.html:68
+#: templates/upload/dashboard-unregistered-master.html:87
+msgid "Bad habits in programming"
+msgstr "Malos hábitos en programación"
+
+#: templates/upload/dashboard-unregistered-developing.html:69
+#: templates/upload/dashboard-unregistered-master.html:88
+msgid "Correct bad habits will help you to programming a cleaner way."
+msgstr ""
+"Corregir los malos hábitos en programación te ayudará a programar de una "
+"forma más limpia."
 
 #: templates/upload/dashboard-unregistered-developing.html:131
 msgid ""
@@ -2514,61 +2600,65 @@ msgid "You're doing a great job.<br> Keep it up!!!"
 msgstr "Estás haciendo un gran trabajo. ¡¡¡Sigue así!!!"
 
 #: templates/upload/dashboard-unregistered-developing.html:190
-#: templates/upload/dashboard-unregistered-master.html:218
+#: templates/upload/dashboard-unregistered-master.html:234
 msgid "Details to fix:"
 msgstr "Detalles a corregir:"
 
 #: templates/upload/dashboard-unregistered-developing.html:193
-#: templates/upload/dashboard-unregistered-master.html:243
+#: templates/upload/dashboard-unregistered-master.html:256
 msgid "Sprites attributes"
 msgstr "Atributos no inicializados correctamente"
 
 #: templates/upload/dashboard-unregistered-developing.html:197
-#: templates/upload/dashboard-unregistered-master.html:247
+#: templates/upload/dashboard-unregistered-master.html:260
 msgid "Your project does not have uninitialized attributes, good job!"
 msgstr "Tu proyecto no tiene atributos sin inicializar,¡Buen trabajo!"
 
 #: templates/upload/dashboard-unregistered-developing.html:203
-#: templates/upload/dashboard-unregistered-master.html:253
+#: templates/upload/dashboard-unregistered-master.html:266
 msgid " sprite attributes."
 msgstr "atributos no inicializados correctamente."
 
 #: templates/upload/dashboard-unregistered-developing.html:206
-#: templates/upload/dashboard-unregistered-master.html:227
+#: templates/upload/dashboard-unregistered-master.html:239
 msgid "Sprite naming"
 msgstr "Nombres inadecuados"
 
 #: templates/upload/dashboard-unregistered-developing.html:208
-#: templates/upload/dashboard-unregistered-master.html:229
+#: templates/upload/dashboard-unregistered-master.html:241
 msgid " sprites naming."
 msgstr "nombres inadecuados."
 
-#: templates/upload/dashboard-unregistered-master.html:151
+#: templates/upload/dashboard-unregistered-master.html:167
 msgid ""
 "<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></"
 "h3>"
 msgstr ""
 "<h3 class='text-left dark-text'>Tu nivel es <strong>ALTO!</strong></h3>"
 
-#: templates/upload/dashboard-unregistered-master.html:152
+#: templates/upload/dashboard-unregistered-master.html:168
 msgid "You're the master of the universe!!! "
 msgstr "¡¡¡Eres el master del universo!!!"
 
-#: templates/upload/dashboard-unregistered-master.html:221
+#: templates/upload/dashboard-unregistered-master.html:237
 msgid "Duplicated scripts"
 msgstr "Programas duplicados"
 
-#: templates/upload/dashboard-unregistered-master.html:225
+#: templates/upload/dashboard-unregistered-master.html:237
 msgid " duplicated scripts."
 msgstr "Programas Duplicados"
 
-#: templates/upload/dashboard-unregistered-master.html:235
+#: templates/upload/dashboard-unregistered-master.html:247
 msgid "Your project does not have dead code, good job!"
 msgstr "Tu proyecto no tiene código muerto, ¡Buen trabajo!"
 
-#: templates/upload/dashboard-unregistered-master.html:241
+#: templates/upload/dashboard-unregistered-master.html:249
+msgid "You have dead code in "
+msgstr "Tienes código no ejecutado en "
+
+#: templates/upload/dashboard-unregistered-master.html:254
 msgid " dead code."
-msgstr "código muerto."
+msgstr " código muerto."
 
 #: templates/upload/dashboard-unregistered.html:10
 msgid "Project results"
@@ -2595,18 +2685,6 @@ msgstr "Puntuación:"
 #: templates/upload/dashboard-unregistered.html:86
 msgid "Your level:"
 msgstr "Tu nivel:"
-
-#: templates/upload/dashboard-unregistered.html:88
-msgid "Master"
-msgstr "Avanzado"
-
-#: templates/upload/dashboard-unregistered.html:90
-msgid "Developing"
-msgstr "Medio"
-
-#: templates/upload/dashboard-unregistered.html:92
-msgid "Basic"
-msgstr "Básico"
 
 #: templates/upload/dashboard-unregistered.html:101
 #, python-format
@@ -2654,6 +2732,11 @@ msgstr "Atributos no inicializados correctamente"
 #: templates/upload/dashboard-unregistered.html:254
 msgid "modified but not initialized correctly."
 msgstr "ha sido modificado pero no inicializado correctamente."
+
+#, fuzzy
+#~| msgid "Developing"
+#~ msgid "Development"
+#~ msgstr "Medio"
 
 #~ msgid "Back"
 #~ msgstr "Volver"
