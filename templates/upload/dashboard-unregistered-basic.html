@@ -60,18 +60,18 @@
       steps: [
       {
         element: "#stepone",
-        title: "{% trans 'Score' %}",
-        content: "{% trans 'This section shows the total score.' %}"
+        title: "Puntuación",
+        content: "Éste apartado muestra la puntuación total obtenida."
       },
       {
         element: "#steptwo",
-        title: "{% trans 'Improve your score' %}",
-        content: "{% trans 'You don't like the score that you got? Follor our tips for improve!' %}"
+        title: "Mejorar puntuación",
+        content: "¿No te gusta la puntuación que has sacado? ¡Sigue nuestros consejos para subirla!"
       },
       {
         element: "#stepthree",
-        title: "{% trans 'Score in detail' %}",
-        content: "{% trans 'This is the score on each programming skill, evaluated from 0 to 3.' %}",
+        title: "Puntuación detallada",
+        content: "Aquí mostramos la puntuación de cada habilidad de programación, se evalúa del 0 a 3.",
         placement:'left'
       }
     ]});
@@ -146,7 +146,7 @@
                                 {% if value != 2 %}
                                       {% if value == 0 %}
                                   <a  href="/learn/{{ key }}/#level0">
-                                    <img src="static/app/images/favicon.ico" alt="">
+                                    <img src="static/app/images/little_bulb.png" alt="">
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
@@ -155,7 +155,7 @@
                                 </tr>
                             {% elif value == 1 %}
                                 <a href="/learn/{{ key }}/#level1">
-                                    <img src="static/app/images/favicon.ico" alt=""> 
+                                    <img src="static/app/images/little_bulb.png" alt=""> 
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
