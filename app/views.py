@@ -484,6 +484,11 @@ def loginOrganization(request):
                 return render_to_response("password/user_doesntexist.html", 
                                             {'flag': flag},
                                             context_instance=RC(request))
+        else:
+            flag = True
+            return render_to_response("password/wrong_form.html", 
+                            {'flag': flag},
+                            context_instance=RC(request))
     
     else:
         return HttpResponseRedirect("/")
@@ -660,7 +665,7 @@ def signUpUser(request):
         return render_to_response("sign/createUser.html", context_instance = RC(request))
         
 
-
+"""
 def invite(request, username, email, hashkey):
     emisor = "drscratch.website@gmail.com"
     receptor = "inanna17@gmail.com"
@@ -670,7 +675,7 @@ def invite(request, username, email, hashkey):
         mensaje['To']=receptor
         mensaje['Subject']="Asunto del correo"
     except:
-        "PROBLEMA MIMEtext"
+        print "PROBLEMA MIMEtext"
     try: 
         serverSMTP = smtplib.SMTP('smtp.gmail.com',587)
         serverSMTP.ehlo()
@@ -685,9 +690,8 @@ def invite(request, username, email, hashkey):
         serverSMTP.close() 
         print "Email sended" 
     except: 
-        print """Error: el mensaje no pudo enviarse. 
-        Compruebe que sendmail se encuentra instalado en su sistema"""
- 
+        print "Error: el mensaje no pudo enviarse."
+"""
 
 def loginUser(request):
     """Log in app to user"""
@@ -719,6 +723,7 @@ def logoutUser(request):
 def changePwd(request):
     if request.method == 'POST':
         receptor = request.POST['email']
+        print receptor
         try:
             user=Organization.objects.get(email=receptor)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
@@ -733,7 +738,7 @@ def changePwd(request):
             print "FUNCIONA"
             try:
                 subject = "Dr.Scratch :: Did you forget your password?"
-                sender ="evahugarres@gmail.com"
+                sender ="inanna17@gmail.com"
                 to = [receptor]
                 email = EmailMessage(subject,body,sender,to)
                 email.attach_file("static/app/images/logo_main.png")
@@ -753,6 +758,7 @@ def changePwd(request):
                                 {}, context_instance=RC(request))
 
 def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
+    flag = False
     UserModel = get_user_model()
     try:
         uid=urlsafe_base64_decode(uidb64)
@@ -762,10 +768,17 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
     if request.method == "POST":
         if user is not None and default_token_generator.check_token(user, token):
             new_password= request.POST['password']
-            user.set_password(new_password)
-            user.save()
-            return render_to_response("password/new_password.html",
-                                    {}, context_instance=RC(request))
+            new_confirm = request.POST['confirm']
+            if new_password == new_confirm:
+                user.set_password(new_password)
+                user.save()
+                return render_to_response("sign/organization.html", 
+                                            context_instance = RC(request))
+            else:
+                flag = False
+                return render_to_response("password/new_password.html",
+                                        {'flag': flag}, 
+                                        context_instance=RC(request))
                 
     else:
          return render_to_response("password/new_password.html",

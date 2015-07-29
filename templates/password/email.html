@@ -1,4 +1,3 @@
-
 {% load i18n %}
 
 {% block content %}
@@ -11,7 +10,7 @@
                         <h4> {% trans "Reset password"%}</h4>
                         <p>  {% trans "You're receiving this email because you requested a password reset for your user account at Dr.Scratch."%}</p>
                         <p>{% trans "Please, go to the following page and choose a new password:"%}</p>
-                        drscratch-programamos.es{% url 'reset_password_confirm' uidb64=uid token=token %}
+                        localhost:1234{% url 'reset_password_confirm' uidb64=uid token=token %}
                         {% block reset_link %}
                         {% endblock %}
                         <p> {% trans "Thanks for using our website!"%}</p>
