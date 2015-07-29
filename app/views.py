@@ -24,7 +24,7 @@ from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
 from django.contrib.auth.models import User
-import datetime
+from datetime import datetime, date, timedelta
 from django.contrib.auth.decorators import login_required
 from email.MIMEText import MIMEText
 from django.utils.encoding import smart_str
@@ -196,7 +196,7 @@ def uploadUnregistered(request):
             d = {'Error': 'MultiValueDict'}
             return  d
         # Create DB of files
-        now = datetime.datetime.now()
+        now = datetime.now()
         method = "project"
         fileName = File (filename = file.name.encode('utf-8'), 
                         method = method , time = now, 
@@ -774,24 +774,23 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
 #_______________________ STATISTICS _________________________________#
 
 def date_range(start, end):
-    r = (end+datetime.timedelta(days=1)-start).days
-    return [start+datetime.timedelta(days=i) for i in range(r)]
+    r = (end+timedelta(days=1)-start).days
+    return [start+timedelta(days=i) for i in range(r)]
 
 def statistics(request):
 
-    start = datetime.date(2015,3,1)
-    end = datetime.datetime.today()
+    start = date(2015,3,1)
+    end = datetime.today()
     y = end.year
     m = end.month
     d = end.day
-    end = datetime.date(y,m,d)
+    end = date(y,m,d)
     dateList = date_range(start, end)
     x = {}
     mylist=[]
     mydates=[]
     point_list = []
     scores = list(File.objects.all().values_list("score"))
-    print scores
     
     for n in dateList:
         mydates.append(n.strftime("%d/%m"))
@@ -808,7 +807,6 @@ def statistics(request):
     master = 0
     development = 0
     basic = 0
-    print point_list
     for i in point_list:
         if i >= 15:
             master = master + 1
@@ -819,10 +817,9 @@ def statistics(request):
     levels = {"basic":basic*100/len(point_list),
               "development":development*100/len(point_list),
               "master":master*100/len(point_list)}
-    date = {"date":mydates,"list":x.values,"levels":levels}
-    #print date
+    dates = {"date":mydates,"list":x.values,"levels":levels}
     return render_to_response("statistics/statistics.html",
-                                    date, context_instance=RC(request))
+                                    dates, context_instance=RC(request))
 
 
 
