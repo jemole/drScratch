@@ -24,7 +24,7 @@ from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
 from django.contrib.auth.models import User
-from datetime import datetime, date, timedelta
+from datetime import datetime,timedelta,date
 from django.contrib.auth.decorators import login_required
 from email.MIMEText import MIMEText
 from django.utils.encoding import smart_str
@@ -484,11 +484,6 @@ def loginOrganization(request):
                 return render_to_response("password/user_doesntexist.html", 
                                             {'flag': flag},
                                             context_instance=RC(request))
-        else:
-            flag = True
-            return render_to_response("password/wrong_form.html", 
-                            {'flag': flag},
-                            context_instance=RC(request))
     
     else:
         return HttpResponseRedirect("/")
@@ -519,50 +514,41 @@ def organization(request, name):
 def analyzeCSV(request):
     if request.method =='POST':
         if "_upload" in request.POST:
-            """Upload a .csv file to analyze several projects"""
-            flag_form = False
-            try:
-                flag_csv = False
-                file = request.FILES['csvFile']
-                file_name = file.name.encode('utf-8')
-                dir_csvs = os.path.dirname(os.path.dirname(__file__)) + "/csvs/" + file_name
-                print dir_csvs
-                #Save file .csv
-                with open(dir_csvs, 'wb+') as destination:
-                    for chunk in file.chunks():
-                        destination.write(chunk)
-                infile = open(dir_csvs, 'r')
-                dictionary = {}
-                for line in infile:
-                    line = line.split("\n")[0]
-                    method = "csv"
-                    (pathProject, file) = sendRequestgetSB2(line, method)   
-                    d = analyzeProject(request, pathProject, file)
-                    dic = {}
-                    dic[line] = d
-                    dictionary.update(dic)       
-                infile.close()
-            except:
-                flag_csv = False
+            flag_csv = False
+            file = request.FILES['csvFile']
+            file_name = file.name.encode('utf-8')
+            dir_csvs = os.path.dirname(os.path.dirname(__file__)) + "/csvs/" + file_name
+            print dir_csvs
+            #Save file .csv
+            with open(dir_csvs, 'wb+') as destination:
+                for chunk in file.chunks():
+                    destination.write(chunk)
+            infile = open(dir_csvs, 'r')
+            dictionary = {}
+            for line in infile:
+                line = line.split("\n")[0]
+                method = "csv"
+                (pathProject, file) = sendRequestgetSB2(line, method)   
+                d = analyzeProject(request, pathProject, file)
+                dic = {}
+                dic[line] = d
+                dictionary.update(dic)       
+            infile.close()
             try:
                 csv_data = generatorCSV(request, dictionary, file_name)
                 flag_csv = True
             except:
                 flag_csv = False
-            try:
-                if request.user.is_authenticated():
-                    username = request.user.username
 
-                csv_save = CSVs(filename = file_name, directory = csv_data, organization = username)
-                csv_save.save()
-            except:
-                flag_csv = False
-                flag_form = True             
+            if request.user.is_authenticated():
+                username = request.user.username
+
+            csv_save = CSVs(filename = file_name, directory = csv_data, organization = username)
+            csv_save.save()                
 
             return render_to_response("upload/dashboard-organization.html", 
                                     {'username': username,
-                                     'flag_csv': flag_csv,
-                                     'flag_form': flag_form,},
+                                     'flag_csv': flag_csv,},
                                      context_instance=RC(request))
         
         elif "_download" in request.POST:
@@ -674,7 +660,7 @@ def signUpUser(request):
         return render_to_response("sign/createUser.html", context_instance = RC(request))
         
 
-"""
+
 def invite(request, username, email, hashkey):
     emisor = "drscratch.website@gmail.com"
     receptor = "inanna17@gmail.com"
@@ -684,7 +670,7 @@ def invite(request, username, email, hashkey):
         mensaje['To']=receptor
         mensaje['Subject']="Asunto del correo"
     except:
-        print "PROBLEMA MIMEtext"
+        "PROBLEMA MIMEtext"
     try: 
         serverSMTP = smtplib.SMTP('smtp.gmail.com',587)
         serverSMTP.ehlo()
@@ -699,8 +685,9 @@ def invite(request, username, email, hashkey):
         serverSMTP.close() 
         print "Email sended" 
     except: 
-        print "Error: el mensaje no pudo enviarse."
-"""
+        print """Error: el mensaje no pudo enviarse. 
+        Compruebe que sendmail se encuentra instalado en su sistema"""
+ 
 
 def loginUser(request):
     """Log in app to user"""
@@ -732,15 +719,10 @@ def logoutUser(request):
 def changePwd(request):
     if request.method == 'POST':
         receptor = request.POST['email']
-        print receptor
         try:
             user=Organization.objects.get(email=receptor)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token=default_token_generator.make_token(user)
-            
-            print user
-            print uid
-            print token
                 
             c = {
                     'email':receptor,
@@ -748,13 +730,15 @@ def changePwd(request):
                     'token':token}
 
             body = render_to_string("password/email.html",c)
+            print "FUNCIONA"
             try:
-                subject = "Dr.Scratch: Did you forget your password?"
-                sender ="no-reply@drscratch.org"
+                subject = "Dr.Scratch :: Did you forget your password?"
+                sender ="evahugarres@gmail.com"
                 to = [receptor]
                 email = EmailMessage(subject,body,sender,to)
                 email.attach_file("static/app/images/logo_main.png")
                 email.send()
+                print "MENSAJE ENVIADO"
                 return render_to_response("password/email_sended.html",
                                         {}, context_instance=RC(request))
 
@@ -769,7 +753,6 @@ def changePwd(request):
                                 {}, context_instance=RC(request))
 
 def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
-    flag = False
     UserModel = get_user_model()
     try:
         uid=urlsafe_base64_decode(uidb64)
@@ -779,17 +762,10 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
     if request.method == "POST":
         if user is not None and default_token_generator.check_token(user, token):
             new_password= request.POST['password']
-            new_confirm = request.POST['confirm']
-            if new_password == new_confirm:
-                user.set_password(new_password)
-                user.save()
-                return render_to_response("sign/organization.html", 
-                                            context_instance = RC(request))
-            else:
-                flag = False
-                return render_to_response("password/new_password.html",
-                                        {'flag': flag}, 
-                                        context_instance=RC(request))
+            user.set_password(new_password)
+            user.save()
+            return render_to_response("password/new_password.html",
+                                    {}, context_instance=RC(request))
                 
     else:
          return render_to_response("password/new_password.html",
@@ -814,7 +790,9 @@ def statistics(request):
     mylist=[]
     mydates=[]
     point_list = []
+    totalProjects = []
     scores = list(File.objects.all().values_list("score"))
+    
     
     for n in dateList:
         mydates.append(n.strftime("%d/%m"))
@@ -822,7 +800,10 @@ def statistics(request):
         for i in points:
             mylist.append(i.score)
             point_list.append(i.score)
+
+        totalProjects.append(len(mylist))
         if len(mylist) != 0:
+            
             x[str(n.strftime("%d/%m/%y"))] =(sum(mylist)/len(mylist))    
         else:
             x[str(n.strftime("%d/%m/%y"))] = 0
@@ -831,6 +812,8 @@ def statistics(request):
     master = 0
     development = 0
     basic = 0
+    #print point_list
+    print totalProjects
     for i in point_list:
         if i >= 15:
             master = master + 1
@@ -841,7 +824,8 @@ def statistics(request):
     levels = {"basic":basic*100/len(point_list),
               "development":development*100/len(point_list),
               "master":master*100/len(point_list)}
-    dates = {"date":mydates,"list":x.values,"levels":levels}
+    dates = {"date":mydates,"list":x.values,"levels":levels,"totalProjects":totalProjects}
+    #print date
     return render_to_response("statistics/statistics.html",
                                     dates, context_instance=RC(request))
 
@@ -865,7 +849,7 @@ def analyzeProject(request,file_name, fileName):
         metricDeadCode = "hairball -p blocks.DeadCode " + file_name 
         metricInitialization = "hairball -p \
                            initialization.AttributeInitialization " + file_name
-
+        
         #Plug-ins not used yet
         #metricBroadcastReceive = "hairball -p 
         #                          checks.BroadcastReceive " + file_name
@@ -879,18 +863,17 @@ def analyzeProject(request,file_name, fileName):
         #Plug-ins not used yet
         #resultBlockCounts = os.popen(metricBlockCounts).read()
         #resultBroadcastReceive = os.popen(metricBroadcastReceive).read()
-
+        
         #Create a dictionary with necessary information
         dictionary.update(procMastery(request,resultMastery, fileName))
         dictionary.update(procDuplicateScript(resultDuplicateScript, fileName))
         dictionary.update(procSpriteNaming(resultSpriteNaming, fileName))
         dictionary.update(procDeadCode(resultDeadCode, fileName))
         dictionary.update(procInitialization(resultInitialization, fileName))
-        #code = {'dupCode':DuplicateScriptToScratchBlock(resultDuplicateScript)}
+       # code = {'dupCode':DuplicateScriptToScratchBlock(resultDuplicateScript)}
         #dictionary.update(code)
-        #code = {'dCode':DeadCodeToScratchBlock(resultDeadCode)}
+       # code = {'dCode':DeadCodeToScratchBlock(resultDeadCode)}
         #dictionary.update(code)
-        #print DuplicateScriptToScratchBlock(resultDeadCode)
         #Plug-ins not used yet
         #dictionary.update(procBroadcastReceive(resultBroadcastReceive))
         #dictionary.update(procBlockCounts(resultBlockCounts))
@@ -1060,8 +1043,6 @@ def procInitialization(lines, fileName):
     fileName.save()
 
     return dic
-
-"""
 def DuplicateScriptToScratchBlock(code):
     code = code.split("\n")[2:][0]
     code = code[1:-1].split(",")
@@ -1073,7 +1054,7 @@ def DeadCodeToScratchBlock(code):
         n = n[15:-2]
         print n
     return code
-"""    
+    
 
 
 
