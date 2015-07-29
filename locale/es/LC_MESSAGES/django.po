@@ -1887,6 +1887,8 @@ msgid ""
 "We would like to thank many people for their collaboration and we have done "
 "one special section."
 msgstr ""
+"Nos gustaría agradecer a mucha gente su colaboración y hemos incluido una "
+"sección especial para ello."
 
 #: templates/login/login.html:501 templates/main/main.html:527
 msgid "Collaborators"
@@ -2238,6 +2240,8 @@ msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at Dr.Scratch."
 msgstr ""
+"Estas recibiendo este email porque has pedido restaurar tu cuenta en "
+"Dr.Scratch."
 
 #: templates/password/email.html:12
 msgid "Please, go to the following page and choose a new password:"
