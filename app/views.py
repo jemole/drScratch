@@ -514,6 +514,7 @@ def organization(request, name):
 def analyzeCSV(request):
     if request.method =='POST':
         if "_upload" in request.POST:
+            csv_data = 0
             flag_csv = False
             file = request.FILES['csvFile']
             file_name = file.name.encode('utf-8')
@@ -526,18 +527,29 @@ def analyzeCSV(request):
             infile = open(dir_csvs, 'r')
             dictionary = {}
             for line in infile:
-                line = line.split("\n")[0]
+                code = line.split(",")[0]
+                url = line.split(",")[1]
+                print "LINEA: " + line
+                print "CODE: " + code
+                print "URL: " + url
                 method = "csv"
-                (pathProject, file) = sendRequestgetSB2(line, method)   
-                d = analyzeProject(request, pathProject, file)
+                url = url.split("https://scratch.mit.edu/projects/")[-1]
+                print "URL: " + url
+                (pathProject, file) = sendRequestgetSB2(url, method)
+                try:  
+                    d = analyzeProject(request, pathProject, file)
+                except:
+                    d = "Error analyzing project: " + url
                 dic = {}
                 dic[line] = d
                 dictionary.update(dic)       
             infile.close()
             try:
                 csv_data = generatorCSV(request, dictionary, file_name)
+                print "Funciona"
                 flag_csv = True
             except:
+                print "FALLA: Debe poner un .csv como el que  se indica."
                 flag_csv = False
 
             if request.user.is_authenticated():
@@ -730,27 +742,25 @@ def changePwd(request):
                     'token':token}
 
             body = render_to_string("password/email.html",c)
-            print "FUNCIONA"
             try:
                 subject = "Dr.Scratch :: Did you forget your password?"
-                sender ="evahugarres@gmail.com"
+                sender ="no-reply@drscratch.org"
                 to = [receptor]
                 email = EmailMessage(subject,body,sender,to)
                 email.attach_file("static/app/images/logo_main.png")
                 email.send()
-                print "MENSAJE ENVIADO"
                 return render_to_response("password/email_sended.html",
-                                        {}, context_instance=RC(request))
+                                        context_instance=RC(request))
 
             except:
                  return render_to_response("password/user_doesntexist.html",
-                                        {}, context_instance=RC(request))
+                                           context_instance=RC(request))
         except:
             return render_to_response("password/user_doesntexist.html",
-                                        {}, context_instance=RC(request))
+                                       context_instance=RC(request))
     else:
         return render_to_response("password/password.html",
-                                {}, context_instance=RC(request))
+                                   context_instance=RC(request))
 
 def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
     UserModel = get_user_model()
@@ -760,16 +770,30 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
     except (TypeError, ValueError, OverflowError, UserModel.DoesNotExist):
         user = None
     if request.method == "POST":
+        flag_error = False
         if user is not None and default_token_generator.check_token(user, token):
-            new_password= request.POST['password']
-            user.set_password(new_password)
-            user.save()
-            return render_to_response("password/new_password.html",
-                                    {}, context_instance=RC(request))
-                
+            new_password = request.POST['password']
+            new_confirm = request.POST['confirm']
+            print new_password
+            print new_confirm
+            if new_password == new_confirm:
+                user.set_password(new_password)
+                user.save()
+                return render_to_response("sign/organization.html", 
+                                            context_instance = RC(request))
+            else:
+                flag_error = True
+                return render_to_response("password/new_password.html",
+                                    {'flag_error':flag_error},
+                                    context_instance=RC(request))
+                 
     else:
-         return render_to_response("password/new_password.html",
-                                    {}, context_instance=RC(request))
+         if user is not None and default_token_generator.check_token(user, token):
+             return render_to_response("password/new_password.html",
+                                        context_instance=RC(request))
+         else:
+             return render_to_response("sign/organization.html", 
+                        context_instance = RC(request))
         
 #_______________________ STATISTICS _________________________________#
 
@@ -812,7 +836,6 @@ def statistics(request):
     master = 0
     development = 0
     basic = 0
-    #print point_list
     print totalProjects
     for i in point_list:
         if i >= 15:
@@ -825,7 +848,6 @@ def statistics(request):
               "development":development*100/len(point_list),
               "master":master*100/len(point_list)}
     dates = {"date":mydates,"list":x.values,"levels":levels,"totalProjects":totalProjects}
-    #print date
     return render_to_response("statistics/statistics.html",
                                     dates, context_instance=RC(request))
 
