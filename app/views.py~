@@ -479,7 +479,7 @@ def signUpOrganization(request):
                                 'uid':uid,
                                 'token':token}
 
-                        body = render_to_string("sign/email.html",c)
+                        body = render_to_string("password/email.html",c)
                         subject = "Welcome to Dr.Scratch for organizations"
                         sender ="no-reply@drscratch.org"
                         to = [email]

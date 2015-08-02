@@ -2424,7 +2424,7 @@ msgstr "Ese email ya existe. Elige otro, por favor."
 
 #: templates/sign/signup_error.html:19
 msgid "This hash doesn't exist."
-msgstr "Esa clave no existe."
+msgstr ""
 
 #: templates/sign/signup_error.html:22
 msgid "You must to complete all fields."
