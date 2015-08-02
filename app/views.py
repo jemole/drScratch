@@ -438,15 +438,14 @@ def signUpOrganization(request):
     if request.method == 'POST':
         form = OrganizationForm(request.POST)    
         if form.is_valid():
-            print "FORM"
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
             hashkey = form.cleaned_data['hashkey'] 
                           
             try:
-                organization = Organization.objects.get(username=username)
-                print "The name already exists"                
+                #This name already exists
+                organization = Organization.objects.get(username=username)            
                 flagName = 1            
                 return render_to_response("sign/signup_error.html", 
                                           {'flagName':flagName,
@@ -456,8 +455,8 @@ def signUpOrganization(request):
                                           context_instance = RC(request))
             except:
                 try:
+                    #This email already exists
                     email = Organization.objects.get(email=email)
-                    print "The email already exists"
                     flagEmail = 1
                     return render_to_response("sign/signup_error.html", 
                                             {'flagName':flagName,
@@ -489,7 +488,7 @@ def signUpOrganization(request):
                         return HttpResponseRedirect('/organization/' + organization.username)
                     
                     except:
-                        print "Doesn't exist this hash"
+                        #Doesn't exist this hash
                         flagHash = 1
 
                         return render_to_response("sign/signup_error.html", 
@@ -557,7 +556,6 @@ def organization(request, name):
                                         context_instance = RC(request))
         return render_to_response("sign/organization.html", context_instance = RC(request))
     else:
-        print "ENTRA EN " + name
         return HttpResponseRedirect("/")
 
 #________________________ ANALYZE CSV FOR ORGANIZATIONS ____________#
@@ -585,16 +583,18 @@ def analyzeCSV(request):
                 try:  
                     d = analyzeProject(request, pathProject, file)
                 except:
-                    d = "Error analyzing project: " + url
+                    d = ["Error analyzing project", url]
+
                 dic = {}
                 dic[line] = d
-                dictionary.update(dic)       
+                dictionary.update(dic)    
             infile.close()
             try:
                 csv_data = generatorCSV(request, dictionary, file_name)
                 flag_csv = True
             except:
                 flag_csv = False
+
 
             if request.user.is_authenticated():
                 username = request.user.username
@@ -629,47 +629,134 @@ def analyzeCSV(request):
 
 def generatorCSV(request, dictionary, file_name):
     """Generator of a csv file"""
-
     csv_directory = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/"
     csv_data = csv_directory + file_name
     writer = csv.writer(open(csv_data, "wb"))
-
-    for key, value in dictionary.items():
-        total = 0
-        writer.writerow(['PROJECT',key])
-        writer.writerow([" "," "])
-        writer.writerow(['Code smells:',])        
-        for key, subvalue in value.items():
-            if key == "duplicateScript":
-                for key, sub2value in subvalue.items():
-                    if key == "number":
-                        writer.writerow(["Duplicate scripts", sub2value])
-            elif key == "deadCode":
-                for key, sub2value in subvalue.items():
-                    if key == "number":
-                        writer.writerow(["Dead code", sub2value])
-            elif key == "initialization":
-                for key, sub2value in subvalue.items():
-                    if key == "number":
-                        writer.writerow(["Initialization", sub2value])
-            elif key == "spriteNaming":
-                for key, sub2value in subvalue.items():
-                    if key == "number":
-                        writer.writerow(["Sprite naming", sub2value])
-        
-        writer.writerow([" "," "])
-        writer.writerow(['Skills of Computational Thinking:',])        
-        for key, value in value.items():
-            if key == "mastery":
+    
+    if request.LANGUAGE_CODE == "es":
+        writer.writerow(["CÓDIGO", "URL", "Mastery", "Abstracción", "Paralelismo", "Pensamiento lógico", "Sincronización", "Control de flujo", "Interactividad con el usuario", "Representación de la información", "Código repetido", "Nombres por defecto", "Código muerto",  "Inicialización atributos"])
+        for key, value in dictionary.items(): 
+            total = 0
+            flag = False
+            try:
+                if value[0] == "Error analizando el proyecto":
+                    row1 = key.split(",")[0]
+                    row2 = key.split(",")[1]
+                    row2 = row2.split("\n")[0]                
+                    writer.writerow([row1, row2, "Error analyzing project"])
+                    
+            except:
+                total = 0
+                row1 = key.split(",")[0]
+                row2 = key.split(",")[1]
+                row2 = row2.split("\n")[0]
+                #writer.writerow([row1, row2])
+                
                 for key, subvalue in value.items():
-                    if key!="maxi" and key!="points":         
-                        writer.writerow([key, subvalue])
-                        total = total + subvalue
-                writer.writerow(["SCORE:", total])
-        writer.writerow([" "," "])
-        writer.writerow([" "," "])
+                    if key == "duplicateScript":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row11 = sub2value
+                    if key == "spriteNaming":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row12 = sub2value
+                    if key == "deadCode":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row13 = sub2value
+                    if key == "initialization":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row14 = sub2value
 
+                for key, value in value.items():
+                    if key == "mastery":
+                        for key, subvalue in value.items():
+                            if key!="maxi" and key!="points":
+                                if key == "Paralelismo":
+                                    row5 = subvalue
+                                elif key == "Abstracción":
+                                    row4 = subvalue
+                                elif key == "Pensamiento lógico":
+                                    row6 = subvalue
+                                elif key == "Sincronización":
+                                    row7 = subvalue
+                                elif key == "Control de flujo":
+                                    row8 = subvalue
+                                elif key == "Interactividad con el usuario":
+                                    row9 = subvalue
+                                elif key == "Representación de la información":
+                                    row10 = subvalue
+                                total = total + subvalue
+                        row3 = total
+
+                writer.writerow([row1,row2,row3,row4,row5,row6,row7,row8,
+                                row9,row10,row11,row12,row13,row14])
+
+    else:
+        writer.writerow(["CODE", "URL", "Mastery", "Abstraction", "Parallelism", "Logic", "Synchronization", "Flow control", "User interactivity", "Data representation", "Duplicate script", "Sprites naming", "Dead code",  "Sprite attributes"])
+        for key, value in dictionary.items(): 
+            total = 0
+            flag = False
+            try:
+                if value[0] == "Error analyzing project":
+                    row1 = key.split(",")[0]
+                    row2 = key.split(",")[1]
+                    row2 = row2.split("\n")[0]                
+                    writer.writerow([row1, row2, "Error analyzing project"])
+                    
+            except:
+                total = 0
+                row1 = key.split(",")[0]
+                row2 = key.split(",")[1]
+                row2 = row2.split("\n")[0]
+                #writer.writerow([row1, row2])
+                
+                for key, subvalue in value.items():
+                    if key == "duplicateScript":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row11 = sub2value
+                    if key == "deadCode":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row12 = sub2value
+                    if key == "initialization":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row13 = sub2value
+                    if key == "spriteNaming":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row14 = sub2value
+                     
+                for key, value in value.items():
+                    if key == "mastery":
+                        for key, subvalue in value.items():
+                            if key!="maxi" and key!="points":
+                                if key == "Abstraction":
+                                    row4 = subvalue
+                                elif key == "Parallelization":
+                                    row5 = subvalue
+                                elif key == "Logic":
+                                    row6 = subvalue
+                                elif key == "Synchronization":
+                                    row7 = subvalue
+                                elif key == "FlowControl":
+                                    row8 = subvalue
+                                elif key == "UserInteractivity":
+                                    row9 = subvalue
+                                elif key == "DataRepresentation":
+                                    row10 = subvalue
+                                total = total + subvalue
+                        row3 = total
+
+                writer.writerow([row1,row2,row3,row4,row5,row6,row7,row8,
+                                row9,row10,row11,row12,row13,row14])
+        
     return csv_data
+
 
 
               
