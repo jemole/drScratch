@@ -993,10 +993,10 @@ def analyzeProject(request,file_name, fileName):
         dictionary.update(procSpriteNaming(resultSpriteNaming, fileName))
         dictionary.update(procDeadCode(resultDeadCode, fileName))
         dictionary.update(procInitialization(resultInitialization, fileName))
-        code = {'dupCode':DuplicateScriptToScratchBlock(resultDuplicateScript)}
-        dictionary.update(code)
-        code = {'dCode':DeadCodeToScratchBlock(resultDeadCode)}
-        dictionary.update(code)
+       # code = {'dupCode':DuplicateScriptToScratchBlock(resultDuplicateScript)}
+        #dictionary.update(code)
+       # code = {'dCode':DeadCodeToScratchBlock(resultDeadCode)}
+        #dictionary.update(code)
         #Plug-ins not used yet
         #dictionary.update(procBroadcastReceive(resultBroadcastReceive))
         #dictionary.update(procBlockCounts(resultBlockCounts))
@@ -1166,25 +1166,17 @@ def procInitialization(lines, fileName):
     fileName.save()
 
     return dic
-
 def DuplicateScriptToScratchBlock(code):
-    try:
-        code = code.split("\n")[2:][0]
-        code = code[1:-1].split(",")
-    except:
-        code = ""
-
+    code = code.split("\n")[2:][0]
+    code = code[1:-1].split(",")
     return code
 
 def DeadCodeToScratchBlock(code):
-    try:
-        code = code.split("\n")[2:-1]
-        for n in code:
-            n = n[15:-2]
-            print n
-    except:
-        code = ""
+    code = code.split("\n")[2:-1]
+    for n in code:
+        n = n[15:-2]
     return code
+    
 
 
 

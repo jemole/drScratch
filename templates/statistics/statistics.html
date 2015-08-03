@@ -86,6 +86,32 @@ $(function () {
     });
 });
 $(function () {
+   
+    $('#total-projects').highcharts({
+        title: {
+            text: 'Proyectos de 2015',
+            x: -20 //center
+        },
+        xAxis: {
+            categories: date_list
+        },
+       
+        tooltip: {
+            valueSuffix: ' proyectos'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Proyectos totales',
+            data: {{ totalProjects }}
+        }]
+    });
+});
+$(function () {
     $('#pie-chart').highcharts({
         chart: {
             plotBackgroundColor: null,
@@ -155,21 +181,33 @@ $(function () {
             <!-- /END STICKY NAVIGATION -->
     <!-- JUMBOTRON -->
      
-      <div id ="cloud"><h2>{% block title %}{% endblock %}</h2><span class='shadow'></span></div>
+      <div id ="cloud"><h2>{% trans "Statistics" %}</h2><span class='shadow'></span></div>
     <!-- /END JUMBOTRON -->
     <!-- PANEL-->
-      <div class="container">
-         <div class="panel panel-success">
-        <div class="panel-body" id ="chart-panel" style="height:350px;">
-        </div>
-      </div>
-    </div>
-     <div class="container">
-             <div class="panel panel-success">
-            <div class="panel-body" id ="pie-chart" style="height:350px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body" id ="chart-panel" style="height:350px;">
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body" id ="pie-chart" style="height:350px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body" id ="total-projects" style="height:350px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
  <footer class="footer grey-bg">
         <div class="container">
                {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
