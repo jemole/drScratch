@@ -76,6 +76,8 @@
       }
     ]});
             tour.init();
+
+       
             tour.start();
 
         });
