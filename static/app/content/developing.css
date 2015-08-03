@@ -154,6 +154,10 @@ padding-top:90px;
     color:#B40404;
 }
 
+#star{
+        color:#FBE083;
+        border-color: #F9B966;
+        display: inline;}
 /* Popover */
   .popover {
       border: 5px dotted #1792a4;

@@ -25,6 +25,10 @@ body {
 #footer {
   background-color: #eee;
 }
+#star{
+        color:#FBE083;
+        border-color: #F9B966;
+        display: inline;}
 
 /* Lastly, apply responsive CSS fixes as necessary */
 @media (max-width: 767px) {

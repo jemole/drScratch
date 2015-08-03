@@ -150,6 +150,10 @@ padding-top:90px;
 #footer a:hover{
     color:#B40404;
 }
+#star{
+        color:#FBE083;
+        border-color: #F9B966;
+        display: inline;}
 
 /* Popover */
   .popover {
