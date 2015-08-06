@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+# Removing backup files
+*~
+
 # C extensions
 *.so
 
