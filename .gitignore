@@ -2,6 +2,12 @@
 __pycache__/
 *.py[cod]
 
+# Backup files
+*~
+
+# Python compiled bytecode
+*.pyc
+
 # C extensions
 *.so
 
