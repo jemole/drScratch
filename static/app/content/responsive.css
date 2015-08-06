@@ -1,0 +1,379 @@
+/* --------------------------------------
+=========================================
+   4. RESPONSIVE CSS FIXES
+=========================================
+-----------------------------------------*/
+@media (min-width: 1200px) {
+	.vertical-registration-form {
+		width: 80%;
+	}
+}
+/*---------------------------------------
+   4.1 FIXES FOR 992PX to <= 1199PX SCREENS          
+-----------------------------------------*/
+@media (min-width: 992px) and (max-width: 1199px) {
+	html {
+		font-size: 90% !important;
+	}
+
+	body {
+		font-size: 15px;
+		line-height: 26px;
+	}
+}
+
+/*---------------------------------------
+   4.2 FIXES FOR <= 1024PX SCREENS          
+-----------------------------------------*/
+@media (max-width: 1024px) {
+	.header .overlay-layer {
+		padding-bottom: 85px;
+	}
+
+	.header,
+    .features,
+    .stats {
+		background-attachment: scroll !important;
+	}
+
+    .vertical-registration-form {
+	   width: 100%;
+	   float: none;
+    }
+
+    .header .overlay-layer {
+	   padding-top: 60px;
+    }
+
+    .intro-section {
+	   margin-top: 60px;
+    }
+
+	.feature .icon-container {
+		margin-right: 0;
+		padding-top: 14px;
+	}
+
+	.wow {
+		-webkit-transform: translateZ(0);
+	}
+}
+
+/*---------------------------------------
+   4.3 FIXES FOR <= 991PX SCREENS          
+-----------------------------------------*/
+@media (max-width: 991px) {
+	html {
+		font-size: 90% !important;
+	}
+
+	body {
+		font-size: 15px;
+		line-height: 26px;
+	}
+
+	.client-logos li {
+		margin: 15px 15px 15px 15px;
+	}
+
+	.client-logos li img {
+		max-width: 60px;
+		opacity: 0.6;
+	}
+
+	.pull-left,
+    .pull-right {
+		float: none !important;
+		margin: auto !important;
+	}
+
+	.text-left,
+    .text-right {
+		text-align: center;
+	}
+
+	.colored-line-left {
+		float: none;
+		margin: auto;
+	}
+
+	.brief .brief-image-right,
+    .brief .brief-image-left {
+		margin-top: 20px;
+		padding-bottom: 40px;
+		max-width: 430px;
+		margin: auto;
+	}
+
+	.brief .brief-image-right img,
+    .brief .brief-image-left img {
+		float: none;
+		width: 90%;
+	}
+
+	.border-right-colored,
+    .border-left-colored,
+    .border-left,
+    .border-right {
+		border: none !important;
+	}
+
+	.features {
+		background-image: none;
+	}
+
+	.single-feature {
+		margin-bottom: 28px;
+		width: 33%;
+		float: left;
+	}
+
+	.left-side .single-feature,
+    .right-side .single-feature {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.feature .icon-container {
+		float: none;
+	}
+
+	.feature .description {
+		width: auto;
+		float: none;
+	}
+
+	.pricing-table {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/*---------------------------------------
+   4.4 FIXES FOR => 768PX to <= 991PX SCREENS          
+-----------------------------------------*/
+@media (min-width: 768px) and (max-width: 991px) {
+	html {
+		font-size: 95%;
+	}
+
+	.sticky-navigation {
+		min-height: 70px;
+	}
+
+	.sticky-navigation .navbar-brand img {
+		max-width: 80px;
+	}
+
+	.sticky-navigation .main-navigation li a {
+		line-height: 34px;
+		padding: 8px;
+	}
+
+	.sticky-navigation .main-navigation {
+		margin-top: 13px;
+	}
+
+	.sticky-navigation .login-register {
+		margin-top: 3px;
+	}
+
+	.ipad-image {
+		max-width: 500px;
+	}
+}
+
+/*---------------------------------------
+   4.5 FIXES FOR <= 768PX SCREENS          
+-----------------------------------------*/
+@media (max-width: 767px) {
+	html {
+		font-size: 80%;
+	}
+
+	.navbar-toggle {
+		font-size: 30px !important;
+	}
+
+	.navbar-inverse .navbar-toggle {
+		border: 0 !important;
+	}
+
+	.navbar-inverse .navbar-toggle:hover,
+    .navbar-inverse .navbar-toggle:focus {
+		background-color: inherit;
+	}
+
+	.sticky-navigation .main-navigation li a {
+		line-height: inherit;
+		padding: 10px;
+	}
+
+	.border-right-colored,
+    .border-left-colored {
+		boreder: none;
+	}
+
+	.navbar-inverse .navbar-collapse,
+    .navbar-inverse .navbar-form {
+		border-color: rgba(49, 49, 49, 0.1);
+	}
+
+	.sticky-navigation {
+		min-height: 60px;
+	}
+
+	.nav > li {
+		display: inline-block;
+	}
+
+	.sticky-navigation .navbar-brand {
+		line-height: inherit;
+	}
+
+	.single-service {
+		margin: 54px 0 54px 0;
+	}
+
+	.brief {
+		padding-top: 65px;
+		padding-bottom: 75px;
+	}
+
+	.section-header {
+		margin-top: 75px;
+		margin-bottom: 50px;
+	}
+
+	.features .overlay-layer-2 {
+		padding-bottom: 50px;
+	}
+
+	.pricing-table {
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 0;
+	}
+
+	.highlighted {
+		margin-top: 0;
+	}
+
+	.single-pricing {
+		margin-bottom: 40px;
+	}
+
+	.single-stats .icon-container {
+		margin-bottom: 20px;
+	}
+
+	.single-stats .icon-container span {
+		font-size: 50px;
+	}
+
+	.team-member {
+		margin-bottom: 50px;
+		max-width: 270px;
+		margin: auto;
+	}
+
+	.contact-info .contact-links a {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+@media (max-width: 680px) {
+	.single-feature {
+		width: auto;
+		float: none;
+	}
+}
+
+/*---------------------------------------
+   4.6 FIXES FOR MOBILE SCREENS          
+-----------------------------------------*/
+@media (max-width: 580px) {
+	html {
+		font-size: 65% !important;
+	}
+
+	body {
+		font-size: 14px;
+		line-height: 23px;
+		font-weight: 400;
+	}
+	
+	h3,
+    h4 {
+		font-weight: 600;
+	}
+
+	h4 {
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	h5 {
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	.single-stats {
+	    display: block;
+	    width: 100%;
+	}
+
+	.contact-links .row[class^="col-xs"],
+    .contact-links .row[class*=" col-xs"] {
+		margin-bottom: 10px;
+	}
+
+	.section-header {
+		margin-bottom: 25px;
+	}
+
+	.header .overlay-layer {
+	   padding-top: 55px;
+	   padding-bottom: 0;
+    }
+    .header .overlay-layer .pull-right {
+	   padding: 0;
+    }
+
+    .vertical-registration-form {
+	   background: #ffffff;
+	   padding: 7px 16px 16px 16px;
+	   margin-top: 34px;
+	   width: 100%;
+	   border-radius: 0;
+	   -webkit-box-shadow: none;
+	   box-shadow: none;
+    }
+
+	.only-logo .navbar-header img {
+		max-width: 80px;
+	}
+
+	.intro-section {
+	   margin-top: 30px;
+    }
+
+	.intro-section h5 {
+		margin-top: 15px;
+		margin-bottom: 30px;
+	}
+	
+	.pricing-table {
+	    padding-left: 0;
+	    padding-right: 0;
+	}
+
+	.standard-button {
+		padding: 15px 35px 15px 35px;
+	}
+
+	.timeline-section {
+		padding-left: 95px;
+	}
+}

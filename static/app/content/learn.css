@@ -1,0 +1,48 @@
+@font-face {
+font-family: Purisa,Bold;
+src: url(fonts/glyphicons-halflings-regular.ttf) format("truetype");
+}
+
+body{
+    font-family: Purisa,Bold, sans-serif !important;
+    color: white;
+    background-color: black;
+}
+
+.pager a{
+    text-decoration: none;
+    font-size:20px;
+}
+.pager a:hover{
+    text-decoration: none;
+    color:white;
+}
+
+.jumbotron{
+    color:black;
+    
+}
+
+.pager .btn{
+    border-color: red;
+
+}
+
+.standard-button:hover{
+  color: #fff;
+  border-color: white;
+  background-color:#098B2E;
+  text-decoration: none;
+}
+
+
+#footer{
+    padding: 20px;
+    color: white;
+
+}
+
+#footer a:hover{
+    color: #FA5858;
+}
+

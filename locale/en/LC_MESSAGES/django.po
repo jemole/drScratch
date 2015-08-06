@@ -1,0 +1,585 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-13 12:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: drScratch/settings.py:108
+msgid "Spanish"
+msgstr ""
+
+#: drScratch/settings.py:109
+msgid "English"
+msgstr ""
+
+#: templates/error/404.html:9 templates/error/500.html:9
+#: templates/error/analyzing.html:9
+msgid "Error"
+msgstr ""
+
+#: templates/error/404.html:36
+msgid "ERROR 404 - Page Not Found"
+msgstr ""
+
+#: templates/error/404.html:39
+msgid "Ops! This page doesn't exist"
+msgstr ""
+
+#: templates/error/404.html:59 templates/error/500.html:59
+#: templates/error/analyzing.html:62
+#: templates/learn/learn-unregistered.html:59 templates/main/main.html:84
+#: templates/main/main.html.py:536
+msgid "Get Started"
+msgstr ""
+
+#: templates/error/404.html:67 templates/error/500.html:67
+#: templates/error/analyzing.html:70
+#: templates/learn/learn-unregistered.html:67 templates/main/main.html:547
+#: templates/upload/dashboard-unregistered-basic.html:173
+#: templates/upload/dashboard-unregistered-developing.html:179
+#: templates/upload/dashboard-unregistered-master.html:195
+msgid "©2014 Dr.Scratch is powered by"
+msgstr ""
+
+#: templates/error/500.html:36
+msgid "500 - Internal Server Error"
+msgstr ""
+
+#: templates/error/500.html:39 templates/error/analyzing.html:39
+msgid "We apologize for this inconvenience"
+msgstr ""
+
+#: templates/error/analyzing.html:36
+msgid "There was an error analyzing your project"
+msgstr ""
+
+#: templates/error/analyzing.html:54
+msgid ""
+"Sometimes we have got problems analyzing some projects. We're working on "
+"this."
+msgstr ""
+
+#: templates/learn/attribute-initialization.html:6
+#: templates/upload/dashboard-unregistered.html:237
+msgid "modified but not initialized correctly."
+msgstr ""
+
+#: templates/learn/learn-unregistered.html:9
+msgid "Learn"
+msgstr ""
+
+#: templates/learn/learn-unregistered.html:36
+msgid "If you want to learn more, you'll must to sign up in..."
+msgstr ""
+
+#: templates/learn/learn-unregistered.html:51
+msgid "New features"
+msgstr ""
+
+#: templates/learn/learn-unregistered.html:53
+msgid "We're working on this and would be pleased to receive your feedback"
+msgstr ""
+
+#: templates/learn/sprite-naming.html:2
+msgid "Incorrect names: "
+msgstr ""
+
+#: templates/main/main.html:75
+msgid "Why?"
+msgstr ""
+
+#: templates/main/main.html:76
+msgid "How?"
+msgstr ""
+
+#: templates/main/main.html:77
+msgid "Working on"
+msgstr ""
+
+#: templates/main/main.html:78
+msgid "Contact us"
+msgstr ""
+
+#: templates/main/main.html:107
+msgid "Analyze your Scratch projects"
+msgstr ""
+
+#: templates/main/main.html:109
+msgid ""
+"Welcome to the Dr. Scratch website, an analytical tool that evaluates your "
+"Scratch projects in a variety of computational areas. This analyzer is a "
+"helpful tool to evaluate your own projects, or those of your Scratch "
+"students."
+msgstr ""
+
+#: templates/main/main.html:113
+msgid "Learn More"
+msgstr ""
+
+#: templates/main/main.html:127
+msgid "Analyze your Scratch Project now!"
+msgstr ""
+
+#: templates/main/main.html:131
+msgid ""
+"<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
+"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
+"type=\"text\">"
+msgstr ""
+
+#: templates/main/main.html:132
+msgid "Add project URL"
+msgstr ""
+
+#: templates/main/main.html:135
+msgid ""
+"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
+"Project'>"
+msgstr ""
+
+#: templates/main/main.html:136
+msgid "Add a .sb2 file"
+msgstr ""
+
+#: templates/main/main.html:143 templates/main/main.html.py:146
+msgid "Error! Please choose a sb2 file or input an url"
+msgstr ""
+
+#: templates/main/main.html:150
+msgid "Error! Your project id is wrong"
+msgstr ""
+
+#: templates/main/main.html:154
+msgid "Error! Your project doesn't exist in Scratch's servers"
+msgstr ""
+
+#: templates/main/main.html:207
+msgid "WHY?"
+msgstr ""
+
+#: templates/main/main.html:209
+msgid "Why "
+msgstr ""
+
+#: templates/main/main.html:209
+msgid "you’ll love Dr.Scratch"
+msgstr ""
+
+#: templates/main/main.html:213
+msgid "A powerful tool to analyze your Scratch projects"
+msgstr ""
+
+#: templates/main/main.html:225
+msgid "Simple & Fun"
+msgstr ""
+
+#: templates/main/main.html:227
+msgid ""
+"Your students can easily learn how to improve their programming skills in a "
+"fun way."
+msgstr ""
+
+#: templates/main/main.html:238
+msgid "Improve your skills"
+msgstr ""
+
+#: templates/main/main.html:240
+msgid ""
+"We provide feedback on several aspects which are related to Computational "
+"Thinking."
+msgstr ""
+
+#: templates/main/main.html:251
+msgid "Always improving"
+msgstr ""
+
+#: templates/main/main.html:253
+msgid ""
+"We're continually enhancing the features of Dr. Scratch, and we'd love to "
+"hear your thoughts"
+msgstr ""
+
+#: templates/main/main.html:290
+msgid "How"
+msgstr ""
+
+#: templates/main/main.html:292
+msgid "How "
+msgstr ""
+
+#: templates/main/main.html:292
+msgid "it works"
+msgstr ""
+
+#: templates/main/main.html:296
+msgid "There are two options to analyze a Sratch project with Dr.Scratch"
+msgstr ""
+
+#: templates/main/main.html:297
+msgid "project.png"
+msgstr ""
+
+#: templates/main/main.html:299
+msgid ""
+"You can upload an sb2 file or just provide the project url, avoiding the "
+"need to previously download the project to your computer. By analyzing your "
+"projects with Dr.Scratch, you can easily check your Computational Thinking "
+"Score."
+msgstr ""
+
+#: templates/main/main.html:308
+msgid "It is extremely easy to use, both for begginers and expert programmers."
+msgstr ""
+
+#: templates/main/main.html:312
+msgid "You receive feedback to improve your coding skills."
+msgstr ""
+
+#: templates/main/main.html:320
+msgid ""
+"You can keep on improving your programming skills by yourself even from home."
+msgstr ""
+
+#: templates/main/main.html:324
+msgid "You can track your progress through charts and stats."
+msgstr ""
+
+#: templates/main/main.html:343
+msgid "NEW FEATURES"
+msgstr ""
+
+#: templates/main/main.html:345
+msgid "Coming "
+msgstr ""
+
+#: templates/main/main.html:345
+msgid "Soon"
+msgstr ""
+
+#: templates/main/main.html:349
+msgid "We are working on new features to improve Dr.Scratch"
+msgstr ""
+
+#: templates/main/main.html:364
+msgid "Multilingual Website"
+msgstr ""
+
+#: templates/main/main.html:368
+msgid ""
+"We know the importance of receiving feedback on your own language to "
+"understand every little detail or hint, so we'll translate Dr. Scratch to "
+"facilitate coding learning to as many people as possible."
+msgstr ""
+
+#: templates/main/main.html:379
+msgid "Teacher Accounts"
+msgstr ""
+
+#: templates/main/main.html:383
+msgid ""
+"Teachers will be able to group (and follow) their students to keep track of "
+"their progress in a fast and simple way."
+msgstr ""
+
+#: templates/main/main.html:394
+msgid "Cloud Platform"
+msgstr ""
+
+#: templates/main/main.html:398
+msgid ""
+"We are in the process of migrating our servers to the Cloud with the aim of "
+"providing a better performance."
+msgstr ""
+
+#: templates/main/main.html:423
+msgid ""
+"With Dr.Scratch plug-ins for Chrome and Firefox, students will analyze their "
+"project WHILE programming on the Scratch website."
+msgstr ""
+
+#: templates/main/main.html:434
+msgid "Gamification"
+msgstr ""
+
+#: templates/main/main.html:438
+msgid ""
+"We'd like to take learners curiosity one step further. Do you have cool "
+"ideas to gamify our platform?"
+msgstr ""
+
+#: templates/main/main.html:449
+msgid "Social Network"
+msgstr ""
+
+#: templates/main/main.html:453
+msgid ""
+"The new social network funcionalities will allow users to communicate with "
+"each other to exchange ideas and challenges."
+msgstr ""
+
+#: templates/main/main.html:473
+msgid "Contact"
+msgstr ""
+
+#: templates/main/main.html:475
+msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
+msgstr ""
+
+#: templates/main/main.html:479
+msgid "We would be pleased to receive your feedback"
+msgstr ""
+
+#: templates/main/main.html:531
+msgid "Are you a Dr.Scratch user?"
+msgstr ""
+
+#: templates/main/main.html:534
+msgid "Join now!"
+msgstr ""
+
+#: templates/main/main.html:565
+msgid "Wait a moment please"
+msgstr ""
+
+#: templates/main/main.html:583
+msgid "loading..."
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:13
+#: templates/upload/dashboard-unregistered-developing.html:13
+#: templates/upload/dashboard-unregistered-master.html:13
+msgid "Project results"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:41
+#: templates/upload/dashboard-unregistered-developing.html:41
+#: templates/upload/dashboard-unregistered-master.html:41
+msgid "HOME"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:44
+#: templates/upload/dashboard-unregistered-developing.html:46
+#: templates/upload/dashboard-unregistered-master.html:46
+msgid "Dr.Scratch(Beta Version)"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:56
+msgid ""
+"<h1 class='text-left dark-text'><small>Your level is</small><img src='static/"
+"app/images/B.png'><strong>ASIC </strong></h1></img>"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:57
+msgid "You're at the first of a great adventure . . . Continue that way!"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:58
+#: templates/upload/dashboard-unregistered-developing.html:61
+#: templates/upload/dashboard-unregistered-master.html:61
+msgid "Score:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:71
+msgid "You need to improve:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:77
+#: templates/upload/dashboard-unregistered-developing.html:125
+#: templates/upload/dashboard-unregistered-master.html:80
+#: templates/upload/dashboard-unregistered.html:113
+msgid "Concept"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:78
+#: templates/upload/dashboard-unregistered-developing.html:126
+#: templates/upload/dashboard-unregistered-master.html:81
+#: templates/upload/dashboard-unregistered.html:114
+msgid "Points"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:88
+#: templates/upload/dashboard-unregistered-developing.html:144
+#: templates/upload/dashboard-unregistered-master.html:93
+msgid "Learn more!!!"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:92
+#: templates/upload/dashboard-unregistered-developing.html:148
+#: templates/upload/dashboard-unregistered-master.html:97
+msgid "Well done!!!"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:114
+msgid "Little tricks:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:127
+msgid "Personalize the name of the characters"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:135
+msgid "Chose the rotation mode of your characters"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:144
+msgid "Make your interactive programs!"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:152
+#: templates/upload/dashboard-unregistered-developing.html:108
+#: templates/upload/dashboard-unregistered-master.html:174
+msgid "Previous"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:156
+#: templates/upload/dashboard-unregistered-developing.html:112
+#: templates/upload/dashboard-unregistered-master.html:178
+msgid "Next"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:175
+#: templates/upload/dashboard-unregistered-developing.html:181
+#: templates/upload/dashboard-unregistered-master.html:197
+msgid "Back to top"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-developing.html:59
+msgid ""
+"<h1 class='text-left dark-text'><small>Your level is</small> <img "
+"src='static/app/images/D.png'><strong>EVELOPING </strong></h1></img>"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-developing.html:60
+msgid "You're doing a great job. Keep it up!!!"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-developing.html:76
+msgid "Some advices:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-developing.html:88
+#: templates/upload/dashboard-unregistered-master.html:145
+msgid "Sprites Naming"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-developing.html:91
+#: templates/upload/dashboard-unregistered-developing.html:101
+#: templates/upload/dashboard-unregistered-master.html:138
+#: templates/upload/dashboard-unregistered-master.html:148
+#: templates/upload/dashboard-unregistered-master.html:158
+#: templates/upload/dashboard-unregistered-master.html:168
+msgid "Learn more"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-developing.html:98
+#: templates/upload/dashboard-unregistered-master.html:165
+msgid "Sprite Atributes"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-developing.html:119
+#: templates/upload/dashboard-unregistered-master.html:74
+#: templates/upload/dashboard-unregistered.html:108
+msgid "CT Score in detail:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-developing.html:137
+#, python-format
+msgid ""
+"\n"
+"                                    %(key)s\n"
+"                                    "
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-master.html:59
+msgid ""
+"<h1 class='text-left dark-text'><small>Your level is</small> <img "
+"src='static/app/images/M.png'><strong>ASTER </strong></h1></img>"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-master.html:60
+msgid "You're the master of the universe!!!"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-master.html:121
+msgid "Possible issues to watch out:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-master.html:135
+#: templates/upload/dashboard-unregistered.html:145
+msgid "Duplicated Scripts"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-master.html:155
+#: templates/upload/dashboard-unregistered.html:192
+msgid "Dead Code"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:47
+#: templates/upload/dashboard-unregistered.html:56
+#: templates/upload/dashboard-unregistered.html:58
+msgid "Dashboard"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:56
+msgid "Overview"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:62
+msgid "Welcome to Doctor Scratch. Project results."
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:78
+msgid "CT Score:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:85
+msgid "Your level:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:87
+msgid "Master"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:89
+msgid "Developing"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:91
+msgid "Basic"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:100
+msgid ""
+"<a class=\"twitter-share-button pull-right\" data-text=\"I have just "
+"obtained {{ mastery.points }} points analyzing my project in Dr. Scratch! "
+"Beat it!@DrScratchTool\"href=\"https://twitter.com/share\">Tweet</a>"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:164
+msgid "Sprites naming"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:173
+msgid "Incorrect name:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:203
+msgid "blocks"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:225
+msgid "Sprite attributes initialization"
+msgstr ""
