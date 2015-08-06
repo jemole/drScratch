@@ -2,8 +2,11 @@
 __pycache__/
 *.py[cod]
 
-# Removing backup files
+# Backup files
 *~
+
+# Python compiled bytecode
+*.pyc
 
 # C extensions
 *.so
