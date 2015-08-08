@@ -112,7 +112,7 @@
                         <!-- HEADING AND BUTTONS -->
                         <div class="intro-section">
                             <!-- WELCOM MESSAGE -->
-                            <h2 class="intro white-text">{% trans "Welcome to the Dr. Scratch website, " %}{{ username }} !!!</h2>
+                            <h2 class="intro white-text">{% trans "Welcome to the Dr. Scratch website, " %}{{ username }} !</h2>
                             <h4 align=justify class="transparent-text"><strong> </strong></h4>
                         </div>
                     </div>
@@ -123,11 +123,11 @@
 
                             <div class="vertical-project-form">
             
-                                <h5 class="dark-text form-heading"><strong>{% trans "You can analyze at the same time all the Scratch proyects of your students!" %}</strong></h5>
+                                <h5 class="dark-text form-heading"><strong>{% trans "You are now able to analyze a set of Scratch projects all at once." %}</strong></h5>
                                 
                                 <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/analyzeCSV">
                                     {% csrf_token %}
-                                    {% trans "Only you have to put a " %}<span class='colored-text'><a data-toggle='modal' href='#modalCSV'>{% trans "file CSV " %}</a></span>{% trans " with the urls of the Scratch projects you want to analyze:" %}
+                                    {% trans "Just upload a  " %}<span class='colored-text'><a data-toggle='modal' href='#modalCSV'>{% trans "CSV file " %}</a></span>{% trans " with the list of urls of the Scratch projects you'd like to be analyzed." %}
                                     {% trans "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose File .csv'>" %}
                                     <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my projects" %}</button>
                                     {% csrf_token %}                                    
@@ -220,13 +220,13 @@
           <div class="modal-header">
             <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
             <div class="small-text-medium uppercase colored-text">
-                {% trans "How is the file .csv?" %}
+                {% trans "How to create the .csv file?" %}
             </div>
-            <h4 class="modal-title"><strong>{% trans "You must to write only the number of your students' projects. Easy, isn't it?" %}</strong></h4>
+            <h4 class="modal-title"><strong>{% trans "The file must keep two fields: 1) a number identifying the programmer of the project; and 2) the url of the project. Easy, isn't it?" %}</strong></h4>
             <div class="colored-line"></div> 
           </div>
           <div class="modal-body">
-            <img class='framed' src='../../static/app/images/csv.png' />
+            {% trans "<img class='framed' src='../../static/app/images/csv-en.png' />" %}
           </div>
           <div class="modal-footer">
           </div>

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-03 10:31+0000\n"
+"POT-Creation-Date: 2015-08-08 08:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: drScratch/settings.py:105
+#: drScratch/settings.py:109
 msgid "Spanish"
 msgstr "Español"
 
-#: drScratch/settings.py:106
+#: drScratch/settings.py:110
 msgid "English"
 msgstr "Inglés"
 
@@ -489,7 +489,9 @@ msgid "change size by (10)"
 msgstr "cambiar tamaño por (-1)"
 
 #: templates/learn/DataRepresentation.html:43
-msgid "set size to (120) %"
+#, fuzzy, python-format
+#| msgid "set size to (120) %"
+msgid "set size to (120) %%"
 msgstr "fijar tamaño a (120)%"
 
 #: templates/learn/DataRepresentation.html:47
@@ -2185,26 +2187,21 @@ msgid "Welcome to the Dr. Scratch website, "
 msgstr "Bienvenido a Dr. Scratch "
 
 #: templates/main/main_organization.html:126
-#: templates/upload/dashboard-organization.html:150
+msgid "You are now able to analyze a set of Scratch projects all at once."
+msgstr "Ahora puedes analizar varios proyectos de Scratch a la vez."
+
+#: templates/main/main_organization.html:130
+msgid "Just upload a  "
+msgstr "Sólo tienes que subir un "
+
+#: templates/main/main_organization.html:130
+msgid "CSV file "
+msgstr "fichero CSV"
+
+#: templates/main/main_organization.html:130
 msgid ""
-"You can analyze at the same time all the Scratch proyects of your students!"
-msgstr ""
-"Puedes analizar de una vez todos los proyectos de Scratch de tus estudiantes."
-
-#: templates/main/main_organization.html:130
-#: templates/upload/dashboard-organization.html:153
-msgid "Only you have to put a "
-msgstr "Sólo tienes que poner un "
-
-#: templates/main/main_organization.html:130
-#: templates/upload/dashboard-organization.html:153
-msgid "file CSV "
-msgstr "fichero CSV "
-
-#: templates/main/main_organization.html:130
-#: templates/upload/dashboard-organization.html:153
-msgid " with the urls of the Scratch projects you want to analyze:"
-msgstr "con las urls de los proyectos de Scratch que quieres analizar:"
+" with the list of urls of the Scratch projects you'd like to be analyzed."
+msgstr " con las urls de los proyectos de Scratch que te gustaría analizar."
 
 #: templates/main/main_organization.html:131
 #: templates/upload/dashboard-organization.html:154
@@ -2221,21 +2218,26 @@ msgid "Analyze my projects"
 msgstr "Analiza mis proyectos"
 
 #: templates/main/main_organization.html:223
-msgid "How is the file .csv?"
-msgstr "¿Cómo es un fichero .csv?"
+msgid "How to create the .csv file?"
+msgstr "¿Cómo crear el fichero .csv?"
 
 #: templates/main/main_organization.html:225
 msgid ""
-"You must to write only the number of your students' projects. Easy, isn't it?"
+"The file must keep two fields: 1) a number identifying the programmer of the "
+"project; and 2) the url of the project. Easy, isn't it?"
 msgstr ""
-"Sólo tienes que escribir el número de los proyectos de tus estudiantes. "
-"Fácil, ¿o no?"
+"El fichero debe tener dos campos: 1) un número para identificar al "
+"programador del proyecto; y 2) la url del proyecto. Fácil, ¿no?"
 
-#: templates/password/email.html:10
+#: templates/main/main_organization.html:229
+msgid "<img class='framed' src='../../static/app/images/csv-en.png' />"
+msgstr "<img class='framed' src='../../static/app/images/csv-es.png' />"
+
+#: templates/password/email.html:4
 msgid "Reset password"
 msgstr "Reestablecer contraseña"
 
-#: templates/password/email.html:11
+#: templates/password/email.html:6
 msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at Dr.Scratch."
@@ -2243,15 +2245,19 @@ msgstr ""
 "Estas recibiendo este email porque has pedido restaurar tu cuenta en Dr."
 "Scratch."
 
-#: templates/password/email.html:12
+#: templates/password/email.html:7
 msgid "Please, go to the following page and choose a new password:"
 msgstr "Por favor, ve a la siguiente página y elige una nueva contraseña:"
 
-#: templates/password/email.html:16 templates/sign/email.html:14
+#: templates/password/email.html:9
+msgid "Your username is: "
+msgstr "Tu id es: "
+
+#: templates/password/email.html:13 templates/sign/email.html:11
 msgid "Thanks for using our website!"
 msgstr "¡Gracias por usar nuestra web!"
 
-#: templates/password/email.html:17 templates/sign/email.html:15
+#: templates/password/email.html:14 templates/sign/email.html:12
 msgid "The Dr.Scratch team"
 msgstr "El equipo de Dr.Scratch"
 
@@ -2352,19 +2358,13 @@ msgstr ""
 "<input type='password' class='form-control' name='hashkey' "
 "placeholder='Clave'>"
 
-#: templates/sign/email.html:10
-#, fuzzy
-#| msgid "Welcome to the organizations version of Dr.Scratch"
+#: templates/sign/email.html:5
 msgid "New organization in Dr.Scratch!"
-msgstr "Bienvenido a la versión de Dr.Scratch para organizaciones"
+msgstr "¡Nueva organización en Dr.Scratch!"
 
-#: templates/sign/email.html:11
-#, fuzzy
-#| msgid ""
-#| "You're receiving this email because you requested a password reset for "
-#| "your user account at Dr.Scratch."
+#: templates/sign/email.html:7
 msgid ""
-"You're receiving this email because you have successfully sign up in Dr."
+"You're receiving this email because you have successfully signed up in Dr."
 "Scratch for organizations."
 msgstr ""
 "Estas recibiendo este email porque has pedido restaurar tu cuenta en Dr."
@@ -2481,11 +2481,29 @@ msgstr "O... analiza otro fichero con más proyectos:"
 msgid "Analyze again!"
 msgstr "¡Analizar otra vez!"
 
+#: templates/upload/dashboard-organization.html:150
+msgid ""
+"You can analyze at the same time all the Scratch proyects of your students!"
+msgstr ""
+"Puedes analizar de una vez todos los proyectos de Scratch de tus estudiantes."
+
+#: templates/upload/dashboard-organization.html:153
+msgid "Only you have to put a "
+msgstr "Sólo tienes que poner un "
+
+#: templates/upload/dashboard-organization.html:153
+msgid "file CSV "
+msgstr "fichero CSV "
+
+#: templates/upload/dashboard-organization.html:153
+msgid " with the urls of the Scratch projects you want to analyze:"
+msgstr "con las urls de los proyectos de Scratch que quieres analizar:"
+
 #: templates/upload/dashboard-organization.html:163
-#, fuzzy
-#| msgid "Error! Please choose a .sb or .sb2 file or input an url"
 msgid "Error! Please choose a .csv file"
-msgstr "¡Error! Por favor elige un fichero .sb o .sb2 o pon una url"
+msgstr ""
+"¡Error! Por favor elige un fichero .csv/reset_password_confirm/MQ-444-"
+"d881b68117aba8cbeb9a/"
 
 #: templates/upload/dashboard-organization.html:245
 msgid "<img class='framed' src='../../static/app/images/url-en.png' />"
@@ -2617,8 +2635,9 @@ msgstr "Malos hábitos en programación"
 msgid ""
 "If you correct your bad habits in programming, you will avoid problems in "
 "the future."
-msgstr "Si corriges ahora tus malos hábitos en programación, evitarás problemas"
-"en el futuro."
+msgstr ""
+"Si corriges ahora tus malos hábitos en programación, evitarás problemasen el "
+"futuro."
 
 #: templates/upload/dashboard-unregistered-developing.html:131
 msgid ""

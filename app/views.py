@@ -485,6 +485,7 @@ def signUpOrganization(request):
                         email = EmailMessage(subject,body,sender,to)
                         email.attach_file("static/app/images/logo_main.png")
                         email.send()
+                        login(request, organization)
                         return HttpResponseRedirect('/organization/' + organization.username)
                     
                     except:
@@ -582,6 +583,7 @@ def analyzeCSV(request):
                 (pathProject, file) = sendRequestgetSB2(url, method)
                 try:  
                     d = analyzeProject(request, pathProject, file)
+                    print str(d)
                 except:
                     d = ["Error analyzing project", url]
 
@@ -639,18 +641,17 @@ def generatorCSV(request, dictionary, file_name):
             total = 0
             flag = False
             try:
-                if value[0] == "Error analizando el proyecto":
+                if value[0] == "Error analyzing project":
                     row1 = key.split(",")[0]
                     row2 = key.split(",")[1]
                     row2 = row2.split("\n")[0]                
-                    writer.writerow([row1, row2, "Error analyzing project"])
+                    writer.writerow([row1, row2, "Error analizando el proyecto"])
                     
             except:
                 total = 0
                 row1 = key.split(",")[0]
                 row2 = key.split(",")[1]
                 row2 = row2.split("\n")[0]
-                #writer.writerow([row1, row2])
                 
                 for key, subvalue in value.items():
                     if key == "duplicateScript":
@@ -836,9 +837,11 @@ def changePwd(request):
             c = {
                     'email':recipient,
                     'uid':uid,
-                    'token':token}
+                    'token':token,
+                    'id':user.username}
 
             body = render_to_string("password/email.html",c)
+
             try:
                 subject = "Dr.Scratch: Did you forget your password?"
                 sender ="no-reply@drscratch.org"
@@ -1020,6 +1023,18 @@ def translate(request,d, fileName):
         fileName.language = "es"
         fileName.save()
         return d_translate_es
+    elif request.LANGUAGE_CODE == "en":
+        d_translate_en = {}
+        d_translate_en['Abstraction'] = d['Abstraction']
+        d_translate_en['Parallelism'] = d['Parallelization']
+        d_translate_en['Logic'] = d['Logic']
+        d_translate_en['Synchronization'] = d['Synchronization']
+        d_translate_en['Flow Control'] = d['FlowControl']
+        d_translate_en['User Interactivity'] = d['UserInteractivity']
+        d_translate_en['Data Representation'] = d['DataRepresentation']
+        fileName.language = "en"
+        fileName.save()
+        return d_translate_en
     else:
         return d
 

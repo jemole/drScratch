@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from app.models import Teacher, Student
+from app.models import Teacher, Student , Organization, OrganizationHash
 from app.models import Project, Attribute, Sprite, Mastery, Dead, Dashboard
 from app.models import Duplicate, Comment, Activity, File
 
+admin.site.register(Organization)
+admin.site.register(OrganizationHash)
 admin.site.register(Student)
 admin.site.register(Teacher)
 admin.site.register(Project)
