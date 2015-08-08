@@ -7,13 +7,12 @@
     <meta name="author" content="Programamos URJC Libresoft FECyT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-    <link rel="stylesheet" href="../../static/app/content/scratchblocks2.css">
-    <script src="../../static/app/scripts/scratchblocks2.js"></script>
-    <script src="../../static/app/scripts/translations.js"></script>
-    <!--<script src="../../static/app/scripts/morris/chart-data-morris.js"></script>-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <script src="../../static/app/scripts/highcharts.js"></script>
-   <script src="../../static/app/scripts/exporting.js"></script>
+    <script src="../../static/app/scripts/exporting.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/data.js"></script>
+
+
 
     <!-- SITE TITLE -->
     <title>Dr.Scratch</title>
@@ -63,7 +62,7 @@ $(function () {
    
     $('#chart-panel').highcharts({
         title: {
-            text: 'Puntuaciones de 2015',
+            text: '{% trans "Scores of 2015" %}',
             x: -20 //center
         },
         xAxis: {
@@ -71,7 +70,7 @@ $(function () {
         },
        
         tooltip: {
-            valueSuffix: ' puntos'
+            valueSuffix: '{% trans " points"%}'
         },
         legend: {
             layout: 'vertical',
@@ -80,16 +79,18 @@ $(function () {
             borderWidth: 0
         },
         series: [{
-            name: 'Puntos totales',
-            data: {{ list }}
+            name: '{% trans "Total score" %}',
+            data: {{ dailyRate }}
         }]
     });
 });
+</script>
+<script>
 $(function () {
    
     $('#total-projects').highcharts({
         title: {
-            text: 'Proyectos de 2015',
+            text: '{% trans "Number of projects analyzed in 2015" %}',
             x: -20 //center
         },
         xAxis: {
@@ -97,7 +98,7 @@ $(function () {
         },
        
         tooltip: {
-            valueSuffix: ' proyectos'
+            valueSuffix: '{% trans " projects" %}'
         },
         legend: {
             layout: 'vertical',
@@ -106,7 +107,7 @@ $(function () {
             borderWidth: 0
         },
         series: [{
-            name: 'Proyectos totales',
+            name: '{% trans "Total projects" %}',
             data: {{ totalProjects }}
         }]
     });
@@ -120,7 +121,7 @@ $(function () {
             type: 'pie'
         },
         title: {
-            text: 'Porcentaje de niveles de proyectos analizados en 2015'
+            text: '{% trans "Percent levels" %}'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -139,7 +140,7 @@ $(function () {
             }
         },
         series: [{
-            name: "Brands",
+            name: "{% trans 'Level' %}",
             colorByPoint: true,
             data: [{
                 name: '{% trans "Basic" %}',
@@ -154,6 +155,128 @@ $(function () {
         }]
     });
 });
+$(function () {
+    // Create the chart
+    $('#bars_codesmell').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '{% trans "Average rate by code smell" %}'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: '{% trans "Average rate by code smell" %}'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b><br/>'
+        },
+
+        series: [{
+            name: "{% trans 'Code smell' %}",
+            colorByPoint: true,
+            data: [{
+                name: "{% trans 'Dead code' %}",
+                y: {{ codeSmellRate.deadCode }},
+            }, {
+                name: "{% trans 'Duplicated scripts' %}",
+                y: {{ codeSmellRate.duplicateScript }},
+            }, {
+                name: "{% trans 'Attribute Initialization' %}",
+                y: {{ codeSmellRate.initialization }},
+            }, {
+                name: "{% trans 'Sprite naming' %}",
+                y: {{ codeSmellRate.spriteNaming}}
+            }]
+        }],
+    });
+});
+</script>
+<script>
+$(function () {
+    // Create the chart
+    $('#bars_skill').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '{% trans "Average rate by programming skill" %}'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: '{% trans "Average rate by programming skill" %}'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> <br/>'
+        },
+
+        series: [{
+            name: "{% trans 'Programming skill' %}",
+            colorByPoint: true,
+            data: [{
+                name: "{% trans 'Parallelism' %}",
+                y: {{ skillRate.parallelism }},
+            }, {
+                name: "{% trans 'Logic' %}",
+                y: {{ skillRate.logic }},
+            }, {
+                name: "{% trans 'Flow Control' %}",
+                y: {{ skillRate.flowControl }},
+            }, {
+                name: "{% trans 'User interactivity' %}",
+                y: {{ skillRate.userInteractivity }},
+            }, {
+                name: "{% trans 'Data representation' %}",
+                y: {{ skillRate.dataRepresentation }},
+            }, {
+                name: "{% trans 'Abstraction' %}",
+                y: {{ skillRate.abstraction }},
+            }, {
+                name: "{% trans 'Synchronization' %}",
+                y: {{ skillRate.synchronization }}
+            }]
+        }],
+    });
+});
+
 </script>
 
 </head>
@@ -203,6 +326,18 @@ $(function () {
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-body" id ="total-projects" style="height:350px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body" id ="bars_skill"  style="min-width: 310px; height: 400px; margin: 0 auto">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body" id ="bars_codesmell" style="min-width: 310px; height: 400px; margin: 0 auto">
                     </div>
                 </div>
             </div>

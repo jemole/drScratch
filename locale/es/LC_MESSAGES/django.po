@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-08 08:09+0000\n"
+"POT-Creation-Date: 2015-08-08 13:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: drScratch/settings.py:109
+#: drScratch/settings.py:105
 msgid "Spanish"
 msgstr "Español"
 
-#: drScratch/settings.py:110
+#: drScratch/settings.py:106
 msgid "English"
 msgstr "Inglés"
 
@@ -59,7 +59,7 @@ msgstr "Empezar"
 #: templates/sign/createOrganization.html:256
 #: templates/sign/createUser.html:255 templates/sign/organization.html:288
 #: templates/sign/registerOrganization.html:255
-#: templates/statistics/statistics.html:213
+#: templates/statistics/statistics.html:348
 #: templates/upload/dashboard-organization.html:212
 #: templates/upload/dashboard-unregistered-basic.html:255
 #: templates/upload/dashboard-unregistered-developing.html:292
@@ -87,7 +87,7 @@ msgstr ""
 "Algunas veces tenemos problemas analizando determinados proyectos. Estamos "
 "trabajando en ello."
 
-#: templates/learn/Abstraction.html:4
+#: templates/learn/Abstraction.html:4 templates/statistics/statistics.html:270
 msgid "Abstraction"
 msgstr "Abstracción"
 
@@ -489,9 +489,7 @@ msgid "change size by (10)"
 msgstr "cambiar tamaño por (-1)"
 
 #: templates/learn/DataRepresentation.html:43
-#, fuzzy, python-format
-#| msgid "set size to (120) %"
-msgid "set size to (120) %%"
+msgid "set size to (120) %"
 msgstr "fijar tamaño a (120)%"
 
 #: templates/learn/DataRepresentation.html:47
@@ -719,7 +717,7 @@ msgstr ""
 "Las listas tienen muchas posibilidades y muchas operaciones disponibles... "
 "¿te animas a investigar cómo funcionan?"
 
-#: templates/learn/FlowControl.html:4
+#: templates/learn/FlowControl.html:4 templates/statistics/statistics.html:261
 msgid "Flow Control"
 msgstr "Control de flujo"
 
@@ -856,7 +854,7 @@ msgstr ""
 "terminará de ejecutarse el bloque contenido en su interior y saltará a la "
 "siguiente instrucción, en este caso decir' Me pillaste!'."
 
-#: templates/learn/Logic.html:4
+#: templates/learn/Logic.html:4 templates/statistics/statistics.html:258
 msgid "Logic"
 msgstr "Lógica"
 
@@ -1011,6 +1009,7 @@ msgstr ""
 "devuelve falso y viceversa."
 
 #: templates/learn/Parallelization.html:4
+#: templates/statistics/statistics.html:255
 msgid "Parallelism"
 msgstr "Paralelismo"
 
@@ -1155,6 +1154,7 @@ msgstr ""
 "ocurran cosas al mismo tiempo. ¿Te animas a probar algunas de ellas?"
 
 #: templates/learn/Synchronization.html:5
+#: templates/statistics/statistics.html:273
 msgid "Synchronization"
 msgstr "Sincronización"
 
@@ -1333,6 +1333,7 @@ msgstr ""
 "decir, que se mostrará y dirá “¡Ha llegado la primavera”."
 
 #: templates/learn/UserInteractivity.html:5
+#: templates/statistics/statistics.html:264
 msgid "User interactivity"
 msgstr "Interactividad del usuario"
 
@@ -1419,7 +1420,7 @@ msgstr ""
 "permitirán que tus creaciones Scratch sean totalmente interactivas con los "
 "usuarios."
 
-#: templates/learn/attrInit.html:4
+#: templates/learn/attrInit.html:4 templates/statistics/statistics.html:204
 msgid "Attribute Initialization"
 msgstr "Atributos no inicializados correctamente"
 
@@ -1473,14 +1474,14 @@ msgid "when [right arrow v] key pressed  //Initialized correctly."
 msgstr "al presionar tecla [flecha derecha v] // Inicializado correctamente"
 
 #: templates/learn/base.html:77 templates/password/base.html:88
-#: templates/sign/base.html:88 templates/statistics/statistics.html:174
+#: templates/sign/base.html:88 templates/statistics/statistics.html:297
 #: templates/upload/dashboard-unregistered-basic.html:99
 #: templates/upload/dashboard-unregistered-developing.html:110
 #: templates/upload/dashboard-unregistered-master.html:148
 msgid "Dr.Scratch(Beta Version)"
 msgstr "Versión Beta"
 
-#: templates/learn/deadCode.html:4
+#: templates/learn/deadCode.html:4 templates/statistics/statistics.html:198
 #: templates/upload/dashboard-unregistered-master.html:246
 msgid "Dead code"
 msgstr "Código Muerto"
@@ -2447,21 +2448,86 @@ msgstr "Esa clave no existe."
 msgid "You must to complete all fields."
 msgstr "Debes completar todos los campos correctamente."
 
-#: templates/statistics/statistics.html:145
+#: templates/statistics/statistics.html:65
+msgid "Scores of 2015"
+msgstr ""
+
+#: templates/statistics/statistics.html:73
+msgid " points"
+msgstr " puntos"
+
+#: templates/statistics/statistics.html:82
+msgid "Total score"
+msgstr "Puntuación total"
+
+#: templates/statistics/statistics.html:93
+msgid "Number of projects analyzed in 2015"
+msgstr ""
+
+#: templates/statistics/statistics.html:101
+msgid " projects"
+msgstr " proyectos"
+
+#: templates/statistics/statistics.html:110
+msgid "Total projects"
+msgstr "Projectos totales"
+
+#: templates/statistics/statistics.html:124
+msgid "Percent levels"
+msgstr "Porcentaje de niveles"
+
+#: templates/statistics/statistics.html:143
+msgid "Level"
+msgstr "Nivel"
+
+#: templates/statistics/statistics.html:146
 #: templates/upload/dashboard-unregistered.html:92
 msgid "Basic"
 msgstr "Básico"
 
-#: templates/statistics/statistics.html:148
+#: templates/statistics/statistics.html:149
 msgid "Development"
 msgstr "Medio"
 
-#: templates/statistics/statistics.html:151
+#: templates/statistics/statistics.html:152
 #: templates/upload/dashboard-unregistered.html:88
 msgid "Master"
 msgstr "Avanzado"
 
-#: templates/statistics/statistics.html:184
+#: templates/statistics/statistics.html:165
+#: templates/statistics/statistics.html:172
+msgid "Average rate by code smell"
+msgstr "Puntuación media por mal hábito de programación"
+
+#: templates/statistics/statistics.html:195
+msgid "Code smell"
+msgstr "Malos hábitos"
+
+#: templates/statistics/statistics.html:201
+#: templates/upload/dashboard-unregistered-master.html:240
+msgid "Duplicated scripts"
+msgstr "Programas duplicados"
+
+#: templates/statistics/statistics.html:207
+#: templates/upload/dashboard-unregistered-developing.html:206
+#: templates/upload/dashboard-unregistered-master.html:242
+msgid "Sprite naming"
+msgstr "Nombres inadecuados"
+
+#: templates/statistics/statistics.html:222
+#: templates/statistics/statistics.html:229
+msgid "Average rate by programming skill"
+msgstr "Puntuación media por habilidad de programación."
+
+#: templates/statistics/statistics.html:252
+msgid "Programming skill"
+msgstr "Habilidad de programación"
+
+#: templates/statistics/statistics.html:267
+msgid "Data representation"
+msgstr "Representación de los datos"
+
+#: templates/statistics/statistics.html:307
 msgid "Statistics"
 msgstr "Estadísticas"
 
@@ -2670,11 +2736,6 @@ msgstr "Tu proyecto no tiene atributos sin inicializar,¡Buen trabajo!"
 msgid " sprite attributes."
 msgstr "atributos no inicializados correctamente."
 
-#: templates/upload/dashboard-unregistered-developing.html:206
-#: templates/upload/dashboard-unregistered-master.html:242
-msgid "Sprite naming"
-msgstr "Nombres inadecuados"
-
 #: templates/upload/dashboard-unregistered-developing.html:208
 #: templates/upload/dashboard-unregistered-master.html:244
 msgid " sprites naming."
@@ -2690,10 +2751,6 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-master.html:171
 msgid "You're the master of the universe!!! "
 msgstr "¡¡¡Eres el master del universo!!!"
-
-#: templates/upload/dashboard-unregistered-master.html:240
-msgid "Duplicated scripts"
-msgstr "Programas duplicados"
 
 #: templates/upload/dashboard-unregistered-master.html:240
 msgid " duplicated scripts."
@@ -2804,15 +2861,6 @@ msgstr "ha sido modificado pero no inicializado correctamente."
 #~ msgstr ""
 #~ "Corregir los malos hábitos en programación te ayudará a programar de una "
 #~ "forma más limpia."
-
-#~ msgid " points"
-#~ msgstr " puntos"
-
-#~ msgid "Total score"
-#~ msgstr "Puntuación total"
-
-#~ msgid "Percent levels"
-#~ msgstr "Porcentaje de niveles"
 
 #~ msgid "Back"
 #~ msgstr "Volver"
