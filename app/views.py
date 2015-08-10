@@ -198,7 +198,8 @@ def uploadUnregistered(request):
         # Create DB of files
         now = datetime.now()
         method = "project"
-        fileName = File (filename = file.name.encode('utf-8'), 
+        fileName = File (filename = file.name.encode('utf-8'),
+                        organization = "",
                         method = method , time = now, 
                         score = 0, abstraction = 0, parallelization = 0,
                         logic = 0, synchronization = 0, flowControl = 0,
@@ -284,8 +285,9 @@ def urlUnregistered(request):
                 return d
             else:
                 try:
+                    organization = ""
                     method = "url"
-                    (pathProject, file) = sendRequestgetSB2(idProject, method)
+                    (pathProject, file) = sendRequestgetSB2(idProject, organization, method)
                 except:
                     #When your project doesn't exist
                     d = {'Error': 'no_exists'}
@@ -341,13 +343,14 @@ def processStringUrl(url):
         idProject = "error"
     return idProject
 
-def sendRequestgetSB2(idProject, method):
+def sendRequestgetSB2(idProject, organization, method):
     """First request to getSB2"""
     getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
     fileURL = idProject + ".sb2"
     # Create DB of files
     now = datetime.now()
-    fileName = File (filename = fileURL, 
+    fileName = File (filename = fileURL,
+                     organization = organization,
                      method = method , time = now, 
                      score = 0, abstraction = 0, parallelization = 0,
                      logic = 0, synchronization = 0, flowControl = 0,
@@ -484,7 +487,7 @@ def signUpOrganization(request):
                         sender ="no-reply@drscratch.org"
                         to = [email]
                         email = EmailMessage(subject,body,sender,to)
-                        email.attach_file("static/app/images/logo_main.png")
+                        #email.attach_file("static/app/images/logo_main.png")
                         email.send()
                         login(request, organization)
                         return HttpResponseRedirect('/organization/' + organization.username)
@@ -550,8 +553,38 @@ def organization(request, name):
         if request.user.is_authenticated():
             username = request.user.username
             if username == name:
+                user = Organization.objects.get(username=username)
+                date_joined= user.date_joined
+                end = datetime.today()
+                y = end.year
+                m = end.month
+                d = end.day
+                end = date(y,m,d)
+                y = date_joined.year
+                m = date_joined.month
+                d = date_joined.day
+                start = date(y,m,d)
+                dateList = date_range(start, end)
+                daily_score = []
+                mydates = []
+
+                for n in dateList:
+                    mydates.append(n.strftime("%d/%m"))
+                    points = File.objects.filter(organization=username).filter(time=n)
+                    points = points.aggregate(Avg("score"))["score__avg"]
+                    daily_score.append(points)
+                
+                for n in daily_score:
+                    print n
+                    if n==None:
+                        daily_score[daily_score.index(n)]=0
+                        
+                
+                print daily_score
+                dic={"date":mydates,"daily_score":daily_score,'username':username}
+
                 return render_to_response("main/main_organization.html",
-                        {'username':username}, 
+                        dic, 
                         context_instance = RC(request))
             else:     
                 return render_to_response("sign/organization.html",
@@ -577,23 +610,47 @@ def analyzeCSV(request):
             infile = open(dir_csvs, 'r')
             dictionary = {}
             for line in infile:
-                code = line.split(",")[0]
-                url = line.split(",")[1]
-                method = "csv"
-                url = url.split("https://scratch.mit.edu/projects/")[-1]
-                (pathProject, file) = sendRequestgetSB2(url, method)
-                try:  
-                    d = analyzeProject(request, pathProject, file)
-                    print str(d)
-                except:
-                    d = ["Error analyzing project", url]
+                row = len(line.split(","))
+                type_csv = ""
+                organization = request.user.username
+                if row == 2:
+                    type_csv = "2_row"
+                    code = line.split(",")[0]
+                    url = line.split(",")[1]
+                    method = "csv"
+                    try:
+                        idProject = url.split("/")[-2]
+                    except:
+                        idProject = url
+                    (pathProject, file) = sendRequestgetSB2(idProject, organization, method)
+                    try:  
+                        d = analyzeProject(request, pathProject, file)
+                    except:
+                        d = ["Error analyzing project", url]
 
-                dic = {}
-                dic[line] = d
-                dictionary.update(dic)    
+                    dic = {}
+                    dic[line] = d
+                    dictionary.update(dic)
+                elif row == 1:
+                    type_csv = "1_row"
+                    url = line.split("\n")[0]
+                    method = "csv"
+                    try:
+                        idProject = url.split("/")[-2]
+                    except:
+                        idProject = url
+                    (pathProject, file) = sendRequestgetSB2(idProject, organization, method)
+                    try:
+                        d = analyzeProject(request, pathProject, file)
+                    except:
+                        d = ["Error analyzing project", url]
+                    
+                    dic = {}
+                    dic[url] = d
+                    dictionary.update(dic)   
             infile.close()
             try:
-                csv_data = generatorCSV(request, dictionary, file_name)
+                csv_data = generatorCSV(request, dictionary, file_name, type_csv)
                 flag_csv = True
             except:
                 flag_csv = False
@@ -622,37 +679,42 @@ def analyzeCSV(request):
             response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(csv.filename)
             return response
 
-            #return response
-
     else:
         return HttpResponseRedirect("/organization")
 
 
 #_________________________GENERATOR CSV FOR ORGANIZATION____________________________#
 
-def generatorCSV(request, dictionary, file_name):
+def generatorCSV(request, dictionary, file_name, type_csv):
     """Generator of a csv file"""
     csv_directory = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/"
     csv_data = csv_directory + file_name
     writer = csv.writer(open(csv_data, "wb"))
     
     if request.LANGUAGE_CODE == "es":
-        writer.writerow(["CÓDIGO", "URL", "Mastery", "Abstracción", "Paralelismo", "Pensamiento lógico", "Sincronización", "Control de flujo", "Interactividad con el usuario", "Representación de la información", "Código repetido", "Nombres por defecto", "Código muerto",  "Inicialización atributos"])
+        if type_csv == "2_row":
+            writer.writerow(["CÓDIGO", "URL", "Mastery", "Abstracción", "Paralelismo", "Pensamiento lógico", "Sincronización", "Control de flujo", "Interactividad con el usuario", "Representación de la información", "Código repetido", "Nombres por defecto", "Código muerto",  "Inicialización atributos"])
+        elif type_csv == "1_row":
+            writer.writerow(["URL", "Mastery", "Abstracción", "Paralelismo", "Pensamiento lógico", "Sincronización", "Control de flujo", "Interactividad con el usuario", "Representación de la información", "Código repetido", "Nombres por defecto", "Código muerto",  "Inicialización atributos"])       
         for key, value in dictionary.items(): 
             total = 0
             flag = False
             try:
                 if value[0] == "Error analyzing project":
-                    row1 = key.split(",")[0]
-                    row2 = key.split(",")[1]
-                    row2 = row2.split("\n")[0]                
-                    writer.writerow([row1, row2, "Error analizando el proyecto"])
-                    
+                    if type_csv == "2_row":
+                        row1 = key.split(",")[0]
+                        row2 = key.split(",")[1]
+                        row2 = row2.split("\n")[0]                
+                        writer.writerow([row1, row2, "Error analizando el proyecto"])
+                    elif type_csv == "1_row":
+                        row1 = key.split(",")[0]
+                        writer.writerow([row1, "Error analizando el proyecto"])
             except:
                 total = 0
                 row1 = key.split(",")[0]
-                row2 = key.split(",")[1]
-                row2 = row2.split("\n")[0]
+                if type_csv == "2_row":
+                    row2 = key.split(",")[1]
+                    row2 = row2.split("\n")[0]
                 
                 for key, subvalue in value.items():
                     if key == "duplicateScript":
@@ -692,28 +754,37 @@ def generatorCSV(request, dictionary, file_name):
                                     row10 = subvalue
                                 total = total + subvalue
                         row3 = total
-
-                writer.writerow([row1,row2,row3,row4,row5,row6,row7,row8,
+                if type_csv == "2_row":
+                    writer.writerow([row1,row2,row3,row4,row5,row6,row7,row8,
                                 row9,row10,row11,row12,row13,row14])
-
+                elif type_csv == "1_row":
+                    writer.writerow([row1,row3,row4,row5,row6,row7,row8,
+                                row9,row10,row11,row12,row13,row14])
     else:
-        writer.writerow(["CODE", "URL", "Mastery", "Abstraction", "Parallelism", "Logic", "Synchronization", "Flow control", "User interactivity", "Data representation", "Duplicate script", "Sprites naming", "Dead code",  "Sprite attributes"])
+        if type_csv == "2_row":
+            writer.writerow(["CODE", "URL", "Mastery", "Abstraction", "Parallelism", "Logic", "Synchronization", "Flow control", "User interactivity", "Data representation", "Duplicate script", "Sprites naming", "Dead code",  "Sprite attributes"])
+        elif type_csv == "1_row":
+            writer.writerow(["URL", "Mastery", "Abstraction", "Parallelism", "Logic", "Synchronization", "Flow control", "User interactivity", "Data representation", "Duplicate script", "Sprites naming", "Dead code",  "Sprite attributes"])
+                
         for key, value in dictionary.items(): 
             total = 0
             flag = False
             try:
                 if value[0] == "Error analyzing project":
-                    row1 = key.split(",")[0]
-                    row2 = key.split(",")[1]
-                    row2 = row2.split("\n")[0]                
-                    writer.writerow([row1, row2, "Error analyzing project"])
-                    
+                    if type_csv == "2_row":
+                        row1 = key.split(",")[0]
+                        row2 = key.split(",")[1]
+                        row2 = row2.split("\n")[0]         
+                        writer.writerow([row1, row2, "Error analyzing project"])
+                    elif type_csv == "1_row":
+                        row1 = key.split(",")[0]           
+                        writer.writerow([row1, "Error analyzing project"])
             except:
                 total = 0
                 row1 = key.split(",")[0]
-                row2 = key.split(",")[1]
-                row2 = row2.split("\n")[0]
-                #writer.writerow([row1, row2])
+                if type_csv == "2_row":
+                    row2 = key.split(",")[1]
+                    row2 = row2.split("\n")[0]
                 
                 for key, subvalue in value.items():
                     if key == "duplicateScript":
@@ -753,12 +824,13 @@ def generatorCSV(request, dictionary, file_name):
                                     row10 = subvalue
                                 total = total + subvalue
                         row3 = total
-
-                writer.writerow([row1,row2,row3,row4,row5,row6,row7,row8,
+                if type_csv == "2_row":
+                    writer.writerow([row1,row2,row3,row4,row5,row6,row7,row8,
                                 row9,row10,row11,row12,row13,row14])
-        
+                elif type_csv == "1_row":
+                    writer.writerow([row1,row3,row4,row5,row6,row7,row8,
+                                row9,row10,row11,row12,row13,row14])
     return csv_data
-
 
 
               
@@ -848,7 +920,7 @@ def changePwd(request):
                 sender ="no-reply@drscratch.org"
                 to = [recipient]
                 email = EmailMessage(subject,body,sender,to)
-                email.attach_file("static/app/images/logo_main.png")
+                #email.attach_file("static/app/images/logo_main.png")
                 email.send()
                 return render_to_response("password/email_sended.html",
                                         context_instance=RC(request))
@@ -1242,7 +1314,6 @@ def DeadCodeToScratchBlock(code):
         code = code.split("\n")[2:-1]
         for n in code:
             n = n[15:-2]
-            print n
     except:
         code = ""
     return code
