@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-08 13:02+0000\n"
+"POT-Creation-Date: 2015-08-10 10:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr "Empezar"
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70 templates/learn/base.html:94
 #: templates/login/login.html:536 templates/main/collaborators.html:593
-#: templates/main/main.html:562 templates/main/main_organization.html:196
+#: templates/main/main.html:562 templates/main/main_organization.html:246
 #: templates/password/base.html:104 templates/sign/base.html:104
 #: templates/sign/createOrganization.html:256
 #: templates/sign/createUser.html:255 templates/sign/organization.html:288
@@ -1934,12 +1934,12 @@ msgid "<img class='framed' src='static/app/images/project-en.png' />"
 msgstr "<img class='framed' src='static/app/images/project-es.png' />"
 
 #: templates/login/login.html:614 templates/main/main.html:640
-#: templates/main/main_organization.html:250
+#: templates/main/main_organization.html:300
 msgid "Wait a moment please"
 msgstr "Espere un momento, por favor."
 
 #: templates/login/login.html:632 templates/main/main.html:658
-#: templates/main/main_organization.html:268
+#: templates/main/main_organization.html:318
 msgid "loading..."
 msgstr "cargando..."
 
@@ -2154,57 +2154,76 @@ msgid "Analyze my project"
 msgstr "Analiza mi proyecto"
 
 #: templates/main/main.html:149 templates/main/main.html.py:152
-#: templates/main/main_organization.html:139
-#: templates/main/main_organization.html:142
+#: templates/main/main_organization.html:190
+#: templates/main/main_organization.html:193
 msgid "Error! Please choose a .sb or .sb2 file or input an url"
 msgstr "¡Error! Por favor elige un fichero .sb o .sb2 o pon una url"
 
-#: templates/main/main.html:156 templates/main/main_organization.html:146
+#: templates/main/main.html:156 templates/main/main_organization.html:197
 msgid "Error! Your project id is wrong"
 msgstr "¡Error! El identificador de tu proyecto es incorrecto"
 
-#: templates/main/main.html:160 templates/main/main_organization.html:150
+#: templates/main/main.html:160 templates/main/main_organization.html:201
 msgid "Error! Your project doesn't exist in Scratch's servers"
 msgstr "¡Error! Tu proyecto no existe en los servidores de Scratch"
 
-#: templates/main/main_organization.html:82
+#: templates/main/main_organization.html:68
+msgid "Your daily progress"
+msgstr ""
+
+#: templates/main/main_organization.html:76
+#: templates/statistics/statistics.html:73
+msgid " points"
+msgstr " puntos"
+
+#: templates/main/main_organization.html:85
+#: templates/statistics/statistics.html:82
+msgid "Total score"
+msgstr "Puntuación total"
+
+#: templates/main/main_organization.html:126
 #: templates/upload/dashboard-organization.html:81
 msgid "Logged in as "
 msgstr "Conectado como "
 
-#: templates/main/main_organization.html:84
+#: templates/main/main_organization.html:128
 #: templates/upload/dashboard-organization.html:83
 msgid "Change password"
 msgstr "Cambiar contraseña"
 
-#: templates/main/main_organization.html:86
+#: templates/main/main_organization.html:130
 #: templates/upload/dashboard-organization.html:85
 msgid "Logout"
 msgstr "Salir"
 
-#: templates/main/main_organization.html:115
+#: templates/main/main_organization.html:159
 #: templates/upload/dashboard-organization.html:107
 msgid "Welcome to the Dr. Scratch website, "
 msgstr "Bienvenido a Dr. Scratch "
 
-#: templates/main/main_organization.html:126
-msgid "You are now able to analyze a set of Scratch projects all at once."
-msgstr "Ahora puedes analizar varios proyectos de Scratch a la vez."
-
-#: templates/main/main_organization.html:130
-msgid "Just upload a  "
-msgstr "Sólo tienes que subir un "
-
-#: templates/main/main_organization.html:130
-msgid "CSV file "
-msgstr "fichero CSV"
-
-#: templates/main/main_organization.html:130
+#: templates/main/main_organization.html:177
+#: templates/upload/dashboard-organization.html:150
 msgid ""
-" with the list of urls of the Scratch projects you'd like to be analyzed."
-msgstr " con las urls de los proyectos de Scratch que te gustaría analizar."
+"You can analyze at the same time all the Scratch proyects of your students!"
+msgstr ""
+"Puedes analizar de una vez todos los proyectos de Scratch de tus estudiantes."
 
-#: templates/main/main_organization.html:131
+#: templates/main/main_organization.html:181
+#: templates/upload/dashboard-organization.html:153
+msgid "Only you have to put a "
+msgstr "Sólo tienes que poner un "
+
+#: templates/main/main_organization.html:181
+#: templates/upload/dashboard-organization.html:153
+msgid "file CSV "
+msgstr "fichero CSV "
+
+#: templates/main/main_organization.html:181
+#: templates/upload/dashboard-organization.html:153
+msgid " with the urls of the Scratch projects you want to analyze:"
+msgstr "con las urls de los proyectos de Scratch que quieres analizar:"
+
+#: templates/main/main_organization.html:182
 #: templates/upload/dashboard-organization.html:154
 msgid ""
 "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose "
@@ -2213,26 +2232,19 @@ msgstr ""
 "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Elige "
 "el fichero .csv'>"
 
-#: templates/main/main_organization.html:132
+#: templates/main/main_organization.html:183
 #: templates/upload/dashboard-organization.html:155
 msgid "Analyze my projects"
 msgstr "Analiza mis proyectos"
 
-#: templates/main/main_organization.html:223
-msgid "How to create the .csv file?"
+#: templates/main/main_organization.html:273
+msgid "How is the file .csv?"
 msgstr "¿Cómo crear el fichero .csv?"
 
-#: templates/main/main_organization.html:225
+#: templates/main/main_organization.html:275
 msgid ""
-"The file must keep two fields: 1) a number identifying the programmer of the "
-"project; and 2) the url of the project. Easy, isn't it?"
+"You must to write only the number of your students' projects. Easy, isn't it?"
 msgstr ""
-"El fichero debe tener dos campos: 1) un número para identificar al "
-"programador del proyecto; y 2) la url del proyecto. Fácil, ¿no?"
-
-#: templates/main/main_organization.html:229
-msgid "<img class='framed' src='../../static/app/images/csv-en.png' />"
-msgstr "<img class='framed' src='../../static/app/images/csv-es.png' />"
 
 #: templates/password/email.html:4
 msgid "Reset password"
@@ -2452,14 +2464,6 @@ msgstr "Debes completar todos los campos correctamente."
 msgid "Scores of 2015"
 msgstr ""
 
-#: templates/statistics/statistics.html:73
-msgid " points"
-msgstr " puntos"
-
-#: templates/statistics/statistics.html:82
-msgid "Total score"
-msgstr "Puntuación total"
-
 #: templates/statistics/statistics.html:93
 msgid "Number of projects analyzed in 2015"
 msgstr ""
@@ -2546,24 +2550,6 @@ msgstr "O... analiza otro fichero con más proyectos:"
 #: templates/upload/dashboard-organization.html:135
 msgid "Analyze again!"
 msgstr "¡Analizar otra vez!"
-
-#: templates/upload/dashboard-organization.html:150
-msgid ""
-"You can analyze at the same time all the Scratch proyects of your students!"
-msgstr ""
-"Puedes analizar de una vez todos los proyectos de Scratch de tus estudiantes."
-
-#: templates/upload/dashboard-organization.html:153
-msgid "Only you have to put a "
-msgstr "Sólo tienes que poner un "
-
-#: templates/upload/dashboard-organization.html:153
-msgid "file CSV "
-msgstr "fichero CSV "
-
-#: templates/upload/dashboard-organization.html:153
-msgid " with the urls of the Scratch projects you want to analyze:"
-msgstr "con las urls de los proyectos de Scratch que quieres analizar:"
 
 #: templates/upload/dashboard-organization.html:163
 msgid "Error! Please choose a .csv file"
@@ -2707,7 +2693,7 @@ msgstr ""
 
 #: templates/upload/dashboard-unregistered-developing.html:131
 msgid ""
-"<h3 class='text-left dark-text'>Your level is...  <strong>DEVELOPING! </"
+"<h3 class='text-left dark-text'>Your level is...  <strong><br>DEVELOPING! </"
 "strong></h3>"
 msgstr ""
 "<h3 class='text-left dark-text'>Tu nivel es...<strong>MEDIO </strong></h3>"
@@ -2844,6 +2830,29 @@ msgstr "Atributos no inicializados correctamente"
 #: templates/upload/dashboard-unregistered.html:254
 msgid "modified but not initialized correctly."
 msgstr "ha sido modificado pero no inicializado correctamente."
+
+#~ msgid "You are now able to analyze a set of Scratch projects all at once."
+#~ msgstr "Ahora puedes analizar varios proyectos de Scratch a la vez."
+
+#~ msgid "Just upload a  "
+#~ msgstr "Sólo tienes que subir un "
+
+#~ msgid "CSV file "
+#~ msgstr "fichero CSV"
+
+#~ msgid ""
+#~ " with the list of urls of the Scratch projects you'd like to be analyzed."
+#~ msgstr " con las urls de los proyectos de Scratch que te gustaría analizar."
+
+#~ msgid ""
+#~ "The file must keep two fields: 1) a number identifying the programmer of "
+#~ "the project; and 2) the url of the project. Easy, isn't it?"
+#~ msgstr ""
+#~ "El fichero debe tener dos campos: 1) un número para identificar al "
+#~ "programador del proyecto; y 2) la url del proyecto. Fácil, ¿no?"
+
+#~ msgid "<img class='framed' src='../../static/app/images/csv-en.png' />"
+#~ msgstr "<img class='framed' src='../../static/app/images/csv-es.png' />"
 
 #~ msgid "Doesn't exist this hash."
 #~ msgstr "El usuario no existe."
