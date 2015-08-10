@@ -487,7 +487,7 @@ def signUpOrganization(request):
                         sender ="no-reply@drscratch.org"
                         to = [email]
                         email = EmailMessage(subject,body,sender,to)
-                        #email.attach_file("static/app/images/logo_main.png")
+                        email.attach_file("static/app/images/logo_main.png")
                         email.send()
                         login(request, organization)
                         return HttpResponseRedirect('/organization/' + organization.username)
@@ -553,38 +553,8 @@ def organization(request, name):
         if request.user.is_authenticated():
             username = request.user.username
             if username == name:
-                user = Organization.objects.get(username=username)
-                date_joined= user.date_joined
-                end = datetime.today()
-                y = end.year
-                m = end.month
-                d = end.day
-                end = date(y,m,d)
-                y = date_joined.year
-                m = date_joined.month
-                d = date_joined.day
-                start = date(y,m,d)
-                dateList = date_range(start, end)
-                daily_score = []
-                mydates = []
-
-                for n in dateList:
-                    mydates.append(n.strftime("%d/%m"))
-                    points = File.objects.filter(organization=username).filter(time=n)
-                    points = points.aggregate(Avg("score"))["score__avg"]
-                    daily_score.append(points)
-                
-                for n in daily_score:
-                    print n
-                    if n==None:
-                        daily_score[daily_score.index(n)]=0
-                        
-                
-                print daily_score
-                dic={"date":mydates,"daily_score":daily_score,'username':username}
-
                 return render_to_response("main/main_organization.html",
-                        dic, 
+                        {'username':username}, 
                         context_instance = RC(request))
             else:     
                 return render_to_response("sign/organization.html",
@@ -920,7 +890,7 @@ def changePwd(request):
                 sender ="no-reply@drscratch.org"
                 to = [recipient]
                 email = EmailMessage(subject,body,sender,to)
-                #email.attach_file("static/app/images/logo_main.png")
+                email.attach_file("static/app/images/logo_main.png")
                 email.send()
                 return render_to_response("password/email_sended.html",
                                         context_instance=RC(request))

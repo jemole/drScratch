@@ -521,7 +521,7 @@
 </div>
         <div class="jumbotron">
                 <div>
-                <!-- {% trans "We would like to thank many people for their collaboration and we have done one special section." %} -->
+                {% trans "We would like to thank many people for their collaboration and we have done one special section." %}
                 </div>
                 <div class="jumbotron">
                     <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/statistics" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Statistics" %}</a>

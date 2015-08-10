@@ -4,7 +4,7 @@
 
 {% trans "New organization in Dr.Scratch!"%}
 
-{% trans "You're receiving this email because you have successfully signed up in Dr.Scratch for organizations."%}
+{% trans "You're receiving this email because you have successfully signed up in Dr.Scratch for organizations."%}</p>
 {% block reset_link %}
 {% endblock %}
 

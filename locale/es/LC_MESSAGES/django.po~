@@ -2270,7 +2270,7 @@ msgstr "Te  hemos enviado un email."
 
 #: templates/password/email_sended.html:13
 msgid "Check with your systems operator to see if the message was blocked."
-msgstr "Compruebe la carpeta de correo no deseado de su cuenta de correo."
+msgstr ""
 
 #: templates/password/new_password.html:14
 msgid "Type your new password:"
