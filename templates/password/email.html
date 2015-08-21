@@ -5,7 +5,7 @@
 
 {% trans "You're receiving this email because you requested a password reset for your user account at Dr.Scratch."%}
 {% trans "Please, go to the following page and choose a new password:"%}
-drscratchpre.programamos.es{% url 'reset_password_confirm' uidb64=uid token=token %}
+drscratch.programamos.es{% url 'reset_password_confirm' uidb64=uid token=token %}
 {% trans "Your username is: " %}{{id}}
 {% block reset_link %}
 {% endblock %}

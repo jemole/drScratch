@@ -389,11 +389,11 @@ def learn(request,page):
     page = unicodedata.normalize('NFKD',page).encode('ascii','ignore')
 
     dic = {'Pensamiento':'Logic',
-           'Paralelismo':'Parallelization',
-          'Representacion':'DataRepresentation',
+           'Paralelismo':'Parallelism',
+          'Representacion':'Data representation',
           'Sincronizacion':'Synchronization',
-          'Interactividad':'UserInteractivity',
-          'Control':'FlowControl',
+          'Interactividad':'User interactivity',
+          'Control':'Flow control',
           'Abstraccion':'Abstraction'}
 
     if page in dic:
@@ -487,7 +487,7 @@ def signUpOrganization(request):
                         sender ="no-reply@drscratch.org"
                         to = [email]
                         email = EmailMessage(subject,body,sender,to)
-                        email.attach_file("static/app/images/logo_main.png")
+                        #email.attach_file("static/app/images/logo_main.png")
                         email.send()
                         login(request, organization)
                         return HttpResponseRedirect('/organization/' + organization.username)
@@ -553,8 +553,36 @@ def organization(request, name):
         if request.user.is_authenticated():
             username = request.user.username
             if username == name:
+                user = Organization.objects.get(username=username)
+                date_joined= user.date_joined
+                end = datetime.today()
+                y = end.year
+                m = end.month
+                d = end.day
+                end = date(y,m,d)
+                y = date_joined.year
+                m = date_joined.month
+                d = date_joined.day
+                start = date(y,m,d)
+                dateList = date_range(start, end)
+                daily_score = []
+                mydates = []
+
+                for n in dateList:
+                    mydates.append(n.strftime("%d/%m"))
+                    points = File.objects.filter(organization=username).filter(time=n)
+                    points = points.aggregate(Avg("score"))["score__avg"]
+                    daily_score.append(points)
+                
+                for n in daily_score:
+                    if n==None:
+                        daily_score[daily_score.index(n)]=0
+                        
+
+                dic={"date":mydates,"daily_score":daily_score,'username':username}
+
                 return render_to_response("main/main_organization.html",
-                        {'username':username}, 
+                        dic, 
                         context_instance = RC(request))
             else:     
                 return render_to_response("sign/organization.html",
@@ -780,17 +808,17 @@ def generatorCSV(request, dictionary, file_name, type_csv):
                             if key!="maxi" and key!="points":
                                 if key == "Abstraction":
                                     row4 = subvalue
-                                elif key == "Parallelization":
+                                elif key == "Parallelism":
                                     row5 = subvalue
                                 elif key == "Logic":
                                     row6 = subvalue
                                 elif key == "Synchronization":
                                     row7 = subvalue
-                                elif key == "FlowControl":
+                                elif key == "Flow control":
                                     row8 = subvalue
-                                elif key == "UserInteractivity":
+                                elif key == "User interactivity":
                                     row9 = subvalue
-                                elif key == "DataRepresentation":
+                                elif key == "Data representation":
                                     row10 = subvalue
                                 total = total + subvalue
                         row3 = total
@@ -890,7 +918,7 @@ def changePwd(request):
                 sender ="no-reply@drscratch.org"
                 to = [recipient]
                 email = EmailMessage(subject,body,sender,to)
-                email.attach_file("static/app/images/logo_main.png")
+                #email.attach_file("static/app/images/logo_main.png")
                 email.send()
                 return render_to_response("password/email_sended.html",
                                         context_instance=RC(request))
@@ -947,15 +975,15 @@ def date_range(start, end):
     return [start+timedelta(days=i) for i in range(r)]
 
 def statistics(request):
-
-    start = date(2015,5,1)
+    """ Initializing variables"""
+    start = date(2015,8,1)
     end = datetime.today()
     y = end.year
     m = end.month
     d = end.day
     end = date(y,m,d)
     dateList = date_range(start, end)
-    daily_rate = {}
+    daily_rate = []
     mastery_list=[]
     mydates=[]
     point_list = []
@@ -964,18 +992,19 @@ def statistics(request):
     """This section calculates the daily average 
     of projects analyzed and the daily average score"""
     for n in dateList:
-        mydates.append(n.strftime("%d/%m"))
+        mydates.append(n.strftime("%d/%m")) #used for x axis in stats
         files = File.objects.filter(time=n)
+        daily_rate.append(files.aggregate(Avg("score"))["score__avg"])
+        for k in daily_rate:
+            if k == None:
+                daily_rate[daily_rate.index(k)]= 0
+
         for i in files:
             mastery_list.append(i.score)
             point_list.append(i.score)
-        daily_projects.append(len(mastery_list))
-        if len(mastery_list) != 0:
             
-            daily_rate[str(n.strftime("%d/%m/%y"))] =(sum(mastery_list)/len(mastery_list))    
-        else:
-            daily_rate[str(n.strftime("%d/%m/%y"))] = 0
-        mastery_list=[]
+        daily_projects.append(len(mastery_list))
+
     """This section calculates the percentage of levels"""
     master = 0
     development = 0
@@ -1022,8 +1051,10 @@ def statistics(request):
 
     """This final section stores all data for the template"""
 
+    print daily_rate
+    print mydates
     data = {"date":mydates,
-             "dailyRate":daily_rate.values(),
+             "dailyRate":daily_rate,
              "levels":levels,
              "totalProjects":daily_projects,
              "skillRate":{"parallelism":parallelism,
@@ -1038,11 +1069,8 @@ def statistics(request):
                               "spriteNaming":spriteNaming,
                               "initialization":initialization }}
 
-    print data
-
     return render_to_response("statistics/statistics.html",
                                     data, context_instance=RC(request))
-
 
 
 #_______________________ AUTOMATIC ANALYSIS _________________________________#
@@ -1091,7 +1119,6 @@ def analyzeProject(request,file_name, fileName):
         #Plug-ins not used yet
         #dictionary.update(procBroadcastReceive(resultBroadcastReceive))
         #dictionary.update(procBlockCounts(resultBlockCounts))
-        #print code
         return dictionary
     else:
         return HttpResponseRedirect('/')
@@ -1117,9 +1144,9 @@ def translate(request,d, fileName):
         d_translate_en['Parallelism'] = d['Parallelization']
         d_translate_en['Logic'] = d['Logic']
         d_translate_en['Synchronization'] = d['Synchronization']
-        d_translate_en['Flow Control'] = d['FlowControl']
-        d_translate_en['User Interactivity'] = d['UserInteractivity']
-        d_translate_en['Data Representation'] = d['DataRepresentation']
+        d_translate_en['Flow control'] = d['FlowControl']
+        d_translate_en['User interactivity'] = d['UserInteractivity']
+        d_translate_en['Data representation'] = d['DataRepresentation']
         fileName.language = "en"
         fileName.save()
         return d_translate_en
@@ -1139,7 +1166,7 @@ def procMastery(request,lines, fileName):
     points = int(lLines.split('/')[0])
     maxi = int(lLines.split('/')[1])
     
-    #Save in DB 
+    #Save in DB
     fileName.score = points
     fileName.abstraction = d["Abstraction"]
     fileName.parallelization = d["Parallelization"]
@@ -1171,7 +1198,6 @@ def procDuplicateScript(lines, fileName):
     #Save in DB 
     fileName.duplicateScript = number
     fileName.save()
-
 
     return dic
 
@@ -1497,7 +1523,6 @@ def uploadRegistered(request):
         else:
             newProject.level = "beginner"
         newProject.save()
-        
         for charx, dmetrics in d["attribute"].items():
             if charx != 'stage':
                 newAttribute = Attribute(myproject=newProject, character=charx, orientation=dmetrics["orientation"], position=dmetrics["position"], costume=dmetrics["costume"], visibility=dmetrics["visibility"], size=dmetrics["size"])

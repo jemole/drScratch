@@ -241,7 +241,7 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
 </a><br>
                         <a class="glyphicon glyphicon-pencil"/> <a class="desplegable" data-toggle="popover" title="{% trans 'Sprite naming' %}" data-content=" {% for value in spriteNaming.sprite %}
                                     {{ value }}.
-                                   {% endfor %}" data-trigger="hover" href="learn/spriteNaming"> {{ spriteNaming.number }} {% trans " sprites naming." %}
+                                   {% endfor %}" data-trigger="hover" href="learn/spriteNaming"> {{ spriteNaming.number }} {% trans " sprite naming." %}
                        </a><br>
                         <a class="glyphicon glyphicon-remove-sign"/><a class="desplegable" data-toggle="popover" title="{% trans 'Dead code' %}" data-content="{% for key,value in deadCode.items%}
                         {% if key != 'deadCode' %}
