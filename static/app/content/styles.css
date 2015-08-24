@@ -121,6 +121,26 @@ a:hover {
 	text-decoration: underline;
 }
 
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #090209;
+    background-color: transparent;
+}
+
+.down{
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    height:50%;
+    width:100%;
+
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* remove the gap between inline(-block) elements */
+
+}
+
 /*---------------------------------------
    1.4 MISC FIXES         
 -----------------------------------------*/
@@ -253,7 +273,12 @@ h5 {
 }
 
 .standard-button {
+    margin-top: 12px;
 	font-weight: 600;
+}
+
+.small-button {
+	font-weight: 500;
 }
 
 /* OTHER TEXTS */
@@ -314,13 +339,41 @@ strong,
 	border-radius: 3px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-size: 16px;
+	font-size: 11px;
 	line-height: 1.6;
 	border: none;
 	padding: 18px 40px 18px 40px;
 	color: #ffffff;
 	-webkit-transition: none;
 	transition: none;
+}
+
+.small-button {
+	border-radius: 20px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 13px;
+	line-height: 1.6;
+	border: none;
+	padding: 6px 25px 6px 25px;
+	color: #ffffff;
+	-webkit-transition: none;
+	transition: none;
+    padding-bottom: 10px;
+}
+
+.configure-button {
+	border-radius: 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 35px;
+	line-height: 1.7;
+	border: none;
+	padding: 5px 20px 5px 20px;
+	color: #ffffff;
+	-webkit-transition: none;
+	transition: none;
+    padding-bottom: 10px;
 }
 
 .secondary-button {
@@ -515,7 +568,7 @@ strong,
    3.1 SECTION: HOME / HEADER         
 -----------------------------------------*/
 .header {
-	background: url(../images/fondo.jpg) no-repeat center top fixed;
+	background: url(../images/background.jpg) no-repeat center top fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -631,6 +684,8 @@ strong,
 }
 
 /* VERTICAL PROJECT FORM */
+
+
 .vertical-project-form {
 	background: #ffffff;
 	padding: 15px 32px 32px 32px;
@@ -648,6 +703,10 @@ strong,
 .vertical-project-form form button {
 	margin-top: 2px;
 	width: 100%;
+}
+
+.container .col-md-5 .vertical-project-form{
+    margin-top: 70px;
 }
 
 @media (min-width: 1200px) {
@@ -807,7 +866,7 @@ strong,
    3.5 SECTION: STATS 
 -----------------------------------------*/
 .stats {
-	background: url(../images/fondo2.png) no-repeat center top fixed;
+	background: url(../images/background_organizations.png) no-repeat center top fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -963,7 +1022,7 @@ strong,
    3.8 SECTION: SCREENSHOTS   
 -----------------------------------------*/
 .features {
-	background: url(../images/fondo2.png) no-repeat top center fixed;
+	background: url(../images/background_organizations.jpg) no-repeat top center fixed;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -1162,7 +1221,7 @@ strong,
    3.12 SECTION: CALL TO ACTION
 -----------------------------------------*/
 .call-to-action {
-    background: url('../images/fondo2.png') fixed no-repeat top center;
+    background: url('../images/background_organizations.jpg') fixed no-repeat top center;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -1181,6 +1240,11 @@ strong,
 
 .modal-content button {
 	width: 100%;
+}
+
+
+.framed{
+    box-shadow: 2px 2px 3px 3px #001; 
 }
 
 /*---------------------------------------

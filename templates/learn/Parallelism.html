@@ -1,0 +1,78 @@
+{% extends 'learn/base.html' %}
+{% load i18n %}
+    <!-- JUMBOTRON -->
+    <div id ="cloud"><h2>{% block title %}{% trans "Parallelism" %}{% endblock %}</h2><span class='shadow'></span></div>
+    <!-- /END JUMBOTRON -->
+    <!-- PANEL-->
+    {% block content %}
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+    {% trans "In most Scratch creations a certain level of parallelism is required. But what means parallelism? <b>Parallelism is the possibility that several things occur simultaneously.</b> For example, two characters perform an action while a character or do several things at once." %}
+        </div>
+    </div>
+    <div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level0">
+                <h3>{% trans "If you get 0 points..." %}</h3>
+
+   {% trans "The most basic and most obvious way to achieve parallelism is to have several programs that start with <i>'When green flag is clicked'</i>:" %}<br><br>
+                  <pre class="blocks">
+               {% trans "when gf clicked" %}
+                  </pre>
+                  <br>
+    {% trans "Thus, when the user clicking on the green flag, all programs that start with this block would begin to run simultaneously, or in parallel, as can also be said. You could have several programs that start with this block in the same character, if you want it to do several things at once, or in programs of different characters, if you want everyone to undertake an action at beginning of execution." %}
+             </section>
+        </div>
+    </div>
+   
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level1">
+                <h3>{% trans "If you get 1 point..." %}</h3>
+    {% trans "Another way to achieve parallelism in your program is <b>doing several things occur when the user presses a key or clicks on an object</b>. Consider a couple of examples:" %} <br><br>
+                <div class="text-center">
+                    <pre class='blocks'>   {% trans "when [a v] key pressed" %}
+                                            {% trans "say [A] for (2) secs" %}</pre> 
+                    <pre class='blocks'>   {% trans "when [a v] key pressed" %}
+                                            {% trans "say [A] for (2) secs" %}</pre> 
+                    <pre class='blocks'> 
+                                           {% trans "when this sprite clicked" %}
+                                           {% trans "forever" %}
+                                            {% trans "move (10) steps" %}
+                                           {% trans "if on edge, bounce" %}
+                                           {% trans "end" %}
+                                           {% trans "when this sprite clicked" %}
+                                           {% trans "forever" %}
+                                           {% trans "if &lt;touching [the mouse pointer v]? &gt;" %}
+                                           {% trans "turn cw (30) degrees" %}
+                                           {% trans "end" %}
+                                            
+                                             </pre>
+                </div><br>
+{% trans "How these blocks works?" %} 
+
+{% trans "In the first example, we see two different characters that, when a key is pressed, perform a certain action. Therefore, when the user press the a key, in this case, both the cat and the child run at the same time <i>'say A for 2 seconds'</i>" %}
+
+{% trans "In the second example we see that a character has two programs that begin with <i>'when clicking this object'</i>. Therefore, when the user clicks on this character, both programs will begin to run simultaneously, in parallel." %}<br>
+            </section>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level2">
+                <h3>{% trans "If you get 2 points..." %}</h3>
+{% trans "There are several events more that can achieve parallelism:" %}<br><br>
+                    <pre class="blocks">{% trans "when backdrop switches to [backdrop1 v]" %}
+                                         {% trans "when I receive [message1 v]" %}
+                                         {% trans "when [loudness ] &gt; 10" %}
+                                         {% trans "when [video motion v] &gt; (2)" %}
+                                         {% trans "when [timer v] &gt; (45)" %}
+                                                          </pre> <br>
+{% trans "As you see, you could create several programs that begin to run when changing the background to a given scenario, or to receive a particular message, or when the room volume exceeds a certain threshold, when the video motion is greater than a number pixel concrete or when the timer has exceeded the value you want. Therefore, there are many possibilities to make things happen in your programs simultaneously. Do you dare to investigate how works?" %} <br><br>
+            </section>
+        </div>
+    </div>
+ </div>
+ {% endblock %}

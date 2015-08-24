@@ -1,0 +1,138 @@
+{% extends 'learn/base.html' %}
+{% load i18n %}
+
+    <!-- JUMBOTRON -->
+    <div id = "cloud"><h2>{% block title %}{% trans "Data Representation" %}{% endblock %}</h2><span class='shadow'></span></div>
+    <!-- /END JUMBOTRON -->
+    <!-- PANEL-->
+{% block content %}
+    <div class="panel panel-default">
+    <div class="panel-body col-lg-10 col-lg-offset-1">
+   {% trans "Every Scratch project needs a set of information about the characters in order to run properly. For example, <b>we need to know the position of each character, the direction it is pointing, size, etc.</b> In addition, programmers can create new information repositories to store other data such as the level at which we find ourselves, elapsed time, the rating, the lives, the rewards collected ..." %}
+    </div>
+    </div>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level0">
+                <h3>{% trans "If you get 0 points..." %}</h3>
+
+    {% trans "Each character of a Scratch project has a number of features, or attributes, that every moment of the project have value, and can be modified by programs. For example, a character has a certain size that can be modified by block 'resize for 10', making the character appear slightly larger. Following is the list of attributes that each character and blocks that can be used to modify:" %}
+<br>
+<br>
+            <div class="col-lg-12">
+{% trans "Position:" %}
+            </div>
+    <br>
+<br>
+                <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "move (10) steps" %}
+                                    {% trans "go to x:(0) y:(0)" %}
+                                    {% trans "glide (1) secs to x:(0) y:(0)" %}
+                                    {% trans "set x to (0)" %}
+                                    {% trans "set y to (0)" %}
+                                    {% trans "change x by (0)" %}
+                                    {% trans "change x by (0)" %}</pre>
+                <br>
+                <div class="col-lg-12">
+{% trans "Size:" %}
+                </div>
+<br>
+<br>
+                <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "change size by (10)" %}
+                                    {% trans "set size to (120) %" %}
+                                                                    </pre>
+<br>
+                <div class="col-lg-12">
+{% trans "Orientation:" %}
+                </div>
+<br>
+<br>
+                <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "point in direction (90 v)" %}
+                                    {% trans "point towards [v]" %}
+                                    {% trans "turn cw (15) degrees" %}
+                                    {% trans "turn ccw (15) degrees" %}
+                                   </pre>
+<br>
+                <div class="col-lg-12">
+{% trans "Costume:" %}
+                </div>
+<br><br>
+                <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "switch costume to [butterfly v]" %}
+                                    {% trans "next costume" %}
+                                    {% trans "change [color v] effect by (25)" %}
+                                    {% trans "set [color v] effect to (0)" %}
+                                   </pre>
+                <div class="col-lg-12">
+{% trans "Visibility:" %}
+                </div>
+<br><br>
+                <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "show" %}
+                                    {% trans "hide" %} 
+                                   </pre>
+            </section>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level1">
+                <h3>{% trans "If you get 1 point..." %}</h3>
+   {% trans "In addition to modifying the attributes of the characters, programmers can use other mechanisms to store information on a Scratch project. <b>One of these mechanisms are variables that can store a value to store different types of data that may need: at what level we are</b>, how many lives you have left, how many points we, how is called the user ..." %}
+
+{% trans "To create a variable you have to go to the category of data, click on 'Create a variable' and give a name. In the example shown below we have given the name 'Points' as use it to store the number of points you get our character." %}
+<br><br>
+                <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "when gf clicked" %}
+                                    {% trans "set [Points v] to [0]" %}
+                                    {% trans "if &lt;touching color [#0000FF]&gt; then" %}
+                                    {% trans "change [Points v] by (1)" %}
+                                   </pre>
+<br>
+                <div class="col-lg-12">
+{% trans "In the program of the top, we assign the number of points that we want the character has to the beginning of the game, in this case 0, for which we use the block <i>'fixing points at 0'</i>.  However in the program of the right, what we do is that when the character touches the blue color, that could be a target, you will add a point, for which we use the block <i>'change Points by 1'</i>. In this case, the block <i>'change'</i> would check the current value of the variable points would add 1: If set to 0, I add 1 and is now worth 1; when set to 1, I add 1 and is now worth 2 ..." %}
+                </div>
+    </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level2">
+                <h3>{% trans "If you get 2 points..." %}</h3>
+{% trans "In addition to the variables, Scratch lets you use another data type to store project information: <b>The lists. The lists can store more than one value at the same time, so they are ideal for storing rewards have been recovered by a character or set of names, raise a couple of examples.</b>" %}
+
+{% trans "To create a list, you have to go to the data category, click on 'Create a List' and give a name. In the example, we have named our 'Students' list:" %}
+<br><br>
+                    <pre class="blocks col-lg-5 col-lg-offset-3">{% trans "when gf clicked" %}
+                                        {% trans "delete (all v) of [Students v]" %}
+                                        {% trans "repeat (3)" %}
+                                        {% trans "ask [Introduce a student name] and wait" %}
+                                        {% trans "insert (answer) at (last v) of [Students v]" %}
+                                   </pre>
+<br>
+                    <div class="col-lg-12">
+{% trans "What have we done with this program? The first thing we do is, to start execution, <b>delete all items from the list Students</b>, to empty it completely and  not appear elements of an previous project implementation. Then we ask three times the user to enter a name, and each name entered insert it in the last position in the list Students." %}
+
+{% trans "What we do with the list? We could, for example, use it to get a volunteer to carry out an exercise to the whiteboard. Look at the new instructions added to the program:" %}
+                    </div>
+<br><br><br><br>
+                    <pre class="blocks col-lg-6 col-lg-offset-3">{% trans "when gf clicked" %}
+                                        {% trans "delete (all v) of [Students v]" %}
+                                        {% trans "repeat (3)" %}
+                                        {% trans "ask [Introduce a student name] and wait" %}
+                                        {% trans "insert (answer) at (last v) of [Students v]" %}
+                                        {% trans "end" %}
+                                        {% trans "say [Today's volunteer will be...] for (2) secs" %}
+                                        {% trans "say (item(pick random (1) to (3)) of [Students v]) for (2) secs" %}
+                                   </pre>
+<br>
+                    <div class="col-lg-12">
+{% trans "We generated a random number between 1 and 3, which are the elements in the list, we selected the element that occupies that position in the list. Sometimes we take the name that is in position 1, others that it is in position 2 and the other at 3." %}
+
+{% trans "Lists have many possibilities and many available operations ... you dare to investigate how they work?" %}
+                    </div>
+<br>
+<br>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

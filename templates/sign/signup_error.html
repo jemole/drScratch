@@ -1,0 +1,33 @@
+{% extends 'password/base.html' %}
+{% load i18n %}
+
+
+{% block content %}
+<div class="container">
+    <div class="col-md-7 col-lg-offset-2">
+        <section id="dashboard">
+            <div class="container-fluid">
+                <div class="row marketing">
+                    <div class="jumbotron">
+                        {% if flagName %}
+                            <h4>{% trans "This name already exists. Choose another, please." %}</h4>
+                        {% endif %}
+                        {% if flagEmail %}
+                            <h4>{% trans "This email already exists. Choose another, please." %}</h4>
+                        {% endif %}
+                        {% if flagHash %}
+                            <h4>{% trans "This hash doesn't exist." %}</h4>
+                        {% endif %}
+                        {% if flagForm %}
+                            <h4>{% trans "You must to complete all fields." %}</h4>
+                        {% endif %}
+                        <div>
+                            <a class="btn btn-primary standard-button" href="organization">{% trans "Retry" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

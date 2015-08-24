@@ -1,0 +1,22 @@
+{% extends 'password/base.html' %}
+{% load i18n %}
+
+
+{% block content %}
+<div class="container">
+    <div class="col-md-7 col-lg-offset-2">
+        <section id="dashboard">
+            <div class="container-fluid">
+                <div class="row marketing">
+                    <div class="jumbotron">
+                        <h4>{% trans "You must to complete all the fields." %}</h4>
+                        <div>
+                            <a class="btn btn-primary standard-button" href="/organization">{% trans "Retry" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
