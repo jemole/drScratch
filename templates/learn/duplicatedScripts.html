@@ -1,0 +1,51 @@
+{% extends 'learn/base.html' %}
+{% load i18n %}
+    <!-- JUMBOTRON -->
+    <div id = "cloud"><h2>{% block title %}{% trans "Duplicated Scripts" %}{% endblock %}</h2><span class='shadow'></span></div>
+    <!-- /END JUMBOTRON -->
+    <!-- PANEL-->
+{% block content %}
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+        {% trans "Imagine that in a project we have two programs formed by the same blocks and where only vary the parameters or values of the blocks." %}
+
+    <br><br>
+            <pre class="blocks col-lg-5 col-lg-offset-1">{% trans "when I receive [message1 v]" %}
+                                     {% trans "set rotation style to [left-rigt v]" %}
+                                     {% trans "repeat (10)" %}
+                                     {% trans "move (2) steps" %}
+                                     {% trans "next costume" %}
+                                     {% trans "if on edge, bounce" %}
+                                     {% trans "wait (1) secs" %}
+                 </pre>
+            <pre class="blocks col-lg-5">{% trans "when I receive [message2 v]" %}
+                                     {% trans "set rotation style to [left-rigt v]" %}
+                                     {% trans "repeat (5)" %}
+                                     {% trans "move (4) steps" %}
+                                     {% trans "next costume" %}
+                                     {% trans "if on edge, bounce" %}
+                                     {% trans "wait (0.5) secs" %}
+                 </pre>
+        </div>
+</br>
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+        {% trans "What would happen if we make a small change? We would have to modify both programs, complicating the maintenance of the code. In these situations is more appropriate that the programmer make his own block that defines this behaviour and use this new block in all programs where needed." %}
+
+</div>
+            <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "define walk (repetitions)(step)(pause)" %}
+                                     {% trans "set rotation style [left-rigt v]" %}
+                                     {% trans "repeat (repetitions)" %}
+                                     {% trans "move (step) steps" %}
+                                     {% trans "next costume" %}
+                                     {% trans "if on edge, bounce" %}
+                                     {% trans "wait (pause) secs" %}
+                 </pre><br>
+         </div>
+<br>
+    <div class="panel-body col-lg-10 col-lg-offset-1">
+    {% trans "Thus, if you want a change, you just have to go to the block defined by the programmer." %}
+
+</div>
+</div>
+{% endblock %}

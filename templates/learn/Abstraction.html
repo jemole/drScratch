@@ -1,0 +1,135 @@
+{% extends 'learn/base.html' %}
+{% load i18n %}
+    <!-- JUMBOTRON -->
+    <div id = "cloud"><h2>{% block title %}{% trans "Abstraction" %}{% endblock %}</h2><span class='shadow'></span></div>
+    <!-- /END JUMBOTRON -->
+    <!-- PANEL-->
+{% block content %}
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+    {% trans "The ability of abstraction and decomposition of problems helps you to <b>break a problem into smaller parts that are easier to understand, program and debug.</b>" %}
+        </div>
+    </div>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level0">
+                <h3>{% trans "If you get 0 points..." %}</h3>
+
+   {% trans "When you start programming with Scratch, sometimes it may seem that the simplest solution is to program all the behavior of a character in a single program. However, <b>ideally is that character behavior is controlled by different programs and each of these programs deal with a particular issue</b>. Here's an example:" %}<br><br>
+                 <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "when gf clicked" %}
+                                     {% trans "clear" %}
+                                     {% trans "go to x:(-100) y:(30)" %}
+                                     {% trans "pen down" %}
+                                     {% trans "move (200) steps" %}
+                                     {% trans "pen up" %}
+                                     {% trans "wait (1) secs" %}
+                                     {% trans "go to x:(-44) y:(-24)" %}
+                                     {% trans "set pen color to [#FFA500]" %}
+                                     {% trans "move (100) steps" %}
+                                     {% trans "pen up" %}
+                 </pre><br>
+                <div class="col-lg-12">
+                {% trans "This project, which paints a picture on the screen, has been programmed in a single program that draws the two lines that make up the drawing. Although it is a valid option, a simpler option to program and maintain the program is divided into two parts, so that we have two different programs, one to paint the front and another to paint the second:" %}
+                </div>
+                <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "when gf clicked" %}
+                                     {% trans "clear" %}
+                                     {% trans "go to x:(-100) y:(30)" %}
+                                     {% trans "pen down" %}
+                                     {% trans "move (200) steps" %}
+                                     {% trans "pen up" %}
+                                     {% trans "when gf clicked" %} 
+                                     {% trans "wait (1) secs" %}
+                                     {% trans "go to x:(-44) y:(-24)" %}
+                                     {% trans "set pen color to [#FFA500]" %}
+                                     {% trans "move (100) steps" %}
+                                     {% trans "pen up" %}
+                 </pre>
+                <div class="col-lg-12">
+{% trans "Thus, if we make any changes eg in one of the lines drawn, it is much easier to know which part of the program we need to go to carry out the changes." %}
+                </div>
+    <br><br>
+            </section>
+        </div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level1">
+                <h3>{% trans "If you get 1 point..." %}</h3>
+    {% trans "Scratch allows new user-defined blocks that consist of a sequence of instructions. These abstractions allow you to create simple programs to read, program and maintain. Here's an example:" %} <br><br>
+                <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "when gf clicked" %}
+                                         {% trans "clear" %}
+                                         {% trans "go to x:(-200) y:(40)" %}
+                                         {% trans "set pen color to [#FFA500]" %}
+                                         {% trans "pen down" %}
+                                         {% trans "move (100) steps" %}
+                                         {% trans "pen up" %} 
+                                         {% trans "wait (1) secs" %}
+                                         {% trans "go to x:(-200) y:(0)" %}
+                                         {% trans "set pen color to [#FFA500]" %}
+                                         {% trans "pen down" %}
+                                         {% trans "move (200) steps" %}
+                                         {% trans "pen up" %}
+                 </pre>
+                <div class="col-lg-12">
+{% trans "This Scratch project draws two orange lines of different length  on the screen. Rather than repeat the code 2 times, as shown in the example, you can define a <i>'DrawOrange'</i> block consisting of blocks that paint an orange line on the screen and that you can tell what is the length of the line. For this you go to the category 'More Blocks' and press the Create button a block:" %}
+                </div><br><br>
+
+                     <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "define PaintedOrange(length)" %}
+                                         {% trans "set pen color to [#FFA500]" %}
+                                         {% trans "pen down" %}
+                                         {% trans "move (length) steps" %}
+                                         {% trans "pen up" %} 
+                      
+                    </pre>
+<br>
+                    <div class="col-lg-12">
+     
+{% trans "Having defined the block <i>'DrawOrange'</i> it can be used in any program of the project, as we see below:" %}
+                    </div>
+
+                     <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "when gf clicked" %}
+                                         {% trans "clear" %} 
+                                         {% trans "go to x:(-200) y:(40)" %}
+                                         {% trans "PaintedOrange(100):: looks stack" %}
+                                         {% trans "wait (1) secs" %}
+                                         {% trans "go to x:(-200) y:(0)" %}
+                                         {% trans "PaintedOrange(200):: looks stack" %}
+                       </pre><br>
+                    <div class="col-lg-12">
+
+{% trans "In this way, we avoid repeating code, which makes our projects easier to program and maintain. As can be seen, the first time the block is used <i>DrawOrange</i> prompted a length of 100 steps, whereas the second time length is 200 steps." %}
+                    </div>
+
+            </section>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level2">
+                <h3>{% trans "If you get 2 points..." %}</h3>
+                <div class="col-lg-12">
+{% trans "In some Scratch projects we have many identical characters that exactly perform the same actions. The first idea that comes to mind to do this is to create a character, schedule all his behavior and once you're ready, make as many copies as you need. Therefore, if we want 20 Martians, create 20 identical objects. However, what if I want to change the program? Would have to go object by object performing this modification." %}<br><br>
+
+{% trans "For such situations it is preferable to use <b>clones</b>, a type of abstraction that helps us to program a single object, and dynamically <b>create exact copies with the same behavior.</b>" %}<br>
+{% trans "Let's see how it works with an example. Imagine you want to pretend that it is snowing on a project. We can draw an object that is a snowflake, and once you start implementing the project, constantly be creating clones appear at the top of the screen and they will fall to the bottom:" %}
+                </div><br><br><br>
+                <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "when gf clicked" %}
+                                         {% trans "forever" %} 
+                                         {% trans "create clone of [myself v]" %}
+                                         {% trans "wait (0.2) secs" %}
+                                         {% trans "go to x:(pick random(-200) to (200)) y:(200)" %}
+                                         {% trans "glide (3) secs to x:(x position) y:(-180)" %}
+                                         {% trans "delete this clone" %}
+                       </pre><br>
+                <div class="col-lg-12">
+{% trans "Thus, just by programming a character, we can have infinite clones  which are created at a particular time of project implementation and are deleted when they are no longer needed." %}
+                </div>
+<br><br>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

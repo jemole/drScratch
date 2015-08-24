@@ -59,7 +59,7 @@
     <!-- =========================
      SECTION: HOME / HEADER  
     ============================== -->
-    <header id="home" style="background-position: 50% -40.5px;" class="header" data-stellar-background-ratio="0.5">
+    <header id="home" style="background-position: 50% 40.5px;" class="header" data-stellar-background-ratio="0.3">
         <!-- COLOR OVER IMAGE -->
         <div class="overlay-layer">
             <!-- STICKY NAVIGATION -->
@@ -76,9 +76,10 @@
                         <li class="navbar-brand"><a href="#section2"><em>{% trans "How?" %}</em></a></li>
                         <li class="navbar-brand"><a href="#section3"><em>{% trans "Working on" %}</em></a></li>
                         <li class="navbar-brand"><a href="#section4"><em>{% trans "Contact us" %}</em></a></li>
+                        <li class="navbar-brand"><a href="/organization"><em class="colored-text">{% trans "Organizations" %}</em></a></li>
                       </ul>
 
-                      <!-- LOGIN REGISTER -->
+                    <!-- LOGIN REGISTER -->
                     <ul class="nav navbar-nav navbar-right login-register small-text">                
                             <li style="display: none;" class="register-button js-register inpage-scroll">
                                 <a href="#home" class="navbar-register-button">{% trans "Get Started" %}</a>
@@ -117,33 +118,38 @@
                         </div>
 
                     </div>
-                        <div class="container">
+                    <div class="container">
                     <div class="col-md-5">
                         
                         <!-- VERTICAL PROJECT FORM -->
 
                             <div class="vertical-project-form">
                                 
-                                <h5 class="dark-text form-heading"><strong>{% trans "Analyze your Scratch Project now!" %}</strong></h5>
+                                <h5 class="dark-text form-heading"><strong>{% trans "There are two options to analyze your Scratch project now!" %}</strong></h5>
                                 
                                 <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/selector">
-                                {% csrf_token %}
+                                {% csrf_token %}   
+                                                            
+                                    {% trans "1. Introduce the <span class='colored-text'><a data-toggle='modal' href='#modalUrl'>url</a></span> of your Scratch project, you don't have to download it:" %}
                                     {% trans '<input name="urlProject" id="cf-name" class="form-control input-box placeholder" placeholder="http:/scratch.mit.edu/projects/your_number" type="text">' %}
-                                    <button id="url" name='_url' type="submit" class="btn btn-primary standard-button">{% trans "Add project URL" %}</button>
+                                    <button id="url" name='_url' type="submit" class="btn btn-primary standard-button">{% trans "Analyze by url" %}</button>
+                                    
+                              
                                     {% csrf_token %}
                                     <br></br>
+                                    {% trans "2. If you have your <span class='colored-text'><a data-toggle='modal' href='#modalProject'>project</a></span> downloaded in the computer you can analyze it here:" %}
                                     {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose Project'>" %}
-                                    <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Add a .sb2 or .sb file" %}</button>
+                                    <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my project" %}</button>
                                     {% csrf_token %}                                    
-
+                                
                                 </form>
                                 
                                 <!-- FORM SUBMIT SUCCESS / ERROR MESSAGES -->
                                 <p class="file-error dark-text small-text">
-                                {% trans "Error! Please choose a sb2 file or input an url" %}</p>
+                                {% trans "Error! Please choose a .sb or .sb2 file or input an url" %}</p>
                                 {% if error %}
                                 <br></br>
-                                <p><span class="icon icon-close-alt2"></span> {% trans "Error! Please choose a sb2 file or input an url" %}</p>
+                                <p><span class="icon icon-close-alt2"></span> {% trans "Error! Please choose a .sb or .sb2 file or input an url" %}</p>
                                 {% endif %}
                                 {% if id_error %}
                                 <br></br>
@@ -296,7 +302,7 @@
                         <p><em>{% trans "There are two options to analyze a Scratch project with Dr.Scratch" %}</em></p>
                         <img src="static/app/images/{% trans 'project.png' %}"></img>
                     <p align=justify>
-                        {% trans "You can upload an sb2 file or just provide the project URL, avoiding the need to previously download the project to your computer. By analyzing your projects with Dr.Scratch, you can easily check your Computational Thinking Score." %}
+                        {% trans "You can upload an sb2 file or just provide the project url, avoiding the need to previously download the project to your computer. By analyzing your projects with Dr.Scratch, you can easily check your Computational Thinking Score." %}
                     </p>
                     </p>
                     <!-- FEATURE LIST -->
@@ -494,7 +500,7 @@
                     <div class="icon-container">
                         <span class="icon-basic-mail colored-text"></span>
                     </div>
-                    <a href="mailto:drscratch@programamos.es" class="strong">drscratch@programamos.es</a>
+                    <a href="mailto:drscratch@programamos.es" class="strong">team@drscratch.org</a>
                 </div>
 
                 <div class="col-sm-4">
@@ -511,7 +517,16 @@
                     <a href="https:/github.com/jemole/drScratch/issues" class="strong">GitHub(issues)</a>
                 </div>
             </div>
-
+        </div>
+</div>
+        <div class="jumbotron">
+                <div>
+                <!-- {% trans "We would like to thank many people for their collaboration and we have done one special section." %} -->
+                </div>
+                <div class="jumbotron">
+                    <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/statistics" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Statistics" %}</a>
+                </div> 
+                
         </div>
     </div>
     </section>
@@ -544,7 +559,7 @@
   
     <!-- FOOTER -->
     <footer class="footer grey-bg">
-       {% trans "©2014 Dr.Scratch is powered by" %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+       {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
         <!-- SOCIAL ICONS -->
         <ul class="social-icons">
@@ -557,6 +572,66 @@
 
     </footer>
     </div>
+
+    <!-- =========================
+            MODALS
+    ============================== -->
+
+     <!-- Modal Url -->
+    <div id="modalUrl" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+            <div class="small-text-medium uppercase colored-text">
+                {% trans "What is an url?" %}
+            </div>
+            <h4 class="modal-title"><strong>{% trans "How I can know my Scratch project's url?" %}</strong></h4>
+            <div class="colored-line"></div> 
+          </div>
+          <div class="modal-body">
+            {% trans "<img class='framed' src='static/app/images/url-en.png' />" %}
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+         <!-- Modal Project -->
+    <div id="modalProject" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+            <div class="small-text-medium uppercase colored-text">
+                {% trans "I want to download my project from Scratch!" %}
+            </div>
+            <h4 class="modal-title"><strong>{% trans "How I can download my Scratch project to my computer?" %}</strong></h4>
+            <div class="colored-line"></div> 
+          </div>
+          <div class="modal-body">
+            {% trans "<img class='framed' src='static/app/images/project-en.png' />" %}
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+        <!-- =========================
+              PROGRESS BAR   
+    ============================== -->
+
+    
 
     <div id="pb" class="jumbotron"> 
     <div class="container">

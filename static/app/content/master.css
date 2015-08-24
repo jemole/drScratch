@@ -3,48 +3,127 @@ font-family: Purisa,Bold;
 src: url(fonts/glyphicons-halflings-regular.ttf) format("truetype");
 }
 
+ html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
+}
+#footer {
+  background-color: #eee;
+}
+#star{
+        color:#FBE083;
+        border-color: #F9B966;
+        display: inline;}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+#footer {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+}
 body{
     font-family: Purisa,Bold, sans-serif !important;
-    color: white;
-    background-color: #819FF7;
+    background-color: white !important;
 }
 
-.navbar-inverse{
-   background-color: #235;
-
+a{
+    color:white;
 }
+
+a:hover,
+a:focus{
+    color:black;
+}
+
 
 .jumbotron{
-    color:black;
+    color:white;
+    background-color: white;
+    padding: 20px !important;
+   
+}
+.modal-backdrop{
+    background-color: red;
+}
+
+.white{
+     color:white;
+    }
+.dark-text:hover{
+    color: #1792A4;
+}
+
+
+#footer .btn,
+.btn{
     
 }
 
-
-.dark-text:hover{
-    color:#235;
+.btn:hover,
+.btn:focus,
+#footer .btn:hover,
+#footer .btn:focus{
+  color:white;
+  border-color: white ;
+  background-color:#FACC2E;
+  text-decoration: none;
 }
-
-
 
 
 #myCarrousel{
     border-style: double;
 }
 
-#blackboard .jumbotron{
-    border-style: double;
-    margin-top: 50px;
-    padding: 0px;
-    padding-bottom: 10px;
-    border-width: 15px; 
+.devpanel{
+    padding-top: 90px;
+    
+
+}
+#improve{
+    border-color:#A3D5D1;
+    -webkit-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+}
+#devpanel{
+        background-color: #A3D5D1;
+        border-color:#A3D5D1;
+        -webkit-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+}
+
+#dashboard{
+
+padding-top:90px;
 }
 
 #dashboard .jumbotron{
-    background-color: #235;
     border-style: dotted;
-    color: #fff;
+    border-color: #A3D5D1;
     border-width: 10px; 
-    padding-top:10px;
+    -webkit-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.75);
+    
 }
 
 #dashboard .jumbotron h4{
@@ -55,20 +134,20 @@ body{
 }
 
 #CT{
-    color:white;
+
     font-weight:bold;
     font-size: 34px;
 }
 
 #issues{
-    color: #235;
+    color: #DD5D26;
     font-weight:bold;
     font-size:34px;
 }
 
 #score{
     font-weight:bold;
-    color:#235;
+    color: #1792A4;
     font-size:34px;
 }
 
@@ -77,4 +156,36 @@ body{
 
 }
 
+#footer a{
+    color:#FFBF00;
+    font-weight:bold;
+}
+
+#footer a:hover{
+    color:#B40404;
+}
+
+ /* Popover */
+  .popover {
+      border: 5px dotted #1792a4;
+  }
+  /* Popover Header */
+  .popover-title {
+      background-color: #4CA8A1; 
+      color: #FFFFFF; 
+      font-size: 20px;
+      text-align:center;
+      font-family: Purisa,Bold, sans-serif !important;
+  }
+  /* Popover Body */
+  .popover-content {
+      background-color: #F6F6F6;
+      color: #142B3B;
+      padding: 25px;
+      font-family: Purisa,Bold, sans-serif !important;
+  }
+  /* Popover Arrow */
+  .arrow {
+      border-right-color: red !important;
+}
 

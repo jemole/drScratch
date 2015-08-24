@@ -1,0 +1,89 @@
+{% extends 'learn/base.html' %}
+{% load i18n %}
+
+    <!-- JUMBOTRON -->
+    <div id = "cloud"><h2>{% block title %}{% trans "User interactivity" %}{% endblock %}</h2><span class='shadow'></span></div>
+    <!-- /END JUMBOTRON -->
+    <!-- PANEL-->
+{% block content %}
+    <div class="panel panel-default">
+    <div class="panel-body col-lg-10 col-lg-offset-1">
+  {% trans "The instructions related to user interactivity can <b>help your Scratch projects be more interactive</b>, ie the person who is running it can perform actions that provoke new situations in the project. For example, I can use the keyboard or mouse to move a character, you can answer questions or playing computer webcam, among many other possibilities." %}<br>
+    </div>
+    </div>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level0">
+                <h3>{% trans "If you get 0 points..." %}</h3>
+
+    {% trans "The most basic block you can start working interactivity with the user is <i>'when green flag clicked'</i>." %}
+<br><br>
+                <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "when gf clicked" %}
+                                     {% trans "clear" %}
+                                     {% trans "go to x:(-100) y:(30)" %}
+                                     {% trans "pen down" %}
+                                     {% trans "move (200) steps" %}
+                                     {% trans "pen up" %}
+                                     {% trans "wait (1) secs" %}
+                                     {% trans "go to x:(-44) y:(-24)" %}
+                                     {% trans "set pen color to [#FFA500]" %}
+                                     {% trans "move (100) steps" %}
+                                     {% trans "pen up" %}
+                 </pre><br>
+                 <div class="col-lg-12">
+    {% trans "How this block works? When the user who wants to run your project Scratch clicks on the green flag, all blocks were placed under the block <i>'when green flag clicked'</i> begin to run. You can have as many programs as you need to start with this block." %}
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level1">
+                <h3>{% trans "If you get 1 point..." %}</h3>
+   {% trans "Now that you have begun to interact with the user running your Scratch project, perhaps you can try some of the following blocks:" %}<br><br>
+                     <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "when gf clicked" %}
+                                                     {% trans "clear" %}
+                                                     {% trans "go to x:(-100) y:(30)" %}
+                                                     {% trans "pen down" %}
+                                                     {% trans "move (200) steps" %}
+                                                     {% trans "pen up" %}
+                                                     {% trans "wait (1) secs" %}
+                                                     {% trans "go to x:(-44) y:(-24)" %}
+                                                     {% trans "set pen color to [#FFA500]" %}
+                                                     {% trans "move (100) steps" %}
+                                                     {% trans "pen up" %}
+                      </pre><br>
+                      <div class="col-lg-12">
+{% trans "As you see, you can allow users to interact with your characters by pressing keys to move, writing answers to questions and your characters use user responses, move characters with the mouse, or perform actions when the user clicks an object." %}
+                        </div>
+            </section>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body col-lg-10 col-lg-offset-1">
+            <section id="level2">
+                <h3>{% trans "If you get 2 points..." %}</h3>
+{% trans "One of the funniest Scratch possibilities in terms of user interactivity is the possibility that <b>the user can use your webcam or microphone to interact with characters from Scratch or sound to trigger certain actions.</b>" %}<br><br>
+                 <pre class="blocks col-lg-4 col-lg-offset-4">{% trans "when gf clicked" %}
+                                             {% trans "clear" %}
+                                             {% trans "go to x:(-100) y:(30)" %}
+                                             {% trans "pen down" %}
+                                             {% trans "move (200) steps" %}
+                                             {% trans "pen up" %}
+                                             {% trans "wait (1) secs" %}
+                                             {% trans "go to x:(-44) y:(-24)" %}
+                                             {% trans "set pen color to [#FFA500]" %}
+                                             {% trans "move (100) steps" %}
+                                             {% trans "pen up" %}
+                         </pre><br>
+                <div class="col-lg-12">
+{% trans "As you can see in the examples, we can make certain sets of blocks are executed when the ambient sound captured by the microphone is greater than a certain threshold, or when video motion occurs over an object or background. The possibilities of these blocks are very large and allows your creations Scratch are fully interactive with users." %}
+                </div>
+<br><br>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

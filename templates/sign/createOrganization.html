@@ -1,0 +1,299 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html class="nivo-lightbox-notouch" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Responsive Bootstrap 3 Startup and Multipurpose Template">
+    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="author" content="Programamos URJC Libresoft FECyT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>Dr.Scratch</title>
+
+
+    <link rel="stylesheet" href="static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT  
+    ============================== -->
+    <link rel="icon" href="static/app/images/favicon.ico">
+    <link rel="stylesheet" href="static/app/icons/icons.css">  
+    <link type="text/css" rel="stylesheet" href="static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="static/app/content/css.css">
+    <!-- =========================
+     STYLESHEETS   
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="static/app/content/bootstrap-main.css">
+    <link rel="stylesheet" href="static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="static/app/content/owl_002.css">
+    <link rel="stylesheet" href="static/app/content/owl.css">
+    <link rel="stylesheet" href="static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="static/app/content/default.css">
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="static/app/content/styles_organizations.css">
+
+    
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="static/app/content/responsive.css">
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="static/app/content/red.css">
+</head>
+
+<body>
+    <div id="mywrapper">
+    <!-- =========================
+     PRE LOADER       
+    ============================== -->
+    <div style="display: none;" class="preloader">
+        <div style="display: none;" class="status">
+            &nbsp;
+        </div>
+    </div>
+
+    <!-- =========================
+     SECTION: HOME / HEADER  
+    ============================== -->
+    <header id="home" style="background-position: 50% -40.5px;" class="header" data-stellar-background-ratio="0.5">
+        <!-- COLOR OVER IMAGE -->
+        <div class="overlay-layer">
+            <!-- STICKY NAVIGATION -->
+            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+                <div class="container">          
+                    <!-- TOP BAR -->
+                    <div class="navbar-collapse collapse" id="stamp-navigation">
+                    <!-- NAVIGATION LINK -->
+                      <a class="navbar-brand" href="/">
+                        <img src="static/app/images/logo_main.png" alt="" />
+                      </a>
+                      <ul class="nav navbar-nav navbar-left main-navigation small-text">
+                      <!--  <li class="navbar-brand"><a href="#section1"><em>{% trans "Sign up!" %}</em></a></li> -->
+                      </ul>
+
+                    <!-- LOGIN REGISTER -->
+                    <ul class="nav navbar-nav navbar-right login-register small-text">                
+                            <li style="display: none;" class="register-button js-register inpage-scroll">
+                                <a href="#home" class="navbar-register-button">{% trans "Get Started" %}</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- /END TOP BAR -->
+                </div>
+                <!-- /END CONTAINER -->
+            </div>
+            <!-- /END STICKY NAVIGATION -->
+
+
+            <!-- CONTAINER -->
+            <div class="container">
+
+        <!-- ONLY LOGO ON HEADER -->
+                <div class="row">
+                    <div class="col-md-12 ">
+
+                        <!-- HEADING AND BUTTONS -->
+                        <div class="intro-section">
+
+                            <!-- WELCOM MESSAGE -->
+                            <h1 class="intro white-text">{% trans "Dr.Scratch for Organizations" %}</h1>
+                            
+                            <h4 align=justify class="transparent-text"><strong>{% trans "Welcome to the Dr.Scratch website (version for organizations), an analytical tool that evaluates your Scratch projects in a variety of computational areas. This analyzer is a helpful tool to evaluate your students' Scratch projects. You'll have a smart dashboard where you can see the most important information about your students and their development." %} </strong></h4>
+                            <div class="intro-section">
+                                <!-- BUTTON -->
+                                <div class="button hidden-xs">
+                                    <a href="#section1" class="btn btn-primary secondary-button">{% trans "Sign up!" %}</a>
+                                </div>
+                                <!-- /END BUTTON -->
+                            </div>                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- =========================
+     SECTION: CLIENTS LOGOs
+    ============================== -->
+    <section id="section6" class="services grey-bg">
+    <div class="clients white-bg">
+        <ul class="client-logos">
+            <li>
+                <a href="http://programamos.es">
+                <img src="static/app/images/logoProgramamos.png" alt="">
+                </a>            
+            </li>
+            <li>
+                <a href="http://www.urjc.es">
+                <img src="static/app/images/logoURJC.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="http://libresoft.es">
+                <img src="static/app/images/logoLibresoft.jpeg" alt="">
+                </a>
+            </li>
+
+            <li>
+                <a href="http://www.fecyt.es">
+                <img src="static/app/images/logoFECYT.png" alt="">
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    </section>
+    </header>
+    <!-- =========================
+     SECTION: Form
+    ============================== -->
+    <section id="section1" class="services grey-bg">
+        <div class="container">
+            <!-- SECTION HEADER -->
+            <div class="section-header">
+
+                <div class="small-text-medium uppercase colored-text">
+                    {% trans "Dr.Scratch for Organizations" %}
+                </div>
+                <h2 class="dark-text"><strong>{% trans "Why " %} </strong>{% trans "you’ll love Dr.Scratch" %}</h2>
+                <div class="colored-line"></div>
+                <div class="sub-heading">
+                    <h3><em>{% trans "You'll evaluate the projects of all your student in few time. Also, you'll see all the relevant information in a view." %}</em></h3>
+                </div>
+                    {% trans "If you want to be one of the ten first organizations which prove Dr.Scratch send us an email to " %}<a href="mailto:team@drscratch.org" class="strong">team@drscratch.org</a>{% trans  " and we'll give you your hash to can sign up in the web" %}
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- FORM -->
+        
+        <div class="container">
+        <img src="static/app/images/drScratch.png" alt=""  width="200" height="200" />
+        <form action="/organization" method="post" class="vertical-registration-form" role="form">
+       {% csrf_token %}     
+       <div class="col-lg-8">
+        <label class="col-md-6 text-left control-label">{% trans "Organization's name" %}</label>
+          <input class='form-control' name='name' placeholder='ID'>
+        </div>
+    
+        <div class="col-lg-8">
+        <label for="ejemplo_email_3" class="col-md-6 text-left control-label">E-mail</label>
+        
+          <input type="email" class="form-control" name="email"
+                 placeholder="E-mail">
+      </div>
+      <div class="form-group">
+        <div class="col-lg-8">
+        <label class="col-lg-2 control-label">{% trans "Password" %}</label>
+        
+        {% trans "<input type='password' class='form-control' name='password' placeholder='Password'>" %}
+      </div>
+
+     <div class="form-group">
+        <div class="col-lg-8">
+        <label class="col-lg-2 control-label">{% trans "Hashkey" %}</label>
+        
+        {% trans "<input type='password' class='form-control' name='hashkey' placeholder='Password'>" %}
+      </div>
+    </div>
+            <div class="registration-buttom">      
+            <button style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/organization" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="submit">{% trans "Sign up!" %}</button>
+    
+            </div>
+    </form>
+    </div>
+    </div>
+        <!-- ENDFORM -->
+
+
+
+
+        <!-- =========================
+     SECTION: CONTACT INFO  
+    ============================== -->
+    <div class="contact-info white-bg">
+        <div class="container">
+
+            <!-- CONTACT INFO -->
+            <div class="row contact-links">
+
+                <div class="col-sm-4">
+                    <div class="icon-container">
+                        <span class="icon-basic-mail colored-text"></span>
+                    </div>
+                    <a href="mailto:drscratch@programamos.es" class="strong">team@drscratch.org</a>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="icon-container">
+                        <span class="icon-social-twitter colored-text"></span>
+                    </div>
+                    <a href="https:/twitter.com/drscratchtool" class="strong">@DrScratchTool</a>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="icon-container">
+                        <span class="icon-basic-tablet colored-text"></span>
+                    </div>
+                    <a href="https:/github.com/jemole/drScratch/issues" class="strong">GitHub(issues)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+ <!-- FOOTER -->
+    <footer class="footer grey-bg">
+       {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+
+        <!-- SOCIAL ICONS -->
+        <ul class="social-icons">
+            <li><a href="https:/twitter.com/drscratchtool"><span class="icon-social-twitter transparent-text-dark"></span></a>
+            </li>
+            <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+            </li>
+            
+        </ul>
+
+    </footer>
+   <!-- =========================
+     SCRIPTS   
+    ============================== -->
+    <script src="static/app/scripts/jquery.min.js"></script>
+    <script>
+        /* PRE LOADER */
+        jQuery(window).load(function () {
+            "use strict";
+            jQuery(".status").fadeOut();
+            jQuery(".preloader").delay(1000).fadeOut("slow");
+        })
+    </script>
+    <script type="text/javascript" src="static/app/scripts/bootstrap-filestyle.js"> </script>
+    <script src="static/app/scripts/smoothscroll.js"></script>
+    <script src="static/app/scripts/bootstrap.min.js"></script>
+    <script src="static/app/scripts/jquery.nav.js"></script>
+    <script src="static/app/scripts/ie-emulation-modes-warning.js"></script>
+    <script src="static/app/scripts/wow.js"></script>
+    <script src="static/app/scripts/nivo-lightbox.js"></script>
+    <script src="static/app/scripts/owl.js"></script>
+    <script src="static/app/scripts/jquery_main.js"></script>
+    <script src="static/app/scripts/jquery.ajaxchimp.min.js"></script>
+    <script src="static/app/scripts/progress-bar.js"></script>
+
+    <!-- GOGLE MAP -->
+    <!--
+    <script src="https:/maps.googleapis.com/maps/api/js"></script><script src="https:/maps.gstatic.com/maps-api-v3/api/js/19/5/intl/es_ALL/main.js"></script>
+-->
+
+    <!-- CUSTOM JS  -->
+    <script src="static/app/scripts/custom.js"></script>
+</body></html>
