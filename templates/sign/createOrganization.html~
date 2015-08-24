@@ -160,14 +160,14 @@
             <div class="section-header">
 
                 <div class="small-text-medium uppercase colored-text">
-                    {% trans "Dr. Scratch for Organizations" %}
+                    {% trans "Dr.Scratch for Organizations" %}
                 </div>
-                <h2 class="dark-text"><strong>{% trans "Why " %} </strong>{% trans "you’ll love Dr. Scratch" %}</h2>
+                <h2 class="dark-text"><strong>{% trans "Why " %} </strong>{% trans "you’ll love Dr.Scratch" %}</h2>
                 <div class="colored-line"></div>
                 <div class="sub-heading">
                     <h3><em>{% trans "You'll evaluate the projects of all your student in few time. Also, you'll see all the relevant information in a view." %}</em></h3>
                 </div>
-                    {% trans "If you want to be one of the ten first organizations which prove Dr. Scratch send us an email to " %}<a href="mailto:team@drscratch.org" class="strong">team@drscratch.org</a>{% trans  " and we'll give you your hash to can sign up in the web" %}
+                    {% trans "If you want to be one of the ten first organizations which prove Dr.Scratch send us an email to " %}<a href="mailto:team@drscratch.org" class="strong">team@drscratch.org</a>{% trans  " and we'll give you your hash to can sign up in the web" %}
             </div>
 
         </div>
@@ -253,7 +253,7 @@
 
  <!-- FOOTER -->
     <footer class="footer grey-bg">
-       {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+       {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
         <!-- SOCIAL ICONS -->
         <ul class="social-icons">

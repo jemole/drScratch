@@ -10,7 +10,7 @@
 
         <link rel="icon" href="../../static/app/images/favicon.ico">
 		<!-- Bootstrap core CSS -->
-	    <link href="../../static/app/content/bootstrap-main.css" rel="stylesheet">
+	    <link href="../../static/app/content/bootstrap.min.css" rel="stylesheet">
 	    <!-- Add custom CSS here -->
 	    <link href="../../static/app/content/sb-admin.css" rel="stylesheet">
 
@@ -32,11 +32,11 @@
 <div class="jumbotron">
     <div class="container">
             <p>
-                <h1 class="text-center">
-                     {% trans "ERROR 404 - Page Not Found" %}
+                <h1 class= text-center>
+                     {% trans "There was an error analyzing your project" %}
                 </h1>
                 <h2 class="text-center">
-                     {% trans  "Ops! This page doesn't exist" %} 
+                     {% trans  "We apologize for this inconvenience" %} 
                 </h2>
             </p>
     </div>
@@ -49,8 +49,11 @@
 
 <!-- Sign up -->
 <div class="pager">
-        <h4>          
-              <a href="/"><span class="icon-basic-home colored-text"></span></a>
+        <h4>
+            
+               {% trans "Sometimes we have got problems analyzing some projects. We're working on this." %}
+            
+             
               <a href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a>
               <a href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a>
         </h4>
@@ -64,7 +67,7 @@
 <!-- Footer -->
 <div id="footer" class="container">
     <footer class="footer grey-bg">
-       {% trans "©2014 Dr. Scratch is powered by " %} <a href="https://github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+       {% trans "©2014 Dr.Scratch is powered by " %} <a href="https://github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
        <a href
     </footer>
 </div>

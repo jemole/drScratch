@@ -12,7 +12,7 @@
     <script src="../../static/app/scripts/translations.js"></script>
 
     <!-- SITE TITLE -->
-    <title>Dr. Scratch</title>
+    <title>Dr.Scratch</title>
 
 
     <link rel="stylesheet" href="../../static/app/content/style.css">
@@ -39,7 +39,7 @@
     <!-- CUSTOM STYLESHEETS -->
     <link rel="stylesheet" href="../../static/app/content/styles.css">
     <link rel="stylesheet" href="../../static/app/content/cloud.css">
-
+   
     
     <!-- RESPONSIVE FIXES -->
     <link rel="stylesheet" href="../../static/app/content/responsive.css">
@@ -63,7 +63,18 @@
         </script>
 </head>
 <body>
-   <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+    <div id="mywrapper">
+    <!-- =========================
+     PRE LOADER       
+    ============================== -->
+    <div style="display: none;" class="preloader">
+        <div style="display: none;" class="status">
+            &nbsp;
+        </div>
+    </div>
+    
+
+   <div class="navbar navbar-inverse bs-docs-nav  sticky-navigation" role="navigation">
         <div class="container">          
                     <!-- TOP BAR -->
             <div class="navbar-collapse collapse" id="stamp-navigation">
@@ -74,7 +85,7 @@
                 <ul class="nav navbar-nav navbar-right main-navigation ">
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
-                        <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr. Scratch(Beta Version)" %}</a></li>
+                        <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr.Scratch(Beta Version)" %}</a></li>
                       </ul>
             </div>
                     <!-- /END TOP BAR -->
@@ -83,15 +94,14 @@
     </div>
             <!-- /END STICKY NAVIGATION -->
     <!-- JUMBOTRON -->
-     
-    <div id ="cloud"><h2>{% block title %}{% endblock %}</h2><span class='shadow'></span></div>
+   
     <!-- /END JUMBOTRON -->
     <!-- PANEL-->
    {% block content %}
     {% endblock %}
- <footer class="footer grey-bg">
+ <footer class="footer grey-bg navbar-fixed-bottom">
         <div class="container">
-               {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+               {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
                 <!-- SOCIAL ICONS -->
                 <ul class="social-icons">

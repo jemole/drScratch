@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- SITE TITLE -->
-    <title>Dr. Scratch</title>
+    <title>Dr.Scratch</title>
 
 
     <link rel="stylesheet" href="static/app/content/style.css">
@@ -103,7 +103,7 @@
                             <!-- WELCOM MESSAGE -->
                             <h1 class="intro white-text">{% trans "Thanks all of you!" %}</h1>
 
-                            <h4 align=justify class="transparent-text"><strong>{% trans "We are so pleased to receive so much help of you and we thought that the best way of show our appreciation is including your work in the website. In this space you can see who people help us to improve Dr. Scratch!" %} </strong></h4>
+                            <h4 align=justify class="transparent-text"><strong>{% trans "We are so pleased to receive so much help of you and we thought that the best way of show our appreciation is including your work in the website. In this space you can see who people help us to improve Dr.Scratch!" %} </strong></h4>
                             
                             <!--<h4 align=justify class="transparent-text"><strong></strong></h4>-->
                           </div>   
@@ -163,7 +163,7 @@
                 <div class="colored-line">
                 </div>
                 <div class="sub-heading">
-                    <h4><em>{% trans "Dr. Scratch's team likes to thank you for your contributions." %}</em></h4>
+                    <h4><em>{% trans "Dr.Scratch's team likes to thank you for your contributions." %}</em></h4>
                 </div>
             </div>
 
@@ -348,7 +348,7 @@
                 </div>
                 <div class="sub-heading">
                     <h4><em>{% trans "We know the importance of receiving feedback on your own language to understand every little detail or hint, so we'll translate Dr. Scratch to facilitate coding learning to as many people as possible." %}</em></h3>
-                    <h4><em>{% trans "Would you like help us to translate Dr. Scratch to your language? Many people have already helped us! " %}</em></h3>
+                    <h4><em>{% trans "Would you like help us to translate Dr.Scratch to your language? Many people have already helped us! " %}</em></h3>
                 </div>
             </div>
 
@@ -590,7 +590,7 @@
   
     <!-- FOOTER -->
     <footer class="footer grey-bg">
-       {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+       {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
         <!-- SOCIAL ICONS -->
         <ul class="social-icons">
