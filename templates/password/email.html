@@ -3,7 +3,7 @@
 {% block content %}
 {% trans "Reset password"%}
 
-{% trans "You're receiving this email because you requested a password reset for your user account at Dr.Scratch."%}
+{% trans "You're receiving this email because you requested a password reset for your user account at Dr. Scratch."%}
 {% trans "Please, go to the following page and choose a new password:"%}
 drscratch.programamos.es{% url 'reset_password_confirm' uidb64=uid token=token %}
 {% trans "Your username is: " %}{{id}}
@@ -11,6 +11,6 @@ drscratch.programamos.es{% url 'reset_password_confirm' uidb64=uid token=token %
 {% endblock %}
 
 {% trans "Thanks for using our website!"%}
-{% trans "The Dr.Scratch team"%}
+{% trans "The Dr. Scratch team"%}
 
 {% endblock %}
