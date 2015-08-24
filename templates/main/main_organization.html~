@@ -16,7 +16,7 @@
     <script src="http://code.highcharts.com/modules/data.js"></script>
 
     <!-- SITE TITLE -->
-    <title>Dr. Scratch</title>
+    <title>Dr.Scratch</title>
 
 
     <link rel="stylesheet" href="../../static/app/content/style.css">
@@ -243,7 +243,7 @@ $(function () {
     
     <!-- FOOTER -->
     <footer class="footer grey-bg">
-       {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+       {% trans "©2014 Dr.Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
         <!-- SOCIAL ICONS -->
         <ul class="social-icons">
