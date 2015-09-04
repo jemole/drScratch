@@ -2418,8 +2418,8 @@ msgid ""
 msgstr ""
 "Dr.Scratch para organizaciones es una herramienta analítica que te ayuda a "
 "evaluar los proyectos Scratch de los estudiantes que participan en tus "
-"iniciativas y te permite controlar su progresión haciendo hincapié en el "
-"código y habilidades de pensamiento computacional."
+"iniciativas y te permite controlar su progresión en relación a sus "
+"habilidades de programación y pensamiento computacional."
 
 #: templates/sign/organization.html:189
 msgid "to join Dr.Scratch for organizations?"
