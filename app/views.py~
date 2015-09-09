@@ -20,7 +20,7 @@ from django.db.models import Avg
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
 from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
-from app.models import Teacher, Student, Classroom, Stats
+from app.models import Teacher, Student, Classroom
 from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm

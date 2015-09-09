@@ -109,21 +109,3 @@ class Comment(models.Model):
 class Activity(models.Model):
 	text = models.TextField()
 	date = models.DateField()
-
-class Stats(models.Model):
-    daily_score = models.TextField()
-    basic = models.TextField(default="")
-    development = models.TextField(default="")
-    master = models.TextField(default="")
-    daily_projects = models.TextField(default="")
-    parallelism = models.IntegerField(default=int(0))
-    abstraction = models.IntegerField(default=int(0))
-    logic = models.IntegerField(default=int(0))
-    synchronization = models.IntegerField(default=int(0))
-    flowControl = models.IntegerField(default=int(0))
-    userInteractivity = models.IntegerField(default=int(0))
-    dataRepresentation = models.IntegerField(default=int(0))
-    deadCode = models.IntegerField(default=int(0))
-    duplicateScript = models.IntegerField(default=int(0))
-    spriteNaming = models.IntegerField(default=int(0))
-    initialization = models.IntegerField(default=int(0))
