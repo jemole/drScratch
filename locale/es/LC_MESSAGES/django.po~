@@ -65,7 +65,7 @@ msgstr "Empezar"
 #: templates/upload/dashboard-unregistered-developing.html:292
 #: templates/upload/dashboard-unregistered-master.html:353
 msgid "©2014 Dr. Scratch is powered by "
-msgstr "©2014 Dr. Scratch está implementado con "
+msgstr "©2014 Dr. Scratch implementado con "
 
 #: templates/error/500.html:36
 msgid "500 - Internal Server Error"
