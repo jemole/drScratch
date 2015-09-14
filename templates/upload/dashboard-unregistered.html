@@ -1,0 +1,287 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard">
+    <meta name="author" content="Cristian Chushig">
+
+    <title>{% trans "Project results" %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/app/content/bootstrap-dashboard.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="../../static/app/content/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/app/content/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+    <link rel="stylesheet" href="static/app/icons/icons.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <script src="../../static/app/scripts/twitter.js"></script>
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Doctor Scratch</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="active"><a href="/"><i class="fa fa-dashboard"></i>{% trans "Dashboard" %}</a></li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div id="page-wrapper">
+          <div class="row">
+          <div class="col-lg-12">
+            <h1>{% trans "Dashboard" %}<small>{% trans "Overview" %}</small></h1>
+            <ol class="breadcrumb">
+              <li class="active"><i class="fa fa-dashboard"></i> {% trans "Dashboard" %}</li>
+            </ol>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              {% trans "Welcome to Doctor Scratch. Project results." %} 
+            </div>
+          </div>
+          </div><!-- /.row -->
+
+        <!-- Mastery -->
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-star fa-5x"></i>
+                  </div>
+
+                  <div class="col-xs-6">
+                    <p class="announcement-heading">{% trans "CT Score:" %} {{ mastery.points }}/{{ mastery.maxi }}</p>
+                  </div>
+                </div>
+              </div>
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <h4><p class="text-center">{% trans "Your level:" %} 
+		      {% if mastery.points >= 15 %}
+                      <span class="label label-default">{% trans "Master" %}</span></p></h4>
+		      {% elif mastery.points > 7 %}    	
+                      <span class="label label-default">{% trans "Developing" %}</span></p></h4>
+		      {% else %}     
+                      <span class="label label-default">{% trans "Basic" %}</span></p></h4>
+		      {% endif %} 
+                    </div>
+                  </div>
+                </div>
+
+
+            </div>
+            <div>
+          <a class="twitter-share-button pull-right" data-text="{% blocktrans with points=mastery.points %}I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a>
+          </div>
+          </div>
+        </div><!-- /.row -->
+
+        <!-- Mastery -->
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>{% trans "CT Score in detail:" %}</h2>
+            <div class="table-responsive">
+              <table class="table table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>{% trans "Concept" %}<i class="fa fa-sort"></i></th>
+                    <th>{% trans "Points" %}<i class="fa fa-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for key, value in mastery.items %}
+                  {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
+                  {% if key != "points" %}
+                  {% if key != "maxi" %}
+                        <td>{{ key }}</td>
+                        <td>{{ value }}/3
+                        {% if value == 0 %}
+                        <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level0" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            {% elif value == 1 %}
+                                <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level1" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            {% elif value == 2 %}
+                                <a class="glyphicon-chevron-left icon icon-basic-lightbulb" href="/learn/{{ key }}/#level2" aria-hidden="true">
+                                    {% trans "Learn more!!!" %}
+                                 </a></tr>
+                            
+                            {% elif value == 3 %}
+                                  <span class="glyphicon-chevron-left icon icon-star-alt" aria-hidden="true">{% trans "Well done!!!" %} </span>
+                            {% endif %}</td>
+                  {% endif %}
+                  {% endif %}                  
+                  {% if forloop.counter|divisibleby:1 or forloop.last %}</tr>{% endif %}
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+	    </div> 
+
+          <!-- Duplicate Script -->
+          <div class="row">
+          <div class="col-lg-3">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-bell fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ duplicateScript.number }}</p>
+                    <p class="announcement-text">{% trans "Duplicated Scripts" %}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Sprite Naming -->
+          
+          <div class="col-lg-3">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-exclamation-triangle fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ spriteNaming.number }}</p>
+                    <p class="announcement-text">{% trans "Sprites naming" %}</p>
+                  </div>
+                </div>
+              </div>   
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="list-group">
+                      {% for item in spriteNaming.sprite %}
+                        <p class="list-group-item">
+                          <i class="fa fa-check"></i>{% trans "Incorrect name:" %} {{ item }}
+                        </p>
+                      {% endfor%}
+                   </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Dead Code -->
+          <div class="col-lg-3">
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-times-circle fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ deadCode.number }}</p>
+                    <p class="announcement-text">{% trans "Dead Code" %}</p>
+                  </div>
+                </div>
+              </div>
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="list-group">
+                      {% for key,value in deadCode.items %}
+                      {% if key != "number" %}
+                      {% if key != "deadCode" %}
+                        <p class="list-group-item">
+                          <i class="fa fa-check"></i>{{ key }} : {{ value }} {% trans "blocks" %} 
+                        </p>
+                      {% endif %}
+                      {% endif %}
+                      {% endfor%}
+                   </div>
+                 </div>
+                </div>
+              </div>
+          </div>
+
+
+          <!-- Attribute Initialization -->
+          <div class="col-lg-3">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-exclamation-circle fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">{{ initialization.number }}</p>
+                    <p class="announcement-text">{% trans "Sprite attributes initialization" %}</p>
+                  </div>
+                </div>
+              </div>
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="list-group">
+                      {% for key,value in initialization.items %}
+                        {% if value|length > 0 %}
+                         {% if key != "number" %}
+                        <p class="list-group-item">
+                          <i class="fa fa-check"></i> {{ key }}: ({{ value }}) 
+                           {% trans "modified but not initialized correctly." %}     
+                        </p>
+                         {% endif %}
+                        {% endif %}
+                      {% endfor %}
+                   </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+   
+      </div>
+      
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script src="../../static/app/scripts/jquery-1.10.2.js"></script>
+    <script src="../../static/app/scripts/bootstrap.js"></script>
+
+    <!-- Page Specific Plugins -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+    <script src="static/app/scripts/morris/chart-data-morris.js"></script>
+    <script src="../../static/app/scripts/tablesorter/jquery.tablesorter.js"></script>
+    <script src="../../static/app/scripts/tablesorter/tables.js"></script>
+
+
+    
+
+  </body>
+</html>
