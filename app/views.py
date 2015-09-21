@@ -20,7 +20,7 @@ from django.db.models import Avg
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
 from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
-from app.models import Teacher, Student, Classroom
+from app.models import Teacher, Student, Classroom, Stats
 from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
@@ -40,12 +40,12 @@ import shutil
 import unicodedata
 import csv
 import kurt
-import zipfile  
+import zipfile
 from zipfile import ZipFile
 
 #Global variables
 pMastery = "hairball -p mastery.Mastery "
-pDuplicateScript = "hairball -p duplicate.DuplicateScripts " 
+pDuplicateScript = "hairball -p duplicate.DuplicateScripts "
 pSpriteNaming = "hairball -p convention.SpriteNaming "
 pDeadCode = "hairball -p blocks.DeadCode "
 pInitialization = "hairball -p initialization.AttributeInitialization "
@@ -56,7 +56,7 @@ pInitialization = "hairball -p initialization.AttributeInitialization "
 def main(request):
     """Main page"""
     if request.user.is_authenticated():
-        user = request.user.username    
+        user = request.user.username
     else:
         user = None
     # The first time one user enters
@@ -96,13 +96,13 @@ def selector(request):
             d = uploadUnregistered(request)
             if d['Error'] == 'analyzing':
                 return render_to_response('error/analyzing.html',
-                                          RC(request))   
+                                          RC(request))
             elif d['Error'] == 'MultiValueDict':
                 error = True
                 return render_to_response('main/main.html',
                             {'error':error},
                             RC(request))
-            else:    
+            else:
 
                 dic = {'url': ""}
                 d.update(dic)
@@ -116,7 +116,7 @@ def selector(request):
             d = urlUnregistered(request)
             if d['Error'] == 'analyzing':
                 return render_to_response('error/analyzing.html',
-                                          RC(request))             
+                                          RC(request))
             elif d['Error'] == 'MultiValueDict':
                 error = True
                 return render_to_response('main/main.html',
@@ -151,7 +151,7 @@ def selector(request):
 def handler_upload(fileSaved, counter):
     """ Necessary to uploadUnregistered"""
     # If file exists,it will save it with new name: name(x)
-    if os.path.exists(fileSaved): 
+    if os.path.exists(fileSaved):
         counter = counter + 1
         #Check the version of Scratch 1.4Vs2.0
         version = checkVersion(fileSaved)
@@ -165,11 +165,11 @@ def handler_upload(fileSaved, counter):
                 fileSaved = fileSaved.split(".")[0] + "(1).sb"
             else:
                 fileSaved = fileSaved.split('(')[0] + "(" + str(counter) + ").sb"
-        
+
 
         file_name = handler_upload(fileSaved, counter)
         return file_name
-    else:   
+    else:
         file_name = fileSaved
         return file_name
 
@@ -200,7 +200,7 @@ def uploadUnregistered(request):
         method = "project"
         fileName = File (filename = file.name.encode('utf-8'),
                         organization = "",
-                        method = method , time = now, 
+                        method = method , time = now,
                         score = 0, abstraction = 0, parallelization = 0,
                         logic = 0, synchronization = 0, flowControl = 0,
                         userInteractivity = 0, dataRepresentation = 0,
@@ -227,18 +227,18 @@ def uploadUnregistered(request):
         # Save file in server
         counter = 0
         file_name = handler_upload(fileSaved, counter)
-        
+
         with open(file_name, 'wb+') as destination:
             for chunk in file.chunks():
                 destination.write(chunk)
 
         #Create 2.0Scratch's File
         file_name = changeVersion(request, file_name)
-    
+
         # Analyze the scratch project
         try:
             d = analyzeProject(request, file_name, fileName)
-   
+
         except:
             #There ir an error with kutz or hairball
             #We save the project in folder called error_analyzing
@@ -265,18 +265,18 @@ def changeVersion(request, file_name):
     p.convert("scratch20")
     p.save()
     file_name = file_name.split('.')[0] + '.sb2'
-    return file_name   
-        
+    return file_name
+
 
 
 #_______________________URL Analysis Project_________________________________#
 
 
 def urlUnregistered(request):
-    """Process Request of form URL"""        
+    """Process Request of form URL"""
     if request.method == "POST":
         form = UrlForm(request.POST)
-        if form.is_valid():          
+        if form.is_valid():
             d = {}
             url = form.cleaned_data['urlProject']
             idProject = processStringUrl(url)
@@ -291,7 +291,7 @@ def urlUnregistered(request):
                 except:
                     #When your project doesn't exist
                     d = {'Error': 'no_exists'}
-                    return d             
+                    return d
                 try:
                     d = analyzeProject(request, pathProject, file)
                 except:
@@ -311,21 +311,21 @@ def urlUnregistered(request):
                 djson = createJson(d)
 
                 # Redirect to dashboard for unregistered user
-                d['Error'] = 'None'            
+                d['Error'] = 'None'
                 return d
         else:
             d = {'Error': 'MultiValueDict'}
             return  d
     else:
         return HttpResponseRedirect('/')
-                     
-                
+
+
 def processStringUrl(url):
     """Process String of URL from Form"""
     idProject = ''
     auxString = url.split("/")[-1]
     if auxString == '':
-        # we need to get the other argument    
+        # we need to get the other argument
         possibleId = url.split("/")[-2]
         if possibleId == "#editor":
             idProject = url.split("/")[-3]
@@ -351,7 +351,7 @@ def sendRequestgetSB2(idProject, organization, method):
     now = datetime.now()
     fileName = File (filename = fileURL,
                      organization = organization,
-                     method = method , time = now, 
+                     method = method , time = now,
                      score = 0, abstraction = 0, parallelization = 0,
                      logic = 0, synchronization = 0, flowControl = 0,
                      userInteractivity = 0, dataRepresentation = 0,
@@ -380,7 +380,7 @@ def sendRequestgetSB2(idProject, organization, method):
 
 def createJson(d):
     flagsPlugin = {"Mastery":0, "DeadCode":0, "SpriteNaming":1, "Initialization":0, "DuplicateScripts":0}
-    
+
 
 #________________________ LEARN MORE __________________________________#
 
@@ -402,22 +402,22 @@ def learn(request,page):
     page = "learn/" + page + ".html"
 
     if request.user.is_authenticated():
-     
+
         return render_to_response(page,
                                 RC(request))
     else:
-       
+
         return render_to_response(page,
                                 RC(request))
 
 def learnUnregistered(request):
-       
+
     return render_to_response("learn/learn-unregistered.html",)
 
 #________________________ COLLABORATORS _____________________________#
 
 def collaborators(request):
-       
+
     return render_to_response("main/collaborators.html",)
 
 
@@ -440,37 +440,37 @@ def signUpOrganization(request):
     flagEmail = 0
     flagForm = 0
     if request.method == 'POST':
-        form = OrganizationForm(request.POST)    
+        form = OrganizationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            hashkey = form.cleaned_data['hashkey'] 
-                          
+            hashkey = form.cleaned_data['hashkey']
+
             try:
                 #This name already exists
-                organization = Organization.objects.get(username=username)            
-                flagName = 1            
-                return render_to_response("sign/signup_error.html", 
+                organization = Organization.objects.get(username=username)
+                flagName = 1
+                return render_to_response("sign/signup_error.html",
                                           {'flagName':flagName,
                                            'flagEmail':flagEmail,
                                            'flagHash':flagHash,
-                                           'flagForm':flagForm},                        
+                                           'flagForm':flagForm},
                                           context_instance = RC(request))
             except:
                 try:
                     #This email already exists
                     email = Organization.objects.get(email=email)
                     flagEmail = 1
-                    return render_to_response("sign/signup_error.html", 
+                    return render_to_response("sign/signup_error.html",
                                             {'flagName':flagName,
                                             'flagEmail':flagEmail,
                                             'flagHash':flagHash,
-                                            'flagForm':flagForm},                        
+                                            'flagForm':flagForm},
                                             context_instance = RC(request))
                 except:
                     try:
-                        organizationHashkey = OrganizationHash.objects.get(hashkey=hashkey)            
+                        organizationHashkey = OrganizationHash.objects.get(hashkey=hashkey)
                         organizationHashkey.delete()
                         organization = Organization.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
                         organization = authenticate(username=username, password=password)
@@ -491,32 +491,32 @@ def signUpOrganization(request):
                         email.send()
                         login(request, organization)
                         return HttpResponseRedirect('/organization/' + organization.username)
-                    
+
                     except:
                         #Doesn't exist this hash
                         flagHash = 1
 
-                        return render_to_response("sign/signup_error.html", 
+                        return render_to_response("sign/signup_error.html",
                                           {'flagName':flagName,
                                            'flagEmail':flagEmail,
                                            'flagHash':flagHash,
-                                           'flagForm':flagForm},                        
+                                           'flagForm':flagForm},
                                           context_instance = RC(request))
         else:
             flagForm = 1
-            return render_to_response("sign/signup_error.html", 
+            return render_to_response("sign/signup_error.html",
                   {'flagName':flagName,
                    'flagEmail':flagEmail,
                    'flagHash':flagHash,
-                   'flagForm':flagForm},                        
+                   'flagForm':flagForm},
                   context_instance = RC(request))
-                              
+
     elif request.method == 'GET':
         if request.user.is_authenticated():
             return HttpResponseRedirect('/organization/' + request.user.username)
         else:
             return render_to_response("sign/organization.html", context_instance = RC(request))
-    
+
 #_________________________ TO SHOW ORGANIZATION'S DASHBOARD ___________#
 
 def loginOrganization(request):
@@ -532,16 +532,16 @@ def loginOrganization(request):
                 if organization.is_active:
                     login(request, organization)
                     return HttpResponseRedirect('/organization/' + organization.username)
-                    
+
             else:
                 flag = True
-                return render_to_response("password/user_doesntexist.html", 
+                return render_to_response("password/user_doesntexist.html",
                                             {'flag': flag},
                                             context_instance=RC(request))
-    
+
     else:
         return HttpResponseRedirect("/")
-    
+
 
 def logoutOrganization(request):
     """Method for logging out"""
@@ -573,18 +573,18 @@ def organization(request, name):
                     points = File.objects.filter(organization=username).filter(time=n)
                     points = points.aggregate(Avg("score"))["score__avg"]
                     daily_score.append(points)
-                
+
                 for n in daily_score:
                     if n==None:
                         daily_score[daily_score.index(n)]=0
-                        
+
 
                 dic={"date":mydates,"daily_score":daily_score,'username':username}
 
                 return render_to_response("main/main_organization.html",
-                        dic, 
+                        dic,
                         context_instance = RC(request))
-            else:     
+            else:
                 return render_to_response("sign/organization.html",
                                         context_instance = RC(request))
         return render_to_response("sign/organization.html", context_instance = RC(request))
@@ -621,7 +621,7 @@ def analyzeCSV(request):
                     except:
                         idProject = url
                     (pathProject, file) = sendRequestgetSB2(idProject, organization, method)
-                    try:  
+                    try:
                         d = analyzeProject(request, pathProject, file)
                     except:
                         d = ["Error analyzing project", url]
@@ -633,19 +633,26 @@ def analyzeCSV(request):
                     type_csv = "1_row"
                     url = line.split("\n")[0]
                     method = "csv"
-                    try:
-                        idProject = url.split("/")[-2]
-                    except:
+                    if url.isdigit():
                         idProject = url
-                    (pathProject, file) = sendRequestgetSB2(idProject, organization, method)
+                    else:
+                        slashNum = url.count('/')
+                        if slashNum == 4:
+                            idProject = url.split("/")[-1]
+                        elif slashNum == 5:
+                            idProject = url.split('/')[-2]
+
+
+
                     try:
+                        (pathProject, file) = sendRequestgetSB2(idProject, organization, method)
                         d = analyzeProject(request, pathProject, file)
                     except:
                         d = ["Error analyzing project", url]
-                    
+
                     dic = {}
                     dic[url] = d
-                    dictionary.update(dic)   
+                    dictionary.update(dic)
             infile.close()
             try:
                 csv_data = generatorCSV(request, dictionary, file_name, type_csv)
@@ -658,13 +665,13 @@ def analyzeCSV(request):
                 username = request.user.username
 
             csv_save = CSVs(filename = file_name, directory = csv_data, organization = username)
-            csv_save.save()                
+            csv_save.save()
 
-            return render_to_response("upload/dashboard-organization.html", 
+            return render_to_response("upload/dashboard-organization.html",
                                     {'username': username,
                                      'flag_csv': flag_csv,},
                                      context_instance=RC(request))
-        
+
         elif "_download" in request.POST:
             """Export a CSV File"""
             if request.user.is_authenticated():
@@ -688,13 +695,13 @@ def generatorCSV(request, dictionary, file_name, type_csv):
     csv_directory = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/"
     csv_data = csv_directory + file_name
     writer = csv.writer(open(csv_data, "wb"))
-    
+
     if request.LANGUAGE_CODE == "es":
         if type_csv == "2_row":
             writer.writerow(["CÓDIGO", "URL", "Mastery", "Abstracción", "Paralelismo", "Pensamiento lógico", "Sincronización", "Control de flujo", "Interactividad con el usuario", "Representación de la información", "Código repetido", "Nombres por defecto", "Código muerto",  "Inicialización atributos"])
         elif type_csv == "1_row":
-            writer.writerow(["URL", "Mastery", "Abstracción", "Paralelismo", "Pensamiento lógico", "Sincronización", "Control de flujo", "Interactividad con el usuario", "Representación de la información", "Código repetido", "Nombres por defecto", "Código muerto",  "Inicialización atributos"])       
-        for key, value in dictionary.items(): 
+            writer.writerow(["URL", "Mastery", "Abstracción", "Paralelismo", "Pensamiento lógico", "Sincronización", "Control de flujo", "Interactividad con el usuario", "Representación de la información", "Código repetido", "Nombres por defecto", "Código muerto",  "Inicialización atributos"])
+        for key, value in dictionary.items():
             total = 0
             flag = False
             try:
@@ -702,7 +709,7 @@ def generatorCSV(request, dictionary, file_name, type_csv):
                     if type_csv == "2_row":
                         row1 = key.split(",")[0]
                         row2 = key.split(",")[1]
-                        row2 = row2.split("\n")[0]                
+                        row2 = row2.split("\n")[0]
                         writer.writerow([row1, row2, "Error analizando el proyecto"])
                     elif type_csv == "1_row":
                         row1 = key.split(",")[0]
@@ -713,7 +720,7 @@ def generatorCSV(request, dictionary, file_name, type_csv):
                 if type_csv == "2_row":
                     row2 = key.split(",")[1]
                     row2 = row2.split("\n")[0]
-                
+
                 for key, subvalue in value.items():
                     if key == "duplicateScript":
                         for key, sub2value in subvalue.items():
@@ -763,8 +770,8 @@ def generatorCSV(request, dictionary, file_name, type_csv):
             writer.writerow(["CODE", "URL", "Mastery", "Abstraction", "Parallelism", "Logic", "Synchronization", "Flow control", "User interactivity", "Data representation", "Duplicate script", "Sprites naming", "Dead code",  "Sprite attributes"])
         elif type_csv == "1_row":
             writer.writerow(["URL", "Mastery", "Abstraction", "Parallelism", "Logic", "Synchronization", "Flow control", "User interactivity", "Data representation", "Duplicate script", "Sprites naming", "Dead code",  "Sprite attributes"])
-                
-        for key, value in dictionary.items(): 
+
+        for key, value in dictionary.items():
             total = 0
             flag = False
             try:
@@ -772,10 +779,10 @@ def generatorCSV(request, dictionary, file_name, type_csv):
                     if type_csv == "2_row":
                         row1 = key.split(",")[0]
                         row2 = key.split(",")[1]
-                        row2 = row2.split("\n")[0]         
+                        row2 = row2.split("\n")[0]
                         writer.writerow([row1, row2, "Error analyzing project"])
                     elif type_csv == "1_row":
-                        row1 = key.split(",")[0]           
+                        row1 = key.split(",")[0]
                         writer.writerow([row1, "Error analyzing project"])
             except:
                 total = 0
@@ -783,7 +790,7 @@ def generatorCSV(request, dictionary, file_name, type_csv):
                 if type_csv == "2_row":
                     row2 = key.split(",")[1]
                     row2 = row2.split("\n")[0]
-                
+
                 for key, subvalue in value.items():
                     if key == "duplicateScript":
                         for key, sub2value in subvalue.items():
@@ -801,7 +808,7 @@ def generatorCSV(request, dictionary, file_name, type_csv):
                         for key, sub2value in subvalue.items():
                             if key == "number":
                                 row14 = sub2value
-                     
+
                 for key, value in value.items():
                     if key == "mastery":
                         for key, subvalue in value.items():
@@ -831,7 +838,7 @@ def generatorCSV(request, dictionary, file_name, type_csv):
     return csv_data
 
 
-              
+
 #________________________ TO REGISTER USER __________________________#
 
 def createUserHash(request):
@@ -849,9 +856,9 @@ def createUserHash(request):
         return render_to_response("sign/createUserHash.html", context_instance = RC(request))
 
 def signUpUser(request):
-    form = TeacherForm(request.POST or None) 
-    if request.method == 'POST': 
-        if form.is_valid():       
+    form = TeacherForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             email = form.cleaned_data['email']
@@ -864,7 +871,7 @@ def signUpUser(request):
             teacher.save()
             return HttpResponseRedirect('/')
         return HttpResponseRedirect('/')
-            
+
     elif request.method == 'GET':
         return render_to_response("sign/createUser.html", context_instance = RC(request))
 
@@ -882,7 +889,7 @@ def loginUser(request):
                     return HttpResponseRedirect('/myDashboard')
             else:
                 flag = True
-                return render_to_response("password/user_doesntexist.html", 
+                return render_to_response("password/user_doesntexist.html",
                                             {'flag': flag},
                                             context_instance=RC(request))
 
@@ -904,7 +911,7 @@ def changePwd(request):
             user=Organization.objects.get(email=recipient)
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token=default_token_generator.make_token(user)
-                
+
             c = {
                     'email':recipient,
                     'uid':uid,
@@ -948,26 +955,26 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
             if new_password == "":
                 return render_to_response("password/new_password.html",
                         context_instance=RC(request))
-                
+
             elif new_password == new_confirm:
                 user.set_password(new_password)
                 user.save()
-                return render_to_response("sign/organization.html", 
+                return render_to_response("sign/organization.html",
                                             context_instance = RC(request))
             else:
                 flag_error = True
                 return render_to_response("password/new_password.html",
                                     {'flag_error':flag_error},
                                     context_instance=RC(request))
-                 
+
     else:
          if user is not None and default_token_generator.check_token(user, token):
              return render_to_response("password/new_password.html",
                                         context_instance=RC(request))
          else:
-             return render_to_response("sign/organization.html", 
+             return render_to_response("sign/organization.html",
                         context_instance = RC(request))
-        
+
 #_______________________ STATISTICS _________________________________#
 
 def date_range(start, end):
@@ -983,94 +990,33 @@ def statistics(request):
     d = end.day
     end = date(y,m,d)
     dateList = date_range(start, end)
-    daily_rate = []
-    mastery_list=[]
     mydates=[]
-    point_list = []
-    totalProjects = []
-    daily_projects = []
-    """This section calculates the daily average 
-    of projects analyzed and the daily average score"""
     for n in dateList:
-        mydates.append(n.strftime("%d/%m")) #used for x axis in stats
-        files = File.objects.filter(time=n)
-        daily_rate.append(files.aggregate(Avg("score"))["score__avg"])
-        for k in daily_rate:
-            if k == None:
-                daily_rate[daily_rate.index(k)]= 0
-
-        for i in files:
-            mastery_list.append(i.score)
-            point_list.append(i.score)
-            
-        daily_projects.append(len(mastery_list))
-
-    """This section calculates the percentage of levels"""
-    master = 0
-    development = 0
-    basic = 0
-
-    totalProjects = File.objects.count()
-    for i in point_list:
-        if i >= 15:
-            master = master + 1
-        elif i > 7:
-            development = development + 1
-        else:
-            basic = basic + 1
-    levels = {"basic":basic*100/totalProjects,
-              "development":development*100/totalProjects,
-              "master":master*100/totalProjects}
-
-    """This section calculates the average score by programming skill """
-
-    parallelism = File.objects.all().aggregate(Avg("parallelization"))
-    parallelism = int(parallelism["parallelization__avg"])
-    abstraction = File.objects.all().aggregate(Avg("abstraction"))
-    abstraction = int(abstraction["abstraction__avg"])
-    logic = File.objects.all().aggregate(Avg("logic"))
-    logic = int(logic["logic__avg"])
-    synchronization = File.objects.all().aggregate(Avg("synchronization"))
-    synchronization = int(synchronization["synchronization__avg"])
-    flowControl = File.objects.all().aggregate(Avg("flowControl"))
-    flowControl = int(flowControl["flowControl__avg"])
-    userInteractivity = File.objects.all().aggregate(Avg("userInteractivity"))
-    userInteractivity = int(userInteractivity["userInteractivity__avg"])
-    dataRepresentation = File.objects.all().aggregate(Avg("dataRepresentation"))
-    dataRepresentation = int(dataRepresentation["dataRepresentation__avg"])
-    
-    """This section calculates the average score by code smell"""
-    deadCode = File.objects.all().aggregate(Avg("deadCode"))
-    deadCode = int(deadCode["deadCode__avg"])
-    duplicateScript = File.objects.all().aggregate(Avg("duplicateScript"))
-    duplicateScript = int(duplicateScript["duplicateScript__avg"])
-    spriteNaming = File.objects.all().aggregate(Avg("spriteNaming"))
-    spriteNaming = int(spriteNaming["spriteNaming__avg"])
-    initialization = File.objects.all().aggregate(Avg("initialization"))
-    initialization = int(initialization["initialization__avg"])
+        mydates.append(n.strftime("%d/%m")) #used for x axis in
 
     """This final section stores all data for the template"""
 
-    print daily_rate
-    print mydates
+    obj= Stats.objects.order_by("-id")[0]
     data = {"date":mydates,
-             "dailyRate":daily_rate,
-             "levels":levels,
-             "totalProjects":daily_projects,
-             "skillRate":{"parallelism":parallelism,
-                          "abstraction":abstraction,
-                          "logic":logic,
-                          "synchronization":synchronization,
-                          "flowControl":flowControl,
-                          "userInteractivity":userInteractivity,
-                          "dataRepresentation":dataRepresentation},
-             "codeSmellRate":{"deadCode":deadCode,
-                              "duplicateScript":duplicateScript,
-                              "spriteNaming":spriteNaming,
-                              "initialization":initialization }}
-
+             "dailyRate":obj.daily_score,
+             "levels":{"basic":obj.basic,
+                     "development":obj.development,
+                     "master":obj.master},
+             "totalProjects":obj.daily_projects,
+             "skillRate":{"parallelism":obj.parallelism,
+                          "abstraction":obj.abstraction,
+                          "logic": obj.logic,
+                          "synchronization":obj.synchronization,
+                          "flowControl":obj.flowControl,
+                          "userInteractivity":obj.userInteractivity,
+                          "dataRepresentation":obj.dataRepresentation},
+             "codeSmellRate":{"deadCode":obj.deadCode,
+                              "duplicateScript":obj.duplicateScript,
+                              "spriteNaming":obj.spriteNaming,
+                              "initialization":obj.initialization }}
     return render_to_response("statistics/statistics.html",
                                     data, context_instance=RC(request))
+
 
 
 #_______________________ AUTOMATIC ANALYSIS _________________________________#
@@ -1088,12 +1034,12 @@ def analyzeProject(request,file_name, fileName):
         metricDuplicateScript = "hairball -p \
                                 duplicate.DuplicateScripts " + file_name
         metricSpriteNaming = "hairball -p convention.SpriteNaming " + file_name
-        metricDeadCode = "hairball -p blocks.DeadCode " + file_name 
+        metricDeadCode = "hairball -p blocks.DeadCode " + file_name
         metricInitialization = "hairball -p \
                            initialization.AttributeInitialization " + file_name
-        
+
         #Plug-ins not used yet
-        #metricBroadcastReceive = "hairball -p 
+        #metricBroadcastReceive = "hairball -p
         #                          checks.BroadcastReceive " + file_name
         #metricBlockCounts = "hairball -p blocks.BlockCounts " + file_name
         #Response from hairball
@@ -1105,7 +1051,7 @@ def analyzeProject(request,file_name, fileName):
         #Plug-ins not used yet
         #resultBlockCounts = os.popen(metricBlockCounts).read()
         #resultBroadcastReceive = os.popen(metricBroadcastReceive).read()
-        
+
         #Create a dictionary with necessary information
         dictionary.update(procMastery(request,resultMastery, fileName))
         dictionary.update(procDuplicateScript(resultDuplicateScript, fileName))
@@ -1165,7 +1111,7 @@ def procMastery(request,lines, fileName):
     lLines = lLines[2].split(':')[1]
     points = int(lLines.split('/')[0])
     maxi = int(lLines.split('/')[1])
-    
+
     #Save in DB
     fileName.score = points
     fileName.abstraction = d["Abstraction"]
@@ -1182,7 +1128,7 @@ def procMastery(request,lines, fileName):
 
     dic["mastery"] = d_translated
     dic["mastery"]["points"] = points
-    dic["mastery"]["maxi"] = maxi   
+    dic["mastery"]["maxi"] = maxi
     return dic
 
 def procDuplicateScript(lines, fileName):
@@ -1195,7 +1141,7 @@ def procDuplicateScript(lines, fileName):
     dic["duplicateScript"] = dic
     dic["duplicateScript"]["number"] = number
 
-    #Save in DB 
+    #Save in DB
     fileName.duplicateScript = number
     fileName.save()
 
@@ -1213,7 +1159,7 @@ def procSpriteNaming(lines, fileName):
     dic['spriteNaming']['number'] = str(number)
     dic['spriteNaming']['sprite'] = lfinal
 
-    #Save in DB 
+    #Save in DB
     fileName.spriteNaming = str(number)
     fileName.save()
 
@@ -1230,7 +1176,7 @@ def procDeadCode(lines, fileName):
     for frame in lLines:
         if '[kurt.Script' in frame:
             # Found an object
-            name = frame.split("'")[1]         
+            name = frame.split("'")[1]
             lcharacter.append(name)
             if iterator != 0:
                 literator.append(iterator)
@@ -1241,15 +1187,15 @@ def procDeadCode(lines, fileName):
 
     number = len(lcharacter)
     dic = {}
-    dic["deadCode"] = dic  
+    dic["deadCode"] = dic
     dic["deadCode"]["number"] = number
     for i in range(number):
         dic["deadCode"][lcharacter[i]] = literator[i]
 
-    #Save in DB 
+    #Save in DB
     fileName.deadCode = number
     fileName.save()
-  
+
     return dic
 
 
@@ -1262,7 +1208,7 @@ def procInitialization(lines, fileName):
     values = d.values()
     items = d.items()
     number = 0
-    
+
     for keys, values in items:
         list = []
         attribute = ""
@@ -1286,11 +1232,11 @@ def procInitialization(lines, fileName):
                         attribute = attribute + ", " + str(internalkeys)
         if counterFlag:
             number = number + 1
-        d[keys] = attribute      
+        d[keys] = attribute
     dic["initialization"] = d
     dic["initialization"]["number"] = number
 
-    #Save in DB 
+    #Save in DB
     fileName.initialization = number
     fileName.save()
 
@@ -1339,10 +1285,10 @@ def exportCsvFile(request):
 
 
 ##############################################################################
-#                           UNDER DEVELOPMENT                                   
+#                           UNDER DEVELOPMENT
 ##############################################################################
 
-#________________________ DASHBOARD ____________________________# 
+#________________________ DASHBOARD ____________________________#
 
 def createDashboards():
     """Get users and create dashboards"""
@@ -1354,7 +1300,7 @@ def createDashboards():
             fupdate = datetime.now()
             newDash = Dashboard(user=user.username, frelease=fupdate)
             newDash.save()
-       
+
 def myDashboard(request):
     """Dashboard page"""
     if request.user.is_authenticated():
@@ -1366,7 +1312,7 @@ def myDashboard(request):
         beginner = mydashboard.project_set.filter(level="beginner")
         developing = mydashboard.project_set.filter(level="developing")
         advanced = mydashboard.project_set.filter(level="advanced")
-        return render_to_response("myDashboard/content-dashboard.html", 
+        return render_to_response("myDashboard/content-dashboard.html",
                                     {'user': user,
                                     'beginner': beginner,
                                     'developing': developing,
@@ -1383,23 +1329,23 @@ def myProjects(request):
         user = request.user.username
         mydashboard = Dashboard.objects.get(user=user)
         projects = mydashboard.project_set.all()
-        return render_to_response("myProjects/content-projects.html", 
+        return render_to_response("myProjects/content-projects.html",
                                 {'projects': projects,
                                  'user':user},
                                 context_instance=RC(request))
     else:
         return HttpResponseRedirect("/")
-    
+
 
 def myRoles(request):
     """Show the roles in Doctor Scratch"""
     if request.user.is_authenticated():
         user = request.user.username
         return render_to_response("myRoles/content-roles.html",
-                                context_instance=RC(request))   
+                                context_instance=RC(request))
     else:
-        return HttpResponseRedirect("/") 
-     
+        return HttpResponseRedirect("/")
+
 
 
 def myHistoric(request):
@@ -1408,14 +1354,14 @@ def myHistoric(request):
         user = request.user.username
         mydashboard = Dashboard.objects.get(user=user)
         projects = mydashboard.project_set.all()
-        return render_to_response("myHistoric/content-historic.html", 
+        return render_to_response("myHistoric/content-historic.html",
                                     {'projects': projects},
                                     context_instance=RC(request))
     else:
         return HttpResponseRedirect("/")
 
 
-#________________________ PROFILE ____________________________# 
+#________________________ PROFILE ____________________________#
 
 
 def updateProfile(request):
@@ -1462,7 +1408,7 @@ def changePassword(request, new_password):
 #    laux = lLines[3]
 #    laux = laux.split(':')[0]
 #    dic["neverRB"]["neverBroadcast"] = laux
-    
+
 #    return dic
 
 
@@ -1496,7 +1442,7 @@ def uploadRegistered(request):
         user = request.user.username
     else:
         return HttpResponseRedirect('/')
-        
+
     if request.method == 'POST':
         form = UploadFileForm(request.POST)
         # Analyze the scratch project and save in our server files
@@ -1507,11 +1453,11 @@ def uploadRegistered(request):
         # Get the short name
         shortName = fileName.split('/')[-1]
         # Get the dashboard of user
-        myDashboard = Dashboard.objects.get(user=user)    
+        myDashboard = Dashboard.objects.get(user=user)
         # Save the project
         newProject = Project(name=shortName, version=1, score=0, path=fileName, fupdate=fupdate, dashboard=myDashboard)
         newProject.save()
-        # Save the metrics    
+        # Save the metrics
         dmaster = d["mastery"]
         newMastery = Mastery(myproject=newProject, abstraction=dmaster["Abstraction"], paralel=dmaster["Parallelization"], logic=dmaster["Logic"], synchronization=dmaster["Synchronization"], flowcontrol=dmaster["FlowControl"], interactivity=dmaster["UserInteractivity"], representation=dmaster["DataRepresentation"], TotalPoints=dmaster["TotalPoints"])
         newMastery.save()
@@ -1536,7 +1482,7 @@ def uploadRegistered(request):
                 newDead.blocks = deadx
             newDead.save()
             iterator += 1
-        
+
         newDuplicate = Duplicate(myproject=newProject, numduplicates=d["duplicate"][0])
         newDuplicate.save()
         for charx in d["sprite"]:
@@ -1570,7 +1516,7 @@ def idProject(request, idProject):
                                                 'Total points': TotalPoints,
                                                 'ddead': ddead},
                                                 context_instance=RequestContext(request))
-    
+
 
 
 
@@ -1590,10 +1536,10 @@ def buildAttribute(qattribute):
     # Build the dictionary
     dic = {}
     for item in qattribute:
-        dic[item.character] = {"orientation": item.orientation, 
-                                "position": item.position, 
-                                "costume": item.costume, 
-                                "visibility":item.visibility, 
+        dic[item.character] = {"orientation": item.orientation,
+                                "position": item.position,
+                                "costume": item.costume,
+                                "visibility":item.visibility,
                                 "size": item.size}
     listInfo = writeErrorAttribute(dic)
     return listInfo
@@ -1637,4 +1583,3 @@ def uncompress_zip(zip_file):
         if file_path == 'project.json':
             file_content = unziped.read(file_path)
     show_file(file_content)
-
