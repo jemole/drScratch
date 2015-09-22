@@ -1,0 +1,11 @@
+FileName: 4FUNCIONA.sb2			ID: 57			Method: project			Time: 2015-09-22 10:40:51.946781
+FileName: 4NO FUNCIONA.sb2			ID: 58			Method: project			Time: 2015-09-22 10:40:59.466126
+FileName: XFUNCIONA.sb2			ID: 59			Method: project			Time: 2015-09-22 10:41:06.688723
+FileName: XNO FUNCIONA.sb2			ID: 60			Method: project			Time: 2015-09-22 10:41:13.403686
+FileName: 17896669.sb2			ID: 61			Method: url			Time: 2015-09-22 10:42:26.922054
+FileName: 2294898.sb2			ID: 62			Method: url			Time: 2015-09-22 10:43:04.622538
+FileName: 31417096.sb2			ID: 63			Method: url			Time: 2015-09-22 10:43:29.009684
+FileName: 17896669.sb2			ID: 64			Method: url			Time: 2015-09-22 10:54:55.588434
+FileName: 17896669.sb2			ID: 65			Method: url			Time: 2015-09-22 10:56:41.209863
+FileName: 17896669.sb2			ID: 66			Method: csv			Time: 2015-09-22 12:03:16.834282
+FileName: 17895669.sb2			ID: 67			Method: csv			Time: 2015-09-22 12:03:19.616471

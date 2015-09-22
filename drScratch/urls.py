@@ -38,5 +38,5 @@ urlpatterns = (
     url(r'^myRoles', 'app.views.myRoles',),
     url(r'^$', 'app.views.main',),
     url(r'^.*', 'app.views.redirectMain',),
-    
+
 )

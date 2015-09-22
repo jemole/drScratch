@@ -456,9 +456,11 @@ def signUpOrganization(request):
             password = form.cleaned_data['password']
             hashkey = form.cleaned_data['hashkey']
 
-            try:
+            #Checking the validity into the database contents.
+            #They will be refused if they already exist.
+            #If they exist an error message will be shown.
+            if Organization.objects.filter(username = username):
                 #This name already exists
-                organization = Organization.objects.get(username=username)
                 flagName = 1
                 return render_to_response("sign/signup_error.html",
                                           {'flagName':flagName,
@@ -466,51 +468,49 @@ def signUpOrganization(request):
                                            'flagHash':flagHash,
                                            'flagForm':flagForm},
                                           context_instance = RC(request))
-            except:
-                try:
-                    #This email already exists
-                    email = Organization.objects.get(email=email)
-                    flagEmail = 1
-                    return render_to_response("sign/signup_error.html",
-                                            {'flagName':flagName,
-                                            'flagEmail':flagEmail,
-                                            'flagHash':flagHash,
-                                            'flagForm':flagForm},
-                                            context_instance = RC(request))
-                except:
-                    try:
-                        organizationHashkey = OrganizationHash.objects.get(hashkey=hashkey)
-                        organizationHashkey.delete()
-                        organization = Organization.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
-                        organization = authenticate(username=username, password=password)
-                        user=Organization.objects.get(email=email)
-                        uid = urlsafe_base64_encode(force_bytes(user.pk))
-                        token=default_token_generator.make_token(user)
-                        c = {
-                                'email':email,
-                                'uid':uid,
-                                'token':token}
 
-                        body = render_to_string("sign/email.html",c)
-                        subject = "Welcome to Dr.Scratch for organizations"
-                        sender ="no-reply@drscratch.org"
-                        to = [email]
-                        email = EmailMessage(subject,body,sender,to)
-                        #email.attach_file("static/app/images/logo_main.png")
-                        email.send()
-                        login(request, organization)
-                        return HttpResponseRedirect('/organization/' + organization.username)
+            elif Organization.objects.filter(email = email):
+                #This email already exists
+                flagEmail = 1
+                return render_to_response("sign/signup_error.html",
+                                        {'flagName':flagName,
+                                        'flagEmail':flagEmail,
+                                        'flagHash':flagHash,
+                                        'flagForm':flagForm},
+                                        context_instance = RC(request))
+            elif not (Organization.objects.filter(hashkey = hashkey)):
+                #Doesn't exist this hash
+                flagHash = 1
 
-                    except:
-                        #Doesn't exist this hash
-                        flagHash = 1
+                return render_to_response("sign/signup_error.html",
+                                  {'flagName':flagName,
+                                   'flagEmail':flagEmail,
+                                   'flagHash':flagHash,
+                                   'flagForm':flagForm},
+                                  context_instance = RC(request))
+            else:
+                organizationHashkey = OrganizationHash.objects.get(hashkey=hashkey)
+                organizationHashkey.delete()
+                organization = Organization.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
+                organization = authenticate(username=username, password=password)
+                user=Organization.objects.get(email=email)
+                uid = urlsafe_base64_encode(force_bytes(user.pk))
+                token=default_token_generator.make_token(user)
+                c = {
+                        'email':email,
+                        'uid':uid,
+                        'token':token}
 
-                        return render_to_response("sign/signup_error.html",
-                                          {'flagName':flagName,
-                                           'flagEmail':flagEmail,
-                                           'flagHash':flagHash,
-                                           'flagForm':flagForm},
-                                          context_instance = RC(request))
+                body = render_to_string("sign/email.html",c)
+                subject = "Welcome to Dr.Scratch for organizations"
+                sender ="no-reply@drscratch.org"
+                to = [email]
+                email = EmailMessage(subject,body,sender,to)
+                #email.attach_file("static/app/images/logo_main.png")
+                email.send()
+                login(request, organization)
+                return HttpResponseRedirect('/organization/' + organization.username)
+
         else:
             flagForm = 1
             return render_to_response("sign/signup_error.html",
