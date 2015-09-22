@@ -615,13 +615,23 @@ def analyzeCSV(request):
                     type_csv = "2_row"
                     code = line.split(",")[0]
                     url = line.split(",")[1]
+                    url = url.split("\n")[0]
                     method = "csv"
-                    try:
-                        idProject = url.split("/")[-2]
-                    except:
+                    print "ESTE" + str(url) + "VALE"
+                    if url.isdigit():
+                        print "FUNCIONA"
                         idProject = url
-                    (pathProject, file) = sendRequestgetSB2(idProject, organization, method)
+                    else:
+                        slashNum = url.count('/')
+                        if slashNum == 4:
+                            idProject = url.split("/")[-1]
+                        elif slashNum == 5:
+                            idProject = url.split('/')[-2]
+
+
+
                     try:
+                        (pathProject, file) = sendRequestgetSB2(idProject, organization, method)
                         d = analyzeProject(request, pathProject, file)
                     except:
                         d = ["Error analyzing project", url]
