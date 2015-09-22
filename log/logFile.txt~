@@ -1,35 +1,25 @@
-FileName: 17896669.sb2			ID: 1			Method: url			Time: 2015-09-21 18:27:10.832727
-FileName: 46209950.sb2			ID: 2			Method: csv			Time: 2015-09-21 18:41:15.134224
-FileName: 49335402.sb2			ID: 3			Method: csv			Time: 2015-09-21 18:41:19.197708
-FileName: 49336196.sb2			ID: 4			Method: csv			Time: 2015-09-21 18:41:25.836665
-FileName: 49333588.sb2			ID: 5			Method: csv			Time: 2015-09-21 18:41:28.475759
-FileName: 46209950.sb2			ID: 6			Method: csv			Time: 2015-09-21 18:41:32.431202
-FileName: 49335402.sb2			ID: 7			Method: csv			Time: 2015-09-21 18:41:36.434671
-FileName: projects.sb2			ID: 8			Method: csv			Time: 2015-09-21 18:42:45.324745
-FileName: 2437817.sb2			ID: 9			Method: csv			Time: 2015-09-21 18:45:49.287471
-FileName: 2437817.sb2			ID: 10			Method: csv			Time: 2015-09-21 18:47:01.322265
-FileName: 17896669.sb2			ID: 11			Method: csv			Time: 2015-09-21 18:50:08.931903
-FileName: 17896669.sb2			ID: 12			Method: csv			Time: 2015-09-21 18:50:16.605348
-FileName: 17896669.sb2			ID: 13			Method: csv			Time: 2015-09-21 18:50:22.795165
-FileName: 17896669.sb2			ID: 14			Method: csv			Time: 2015-09-21 18:50:30.495797
-FileName: 17896669.sb2			ID: 15			Method: csv			Time: 2015-09-21 19:29:29.018202
-FileName: 17895669.sb2			ID: 16			Method: csv			Time: 2015-09-21 19:29:37.335651
-FileName: 17896669.sb2			ID: 17			Method: csv			Time: 2015-09-21 19:30:51.687475
-FileName: 17895669.sb2			ID: 18			Method: csv			Time: 2015-09-21 19:30:58.682163
-FileName: 17896669.sb2			ID: 19			Method: csv			Time: 2015-09-21 19:32:48.079585
-FileName: 17895669.sb2			ID: 20			Method: csv			Time: 2015-09-21 19:32:55.521043
-FileName: 17896669.sb2			ID: 21			Method: csv			Time: 2015-09-21 19:33:44.292560
-FileName: 17895669.sb2			ID: 22			Method: csv			Time: 2015-09-21 19:33:51.549526
-FileName: 17896669.sb2			ID: 23			Method: url			Time: 2015-09-21 19:36:13.536169
-FileName: 17896669.sb2			ID: 24			Method: csv			Time: 2015-09-21 19:36:32.568672
-FileName: 17895669.sb2			ID: 25			Method: csv			Time: 2015-09-21 19:36:42.090045
-FileName: 17896669.sb2			ID: 26			Method: csv			Time: 2015-09-21 19:37:54.840528
-FileName: 17895669.sb2			ID: 27			Method: csv			Time: 2015-09-21 19:38:02.137894
-FileName: 17896669.sb2			ID: 28			Method: csv			Time: 2015-09-21 19:38:39.269089
-FileName: 17895669.sb2			ID: 29			Method: csv			Time: 2015-09-21 19:38:46.443320
-FileName: 17896669.sb2			ID: 30			Method: csv			Time: 2015-09-21 19:39:29.668703
-FileName: 17895669.sb2			ID: 31			Method: csv			Time: 2015-09-21 19:39:40.443083
-FileName: 17896669.sb2			ID: 32			Method: csv			Time: 2015-09-21 19:40:38.666332
-FileName: 17895669.sb2			ID: 33			Method: csv			Time: 2015-09-21 19:40:46.956241
-FileName: 17896669.sb2			ID: 34			Method: csv			Time: 2015-09-21 19:41:48.927294
-FileName: 17895669.sb2			ID: 35			Method: csv			Time: 2015-09-21 19:41:57.624510
+FileName: 17896669.sb2			ID: 36			Method: url			Time: 2015-09-22 09:37:41.831930
+FileName: 17896669.sb2			ID: 37			Method: csv			Time: 2015-09-22 09:38:45.867388
+FileName: 17895669.sb2			ID: 38			Method: csv			Time: 2015-09-22 09:38:50.691770
+FileName: 17896669.sb2			ID: 39			Method: csv			Time: 2015-09-22 10:07:10.509922
+FileName: 17895669.sb2			ID: 40			Method: csv			Time: 2015-09-22 10:07:17.460455
+FileName: 17896669.sb2			ID: 41			Method: csv			Time: 2015-09-22 10:07:53.827616
+FileName: 17895669.sb2			ID: 42			Method: csv			Time: 2015-09-22 10:07:58.217711
+FileName: 17896669.sb2			ID: 43			Method: csv			Time: 2015-09-22 10:08:24.300589
+FileName: 17895669.sb2			ID: 44			Method: csv			Time: 2015-09-22 10:08:28.929974
+FileName: 17896669
+.sb2			ID: 45			Method: csv			Time: 2015-09-22 10:08:44.514456
+FileName: 17895669
+.sb2			ID: 46			Method: csv			Time: 2015-09-22 10:08:49.044959
+FileName: 17896669.sb2			ID: 47			Method: csv			Time: 2015-09-22 10:11:20.450287
+FileName: 17895669.sb2			ID: 48			Method: csv			Time: 2015-09-22 10:11:25.104380
+FileName: 17896669
+.sb2			ID: 49			Method: csv			Time: 2015-09-22 10:12:14.028182
+FileName: 17895669
+.sb2			ID: 50			Method: csv			Time: 2015-09-22 10:12:18.507844
+FileName: 17896669.sb2			ID: 51			Method: csv			Time: 2015-09-22 10:19:06.136217
+FileName: 17895669.sb2			ID: 52			Method: csv			Time: 2015-09-22 10:19:10.612981
+FileName: 17896669.sb2			ID: 53			Method: csv			Time: 2015-09-22 10:19:31.270681
+FileName: 17895669.sb2			ID: 54			Method: csv			Time: 2015-09-22 10:19:35.789843
+FileName: 17896669.sb2			ID: 55			Method: csv			Time: 2015-09-22 10:19:54.649403
+FileName: 17895669.sb2			ID: 56			Method: csv			Time: 2015-09-22 10:19:59.067800
