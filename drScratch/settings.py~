@@ -104,7 +104,6 @@ _ = lambda s: s
 LANGUAGES = (
     ('es', _('Spanish')),
     ('en', _('English')),
-    ('ca', _('Catalan')),
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

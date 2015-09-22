@@ -388,13 +388,22 @@ def learn(request,page):
     #Unicode to string(page)
     page = unicodedata.normalize('NFKD',page).encode('ascii','ignore')
 
-    dic = {'Pensamiento':'Logic',
-           'Paralelismo':'Parallelism',
-          'Representacion':'Data representation',
-          'Sincronizacion':'Synchronization',
-          'Interactividad':'User interactivity',
-          'Control':'Flow control',
-          'Abstraccion':'Abstraction'}
+    if request.LANGUAGE_CODE == "es":
+        dic = {'Pensamiento':'Logic',
+               'Paralelismo':'Parallelism',
+              'Representacion':'Data',
+              'Sincronizacion':'Synchronization',
+              'Interactividad':'User',
+              'Control':'Flow',
+              'Abstraccion':'Abstraction'}
+    elif request.LANGUAGE_CODE == "ca":
+        dic = {'Logica':'Logic',
+               'Paral':'Parallelism',
+              'Representació':'Data',
+              'Sincronitzacio':'Synchronization',
+              'Interactivitat':'User',
+              'Controls':'Flow',
+              'Abstraccio':'Abstraction'}
 
     if page in dic:
         page = dic[page]
@@ -706,7 +715,78 @@ def generatorCSV(request, dictionary, file_name, type_csv):
     csv_data = csv_directory + file_name
     writer = csv.writer(open(csv_data, "wb"))
 
-    if request.LANGUAGE_CODE == "es":
+    if request.LANGUAGE_CODE == "ca":
+        if type_csv == "2_row":
+            writer.writerow(["CODI", "URL", "Mastery", "Abstracció", "Paral·lelisme", "Lògica ", "Sincronització", "Controls de flux ", "Interactivitat de l'usuari", "Representació de dades", "Programes duplicats", "Noms per defecte", "Codi mort",  "Atributs no inicialitzats correctament"])
+        elif type_csv == "1_row":
+            writer.writerow(["URL",  "Mastery", "Abstracció", "Paral·lelisme", "Lògica ", "Sincronització", "Controls de flux ", "Interactivitat de l'usuari", "Representació de dades", "Programes duplicats", "Noms per defecte", "Codi mort",  "Atributs no inicialitzats correctament"])
+        for key, value in dictionary.items():
+            total = 0
+            flag = False
+            try:
+                if value[0] == "Error analyzing project":
+                    if type_csv == "2_row":
+                        row1 = key.split(",")[0]
+                        row2 = key.split(",")[1]
+                        row2 = row2.split("\n")[0]
+                        writer.writerow([row1, row2, "Error analitzant el projecte"])
+                    elif type_csv == "1_row":
+                        row1 = key.split(",")[0]
+                        writer.writerow([row1, "Error analitzant el projecte"])
+            except:
+                total = 0
+                row1 = key.split(",")[0]
+                if type_csv == "2_row":
+                    row2 = key.split(",")[1]
+                    row2 = row2.split("\n")[0]
+
+                for key, subvalue in value.items():
+                    if key == "duplicateScript":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row11 = sub2value
+                    if key == "spriteNaming":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row12 = sub2value
+                    if key == "deadCode":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row13 = sub2value
+                    if key == "initialization":
+                        for key, sub2value in subvalue.items():
+                            if key == "number":
+                                row14 = sub2value
+
+                for key, value in value.items():
+                    if key == "mastery":
+                        for key, subvalue in value.items():
+                            if key!="maxi" and key!="points":
+                                if key == "Paral·lelisme":
+                                    row5 = subvalue
+                                elif key == "Abstracció":
+                                    row4 = subvalue
+                                elif key == "Lògica":
+                                    row6 = subvalue
+                                elif key == "Sincronització":
+                                    row7 = subvalue
+                                elif key == "Controls de flux":
+                                    row8 = subvalue
+                                elif key == "Interactivitat de l'usuari":
+                                    row9 = subvalue
+                                elif key == "Representació de dades":
+                                    row10 = subvalue
+                                total = total + subvalue
+                        row3 = total
+                if type_csv == "2_row":
+                    writer.writerow([row1,row2,row3,row4,row5,row6,row7,row8,
+                                row9,row10,row11,row12,row13,row14])
+                elif type_csv == "1_row":
+                    writer.writerow([row1,row3,row4,row5,row6,row7,row8,
+                                row9,row10,row11,row12,row13,row14])
+
+
+    elif request.LANGUAGE_CODE == "es":
         if type_csv == "2_row":
             writer.writerow(["CÓDIGO", "URL", "Mastery", "Abstracción", "Paralelismo", "Pensamiento lógico", "Sincronización", "Control de flujo", "Interactividad con el usuario", "Representación de la información", "Código repetido", "Nombres por defecto", "Código muerto",  "Inicialización atributos"])
         elif type_csv == "1_row":
@@ -1106,6 +1186,18 @@ def translate(request,d, fileName):
         fileName.language = "en"
         fileName.save()
         return d_translate_en
+    elif request.LANGUAGE_CODE == "ca":
+        d_translate_ca = {}
+        d_translate_ca['Abstracció'] = d['Abstraction']
+        d_translate_ca['Paral·lelisme'] = d['Parallelization']
+        d_translate_ca['Lògica'] = d['Logic']
+        d_translate_ca['Sincronització'] = d['Synchronization']
+        d_translate_ca['Controls de flux'] = d['FlowControl']
+        d_translate_ca["Interactivitat de l'usuari"] = d['UserInteractivity']
+        d_translate_ca['Representació de dades'] = d['DataRepresentation']
+        fileName.language = "ca"
+        fileName.save()
+        return d_translate_ca
     else:
         return d
 

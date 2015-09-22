@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 19:13+0000\n"
+"POT-Creation-Date: 2015-09-22 10:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,13 +20,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: drScratch/settings.py:106
+#: drScratch/settings.py:105
 msgid "Spanish"
 msgstr "Español"
 
-#: drScratch/settings.py:107
+#: drScratch/settings.py:106
 msgid "English"
 msgstr "Inglés"
+
+#: drScratch/settings.py:107 templates/main/collaborators.html:433
+msgid "Catalan"
+msgstr "Catalán"
 
 #: templates/error/404.html:9 templates/error/500.html:9
 #: templates/error/analyzing.html:9
@@ -59,7 +63,7 @@ msgstr "Empezar"
 #: templates/sign/createOrganization.html:256
 #: templates/sign/createUser.html:255 templates/sign/organization.html:288
 #: templates/sign/registerOrganization.html:255
-#: templates/statistics/statistics.html:347
+#: templates/statistics/statistics.html:350
 #: templates/upload/dashboard-organization.html:212
 #: templates/upload/dashboard-unregistered-basic.html:255
 #: templates/upload/dashboard-unregistered-developing.html:292
@@ -1677,8 +1681,8 @@ msgid ""
 "We provide feedback on several aspects which are related to Computational "
 "Thinking."
 msgstr ""
-"Dr. Scratch ofrece realimentación en aspectos relacionados con el Pensamiento "
-"Computacional ayudándote a mejorarlos."
+"Dr. Scratch ofrece realimentación en aspectos relacionados con el "
+"Pensamiento Computacional ayudándote a mejorarlos."
 
 #: templates/login/login.html:231 templates/main/main.html:257
 msgid "Always improving"
@@ -1973,8 +1977,8 @@ msgid ""
 "Would you like help us to translate Dr. Scratch to your language? Many "
 "people have already helped us! "
 msgstr ""
-"¿Te gustaría ayudarnos a traducir Dr. Scratch a tu lengua? ¡Mucha gente nosha "
-"ayudado ya!"
+"¿Te gustaría ayudarnos a traducir Dr. Scratch a tu lengua? ¡Mucha gente "
+"nosha ayudado ya!"
 
 #: templates/main/collaborators.html:367
 msgid "Portuguese from Brazil"
@@ -1987,10 +1991,6 @@ msgstr "Griego"
 #: templates/main/collaborators.html:411
 msgid "Hungarian"
 msgstr "Húgaro"
-
-#: templates/main/collaborators.html:433
-msgid "Catalan"
-msgstr "Catalán"
 
 #: templates/main/collaborators.html:457
 msgid "Basque"
@@ -2500,6 +2500,10 @@ msgstr "Habilidad de programación"
 #: templates/statistics/statistics.html:266
 msgid "Data representation"
 msgstr "Representación de los datos"
+
+#: templates/statistics/statistics.html:310
+msgid "These statistics are update every night at 00.00h CEST."
+msgstr "Estas estadísticas son actualizadas todas las noches a las 00.00h CEST."
 
 #: templates/upload/dashboard-organization.html:122
 msgid "You can download your results. You do click in the following button:"
