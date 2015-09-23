@@ -161,13 +161,13 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
             <div class="panel panel-success" id="devpanel">
                 <div class="panel-heading" id="stepone" >
                     <img src="static/app/images/cat.png" class="img-responsive col-md-4">
-                    <h2 id="score" class="panel-title dark-text"> <strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}
-                            <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2> 
-                        
+                    <h2 id="score" class="panel-title dark-text"> <strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}                   
+                    <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>                                          
                 </div>
-                <div class="panel-body">
+                <div class="panel-body">                    
                     <div class="container">
-                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></h3>" %}
+                            <br></br>
+                            {% trans "<h3 class='text-left dark-text'>Your level is...  <strong> MASTER! </strong></h3>" %}
                             <p class='text-left dark-text'> {% trans "You're the master of the universe!!! " %}</p> 
                     </div>
                 </div>
