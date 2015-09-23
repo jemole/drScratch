@@ -33,7 +33,8 @@ class File(models.Model):
     duplicateScript = models.IntegerField()
 
 class Student(models.Model):
-    student = models.ForeignKey(User, unique=True)  
+    #student = models.ForeignKey(User, unique=True)  
+    student = models.OneToOneField(User)
 
 class Classroom(models.Model):
     name = models.CharField(max_length=100)
@@ -41,7 +42,8 @@ class Classroom(models.Model):
 
 
 class Teacher(models.Model):
-    teacher = models.ForeignKey(User, unique=True)
+    #teacher = models.ForeignKey(User, unique=True)
+    teacher = models.OneToOneField(User)    
     username = models.TextField()
     password = models.TextField()
     email = models.TextField()
