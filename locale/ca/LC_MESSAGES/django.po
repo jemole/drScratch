@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-23 09:31+0000\n"
+"POT-Creation-Date: 2015-09-22 09:56+0000\n"
 "PO-Revision-Date: 2015-08-30 23:02+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,15 +18,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.4\n"
 
-#: drScratch/settings.py:106
+#: drScratch/settings.py:105
 msgid "Spanish"
 msgstr "Espanyol"
 
-#: drScratch/settings.py:107
+#: drScratch/settings.py:106
 msgid "English"
 msgstr "Anglès"
 
-#: drScratch/settings.py:108 templates/main/collaborators.html:433
+#: drScratch/settings.py:107 templates/main/collaborators.html:433
 msgid "Catalan"
 msgstr "Català"
 
@@ -46,7 +46,7 @@ msgstr "Vaja! Aquesta pàgina no existeix"
 #: templates/error/404.html:59 templates/error/500.html:59
 #: templates/error/analyzing.html:62 templates/login/login.html:104
 #: templates/login/login.html.py:525 templates/main/collaborators.html:84
-#: templates/main/main.html:85 templates/main/main.html.py:551
+#: templates/main/main.html:86 templates/main/main.html.py:552
 #: templates/sign/createOrganization.html:81 templates/sign/createUser.html:81
 #: templates/sign/organization.html:105
 #: templates/sign/registerOrganization.html:81
@@ -56,14 +56,14 @@ msgstr "Començar"
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70 templates/learn/base.html:94
 #: templates/login/login.html:536 templates/main/collaborators.html:593
-#: templates/main/main.html:562 templates/main/main_organization.html:246
+#: templates/main/main.html:563 templates/main/main_organization.html:246
 #: templates/password/base.html:104 templates/sign/base.html:104
 #: templates/sign/createOrganization.html:256
 #: templates/sign/createUser.html:255 templates/sign/organization.html:288
 #: templates/sign/registerOrganization.html:255
 #: templates/statistics/statistics.html:350
 #: templates/upload/dashboard-organization.html:212
-#: templates/upload/dashboard-unregistered-basic.html:254
+#: templates/upload/dashboard-unregistered-basic.html:255
 #: templates/upload/dashboard-unregistered-developing.html:292
 #: templates/upload/dashboard-unregistered-master.html:353
 msgid "©2014 Dr. Scratch is powered by "
@@ -144,7 +144,7 @@ msgstr "quan la ⚑ es premi"
 #: templates/learn/User.html:23 templates/learn/User.html.py:47
 #: templates/learn/User.html:70
 msgid "clear"
-msgstr "esborrar"
+msgstr "neteja"
 
 #: templates/learn/Abstraction.html:22 templates/learn/Abstraction.html:37
 #: templates/learn/User.html:24 templates/learn/User.html.py:48
@@ -268,7 +268,7 @@ msgstr ""
 
 #: templates/learn/Abstraction.html:79
 msgid "define PaintedOrange(length)"
-msgstr "definir PintaTaronja(llargada)"
+msgstr "defineix PintaTaronja(llargada)"
 
 #: templates/learn/Abstraction.html:82
 msgid "move (length) steps"
@@ -370,7 +370,7 @@ msgstr "vés a x:(nombre a l'atzar entre (-200) i (200)) y:(200)"
 
 #: templates/learn/Abstraction.html:123
 msgid "glide (3) secs to x:(x position) y:(-180)"
-msgstr "llisca en (3) segons a x:(posició x) y:(-180)"
+msgstr "llisca en (3) segons fins a x:(posició x) y:(-180)"
 
 #: templates/learn/Abstraction.html:124
 msgid "delete this clone"
@@ -460,7 +460,7 @@ msgstr "Mida:"
 
 #: templates/learn/Data.html:42
 msgid "change size by (10)"
-msgstr "augmenta (10) a mida"
+msgstr "augmenta (10) la mida"
 
 #: templates/learn/Data.html:43
 #, python-format
@@ -652,7 +652,7 @@ msgstr ""
 #: templates/learn/Parallelism.html:44 templates/learn/Parallelism.html:49
 #: templates/learn/Synchronization.html:50
 msgid "end"
-msgstr "final"
+msgstr "end"
 
 #: templates/learn/Data.html:123
 msgid "say [Today's volunteer will be...] for (2) secs"
@@ -1086,15 +1086,15 @@ msgstr "quan rebi [message1 v]"
 
 #: templates/learn/Parallelism.html:69
 msgid "when [loudness ] &gt; 10"
-msgstr "quan [volum del so v] sigui &gt; (10)"
+msgstr "quan [volum del so v] &gt; (10)"
 
 #: templates/learn/Parallelism.html:70
 msgid "when [video motion v] &gt; (2)"
-msgstr "quan [moviment de vídeo v] sigui &gt; (2)"
+msgstr "quan [moviment de vídeo v] &gt; (2)"
 
 #: templates/learn/Parallelism.html:71
 msgid "when [timer v] &gt; (45)"
-msgstr "quan [cronòmetre v] sigui &gt; (2)"
+msgstr "quan [cronòmetre v] &gt; (2)"
 
 #: templates/learn/Parallelism.html:73
 msgid ""
@@ -1486,6 +1486,7 @@ msgstr ""
 "com s'espera d'ells, així que: mira d'evitar codi mort en els teus programes!"
 
 #: templates/learn/duplicatedScripts.html:4
+#: templates/upload/dashboard-unregistered.html:162
 msgid "Duplicated Scripts"
 msgstr "Programes Duplicats"
 
@@ -1630,33 +1631,33 @@ msgstr ""
 msgid "Sign up!"
 msgstr "Registra't!"
 
-#: templates/login/login.html:187 templates/main/main.html:213
+#: templates/login/login.html:187 templates/main/main.html:214
 msgid "WHY?"
 msgstr "Per què?"
 
-#: templates/login/login.html:189 templates/main/main.html:215
+#: templates/login/login.html:189 templates/main/main.html:216
 #: templates/sign/createOrganization.html:165
 #: templates/sign/createUser.html:165
 #: templates/sign/registerOrganization.html:165
 msgid "Why "
 msgstr "Per què"
 
-#: templates/login/login.html:189 templates/main/main.html:215
+#: templates/login/login.html:189 templates/main/main.html:216
 #: templates/sign/createOrganization.html:165
 #: templates/sign/createUser.html:165
 #: templates/sign/registerOrganization.html:165
 msgid "you’ll love Dr. Scratch"
 msgstr "t'encantarà Dr. Scratch"
 
-#: templates/login/login.html:193 templates/main/main.html:219
+#: templates/login/login.html:193 templates/main/main.html:220
 msgid "A powerful tool to analyze your Scratch projects"
 msgstr "Analitza els teus projectes de Scratch"
 
-#: templates/login/login.html:205 templates/main/main.html:231
+#: templates/login/login.html:205 templates/main/main.html:232
 msgid "Simple & Fun"
 msgstr "Fàcil & Divertit"
 
-#: templates/login/login.html:207 templates/main/main.html:233
+#: templates/login/login.html:207 templates/main/main.html:234
 msgid ""
 "Your students can easily learn how to improve their programming skills in a "
 "fun way."
@@ -1664,11 +1665,11 @@ msgstr ""
 "Els teus estudiants poden aprendre fàcilment com millorar les seves "
 "habilitats de programació d'una manera divertida."
 
-#: templates/login/login.html:218 templates/main/main.html:244
+#: templates/login/login.html:218 templates/main/main.html:245
 msgid "Improve your skills"
 msgstr "Millora les teves habilitats"
 
-#: templates/login/login.html:220 templates/main/main.html:246
+#: templates/login/login.html:220 templates/main/main.html:247
 msgid ""
 "We provide feedback on several aspects which are related to Computational "
 "Thinking."
@@ -1676,11 +1677,11 @@ msgstr ""
 "Dr. Scratch ofereix retroacció en aspectes relacionats amb el Pensament "
 "Computacional ajudant-te a millorar-los."
 
-#: templates/login/login.html:231 templates/main/main.html:257
+#: templates/login/login.html:231 templates/main/main.html:258
 msgid "Always improving"
 msgstr "Millorant constantment"
 
-#: templates/login/login.html:233 templates/main/main.html:259
+#: templates/login/login.html:233 templates/main/main.html:260
 msgid ""
 "We're continually enhancing the features of Dr. Scratch, and we'd love to "
 "hear your thoughts"
@@ -1688,29 +1689,29 @@ msgstr ""
 "Intentem millorar contínuament, per això ens agradaria escoltar les teves "
 "opinions."
 
-#: templates/login/login.html:270 templates/main/main.html:296
+#: templates/login/login.html:270 templates/main/main.html:297
 msgid "How"
 msgstr "Com"
 
-#: templates/login/login.html:272 templates/main/main.html:298
+#: templates/login/login.html:272 templates/main/main.html:299
 #: templates/sign/organization.html:189
 msgid "How "
 msgstr "Com"
 
-#: templates/login/login.html:272 templates/main/main.html:298
+#: templates/login/login.html:272 templates/main/main.html:299
 msgid "it works"
 msgstr "funciona"
 
-#: templates/login/login.html:276 templates/main/main.html:302
+#: templates/login/login.html:276 templates/main/main.html:303
 msgid "There are two options to analyze a Scratch project with Dr. Scratch"
 msgstr ""
 "Hi ha dues opcions per analitzar un projecte de Scratch amb Dr. Scratch"
 
-#: templates/login/login.html:277 templates/main/main.html:303
+#: templates/login/login.html:277 templates/main/main.html:304
 msgid "project.png"
 msgstr "projecte.png"
 
-#: templates/login/login.html:279 templates/main/main.html:305
+#: templates/login/login.html:279 templates/main/main.html:306
 msgid ""
 "You can upload an sb2 file or just provide the project url, avoiding the "
 "need to previously download the project to your computer. By analyzing your "
@@ -1722,51 +1723,51 @@ msgstr ""
 "ordinador. Per mitjà de l'anàlisi de Dr. Scratch pots conèixer fàcilment el "
 "teu Nivell de Pensament Computacional."
 
-#: templates/login/login.html:288 templates/main/main.html:314
+#: templates/login/login.html:288 templates/main/main.html:315
 msgid "It is extremely easy to use, both for begginers and expert programmers."
 msgstr ""
 "És increïblement fàcil d'utilitzar, tant si ets principiant com si ets un "
 "programador expert."
 
-#: templates/login/login.html:292 templates/main/main.html:318
+#: templates/login/login.html:292 templates/main/main.html:319
 msgid "You receive feedback to improve your coding skills."
 msgstr "Rebràs retroacció per millorar les teves habilitats de programació."
 
-#: templates/login/login.html:300 templates/main/main.html:326
+#: templates/login/login.html:300 templates/main/main.html:327
 msgid ""
 "You can keep on improving your programming skills by yourself even from home."
 msgstr ""
 "Pots seguir millorant les teves habilitats com a programador pel teu compte, "
 "fins i tot des de casa."
 
-#: templates/login/login.html:304 templates/main/main.html:330
+#: templates/login/login.html:304 templates/main/main.html:331
 msgid "You can track your progress through charts and stats."
 msgstr ""
 "Pots realitzar un seguiment del teu progrés a través de gràfics i "
 "estadístiques."
 
-#: templates/login/login.html:323 templates/main/main.html:349
+#: templates/login/login.html:323 templates/main/main.html:350
 msgid "NEW FEATURES"
 msgstr "NOVES FUNCIONALITATS"
 
-#: templates/login/login.html:325 templates/main/main.html:351
+#: templates/login/login.html:325 templates/main/main.html:352
 msgid "Coming "
 msgstr "Properes "
 
-#: templates/login/login.html:325 templates/main/main.html:351
+#: templates/login/login.html:325 templates/main/main.html:352
 msgid "Soon"
 msgstr "Funcionalitats"
 
-#: templates/login/login.html:329 templates/main/main.html:355
+#: templates/login/login.html:329 templates/main/main.html:356
 msgid "We are working on new features to improve Dr. Scratch"
 msgstr "Estem treballant en noves característiques que millorin Dr. Scratch"
 
-#: templates/login/login.html:344 templates/main/main.html:370
+#: templates/login/login.html:344 templates/main/main.html:371
 msgid "Multilingual Website"
 msgstr "Web Multilingüe"
 
 #: templates/login/login.html:348 templates/main/collaborators.html:350
-#: templates/main/main.html:374
+#: templates/main/main.html:375
 msgid ""
 "We know the importance of receiving feedback on your own language to "
 "understand every little detail or hint, so we'll translate Dr. Scratch to "
@@ -1776,11 +1777,11 @@ msgstr ""
 "propi idioma, és per això que traduirem Dr. Scratch; així alhora facilitem "
 "l'aprentatge d'un major nombre de persones."
 
-#: templates/login/login.html:359 templates/main/main.html:385
+#: templates/login/login.html:359 templates/main/main.html:386
 msgid "Teacher Accounts"
 msgstr "Comptes per a professors"
 
-#: templates/login/login.html:363 templates/main/main.html:389
+#: templates/login/login.html:363 templates/main/main.html:390
 msgid ""
 "Teachers will be able to group (and follow) their students to keep track of "
 "their progress in a fast and simple way."
@@ -1788,11 +1789,11 @@ msgstr ""
 "Els professors podran agrupar (i seguir) els seus estudiants i realitzar un "
 "seguiment dels seus progressos d'una manera ràpida i simple."
 
-#: templates/login/login.html:374 templates/main/main.html:400
+#: templates/login/login.html:374 templates/main/main.html:401
 msgid "Cloud Platform"
 msgstr "Plataforma en el núvol"
 
-#: templates/login/login.html:378 templates/main/main.html:404
+#: templates/login/login.html:378 templates/main/main.html:405
 msgid ""
 "We are in the process of migrating our servers to the Cloud with the aim of "
 "providing a better performance."
@@ -1800,7 +1801,7 @@ msgstr ""
 "Estem migrant els nostres servidors al núvol amb l'objectiu d'oferir un "
 "millor rendiment."
 
-#: templates/login/login.html:403 templates/main/main.html:429
+#: templates/login/login.html:403 templates/main/main.html:430
 msgid ""
 "With Dr. Scratch plug-ins for Chrome and Firefox, students will analyze "
 "their project WHILE programming on the Scratch website."
@@ -1808,11 +1809,11 @@ msgstr ""
 "Amb les extensions de Dr. Scratch per a Chrome i Firefox, els estudiants "
 "podran analitzar els seus projectes MENTRE programen en la web de Scratch."
 
-#: templates/login/login.html:414 templates/main/main.html:440
+#: templates/login/login.html:414 templates/main/main.html:441
 msgid "Gamification"
 msgstr "Ludificació"
 
-#: templates/login/login.html:418 templates/main/main.html:444
+#: templates/login/login.html:418 templates/main/main.html:445
 msgid ""
 "We'd like to take learners curiosity one step further. Do you have cool "
 "ideas to gamify our platform?"
@@ -1820,11 +1821,11 @@ msgstr ""
 "Ens agradaria dur la curiositat dels estudiants un pas més enllà. Tens bones "
 "propostes per ludificar la nostra plataforma?"
 
-#: templates/login/login.html:429 templates/main/main.html:455
+#: templates/login/login.html:429 templates/main/main.html:456
 msgid "Social Network"
 msgstr "Xarxa Social"
 
-#: templates/login/login.html:433 templates/main/main.html:459
+#: templates/login/login.html:433 templates/main/main.html:460
 msgid ""
 "The new social network funcionalities will allow users to communicate with "
 "each other to exchange ideas and challenges."
@@ -1832,19 +1833,19 @@ msgstr ""
 "Les funcionalitats de xarxa social que inclourem permetran als usuaris "
 "comunicar-se entre ells i intercanviar idees i reptes."
 
-#: templates/login/login.html:453 templates/main/main.html:479
+#: templates/login/login.html:453 templates/main/main.html:480
 msgid "Contact"
 msgstr "Contacte"
 
-#: templates/login/login.html:455 templates/main/main.html:481
+#: templates/login/login.html:455 templates/main/main.html:482
 msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
 msgstr "<strong>Contacta </strong>amb l'equip de Dr. Scratch</h2>"
 
-#: templates/login/login.html:459 templates/main/main.html:485
+#: templates/login/login.html:459 templates/main/main.html:486
 msgid "We would be pleased to receive your feedback"
 msgstr "Ens agradaria conèixer la teva opinió i escoltar les teves idees"
 
-#: templates/login/login.html:498 templates/main/main.html:524
+#: templates/login/login.html:498 templates/main/main.html:525
 msgid ""
 "We would like to thank many people for their collaboration and we have done "
 "one special section."
@@ -1856,48 +1857,48 @@ msgstr ""
 msgid "Collaborators"
 msgstr "Col·laboradors"
 
-#: templates/login/login.html:520 templates/main/main.html:546
+#: templates/login/login.html:520 templates/main/main.html:547
 msgid "Are you a Dr. Scratch user?"
 msgstr "Ets usuari de Dr. Scratch?"
 
-#: templates/login/login.html:523 templates/main/main.html:549
+#: templates/login/login.html:523 templates/main/main.html:550
 msgid "Join now!"
 msgstr "Prova-ho!"
 
-#: templates/login/login.html:563 templates/main/main.html:589
+#: templates/login/login.html:563 templates/main/main.html:590
 #: templates/upload/dashboard-organization.html:239
 msgid "What is an url?"
 msgstr "Què és una url?"
 
-#: templates/login/login.html:565 templates/main/main.html:591
+#: templates/login/login.html:565 templates/main/main.html:592
 #: templates/upload/dashboard-organization.html:241
 msgid "How I can know my Scratch project's url?"
 msgstr "Com puc esbrinar la url del meu projecte de Scratch?"
 
-#: templates/login/login.html:569 templates/main/main.html:595
+#: templates/login/login.html:569 templates/main/main.html:596
 msgid "<img class='framed' src='static/app/images/url-en.png' />"
 msgstr "<img class='framed' src='static/app/images/url-ca.png' />"
 
-#: templates/login/login.html:588 templates/main/main.html:614
+#: templates/login/login.html:588 templates/main/main.html:615
 #: templates/upload/dashboard-organization.html:264
 msgid "I want to download my project from Scratch!"
 msgstr "Vull descarregar el meu projecte de Scratch!"
 
-#: templates/login/login.html:590 templates/main/main.html:616
+#: templates/login/login.html:590 templates/main/main.html:617
 #: templates/upload/dashboard-organization.html:266
 msgid "How I can download my Scratch project to my computer?"
 msgstr "Com puc descarregar el meu projecte de Scratch al meu ordinador?"
 
-#: templates/login/login.html:594 templates/main/main.html:620
+#: templates/login/login.html:594 templates/main/main.html:621
 msgid "<img class='framed' src='static/app/images/project-en.png' />"
 msgstr "<img class='framed' src='static/app/images/project-ca.png' />"
 
-#: templates/login/login.html:614 templates/main/main.html:640
+#: templates/login/login.html:614 templates/main/main.html:641
 #: templates/main/main_organization.html:300
 msgid "Wait a moment please"
 msgstr "Espereu un moment, si us plau."
 
-#: templates/login/login.html:632 templates/main/main.html:658
+#: templates/login/login.html:632 templates/main/main.html:659
 #: templates/main/main_organization.html:318
 msgid "loading..."
 msgstr "carregant..."
@@ -2039,11 +2040,11 @@ msgstr "Contacte"
 msgid "Organizations"
 msgstr "Organitzacions"
 
-#: templates/main/main.html:108
+#: templates/main/main.html:109
 msgid "Analyze your Scratch projects"
 msgstr "Analitza els teus projectes de Scratch"
 
-#: templates/main/main.html:110
+#: templates/main/main.html:111
 msgid ""
 "Welcome to the Dr. Scratch website, an analytical tool that evaluates your "
 "Scratch projects in a variety of computational areas. This analyzer is a "
@@ -2055,16 +2056,16 @@ msgstr ""
 "analitzador és una eina molt útil tanto per avaluar els teus projectes "
 "Scratch com els dels teus alumnes."
 
-#: templates/main/main.html:114
+#: templates/main/main.html:115
 msgid "Learn More"
 msgstr "Aprèn més"
 
-#: templates/main/main.html:128
+#: templates/main/main.html:129
 msgid "There are two options to analyze your Scratch project now!"
 msgstr ""
 "Hi ha dues opcions per analitzar un projecte de Scratch amb Dr. Scratch"
 
-#: templates/main/main.html:133
+#: templates/main/main.html:134
 msgid ""
 "1. Introduce the <span class='colored-text'><a data-toggle='modal' "
 "href='#modalUrl'>url</a></span> of your Scratch project, you don't have to "
@@ -2074,7 +2075,7 @@ msgstr ""
 "href='#modalUrl'>url</a></span> del teu projecte Scratch, no hauràs de "
 "descarregar-lo:"
 
-#: templates/main/main.html:134
+#: templates/main/main.html:135
 msgid ""
 "<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
 "placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
@@ -2084,11 +2085,11 @@ msgstr ""
 "placeholder\" placeholder=\"http://scratch.mit.edu/projects/el_teu_número\" "
 "type=\"text\">"
 
-#: templates/main/main.html:135
+#: templates/main/main.html:136
 msgid "Analyze by url"
 msgstr "Analitzar per url"
 
-#: templates/main/main.html:140
+#: templates/main/main.html:141
 msgid ""
 "2. If you have your <span class='colored-text'><a data-toggle='modal' "
 "href='#modalProject'>project</a></span> downloaded in the computer you can "
@@ -2098,7 +2099,7 @@ msgstr ""
 "href='#modalProject'>projecte</a></span> descarregat al teu ordinador, "
 "podràs analitzar-lo aquí:"
 
-#: templates/main/main.html:141
+#: templates/main/main.html:142
 msgid ""
 "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
 "Project'>"
@@ -2106,25 +2107,25 @@ msgstr ""
 "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Tria "
 "Projecte'>"
 
-#: templates/main/main.html:142
+#: templates/main/main.html:143
 msgid "Analyze my project"
 msgstr "Analitza el meu projecte"
 
-#: templates/main/main.html:149 templates/main/main.html.py:152
+#: templates/main/main.html:150 templates/main/main.html.py:153
 #: templates/main/main_organization.html:190
 #: templates/main/main_organization.html:193
 msgid "Error! Please choose a .sb or .sb2 file or input an url"
 msgstr "Error! Si us plau tria un fitxer .sb o .sb2 o afegeix una url"
 
-#: templates/main/main.html:156 templates/main/main_organization.html:197
+#: templates/main/main.html:157 templates/main/main_organization.html:197
 msgid "Error! Your project id is wrong"
 msgstr "Error! L'identificador del teu projecte és incorrecte"
 
-#: templates/main/main.html:160 templates/main/main_organization.html:201
+#: templates/main/main.html:161 templates/main/main_organization.html:201
 msgid "Error! Your project doesn't exist in Scratch's servers"
 msgstr "Error! El teu projecte no existeix en els servidors de Scratch"
 
-#: templates/main/main.html:527 templates/statistics/statistics.html:306
+#: templates/main/main.html:528 templates/statistics/statistics.html:306
 msgid "Statistics"
 msgstr "Estadístiques"
 
@@ -2228,11 +2229,11 @@ msgstr "Si us plau, vés a la següent pàgina i tria una nova contrasenya:"
 msgid "Your username is: "
 msgstr "El teu nom d'usuari és:"
 
-#: templates/password/email.html:13 templates/sign/email.html:11
+#: templates/password/email.html:13 templates/sign/email.html:26
 msgid "Thanks for using our website!"
 msgstr "Gràcies per utilitzar la nostra web!"
 
-#: templates/password/email.html:14 templates/sign/email.html:12
+#: templates/password/email.html:14 templates/sign/email.html:27
 msgid "The Dr. Scratch team"
 msgstr "L'equip de Dr. Scratch"
 
@@ -2338,11 +2339,11 @@ msgstr ""
 "<input type='password' class='form-control' name='hashkey' "
 "placeholder='Clau'>"
 
-#: templates/sign/email.html:5
+#: templates/sign/email.html:20
 msgid "New organization in Dr. Scratch!"
 msgstr "Nova organització a Dr. Scratch!"
 
-#: templates/sign/email.html:7
+#: templates/sign/email.html:21
 msgid ""
 "You're receiving this email because you have successfully signed up in Dr. "
 "Scratch for organizations."
@@ -2452,6 +2453,7 @@ msgid "Level"
 msgstr "Nivell"
 
 #: templates/statistics/statistics.html:145
+#: templates/upload/dashboard-unregistered.html:92
 msgid "Basic"
 msgstr "Bàsic"
 
@@ -2460,6 +2462,7 @@ msgid "Development"
 msgstr "Mig"
 
 #: templates/statistics/statistics.html:151
+#: templates/upload/dashboard-unregistered.html:88
 msgid "Master"
 msgstr "Avançat"
 
@@ -2585,33 +2588,33 @@ msgstr ""
 "He aconseguit %(points)s punts analitzant el meu projecte a Dr. Scratch! "
 "Pots superar-ho? @DrScratchTool"
 
-#: templates/upload/dashboard-unregistered-basic.html:121
+#: templates/upload/dashboard-unregistered-basic.html:122
 msgid ""
-"<h3 class='text-left dark-text'>Your level is... <strong>BASIC! </strong></"
+"<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></"
 "h3>"
 msgstr ""
 "<h3 class='text-left dark-text'>El teu nivell és...<strong>BÀSIC </strong></"
 "h3>"
 
-#: templates/upload/dashboard-unregistered-basic.html:122
+#: templates/upload/dashboard-unregistered-basic.html:123
 msgid "You're at the beginning of a <br>great adventure . . . Keep it up!"
 msgstr "Et trobes a l'inici d'una gran aventura. . . <br>Segueix així!"
 
-#: templates/upload/dashboard-unregistered-basic.html:132
+#: templates/upload/dashboard-unregistered-basic.html:133
 #: templates/upload/dashboard-unregistered-developing.html:141
 #: templates/upload/dashboard-unregistered-master.html:184
 msgid "Want to level up?"
 msgstr "Vols pujar de nivell?"
 
-#: templates/upload/dashboard-unregistered-basic.html:134
+#: templates/upload/dashboard-unregistered-basic.html:135
 #: templates/upload/dashboard-unregistered-developing.html:143
 #: templates/upload/dashboard-unregistered-master.html:186
 msgid "Come back to your Scratch project."
 msgstr "Torna al teu projecte Scratch"
 
-#: templates/upload/dashboard-unregistered-basic.html:147
-#: templates/upload/dashboard-unregistered-basic.html:156
-#: templates/upload/dashboard-unregistered-basic.html:202
+#: templates/upload/dashboard-unregistered-basic.html:148
+#: templates/upload/dashboard-unregistered-basic.html:157
+#: templates/upload/dashboard-unregistered-basic.html:203
 #: templates/upload/dashboard-unregistered-developing.html:155
 #: templates/upload/dashboard-unregistered-developing.html:165
 #: templates/upload/dashboard-unregistered-developing.html:173
@@ -2630,15 +2633,17 @@ msgstr ""
 "                                        %(key)s\n"
 "                                        "
 
-#: templates/upload/dashboard-unregistered-basic.html:188
+#: templates/upload/dashboard-unregistered-basic.html:189
 #: templates/upload/dashboard-unregistered-developing.html:229
 #: templates/upload/dashboard-unregistered-master.html:290
+#: templates/upload/dashboard-unregistered.html:114
 msgid "Concept"
 msgstr "Concepte"
 
-#: templates/upload/dashboard-unregistered-basic.html:189
+#: templates/upload/dashboard-unregistered-basic.html:190
 #: templates/upload/dashboard-unregistered-developing.html:230
 #: templates/upload/dashboard-unregistered-master.html:291
+#: templates/upload/dashboard-unregistered.html:115
 msgid "Points"
 msgstr "Punts"
 
@@ -2658,13 +2663,13 @@ msgstr ""
 
 #: templates/upload/dashboard-unregistered-developing.html:131
 msgid ""
-"<h3 class='text-left dark-text'>Your level is... <strong>DEVELOPING! </"
-"strong></h3>"
+"<h3 class='text-left dark-text'>Your level is... <br></br> "
+"<strong>DEVELOPING! </strong></h3>"
 msgstr ""
 "<h3 class='text-left dark-text'>El teu nivell és...<strong>MIG </strong></h3>"
 
 #: templates/upload/dashboard-unregistered-developing.html:132
-msgid "You're doing a great job. Keep it up!!!"
+msgid "You're doing a great job.<br> Keep it up!!!"
 msgstr "Estàs fent un gran treball. Segueix així!!!"
 
 #: templates/upload/dashboard-unregistered-developing.html:190
@@ -2694,8 +2699,8 @@ msgstr "noms inadequats."
 
 #: templates/upload/dashboard-unregistered-master.html:170
 msgid ""
-"<h3 class='text-left dark-text'>Your level is...  <strong> MASTER! </"
-"strong></h3>"
+"<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></"
+"h3>"
 msgstr ""
 "<h3 class='text-left dark-text'>El teu nivell és...  <strong>AVANÇAT! </"
 "strong></h3>"
@@ -2719,3 +2724,104 @@ msgstr "Tins un codi no executat a"
 #: templates/upload/dashboard-unregistered-master.html:257
 msgid " dead code."
 msgstr "codi mort."
+
+#: templates/upload/dashboard-unregistered.html:10
+msgid "Project results"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:48
+#: templates/upload/dashboard-unregistered.html:57
+#: templates/upload/dashboard-unregistered.html:59
+msgid "Dashboard"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:57
+msgid "Overview"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:63
+#, fuzzy
+#| msgid "Come back to your Scratch project."
+msgid "Welcome to Doctor Scratch. Project results."
+msgstr "Torna al teu projecte Scratch"
+
+#: templates/upload/dashboard-unregistered.html:79
+#, fuzzy
+#| msgid "Score:"
+msgid "CT Score:"
+msgstr "Puntuació:"
+
+#: templates/upload/dashboard-unregistered.html:86
+msgid "Your level:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:90
+#, fuzzy
+#| msgid "Development"
+msgid "Developing"
+msgstr "Mig"
+
+#: templates/upload/dashboard-unregistered.html:101
+#, fuzzy, python-format
+#| msgid ""
+#| " I have just obtained %(points)s points analyzing my project in Dr. "
+#| "Scratch! Beat it! @DrScratchTool "
+msgid ""
+"I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
+"Beat it! @DrScratchTool "
+msgstr ""
+"He aconseguit %(points)s punts analitzant el meu projecte a Dr. Scratch! "
+"Pots superar-ho? @DrScratchTool"
+
+#: templates/upload/dashboard-unregistered.html:109
+#, fuzzy
+#| msgid "Score in detail"
+msgid "CT Score in detail:"
+msgstr "Puntuació al detall"
+
+#: templates/upload/dashboard-unregistered.html:127
+#: templates/upload/dashboard-unregistered.html:131
+#: templates/upload/dashboard-unregistered.html:135
+#, fuzzy
+#| msgid "Learn More"
+msgid "Learn more!!!"
+msgstr "Aprèn més"
+
+#: templates/upload/dashboard-unregistered.html:139
+msgid "Well done!!!"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:181
+#, fuzzy
+#| msgid "Sprite naming"
+msgid "Sprites naming"
+msgstr "Noms poc encertats"
+
+#: templates/upload/dashboard-unregistered.html:190
+#, fuzzy
+#| msgid "Incorrect names"
+msgid "Incorrect name:"
+msgstr "Noms poc encertats"
+
+#: templates/upload/dashboard-unregistered.html:209
+#, fuzzy
+#| msgid "Dead code"
+msgid "Dead Code"
+msgstr "Codi Mort"
+
+#: templates/upload/dashboard-unregistered.html:220
+msgid "blocks"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:242
+#, fuzzy
+#| msgid "Attribute Initialization"
+msgid "Sprite attributes initialization"
+msgstr "Atributs no inicialitzats correctament"
+
+#: templates/upload/dashboard-unregistered.html:254
+msgid "modified but not initialized correctly."
+msgstr ""
+
+#~ msgid "Username"
+#~ msgstr "Nom d'usuari"
