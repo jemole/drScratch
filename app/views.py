@@ -387,23 +387,35 @@ def createJson(d):
 def learn(request,page):
     #Unicode to string(page)
     page = unicodedata.normalize('NFKD',page).encode('ascii','ignore')
+    print str(page)
 
-    if request.LANGUAGE_CODE == "es":
+    if request.LANGUAGE_CODE == "en":
+            dic = {'Logic':'Logic',
+                   'Parallelism':'Parallelism',
+                   'Data':'Data',
+                   'Synchronization':'Synchronization',
+                   'User':'User',
+                   'Flow':'Flow',
+                   'Abstraction':'Abstraction'}
+
+
+    elif request.LANGUAGE_CODE == "es":
         dic = {'Pensamiento':'Logic',
                'Paralelismo':'Parallelism',
-              'Representacion':'Data',
-              'Sincronizacion':'Synchronization',
-              'Interactividad':'User',
-              'Control':'Flow',
-              'Abstraccion':'Abstraction'}
+               'Representacion':'Data',
+               'Sincronizacion':'Synchronization',
+               'Interactividad':'User',
+               'Control':'Flow',
+               'Abstraccion':'Abstraction'}
+
     elif request.LANGUAGE_CODE == "ca":
         dic = {'Logica':'Logic',
                'Paral':'Parallelism',
-              'Representació':'Data',
-              'Sincronitzacio':'Synchronization',
-              'Interactivitat':'User',
-              'Controls':'Flow',
-              'Abstraccio':'Abstraction'}
+               'Representacio':'Data',
+               'Sincronitzacio':'Synchronization',
+               'Interactivitat':'User',
+               'Controls':'Flow',
+               'Abstraccio':'Abstraction'}
 
     if page in dic:
         page = dic[page]
@@ -626,9 +638,7 @@ def analyzeCSV(request):
                     url = line.split(",")[1]
                     url = url.split("\n")[0]
                     method = "csv"
-                    print "ESTE" + str(url) + "VALE"
                     if url.isdigit():
-                        print "FUNCIONA"
                         idProject = url
                     else:
                         slashNum = url.count('/')
