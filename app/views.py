@@ -72,6 +72,12 @@ def redirectMain(request):
     """Page not found redirect to main"""
     return HttpResponseRedirect('/')
 
+#_____________________________ BLOG ______________________________________#
+
+def blog(request):
+    """Redirect to Dr. Scratch's blog"""
+    return HttpResponseRedirect('https://drscratchblog.wordpress.com')  
+
 #_______________________________ ERROR ___________________________________#
 
 def error404(request):
@@ -512,7 +518,7 @@ def signUpOrganization(request):
                 email.send()
                 login(request, organization)
                 return HttpResponseRedirect('/organization/' + organization.username)
-                
+
             else:
                 #Doesn't exist this hash
                 flagHash = 1
@@ -944,18 +950,15 @@ def generatorCSV(request, dictionary, file_name, type_csv):
 #________________________ TO REGISTER USER __________________________#
 
 def createUserHash(request):
-    """Method for to sign up in the platform"""
-    logout(request)
+    """Method for to sign up users in the platform"""
     if request.method == "POST":
-        form = NewUserForm(request.POST)
+        form = UserHashForm(request.POST)
         if form.is_valid():
-            nickName = form.cleaned_data['nickname']
-            emailUser = form.cleaned_data['emailUser']
-            passUser = form.cleaned_data['passUser']
-            user = User.objects.create_user(nickName, emailUser, passUser)
-            return render_to_response("profile.html", {'user': user}, context_instance=RC(request))
+            form.save()
+            return HttpResponseRedirect('/userHash')
     elif request.method == 'GET':
-        return render_to_response("sign/createUserHash.html", context_instance = RC(request))
+        return render_to_response("sign/userHash.html", context_instance = RC(request))
+
 
 def signUpUser(request):
     form = TeacherForm(request.POST or None)
