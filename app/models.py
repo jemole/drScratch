@@ -33,8 +33,7 @@ class File(models.Model):
     duplicateScript = models.IntegerField()
 
 class Student(models.Model):
-    #student = models.ForeignKey(User, unique=True)  
-    student = models.OneToOneField(User)
+    student = models.ForeignKey(User, unique=True)
 
 class Classroom(models.Model):
     name = models.CharField(max_length=100)
@@ -42,8 +41,7 @@ class Classroom(models.Model):
 
 
 class Teacher(models.Model):
-    #teacher = models.ForeignKey(User, unique=True)
-    teacher = models.OneToOneField(User)    
+    teacher = models.ForeignKey(User, unique=True)
     username = models.TextField()
     password = models.TextField()
     email = models.TextField()
@@ -53,6 +51,7 @@ class Teacher(models.Model):
 
 class Organization(User):
     hashkey = models.TextField()
+    img = models.ImageField(upload_to="img/", default="None")
 
 class OrganizationHash(models.Model):
     hashkey = models.TextField()
@@ -69,7 +68,7 @@ class Project(models.Model):
 	path = models.TextField()
 	fupdate = models.TextField()
 	dashboard = models.ForeignKey(Dashboard)
-	
+
 class Attribute(models.Model):
 	myproject = models.ForeignKey(Project)
 	character = models.TextField()
@@ -101,7 +100,7 @@ class Mastery(models.Model):
 	flowcontrol = models.IntegerField()
 	interactivity = models.IntegerField()
 	representation = models.IntegerField()
-	scoring = models.IntegerField()	
+	scoring = models.IntegerField()
 
 class Comment(models.Model):
 	user = models.TextField()
