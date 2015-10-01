@@ -31,7 +31,7 @@ urlpatterns = (
     url(r'^loginOrganization$', 'app.views.loginOrganization',),
     url(r'^logoutOrganization$', 'app.views.logoutOrganization',),
     url(r'^analyzeCSV$', 'app.views.analyzeCSV',),
-
+<<<<<<< HEAD
     #Users
     url(r'^userHash', 'app.views.userHash',),
     url(r'^user$', 'app.views.signUpUser',),
@@ -39,7 +39,8 @@ urlpatterns = (
     url(r'^loginUser$', 'app.views.loginUser',),
     url(r'^logoutUser$', 'app.views.logoutUser',),
     #Error pages
-
+=======
+>>>>>>> 91d5418532e1e67b88d43d27550dda736953c81e
     #url(r'^500', 'app.views.error500',),
     #url(r'^404', 'app.views.error404',),
     #url(r'learn$', 'app.views.learnUnregistered',),

@@ -32,10 +32,10 @@ class File(models.Model):
     deadCode = models.IntegerField()
     duplicateScript = models.IntegerField()
 
-class Coder(User):
+class User(User):
     hashkey = models.TextField()
 
-class CoderHash(models.Model):
+class UserHash(models.Model):
     hashkey = models.TextField()
 
 
