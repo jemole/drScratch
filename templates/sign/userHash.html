@@ -16,11 +16,11 @@
     <html>
 <head><title>Form</title></head>
 <body>
- 
- 
-<form action="/createUserHash" method="post">
+
+
+<form action="/userHash" method="post">
   {% csrf_token %}
-  Hash: 
+  Hash:
  <input type="text" name="hashkey" value="" />
  <!-- <br/>
   Your class:
@@ -28,6 +28,6 @@
   <br/>
   <input type="submit" value="Send" />
 </form>
- 
+
 </body>
 </html>

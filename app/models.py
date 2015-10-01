@@ -32,8 +32,21 @@ class File(models.Model):
     deadCode = models.IntegerField()
     duplicateScript = models.IntegerField()
 
+class Organization(User):
+    hashkey = models.TextField()
+
+class OrganizationHash(models.Model):
+    hashkey = models.TextField()
+
+class User(User):
+    hashkey = models.TextField()
+
+class UserHash(models.Model):
+    hashkey = models.TextField()
+
+
 class Student(models.Model):
-    #student = models.ForeignKey(User, unique=True)  
+    #student = models.ForeignKey(User, unique=True)
     student = models.OneToOneField(User)
 
 class Classroom(models.Model):
@@ -43,19 +56,12 @@ class Classroom(models.Model):
 
 class Teacher(models.Model):
     #teacher = models.ForeignKey(User, unique=True)
-    teacher = models.OneToOneField(User)    
+    teacher = models.OneToOneField(User)
     username = models.TextField()
     password = models.TextField()
     email = models.TextField()
     hashkey = models.TextField()
     #classroom = models.ManyToManyField(Classroom)
-
-
-class Organization(User):
-    hashkey = models.TextField()
-
-class OrganizationHash(models.Model):
-    hashkey = models.TextField()
 
 class Dashboard(models.Model):
 	user = models.TextField()
@@ -69,7 +75,7 @@ class Project(models.Model):
 	path = models.TextField()
 	fupdate = models.TextField()
 	dashboard = models.ForeignKey(Dashboard)
-	
+
 class Attribute(models.Model):
 	myproject = models.ForeignKey(Project)
 	character = models.TextField()
@@ -101,7 +107,7 @@ class Mastery(models.Model):
 	flowcontrol = models.IntegerField()
 	interactivity = models.IntegerField()
 	representation = models.IntegerField()
-	scoring = models.IntegerField()	
+	scoring = models.IntegerField()
 
 class Comment(models.Model):
 	user = models.TextField()

@@ -22,9 +22,11 @@ from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
 from app.models import Teacher, Student, Classroom, Stats
 from app.models import Organization, OrganizationHash
+from app.models import User, UserHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
-from django.contrib.auth.models import User
+from app.forms import UserForm, UserHashForm, LoginUserForm
+#from django.contrib.auth.models import User
 from datetime import datetime,timedelta,date
 from django.contrib.auth.decorators import login_required
 from email.MIMEText import MIMEText
@@ -72,11 +74,6 @@ def redirectMain(request):
     """Page not found redirect to main"""
     return HttpResponseRedirect('/')
 
-#_____________________________ BLOG ______________________________________#
-
-def blog(request):
-    """Redirect to Dr. Scratch's blog"""
-    return HttpResponseRedirect('https://drscratchblog.wordpress.com')  
 
 #_______________________________ ERROR ___________________________________#
 
@@ -949,7 +946,7 @@ def generatorCSV(request, dictionary, file_name, type_csv):
 
 #________________________ TO REGISTER USER __________________________#
 
-def createUserHash(request):
+def userHash(request):
     """Method for to sign up users in the platform"""
     if request.method == "POST":
         form = UserHashForm(request.POST)
@@ -959,26 +956,95 @@ def createUserHash(request):
     elif request.method == 'GET':
         return render_to_response("sign/userHash.html", context_instance = RC(request))
 
-
 def signUpUser(request):
-    form = TeacherForm(request.POST or None)
+    """Method which allow to sign up organizations"""
+    flagHash = 0
+    flagName = 0
+    flagEmail = 0
+    flagForm = 0
+    print "ENTRA"
     if request.method == 'POST':
+        form = UserForm(request.POST)
         if form.is_valid():
+
             username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
             email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
             hashkey = form.cleaned_data['hashkey']
-            #classroom = form.cleaned_data['classroom']
-            invite(request, username, email, hashkey)
-            teacher = Teacher(teacher = request.user, username = username,
-                              password = password, email = email,
-                              hashkey = hashkey)
-            teacher.save()
-            return HttpResponseRedirect('/')
-        return HttpResponseRedirect('/')
+
+            #Checking the validity into the database contents.
+            #They will be refused if they already exist.
+            #If they exist an error message will be shown.
+            if User.objects.filter(username = username):
+                #This name already exists
+                flagName = 1
+                return render_to_response("sign/signup_error.html",
+                                          {'flagName':flagName,
+                                           'flagEmail':flagEmail,
+                                           'flagHash':flagHash,
+                                           'flagForm':flagForm},
+                                          context_instance = RC(request))
+
+            elif User.objects.filter(email = email):
+                #This email already exists
+                flagEmail = 1
+                return render_to_response("sign/signup_error.html",
+                                        {'flagName':flagName,
+                                        'flagEmail':flagEmail,
+                                        'flagHash':flagHash,
+                                        'flagForm':flagForm},
+                                        context_instance = RC(request))
+            if (UserHash.objects.filter(hashkey = hashkey)):
+                userHashkey = UserHash.objects.get(hashkey=hashkey)
+                userHashkey.delete()
+                user = User.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
+                user = authenticate(username=username, password=password)
+                user_email = User.objects.get(email=email)
+                uid = urlsafe_base64_encode(force_bytes(user_email.pk))
+                token=default_token_generator.make_token(user_email)
+                c = {
+                        'email':email,
+                        'uid':uid,
+                        'token':token}
+
+                body = render_to_string("sign/email.html",c)
+                subject = "Welcome to Dr.Scratch for organizations"
+                sender ="no-reply@drscratch.org"
+                to = [email]
+                email = EmailMessage(subject,body,sender,to)
+                #email.attach_file("static/app/images/logo_main.png")
+                email.send()
+                login(request, user)
+                return HttpResponseRedirect('/user/' + user.username)
+
+            else:
+                #Doesn't exist this hash
+                flagHash = 1
+
+                return render_to_response("sign/signup_error.html",
+                                  {'flagName':flagName,
+                                   'flagEmail':flagEmail,
+                                   'flagHash':flagHash,
+                                   'flagForm':flagForm},
+                                  context_instance = RC(request))
+
+
+        else:
+            flagForm = 1
+            return render_to_response("sign/signup_error.html",
+                  {'flagName':flagName,
+                   'flagEmail':flagEmail,
+                   'flagHash':flagHash,
+                   'flagForm':flagForm},
+                  context_instance = RC(request))
 
     elif request.method == 'GET':
-        return render_to_response("sign/createUser.html", context_instance = RC(request))
+        if request.user.is_authenticated():
+            return HttpResponseRedirect('/user/' + request.user.username)
+        else:
+            return render_to_response("sign/user.html", context_instance = RC(request))
+
+#_________________________ TO SHOW USER'S DASHBOARD ___________#
 
 def loginUser(request):
     """Log in app to user"""
@@ -988,6 +1054,8 @@ def loginUser(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user = authenticate(username=username, password=password)
+            print "ENTRA"
+            print str(user)
             if user is not None:
                 if user.is_active:
                     login(request, user)

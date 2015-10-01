@@ -81,17 +81,61 @@
 
                     <!-- LOGIN REGISTER -->
                     <ul class="nav navbar-nav navbar-right login-register small-text">
-                            <li style="display: none;" class="register-button js-register inpage-scroll">
-                                <a href="#home" class="navbar-register-button">{% trans "Get Started" %}</a>
-                            </li>
-                        </ul>
+                      <li style="display: block;" class="login js-login dropdown">
+                        <a aria-expanded="false" role="button" href="#modalSign" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign up" %}
+                          <span class="caret"></span>
+                        </a>
+                        <ul role="menu" class="dropdown-menu">
+                          <li>
+                          <div style="padding: 15px; padding-bottom: 0px;">
+                            <form accept-charset="UTF-8" action="/user" method="post">
+                            {% csrf_token %}
+                              {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
+                              {% trans "<input type='text' name='email' id='email' placeholder='Email' style='margin-bottom: 15px;'>" %}
+                              {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
+                              {% trans "<input class='form-control' type='password' name='hashkey' id='hashkey' placeholder='Hashkey' style='margin-bottom: 15px;'>" %}
+                              <input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;">
+                              <label for="sign-in" class="string optional"> {% trans "Remember me" %}</label>
+                              {% trans "<input type='submit' value='Sign Up' id='sign-up' class='btn-group btn-group-justified colored-text'>" %}
+                            </form>
+                          </div>
+                          </li>
+                          </ul>
+                        </li>
 
-                    </div>
-                    <!-- /END TOP BAR -->
-                </div>
-                <!-- /END CONTAINER -->
-            </div>
-            <!-- /END STICKY NAVIGATION -->
+
+
+                      <li style="display: block;" class="login js-login dropdown">
+                        <a aria-expanded="false" role="button" href="#" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign in" %}
+                          <span class="caret"></span>
+                        </a>
+                        <ul role="menu" class="dropdown-menu">
+                          <li>
+                          <div style="padding: 15px; padding-bottom: 0px;">
+                            <form accept-charset="UTF-8" action="/loginUser" method="post">
+                                          {% csrf_token %}
+                              {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
+                              {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
+                              <input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;">
+                              <label for="sign-in" class="string optional">{% trans "Remember me" %}</label>
+                              {% trans "<input type='submit' value='Sign In' id='sign-in' class='btn-group btn-group-justified colored-text'>" %}
+                            </form>
+                          </div>
+                          </li>
+                          </ul>
+                        </li>
+
+                        <li style="display: none;" class="register-button js-register inpage-scroll">
+                            <a href="#home" class="navbar-register-button">{% trans "Get Started" %}</a>
+                        </li>
+                    </ul>
+
+                  </div>
+                  <!-- /END TOP BAR -->
+              </div>
+              <!-- /END CONTAINER -->
+          </div>
+          <!-- /END STICKY NAVIGATION -->
 
 
             <!-- CONTAINER -->

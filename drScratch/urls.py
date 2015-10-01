@@ -32,11 +32,11 @@ urlpatterns = (
     url(r'^logoutOrganization$', 'app.views.logoutOrganization',),
     url(r'^analyzeCSV$', 'app.views.analyzeCSV',),
     #Users
-    url(r'^organizationHash', 'app.views.organizationHash',),
-    url(r'^organization$', 'app.views.signUpOrganization',),
-    url(r'^organization/(\w+)', 'app.views.organization',),
-    url(r'^loginOrganization$', 'app.views.loginOrganization',),
-    url(r'^logoutOrganization$', 'app.views.logoutOrganization',),
+    url(r'^userHash', 'app.views.userHash',),
+    url(r'^user$', 'app.views.signUpUser',),
+    url(r'^user/(\w+)', 'app.views.organization',),
+    url(r'^loginUser$', 'app.views.loginUser',),
+    url(r'^logoutUser$', 'app.views.logoutUser',),
     #Error pages
     #url(r'^500', 'app.views.error500',),
     #url(r'^404', 'app.views.error404',),
