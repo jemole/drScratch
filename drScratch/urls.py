@@ -2,22 +2,20 @@ from django.conf.urls import include, url, patterns
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from django.views.generic import RedirectView
 admin.autodiscover()
 
 urlpatterns = (
-    # Examples:
-    # url(r'^$', 'drScratch.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
+    #Blog
+    url(r'^blog$', RedirectView.as_view(url='https://drscratchblog.wordpress.com')),
     #url(r'^profile', 'DrScratchApp.views.profileSettings',),
     url(r'^selector', 'app.views.selector',),
-    #url(r'^login', 'app.views.loginUser',),
-    #url(r'^logout', 'app.views.logoutUser',),
-    url(r'^users$', 'app.views.signUpUser',),
     url(r'^statistics$', 'app.views.statistics',),
     url(r'^collaborators$', 'app.views.collaborators',),
+
+    #Organizations
     url(r'^reset_password_confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', 'app.views.reset_password_confirm',name="reset_password_confirm"),
     url(r'^changePwd$', 'app.views.changePwd',),
     url(r'^organizationHash', 'app.views.organizationHash',),
@@ -32,14 +30,14 @@ urlpatterns = (
     url(r'^logoutOrganization$', 'app.views.logoutOrganization',),
     url(r'^analyzeCSV$', 'app.views.analyzeCSV',),
 
-    #Users
-    url(r'^userHash', 'app.views.userHash',),
-    url(r'^user$', 'app.views.signUpUser',),
-    url(r'^user/(\w+)', 'app.views.organization',),
-    url(r'^loginUser$', 'app.views.loginUser',),
-    url(r'^logoutUser$', 'app.views.logoutUser',),
-    #Error pages
+    #Coders
+    url(r'^coderHash', 'app.views.coderHash',),
+    url(r'^coder$', 'app.views.signUpCoder',),
+    url(r'^user/(\w+)', 'app.views.coder',),
+    url(r'^loginCoder$', 'app.views.loginCoder',),
+    url(r'^logoutCoder$', 'app.views.logoutCoder',),
 
+    #Error pages
     #url(r'^500', 'app.views.error500',),
     #url(r'^404', 'app.views.error404',),
     #url(r'learn$', 'app.views.learnUnregistered',),

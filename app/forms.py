@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from models import OrganizationHash, UserHash
+from models import OrganizationHash, CoderHash
 
 class UploadFileForm(forms.Form):
 	filename = forms.CharField(max_length=50)
@@ -42,12 +42,12 @@ class OrganizationForm(forms.Form):
     password = forms.CharField(max_length=50)
     hashkey = forms.CharField(max_length=70)
 
-class UserHashForm(ModelForm):
+class CoderHashForm(ModelForm):
     class Meta:
-        model = UserHash
+        model = CoderHash
         fields = ['hashkey']
 
-class UserForm(forms.Form):
+class CoderForm(forms.Form):
     username = forms.CharField(max_length=50)
     email = forms.CharField(max_length=50)
     password = forms.CharField(max_length=50)
@@ -58,6 +58,6 @@ class LoginOrganizationForm(forms.Form):
     username = forms.CharField(max_length=50)
     password = forms.CharField(max_length=50)
 
-class LoginUserForm(forms.Form):
+class LoginCoderForm(forms.Form):
     username = forms.CharField(max_length=50)
     password = forms.CharField(max_length=50)

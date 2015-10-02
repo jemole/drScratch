@@ -22,10 +22,10 @@ from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
 from app.models import Teacher, Student, Classroom, Stats
 from app.models import Organization, OrganizationHash
-from app.models import User, UserHash
+from app.models import Coder, CoderHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
-from app.forms import UserForm, UserHashForm, LoginUserForm
+from app.forms import CoderForm, CoderHashForm, LoginCoderForm
 #from django.contrib.auth.models import User
 from datetime import datetime,timedelta,date
 from django.contrib.auth.decorators import login_required
@@ -348,7 +348,7 @@ def processStringUrl(url):
 
 def sendRequestgetSB2(idProject, organization, method):
     """First request to getSB2"""
-    getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
+    getRequestSb2 = "http://drscratch-getsb2.herokuapp.com/" + idProject
     fileURL = idProject + ".sb2"
     # Create DB of files
     now = datetime.now()
@@ -1559,7 +1559,18 @@ def exportCsvFile(request):
 
 
 
+#________________________ DASHBOARD ____________________________#
 
+def createDashboards():
+    """Get users and create dashboards"""
+    allUsers = Coder.objects.all()
+    for user in allUsers:
+        try:
+            newdash = Dashboard.objects.get(user=user)
+        except:
+            fupdate = datetime.now()
+            newDash = Dashboard(user=user.username, frelease=fupdate)
+            newDash.save()
 
 
 ##############################################################################
@@ -1568,16 +1579,7 @@ def exportCsvFile(request):
 
 #________________________ DASHBOARD ____________________________#
 
-def createDashboards():
-    """Get users and create dashboards"""
-    allUsers = User.objects.all()
-    for user in allUsers:
-        try:
-            newdash = Dashboard.objects.get(user=user)
-        except:
-            fupdate = datetime.now()
-            newDash = Dashboard(user=user.username, frelease=fupdate)
-            newDash.save()
+
 
 def myDashboard(request):
     """Dashboard page"""
