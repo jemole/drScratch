@@ -17,14 +17,14 @@
 
     <link rel="stylesheet" href="../../static/app/content/style.css">
     <!-- =========================
-     FAV AND TOUCH ICONS AND FONT  
+     FAV AND TOUCH ICONS AND FONT
     ============================== -->
     <link rel="icon" href="../../static/app/images/favicon.ico">
-    <link rel="stylesheet" href="../../static/app/icons/icons.css">  
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
     <!-- =========================
-     STYLESHEETS   
+     STYLESHEETS
     ============================== -->
     <!-- BOOTSTRAP AND ANIMATION -->
     <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
@@ -40,13 +40,13 @@
     <link rel="stylesheet" href="../../static/app/content/styles.css">
     <link rel="stylesheet" href="../../static/app/content/cloud.css">
 
-    
+
     <!-- RESPONSIVE FIXES -->
     <link rel="stylesheet" href="../../static/app/content/responsive.css">
 
     <!-- DEFAULT COLOR/ CURRENTLY USING -->
     <link rel="stylesheet" href="../../static/app/content/red.css">
-    
+
     <script>
         $(document).ready(function() {
             scratchblocks2.parse();
@@ -54,17 +54,17 @@
 
         var choose_lang = x=window.navigator.language||navigator.browserLanguage;
         choose_lang = choose_lang.split("-")[0];
-        
+
 
         scratchblocks2.reset_languages();
         var lang_dict = scratchblocks2._translations[choose_lang];
-         
+
           if (lang_dict) scratchblocks2.load_language(lang_dict);
         </script>
 </head>
 <body>
    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
-        <div class="container">          
+        <div class="container">
                     <!-- TOP BAR -->
             <div class="navbar-collapse collapse" id="stamp-navigation">
                     <!-- NAVIGATION LINK -->
@@ -83,8 +83,26 @@
     </div>
             <!-- /END STICKY NAVIGATION -->
     <!-- JUMBOTRON -->
-     
+
     <div id ="cloud"><h2>{% block title %}{% endblock %}</h2><span class='shadow'></span></div>
+    <div class="container col-md-10 col-md-offset-1">
+    <ul class="nav nav-tabs nav-justified">
+      <li role="presentation"><a href="/learn/Logic/">{% trans "Logic" %}</a></li>
+      <li role="presentation"><a href="/learn/Data/">{% trans "Data representation" %}</a></li>
+      <li role="presentation"><a href="/learn/Parallelism/">{% trans "Parallelism" %}</a></li>
+      <li role="presentation"><a href="/learn/Synchronization/">{% trans "Synchronization" %}</a></li>
+      <li role="presentation"><a href="/learn/User/">{% trans "User interactivity" %}</a></li>
+      <li role="presentation"><a href="/learn/Flow/">{% trans "Flow control" %}</a></li>
+      <li role="presentation"><a href="/learn/Abstraction/">{% trans "Abstraction" %}</a></li>
+    </ul>
+    <ul class="nav nav-tabs nav-justified">
+      <li role="presentation"><a href="/learn/duplicatedScripts/">{% trans "Duplicated scripts" %}</a></li>
+      <li role="presentation"><a href="/learn/spriteNaming/">{% trans "Incorrect names" %}</a></li>
+      <li role="presentation"><a href="/learn/deadCode/">{% trans "Dead code" %}</a></li>
+      <li role="presentation"><a href="/learn/attrInit/">{% trans "Attribute initialization" %}</a></li>
+
+    </ul>
+    </div>
     <!-- /END JUMBOTRON -->
     <!-- PANEL-->
    {% block content %}
@@ -100,7 +118,7 @@
                     </li>
                     <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
                     </li>
-                    
+
                 </ul>
         </div>
     </footer>
