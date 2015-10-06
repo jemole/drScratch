@@ -1,0 +1,311 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html class="nivo-lightbox-notouch" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Responsive Bootstrap 3 Startup and Multipurpose Template">
+    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="author" content="Programamos URJC Libresoft FECyT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>Dr. Scratch</title>
+
+
+    <link rel="stylesheet" href="../../static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT  
+    ============================== -->
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">  
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <!-- =========================
+     STYLESHEETS   
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap-main.css">
+    <link rel="stylesheet" href="../../static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="../../static/app/content/styles.css">
+
+    
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+</head>
+
+<body>
+    <div id="mywrapper">
+    <!-- =========================
+     PRE LOADER       
+    ============================== -->
+    <div style="display: none;" class="preloader">
+        <div style="display: none;" class="status">
+            &nbsp;
+        </div>
+    </div>
+
+    <!-- =========================
+     SECTION: HOME / HEADER  
+    ============================== -->
+    <header id="home" style="background-position: 50% 40.5px;" class="header" data-stellar-background-ratio="0.3">
+        <!-- COLOR OVER IMAGE -->
+        <div class="overlay-layer">
+            <!-- STICKY NAVIGATION -->
+            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+                <div class="container">          
+                    <!-- TOP BAR -->
+                    <div class="navbar-collapse collapse" id="stamp-navigation">
+                    <!-- NAVIGATION LINK -->
+                      <a class="navbar-brand" href="/">
+                        <img src="../../static/app/images/logo_main.png" alt="">
+                      </a>
+                      <ul class="nav navbar-nav navbar-left main-navigation small-text">
+                      </ul>
+
+                    <!-- LOGIN REGISTER -->
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                                <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
+                                <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li> <a href='/changePwd'>{% trans "Change password" %}</a> </li>
+                                    <li>
+                                        <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
+                                    </li>
+                                    
+                                </ul>
+
+                    </div>
+                    <!-- /END TOP BAR -->
+                </div>
+                <!-- /END CONTAINER -->
+            </div>
+            <!-- /END STICKY NAVIGATION -->
+
+
+            <!-- CONTAINER -->
+            <div class="container">
+
+        <!-- ONLY LOGO ON HEADER -->
+                <div class="row">
+                    <div class="col-md-6 text-left">
+                        <!-- HEADING AND BUTTONS -->
+                        <div class="intro-section">
+                            <!-- WELCOM MESSAGE -->
+                            <h2 class="intro white-text">{% trans "Welcome to the Dr. Scratch website, " %}{{ username }} !!!</h2>
+                            <h4 align=justify class="transparent-text"><strong> </strong></h4>
+                        </div>
+                    </div>
+                    <div class="container">
+                    <div class="col-md-5">
+                        
+                        <!-- VERTICAL PROJECT FORM -->
+
+      
+    {% if flag_csv %}
+
+
+          <div class="vertical-project-form">
+            
+                                <h5 class="dark-text form-heading"><strong>{% trans "You can download your results. You do click in the following button:" %}</strong></h5>                                
+
+                                  <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/analyzeCSV">
+                                    <button  name="_download" type="submit" class="btn btn-primary standard-button">{% trans "Download .csv file" %}</button>    
+                                      {% csrf_token %}                                    
+    
+                                    </form>
+                                     
+                                <br></br>
+                                     
+                                {% trans "Or...you can analyze another file with more projects:" %}
+
+                                <form name="form" class="project-form" enctype="multipart/form-data" method="get" action="/organization">
+                                    <button  name="_download" type="submit" class="btn btn-primary standard-button">{% trans "Analyze again!" %}</button>    
+                                      {% csrf_token %}                                    
+    
+                                    </form>                        
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+    
+
+
+                                <div class="vertical-project-form">
+            
+                                <h5 class="dark-text form-heading"><strong>{% trans "You can analyze at the same time all the Scratch proyects of your students!" %}</strong></h5>
+                                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/analyzeCSV">
+                                    {% csrf_token %}
+                                    {% trans "Only you have to put a " %}<span class='colored-text'><a data-toggle='modal' href='#modalCSV'>{% trans "file CSV " %}</a></span>{% trans " with the urls of the Scratch projects you want to analyze:" %}
+                                    {% trans "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose File .csv'>" %}
+                                    <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my projects" %}</button>
+                                    {% csrf_token %}                                    
+                                
+                                </form>
+                                
+                                <!-- FORM SUBMIT SUCCESS / ERROR MESSAGES -->
+                                <p class="file-error dark-text small-text">
+                                {% if flag_form %}
+                                <p><span class="icon icon-close-alt2"></span> {% trans "Error! Please choose a .csv file" %}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+        
+    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    
+
+
+    <!-- =========================
+     SECTION: CLIENTS LOGOs
+    ============================== -->
+    <section id="section6" class="services grey-bg">
+    <div class="clients white-bg">
+        <ul class="client-logos">
+            <li>
+                <a href="http://programamos.es">
+                <img src="../../static/app/images/logoProgramamos.png" alt="">
+                </a>            
+            </li>
+            <li>
+                <a href="http://www.urjc.es">
+                <img src="../../static/app/images/logoURJC.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="http://libresoft.es">
+                <img src="../../static/app/images/logoLibresoft.jpeg" alt="">
+                </a>
+            </li>
+
+            <li>
+                <a href="http://www.fecyt.es">
+                <img src="../../static/app/images/logoFECYT.jpg" alt="">
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    </section>
+    </header>
+    
+    <!-- FOOTER -->
+    <footer class="footer grey-bg">
+       {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+
+        <!-- SOCIAL ICONS -->
+        <ul class="social-icons">
+            <li><a href="https:/twitter.com/drscratchtool"><span class="icon-social-twitter transparent-text-dark"></span></a>
+            </li>
+            <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+            </li>
+            
+        </ul>
+
+    </footer>
+    </div>
+
+    <!-- =========================
+            MODALS
+    ============================== -->
+
+     <!-- Modal Url -->
+    <div id="modalUrl" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+            <div class="small-text-medium uppercase colored-text">
+                {% trans "What is an url?" %}
+            </div>
+            <h4 class="modal-title"><strong>{% trans "How I can know my Scratch project's url?" %}</strong></h4>
+            <div class="colored-line"></div> 
+          </div>
+          <div class="modal-body">
+            {% trans "<img class='framed' src='../../static/app/images/url-en.png' />" %}
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+         <!-- Modal Project -->
+    <div id="modalProject" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+            <div class="small-text-medium uppercase colored-text">
+                {% trans "I want to download my project from Scratch!" %}
+            </div>
+            <h4 class="modal-title"><strong>{% trans "How I can download my Scratch project to my computer?" %}</strong></h4>
+            <div class="colored-line"></div> 
+          </div>
+          <div class="modal-body">
+            {% trans "<img class='framed' src='../../static/app/images/project-en.png' />" %}
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- =========================
+     SCRIPTS   
+    ============================== -->
+    <script src="../../static/app/scripts/jquery.min.js"></script>
+    <script>
+        /* PRE LOADER */
+        jQuery(window).load(function () {
+            "use strict";
+            jQuery(".status").fadeOut();
+            jQuery(".preloader").delay(1000).fadeOut("slow");
+        })
+    </script>
+    <script type="text/javascript" src="../../static/app/scripts/bootstrap-filestyle.js"> </script>
+    <script src="../../static/app/scripts/smoothscroll.js"></script>
+    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+    <script src="../../static/app/scripts/jquery.nav.js"></script>
+    <script src="../../static/app/scripts/ie-emulation-modes-warning.js"></script>
+    <script src="../../static/app/scripts/wow.js"></script>
+    <script src="../../static/app/scripts/nivo-lightbox.js"></script>
+    <script src="../../static/app/scripts/owl.js"></script>
+    <script src="../../static/app/scripts/jquery_main.js"></script>
+    <script src="../../static/app/scripts/jquery.ajaxchimp.min.js"></script>
+    <script src="../../static/app/scripts/progress-bar.js"></script>
+
+    <!-- GOGLE MAP -->
+    <!--
+    <script src="https:/maps.googleapis.com/maps/api/js"></script><script src="https:/maps.gstatic.com/maps-api-v3/api/js/19/5/intl/es_ALL/main.js"></script>
+-->
+
+    <!-- CUSTOM JS  -->
+    <script src="../../static/app/scripts/custom.js"></script>
+</body></html>

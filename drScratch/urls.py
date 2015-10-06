@@ -33,7 +33,7 @@ urlpatterns = (
     #Coders
     url(r'^coderHash', 'app.views.coderHash',),
     url(r'^coder$', 'app.views.signUpCoder',),
-    url(r'^user/(\w+)', 'app.views.coder',),
+    url(r'^coder/(\w+)', 'app.views.coder',),
     url(r'^loginCoder$', 'app.views.loginCoder',),
     url(r'^logoutCoder$', 'app.views.logoutCoder',),
 
@@ -42,7 +42,6 @@ urlpatterns = (
     #url(r'^404', 'app.views.error404',),
     #url(r'learn$', 'app.views.learnUnregistered',),
     url(r'^learn/(\w+)', 'app.views.learn',),
-    url(r'^createUserHash', 'app.views.createUserHash',),
     url(r'^uploadRegistered', 'app.views.uploadRegistered',),
     url(r'^myDashboard', 'app.views.myDashboard',),
     url(r'^myHistoric', 'app.views.myHistoric',),

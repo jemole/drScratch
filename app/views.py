@@ -1039,17 +1039,17 @@ def generatorCSV(request, dictionary, file_name, type_csv):
 
 #________________________ TO REGISTER USER __________________________#
 
-def userHash(request):
+def coderHash(request):
     """Method for to sign up users in the platform"""
     if request.method == "POST":
-        form = UserHashForm(request.POST)
+        form = CoderHashForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/userHash')
+            return HttpResponseRedirect('/coderHash')
     elif request.method == 'GET':
-        return render_to_response("sign/userHash.html", context_instance = RC(request))
+        return render_to_response("sign/coderHash.html", context_instance = RC(request))
 
-def signUpUser(request):
+def signUpCoder(request):
     """Method which allow to sign up organizations"""
     flagHash = 0
     flagName = 0
@@ -1057,7 +1057,7 @@ def signUpUser(request):
     flagForm = 0
     print "ENTRA"
     if request.method == 'POST':
-        form = UserForm(request.POST)
+        form = CoderForm(request.POST)
         if form.is_valid():
 
             username = form.cleaned_data['username']
@@ -1068,7 +1068,7 @@ def signUpUser(request):
             #Checking the validity into the database contents.
             #They will be refused if they already exist.
             #If they exist an error message will be shown.
-            if User.objects.filter(username = username):
+            if Coder.objects.filter(username = username):
                 #This name already exists
                 flagName = 1
                 return render_to_response("sign/signup_error.html",
@@ -1078,7 +1078,7 @@ def signUpUser(request):
                                            'flagForm':flagForm},
                                           context_instance = RC(request))
 
-            elif User.objects.filter(email = email):
+            elif Coder.objects.filter(email = email):
                 #This email already exists
                 flagEmail = 1
                 return render_to_response("sign/signup_error.html",
@@ -1087,14 +1087,14 @@ def signUpUser(request):
                                         'flagHash':flagHash,
                                         'flagForm':flagForm},
                                         context_instance = RC(request))
-            if (UserHash.objects.filter(hashkey = hashkey)):
-                userHashkey = UserHash.objects.get(hashkey=hashkey)
-                userHashkey.delete()
-                user = User.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
-                user = authenticate(username=username, password=password)
-                user_email = User.objects.get(email=email)
-                uid = urlsafe_base64_encode(force_bytes(user_email.pk))
-                token=default_token_generator.make_token(user_email)
+            if (CoderHash.objects.filter(hashkey = hashkey)):
+                coderHashkey = CoderHash.objects.get(hashkey=hashkey)
+                coderHashkey.delete()
+                coder = Coder.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
+                coder = authenticate(username=username, password=password)
+                user = User.objects.get(email=email)
+                uid = urlsafe_base64_encode(force_bytes(user.pk))
+                token=default_token_generator.make_token(user)
                 c = {
                         'email':email,
                         'uid':uid,
@@ -1107,8 +1107,8 @@ def signUpUser(request):
                 email = EmailMessage(subject,body,sender,to)
                 #email.attach_file("static/app/images/logo_main.png")
                 email.send()
-                login(request, user)
-                return HttpResponseRedirect('/user/' + user.username)
+                login(request, coder)
+                return HttpResponseRedirect('/user/' + coder.username)
 
             else:
                 #Doesn't exist this hash
@@ -1139,7 +1139,7 @@ def signUpUser(request):
 
 #_________________________ TO SHOW USER'S DASHBOARD ___________#
 
-def loginUser(request):
+def loginCoder(request):
     """Log in app to user"""
     if request.method == 'POST':
         form = UserForm(request.POST)
@@ -1147,8 +1147,6 @@ def loginUser(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user = authenticate(username=username, password=password)
-            print "ENTRA"
-            print str(user)
             if user is not None:
                 if user.is_active:
                     login(request, user)
@@ -1537,26 +1535,6 @@ def DeadCodeToScratchBlock(code):
     except:
         code = ""
     return code
-
-
-
-#_________________________CSV File____________________________#
-def exportCsvFile(request):
-    """Export a CSV File"""
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename="some.csv"'
-    d = {"Abstraction": 2, "level": " Developing", "Parallelization": 1, "Logic": 1, "Synchronization": 2, "FlowControl": 2, "UserInteractivity": 1, "maxPoints": 21, "DataRepresentation": 1, "points": 10}
-    writer = csv.writer(response)
-    for key, value in d.items():
-           writer.writerow([key, value])
-
-    """
-    writer = csv.writer(response)
-    writer.writerow(['First row', 'Paco', '21', 'Madrid'])
-    writer.writerow(['Second row', 'Lucia', '25', 'Quito'])
-    """
-    return response
-
 
 
 #________________________ DASHBOARD ____________________________#
