@@ -291,10 +291,20 @@
  });
 
  </script>
+
   </head>
 
   <body>
+    <!-- =========================
+     PRE LOADER
+    ============================== -->
+    <div id="mywrapper">
 
+    <div style="display: none;" class="preloader">
+        <div style="display: none;" class="status">
+            &nbsp;
+        </div>
+    </div>
     <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
         <div class="container">
             <!-- TOP BAR -->
@@ -332,74 +342,185 @@
             <img src="/static/{{ img }}">
           </div>
           <ul class="nav nav-sidebar">
-            <li><a class="litext" href="/organization/{{ username }}"><span class="glyphicon glyphicon-dashboard"></span> General</a></li>
-            <li><a class="litext" href="/organization/stats/{{ username }}"><span class="glyphicon glyphicon-stats"></span> Seguimiento</a></li>
-            <li><a class="litext" href="/organization/downloads/{{ username }}"><span class="glyphicon glyphicon-download-alt"></span> Descargas</a></li>
-            <li><a class="litext" href="/organization/settings/{{ username }}"><span class="glyphicon glyphicon-cog"></span> Ajustes</a></li>
+            <li><a class="litext" href="/organization/{{ username }}"><span class="glyphicon glyphicon-dashboard"></span> {% trans "Analysis" %}</a></li>
+            <li><a class="litext" href="/organization/stats/{{ username }}"><span class="glyphicon glyphicon-stats"></span> {% trans "Stats"%}</a></li>
+            <li><a class="litext" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><span class="glyphicon glyphicon-book"></span> {% trans "Learn more" %} <span class="caret"></span></a>
+              <ul class="dropdown-menu pull-right">
+                <li><a href="/learn/Logic/">{% trans "Logic" %}</a></li>
+                <li><a href="/learn/Data/">{% trans "Data representation" %}</a></li>
+                <li><a href="/learn/Parallelism/">{% trans "Parallelism" %}</a></li>
+                <li><a href="/learn/Synchronization/">{% trans "Synchronization" %}</a></li>
+                <li><a href="/learn/User/">{% trans "User interactivity" %}</a></li>
+                <li><a href="/learn/Flow/">{% trans "Flow control" %}</a></li>
+                <li><a href="/learn/Abstraction/">{% trans "Abstraction" %}</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/learn/duplicatedScripts/">{% trans "Duplicated scripts" %}</a></li>
+                <li><a href="/learn/spriteNaming/">{% trans "Incorrect names" %}</a></li>
+                <li><a href="/learn/deadCode/">{% trans "Dead code" %}</a></li>
+                <li><a href="/learn/attrInit/">{% trans "Attribute initialization" %}</a></li>
+              </ul>
+            </li>
+            <li><a class="litext" href="/organization/downloads/{{ username }}"><span class="glyphicon glyphicon-download-alt"></span> {% trans "Downloads"%}</a></li>
+            <li><a class="litext" href="/organization/settings/{{ username }}"><span class="glyphicon glyphicon-cog"></span> {% trans "Settings" %}</a></li>
           </ul>
         </div>
 
-        <div class="col-sm-12 col-md-12 main">
-          <h2 class="page-header">Seguimiento</h2>
-            <div class="row">
+        {% block content %}
+         {% endblock %}
+        <footer class="footer grey-bg">
+               <div class="container">
+                      {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
 
-                <div class="col-md-10 col-md-offset-2">
-                    <!-- HEADING AND BUTTONS -->
-                    <div class="panel panel-default paneldash">
-                      <div class="panel-body" id ="chart-panel" style="height:350px;">
-                      </div>
-                    </div>
-                </div>
+                       <!-- SOCIAL ICONS -->
+                       <ul class="social-icons">
+                           <li><a href="https:/twitter.com/drscratchtool">
+                               <span class="icon-social-twitter transparent-text-dark"></span></a>
+                           </li>
+                           <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+                           </li>
 
-            </div>
-            <div class="row">
+                       </ul>
+               </div>
+           </footer>
 
-                <div class="col-md-5 col-md-offset-2">
-                    <!-- HEADING AND BUTTONS -->
-                    <div class="panel panel-default paneldash">
-                      <div class="panel-body" id ="bars_skill" style="height:350px;">
-                      </div>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <!-- HEADING AND BUTTONS -->
-                    <div class="panel panel-default paneldash">
-                      <div class="panel-body" id ="bars_codesmell" style="height:350px;">
-                      </div>
-                    </div>
-                </div>
+           <!-- =========================
+                   MODALS
+           ============================== -->
 
-            </div>
-      </div>
-      </div>
-    </div>
-    <footer class="footer grey-bg">
-           <div class="container">
-                  {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+            <!-- Modal Url -->
+           <div id="modalCSV" class="modal fade" role="dialog">
+             <div class="modal-dialog">
 
-                   <!-- SOCIAL ICONS -->
-                   <ul class="social-icons">
-                       <li><a href="https:/twitter.com/drscratchtool">
-                           <span class="icon-social-twitter transparent-text-dark"></span></a>
-                       </li>
-                       <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
-                       </li>
+               <!-- Modal content-->
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+                   <div class="small-text-medium uppercase colored-text">
+                       {% trans "How is the file .csv?" %}
+                   </div>
+                   <h4 class="modal-title"><strong>{% trans "You must to write only the number of your students' projects. Easy, isn't it?" %}</strong></h4>
+                   <div class="colored-line"></div>
+                 </div>
+                 <div class="modal-body">
+                   <img class='framed' src='../../static/app/images/csv.png' />
+                 </div>
+                 <div class="modal-footer">
+                 </div>
+               </div>
 
-                   </ul>
+             </div>
            </div>
-       </footer>
+           <!-- Modal Url -->
+           <div id="modalUrl" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+                  <div class="small-text-medium uppercase colored-text">
+                      {% trans "What is an url?" %}
+                  </div>
+                  <h4 class="modal-title"><strong>{% trans "How I can know my Scratch project's url?" %}</strong></h4>
+                  <div class="colored-line"></div>
+                </div>
+                <div class="modal-body">
+                  {% trans "<img class='framed' src='../static/app/images/url-en.png' />" %}
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+
+            </div>
+           </div>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="../../static/app/scripts/bootstrap-filestyle.js"> </script>
-    <script src="../../static/app/scripts/smoothscroll.js"></script>
-    <script src="../../static/app/scripts/bootstrap.min.js"></script>
-    <script src="../../static/app/scripts/jquery.nav.js"></script>
-    <script src="../../static/app/scripts/ie-emulation-modes-warning.js"></script>
-    <script src="../../static/app/scripts/wow.js"></script>
-    <script src="../../static/app/scripts/nivo-lightbox.js"></script>
-    <script src="../../static/app/scripts/owl.js"></script>
+               <!-- Modal Project -->
+           <div id="modalProject" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
-</body></html>
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+                  <div class="small-text-medium uppercase colored-text">
+                      {% trans "I want to download my project from Scratch!" %}
+                  </div>
+                  <h4 class="modal-title"><strong>{% trans "How I can download my Scratch project to my computer?" %}</strong></h4>
+                  <div class="colored-line"></div>
+                </div>
+                <div class="modal-body">
+                  {% trans "<img class='framed' src='../static/app/images/project-en.png' />" %}
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+
+            </div>
+           </div>
+
+         </div>
+         <!-- =========================
+               PROGRESS BAR
+       ============================== -->
+
+
+
+       <div id="pb" class="jumbotron">
+       <div class="container">
+             <p>
+                 <h2>
+                     {% trans "Wait a moment please" %}
+                 </h2>
+             </p>
+       </div>
+
+
+         <div class="container">
+             <img src="../../static/app/images/logo_main.png"/>
+         </div>
+
+
+
+         <div class = "container">
+
+             <div class="progress progress-striped active">
+                 <div class="progress-bar progress-bar-danger" role="progressbar"
+                     aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 99%">
+                     <span style="width: 99%">{% trans "loading..." %}</span>
+                 </div>
+             </div>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
+
+
+         </div>
+
+           <script>
+               /* PRE LOADER */
+               jQuery(window).load(function () {
+                   "use strict";
+                   jQuery(".status").fadeOut();
+                   jQuery(".preloader").delay(1000).fadeOut("slow");
+               })
+           </script>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src="../../static/app/scripts/bootstrap-filestyle.js"> </script>
+        <script src="../../static/app/scripts/smoothscroll.js"></script>
+        <script src="../../static/app/scripts/bootstrap.min.js"></script>
+        <script src="../../static/app/scripts/jquery.nav.js"></script>
+        <script src="../../static/app/scripts/ie-emulation-modes-warning.js"></script>
+        <script src="../../static/app/scripts/wow.js"></script>
+        <script src="../../static/app/scripts/nivo-lightbox.js"></script>
+        <script src="../../static/app/scripts/owl.js"></script>
+        <script src="../../static/app/scripts/progress-bar.js"></script>
+
+
+        </body></html>

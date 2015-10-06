@@ -24,8 +24,6 @@ urlpatterns = (
     url(r'^organization/downloads/(\w+)', 'app.views.organization_downloads',),
     url(r'^organization/settings/(\w+)', 'app.views.organization_settings',),
     url(r'^organization/(\w+)', 'app.views.organization',),
-    url(r'^organization/stats/(\w+)', 'app.views.organization_stats',),
-    url(r'^organization/settings/(\w+)', 'app.views.organization_settings',),
     url(r'^loginOrganization$', 'app.views.loginOrganization',),
     url(r'^logoutOrganization$', 'app.views.logoutOrganization',),
     url(r'^analyzeCSV$', 'app.views.analyzeCSV',),

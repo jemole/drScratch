@@ -580,30 +580,11 @@ def organization(request, name):
             username = request.user.username
             if username == name:
                 user = Organization.objects.get(username=username)
-                date_joined= user.date_joined
-                end = datetime.today()
-                end = date(end.year,end.month,end.day)
-                start = date(date_joined.year,date_joined.month,date_joined.day)
-                dateList = date_range(start, end)
-                daily_score = []
-                mydates = []
-                for n in dateList:
-                    mydates.append(n.strftime("%d/%m"))
-                    points = File.objects.filter(organization=username).filter(time=n)
-                    points = points.aggregate(Avg("score"))["score__avg"]
-                    daily_score.append(points)
+                img = user.img
+                dic={'username':username,
+                "img":str(img)}
 
-                for n in daily_score:
-                    if n==None:
-                        daily_score[daily_score.index(n)]=0
-
-
-                dic={"date":mydates,
-                "daily_score":daily_score,
-                'username':username,
-                "img":str(user.img)}
-
-                return render_to_response("main/dash.html",
+                return render_to_response("organization/org_main.html",
                         dic,
                         context_instance = RC(request))
             else:
@@ -632,50 +613,62 @@ def organization_stats(request,username):
             daily_score[daily_score.index(n)]=0
 
     f = File.objects.filter(organization=username)
+    if f:
 
-    parallelism = f.aggregate(Avg("parallelization"))
-    parallelism = int(parallelism["parallelization__avg"])
-    abstraction = f.aggregate(Avg("abstraction"))
-    abstraction = int(abstraction["abstraction__avg"])
-    logic = f.aggregate(Avg("logic"))
-    logic = int(logic["logic__avg"])
-    synchronization = f.aggregate(Avg("synchronization"))
-    synchronization = int(synchronization["synchronization__avg"])
-    flowControl = f.aggregate(Avg("flowControl"))
-    flowControl = int(flowControl["flowControl__avg"])
-    userInteractivity = f.aggregate(Avg("userInteractivity"))
-    userInteractivity = int(userInteractivity["userInteractivity__avg"])
-    dataRepresentation = f.aggregate(Avg("dataRepresentation"))
-    dataRepresentation = int(dataRepresentation["dataRepresentation__avg"])
+        """If the org has analyzed projects"""
 
-    deadCode = File.objects.all().aggregate(Avg("deadCode"))
-    deadCode = int(deadCode["deadCode__avg"])
-    duplicateScript = File.objects.all().aggregate(Avg("duplicateScript"))
-    duplicateScript = int(duplicateScript["duplicateScript__avg"])
-    spriteNaming = File.objects.all().aggregate(Avg("spriteNaming"))
-    spriteNaming = int(spriteNaming["spriteNaming__avg"])
-    initialization = File.objects.all().aggregate(Avg("initialization"))
-    initialization = int(initialization["initialization__avg"])
+        parallelism = f.aggregate(Avg("parallelization"))
+        parallelism = int(parallelism["parallelization__avg"])
+        abstraction = f.aggregate(Avg("abstraction"))
+        abstraction = int(abstraction["abstraction__avg"])
+        logic = f.aggregate(Avg("logic"))
+        logic = int(logic["logic__avg"])
+        synchronization = f.aggregate(Avg("synchronization"))
+        synchronization = int(synchronization["synchronization__avg"])
+        flowControl = f.aggregate(Avg("flowControl"))
+        flowControl = int(flowControl["flowControl__avg"])
+        userInteractivity = f.aggregate(Avg("userInteractivity"))
+        userInteractivity = int(userInteractivity["userInteractivity__avg"])
+        dataRepresentation = f.aggregate(Avg("dataRepresentation"))
+        dataRepresentation = int(dataRepresentation["dataRepresentation__avg"])
 
+        deadCode = File.objects.all().aggregate(Avg("deadCode"))
+        deadCode = int(deadCode["deadCode__avg"])
+        duplicateScript = File.objects.all().aggregate(Avg("duplicateScript"))
+        duplicateScript = int(duplicateScript["duplicateScript__avg"])
+        spriteNaming = File.objects.all().aggregate(Avg("spriteNaming"))
+        spriteNaming = int(spriteNaming["spriteNaming__avg"])
+        initialization = File.objects.all().aggregate(Avg("initialization"))
+        initialization = int(initialization["initialization__avg"])
+    else:
+
+        """If the org hasn't analyzed projects yet"""
+
+        parallelism,abstraction,logic=[0],[0],[0]
+        synchronization,flowControl,userInteractivity=[0],[0],[0]
+        dataRepresentation,deadCode,duplicateScript=[0],[0],[0]
+        spriteNaming,initialization =[0],[0]
+
+    """Saving data in the dictionary"""
 
     dic = {
-    "date":mydates,
-    "username": username,
-    "img": org.img,
-    "daily_score":daily_score,
-    "skillRate":{"parallelism":parallelism,
+        "date":mydates,
+        "username": username,
+        "img": org.img,
+        "daily_score":daily_score,
+        "skillRate":{"parallelism":parallelism,
                  "abstraction":abstraction,
                  "logic": logic,
                  "synchronization":synchronization,
                  "flowControl":flowControl,
                  "userInteractivity":userInteractivity,
                  "dataRepresentation":dataRepresentation},
-    "codeSmellRate":{"deadCode":deadCode,
+                 "codeSmellRate":{"deadCode":deadCode,
         "duplicateScript":duplicateScript,
         "spriteNaming":spriteNaming,
         "initialization":initialization }}
 
-    return render_to_response("main/org_stats.html",
+    return render_to_response("organization/org_stats.html",
                             dic,
                             context_instance = RC(request))
 def organization_settings(request,username):
@@ -683,6 +676,9 @@ def organization_settings(request,username):
     org = Organization.objects.get(username=username)
 
     if request.method == "POST":
+
+        """Saving image in DB"""
+
         org.img = request.FILES["img"]
         org.save()
         path_to_file = os.path.dirname(os.path.dirname(__file__)) + "/img/" + str(username) +"_"+str(request.FILES["img"])
@@ -691,21 +687,31 @@ def organization_settings(request,username):
     "username": username,
     "img": org.img
     }
-    return render_to_response("main/settings.html",
+    return render_to_response("organization/org_settings.html",
                             dic,
                             context_instance = RC(request))
 
-def organization_downloads(request,username):
+def organization_downloads(request,username, filename=""):
 
     org = Organization.objects.get(username=username)
     csv = CSVs.objects.filter(organization=username)
-    for n in csv:
-        print n.directory
     dic = {
     "username": username,
-    "img": org.img
+    "img": org.img,
+    "csv":csv
     }
-    return render_to_response("main/org_downloads.html",
+    if request.method == "POST":
+
+        """Downloading CSV"""
+
+        filename = request.POST["csv"]
+        path_to_file = os.path.dirname(os.path.dirname(__file__)) + "/csvs/Dr.Scratch/" + filename
+        csv_data = open(path_to_file, 'r')
+        response = HttpResponse(csv_data, content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(filename)
+        return response
+    else:
+        return render_to_response("organization/org_downloads.html",
                                 dic,
                                 context_instance = RC(request))
 
