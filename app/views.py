@@ -26,7 +26,7 @@ from app.models import Coder, CoderHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
 from app.forms import CoderForm, CoderHashForm, LoginCoderForm
-#from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from datetime import datetime,timedelta,date
 from django.contrib.auth.decorators import login_required
 from email.MIMEText import MIMEText
@@ -474,7 +474,7 @@ def signUpOrganization(request):
             #Checking the validity into the database contents.
             #They will be refused if they already exist.
             #If they exist an error message will be shown.
-            if Organization.objects.filter(username = username):
+            if User.objects.filter(username = username):
                 #This name already exists
                 flagName = 1
                 return render_to_response("sign/signup_error.html",
@@ -484,7 +484,7 @@ def signUpOrganization(request):
                                            'flagForm':flagForm},
                                           context_instance = RC(request))
 
-            elif Organization.objects.filter(email = email):
+            elif User.objects.filter(email = email):
                 #This email already exists
                 flagEmail = 1
                 return render_to_response("sign/signup_error.html",
@@ -495,8 +495,8 @@ def signUpOrganization(request):
                                         context_instance = RC(request))
             if (OrganizationHash.objects.filter(hashkey = hashkey)):
                 organizationHashkey = OrganizationHash.objects.get(hashkey=hashkey)
-                organizationHashkey.delete()
                 organization = Organization.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
+                organizationHashkey.delete()
                 organization = authenticate(username=username, password=password)
                 user=Organization.objects.get(email=email)
                 uid = urlsafe_base64_encode(force_bytes(user.pk))
@@ -593,6 +593,7 @@ def organization(request, name):
         return render_to_response("sign/organization.html", context_instance = RC(request))
     else:
         return HttpResponseRedirect("/")
+
 def organization_stats(request,username):
     org = Organization.objects.get(username=username)
     date_joined= org.date_joined
@@ -1050,6 +1051,7 @@ def coderHash(request):
     if request.method == "POST":
         form = CoderHashForm(request.POST)
         if form.is_valid():
+            print "OK"
             form.save()
             return HttpResponseRedirect('/coderHash')
     elif request.method == 'GET':
@@ -1074,7 +1076,7 @@ def signUpCoder(request):
             #Checking the validity into the database contents.
             #They will be refused if they already exist.
             #If they exist an error message will be shown.
-            if Coder.objects.filter(username = username):
+            if User.objects.filter(username = username):
                 #This name already exists
                 flagName = 1
                 return render_to_response("sign/signup_error.html",
@@ -1084,7 +1086,7 @@ def signUpCoder(request):
                                            'flagForm':flagForm},
                                           context_instance = RC(request))
 
-            elif Coder.objects.filter(email = email):
+            elif User.objects.filter(email = email):
                 #This email already exists
                 flagEmail = 1
                 return render_to_response("sign/signup_error.html",
@@ -1095,10 +1097,10 @@ def signUpCoder(request):
                                         context_instance = RC(request))
             if (CoderHash.objects.filter(hashkey = hashkey)):
                 coderHashkey = CoderHash.objects.get(hashkey=hashkey)
-                coderHashkey.delete()
                 coder = Coder.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
+                coderHashkey.delete()
                 coder = authenticate(username=username, password=password)
-                user = User.objects.get(email=email)
+                user = Coder.objects.get(email=email)
                 uid = urlsafe_base64_encode(force_bytes(user.pk))
                 token=default_token_generator.make_token(user)
                 c = {
@@ -1114,7 +1116,7 @@ def signUpCoder(request):
                 #email.attach_file("static/app/images/logo_main.png")
                 email.send()
                 login(request, coder)
-                return HttpResponseRedirect('/user/' + coder.username)
+                return HttpResponseRedirect('/coder/' + coder.username)
 
             else:
                 #Doesn't exist this hash
@@ -1139,11 +1141,31 @@ def signUpCoder(request):
 
     elif request.method == 'GET':
         if request.user.is_authenticated():
-            return HttpResponseRedirect('/user/' + request.user.username)
+            return HttpResponseRedirect('/coder/' + request.user.username)
         else:
-            return render_to_response("sign/user.html", context_instance = RC(request))
+            return render_to_response("sign/coder.html", context_instance = RC(request))
 
 #_________________________ TO SHOW USER'S DASHBOARD ___________#
+
+def coder(request, name):
+    if request.method == 'GET':
+        if request.user.is_authenticated():
+            username = request.user.username
+            if username == name:
+                user = Coder.objects.get(username=username)
+                img = user.img
+                dic={'username':username,
+                "img":str(img)}
+
+                return render_to_response("coder/coder_main.html",
+                                            dic,
+                                            context_instance = RC(request))
+            else:
+                return render_to_response("sign/organization.html",
+                                        context_instance = RC(request))
+        return render_to_response("sign/organization.html", context_instance = RC(request))
+    else:
+        return HttpResponseRedirect("/")
 
 def loginCoder(request):
     """Log in app to user"""

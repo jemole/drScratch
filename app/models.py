@@ -34,6 +34,7 @@ class File(models.Model):
 
 class Coder(User):
     hashkey = models.TextField()
+    img = models.ImageField(upload_to="img/", default="app/images/cat.png")
 
 class CoderHash(models.Model):
     hashkey = models.TextField()
@@ -60,7 +61,7 @@ class Teacher(models.Model):
 
 class Organization(User):
     hashkey = models.TextField()
-    img = models.ImageField(upload_to="img/", default="None")
+    img = models.ImageField(upload_to="img/", default="app/images/cat.png")
 
 class OrganizationHash(models.Model):
     hashkey = models.TextField()

@@ -88,12 +88,12 @@
                         <ul role="menu" class="dropdown-menu">
                           <li>
                           <div style="padding: 15px; padding-bottom: 0px;">
-                            <form accept-charset="UTF-8" action="/signUpCoder" method="post">
+                            <form accept-charset="UTF-8" action="/coder" method="post">
                             {% csrf_token %}
                               {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
                               {% trans "<input type='text' name='email' id='email' placeholder='Email' style='margin-bottom: 15px;'>" %}
                               {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
-                              {% trans "<input class='form-control' type='password' name='hashkey' id='hashkey' placeholder='Hashkey' style='margin-bottom: 15px;'>" %}
+                              {% trans "<input class='form-control' type='password' name='hashkey' id='hashkey' placeholder='Hashkey' style='margin-bottom: 15px;'>" %}                        
                               {% trans "<input type='submit' value='Sign Up' id='sign-up' class='btn-group btn-group-justified colored-text'>" %}
                             </form>
                           </div>
@@ -115,8 +115,8 @@
                               {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
                               {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
                             <div>
-                                <a class="message" style="size: 5px;" href="/changePwd">{% trans "I forgot my password" %}</a>
-                            </div>
+                                <a class="message" style="size: 15px;" href="/changePwd">{% trans "I forgot my password" %}</a>
+                            </div>  
                               {% trans "<input type='submit' value='Sign In' id='sign-in' class='btn-group btn-group-justified colored-text'>" %}
                             </form>
                           </div>
