@@ -26,7 +26,6 @@ from app.models import Coder, CoderHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
 from app.forms import CoderForm, CoderHashForm, LoginCoderForm
-from app import org
 from django.contrib.auth.models import User
 from datetime import datetime,timedelta,date
 from django.contrib.auth.decorators import login_required
