@@ -1,36 +1,34 @@
-# -*- encoding: utf-8 -*-
-# -*- coding: utf-8 -*-
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-30 17:03+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2015-09-22 09:56+0000\n"
+"PO-Revision-Date: 2015-08-30 23:02+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.4\n"
+
+#: drScratch/settings.py:105
+msgid "Spanish"
+msgstr "Espanyol"
 
 #: drScratch/settings.py:106
-msgid "Spanish"
-msgstr "Español"
-
-#: drScratch/settings.py:107
 msgid "English"
-msgstr "Inglés"
+msgstr "Anglès"
 
-#: drScratch/settings.py:108 templates/main/collaborators.html:433
+#: drScratch/settings.py:107 templates/main/collaborators.html:433
 msgid "Catalan"
-msgstr "Catalán"
+msgstr "Català"
 
 #: templates/error/404.html:9 templates/error/500.html:9
 #: templates/error/analyzing.html:9
@@ -39,57 +37,61 @@ msgstr "Error"
 
 #: templates/error/404.html:36
 msgid "ERROR 404 - Page Not Found"
-msgstr " 404 - Página No Encontrada"
+msgstr "ERROR 404 - Pàgina No Trobada"
 
 #: templates/error/404.html:39
 msgid "Ops! This page doesn't exist"
-msgstr "Ops! Esta página no existe"
+msgstr "Vaja! Aquesta pàgina no existeix"
 
 #: templates/error/404.html:59 templates/error/500.html:59
 #: templates/error/analyzing.html:62 templates/login/login.html:104
 #: templates/login/login.html.py:525 templates/main/collaborators.html:84
-#: templates/main/main.html:127 templates/main/main.html.py:594
-#: templates/sign/organization.html:105 templates/sign/user.html:81
+#: templates/main/main.html:86 templates/main/main.html.py:552
+#: templates/sign/createOrganization.html:81 templates/sign/createUser.html:81
+#: templates/sign/organization.html:105
+#: templates/sign/registerOrganization.html:81
 msgid "Get Started"
-msgstr "Empezar"
+msgstr "Començar"
 
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70 templates/learn/base.html:94
 #: templates/login/login.html:536 templates/main/collaborators.html:593
-#: templates/main/main.html:605 templates/main/main_organization.html:246
+#: templates/main/main.html:563 templates/main/main_organization.html:246
 #: templates/password/base.html:104 templates/sign/base.html:104
-#: templates/sign/organization.html:288 templates/sign/user.html:255
+#: templates/sign/createOrganization.html:256
+#: templates/sign/createUser.html:255 templates/sign/organization.html:288
+#: templates/sign/registerOrganization.html:255
 #: templates/statistics/statistics.html:350
 #: templates/upload/dashboard-organization.html:212
-#: templates/upload/dashboard-unregistered-basic.html:254
+#: templates/upload/dashboard-unregistered-basic.html:255
 #: templates/upload/dashboard-unregistered-developing.html:292
 #: templates/upload/dashboard-unregistered-master.html:353
 msgid "©2014 Dr. Scratch is powered by "
-msgstr "©2014 Dr. Scratch está implementado con "
+msgstr "© 2014 Dr. Scratch implementat amb "
 
 #: templates/error/500.html:36
 msgid "500 - Internal Server Error"
-msgstr "500-Error Interno del Servidor"
+msgstr "500 - Error Intern del Servidor"
 
 #: templates/error/500.html:39 templates/error/analyzing.html:39
 msgid "We apologize for this inconvenience"
-msgstr "Sentimos las molestias"
+msgstr "Sentim les molèsties"
 
 #: templates/error/analyzing.html:36
 msgid "There was an error analyzing your project"
-msgstr "Hubo un error analizando tu proyecto"
+msgstr "Ha hagut un error analitzant el teu projecte"
 
 #: templates/error/analyzing.html:54
 msgid ""
 "Sometimes we have got problems analyzing some projects. We're working on "
 "this."
 msgstr ""
-"Algunas veces tenemos problemas analizando determinados proyectos. Estamos "
-"trabajando en ello."
+"De vegades tenim problemes analitzant determinats projectes. Hi estem "
+"treballant."
 
 #: templates/learn/Abstraction.html:4 templates/statistics/statistics.html:269
 msgid "Abstraction"
-msgstr "Abstracción"
+msgstr "Abstracció"
 
 #: templates/learn/Abstraction.html:10
 msgid ""
@@ -97,16 +99,16 @@ msgid ""
 "<b>break a problem into smaller parts that are easier to understand, program "
 "and debug.</b>"
 msgstr ""
-"La capacidad de abstracción y descomposición de problemas te ayuda a "
-"<b>dividir un problema en partes más pequeñas que serán más fáciles de "
-"comprender, programar y depurar.</b>"
+"La capacitat d'abstracció i descomposició de problemes t'ajuda a <b> dividir "
+"un problema en parts més petites que seran més fàcils de comprendre, "
+"programar i depurar.</b>"
 
 #: templates/learn/Abstraction.html:17 templates/learn/Data.html:19
 #: templates/learn/Flow.html:17 templates/learn/Logic.html:17
 #: templates/learn/Parallelism.html:17 templates/learn/Synchronization.html:18
 #: templates/learn/User.html:18
 msgid "If you get 0 points..."
-msgstr "Si has sacado 0 puntos..."
+msgstr "Si has tret 0 punts..."
 
 #: templates/learn/Abstraction.html:19
 msgid ""
@@ -116,11 +118,11 @@ msgid ""
 "different programs and each of these programs deal with a particular issue</"
 "b>. Here's an example:"
 msgstr ""
-"Cuando se comienza a programar con Scratch, en ocasiones puede parecer que "
-"la solución más sencilla es programar todo el comportamiento de un personaje "
-"en un único programa. Sin embargo, <b>lo ideal es que el comportamiento del "
-"personaje sea controlado por diferentes programas y que cada uno de estos "
-"programas se ocupe de una cuestión concreta.</b> Veamos un ejemplo:"
+"Quan es comença a programar amb Scratch, de vegades pot semblar que la "
+"solució més senzilla és programar tot el comportament d'un personatge en un "
+"únic programa. Tot i això, <b> el millor és que el comportament del "
+"personatge estigui controlat per diferents programes i que cada un d'aquests "
+"programes s'ocupi d'una qüestió concreta. </b> Vegem un exemple:"
 
 #: templates/learn/Abstraction.html:20 templates/learn/Abstraction.html:35
 #: templates/learn/Abstraction.html:41 templates/learn/Abstraction.html:61
@@ -135,33 +137,33 @@ msgstr ""
 #: templates/learn/User.html.py:46 templates/learn/User.html:69
 #: templates/learn/attrInit.html:25
 msgid "when gf clicked"
-msgstr "al presionar ⚑"
+msgstr "quan la ⚑ es premi"
 
 #: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
 #: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
 #: templates/learn/User.html:23 templates/learn/User.html.py:47
 #: templates/learn/User.html:70
 msgid "clear"
-msgstr "borrar"
+msgstr "neteja"
 
 #: templates/learn/Abstraction.html:22 templates/learn/Abstraction.html:37
 #: templates/learn/User.html:24 templates/learn/User.html.py:48
 #: templates/learn/User.html:71
 msgid "go to x:(-100) y:(30)"
-msgstr "ir a x:(-100) y:(30)"
+msgstr "vés a x:(-100) y:(30)"
 
 #: templates/learn/Abstraction.html:23 templates/learn/Abstraction.html:38
 #: templates/learn/Abstraction.html:65 templates/learn/Abstraction.html:71
 #: templates/learn/Abstraction.html:81 templates/learn/User.html:25
 #: templates/learn/User.html.py:49 templates/learn/User.html:72
 msgid "pen down"
-msgstr "bajar lápiz"
+msgstr "baixa el llapis"
 
 #: templates/learn/Abstraction.html:24 templates/learn/Abstraction.html:39
 #: templates/learn/Abstraction.html:72 templates/learn/User.html:26
 #: templates/learn/User.html.py:50 templates/learn/User.html:73
 msgid "move (200) steps"
-msgstr "mover (10) pasos"
+msgstr "mou-te (200) passos"
 
 #: templates/learn/Abstraction.html:25 templates/learn/Abstraction.html:30
 #: templates/learn/Abstraction.html:40 templates/learn/Abstraction.html:46
@@ -171,7 +173,7 @@ msgstr "mover (10) pasos"
 #: templates/learn/User.html.py:56 templates/learn/User.html:74
 #: templates/learn/User.html.py:79
 msgid "pen up"
-msgstr "subir lápiz"
+msgstr "puja el llapis"
 
 #: templates/learn/Abstraction.html:26 templates/learn/Abstraction.html:42
 #: templates/learn/Abstraction.html:68 templates/learn/Abstraction.html:96
@@ -179,26 +181,26 @@ msgstr "subir lápiz"
 #: templates/learn/User.html.py:52 templates/learn/User.html:75
 #: templates/learn/duplicatedScripts.html:20
 msgid "wait (1) secs"
-msgstr "esperar (1) segundos"
+msgstr "espera (1) segons"
 
 #: templates/learn/Abstraction.html:27 templates/learn/Abstraction.html:43
 #: templates/learn/User.html:29 templates/learn/User.html.py:53
 #: templates/learn/User.html:76
 msgid "go to x:(-44) y:(-24)"
-msgstr "ir a x:(-44) y:(-24)"
+msgstr "vés a x:(-44) y:(-24)"
 
 #: templates/learn/Abstraction.html:28 templates/learn/Abstraction.html:44
 #: templates/learn/Abstraction.html:64 templates/learn/Abstraction.html:70
 #: templates/learn/Abstraction.html:80 templates/learn/User.html:30
 #: templates/learn/User.html.py:54 templates/learn/User.html:77
 msgid "set pen color to [#FFA500]"
-msgstr "fijar color de lápiz a [#FFA500]"
+msgstr "fixa el color del llapis a [#FFA500]"
 
 #: templates/learn/Abstraction.html:29 templates/learn/Abstraction.html:45
 #: templates/learn/Abstraction.html:66 templates/learn/User.html:31
 #: templates/learn/User.html.py:55 templates/learn/User.html:78
 msgid "move (100) steps"
-msgstr "mover (100) pasos"
+msgstr "mou-te (100) passos"
 
 #: templates/learn/Abstraction.html:33
 msgid ""
@@ -208,27 +210,27 @@ msgid ""
 "is divided into two parts, so that we have two different programs, one to "
 "paint the front and another to paint the second:"
 msgstr ""
-"Este proyecto, que pinta un dibujo en la pantalla, ha sido programado en un "
-"único programa que dibuja las dos líneas que componen el dibujo. Aunque es "
-"una opción válida, una opción más sencilla de programar y de mantener es "
-"dividir el programa en dos partes, de forma que tengamos dos programas "
-"diferentes, uno para pintar la primera línea y otro para pintar la segunda:"
+"Aquest projecte pinta una imatge en la pantalla. Ha estat programat en un "
+"sol programa que dibuixa les dues línies que formen el dibuix. Encara que és "
+"una opció vàlida, una de més senzilla de programar i de mantenir és dividir "
+"el programa en dues parts, de manera que tinguem dos programes diferents, un "
+"per pintar la primera línia i un altre per pintar la segona:"
 
 #: templates/learn/Abstraction.html:49
 msgid ""
 "Thus, if we make any changes eg in one of the lines drawn, it is much easier "
 "to know which part of the program we need to go to carry out the changes."
 msgstr ""
-"De este modo, si queremos por ejemplo realizar alguna modificación en una de "
-"las líneas dibujadas, es mucho más sencillo saber a qué parte del programa "
-"tenemos que dirigirnos para llevar a cabo los cambios."
+"Per tant, si fem algun canvi, per exemple en una de les línies traçades, és "
+"molt més fàcil saber quina part del programa necessitem per dur a terme els "
+"canvis."
 
 #: templates/learn/Abstraction.html:59 templates/learn/Data.html:80
 #: templates/learn/Flow.html:37 templates/learn/Logic.html:32
 #: templates/learn/Parallelism.html:32 templates/learn/Synchronization.html:43
 #: templates/learn/User.html:44
 msgid "If you get 1 point..."
-msgstr "Si has sacado 1 punto..."
+msgstr "Si has tret 1 punt..."
 
 #: templates/learn/Abstraction.html:60
 msgid ""
@@ -236,18 +238,17 @@ msgid ""
 "instructions. These abstractions allow you to create simple programs to "
 "read, program and maintain. Here's an example:"
 msgstr ""
-"Scratch permite crear nuevos bloques definidos por los usuarios que se "
-"componen de una secuencia de instrucciones. Estas abstracciones permiten "
-"crear programas más sencillos de leer, de programar y de mantener. Veamos un "
-"ejemplo:"
+"Scratch permet crear nous blocs definits pels usuaris que es componen d'una "
+"seqüència d'instruccions. Aquestes abstraccions permeten crear programes més "
+"senzills de llegir, de programar i de mantenir. Vegem un exemple:"
 
 #: templates/learn/Abstraction.html:63 templates/learn/Abstraction.html:94
 msgid "go to x:(-200) y:(40)"
-msgstr "ir a x:(-200) y:(40)"
+msgstr "vés a x:(-200) y:(40)"
 
 #: templates/learn/Abstraction.html:69 templates/learn/Abstraction.html:97
 msgid "go to x:(-200) y:(0)"
-msgstr "ir a x:(-200) y:(0)"
+msgstr "vés a x:(-200) y:(0)"
 
 #: templates/learn/Abstraction.html:76
 msgid ""
@@ -258,36 +259,36 @@ msgid ""
 "line. For this you go to the category 'More Blocks' and press the Create "
 "button a block:"
 msgstr ""
-"Este proyecto Scratch dibuja dos líneas naranjas de diferente longitud en la "
-"pantalla. En lugar de repetir el código 2 veces, tal como vemos en el "
-"ejemplo, es posible definir un bloque <i>“PintaNaranja”</i> que se compone "
-"de los bloques que pintan una línea naranja en la pantalla y al que se le "
-"puede indicar cuál es la longitud de la línea. Para ello hay que irse a la "
-"categoría “Más Bloques” y pulsar en el botón Crear un bloque:"
+"Aquest projecte Scratch dibuixa dues línies taronges de diferent llargada a "
+"la pantalla. En lloc de repetir el codi dues vegades, tal com veiem a "
+"l'exemple, és possible definir un bloc <i> \"PintaTaronja\" </i> que es "
+"compon dels blocs que pinten una línia taronja a la pantalla i al qual es "
+"pot indicar quina és la llargada de la línia. Per fer-ho cal anar a la "
+"categoria \"Més Blocs\" i fer clic damunt l'opció Crear un bloc:"
 
 #: templates/learn/Abstraction.html:79
 msgid "define PaintedOrange(length)"
-msgstr "definir PintaNaranja(longitud)"
+msgstr "defineix PintaTaronja(llargada)"
 
 #: templates/learn/Abstraction.html:82
 msgid "move (length) steps"
-msgstr "mover (longitud) pasos"
+msgstr "mou-te (llargada) passos"
 
 #: templates/learn/Abstraction.html:89
 msgid ""
 "Having defined the block <i>'DrawOrange'</i> it can be used in any program "
 "of the project, as we see below:"
 msgstr ""
-"Una vez definido el bloque <i>“PintaNaranja”</i> es posible utilizarlo en "
-"cualquier programa del proyecto, tal como vemos a continuación:"
+"Una vegada definit el bloc <i> \"PintaTaronja\" </i> és possible utilitzar-"
+"lo en qualsevol programa del projecte, tal com veiem a continuació:"
 
 #: templates/learn/Abstraction.html:95
 msgid "PaintedOrange(100):: looks stack"
-msgstr "PintaNaranja(100):: looks stack"
+msgstr "PintaTaronja(100):: looks stack"
 
 #: templates/learn/Abstraction.html:98
 msgid "PaintedOrange(200):: looks stack"
-msgstr "PintaNaranja(200):: looks stack"
+msgstr "PintaTaronja(200):: looks stack"
 
 #: templates/learn/Abstraction.html:102
 msgid ""
@@ -296,18 +297,18 @@ msgid ""
 "<i>DrawOrange</i> prompted a length of 100 steps, whereas the second time "
 "length is 200 steps."
 msgstr ""
-"De este modo, evitamos la repetición de código, lo que hace que nuestros "
-"proyectos sean más fáciles de programar y mantener. Tal como se puede "
-"observar, la primera vez que se usa el bloque <i>PintaNaranja</i> se le "
-"indica una longitud de 100 pasos, mientras que la segunda vez la longitud es "
-"de 200 pasos."
+"D'aquesta manera, evitem la repetició de codi, cosa que fa que els nostres "
+"projectes siguin més fàcils de programar i mantenir. Tal com es pot "
+"observar, la primera vegada que s'utilitza el bloc <i> PintaTaronja </i> "
+"s'indica una llargada de 100 passos, mentre que a la segona vegada la "
+"llargada és de 200 passos."
 
 #: templates/learn/Abstraction.html:111 templates/learn/Data.html:99
 #: templates/learn/Flow.html:65 templates/learn/Logic.html:47
 #: templates/learn/Parallelism.html:65 templates/learn/Synchronization.html:67
 #: templates/learn/User.html:67
 msgid "If you get 2 points..."
-msgstr "Si has sacado 2 puntos..."
+msgstr "Si has tret 2 punts..."
 
 #: templates/learn/Abstraction.html:113
 msgid ""
@@ -318,13 +319,13 @@ msgid ""
 "identical objects. However, what if I want to change the program? Would have "
 "to go object by object performing this modification."
 msgstr ""
-"En algunos proyectos Scratch queremos tener muchos personajes iguales que "
-"realizan exacatamente las mismas acciones. La primera idea que se nos ocurre "
-"para conseguirlo es crear un personaje, programar todo su comportamiento y, "
-"una vez que está listo, crear tantas copias como necesitemos. Por tanto, si "
-"queremos 20 marcianitos, hay que crear 20 objetos iguales. Sin embargo, ¿qué "
-"ocurriría si quiero realizar un cambio en un programa? Tendría que ir objeto "
-"por objeto realizando esa modificación."
+"En alguns projectes Scratch volem tenir molts personatges iguals que "
+"realitzen exactament les mateixes accions. La primera idea que se'ns acut "
+"per aconseguir-ho és crear un personatge, programar tot el seu comportament "
+"i, un cop enllestit, crear tantes còpies com necessitem. Per tant, si volem "
+"20 marcianets, cal crear 20 objectes iguals. Ara bé, què succeiria si volem "
+"realitzar un canvi en un programa? Hauríem d'anar personatge per personatge "
+"realitzant aquesta modificació."
 
 #: templates/learn/Abstraction.html:115
 msgid ""
@@ -332,9 +333,9 @@ msgid ""
 "abstraction that helps us to program a single object, and dynamically "
 "<b>create exact copies with the same behavior.</b>"
 msgstr ""
-"Para este tipo de situaciones es preferible utilizar <b>clones</b>, un tipo "
-"de abstracción que nos ayuda a poder programar un solo objeto, y <b>crear de "
-"forma dinámica copias exactas con el mismo comportamiento.</b> "
+"Per a aquest tipus de situacions és preferible fer ús de <b>còpies</b>, un "
+"tipus d'abstracció que ens ajuda a poder programar un sol personatge, i <b> "
+"crear de forma dinàmica còpies exactes amb el mateix comportament.</b>"
 
 #: templates/learn/Abstraction.html:116
 msgid ""
@@ -343,37 +344,37 @@ msgid ""
 "you start implementing the project, constantly be creating clones appear at "
 "the top of the screen and they will fall to the bottom:"
 msgstr ""
-"Veamos cómo funcionan con un ejemplo. Imagina que queremos simular que está "
-"nevando en un proyecto. Podemos dibujar un objeto que sea un copo de nive, y "
-"una vez que comience la ejecución del proyecto, ir creando clones "
-"constantemente que aparezcan en la parte superior de la pantalla y vayan "
-"cayendo hasta la parte inferior:"
+"Vegem com funcionen amb un exemple. Imagina que en un projecte volem simular "
+"que està nevant. Podem dibuixar un personatge que sigui un floc de neu i "
+"que, una vegada comenci l'execució del programa, es creïn constantment "
+"còpies que apareguin a la part superior de la pantalla i vagin caient fins a "
+"la part inferior:"
 
 #: templates/learn/Abstraction.html:119 templates/learn/Flow.html:50
 #: templates/learn/Parallelism.html:41 templates/learn/Parallelism.html:46
 #: templates/learn/Synchronization.html:47
 msgid "forever"
-msgstr "por siempre"
+msgstr "per sempre"
 
 #: templates/learn/Abstraction.html:120
 msgid "create clone of [myself v]"
-msgstr "crear clon de [yo v]"
+msgstr "crea una còpia de [jo mateix v]"
 
 #: templates/learn/Abstraction.html:121
 msgid "wait (0.2) secs"
-msgstr "esperar (0.2) segundos"
+msgstr "espera (0.2) segons"
 
 #: templates/learn/Abstraction.html:122
 msgid "go to x:(pick random(-200) to (200)) y:(200)"
-msgstr "ir a x:(número al azar entre (-200) y (200)) y:(200)"
+msgstr "vés a x:(nombre a l'atzar entre (-200) i (200)) y:(200)"
 
 #: templates/learn/Abstraction.html:123
 msgid "glide (3) secs to x:(x position) y:(-180)"
-msgstr "deslizar en (3) segs a x:(posicion en x) y:(-180)"
+msgstr "llisca en (3) segons fins a x:(posició x) y:(-180)"
 
 #: templates/learn/Abstraction.html:124
 msgid "delete this clone"
-msgstr "borrar este clon"
+msgstr "esborra aquesta còpia"
 
 #: templates/learn/Abstraction.html:127
 msgid ""
@@ -381,13 +382,13 @@ msgid ""
 "are created at a particular time of project implementation and are deleted "
 "when they are no longer needed."
 msgstr ""
-"De este modo, tan solo programando un personaje podemos tener infinitos "
-"clones, que se crean en un momento determinado de la ejecución del proyecto "
-"y se borran cuando ya no son necesarios."
+"Així, només programant un personatge podem tenir infinites còpies que es "
+"creen en un moment determinat de l'execució del projecte i s'esborren quan "
+"ja no són necessàries."
 
 #: templates/learn/Data.html:5
 msgid "Data Representation"
-msgstr "Representación de los datos"
+msgstr "Representació de les dades"
 
 #: templates/learn/Data.html:11
 msgid ""
@@ -398,13 +399,13 @@ msgid ""
 "as the level at which we find ourselves, elapsed time, the rating, the "
 "lives, the rewards collected ..."
 msgstr ""
-"Cada proyecto Scratch necesita un conjunto de información sobre los "
-"personajes para poder ejecutarse correctamente. Por ejemplo, <b>necesita "
-"conocer la posición de cada personaje, la dirección a la que está apuntando, "
-"su tamaño, etc.</b> Además, los programadores podemos crear nuevos depósitos "
-"de información para guardar otro tipo de datos, como el nivel en el que nos "
-"encontramos, el tiempo transcurrido, la puntación, las vidas, las "
-"recompensas recogidas... "
+"Cada projecte Scratch necessita un conjunt d'informació sobre els "
+"personatges per poder executar-se correctament. Per exemple, <b> necessita "
+"conèixer la posició de cada personatge, la direcció a la qual està apuntant, "
+"la seva mida, etc.</b> A més, els programadors podem crear nous repositoris "
+"d'informació per tal d'emmagatzemar altres tipus de dades, com el nivell en "
+"el que ens trobem, el temps transcorregut, la puntuació, les vides, les "
+"recompenses recollides..."
 
 #: templates/learn/Data.html:21
 msgid ""
@@ -415,113 +416,112 @@ msgid ""
 "Following is the list of attributes that each character and blocks that can "
 "be used to modify:"
 msgstr ""
-"Cada personaje de un proyecto Scratch tiene una serie de características, o "
-"atributos, que en cada momento de ejecución del proyecto tienen un valor, y "
-"que pueden ser modificadas por los programas. Por ejemplo, un personaje "
-"tiene un tamaño determinado que puede ser  modificado por el bloque “cambiar "
-"tamaño por 10”, haciendo que el personaje aparezca un poco más grande. A "
-"continuación mostramos la lista de atributos que tiene cada personaje y los "
-"bloques que pueden utilizarse para modificarlos:"
+"Cada personatge d'un projecte Scratch té una sèrie de característiques, o "
+"atributs, que en cada moment de l'execució del projecte tenen un valor, i "
+"que poden ser modificades pels programes. Per exemple, un personatge té un "
+"tamany determinat que pot ser modificat pel bloc \"augmenta 10 la mida\", "
+"fent que el personatge aparegui una mica més gran. A continuació mostrarem "
+"el llistat d'atributs que té cada personatge i els blocs que poden emprar-se "
+"per modificar-los:"
 
 #: templates/learn/Data.html:25
 msgid "Position:"
-msgstr "Posición:"
+msgstr "Posició:"
 
 #: templates/learn/Data.html:29 templates/learn/Flow.html:23
 #: templates/learn/Flow.html.py:42 templates/learn/Flow.html:51
 #: templates/learn/Parallelism.html:42
 msgid "move (10) steps"
-msgstr "mover (10) pasos"
+msgstr "mou-te (10) passos"
 
 #: templates/learn/Data.html:30 templates/learn/attrInit.html:26
 msgid "go to x:(0) y:(0)"
-msgstr "ir a x:(0) y:(0)"
+msgstr "vés a x:(0) y:(0)"
 
 #: templates/learn/Data.html:31
 msgid "glide (1) secs to x:(0) y:(0)"
-msgstr "deslizar en (1) segs a x:(0) y:(0)"
+msgstr "llisca en (1) segons a x:(0) y:(0)"
 
 #: templates/learn/Data.html:32
 msgid "set x to (0)"
-msgstr "fijar x a (0)"
+msgstr "assigna el valor (0) a x"
 
 #: templates/learn/Data.html:33
 msgid "set y to (0)"
-msgstr "fijar y a (0)"
+msgstr "assigna el valor (0) a y"
 
 #: templates/learn/Data.html:34 templates/learn/Data.html.py:35
 msgid "change x by (0)"
-msgstr "cambiar x por (0)"
+msgstr "suma (0) a x"
 
 #: templates/learn/Data.html:38
 msgid "Size:"
-msgstr "Tamaño:"
+msgstr "Mida:"
 
 #: templates/learn/Data.html:42
 msgid "change size by (10)"
-msgstr "cambiar tamaño por (-1)"
+msgstr "augmenta (10) la mida"
 
 #: templates/learn/Data.html:43
-#, fuzzy, python-format
-#| msgid "set size to (120) %"
+#, python-format
 msgid "set size to (120) %%"
-msgstr "fijar tamaño a (120)%"
+msgstr "fixa la mida a (100) %%"
 
 #: templates/learn/Data.html:47
 msgid "Orientation:"
-msgstr "Orientación:"
+msgstr "Orientació:"
 
 #: templates/learn/Data.html:51
 msgid "point in direction (90 v)"
-msgstr "apuntar en dirección (90 v)"
+msgstr "apunta en direcció (90 v)"
 
 #: templates/learn/Data.html:52
 msgid "point towards [v]"
-msgstr "apuntar hacia [v]"
+msgstr "apunta cap a [v]"
 
 #: templates/learn/Data.html:53 templates/learn/Flow.html:24
 #: templates/learn/Flow.html.py:43
 msgid "turn cw (15) degrees"
-msgstr "girar ↻ (15) grados"
+msgstr "gira ↻ (15) graus"
 
 #: templates/learn/Data.html:54 templates/learn/Flow.html:26
 #: templates/learn/Flow.html.py:45
 msgid "turn ccw (15) degrees"
-msgstr "girar ↺ (15) grados"
+msgstr "gira ↺ (15) graus"
 
 #: templates/learn/Data.html:58
 msgid "Costume:"
-msgstr "Disfraz:"
+msgstr "Vestit:"
 
 #: templates/learn/Data.html:61
 msgid "switch costume to [butterfly v]"
-msgstr "cambiar disfraz a [butterfly v]"
+msgstr "canvia el vestit a [butterfly v]"
 
 #: templates/learn/Data.html:62 templates/learn/duplicatedScripts.html:18
 #: templates/learn/duplicatedScripts.html:26
 #: templates/learn/duplicatedScripts.html:40
 msgid "next costume"
-msgstr "siguiente disfraz"
+msgstr "següent vestit"
 
 #: templates/learn/Data.html:63
 msgid "change [color v] effect by (25)"
-msgstr "cambiar efecto [color v] por (25)"
+msgstr "augmenta l'efecte [color v] en (25) "
 
 #: templates/learn/Data.html:64
 msgid "set [color v] effect to (0)"
-msgstr "establecer efecto [color v] a (25)"
+msgstr "fixa l'efecte [color v] a (0)"
 
 #: templates/learn/Data.html:67
 msgid "Visibility:"
-msgstr "Visibilidad:"
+msgstr "Visibilitat"
 
 #: templates/learn/Data.html:70 templates/learn/Synchronization.html:74
 msgid "show"
-msgstr "mostrar"
+msgstr "mostra't"
 
 #: templates/learn/Data.html:71
 msgid "hide"
-msgstr "esconder"
+msgstr "amaga't"
 
 #: templates/learn/Data.html:81
 msgid ""
@@ -531,12 +531,12 @@ msgid ""
 "types of data that may need: at what level we are</b>, how many lives you "
 "have left, how many points we, how is called the user ..."
 msgstr ""
-"Además de modificar los atributos de los personajes, los programadores "
-"podemos utilizar otros mecanismos para almacenar información en un proyecto "
-"Scratch.<b> Uno de estos mecanismos son las variables, que permiten "
-"almacenar un valor para guardar distintos tipos de datos que podemos "
-"necesitar: en qué nivel nos encontramos</b>, cuántas vidas nos quedan, "
-"cuántos puntos llevamos, cómo se llama el usuario..."
+"A més de modificar els atributs dels personatges, els programadors podem "
+"utilitzar altres mecanismes per emmagatzemar informació en un projecte "
+"Scratch.<b> Un d'aquests mecanismes són les variables, que permeten "
+"emmagatzemar un valor per desar diferents tipus de dades que podem "
+"necessitar: en quin nivell ens trobem</b>, quantes vides ens queden, quants "
+"punts portem, com es diu l'usuari..."
 
 #: templates/learn/Data.html:83
 msgid ""
@@ -545,22 +545,22 @@ msgid ""
 "given the name 'Points' as use it to store the number of points you get our "
 "character."
 msgstr ""
-"Para crear una variable hay que irse a la categoría de Datos, pinchar sobre "
-"“Crear una variable” y darle un nombre. En el ejemplo que mostramos a "
-"continuación le hemos dado el nombre “Puntos”, ya que la utilizaremos para "
-"guardar el número de puntos que consigue nuestro personaje."
+"Per crear una variable cal anar a la categoria de Dades, clicar damunt "
+"\"Crea una variable\" i anomenar-la. A l'exemple que mostrarem tot seguit "
+"l'hem anomenada \"Punts\", ja que la utilitzarem per desar el nombre de "
+"punts que aconsegueix el nostre personatge."
 
 #: templates/learn/Data.html:86
 msgid "set [Points v] to [0]"
-msgstr "fijar [Puntos v] a [0]"
+msgstr "assigna a [Punts v] el valor [0]"
 
 #: templates/learn/Data.html:87
 msgid "if &lt;touching color [#0000FF]&gt; then"
-msgstr "si &lt;¿tocando el color [#0000FF]?&gt; entonces"
+msgstr "si &lt;tocant el color [#0000FF]?&gt; llavors"
 
 #: templates/learn/Data.html:88
 msgid "change [Points v] by (1)"
-msgstr "cambiar [Puntos v] por (1)"
+msgstr "augmenta [Punts v] en (1)"
 
 #: templates/learn/Data.html:92
 msgid ""
@@ -573,15 +573,14 @@ msgid ""
 "value of the variable points would add 1: If set to 0, I add 1 and is now "
 "worth 1; when set to 1, I add 1 and is now worth 2 ..."
 msgstr ""
-"En el prorgrama de la izquierda asignamos el número de puntos con los que "
-"queremos que el personaje comience la partida, en este caso 0, para lo que "
-"utilizamos el bloque <i>“fijar Puntos a 0”</i>. Sin embargo en el programa "
-"de la derecha lo que hacemos es que cuando el personaje toque el color azul, "
-"que podría ser el de un objetivo, le vamos a sumar un punto, para lo que "
-"utilizamos el bloque <i>“cambiar Puntos por 1”</i>. En este caso, el bloque "
-"<i>'cambiar'</i> comprobaría el valor actual de la variable Puntos y le "
-"sumaría 1: si vale 0, le sumo 1 y ahora vale 1; si vale 1, le sumo 1 y ahora "
-"vale 2..."
+"En el programa de l'esquerra assignem el nombre de punts amb els que volem "
+"que el personatge comenci la partida, en aquest cas 0, i per això fem ús del "
+"bloc <i> \"assigna a Punts el valor 0\"</i>. En el programa de la dreta el "
+"que fem és que quan el personatge toqui el color blau, que podria ser el "
+"d'un objectiu, li sumem un punt, i és per això que utilitzem el bloc <i>"
+"\"augmenta Punts en 1\"</i>. En aquest cas, el bloc <i>'augmenta'</i> "
+"comprovaria el valor actual de la variable Punts i li sumaria 1: si val 0, "
+"suma 1 i ara val 1; si val 1, suma 1 i ara val 2..."
 
 #: templates/learn/Data.html:100
 msgid ""
@@ -590,37 +589,37 @@ msgid ""
 "value at the same time, so they are ideal for storing rewards have been "
 "recovered by a character or set of names, raise a couple of examples.</b>"
 msgstr ""
-"Además de las variables, Scratch permite utilizar otro tipo de datos para "
-"guardar información de un proyecto: <b>las listas. Las listas permiten "
-"almacenar más de un valor al mismo tiempo, por lo que son ideales para "
-"guardar las recompensas que han sido recuperadas por un personaje, o un "
-"conjunto de nombres, por plantear un par de ejemplos.</b>"
+"A més de les variables, Scratch permet fer ús d'altres tipus de dades per "
+"desar informació d'un projecte: <b> les llistes. Les llistes permeten "
+"emmagatzemar més d'un valor al mateix temps, és per això que són ideals per "
+"desar les recompenses que han estat recuperades per un personatge, o un "
+"conjunt de nombres, per posar un parell d'exemples.</b>"
 
 #: templates/learn/Data.html:102
 msgid ""
 "To create a list, you have to go to the data category, click on 'Create a "
 "List' and give a name. In the example, we have named our 'Students' list:"
 msgstr ""
-"Para crear una lista, hay que irse a la categoría de Datos, pinchar sobre "
-"“Crear una lista” y darle un nombre. En el ejemplo, nosotros hemos llamado a "
-"nuestra lista “Estudiantes”:"
+"Per crear una llista, cal anar a la categoria de Dades, clicar damunt \"Crea "
+"una llista\" i anomenar-la. A l'exemple, nosaltres hem anomenat la nostra "
+"llista \"Estudiants\":"
 
 #: templates/learn/Data.html:105 templates/learn/Data.html.py:118
 msgid "delete (all v) of [Students v]"
-msgstr "borrar (todos v) de [Estudiantes v]"
+msgstr "esborra l'element (tots v) de [Estudiants v]"
 
 #: templates/learn/Data.html:106 templates/learn/Data.html.py:119
 #: templates/learn/Flow.html:41
 msgid "repeat (3)"
-msgstr "repetir (3)"
+msgstr "repeteix (3) vegades"
 
 #: templates/learn/Data.html:107 templates/learn/Data.html.py:120
 msgid "ask [Introduce a student name] and wait"
-msgstr "preguntar [Introduce el nombre de un estudiante] y esperar"
+msgstr "pregunta [Introdueix el nom d'un estudiant] i espera"
 
 #: templates/learn/Data.html:108 templates/learn/Data.html.py:121
 msgid "insert (answer) at (last v) of [Students v]"
-msgstr "insertar (respuesta) en [último v] de [Estudiantes v]"
+msgstr "afegeix (resposta) a la posició [darrer] de [Estudiants v]"
 
 #: templates/learn/Data.html:112
 msgid ""
@@ -630,12 +629,12 @@ msgid ""
 "Then we ask three times the user to enter a name, and each name entered "
 "insert it in the last position in the list Students."
 msgstr ""
-"¿Qué hemos hecho con este programa? Lo primero que hacemos al comenzar la "
-"ejecución es <b>borrar todos los elementos de la lista Estudiantes</b>, para "
-"vaciarla completamente y que no aparezcan elementos de una ejecución "
-"anterior del proyecto. A continuación le pedimos tres veces al usuario que "
-"introduzca un nombre, y cada nombre introducido lo insertamos en la última "
-"posición de la lista Estudiantes."
+"Què hem fet amb aquest programa?  El primer que fem al començar l'execució "
+"és <b> esborrar tots els elements de la llista Estudiants</b>, per tal de "
+"buidar-la completament i que no apareguin elements d'una execució anterior "
+"del projecte. Tot seguit li demanem tres vegades a l'usuari que introdueixi "
+"un nom, i cada un d'ells és insertat a la darrera posició de la llista "
+"Estudiants."
 
 #: templates/learn/Data.html:114
 msgid ""
@@ -643,9 +642,9 @@ msgid ""
 "to carry out an exercise to the whiteboard. Look at the new instructions "
 "added to the program:"
 msgstr ""
-"¿Qué podemos hacer con la lista? Podríamos, por ejemplo, utilizarla para "
-"sacar a un voluntario a realizar un ejercicio a la pizarra digital. Fijaos "
-"en las nuevas instrucciones que añadimos al programa:"
+"Què podem fer amb la llista? Podríem, per exemple, utilitzar-la per triar un "
+"alumne i que realitzi un exercici a la pissarra digital. Fixeu-vos en les "
+"noves instruccions que afegim al programa:"
 
 #: templates/learn/Data.html:122 templates/learn/Flow.html:48
 #: templates/learn/Flow.html.py:70 templates/learn/Logic.html:52
@@ -653,17 +652,17 @@ msgstr ""
 #: templates/learn/Parallelism.html:44 templates/learn/Parallelism.html:49
 #: templates/learn/Synchronization.html:50
 msgid "end"
-msgstr "fin"
+msgstr "end"
 
 #: templates/learn/Data.html:123
 msgid "say [Today's volunteer will be...] for (2) secs"
-msgstr "decir [El voluntario de hoy va a ser...] por (2) segundos"
+msgstr "digues [Avui sortirà a la pissarra...] durant (2) segons"
 
 #: templates/learn/Data.html:124
 msgid "say (item(pick random (1) to (3)) of [Students v]) for (2) secs"
 msgstr ""
-"decir(elemento(número al azar entre (1) y (3)) de [Estudiantes v]) por (2) "
-"segundos"
+"digues (element(nombre a l'atzar entre (1) i (3)) de [Estudiants v]) durant "
+"(2) segons"
 
 #: templates/learn/Data.html:128
 msgid ""
@@ -672,22 +671,22 @@ msgid ""
 "Sometimes we take the name that is in position 1, others that it is in "
 "position 2 and the other at 3."
 msgstr ""
-"Hemos generado un número al azar entre 1 y 3, que son los elementos que hay "
-"en la lista, y hemos seleccionado al elemento que ocupa esa posición en la "
-"lista. Unas veces cogeremos el nombre que está en la posición 1, otras al "
-"que está en la posición 2 y otras al de la posición 3."
+"Hem generat un nombre a l'atzar entre 1 i 3, que són els elements que hi ha "
+"a la llista, i hem seleccionat l'element que ocupa aquesta posició a la "
+"llista. Unes vegades agafarem el nombre que està a la posició 1, unes altres "
+"al que està a la posició 2 i unes altres al de la posició 3."
 
 #: templates/learn/Data.html:130
 msgid ""
 "Lists have many possibilities and many available operations ... you dare to "
 "investigate how they work?"
 msgstr ""
-"Las listas tienen muchas posibilidades y muchas operaciones disponibles... "
-"¿te animas a investigar cómo funcionan?"
+"Les llistes tenen moltes possibilitats i moltes operacions possibles... "
+"t'animes a investigar com funcionen?"
 
 #: templates/learn/Flow.html:4 templates/statistics/statistics.html:260
 msgid "Flow Control"
-msgstr "Control de flujo"
+msgstr "Controls de flux"
 
 #: templates/learn/Flow.html:10
 msgid ""
@@ -695,10 +694,10 @@ msgid ""
 "<b>control the behavior of your characters</b>, making, for example, certain "
 "blocks that are repeated a number of times,  or until a situation arises."
 msgstr ""
-"Las instrucciones relacionadas con las nociones algorítmicas de control de "
-"flujo pueden ayudarte a <b>controlar el comportamiento de tus personajes</"
-"b>, haciendo, por ejemplo, que repitan ciertos bloques un número de veces "
-"concreto o que lo repitan hasta que se produzca una situación."
+"Les instruccions relaciones amb les nocions algorísmiques de control de flux "
+"poden ajudar-te a <b>controlar el comportament dels teus personatges</b>, "
+"fent per exemple que repeteixin determinats blocs un nombre de vegades "
+"concret o que el repeteixin fins que es produeixi una situació."
 
 #: templates/learn/Flow.html:19
 msgid ""
@@ -706,22 +705,22 @@ msgid ""
 "<b>program composed of a set of blocks are executed one after another</b>, "
 "as we see in the picture:"
 msgstr ""
-"La forma más básica de controlar el comportamiento de tus personajes es "
-"creando un <b>programa computesto por un conjunto de bloques que se ejecutan "
-"uno detrás de otro</b>, tal como vemos en la imagen:"
+"La forma més bàsica de controlar el comportament dels teus personatges és "
+"creant un <b>programa compost per un conjunt de blocs que s'executen un "
+"darrere l'altre</b>, tal com veiem en la imatge:"
 
 #: templates/learn/Flow.html:22 templates/learn/Flow.html.py:40
 msgid "say [I'm a dancer cat] for (2) secs"
-msgstr "decir [Soy un gato bailarin] por (2) segundos"
+msgstr "digues [Sóc un gat ballarí] durant (2) segons"
 
 #: templates/learn/Flow.html:25 templates/learn/Flow.html.py:44
 #: templates/learn/Flow.html:47 templates/learn/duplicatedScripts.html:28
 msgid "wait (0.5) secs"
-msgstr "esperar (0.5) segundos"
+msgstr "espera (0.5) segons"
 
 #: templates/learn/Flow.html:27 templates/learn/Flow.html.py:46
 msgid "move (-10) steps"
-msgstr "mover (-10) pasos"
+msgstr "mou-te (-10) passos"
 
 #: templates/learn/Flow.html:29
 msgid ""
@@ -731,12 +730,11 @@ msgid ""
 "<i>'move 10 steps'</i> then <i>'turn 15 degrees right'</i>, and so on to the "
 "last block of the program."
 msgstr ""
-"¿Cómo funciona este programa? Cuando el usuario presione sobre la bandera "
-"verde se ejecutarán uno detras de otro todos los bloques que se han incluido "
-"en el programa. Comenzará por el primero <i>“decir soy un gato que baila por "
-"2 segundos”</i>, luego ejecutará <i>“mover 10 pasos”</i>, a continuación "
-"<i>“girar 15 grados a la derecha”</i>, y así hasta llegar al último bloque "
-"del programa."
+"Com funciona aquest programa? Quan l'usuari prem la bandera verda "
+"s'executaran un rere l'altre tots els blocs que hem inclòs en el programa. "
+"Començarà pel primer <i>\"digues sóc un gat ballarí durant 2 segons\"</i>"
+"\"mou-te 10 passos\"</i>, a continuació <i>\"gira 15 graus cap a la dreta\"</"
+"i>, i així fins arribar al darrer bloc del programa."
 
 #: templates/learn/Flow.html:38
 msgid ""
@@ -745,21 +743,21 @@ msgid ""
 "instruction allowing achieve the same effect, but more comfortable and "
 "manageable way. Consider a couple of examples:"
 msgstr ""
-"En ocasiones, cuando queremos que un conjunto de bloques se repita "
-"constantemente, en lugar de repetir los mismos bloques una y otra vez, es "
-"posible utilizar instrucciones de repetición que permiten conseguir el mismo "
-"efecto, pero de forma más cómoda y manejable. Veamos un par de ejemplos:"
+"De vegades, quan volem que un conjunt de blocs es repeteixi constantment, "
+"enlloc de repetir els mateixos blocs una i altra vegada, és possible fer ús "
+"d'instruccions de repetició que permetin aconseguir el mateix efecte, però "
+"d'una manera més còmode i manejable. Vegem un parell d'exemples:"
 
 #: templates/learn/Flow.html:52 templates/learn/Parallelism.html:43
 #: templates/learn/duplicatedScripts.html:19
 #: templates/learn/duplicatedScripts.html:27
 #: templates/learn/duplicatedScripts.html:41
 msgid "if on edge, bounce"
-msgstr "rebotar si toca un borde"
+msgstr "rebota en tocar una vora"
 
 #: templates/learn/Flow.html:54
 msgid "How these control blocks works?"
-msgstr "¿Cómo funciona estos bloques de control?"
+msgstr "Com funcionen aquests blocs de control?"
 
 #: templates/learn/Flow.html:56
 msgid ""
@@ -769,20 +767,21 @@ msgid ""
 "that the block 'repeat' has an arrow at the bottom indicating that <b>when "
 "they finish executing the blocks back again up</b>."
 msgstr ""
-"En el bloque <i>“repetir”</i>, cuando la ejecución llega a este punto se "
-"repetirán tantas veces como se haya indicado en el parámetro del bloque "
-"'repetir', en el ejemplo serían 3 veces, todos los bloques incluidos dentro "
-"de este bloque. Podemos ver que el bloque 'repetir' tiene una flechita en la "
-"parte inferior que indica que <b>cuando se terminan de ejecutar los bloques "
-"se vuelve otra vez para arriba</b>."
+"En el bloc <i>\"repeteix\"</i>, quan l'execució arriba a aquest punt es "
+"repetiran tantes vegades com haguem indicat en el paràmetre del bloc "
+"'repeteix'; en l'exemple serien tres vegades, tots els blocs inclosos dins "
+"d'aquest bloc. Podem veure que el bloc 'repeteix' té una fletxeta a la part "
+"inferior que indica que <b>quan s'acaben d'executar els blocs, aquests es "
+"tornen a repetir de nou</b> "
 
 #: templates/learn/Flow.html:58
 msgid ""
 "The block <i>'forever'</i> works like the 'repeat' but never finish "
 "executing the blocks containing in its interior."
 msgstr ""
-"El bloque <i>“por siempre”</i> funciona igual que el 'repetir' pero sin "
-"terminar nunca de ejecutar los bloques que contiene en su interior."
+"El bloc <i>\"per sempre\"</i> funciona de la mateixa manera que el "
+"'repeteix' però no deixa mai d'executar els blocs que conté en el seu "
+"interior."
 
 #: templates/learn/Flow.html:66
 msgid ""
@@ -790,22 +789,22 @@ msgid ""
 "blocks is executed, as this depends on a given situation. In these cases, "
 "the block 'repeat until ...' is really useful. Here's an example:"
 msgstr ""
-"En algunas ocasiones no sabemos previamente el número de veces que queremos "
-"que un conjunto de bloques se ejecute, ya que esto depende de una "
-"determinada situación. En estas ocasiones, el bloque 'repetir hasta que...' "
-"es realmente útil. Veamos un ejemplo:"
+"De vegades no sabem prèviament el nombre de vegades que volem que un conjunt "
+"de blocs s'executi, ja que això depèn d'una determinada situació. En "
+"aquestes ocasions, el bloc 'repetir fins que...' és realment útil. Vegem un "
+"exemple:"
 
 #: templates/learn/Flow.html:68
 msgid "repeat until &lt; touching [Enemy v] ?&gt;"
-msgstr "si  &lt; ¿tocando [Enemigo v]? &gt;"
+msgstr "repeteix fins &lt; tocant [Enemic v]? &gt;"
 
 #: templates/learn/Flow.html:69
 msgid "say [You don't catch me]"
-msgstr "decir [No me pillas]"
+msgstr "digues [No m'atrapes...]"
 
 #: templates/learn/Flow.html:71
 msgid "say [You catch me]"
-msgstr "decir [Me has pillado]"
+msgstr "digues [M'has atrapat!]"
 
 #: templates/learn/Flow.html:74
 msgid ""
@@ -815,15 +814,15 @@ msgid ""
 "inside will finish run and will jump to the next instruction, in this case "
 "say 'You caught me!'."
 msgstr ""
-"En el ejemplo, el personaje repetirá constantemente la instrucción decir 'No "
-"me pillas...' mientras no esté tocando al enemigo. En el momento que se "
-"cumpla la condición de la instrucción <i>'repetir hasta que...'</i>, "
-"terminará de ejecutarse el bloque contenido en su interior y saltará a la "
-"siguiente instrucción, en este caso decir' Me pillaste!'."
+"A l'exemple, el personatge repetirà constantment la instrucció \"digues 'No "
+"m'atrapes...'\" mentre no estigui tocant l'enemic. En el moment en què es "
+"compleixi la condició de la instrucció <i>'repeteix fins que...'</i>, "
+"deixarà d'executar-se el bloc contingut en el seu interior i saltarà a la "
+"següent instrucció, en aquest cas \"digues 'M'has atrapat!'\"."
 
 #: templates/learn/Logic.html:4 templates/statistics/statistics.html:257
 msgid "Logic"
-msgstr "Lógica"
+msgstr "Lògica"
 
 #: templates/learn/Logic.html:10
 msgid ""
@@ -834,28 +833,28 @@ msgid ""
 "other projects, such as video games are essential to perform different "
 "actions depending on the situation."
 msgstr ""
-"Las instrucciones relacionadas con el pensamiento lógico pueden ayudarte a "
-"que tus proyectos sean dinámicos,<b> de forma que se comporten de modo "
-"distinto en función de la situación</b>. En las historias, por ejemplo, este "
-"tipo de instrucciones no son tan importantes, ya que suelen tener una "
-"estrucutura lineal que siempre queremos que se ejecute del mismo modo, pero "
-"en otro tipo de proyectos, como los videojuegos, son fundamentales para "
-"ejecutar acciones diferentes dependiendo de la situación."
+"Les instruccions relacionades amb el pensament lògic poden ajudar-te a fer "
+"que els teus projectes siguin dinàmics <b>per tal que es comportin de forma "
+"diferent en funció de la situació</b>. En les històries, per exemple, aquest "
+"tipus d'instruccions no són tan importants, ja que acostumen a tenir una "
+"estructura linial que sempre volem que s'executi de la mateixa manera; ara "
+"bé, en altres tipus de projectes, com ara els videojocs, són fonamentals per "
+"executar accions diferents depenent de la situació."
 
 #: templates/learn/Logic.html:19
 msgid "The most basic block you can start working logical thinking is this:"
 msgstr ""
-"El bloque más básico con el que puedes comenzar a trabajar el pensamiento "
-"lógico es éste:"
+"El bloc més bàsic amb el que pots començar a treballar el pensament lògic és "
+"aquest:"
 
 #: templates/learn/Logic.html:21
 msgid "if &lt; touching color [#0000FF]?&gt; then"
-msgstr "si &lt;¿tocando el color [#0000FF]?&gt; entonces"
+msgstr "si &lt; tocant el color [#0000FF]?&gt; llavors"
 
 #: templates/learn/Logic.html:22 templates/learn/Logic.html.py:35
 #: templates/learn/Logic.html:37
 msgid "say [I have reached the goal!] for (2) secs"
-msgstr "decir [He alcanzado la meta!] por (2) segundos"
+msgstr "digues [He arribat a la meta!] durant (2) segons"
 
 #: templates/learn/Logic.html:23
 msgid ""
@@ -863,17 +862,17 @@ msgid ""
 "the block is evaluated, and if this is true, the set of blocks that are "
 "within the if executed."
 msgstr ""
-"¿Cómo funciona este bloque? Cuando la ejecución llega a este punto, se "
-"evalúa la condición que aparece en el bloque, y si ésta es verdadera, se "
-"ejecuta el conjunto de bloques que están dentro del si."
+"Com funciona aquest bloc? Quan l'execució arriba a aquest punt, s'avalua la "
+"condició que apareix en el bloc i, si aquesta és certa, s'executa el conjunt "
+"de blocs que estan dins d'aquesta."
 
 #: templates/learn/Logic.html:24
 msgid ""
 "In the example, if the character is touching the blue color, he says 'I "
 "reached the goal.'"
 msgstr ""
-"En el ejemplo, si el personaje está tocando el color azul diría “Llegué a la "
-"meta”."
+"En l'exemple, si el personatge està tocant el color blau diria \"He arribat "
+"a la meta!\"."
 
 #: templates/learn/Logic.html:33
 msgid ""
@@ -882,14 +881,14 @@ msgid ""
 "projects. The blocks <i>if / else</i> are very similar to the block <i>if</"
 "i>, but contain two sets of blocks inside."
 msgstr ""
-"Ahora que conoces las instrucciones <i>si</i>, quizás puedas comenzar a "
-"utilizar bloques <i>si/sino</i>, que pueden ser muy prácticos en muchos "
-"tipos de proyectos. Los bloques <i>si/sino</i> son muy parecidos a los "
-"bloque si, pero contienen dos conjuntos de bloques en su interior."
+"Ara que coneixes les instruccions <i>si</i>, potser puguis començar a fer ús "
+"del blocs <i>si/si no</i>, que poden ser molt pràctics en molts tipus de "
+"projectes. Els blocs <i>si/si no</i> són molt semblants als blocs si, però "
+"contenen dos conjunts de blocs en el seu interior."
 
 #: templates/learn/Logic.html:34
 msgid "if &lt; touching color [#0000FF]? &gt;"
-msgstr "si &lt;¿tocando el color [#0000FF]? &gt; entonces"
+msgstr "si &lt; tocant el color [#0000FF]? &gt; llavors"
 
 #: templates/learn/Logic.html:36
 msgid "else"
@@ -902,9 +901,10 @@ msgid ""
 "within the 'if' is executed, but if the condition is false, then the set of  "
 "blocks that are within the 'else' is executed."
 msgstr ""
-"¿Cómo funciona este bloque? Cuando la ejecución llega a este punto, se "
-"evalúa la condición que aparece en el bloque, y si ésta es verdadera, se "
-"ejecuta el conjunto de bloques que están dentro del si."
+"Com funciona aquest bloc? Quan l'execució arriba a aquest punt, s'avalua la "
+"condició que apareix en el bloc, i si aquesta és certa, s'executa el conjunt "
+"de blocs que estan dins d'aquesta; ara bé, en cas de ser falsa, aleshores "
+"s'executa el conjunt de blocs continguts en el \"si no\"."
 
 #: templates/learn/Logic.html:40
 msgid ""
@@ -912,9 +912,8 @@ msgid ""
 "reached the goal!', but ,if you are not touching the purple color, says 'I "
 "have not reached the goal'."
 msgstr ""
-"En el ejemplo, si el personaje está tocando el color azul diría “Llegué a la "
-"meta”,pero si no está tocando el color morado diría “Aún no he llegado a la "
-"meta”"
+"En l'exemple, si el personatge està tocant el color blau diria \"He arribat "
+"a la meta!\", però si no ho està diria \"Encara no he arribat\"."
 
 #: templates/learn/Logic.html:48
 msgid ""
@@ -924,43 +923,42 @@ msgid ""
 "the conditions. Logical operations are available in Scratch <i>AND, OR and "
 "No</i>."
 msgstr ""
-"Para tomar decisiones en algunos proyectos en ocasiones se requiere evaluar "
-"más de una condición al mismo tiempo para saber qué hay que ejecutar. En "
-"esas situaciones es muy útil utilizar <b>operaciones lógicas</b> que "
-"permiten combinar las condiciones. Las operaciones lógicas disponibles en "
-"Scratch son <i>Y, O y No</i>."
+"Per prendre decisions en alguns projectes, de vegades es fa necessari "
+"avaluar més d'una condició al mateix temps per saber què cal executar. En "
+"aquestes situacions és molt útil emprar <b>operacions lògiques</b> que "
+"permetin combinar les condicions. Les operacions lògiques disponibles a "
+"Scratch són <i>I, O i No</i>."
 
 #: templates/learn/Logic.html:49
 msgid "if &lt;&lt; touching [Enemy v]? &gt; and &lt;(lives) = [0]&gt;&gt;then"
 msgstr ""
-"si &lt;&lt; ¿tocando [Enemigo v]? &gt; y &lt; (vidas) = [0]&gt;&gt;entonces"
+"si &lt;&lt; tocant [Enemic v]? &gt; i &lt; (vides) = [0]&gt;&gt;llavors"
 
 #: templates/learn/Logic.html:50
 msgid "say [Game over]"
-msgstr "decir [Has perdido]"
+msgstr "digues [Fi del joc]"
 
 #: templates/learn/Logic.html:51 templates/learn/Synchronization.html:71
 msgid "stop [all v]"
-msgstr "detener [todos v]"
+msgstr "atura [tot v]"
 
 #: templates/learn/Logic.html:53
 msgid ""
 "if &lt;&lt; touching [edge v]? &gt; or &lt; touching [Enemy v]? &gt;&gt;then"
 msgstr ""
-"si &lt;&lt; ¿tocando [borde v]? &gt; o &lt; ¿tocando [Enemigo v]? &gt;&gt;"
-"entonces"
+"si &lt;&lt; tocant [vora v]? &gt; o &lt; tocant [Enemic v]? &gt;&gt;llavors"
 
 #: templates/learn/Logic.html:54
 msgid "change [lives v] by (-1)"
-msgstr "cambiar [vidas v] por (-1)"
+msgstr "augmenta [vides v] en (-1)"
 
 #: templates/learn/Logic.html:56
 msgid "if &lt;not&lt; (level) = (5)&gt;&gt;then"
-msgstr "si &lt;no&lt; (nivel) = (5)&gt;&gt;entonces"
+msgstr "si &lt;no&lt; (nivell) = (5)&gt;&gt;llavors"
 
 #: templates/learn/Logic.html:57
 msgid "say [You still have undiscovered levels] for (2) secs"
-msgstr "decir [Aún tienes niveles por descubrir] por (2) segundos"
+msgstr "digues [Encara tens nivells per descobrir] durant (2) segons"
 
 #: templates/learn/Logic.html:60
 msgid ""
@@ -969,15 +967,14 @@ msgid ""
 "evaluated. And the operation otherwise not worth the condition, ie, if the "
 "condition is true, not returns false and vice versa."
 msgstr ""
-"La operación <i>Y</i> es verdadera cuando las dos condiciones de evaluadas "
-"son verdaderas. La operación <i>O</i> es verdadera cuando una de las dos "
-"condiciones evaluadas son verdaderas. Y la operación <i>No</i> valdrá lo "
-"contrario de la condición, es decir, si la condición es verdadera, <i>No</i> "
-"devuelve falso y viceversa."
+"L'operació <i>I</i> és certa quan les dues condicions avaluades són certes. "
+"L'operació <i>O</i> és certa quan una de les dues condicions avaluades són "
+"certes. I l'operació <i>No</i> valdrà el contrari de la condició, és a dir, "
+"si la condició és certa, <i>No</i> retorna fals i al contrari."
 
 #: templates/learn/Parallelism.html:4 templates/statistics/statistics.html:254
 msgid "Parallelism"
-msgstr "Paralelismo"
+msgstr "Paral·lelisme"
 
 #: templates/learn/Parallelism.html:10
 msgid ""
@@ -986,19 +983,20 @@ msgid ""
 "things occur simultaneously.</b> For example, two characters perform an "
 "action while a character or do several things at once."
 msgstr ""
-"En la mayoría de las creaciones Scratch se requiere un cierto nivel de "
-"paralelismo. Pero, ¿qué es el paralelismo? <b>El paralelismo es la "
-"posibilidad de que varias cosas ocurran al mismo tiempo.</b> Por ejemplo, "
-"que dos personajes realicen una acción al mismo tiempo, o que un personaje "
-"haga varias cosas a la vez."
+"En la majoria de les creacions Scratch es fa necessari un cert nivell de "
+"paral·lelisme. Però, què és el paral·lelisme? <b> El paral·lelisme és la "
+"possibilitat de que diverses circumstàncies succeeixin alhora.</b> Per "
+"exemple, que dos personatges realitzin una acció al mateix temps, o que un "
+"personatge dugui a terme múltiples fets alhora."
 
 #: templates/learn/Parallelism.html:19
 msgid ""
 "The most basic and most obvious way to achieve parallelism is to have "
 "several programs that start with <i>'When green flag is clicked'</i>:"
 msgstr ""
-"La forma más básica y más evidente de conseguir paralelismo es tener varios "
-"programas que comienzan con <i>“Al presionar la bandera verde”</i>:"
+"La manera més bàsica i més evident d'aconseguir paral·lelisme és tenir "
+"diversos programes que s'iniciïn alhora amb <i> \"Quan la bandera verda es "
+"premi\"</i>:"
 
 #: templates/learn/Parallelism.html:24
 msgid ""
@@ -1009,12 +1007,12 @@ msgid ""
 "different characters, if you want everyone to undertake an action at "
 "beginning of execution."
 msgstr ""
-"De este modo, cuando el usuario pinchase sobre la bandera verde, todos los "
-"programas que comienzan con este bloque comenzarían a ejecutarse al mismo "
-"tiempo, o en paralelo, como también puede decirse.  Podrías tener varios "
-"programas que comiencen con este bloque en un mismo personaje, si quieres "
-"que haga varias cosas a la vez, o en programas de diferentes personajes, si "
-"quieres que todos comiencen a realizar una acción al comenzar la ejecución."
+"Així, quan l'usuari cliqui damunt la bandera verda, tots els programes que "
+"comencen amb aquest bloc passaran a executar-se al mateix temps o, com també "
+"podem dir, en paral·lel. Podries tenir diferents programes que comencin amb "
+"aquest bloc en un mateix personatge, si vols que faci diverses accions "
+"alhora, o en programes de diferents personatges, si vols que tots comencin a "
+"realitzar una acció quan iniciem l'execució."
 
 #: templates/learn/Parallelism.html:33
 msgid ""
@@ -1022,33 +1020,33 @@ msgid ""
 "things occur when the user presses a key or clicks on an object</b>. "
 "Consider a couple of examples:"
 msgstr ""
-"Otra forma de conseguir paralelismo en tus programas es <b>haciendo que "
-"ocurran varias cosas cuando el usuario presiona una tecla o hace click sobre "
-"un objeto</b>.  Veamos un par de ejemplos:"
+"Una altra manera d'aconseguir paral·lelisme en els teus programes és <b>fent "
+"que succeeixin diverses circumstàncies quan l'usuari prem una tecla o clica "
+"sobre un personatge</b>.  Vegem un parell d'exemples:"
 
 #: templates/learn/Parallelism.html:35 templates/learn/Parallelism.html:37
 msgid "when [a v] key pressed"
-msgstr "al presionar tecla [A v]"
+msgstr "quan la tecla [a v] es premi"
 
 #: templates/learn/Parallelism.html:36 templates/learn/Parallelism.html:38
 msgid "say [A] for (2) secs"
-msgstr "decir [A] por (2) segundos"
+msgstr "digues [A] durant (2) segons"
 
 #: templates/learn/Parallelism.html:40 templates/learn/Parallelism.html:45
 msgid "when this sprite clicked"
-msgstr "al presionar ⚑"
+msgstr "quan es cliqui aquest personatge"
 
 #: templates/learn/Parallelism.html:47
 msgid "if &lt;touching [the mouse pointer v]? &gt;"
-msgstr "si  &lt; ¿tocando [puntero del raton v]? &gt;"
+msgstr "si  &lt; tocant [punter del ratolí v]? &gt;"
 
 #: templates/learn/Parallelism.html:48
 msgid "turn cw (30) degrees"
-msgstr "girar ↺ (30) grados"
+msgstr "gira ↺ (30) graus"
 
 #: templates/learn/Parallelism.html:53
 msgid "How these blocks works?"
-msgstr "¿Cómo funcionan estos bloques de control?"
+msgstr "Com funcionen aquests blocs de control?"
 
 #: templates/learn/Parallelism.html:55
 msgid ""
@@ -1057,10 +1055,10 @@ msgid ""
 "in this case, both the cat and the child run at the same time <i>'say A for "
 "2 seconds'</i>"
 msgstr ""
-"En el primer ejemplo, vemos que hay dos personajes diferentes que, cuando se "
-"pulsa una tecla, realizan una determinada acción. Por tanto, cuando el "
-"usuario pulse la tecla a, en este caso, tanto el gato como el niño "
-"ejecutarán al mismo tiempo <i>“decir A por 2 segundos”</i>."
+"En el primer exemple veiem que hi ha dos personatges diferents que, quan es "
+"prem una tecla, realitzen una determinada acció. Per tant, quan l'usuari "
+"premi, en aquest cas, la tecla a, tant el gat com el nen executaran alhora "
+"<i>\"digues A durant 2 segons\"</i>."
 
 #: templates/learn/Parallelism.html:57
 msgid ""
@@ -1068,35 +1066,35 @@ msgid ""
 "with <i>'when clicking this object'</i>. Therefore, when the user clicks on "
 "this character, both programs will begin to run simultaneously, in parallel."
 msgstr ""
-"En el segundo ejemplo vemos que un personaje tiene dos programas que "
-"comienzan con <i>“al clickear este objeto”</i>. Por tanto, cuando el usuario "
-"haga click sobre este personaje, ambos programas comenzarán a ejecutarse al "
-"mismo tiempo, en paralelo."
+"En el segon exemple veiem que un personatge té dos programes que comencen "
+"amb <i>\"quan es cliqui aquest personatge\"</i>. Per tant, quan l'usuari "
+"faci clic sobre aquest personatge, tots dos programes començaran a executar-"
+"se alhora, en paral·lel."
 
 #: templates/learn/Parallelism.html:66
 msgid "There are several events more that can achieve parallelism:"
-msgstr "Existen varios eventos más que permiten conseguir paralelismo:"
+msgstr "Existeixen altres esdeveniments que permeten aconseguir paral·lelisme:"
 
 #: templates/learn/Parallelism.html:67
 msgid "when backdrop switches to [backdrop1 v]"
-msgstr "cuando el fondo cambie a [backdrop1 v]"
+msgstr "quan l'escenari canviï al fons [backdrop1 v]"
 
 #: templates/learn/Parallelism.html:68
 #: templates/learn/duplicatedScripts.html:14
 msgid "when I receive [message1 v]"
-msgstr "al recibir [message1 v]"
+msgstr "quan rebi [message1 v]"
 
 #: templates/learn/Parallelism.html:69
 msgid "when [loudness ] &gt; 10"
-msgstr "cuando [volumen del sonido v] sea &gt; (10)"
+msgstr "quan [volum del so v] &gt; (10)"
 
 #: templates/learn/Parallelism.html:70
 msgid "when [video motion v] &gt; (2)"
-msgstr "cuando [movimiento del video v] sea &gt; (2)"
+msgstr "quan [moviment de vídeo v] &gt; (2)"
 
 #: templates/learn/Parallelism.html:71
 msgid "when [timer v] &gt; (45)"
-msgstr "cuando [cronómetro v] sea &gt; (45)"
+msgstr "quan [cronòmetre v] &gt; (2)"
 
 #: templates/learn/Parallelism.html:73
 msgid ""
@@ -1108,27 +1106,27 @@ msgid ""
 "things happen in your programs simultaneously. Do you dare to investigate "
 "how works?"
 msgstr ""
-"Como ves, podrías crear varios programas que comenzaran a ejecutarse al "
-"cambiar el fondo a un determinado escenario, o al recibir un mensaje "
-"concreto, o cuando el volumen del ambiente sea superior a un determinado "
-"umbral, cuando el movimiento del vídeo se mayor que un número de pixels "
-"concreto o cuando el cronómetro haya superado el valor que tú quieras. Por "
-"tanto, existen muchas posibilidades para conseguir que en tus programas "
-"ocurran cosas al mismo tiempo. ¿Te animas a probar algunas de ellas?"
+"Com veus, podries crear diferents programes que comencin a executar-se al "
+"canviar l'escenari a un determinat fons, o al rebre un missatge concret, o "
+"quan el volum de l'ambient sigui superior a un determinat llindar, quan el "
+"moviment de vídeo sigui major que un nombre de pixels concret o quan el "
+"cronòmetre hagi superat el valor que tu vulguis. Per tant, existeixen moltes "
+"possibilitats per aconseguir que en els teus programes es donin diferents "
+"fets alhora. T'animes a provar algunes d'elles?"
 
 #: templates/learn/Synchronization.html:5
 #: templates/statistics/statistics.html:272
 msgid "Synchronization"
-msgstr "Sincronización"
+msgstr "Sincronització"
 
 #: templates/learn/Synchronization.html:11
 msgid ""
 "Instructions related to synchronization <b>allow our characters to organize "
 "things happen in the order we want</b>."
 msgstr ""
-"Las instrucciones relacionadas con la sincronización <b>permiten organizar a "
-"nuestros personajes para que las cosas ocurran en el orden que nosotros "
-"deseamos</b>."
+"Les instruccions relacionades amb la sincronització <b>permeten organitzar "
+"els nostres personatges per a que les coses succeeixin en l'ordre que "
+"nosaltres desitgem</b>."
 
 #: templates/learn/Synchronization.html:20
 msgid ""
@@ -1137,41 +1135,40 @@ msgid ""
 "you write as a parameter block. An example of how this block can be used to "
 "synchronize two characters:"
 msgstr ""
-"La forma más sencilla de sincronizar el comportamiento de tus personajes es "
-"utilizando un bloque <i>“esperar”</i>, que hace que el personaje espere el "
-"número de segundos que escribamos como parámetro del bloque. Veamos un "
-"ejemplo de cómo puede utilizarse este bloque para sincronizar a dos "
-"personajes:"
+"La manera més senzilla de sincronitzar el comportament dels teus personatges "
+"és fent ús del bloc <i> \"espera\"</i>, el qual fa que el personatge esperi "
+"el nombre de segons que escriguem com a paràmetre del bloc. Vegem un exemple "
+"de com podem utilitzar aquest bloc per sincronitzar dos personatges:"
 
 #: templates/learn/Synchronization.html:22
 #: templates/learn/Synchronization.html:46
 msgid "say [Hello, how are you?] for (2) secs"
-msgstr "decir [Hola, ¿cómo estás?] por (2) segundos"
+msgstr "digues [Hola, com estàs?] durant (2) segons"
 
 #: templates/learn/Synchronization.html:23
 #: templates/learn/Synchronization.html:28
 msgid "wait (2) secs"
-msgstr "esperar (2) segundos"
+msgstr "espera (2) segons"
 
 #: templates/learn/Synchronization.html:24
 msgid "say [Well, do you want to play hide-and seek?] for (3) secs"
-msgstr "decir [Bien! ¿Quieres jugar al escondite?]"
+msgstr "digues [Bé! Vols jugar a fet i amagar?]"
 
 #: templates/learn/Synchronization.html:26
 msgid "say [Let's go] for (2) secs"
-msgstr "decir [Vamos!] por (2) segundos"
+msgstr "digues [Som-hi!] durant (2) segons"
 
 #: templates/learn/Synchronization.html:29
 msgid "say [I'm fine, thanks!] for (2) secs"
-msgstr "decir [Estoy bien, ¡gracias!] por (2) segundos"
+msgstr "digues [Estic bé, gràcies!] durant (2) segons"
 
 #: templates/learn/Synchronization.html:30
 msgid "wait (3) secs"
-msgstr "esperar (3) segundos"
+msgstr "espera (3) segons"
 
 #: templates/learn/Synchronization.html:31
 msgid "say [Yes] for (1) secs"
-msgstr "decir [Sí] por (2) segundos"
+msgstr "digues [Sí] durant (2) segons"
 
 #: templates/learn/Synchronization.html:34
 msgid ""
@@ -1181,11 +1178,11 @@ msgid ""
 "character expected, are equal to the number of seconds that the other "
 "character speaks, so they never talk at the same time."
 msgstr ""
-"En este caso se han utilizado los bloques <i>“esperar”</i> para sincronizar "
-"a estos dos personajes para que mantengan una conversación, de forma que "
-"mientras uno habla, el otro espera, y viceversa. Fíjate en que el número de "
-"segundos que cada personaje espera, son iguales al número de segundos que el "
-"otro personaje habla, de manera que nunca hablan al mismo tiempo."
+"En aquest cas s'han utilitzat els blocs <i>\"espera\"</i> per sincronitzar "
+"els dos personatges i que d'aquesta manera puguin mantenir una conversa en "
+"què mentre un parla l'altre espera i viceversa. Fixa't que el nombre de "
+"segons que cada personatge espera és igual al nombre de segons que l'altre "
+"personatge parla, de manera que mai intervenen alhora."
 
 #: templates/learn/Synchronization.html:44
 msgid ""
@@ -1195,31 +1192,31 @@ msgid ""
 "previously, it is more efficient to use other modes of synchronization and "
 "messages. Here's an example:"
 msgstr ""
-"La sincronización mediante bloques <i>“esperar”</i> es muy sencilla cuando "
-"los programas son pequeños y tenemos pocos personajes, pero cuando son más "
-"grandes, o cuando tenemos varios personajes, o cuando las condiciones para "
-"generar una reacción no pueden ser medidas previamente, es más eficiente "
-"utilizar otros modos de sincronización como los mensajes. Veamos un ejemplo:"
+"La sincronització per mitjà de blocs <i>\"espera\"</i> és molt senzilla quan "
+"els programes són petits i tenim pocs personatges, però quan són més grans, "
+"o quan tenim diversos personatges, o bé quan les condicions per generar una "
+"reacció no poden ser mesurades prèviament, és més eficient utilitzar altres "
+"modes de sincronització com són els missatges. Vegem un exemple:"
 
 #: templates/learn/Synchronization.html:48
 msgid "if &lt; touching [mouse pointer v]?&gt;then"
-msgstr "si  &lt; ¿tocando [puntero del raton v]? &gt;"
+msgstr "si  &lt; tocant [punter del ratolí v]? &gt;"
 
 #: templates/learn/Synchronization.html:49
 msgid "broadcast [catched! v]"
-msgstr ""
+msgstr "envia a tots [atrapat! v]"
 
 #: templates/learn/Synchronization.html:53
 msgid "when I receive [catched! v]"
-msgstr "al recibir [Pillado! v]"
+msgstr "quan rebi [atrapat! v]"
 
 #: templates/learn/Synchronization.html:54
 msgid "say [You have catched my friend] for (2) secs"
-msgstr "decir [Has pillado a mi amigo!] por (2) segundos"
+msgstr "digues [Has atrapat el meu amic!] durant (2) segons"
 
 #: templates/learn/Synchronization.html:55
 msgid "say [Now, you have to catch me!] for (2) secs"
-msgstr "decir [Ahora tienes que pillarme a mi!] por (2) segundos"
+msgstr "digues [Ara, m'has d'atrapar a mi!] durant (2) segons"
 
 #: templates/learn/Synchronization.html:58
 msgid ""
@@ -1232,15 +1229,14 @@ msgid ""
 "whit the mouse, butterfly says, 'You caught my companion. Now you have to "
 "catch me!'."
 msgstr ""
-"¿Cómo funciona estos bloques de sincronización? Cuando se produce una "
-"situación en un personaje que queremos que provoque una reacción en otro "
-"personaje, podemos hacer uso del <b>envío de mensajes</b>. En el ejemplo, "
-"cuando el ratón toca al gato, se envía el mensaje “Pillado”, que será "
-"enviado a todos los personajes del proyecto. Así, cuando la mariposa recibe "
-"el mensaje “Pillado”, se ejecutan las instrucciones incluidas bajo el bloque "
-"<i>“al recibir Pillado”</i>. Por tanto, cuando el usuario toque con el ratón "
-"al gato, la mariposa dirá: “Has pillado a mi compañero. Ahora tienes que "
-"pillarme a mí”."
+"Com funcionen aquests blocs de sincronització? Quan es produeix una situació "
+"en què volem que un personatge provoqui una reacció en un altre personatge, "
+"podem fer ús de l'<b>enviament de missatges</b>. En l'exemple, quan el "
+"ratolí toca el gat, s'envia el missatge \"Atrapat!\", que serà enviat a tots "
+"els personatges del projecte. Així, quan la papallona rebi el missatge "
+"\"Atrapat\", s'executaran les instruccions incloses sota el bloc <i>\"quan "
+"rebi Atrapat!\"</i>. Per tant, quan l'usuari toqui amb el ratolí el gat, la "
+"papallona dirà: \"Has atrapat el meu amic. Ara m'has d'atrapar a mi\"."
 
 #: templates/learn/Synchronization.html:68
 msgid ""
@@ -1248,26 +1244,26 @@ msgid ""
 "things happen in the order we want, using other blocks, such as <i>'wait "
 "until'</i> or <i>'when the background changes to ...'</i>."
 msgstr ""
-"Además del envío de mensajes, es posible sincronizar personajes para que las "
-"cosas ocurran en el orden que nosotros deseamos utilizando otro tipo de "
-"bloques, como <i>“esperar hasta que”</i> o <i>“cuando el fondo cambie a...”</"
-"i>."
+"A més de l'enviament de missatges, és possible sincronitzar personatges per "
+"tal que les accions succeeixin el l'ordre que nosaltres desitgem, tot "
+"utilitzant un altre tipus de blocs, com ara <i>\"espera fins\"</i> o <i>"
+"\"quan l'escenari canviï al fons...\"</i>."
 
 #: templates/learn/Synchronization.html:69
 msgid "wait until &lt;(lives) =[0]&gt;"
-msgstr "esperar hasta que &lt;(vidas) =[0]&gt;"
+msgstr "espera fins &lt;(vides) =[0]&gt;"
 
 #: templates/learn/Synchronization.html:70
 msgid "say [Game over] for (2) secs"
-msgstr "decir [Has perdido] por (2) segundos"
+msgstr "digues [Fi del joc] durant (2) segons"
 
 #: templates/learn/Synchronization.html:73
 msgid "when backdrop changes to [Spring v]"
-msgstr "cuando el fondo cambie a [Primavera v]"
+msgstr "quan l'escenari canviï al fons [Primavera v]"
 
 #: templates/learn/Synchronization.html:75
 msgid "say [Spring has come!] for (2) secs"
-msgstr "decir [La primavera ha llegado] por (2) segundos"
+msgstr "digues [La primavera ha arribat!] durant (2) segons"
 
 #: templates/learn/Synchronization.html:78
 msgid ""
@@ -1277,11 +1273,11 @@ msgid ""
 "case, <i>'said Game Over'</i> and <i>'stop all'</i>, which ends the "
 "execution of the project."
 msgstr ""
-"En el primer ejemplo, cuando la ejecución del programa llegue a ese punto se "
-"detendrá hasta que se cumpla la condición, en este caso hasta que vidas sea "
-"igual a 0. Cuando vidas valga 0, entonces continuará la ejecución del resto "
-"de bloques, en este caso <i>“decir Game Over”</i> y <i>“detener todos”</i>, "
-"lo que finalizará la ejecución del proyecto. "
+"En el primer exemple, quan l'execució del programa arribi a aquest punt "
+"s'aturarà fins que es compleixi la condició; en aquest cas, fins que les "
+"vides siguin igual a 0. Quan això passi, aleshores procedirà a l'execució de "
+"la resta de blocs, en aquest cas <i>\"digues Fi del joc\"</i> i <i>\"atura "
+"tot\", la qual cosa finalitzarà l'execució del projecte."
 
 #: templates/learn/Synchronization.html:80
 msgid ""
@@ -1290,14 +1286,14 @@ msgid ""
 "the instruction 'when the backdrop changes to Spring', ie to be displayed "
 "and will say 'spring has come!'."
 msgstr ""
-"En el segundo ejemplo, en el momento en el que el escenario cambie al fondo "
-"con el nombre “Primavera”, el personaje ejecutará los bloques colocados a "
-"continuación de la instrucción “cuando el fondo cambia a Primavera”, es "
-"decir, que se mostrará y dirá “¡Ha llegado la primavera”."
+"En el segon exemple, en el moment en què l'escenari canviï al fons amb el "
+"nom \"Primavera\", el personatge executarà els blocs col·locats a "
+"continuació de la instrucció \"quan l'escenari canviï al fons Primavera\" i "
+"per tant dirà \"La primavera ha arribat!\"."
 
 #: templates/learn/User.html:5 templates/statistics/statistics.html:263
 msgid "User interactivity"
-msgstr "Interactividad del usuario"
+msgstr "Interactivitat de l'usuari"
 
 #: templates/learn/User.html:11
 msgid ""
@@ -1307,20 +1303,20 @@ msgid ""
 "can use the keyboard or mouse to move a character, you can answer questions "
 "or playing computer webcam, among many other possibilities."
 msgstr ""
-"Las instrucciones relacionadas con la interactividad con el usuario "
-"<b>pueden ayudarte a que tus proyectos Scratch sean más interactivos</b>, es "
-"decir, que la persona que esté ejecutándolo pueda realizar acciones que "
-"provoquen nuevas situaciones en el proyecto. Por ejemplo, puedo utilizar el "
-"teclado o el ratón para mover un personaje, puede contestar preguntas o "
-"jugar con la webcam del ordenador, entre otras muchas posibilidades."
+"Les instruccions relacionades amb la interactivitat amb l'usuari <b>poden "
+"ajudar-te a fer els projectes de Scratch més interactius</b>, és a dir, que "
+"la persona que estigui executant-lo pugui realitzar accions que provoquin "
+"noves situacions en el projecte. Per exemple, que pugui utilitzar el teclat "
+"o el ratolí per moure un personatge, respondre preguntes o jugar amb la "
+"càmera web de l'ordinador, entre moltes altres possibilitats."
 
 #: templates/learn/User.html:20
 msgid ""
 "The most basic block you can start working interactivity with the user is "
 "<i>'when green flag clicked'</i>."
 msgstr ""
-"El bloque más básico con el que puedes comenzar a trabajar la interactividad "
-"con el usuario es <i>“Al presionar la bandera verde”</i>"
+"El bloc més bàsic amb el que pots començar a treballar la interactivitat amb "
+"l'usuari és <i>\"Quan la bandera verda es premi\"</i>"
 
 #: templates/learn/User.html:35
 msgid ""
@@ -1329,19 +1325,19 @@ msgid ""
 "green flag clicked'</i> begin to run. You can have as many programs as you "
 "need to start with this block."
 msgstr ""
-"¿Cómo funciona este bloque? Cuando el usuario que quiere ejecutar tu "
-"proyecto Scratch pinche en la bandera verde, comenzarán a ejecutarse todos "
-"los bloques que se hayan colocado bajo el bloque <i>“al presionar la bandera "
-"verde”</i>. Puedes tener tantos programas como necesites que comiencen con "
-"este bloque."
+"Com funciona aquest bloc? Quan l'usuari que vol executar el teu projecte "
+"Scratch faci clic a la bandera verda, començaran a executar-se tots els "
+"blocs que s'hagin col·locat després del bloc <i>\"Quan la bandera verda es "
+"premi\"</i>. Pots tenir tants programes com siguin necessaris que comencin "
+"amb aquest bloc."
 
 #: templates/learn/User.html:45
 msgid ""
 "Now that you have begun to interact with the user running your Scratch "
 "project, perhaps you can try some of the following blocks:"
 msgstr ""
-"Ahora que has comenzado a interactuar con el usuario que ejecute tu proyecto "
-"Scratch, quizás puedes probar algunos de los siguientes bloques:"
+"Ara que ja has començat a interactuar amb l'usuari que executi el teu "
+"projecte Scratch, potser puguis provar alguns dels següents blocs:"
 
 #: templates/learn/User.html:59
 msgid ""
@@ -1350,10 +1346,11 @@ msgid ""
 "responses, move characters with the mouse, or perform actions when the user "
 "clicks an object."
 msgstr ""
-"Como ves, es posible permitir a los usuarios interactuar con tus personajes "
-"presionando teclas para que se muevan, escribiendo respuestas a preguntas y "
-"que tus personajes usen las respuestas del usuario, mover a los personajes "
-"con el ratón, o realizar acciones cuando el usuario pincha sobre un objeto."
+"Com veus, és possible permetre als usuaris interactuar amb els teus "
+"personatges prement tecles per a que es moguin, escrivint respostes a "
+"preguntes i que els teus personatges utilitzin les respostes de l'usuari, "
+"moure els personatges amb el ratolí, o realitzar accions quan l'usuari faci "
+"clic sobre un objecte."
 
 #: templates/learn/User.html:68
 msgid ""
@@ -1362,10 +1359,10 @@ msgid ""
 "interact with characters from Scratch or sound to trigger certain actions.</"
 "b>"
 msgstr ""
-"Una de las posibilidades más divertidas de Scratch en cuanto a la "
-"interactividad con el usuario es la posibilidad de que <b>el usuario pueda "
-"utilizar su webcam o el micrófono para interactuar con los personajes de "
-"Scratch o el sonido para provocar ciertas acciones.</b>"
+"Una de les possibilitats més divertides de Scratch pel que fa a la "
+"interactivitat amb l'usuari és la possibilitat que <b>l'usuari pugui "
+"utilitzar la càmera web o el micròfon per interactuar amb els personatges de "
+"Scratch o el so per provocar determinades accions.</b>"
 
 #: templates/learn/User.html:82
 msgid ""
@@ -1375,16 +1372,15 @@ msgid ""
 "The possibilities of these blocks are very large and allows your creations "
 "Scratch are fully interactive with users."
 msgstr ""
-"Como ves en los ejemplos, podemos hacer que ciertos conjuntos de bloques se "
-"ejecuten cuando el sonido ambiente capturado por el micrófono sea mayor que "
-"un determinado umbral, o cuando se produce movimiento del vídeo encima de un "
-"objeto o del fondo. Las posibilidades de estos bloques son muy grandes y "
-"permitirán que tus creaciones Scratch sean totalmente interactivas con los "
-"usuarios."
+"Com veus als exemples, podem fer que certs conjunts de blocs s'executin quan "
+"el so ambient capturat pel micròfon sigui major que un determinat llindar, o "
+"quan es produeix moviment del vídeo sobre un objecte o el fons. Les "
+"possibilitats d'aquests blocs són molt grans i permetran que les teves "
+"creacions Scratch siguin totalment interactives amb els usuaris."
 
 #: templates/learn/attrInit.html:4 templates/statistics/statistics.html:203
 msgid "Attribute Initialization"
-msgstr "Atributos no inicializados correctamente"
+msgstr "Atributs no inicialitzats correctament"
 
 #: templates/learn/attrInit.html:11
 msgid ""
@@ -1394,11 +1390,11 @@ msgid ""
 "execution of a project, like their position, their size, their color, their "
 "orientation..."
 msgstr ""
-"Uno de los errores que más repetimos todos los programadores al aprender a "
-"programar es no inicalizar correctamente los atributos de los objetos. ¿Qué "
-"son los atributos? Son características de un personaje que pueden ser "
-"modificadas en la ejecución de un proyecto, como su posición, su tamaño, su "
-"color, su orientación..."
+"Un dels errors que més cometem tots els programadors a l'hora d'aprendre a "
+"programar és no inicialitzar correctament tots els atributs dels objectes. "
+"Què són els atributs? Són característiques d'un personatge que poden ser "
+"modificades en l'execució d'un projecte, com ara la seva posició, el seu "
+"tamany, el seu color, la seva orientació..."
 
 #: templates/learn/attrInit.html:13
 msgid ""
@@ -1408,32 +1404,34 @@ msgid ""
 "have the block 'go to' under the block 'when green flag clicked', in order "
 "to place the character in its initial position."
 msgstr ""
-"Cuando tengas bloques que modifiquen un atributo de un personaje, siempre "
-"deberías tener un programa que, al comenzar a ejecutar el proyecto, asigne "
-"el valor con el que queremos que comience. Por ejemplo, si se modifica la "
-"posición de un personaje, deberíamos tener un bloque “ir a” bajo “al pulsar "
-"la bandera verde”, para colocar al personaje en su posición inicial."
+"Quan tinguis blocs que modifiquen un atribut d'un personatge, sempre hauries "
+"de tenir un programa que quan comenci a executar el projecte assigni el "
+"valor amb el que volem que comenci. Per exemple, si es modifica la posició "
+"d'un personatge, hauríem de tenir un bloc \"vés a\" després de \"quan la "
+"bandera verda es premi\", per així col·locar el personatge en la seva "
+"posició inicial."
 
 #: templates/learn/attrInit.html:15
 msgid "when [right arrow v] key pressed //Not initialized correctly."
-msgstr "al presionar tecla [flecha derecha v] //No inicializado correctamente."
+msgstr ""
+"quan la tecla [fletxa dreta v] es premi //No inicialitzat correctament."
 
 #: templates/learn/attrInit.html:16 templates/learn/attrInit.html.py:22
 #: templates/learn/deadCode.html:16
 msgid "change x by (10)"
-msgstr "cambiar x por (10)"
+msgstr "suma (10) a x"
 
 #: templates/learn/attrInit.html:17 templates/learn/attrInit.html.py:23
 msgid "when [left arrow v] key pressed"
-msgstr "al presionar tecla [flecha izquierda v]"
+msgstr "quan la tecla [fletxa esquerra v] es premi"
 
 #: templates/learn/attrInit.html:18 templates/learn/attrInit.html.py:24
 msgid "change x by (-10)"
-msgstr "cambiar x por (-10)"
+msgstr "suma (-10) a x"
 
 #: templates/learn/attrInit.html:21
 msgid "when [right arrow v] key pressed  //Initialized correctly."
-msgstr "al presionar tecla [flecha derecha v] // Inicializado correctamente"
+msgstr "quan la tecla [fletxa dreta v] es premi"
 
 #: templates/learn/base.html:77 templates/password/base.html:88
 #: templates/sign/base.html:88 templates/statistics/statistics.html:296
@@ -1441,12 +1439,12 @@ msgstr "al presionar tecla [flecha derecha v] // Inicializado correctamente"
 #: templates/upload/dashboard-unregistered-developing.html:110
 #: templates/upload/dashboard-unregistered-master.html:148
 msgid "Dr. Scratch(Beta Version)"
-msgstr "Dr. Scratch(Versión Beta)"
+msgstr "Dr. Scratch(Versió Beta)"
 
 #: templates/learn/deadCode.html:4 templates/statistics/statistics.html:197
 #: templates/upload/dashboard-unregistered-master.html:246
 msgid "Dead code"
-msgstr "Código Muerto"
+msgstr "Codi Mort"
 
 #: templates/learn/deadCode.html:11
 msgid ""
@@ -1454,76 +1452,76 @@ msgid ""
 "For example, when you have a program that isn't start with a hat block, or "
 "when there is a program that is waiting for a message that never is sent."
 msgstr ""
-"El código muerto son partes de los programas que no llegan nunca a "
-"ejecutarse. ¿Cómo puede formarse código muerto? Por ejemplo, cuando tienes "
-"un programa que no comienza con un bloque de tipo sombrero, o cuando hay un "
-"programa que está esperando a que le llegue un mensaje que nadie envía."
+"El codi mort són parts dels programes que no arriben a executar-se mai. Com "
+"pot formar-se codi mort? Per exemple, quan tens un programa que no comença "
+"amb un bloc d'inici, o quan hi ha un programa que està esperant que li "
+"arribi un missatge que ningú envia."
 
 #: templates/learn/deadCode.html:14
 msgid "forever //Blocks that dont's start with a hat block."
-msgstr "por siempre //Bloques que no empiezan con un bloque sombrero."
+msgstr "per sempre //Blocs que no comencen amb un bloc d'inici."
 
 #: templates/learn/deadCode.html:15
 msgid "if &lt; key [left arrow v] pressed ? &gt; then"
-msgstr "si &lt; ¿tecla [flecha izquierda v] presionada?&gt; entonces"
+msgstr "si &lt; tecla [fletxa esquerra v] premuda?&gt; llavors"
 
 #: templates/learn/deadCode.html:18
 msgid "when I receive [startcc v] //Blocks that start with a hat block."
-msgstr "al recibir [startcc v] // Bloques que empiezan con un bloque sombrero."
+msgstr "al rebre [startcc v] // Blocs que comencen amb un bloc d'inici."
 
 #: templates/learn/deadCode.html:19
 msgid "switch costume to [costume2 v]"
-msgstr "cambiar disfraz a [disfraz2 v]"
+msgstr "canvia el vestit a [vestit2 v]"
 
 #: templates/learn/deadCode.html:20
 msgid "say [Let's start] for (2) secs"
-msgstr "decir [Vamos!] por (2) segundos"
+msgstr "digues [Som-hi!] durant (2) segons"
 
 #: templates/learn/deadCode.html:24
 msgid ""
 "These situations usually causes that projects doesn't work as expected of "
 "them,so,try to avoid dead code in your programs!"
 msgstr ""
-"Estas situaciones suelen ser la causa de proyectos que no funcionan como se "
-"espera de ellos, así que,¡trata de evitar código muerto en tus programas!"
+"Aquestes situacions acostumen a ser la causa de projectes que no funcionen "
+"com s'espera d'ells, així que: mira d'evitar codi mort en els teus programes!"
 
 #: templates/learn/duplicatedScripts.html:4
+#: templates/upload/dashboard-unregistered.html:162
 msgid "Duplicated Scripts"
-msgstr "Programas Duplicados"
+msgstr "Programes Duplicats"
 
 #: templates/learn/duplicatedScripts.html:11
 msgid ""
 "Imagine that in a project we have two programs formed by the same blocks and "
 "where only vary the parameters or values of the blocks."
 msgstr ""
-"Imagina que en un proyecto tenemos dos programas que se componen de los "
-"mismos bloques y en los que solo varían los parámetros o valores de los "
-"bloques."
+"Imagina que en un projecte tenim dos programes que es componen dels mateixos "
+"blocs i en els que només varien els paràmetres o valors dels blocs."
 
 #: templates/learn/duplicatedScripts.html:15
 #: templates/learn/duplicatedScripts.html:23
 msgid "set rotation style to [left-rigt v]"
-msgstr "fijar estilo de rotación[izquierda-derecha v]"
+msgstr "fixa l'estil de rotació a [esquerra-dreta v]"
 
 #: templates/learn/duplicatedScripts.html:16
 msgid "repeat (10)"
-msgstr "repetir (10)"
+msgstr "repeteix (10) vegades"
 
 #: templates/learn/duplicatedScripts.html:17
 msgid "move (2) steps"
-msgstr "mover (2) pasos"
+msgstr "mou-te (2) passos"
 
 #: templates/learn/duplicatedScripts.html:22
 msgid "when I receive [message2 v]"
-msgstr "al recibir [message2 v]"
+msgstr "quan rebi [missatge2 v]"
 
 #: templates/learn/duplicatedScripts.html:24
 msgid "repeat (5)"
-msgstr "repetir (5)"
+msgstr "repeteix (5) vegades"
 
 #: templates/learn/duplicatedScripts.html:25
 msgid "move (4) steps"
-msgstr "mover (4) pasos"
+msgstr "mou-te (4) passos"
 
 #: templates/learn/duplicatedScripts.html:33
 msgid ""
@@ -1532,43 +1530,43 @@ msgid ""
 "more appropriate that the programmer make his own block that defines this "
 "behaviour and use this new block in all programs where needed."
 msgstr ""
-"¿Qué ocurriría si quisiéramos hacer una pequeña modificación? Tendríamos que "
-"modificar ambos programas, lo que complica el mantenimiento del código. En "
-"estas situaciones es mucho más adecuado que el programador cree un bloque "
-"propio que defina este comportamiento y que utilice este nuevo bloque en "
-"todos los programas donde lo necesite."
+"Què passaria si volguéssim fer una petita modificació? Hauríem de modificar "
+"tots dos programes, la qual cosa complica el manteniment del codi. En "
+"aquestes situacions és molt més encertat que el programador creï un bloc "
+"propi que defineixi aquest comportament i que utilitzi aquest nou bloc en "
+"tots els programes on sigui necessari fer-ho."
 
 #: templates/learn/duplicatedScripts.html:36
 msgid "define walk (repetitions)(step)(pause)"
-msgstr "definir andar (repeticiones)(paso)(pausa)"
+msgstr "defineix camina (cops)(pas)(pausa)"
 
 #: templates/learn/duplicatedScripts.html:37
 msgid "set rotation style [left-rigt v]"
-msgstr "fijar estilo de rotación[izquierda-derecha v]"
+msgstr "fixa l'estil de rotació a [esquerra-dreta v]"
 
 #: templates/learn/duplicatedScripts.html:38
 msgid "repeat (repetitions)"
-msgstr "repetir (repeticiones)"
+msgstr "repeteix (cops) vegades"
 
 #: templates/learn/duplicatedScripts.html:39
 msgid "move (step) steps"
-msgstr "mover (paso) pasos"
+msgstr "mou-te (pas) passos"
 
 #: templates/learn/duplicatedScripts.html:42
 msgid "wait (pause) secs"
-msgstr "esperar (pausa) segundos"
+msgstr "espera (pausa) segons"
 
 #: templates/learn/duplicatedScripts.html:47
 msgid ""
 "Thus, if you want a change, you just have to go to the block defined by the "
 "programmer."
 msgstr ""
-"De este modo, si se quiere realizar una modificación, tan solo hay que ir al "
-"bloque definido por el programador."
+"D'aquesta manera, si volem realitzar una modificació, només cal anar al bloc "
+"definit pel programador."
 
 #: templates/learn/spriteNaming.html:5
 msgid "Incorrect names"
-msgstr "Nombres inadecuados"
+msgstr "Noms poc encertats"
 
 #: templates/learn/spriteNaming.html:12
 msgid ""
@@ -1579,32 +1577,35 @@ msgid ""
 "good practice naming(to recognize easily) each character of our projects, "
 "because our programs can be read more fast. Avoid default names!"
 msgstr ""
-" Al comenzar a programar con Scratch es bastante habitual dejar el nombre "
-"que Scratch asigna por defecto a los nuevos personajes (objeto1, "
-"objeto2...). Cuando tenemos pocos personajes, es bastante sencillo saber qué "
-"personaje tiene cada nombre; no obstante, cuando el número de personajes "
-"crece, la cosa se complica. Por tanto, es muy bueno acostumbrarse a poner un "
-"nombre significativo (que reconozcamos fácilmente) a cada objeto de nuestros "
-"proyectos, ya que nuestros programas se leerán mejor y se programarán más "
-"rápidamente. ¡Evita los nombres por defecto!"
+"Quan comencem a programar amb Scratch és freqüent deixar el nom que Scratch "
+"assigna per defecte als nous personatges (sprite1, sprite2...). Quan tenim "
+"pocs personatges, és prou senzill saber quin nom té assignat cada "
+"personatge; no obstant això, quan el nombre de personatges creix, la cosa es "
+"complica. Per tant, és molt encertat acostumar-se a posar un nom "
+"representatiu (que reconeguem fàcilment) a cada personatge dels nostres "
+"projectes, ja que així els programes es llegiran millor i es programaran més "
+"ràpidament. Fuig dels noms per defecte!"
 
-#: templates/login/login.html:81 templates/main/main.html:107
-#: templates/sign/organization.html:78
+#: templates/login/login.html:81 templates/sign/organization.html:78
 msgid "Sign in"
-msgstr "Ingresar"
+msgstr "Inicia la sessió"
 
-#: templates/login/login.html:92 templates/main/main.html:96
-#: templates/main/main.html.py:118 templates/sign/organization.html:91
+#: templates/login/login.html:92 templates/sign/organization.html:91
 msgid "Remember me"
-msgstr "Recordarme"
+msgstr "Recorda'm"
 
-#: templates/login/login.html:127 templates/sign/organization.html:128
-#: templates/sign/organization.html:187 templates/sign/user.html:104
-#: templates/sign/user.html.py:163
+#: templates/login/login.html:127 templates/sign/createOrganization.html:104
+#: templates/sign/createOrganization.html:163
+#: templates/sign/createUser.html:104 templates/sign/createUser.html.py:163
+#: templates/sign/organization.html:128 templates/sign/organization.html:187
+#: templates/sign/registerOrganization.html:104
+#: templates/sign/registerOrganization.html:163
 msgid "Dr. Scratch for Organizations"
-msgstr "Dr. Scratch para Organizaciones"
+msgstr "Dr. Scratch per a organitzacions"
 
-#: templates/login/login.html:129 templates/sign/user.html:106
+#: templates/login/login.html:129 templates/sign/createOrganization.html:106
+#: templates/sign/createUser.html:106
+#: templates/sign/registerOrganization.html:106
 msgid ""
 "Welcome to the Dr. Scratch website (version for organizations), an "
 "analytical tool that evaluates your Scratch projects in a variety of "
@@ -1612,304 +1613,315 @@ msgid ""
 "students' Scratch projects. You'll have a smart dashboard where you can see "
 "the most important information about your students and their development."
 msgstr ""
-"Bienvenido a la Web de Dr. Scratch(versión para organizaciones), es una "
-"aplicación que evalúa proyectos Scratch en relación a varios aspectos del "
-"pensamiento computacional. Este analizador es una herramienta muy útil para "
-"evaluar los proyectos Scratch de tus alumnos.Tendrás una página "
-"personalizada con información de tus estudiantes y su desarrollo."
+"Benvingut a la web de Dr. Scratch (versió per a organitzacions), una "
+"aplicació que avalua projectes Scratch en relació a diferents aspectes del "
+"pensament computacional. Aquest analitzador és una eina molt útil per "
+"avaluar els projectes Scratch dels teus alumnes. Tindràs una pàgina "
+"personalitzada amb informació dels teus estudiants i el seu desenvolupament."
 
-#: templates/login/login.html:133 templates/sign/organization.html:134
-#: templates/sign/organization.html:241 templates/sign/user.html:75
-#: templates/sign/user.html.py:110 templates/sign/user.html:208
+#: templates/login/login.html:133 templates/sign/createOrganization.html:75
+#: templates/sign/createOrganization.html:110
+#: templates/sign/createOrganization.html:209
+#: templates/sign/createUser.html:75 templates/sign/createUser.html.py:110
+#: templates/sign/createUser.html:208 templates/sign/organization.html:134
+#: templates/sign/organization.html:241
+#: templates/sign/registerOrganization.html:75
+#: templates/sign/registerOrganization.html:110
+#: templates/sign/registerOrganization.html:208
 msgid "Sign up!"
-msgstr "¡Regístrate!"
+msgstr "Registra't!"
 
-#: templates/login/login.html:187 templates/main/main.html:255
+#: templates/login/login.html:187 templates/main/main.html:214
 msgid "WHY?"
-msgstr "¿Por qué?"
+msgstr "Per què?"
 
-#: templates/login/login.html:189 templates/main/main.html:257
-#: templates/sign/user.html:165
+#: templates/login/login.html:189 templates/main/main.html:216
+#: templates/sign/createOrganization.html:165
+#: templates/sign/createUser.html:165
+#: templates/sign/registerOrganization.html:165
 msgid "Why "
-msgstr "Por qué "
+msgstr "Per què"
 
-#: templates/login/login.html:189 templates/main/main.html:257
-#: templates/sign/user.html:165
+#: templates/login/login.html:189 templates/main/main.html:216
+#: templates/sign/createOrganization.html:165
+#: templates/sign/createUser.html:165
+#: templates/sign/registerOrganization.html:165
 msgid "you’ll love Dr. Scratch"
-msgstr "te encantará Dr. Scratch"
+msgstr "t'encantarà Dr. Scratch"
 
-#: templates/login/login.html:193 templates/main/main.html:261
+#: templates/login/login.html:193 templates/main/main.html:220
 msgid "A powerful tool to analyze your Scratch projects"
-msgstr "Analiza tus proyectos de Scratch"
+msgstr "Analitza els teus projectes de Scratch"
 
-#: templates/login/login.html:205 templates/main/main.html:273
+#: templates/login/login.html:205 templates/main/main.html:232
 msgid "Simple & Fun"
-msgstr "Fácil & Divertido"
+msgstr "Fàcil & Divertit"
 
-#: templates/login/login.html:207 templates/main/main.html:275
+#: templates/login/login.html:207 templates/main/main.html:234
 msgid ""
 "Your students can easily learn how to improve their programming skills in a "
 "fun way."
 msgstr ""
-"Tus estudiantes pueden aprender fácilmente cómo mejorar sus habilidades de "
-"programación de una forma divertida."
+"Els teus estudiants poden aprendre fàcilment com millorar les seves "
+"habilitats de programació d'una manera divertida."
 
-#: templates/login/login.html:218 templates/main/main.html:286
+#: templates/login/login.html:218 templates/main/main.html:245
 msgid "Improve your skills"
-msgstr "Mejora tus habilidades"
+msgstr "Millora les teves habilitats"
 
-#: templates/login/login.html:220 templates/main/main.html:288
+#: templates/login/login.html:220 templates/main/main.html:247
 msgid ""
 "We provide feedback on several aspects which are related to Computational "
 "Thinking."
 msgstr ""
-"Dr. Scratch ofrece realimentación en aspectos relacionados con el "
-"Pensamiento Computacional ayudándote a mejorarlos."
+"Dr. Scratch ofereix retroacció en aspectes relacionats amb el Pensament "
+"Computacional ajudant-te a millorar-los."
 
-#: templates/login/login.html:231 templates/main/main.html:299
+#: templates/login/login.html:231 templates/main/main.html:258
 msgid "Always improving"
-msgstr "Mejorando constantemente"
+msgstr "Millorant constantment"
 
-#: templates/login/login.html:233 templates/main/main.html:301
+#: templates/login/login.html:233 templates/main/main.html:260
 msgid ""
 "We're continually enhancing the features of Dr. Scratch, and we'd love to "
 "hear your thoughts"
 msgstr ""
-"Intentamos mejorar continuamente, por lo que nos gustaría escuchar tus "
-"opiniones."
+"Intentem millorar contínuament, per això ens agradaria escoltar les teves "
+"opinions."
 
-#: templates/login/login.html:270 templates/main/main.html:338
+#: templates/login/login.html:270 templates/main/main.html:297
 msgid "How"
-msgstr "Cómo"
+msgstr "Com"
 
-#: templates/login/login.html:272 templates/main/main.html:340
+#: templates/login/login.html:272 templates/main/main.html:299
 #: templates/sign/organization.html:189
 msgid "How "
-msgstr "Cómo "
+msgstr "Com"
 
-#: templates/login/login.html:272 templates/main/main.html:340
+#: templates/login/login.html:272 templates/main/main.html:299
 msgid "it works"
 msgstr "funciona"
 
-#: templates/login/login.html:276 templates/main/main.html:344
+#: templates/login/login.html:276 templates/main/main.html:303
 msgid "There are two options to analyze a Scratch project with Dr. Scratch"
-msgstr "Hay dos opciones para analizar un proyecto de Scratch con Dr. Scratch"
+msgstr ""
+"Hi ha dues opcions per analitzar un projecte de Scratch amb Dr. Scratch"
 
-#: templates/login/login.html:277 templates/main/main.html:345
+#: templates/login/login.html:277 templates/main/main.html:304
 msgid "project.png"
-msgstr "proyecto.png"
+msgstr "projecte.png"
 
-#: templates/login/login.html:279 templates/main/main.html:347
+#: templates/login/login.html:279 templates/main/main.html:306
 msgid ""
 "You can upload an sb2 file or just provide the project url, avoiding the "
 "need to previously download the project to your computer. By analyzing your "
 "projects with Dr. Scratch, you can easily check your Computational Thinking "
 "Score."
 msgstr ""
-"Puedes subir un fichero de extensión sb2 o utilizar la url que Scratch "
-"facilita sin necesidad de bajar previamente el proyecto a tu ordenador. "
-"Mediante el análisis de Dr. Scratch, puedes conocer fácilmente tu Nivel de "
-"Pensamiento Computacional."
+"Pots carregar un fitxer amb extensió sb2 o utilitzar la url que Scratch "
+"facilita sense necessitat de descarregar prèviament el projecte al teu "
+"ordinador. Per mitjà de l'anàlisi de Dr. Scratch pots conèixer fàcilment el "
+"teu Nivell de Pensament Computacional."
 
-#: templates/login/login.html:288 templates/main/main.html:356
+#: templates/login/login.html:288 templates/main/main.html:315
 msgid "It is extremely easy to use, both for begginers and expert programmers."
 msgstr ""
-"Es increiblemente fácil de usar, tanto si eres principiante como si eres un "
-"programador experto."
+"És increïblement fàcil d'utilitzar, tant si ets principiant com si ets un "
+"programador expert."
 
-#: templates/login/login.html:292 templates/main/main.html:360
+#: templates/login/login.html:292 templates/main/main.html:319
 msgid "You receive feedback to improve your coding skills."
-msgstr "Recibirás realimentación para mejorar tus habilidades de programación."
+msgstr "Rebràs retroacció per millorar les teves habilitats de programació."
 
-#: templates/login/login.html:300 templates/main/main.html:368
+#: templates/login/login.html:300 templates/main/main.html:327
 msgid ""
 "You can keep on improving your programming skills by yourself even from home."
 msgstr ""
-"Puedes seguir mejorando tus habilidades como programador por ti mismo, "
-"incluso desde casa."
+"Pots seguir millorant les teves habilitats com a programador pel teu compte, "
+"fins i tot des de casa."
 
-#: templates/login/login.html:304 templates/main/main.html:372
+#: templates/login/login.html:304 templates/main/main.html:331
 msgid "You can track your progress through charts and stats."
 msgstr ""
-"Puedes realizar un seguimiento de tu progreso a través de gráficos y "
-"estadísticas."
+"Pots realitzar un seguiment del teu progrés a través de gràfics i "
+"estadístiques."
 
-#: templates/login/login.html:323 templates/main/main.html:391
+#: templates/login/login.html:323 templates/main/main.html:350
 msgid "NEW FEATURES"
-msgstr "NUEVAS FUNCIONALIDADES"
+msgstr "NOVES FUNCIONALITATS"
 
-#: templates/login/login.html:325 templates/main/main.html:393
+#: templates/login/login.html:325 templates/main/main.html:352
 msgid "Coming "
-msgstr "Próximas "
+msgstr "Properes "
 
-#: templates/login/login.html:325 templates/main/main.html:393
+#: templates/login/login.html:325 templates/main/main.html:352
 msgid "Soon"
-msgstr "Funcionalidades"
+msgstr "Funcionalitats"
 
-#: templates/login/login.html:329 templates/main/main.html:397
+#: templates/login/login.html:329 templates/main/main.html:356
 msgid "We are working on new features to improve Dr. Scratch"
-msgstr "Estamos trabajando en nuevas características que mejoren Dr. Scratch"
+msgstr "Estem treballant en noves característiques que millorin Dr. Scratch"
 
-#: templates/login/login.html:344 templates/main/main.html:412
+#: templates/login/login.html:344 templates/main/main.html:371
 msgid "Multilingual Website"
-msgstr "Web Multilenguaje"
+msgstr "Web Multilingüe"
 
 #: templates/login/login.html:348 templates/main/collaborators.html:350
-#: templates/main/main.html:416
+#: templates/main/main.html:375
 msgid ""
 "We know the importance of receiving feedback on your own language to "
 "understand every little detail or hint, so we'll translate Dr. Scratch to "
 "facilitate coding learning to as many people as possible."
 msgstr ""
-"Sabemos que es más fácil entender cada detalle o indicación si la recibes en "
-"tu propio idioma, por ello traduciremos Dr. Scratch para facilitar el "
-"aprendizaje del mayor número de personas posible."
+"Sabem que és més fàcil entendre cada detall o indicació si la reps en el teu "
+"propi idioma, és per això que traduirem Dr. Scratch; així alhora facilitem "
+"l'aprentatge d'un major nombre de persones."
 
-#: templates/login/login.html:359 templates/main/main.html:427
+#: templates/login/login.html:359 templates/main/main.html:386
 msgid "Teacher Accounts"
-msgstr "Cuentas para profesores"
+msgstr "Comptes per a professors"
 
-#: templates/login/login.html:363 templates/main/main.html:431
+#: templates/login/login.html:363 templates/main/main.html:390
 msgid ""
 "Teachers will be able to group (and follow) their students to keep track of "
 "their progress in a fast and simple way."
 msgstr ""
-"Los profesores podrán agrupar(y seguir) a sus estudiantes y realizar un "
-"seguimiento de sus progresos de una forma rápida y simple."
+"Els professors podran agrupar (i seguir) els seus estudiants i realitzar un "
+"seguiment dels seus progressos d'una manera ràpida i simple."
 
-#: templates/login/login.html:374 templates/main/main.html:442
+#: templates/login/login.html:374 templates/main/main.html:401
 msgid "Cloud Platform"
-msgstr "Plataforma en la Nube"
+msgstr "Plataforma en el núvol"
 
-#: templates/login/login.html:378 templates/main/main.html:446
+#: templates/login/login.html:378 templates/main/main.html:405
 msgid ""
 "We are in the process of migrating our servers to the Cloud with the aim of "
 "providing a better performance."
 msgstr ""
-"Estamos migrando nuestros servidores a la Nube con el objetivo de ofrecer un "
-"mejor rendimiento."
+"Estem migrant els nostres servidors al núvol amb l'objectiu d'oferir un "
+"millor rendiment."
 
-#: templates/login/login.html:403 templates/main/main.html:471
+#: templates/login/login.html:403 templates/main/main.html:430
 msgid ""
 "With Dr. Scratch plug-ins for Chrome and Firefox, students will analyze "
 "their project WHILE programming on the Scratch website."
 msgstr ""
-"Con los plugins de Dr. Scratch para Chrome y Firefox, los estudiantes podrán "
-"analizar sus proyectos MIENTRAS programan en la web de Scratch."
+"Amb les extensions de Dr. Scratch per a Chrome i Firefox, els estudiants "
+"podran analitzar els seus projectes MENTRE programen en la web de Scratch."
 
-#: templates/login/login.html:414 templates/main/main.html:482
+#: templates/login/login.html:414 templates/main/main.html:441
 msgid "Gamification"
-msgstr "Gamificación"
+msgstr "Ludificació"
 
-#: templates/login/login.html:418 templates/main/main.html:486
+#: templates/login/login.html:418 templates/main/main.html:445
 msgid ""
 "We'd like to take learners curiosity one step further. Do you have cool "
 "ideas to gamify our platform?"
 msgstr ""
-"Nos gustaría conseguir motivar la curiosidad de los estudiantes. ¿Tienes "
-"ideas interesantes para gamificar nuestra plataforma?"
+"Ens agradaria dur la curiositat dels estudiants un pas més enllà. Tens bones "
+"propostes per ludificar la nostra plataforma?"
 
-#: templates/login/login.html:429 templates/main/main.html:497
+#: templates/login/login.html:429 templates/main/main.html:456
 msgid "Social Network"
-msgstr "Red Social"
+msgstr "Xarxa Social"
 
-#: templates/login/login.html:433 templates/main/main.html:501
+#: templates/login/login.html:433 templates/main/main.html:460
 msgid ""
 "The new social network funcionalities will allow users to communicate with "
 "each other to exchange ideas and challenges."
 msgstr ""
-"Las funcionalidades de red social que incluiremos permitirán a los usuarios "
-"comunicarse entre ellos e intercambiar ideas y retos. "
+"Les funcionalitats de xarxa social que inclourem permetran als usuaris "
+"comunicar-se entre ells i intercanviar idees i reptes."
 
-#: templates/login/login.html:453 templates/main/main.html:521
+#: templates/login/login.html:453 templates/main/main.html:480
 msgid "Contact"
-msgstr "Contacto"
+msgstr "Contacte"
 
-#: templates/login/login.html:455 templates/main/main.html:523
+#: templates/login/login.html:455 templates/main/main.html:482
 msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
-msgstr "<strong>Contacta </strong>con el equipo Dr. Scratch</h2>"
+msgstr "<strong>Contacta </strong>amb l'equip de Dr. Scratch</h2>"
 
-#: templates/login/login.html:459 templates/main/main.html:527
+#: templates/login/login.html:459 templates/main/main.html:486
 msgid "We would be pleased to receive your feedback"
-msgstr "Nos gustaría conocer tu opinión y escuchar tus ideas"
+msgstr "Ens agradaria conèixer la teva opinió i escoltar les teves idees"
 
-#: templates/login/login.html:498 templates/main/main.html:566
+#: templates/login/login.html:498 templates/main/main.html:525
 msgid ""
 "We would like to thank many people for their collaboration and we have done "
 "one special section."
 msgstr ""
-"Nos gustaría agradecer a mucha gente su colaboración y hemos incluido una "
-"sección especial para ello."
+"Ens agradaria agrair a molta gent la seva col·laboració i hem inclòs una "
+"secció especial."
 
-#: templates/login/login.html:501 templates/main/main.html:570
+#: templates/login/login.html:501
 msgid "Collaborators"
-msgstr "Colaboradores"
+msgstr "Col·laboradors"
 
-#: templates/login/login.html:520 templates/main/main.html:589
+#: templates/login/login.html:520 templates/main/main.html:547
 msgid "Are you a Dr. Scratch user?"
-msgstr "¿Eres usuario de Dr. Scratch?"
+msgstr "Ets usuari de Dr. Scratch?"
 
-#: templates/login/login.html:523 templates/main/main.html:592
+#: templates/login/login.html:523 templates/main/main.html:550
 msgid "Join now!"
-msgstr "¡Pruébalo!"
+msgstr "Prova-ho!"
 
-#: templates/login/login.html:563 templates/main/main.html:632
+#: templates/login/login.html:563 templates/main/main.html:590
 #: templates/upload/dashboard-organization.html:239
 msgid "What is an url?"
-msgstr "¿Qué es una url?"
+msgstr "Què és una url?"
 
-#: templates/login/login.html:565 templates/main/main.html:634
+#: templates/login/login.html:565 templates/main/main.html:592
 #: templates/upload/dashboard-organization.html:241
 msgid "How I can know my Scratch project's url?"
-msgstr "¿Cómo puedo averiguar la url de mi proyecto en Scratch?"
+msgstr "Com puc esbrinar la url del meu projecte de Scratch?"
 
-#: templates/login/login.html:569 templates/main/main.html:638
+#: templates/login/login.html:569 templates/main/main.html:596
 msgid "<img class='framed' src='static/app/images/url-en.png' />"
-msgstr "<img class='framed' src='static/app/images/url-es.png' />"
+msgstr "<img class='framed' src='static/app/images/url-ca.png' />"
 
-#: templates/login/login.html:588 templates/main/main.html:657
+#: templates/login/login.html:588 templates/main/main.html:615
 #: templates/upload/dashboard-organization.html:264
 msgid "I want to download my project from Scratch!"
-msgstr "¡Quiero descargar mi proyecto de Scratch!"
+msgstr "Vull descarregar el meu projecte de Scratch!"
 
-#: templates/login/login.html:590 templates/main/main.html:659
+#: templates/login/login.html:590 templates/main/main.html:617
 #: templates/upload/dashboard-organization.html:266
 msgid "How I can download my Scratch project to my computer?"
-msgstr "¿Cómo puedo descargar mi proyecto de Scratch a mi ordenador?"
+msgstr "Com puc descarregar el meu projecte de Scratch al meu ordinador?"
 
-#: templates/login/login.html:594 templates/main/main.html:663
+#: templates/login/login.html:594 templates/main/main.html:621
 msgid "<img class='framed' src='static/app/images/project-en.png' />"
-msgstr "<img class='framed' src='static/app/images/project-es.png' />"
+msgstr "<img class='framed' src='static/app/images/project-ca.png' />"
 
-#: templates/login/login.html:614 templates/main/main.html:683
+#: templates/login/login.html:614 templates/main/main.html:641
 #: templates/main/main_organization.html:300
 msgid "Wait a moment please"
-msgstr "Espere un momento, por favor."
+msgstr "Espereu un moment, si us plau."
 
-#: templates/login/login.html:632 templates/main/main.html:701
+#: templates/login/login.html:632 templates/main/main.html:659
 #: templates/main/main_organization.html:318
 msgid "loading..."
-msgstr "cargando..."
+msgstr "carregant..."
 
 #: templates/main/collaborators.html:75 templates/main/collaborators.html:162
 msgid "Who we are"
-msgstr "Quiénes somos"
+msgstr "Qui som"
 
 #: templates/main/collaborators.html:76 templates/main/collaborators.html:346
 msgid "Translations"
-msgstr "Traducciones"
+msgstr "Traduccions"
 
 #: templates/main/collaborators.html:77 templates/main/collaborators.html:527
 msgid "Workshops"
-msgstr "Talleres"
+msgstr "Tallers"
 
 #: templates/main/collaborators.html:78
 msgid "More thanks"
-msgstr "Más agradecimientos"
+msgstr "Més agraïments"
 
 #: templates/main/collaborators.html:104
 msgid "Thanks all of you!"
-msgstr "Gracias a todos!"
+msgstr "Gràcies a tots!"
 
 #: templates/main/collaborators.html:106
 msgid ""
@@ -1917,19 +1929,19 @@ msgid ""
 "best way of show our appreciation is including your work in the website. In "
 "this space you can see who people help us to improve Dr. Scratch!"
 msgstr ""
-"Estamos muy agradecidos de recibir vuestra ayuda y hemos pensado que la "
-"mejor manera de mostrar nuestro aprecio es incluyendo vuestro trabajo en "
-"laweb. En este espacio podrás ver la gente que nos ha ayudado a mejorar Dr. "
+"Estem molt agraïts de rebre la vostra ajuda i hem pensat que la millor "
+"manera de mostrar el nostre apreci és incloent el vostre treball a la web. "
+"En aquest espai podràs veure la gent que ens ha ajudat a millorar Dr. "
 "Scratch."
 
 #: templates/main/collaborators.html:166
 msgid "Dr. Scratch's team likes to thank you for your contributions."
-msgstr "El equipo de Dr. Scratch agradece vuestras contribuciones."
+msgstr "L'equip de Dr. Scratch agraeix les vostres contribucions."
 
 #: templates/main/collaborators.html:182 templates/main/collaborators.html:204
 #: templates/main/collaborators.html:272 templates/main/collaborators.html:295
 msgid " "
-msgstr ""
+msgstr " "
 
 #: templates/main/collaborators.html:224
 msgid "Eva Hu Garres"
@@ -1937,7 +1949,7 @@ msgstr "Eva Hu Garres"
 
 #: templates/main/collaborators.html:226 templates/main/collaborators.html:248
 msgid "Web Developer"
-msgstr "Desarrolladora web"
+msgstr "Desenvolupadora web"
 
 #: templates/main/collaborators.html:246
 msgid "Mari Luz Aguado Jiménez"
@@ -1948,52 +1960,53 @@ msgstr "Mari Luz Aguado Jiménez"
 #: templates/main/collaborators.html:431 templates/main/collaborators.html:455
 #: templates/main/collaborators.html:478 templates/main/collaborators.html:500
 msgid "Anonymous"
-msgstr "Anónimos"
+msgstr "Anònims"
 
 #: templates/main/collaborators.html:317 templates/main/collaborators.html:502
 msgid "Lenguage"
-msgstr "Lenguaje"
+msgstr "Llenguatge"
 
 #: templates/main/collaborators.html:351
 msgid ""
 "Would you like help us to translate Dr. Scratch to your language? Many "
 "people have already helped us! "
 msgstr ""
-"¿Te gustaría ayudarnos a traducir Dr. Scratch a tu lengua? ¡Mucha gente "
-"nosha ayudado ya!"
+"T'agradaria ajudar-nos a traduir Dr. Scratch a la teva llengua? Molta gent "
+"ens ha ajudat ja!"
 
 #: templates/main/collaborators.html:367
 msgid "Portuguese from Brazil"
-msgstr "Portugués de Brasil"
+msgstr "Portuguès de Brasil"
 
 #: templates/main/collaborators.html:389
 msgid "Greek"
-msgstr "Griego"
+msgstr "Grec"
 
 #: templates/main/collaborators.html:411
 msgid "Hungarian"
-msgstr "Húgaro"
+msgstr "Hongarès"
 
 #: templates/main/collaborators.html:457
 msgid "Basque"
-msgstr "Vasco"
+msgstr "Basc"
 
 #: templates/main/collaborators.html:480
 msgid "Galician"
-msgstr "Gallego"
+msgstr "Gallec"
 
 #: templates/main/collaborators.html:531
 msgid ""
 "We are collaborating with several schools where we can prove the website "
 "with children and see which features they need."
 msgstr ""
-"Estamos colaborando con muchas escuelas donde pueden probar nuestrositio web "
-"y ver qué funcionalidades necesitan."
+"Estem col·laborant amb moltes escoles on es pot provar el nostre lloc web i "
+"veure quines funcionalitats necessiten."
 
 #: templates/main/collaborators.html:532
 msgid "Thanks all of children and teachers who help us with the development!"
 msgstr ""
-"¡Gracias a todos los niños y profesores que nos ayudan con el desarrollo!"
+"Gràcies a tots els infants i professors que ens ajuden amb el "
+"desenvolupament!"
 
 #: templates/main/collaborators.html:561
 msgid "CEIP Lope de Vega"
@@ -2001,213 +2014,175 @@ msgstr "CEIP Lope de Vega"
 
 #: templates/main/collaborators.html:565
 msgid "Teacher: Jorge Lobo"
-msgstr "Profesor: Jorge Lobo"
+msgstr "Professor: Jorge Lobo"
 
 #: templates/main/collaborators.html:584
 msgid "<strong>More thanks</strong></h2>"
-msgstr "<strong>Contacta </strong></h2>"
+msgstr "<strong>Més agraïments</strong></h2>"
 
 #: templates/main/main.html:75
 msgid "Why?"
-msgstr "¿Por qué?"
+msgstr "Per què?"
 
 #: templates/main/main.html:76
 msgid "How?"
-msgstr "¿Cómo?"
+msgstr "Com?"
 
 #: templates/main/main.html:77
 msgid "Working on"
-msgstr "Próximamente"
+msgstr "Properament"
 
 #: templates/main/main.html:78
 msgid "Contact us"
-msgstr "Contacto"
+msgstr "Contacte"
 
 #: templates/main/main.html:79
 msgid "Organizations"
-msgstr "Organizaciones"
+msgstr "Organitzacions"
 
-#: templates/main/main.html:85
-msgid "Sign up"
-msgstr "Regístrate"
-
-#: templates/main/main.html:93 templates/main/main.html.py:115
-#: templates/sign/organization.html:88
-msgid ""
-"<input type='text' name='username' id='username' placeholder='Username' "
-"style='margin-bottom: 15px;'>"
-msgstr ""
-"<input type='text' name='username' id='username' placeholder='Nombre de "
-"usuario' style='margin-bottom: 15px;'>"
-
-#: templates/main/main.html:94 templates/main/main.html.py:116
-#: templates/sign/organization.html:89
-msgid ""
-"<input type='password' name='password' id='password' placeholder='Password' "
-"style='margin-bottom: 15px;'>"
-msgstr ""
-"<input type='password' class='form-control' name='password' "
-"placeholder='Contraseña'>"
-
-#: templates/main/main.html:97
-msgid ""
-"<input type='submit' value='Sign Up' id='sign-up' class='btn-group btn-group-"
-"justified colored-text'>"
-msgstr ""
-"<input type='submit' value='Regístrate' id='sign-in' class='btn-group btn-"
-"group-justified colored-text'>"
-
-#: templates/main/main.html:119
-msgid ""
-"<input type='submit' value='Sign In' id='sign-in' class='btn-group btn-group-"
-"justified colored-text'>"
-msgstr ""
-"<input type='submit' value='Ingresar' id='sign-in' class='btn-group btn-"
-"group-justified colored-text'>"
-
-#: templates/main/main.html:150
+#: templates/main/main.html:109
 msgid "Analyze your Scratch projects"
-msgstr "Analiza tus proyectos de Scratch"
+msgstr "Analitza els teus projectes de Scratch"
 
-#: templates/main/main.html:152
+#: templates/main/main.html:111
 msgid ""
 "Welcome to the Dr. Scratch website, an analytical tool that evaluates your "
 "Scratch projects in a variety of computational areas. This analyzer is a "
 "helpful tool to evaluate your own projects, or those of your Scratch "
 "students."
 msgstr ""
-"Bienvenido a la Web de Dr. Scratch, es una aplicación que evalúa proyectos "
-"Scratch en relación a varios aspectos del pensamiento computacional. Este "
-"analizador es una herramienta muy útil tanto para evaluar tus proyectos "
-"Scratch como los de tus estudiantes."
+"Benvingut a la web de Dr. Scratch, una aplicació que avalua projectes "
+"Scratch en relació a diferents aspectes del pensament computacional. Aquest "
+"analitzador és una eina molt útil tanto per avaluar els teus projectes "
+"Scratch com els dels teus alumnes."
 
-#: templates/main/main.html:156
+#: templates/main/main.html:115
 msgid "Learn More"
-msgstr "Aprende Más"
+msgstr "Aprèn més"
 
-#: templates/main/main.html:170
+#: templates/main/main.html:129
 msgid "There are two options to analyze your Scratch project now!"
-msgstr "Hay dos opciones para analizar un proyecto de Scratch con Dr. Scratch"
+msgstr ""
+"Hi ha dues opcions per analitzar un projecte de Scratch amb Dr. Scratch"
 
-#: templates/main/main.html:175
+#: templates/main/main.html:134
 msgid ""
 "1. Introduce the <span class='colored-text'><a data-toggle='modal' "
 "href='#modalUrl'>url</a></span> of your Scratch project, you don't have to "
 "download it:"
 msgstr ""
-"1. Introduce la <span class='colored-text'><a data-toggle='modal' "
-"href='#modalUrl'>url</a></span> de tu proyecto Scratch, no tendrás que "
-"descargarlo:"
+"1. Introdueix la <span class='colored-text'><a data-toggle='modal' "
+"href='#modalUrl'>url</a></span> del teu projecte Scratch, no hauràs de "
+"descarregar-lo:"
 
-#: templates/main/main.html:176
+#: templates/main/main.html:135
 msgid ""
 "<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
 "placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
 "type=\"text\">"
 msgstr ""
 "<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
-"placeholder\" placeholder=\"http://scratch.mit.edu/projects/tu_número\" type="
-"\"text\">"
+"placeholder\" placeholder=\"http://scratch.mit.edu/projects/el_teu_número\" "
+"type=\"text\">"
 
-#: templates/main/main.html:177
+#: templates/main/main.html:136
 msgid "Analyze by url"
-msgstr "Analizar por url"
+msgstr "Analitzar per url"
 
-#: templates/main/main.html:182
+#: templates/main/main.html:141
 msgid ""
 "2. If you have your <span class='colored-text'><a data-toggle='modal' "
 "href='#modalProject'>project</a></span> downloaded in the computer you can "
 "analyze it here:"
 msgstr ""
-"2. Si tienes tu <span class='colored-text'><a data-toggle='modal' "
-"href='#modalProject'>proyecto</a></span> descargado en tu ordenador, podrás "
-"analizarlo aquí:"
+"2. Si tens el teu <span class='colored-text'><a data-toggle='modal' "
+"href='#modalProject'>projecte</a></span> descarregat al teu ordinador, "
+"podràs analitzar-lo aquí:"
 
-#: templates/main/main.html:183
+#: templates/main/main.html:142
 msgid ""
 "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
 "Project'>"
 msgstr ""
-"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Elige "
-"Proyecto'>"
+"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Tria "
+"Projecte'>"
 
-#: templates/main/main.html:184
+#: templates/main/main.html:143
 msgid "Analyze my project"
-msgstr "Analiza mi proyecto"
+msgstr "Analitza el meu projecte"
 
-#: templates/main/main.html:191 templates/main/main.html.py:194
+#: templates/main/main.html:150 templates/main/main.html.py:153
 #: templates/main/main_organization.html:190
 #: templates/main/main_organization.html:193
 msgid "Error! Please choose a .sb or .sb2 file or input an url"
-msgstr "¡Error! Por favor elige un fichero .sb o .sb2 o pon una url"
+msgstr "Error! Si us plau tria un fitxer .sb o .sb2 o afegeix una url"
 
-#: templates/main/main.html:198 templates/main/main_organization.html:197
+#: templates/main/main.html:157 templates/main/main_organization.html:197
 msgid "Error! Your project id is wrong"
-msgstr "¡Error! El identificador de tu proyecto es incorrecto"
+msgstr "Error! L'identificador del teu projecte és incorrecte"
 
-#: templates/main/main.html:202 templates/main/main_organization.html:201
+#: templates/main/main.html:161 templates/main/main_organization.html:201
 msgid "Error! Your project doesn't exist in Scratch's servers"
-msgstr "¡Error! Tu proyecto no existe en los servidores de Scratch"
+msgstr "Error! El teu projecte no existeix en els servidors de Scratch"
 
-#: templates/main/main.html:569 templates/statistics/statistics.html:306
+#: templates/main/main.html:528 templates/statistics/statistics.html:306
 msgid "Statistics"
-msgstr "Estadísticas"
+msgstr "Estadístiques"
 
 #: templates/main/main_organization.html:68
 msgid "Your daily progress"
-msgstr ""
+msgstr "El teu progrés diari"
 
 #: templates/main/main_organization.html:76
 #: templates/statistics/statistics.html:73
 msgid " points"
-msgstr " puntos"
+msgstr "punts"
 
 #: templates/main/main_organization.html:85
 #: templates/statistics/statistics.html:82
 msgid "Total score"
-msgstr "Puntuación total"
+msgstr "Puntuació total"
 
 #: templates/main/main_organization.html:126
 #: templates/upload/dashboard-organization.html:81
 msgid "Logged in as "
-msgstr "Conectado como "
+msgstr "Connectat com"
 
 #: templates/main/main_organization.html:128
 #: templates/upload/dashboard-organization.html:83
 msgid "Change password"
-msgstr "Cambiar contraseña"
+msgstr "Canviar contrasenya"
 
 #: templates/main/main_organization.html:130
 #: templates/upload/dashboard-organization.html:85
 msgid "Logout"
-msgstr "Salir"
+msgstr "Sortir"
 
 #: templates/main/main_organization.html:159
 #: templates/upload/dashboard-organization.html:107
 msgid "Welcome to the Dr. Scratch website, "
-msgstr "Bienvenido a Dr. Scratch "
+msgstr "Benvingut a Dr. Scratch, "
 
 #: templates/main/main_organization.html:177
 #: templates/upload/dashboard-organization.html:150
 msgid ""
 "You can analyze at the same time all the Scratch proyects of your students!"
-msgstr ""
-"Puedes analizar de una vez todos los proyectos de Scratch de tus estudiantes."
+msgstr "Pots analitzar alhora tots els projectes de Scratch dels teus alumnes!"
 
 #: templates/main/main_organization.html:181
 #: templates/upload/dashboard-organization.html:153
 msgid "Only you have to put a "
-msgstr "Sólo tienes que poner un "
+msgstr "Només cal posar un "
 
 #: templates/main/main_organization.html:181
 #: templates/upload/dashboard-organization.html:153
 msgid "file CSV "
-msgstr "fichero CSV "
+msgstr "fitxer CSV"
 
 #: templates/main/main_organization.html:181
 #: templates/upload/dashboard-organization.html:153
 msgid " with the urls of the Scratch projects you want to analyze:"
-msgstr "con las urls de los proyectos de Scratch que quieres analizar:"
+msgstr " amb les urls dels projectes de Scratch que vulguis analitzar:"
 
 #: templates/main/main_organization.html:182
 #: templates/upload/dashboard-organization.html:154
@@ -2215,119 +2190,198 @@ msgid ""
 "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose "
 "File .csv'>"
 msgstr ""
-"<input  name='csvFile' type='file' class='filestyle' data-buttonText='Elige "
-"el fichero .csv'>"
+"<input  name='csvFile' type='file' class='filestyle' data-buttonText='Tria "
+"el fitxer .csv'>"
 
 #: templates/main/main_organization.html:183
 #: templates/upload/dashboard-organization.html:155
 msgid "Analyze my projects"
-msgstr "Analiza mis proyectos"
+msgstr "Analitza els meus projectes"
 
 #: templates/main/main_organization.html:273
 msgid "How is the file .csv?"
-msgstr "¿Cómo crear el fichero .csv?"
+msgstr "Com crear el fitxer .csv?"
 
 #: templates/main/main_organization.html:275
 msgid ""
 "You must to write only the number of your students' projects. Easy, isn't it?"
 msgstr ""
+"Només cal que escriguis els números de projectes dels teus estudiants. Oi "
+"que és senzill?"
 
 #: templates/password/email.html:4
 msgid "Reset password"
-msgstr "Reestablecer contraseña"
+msgstr "Restablir la contrasenya"
 
 #: templates/password/email.html:6
 msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at Dr. Scratch."
 msgstr ""
-"Estas recibiendo este email porque has pedido restaurar tu cuenta en Dr. "
-"Scratch."
+"Has rebut aquest correu electrònic perquè has sol·licitat restablir el teu "
+"compte a Dr. Scratch."
 
 #: templates/password/email.html:7
 msgid "Please, go to the following page and choose a new password:"
-msgstr "Por favor, ve a la siguiente página y elige una nueva contraseña:"
+msgstr "Si us plau, vés a la següent pàgina i tria una nova contrasenya:"
 
 #: templates/password/email.html:9
 msgid "Your username is: "
-msgstr "Tu id es: "
+msgstr "El teu nom d'usuari és:"
 
-#: templates/password/email.html:13 templates/sign/email.html:11
+#: templates/password/email.html:13 templates/sign/email.html:26
 msgid "Thanks for using our website!"
-msgstr "¡Gracias por usar nuestra web!"
+msgstr "Gràcies per utilitzar la nostra web!"
 
-#: templates/password/email.html:14 templates/sign/email.html:12
+#: templates/password/email.html:14 templates/sign/email.html:27
 msgid "The Dr. Scratch team"
-msgstr "El equipo de Dr. Scratch"
+msgstr "L'equip de Dr. Scratch"
 
 #: templates/password/email_sended.html:12
 msgid "We sended to you an email."
-msgstr "Te  hemos enviado un email."
+msgstr "T'hem enviat un correu electrònic."
 
 #: templates/password/email_sended.html:13
 msgid "Check with your systems operator to see if the message was blocked."
-msgstr "Compruebe la carpeta de correo no deseado de su cuenta de correo."
+msgstr "Comprova la carpeta de correu no desitjat del seu compte de correu."
 
 #: templates/password/new_password.html:14
 msgid "Type your new password:"
-msgstr "Introduce tu nueva contraseña:"
+msgstr "Introdueix la teva nova contrasenya:"
 
 #: templates/password/new_password.html:19
 msgid "Confirm your password:"
-msgstr "Confirma tu contraseña:"
+msgstr "Confirma la teva contrasenya:"
 
 #: templates/password/new_password.html:25 templates/password/password.html:19
 msgid "Send"
-msgstr "Enviar"
+msgstr "Envia"
 
 #: templates/password/new_password.html:31
 msgid "The Password and Confirm password fields are not identical."
-msgstr "Las dos contraseñas no coinciden."
+msgstr "Les dues contrasenyes no coincideixen."
 
 #: templates/password/password.html:13
 msgid "Have you forgotten your password? Please introduce your email:"
-msgstr "¿Has olvidado tu contraseña? Por favor, escribe tu email:"
+msgstr ""
+"Has oblidat la teva contrasenya? Si us plau, escriu el teu correu electrònic:"
 
 #: templates/password/user_doesntexist.html:12
 msgid "User doesn't exist or the password is incorrect."
-msgstr "El usuario no existe o la contraseña es incorrecta."
+msgstr "L'usuari no existeix o la contrasenya és incorrecta."
 
 #: templates/password/user_doesntexist.html:14
 #: templates/password/wrong_form.html:14 templates/sign/signup_error.html:25
 msgid "Retry"
-msgstr "Reintentar"
+msgstr "Torna-ho a intentar"
 
 #: templates/password/wrong_form.html:12
 msgid "You must to complete all the fields."
-msgstr "Debes completar todos los campos correctamente."
+msgstr "Cal que completis tots els camps correctament."
 
-#: templates/sign/email.html:5
+#: templates/sign/createOrganization.html:168
+#: templates/sign/createUser.html:168
+#: templates/sign/registerOrganization.html:168
+msgid ""
+"You'll evaluate the projects of all your student in few time. Also, you'll "
+"see all the relevant information in a view."
+msgstr ""
+"Avaluaràs els projectes de tots els teus alumnes en poc temps. A més, veuràs "
+"la informació més important en un cop d'ull."
+
+#: templates/sign/createOrganization.html:170
+msgid ""
+"If you want to be one of the ten first organizations which prove Dr. Scratch "
+"send us an email to "
+msgstr ""
+"Si vols ser una de les 10 primeres organitzacions que proven Dr. Scratch "
+"envia'ns un correu electrònic a"
+
+#: templates/sign/createOrganization.html:170
+msgid " and we'll give you your hash to can sign up in the web"
+msgstr "i et donarem una clau de pas per poder registrar-te a la web"
+
+#: templates/sign/createOrganization.html:184
+#: templates/sign/createUser.html:183 templates/sign/organization.html:206
+#: templates/sign/registerOrganization.html:183
+msgid "Organization's name"
+msgstr "Nom de l'organització"
+
+#: templates/sign/createOrganization.html:196
+#: templates/sign/createUser.html:195 templates/sign/organization.html:222
+#: templates/sign/registerOrganization.html:195
+msgid "Password"
+msgstr "Contrasenya"
+
+#: templates/sign/createOrganization.html:198
+#: templates/sign/createUser.html:197 templates/sign/organization.html:224
+#: templates/sign/registerOrganization.html:197
+msgid ""
+"<input type='password' class='form-control' name='password' "
+"placeholder='Password'>"
+msgstr ""
+"<input type='password' class='form-control' name='password' "
+"placeholder='Contrasenya'>"
+
+#: templates/sign/createOrganization.html:203
+#: templates/sign/createUser.html:202 templates/sign/organization.html:231
+#: templates/sign/registerOrganization.html:202
+msgid "Hashkey"
+msgstr "Clau de pas"
+
+#: templates/sign/createOrganization.html:205
+#: templates/sign/createUser.html:204 templates/sign/organization.html:233
+#: templates/sign/registerOrganization.html:204
+msgid ""
+"<input type='password' class='form-control' name='hashkey' "
+"placeholder='Password'>"
+msgstr ""
+"<input type='password' class='form-control' name='hashkey' "
+"placeholder='Clau'>"
+
+#: templates/sign/email.html:20
 msgid "New organization in Dr. Scratch!"
-msgstr "¡Nueva organización en Dr. Scratch!"
+msgstr "Nova organització a Dr. Scratch!"
 
-#: templates/sign/email.html:7
+#: templates/sign/email.html:21
 msgid ""
 "You're receiving this email because you have successfully signed up in Dr. "
 "Scratch for organizations."
 msgstr ""
-"Estas recibiendo este email porque has pedido restaurar tu cuenta en Dr. "
-"Scratch."
+"Estàs rebent aquest correu electrònic perquè has sol·licitat restablir el "
+"teu compte a Dr. Scratch."
+
+#: templates/sign/organization.html:88
+msgid ""
+"<input type='text' name='username' id='username' placeholder='Username' "
+"style='margin-bottom: 15px;'>"
+msgstr ""
+"<input type='text' name='username' id='username' placeholder='Nom d usuari' "
+"style='margin-bottom: 15px;'>"
+
+#: templates/sign/organization.html:89
+msgid ""
+"<input type='password' name='password' id='password' placeholder='Password' "
+"style='margin-bottom: 15px;'>"
+msgstr ""
+"<input type='password' name='password' id='password' "
+"placeholder='Contrasenya' style='margin-bottom: 15px;'>"
 
 #: templates/sign/organization.html:93
 msgid "I forgot my password"
-msgstr "¿Has olvidado tu contraseña?"
+msgstr "Has oblidat la teva contrasenya?"
 
 #: templates/sign/organization.html:96
 msgid ""
 "<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-"
 "justified colored-text'>"
 msgstr ""
-"<input type='submit' value='Ingresar' id='sign-in' class='btn-group btn-"
+"<input type='submit' value='Accedeix' id='sign-in' class='btn-group btn-"
 "group-justified colored-text'>"
 
 #: templates/sign/organization.html:129
 msgid "Welcome to the organizations version of Dr. Scratch"
-msgstr "Bienvenido a la versión de Dr. Scratch para organizaciones"
+msgstr "Benvingut a la versió de Dr. Scratch per a organitzacions"
 
 #: templates/sign/organization.html:130
 msgid ""
@@ -2336,201 +2390,164 @@ msgid ""
 "initiatives to asses their progression in terms of coding and computational "
 "thinking skills. "
 msgstr ""
-"Dr. Scratch para organizaciones es una herramienta analítica que te ayuda a "
-"evaluar los proyectos Scratch de los estudiantes que participan en tus "
-"iniciativas y te permite controlar su progresión en relación a sus "
-"habilidades de programación y pensamiento computacional."
+"Dr. Scratch per a organitzacions és una eina analítica que t'ajuda a avaluar "
+"els projectes Scratch dels estudiants que participen en les teves "
+"iniciatives i et permeten controlar el seu progrés posant el focus en el "
+"codi i en les habilitats de pensament computacional."
 
 #: templates/sign/organization.html:189
 msgid "to join Dr. Scratch for organizations?"
-msgstr "disfrutar Dr. Scratch para organizaciones."
+msgstr "gaudir de Dr. Scratch per a organitzacions."
 
 #: templates/sign/organization.html:192
 msgid ""
 "Would you like to be one of the 10 first organizations testing this new "
 "feature? Just drop us a line at "
 msgstr ""
-"Si quieres ser una de las 10 primeras organizaciones que prueban Dr. Scratch "
-"envíanos un email a "
+"Si vols ser una de les 10 primeres organitzacions que provin Dr. Scratch "
+"envia'ns un correu electrònic a:"
 
 #: templates/sign/organization.html:192
 msgid ""
 " and we'll send you a hash key that will allow you to sign up in the web"
-msgstr " y te daremos una clave para poder registrarte en la web"
-
-#: templates/sign/organization.html:206 templates/sign/user.html:183
-msgid "Organization's name"
-msgstr "Nombre de la organización"
-
-#: templates/sign/organization.html:222 templates/sign/user.html:195
-msgid "Password"
-msgstr "Contraseña"
-
-#: templates/sign/organization.html:224 templates/sign/user.html:197
-msgid ""
-"<input type='password' class='form-control' name='password' "
-"placeholder='Password'>"
-msgstr ""
-"<input type='password' class='form-control' name='password' "
-"placeholder='Contraseña'>"
-
-#: templates/sign/organization.html:231 templates/sign/user.html:202
-msgid "Hashkey"
-msgstr "Clave"
-
-#: templates/sign/organization.html:233 templates/sign/user.html:204
-msgid ""
-"<input type='password' class='form-control' name='hashkey' "
-"placeholder='Password'>"
-msgstr ""
-"<input type='password' class='form-control' name='hashkey' "
-"placeholder='Clave'>"
+msgstr "i et donarem una clau de pas per poder registrar-te a la web"
 
 #: templates/sign/signup_error.html:13
 msgid "This name already exists. Choose another, please."
-msgstr "Ese nombre ya existe. Elige otro, por favor."
+msgstr "Aquest nom ja existeix. Escull-ne un altre, si us plau."
 
 #: templates/sign/signup_error.html:16
 msgid "This email already exists. Choose another, please."
-msgstr "Ese email ya existe. Elige otro, por favor."
+msgstr "Aquest correu electrònic ja existeix. Tria'n un altre, si us plau."
 
 #: templates/sign/signup_error.html:19
 msgid "This hash doesn't exist."
-msgstr "Esa clave no existe."
+msgstr "Aquesta clau de pas no existeix."
 
 #: templates/sign/signup_error.html:22
 msgid "You must to complete all fields."
-msgstr "Debes completar todos los campos correctamente."
-
-#: templates/sign/user.html:168
-msgid ""
-"You'll evaluate the projects of all your student in few time. Also, you'll "
-"see all the relevant information in a view."
-msgstr ""
-"Evaluarás los proyectos de todos tus estudiantes en poco tiempo. Además,"
-"verás la información más inportante de una pasada."
+msgstr "Cal que completis tots els camps correctament."
 
 #: templates/statistics/statistics.html:65
 msgid "Scores of 2015"
-msgstr ""
+msgstr "Puntuacions de 2015"
 
 #: templates/statistics/statistics.html:92
 msgid "Number of projects analyzed in 2015"
-msgstr ""
+msgstr "Nombre de projectes analitzats el 2015"
 
 #: templates/statistics/statistics.html:100
 msgid " projects"
-msgstr " proyectos"
+msgstr "projectes"
 
 #: templates/statistics/statistics.html:109
 msgid "Total projects"
-msgstr "Projectos totales"
+msgstr "Projectes totals"
 
 #: templates/statistics/statistics.html:123
 msgid "Percent levels"
-msgstr "Porcentaje de niveles"
+msgstr "Porcentatge de nivells"
 
 #: templates/statistics/statistics.html:142
 msgid "Level"
-msgstr "Nivel"
+msgstr "Nivell"
 
 #: templates/statistics/statistics.html:145
+#: templates/upload/dashboard-unregistered.html:92
 msgid "Basic"
-msgstr "Básico"
+msgstr "Bàsic"
 
 #: templates/statistics/statistics.html:148
 msgid "Development"
-msgstr "Medio"
+msgstr "Mig"
 
 #: templates/statistics/statistics.html:151
+#: templates/upload/dashboard-unregistered.html:88
 msgid "Master"
-msgstr "Avanzado"
+msgstr "Avançat"
 
 #: templates/statistics/statistics.html:164
 #: templates/statistics/statistics.html:171
 msgid "Average rate by code smell"
-msgstr "Puntuación media por mal hábito de programación"
+msgstr "Puntuació mitja per mal hàbit de programació"
 
 #: templates/statistics/statistics.html:194
 msgid "Code smell"
-msgstr "Malos hábitos"
+msgstr "Mals hàbits"
 
 #: templates/statistics/statistics.html:200
 #: templates/upload/dashboard-unregistered-master.html:240
 msgid "Duplicated scripts"
-msgstr "Programas duplicados"
+msgstr "Programes duplicats"
 
 #: templates/statistics/statistics.html:206
 #: templates/upload/dashboard-unregistered-developing.html:206
 #: templates/upload/dashboard-unregistered-master.html:242
 msgid "Sprite naming"
-msgstr "Nombres inadecuados"
+msgstr "Noms poc encertats"
 
 #: templates/statistics/statistics.html:221
 #: templates/statistics/statistics.html:228
 msgid "Average rate by programming skill"
-msgstr "Puntuación media por habilidad de programación."
+msgstr "Puntuació mitja per habilitat de programació"
 
 #: templates/statistics/statistics.html:251
 msgid "Programming skill"
-msgstr "Habilidad de programación"
+msgstr "Habilitat de programació"
 
 #: templates/statistics/statistics.html:266
 msgid "Data representation"
-msgstr "Representación de los datos"
+msgstr "Representació de dades"
 
 #: templates/statistics/statistics.html:310
 msgid "These statistics are update every night at 00.00h CEST."
-msgstr ""
-"Estas estadísticas son actualizadas todas las noches a las 00.00h CEST."
+msgstr "Aquestes estadístiques són actualitzades cada nit a les 00.00h CEST."
 
 #: templates/upload/dashboard-organization.html:122
 msgid "You can download your results. You do click in the following button:"
-msgstr "Puedes descargar tus resultados. Haz click en el siguiente botón:"
+msgstr "Pots descarregar els teus resultats. Fes clic al següent botó:"
 
 #: templates/upload/dashboard-organization.html:125
 msgid "Download .csv file"
-msgstr "Descargar el fichero .csv "
+msgstr "Descarregar el fitxer .csv"
 
 #: templates/upload/dashboard-organization.html:132
 msgid "Or...you can analyze another file with more projects:"
-msgstr "O... analiza otro fichero con más proyectos:"
+msgstr "O... analitza un altre fitxer amb més projectes:"
 
 #: templates/upload/dashboard-organization.html:135
 msgid "Analyze again!"
-msgstr "¡Analizar otra vez!"
+msgstr "Analitzar de nou!"
 
 #: templates/upload/dashboard-organization.html:163
 msgid "Error! Please choose a .csv file"
-msgstr ""
-"¡Error! Por favor elige un fichero .csv/reset_password_confirm/MQ-444-"
-"d881b68117aba8cbeb9a/"
+msgstr "Error! Si us plau tria un fitxer .csv"
 
 #: templates/upload/dashboard-organization.html:245
 msgid "<img class='framed' src='../../static/app/images/url-en.png' />"
-msgstr "<img class='framed' src='../../static/app/images/url-es.png' />"
+msgstr "<img class='framed' src='../../static/app/images/url-ca.png' />"
 
 #: templates/upload/dashboard-organization.html:270
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
-msgstr "<img class='framed' src='../../static/app/images/project-es.png' />"
+msgstr "<img class='framed' src='../../static/app/images/project-ca.png' />"
 
 #: templates/upload/dashboard-unregistered-basic.html:63
 #: templates/upload/dashboard-unregistered-developing.html:58
 #: templates/upload/dashboard-unregistered-master.html:77
 msgid "Score"
-msgstr "Puntuación"
+msgstr "Puntuació"
 
 #: templates/upload/dashboard-unregistered-basic.html:64
 #: templates/upload/dashboard-unregistered-developing.html:59
 #: templates/upload/dashboard-unregistered-master.html:78
 msgid "This section shows the total score."
-msgstr "Esta sección muestra la puntuación total."
+msgstr "Aquesta secció mostra la puntuació total."
 
 #: templates/upload/dashboard-unregistered-basic.html:68
 #: templates/upload/dashboard-unregistered-developing.html:63
 #: templates/upload/dashboard-unregistered-master.html:82
 msgid "Improve the score"
-msgstr "Mejora tu puntuación"
+msgstr "Millora la teva puntuació"
 
 #: templates/upload/dashboard-unregistered-basic.html:69
 #: templates/upload/dashboard-unregistered-developing.html:64
@@ -2538,27 +2555,27 @@ msgstr "Mejora tu puntuación"
 msgid ""
 "You do not like the score that you got? Improve it following our advice."
 msgstr ""
-"¿No te gusta la puntuación que has obtenido? ¡Sigue nuestros consejos para "
-"mejorarla!"
+"No t'agrada la puntuació obtinguda? Segueix els nostres consells per "
+"millorar-la!"
 
 #: templates/upload/dashboard-unregistered-basic.html:73
 #: templates/upload/dashboard-unregistered-developing.html:73
 #: templates/upload/dashboard-unregistered-master.html:92
 msgid "Score in detail"
-msgstr "Puntuación en detalle:"
+msgstr "Puntuació al detall"
 
 #: templates/upload/dashboard-unregistered-basic.html:74
 #: templates/upload/dashboard-unregistered-developing.html:74
 #: templates/upload/dashboard-unregistered-master.html:93
 msgid "Here we show the score in each programming skill."
 msgstr ""
-"Ésta es la puntuación de cada habilidad de programación, evaluada de 0 a 3."
+"Aquesta és la puntuació de cada habilitat de programació, avaluada de 0 a 3."
 
 #: templates/upload/dashboard-unregistered-basic.html:116
 #: templates/upload/dashboard-unregistered-developing.html:125
 #: templates/upload/dashboard-unregistered-master.html:164
 msgid "Score:"
-msgstr "Puntuación:"
+msgstr "Puntuació:"
 
 #: templates/upload/dashboard-unregistered-basic.html:117
 #: templates/upload/dashboard-unregistered-developing.html:126
@@ -2568,35 +2585,36 @@ msgid ""
 " I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
 "Beat it! @DrScratchTool "
 msgstr ""
-"He conseguido %(points)s puntos analizando mi proyecto en Dr. Scratch!¡A ver "
-"si lo superas! @DrScratchTool"
-
-#: templates/upload/dashboard-unregistered-basic.html:121
-msgid ""
-"<h3 class='text-left dark-text'>Your level is... <strong>BASIC! </strong></"
-"h3>"
-msgstr ""
-"<h3 class='text-left dark-text'>Tu nivel es...<strong>¡BÁSICO! </strong></h3>"
+"He aconseguit %(points)s punts analitzant el meu projecte a Dr. Scratch! "
+"Pots superar-ho? @DrScratchTool"
 
 #: templates/upload/dashboard-unregistered-basic.html:122
-msgid "You're at the beginning of a <br>great adventure . . . Keep it up!"
-msgstr "Estás al principio de una gran aventura. . . <br>¡Continúa así!"
+msgid ""
+"<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></"
+"h3>"
+msgstr ""
+"<h3 class='text-left dark-text'>El teu nivell és...<strong>BÀSIC </strong></"
+"h3>"
 
-#: templates/upload/dashboard-unregistered-basic.html:132
+#: templates/upload/dashboard-unregistered-basic.html:123
+msgid "You're at the beginning of a <br>great adventure . . . Keep it up!"
+msgstr "Et trobes a l'inici d'una gran aventura. . . <br>Segueix així!"
+
+#: templates/upload/dashboard-unregistered-basic.html:133
 #: templates/upload/dashboard-unregistered-developing.html:141
 #: templates/upload/dashboard-unregistered-master.html:184
 msgid "Want to level up?"
-msgstr "¿Quieres subir de nivel?"
+msgstr "Vols pujar de nivell?"
 
-#: templates/upload/dashboard-unregistered-basic.html:134
+#: templates/upload/dashboard-unregistered-basic.html:135
 #: templates/upload/dashboard-unregistered-developing.html:143
 #: templates/upload/dashboard-unregistered-master.html:186
 msgid "Come back to your Scratch project."
-msgstr "Vuelve a tu proyecto Scratch"
+msgstr "Torna al teu projecte Scratch"
 
-#: templates/upload/dashboard-unregistered-basic.html:147
-#: templates/upload/dashboard-unregistered-basic.html:156
-#: templates/upload/dashboard-unregistered-basic.html:202
+#: templates/upload/dashboard-unregistered-basic.html:148
+#: templates/upload/dashboard-unregistered-basic.html:157
+#: templates/upload/dashboard-unregistered-basic.html:203
 #: templates/upload/dashboard-unregistered-developing.html:155
 #: templates/upload/dashboard-unregistered-developing.html:165
 #: templates/upload/dashboard-unregistered-developing.html:173
@@ -2611,23 +2629,28 @@ msgid ""
 "                                        %(key)s\n"
 "                                        "
 msgstr ""
-
-#: templates/upload/dashboard-unregistered-basic.html:188
-#: templates/upload/dashboard-unregistered-developing.html:229
-#: templates/upload/dashboard-unregistered-master.html:290
-msgid "Concept"
-msgstr "Concepto"
+"\n"
+"                                        %(key)s\n"
+"                                        "
 
 #: templates/upload/dashboard-unregistered-basic.html:189
+#: templates/upload/dashboard-unregistered-developing.html:229
+#: templates/upload/dashboard-unregistered-master.html:290
+#: templates/upload/dashboard-unregistered.html:114
+msgid "Concept"
+msgstr "Concepte"
+
+#: templates/upload/dashboard-unregistered-basic.html:190
 #: templates/upload/dashboard-unregistered-developing.html:230
 #: templates/upload/dashboard-unregistered-master.html:291
+#: templates/upload/dashboard-unregistered.html:115
 msgid "Points"
-msgstr "Puntos"
+msgstr "Punts"
 
 #: templates/upload/dashboard-unregistered-developing.html:68
 #: templates/upload/dashboard-unregistered-master.html:87
 msgid "Bad habits in programming"
-msgstr "Malos hábitos en programación"
+msgstr "Mals hàbits en programació"
 
 #: templates/upload/dashboard-unregistered-developing.html:69
 #: templates/upload/dashboard-unregistered-master.html:88
@@ -2635,147 +2658,170 @@ msgid ""
 "If you correct your bad habits in programming, you will avoid problems in "
 "the future."
 msgstr ""
-"Si corriges ahora tus malos hábitos en programación, evitarás problemasen el "
-"futuro."
+"Si corregeixes ara els teus mals hàbits en programació, evitaràs problemes "
+"en el futur."
 
 #: templates/upload/dashboard-unregistered-developing.html:131
 msgid ""
-"<h3 class='text-left dark-text'>Your level is... <strong>DEVELOPING! </"
-"strong></h3>"
+"<h3 class='text-left dark-text'>Your level is... <br></br> "
+"<strong>DEVELOPING! </strong></h3>"
 msgstr ""
-"<h3 class='text-left dark-text'>Tu nivel es...<strong>¡MEDIO! </strong></h3>"
+"<h3 class='text-left dark-text'>El teu nivell és...<strong>MIG </strong></h3>"
 
 #: templates/upload/dashboard-unregistered-developing.html:132
-msgid "You're doing a great job. Keep it up!!!"
-msgstr "Estás haciendo un gran trabajo. ¡Sigue así!"
+msgid "You're doing a great job.<br> Keep it up!!!"
+msgstr "Estàs fent un gran treball. Segueix així!!!"
 
 #: templates/upload/dashboard-unregistered-developing.html:190
 #: templates/upload/dashboard-unregistered-master.html:237
 msgid "Details to fix:"
-msgstr "Detalles a corregir:"
+msgstr "Detalls a corregir:"
 
 #: templates/upload/dashboard-unregistered-developing.html:193
 #: templates/upload/dashboard-unregistered-master.html:259
 msgid "Sprites attributes"
-msgstr "Atributos no inicializados correctamente"
+msgstr "Atributs no inicialitzats correctament"
 
 #: templates/upload/dashboard-unregistered-developing.html:197
 #: templates/upload/dashboard-unregistered-master.html:263
 msgid "Your project does not have uninitialized attributes, good job!"
-msgstr "Tu proyecto no tiene atributos sin inicializar,¡Buen trabajo!"
+msgstr "El teu projecte no té atributs sense inicialitzar, bon treball!"
 
 #: templates/upload/dashboard-unregistered-developing.html:203
 #: templates/upload/dashboard-unregistered-master.html:269
 msgid " sprite attributes."
-msgstr "atributos no inicializados correctamente."
+msgstr "atribuits no inicialitzats correctament"
 
 #: templates/upload/dashboard-unregistered-developing.html:208
 #: templates/upload/dashboard-unregistered-master.html:244
 msgid " sprite naming."
-msgstr "nombres inadecuados."
+msgstr "noms inadequats."
 
 #: templates/upload/dashboard-unregistered-master.html:170
 msgid ""
-"<h3 class='text-left dark-text'>Your level is...  <strong> MASTER! </"
-"strong></h3>"
+"<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></"
+"h3>"
 msgstr ""
-"<h3 class='text-left dark-text'>Tu nivel es... <strong>¡ALTO!</strong></h3>"
+"<h3 class='text-left dark-text'>El teu nivell és...  <strong>AVANÇAT! </"
+"strong></h3>"
 
 #: templates/upload/dashboard-unregistered-master.html:171
 msgid "You're the master of the universe!!! "
-msgstr "¡¡¡Eres el master del universo!!!"
+msgstr "Ets el màster de l'univers!!!"
 
 #: templates/upload/dashboard-unregistered-master.html:240
 msgid " duplicated scripts."
-msgstr "Programas Duplicados"
+msgstr "Programes Duplicats"
 
 #: templates/upload/dashboard-unregistered-master.html:250
 msgid "Your project does not have dead code, good job!"
-msgstr "Tu proyecto no tiene código muerto, ¡Buen trabajo!"
+msgstr "El teu projecte no té codi mort, bon treball!"
 
 #: templates/upload/dashboard-unregistered-master.html:252
 msgid "You have dead code in "
-msgstr "Tienes código no ejecutado en "
+msgstr "Tins un codi no executat a"
 
 #: templates/upload/dashboard-unregistered-master.html:257
 msgid " dead code."
-msgstr " código muerto."
+msgstr "codi mort."
 
-#~ msgid ""
-#~ "<input type='submit' value='Sign Up' id='sign-up' class='btn btn-primary "
-#~ "standard-button'>"
-#~ msgstr ""
-#~ "<input type='submit' value='Regístrate' id='sign-up' class='btn btn-"
-#~ "primary standard-button'>"
+#: templates/upload/dashboard-unregistered.html:10
+msgid "Project results"
+msgstr ""
 
-#~ msgid ""
-#~ "<input type='submit' value='Sign In' id='sign-in' class='btn btn-primary "
-#~ "standard-button'>"
-#~ msgstr ""
-#~ "<input type='submit' value='Ingresar' id='sign-in' class='btn-group btn-"
-#~ "group-justified colored-text'>"
+#: templates/upload/dashboard-unregistered.html:48
+#: templates/upload/dashboard-unregistered.html:57
+#: templates/upload/dashboard-unregistered.html:59
+msgid "Dashboard"
+msgstr ""
 
-#~ msgid ""
-#~ "If you want to be one of the ten first organizations which prove Dr. "
-#~ "Scratch send us an email to "
-#~ msgstr ""
-#~ "Si quieres ser una de las 10 primeras organizaciones que prueban Dr. "
-#~ "Scratch envíanos un email a "
+#: templates/upload/dashboard-unregistered.html:57
+msgid "Overview"
+msgstr ""
 
-#~ msgid " and we'll give you your hash to can sign up in the web"
-#~ msgstr " y te daremos una clave para poder registrarte en la web"
+#: templates/upload/dashboard-unregistered.html:63
+#, fuzzy
+#| msgid "Come back to your Scratch project."
+msgid "Welcome to Doctor Scratch. Project results."
+msgstr "Torna al teu projecte Scratch"
 
-#~ msgid "Project results"
-#~ msgstr "Resultados"
+#: templates/upload/dashboard-unregistered.html:79
+#, fuzzy
+#| msgid "Score:"
+msgid "CT Score:"
+msgstr "Puntuació:"
 
-#~ msgid "Dashboard"
-#~ msgstr "Resultados"
+#: templates/upload/dashboard-unregistered.html:86
+msgid "Your level:"
+msgstr ""
 
-#~ msgid "Overview"
-#~ msgstr " "
+#: templates/upload/dashboard-unregistered.html:90
+#, fuzzy
+#| msgid "Development"
+msgid "Developing"
+msgstr "Mig"
 
-#~ msgid "Welcome to Doctor Scratch. Project results."
-#~ msgstr "Bienvenido a Doctor Scratch. Resultados del proyecto."
+#: templates/upload/dashboard-unregistered.html:101
+#, fuzzy, python-format
+#| msgid ""
+#| " I have just obtained %(points)s points analyzing my project in Dr. "
+#| "Scratch! Beat it! @DrScratchTool "
+msgid ""
+"I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
+"Beat it! @DrScratchTool "
+msgstr ""
+"He aconseguit %(points)s punts analitzant el meu projecte a Dr. Scratch! "
+"Pots superar-ho? @DrScratchTool"
 
-#~ msgid "CT Score:"
-#~ msgstr "Puntuación:"
+#: templates/upload/dashboard-unregistered.html:109
+#, fuzzy
+#| msgid "Score in detail"
+msgid "CT Score in detail:"
+msgstr "Puntuació al detall"
 
-#~ msgid "Your level:"
-#~ msgstr "Tu nivel:"
+#: templates/upload/dashboard-unregistered.html:127
+#: templates/upload/dashboard-unregistered.html:131
+#: templates/upload/dashboard-unregistered.html:135
+#, fuzzy
+#| msgid "Learn More"
+msgid "Learn more!!!"
+msgstr "Aprèn més"
 
-#~ msgid "Developing"
-#~ msgstr "Medio"
+#: templates/upload/dashboard-unregistered.html:139
+msgid "Well done!!!"
+msgstr ""
 
-#~ msgid ""
-#~ "I have just obtained %(points)s points analyzing my project in Dr. "
-#~ "Scratch! Beat it! @DrScratchTool "
-#~ msgstr ""
-#~ "He conseguido %(points)s puntos analizando mi proyecto en Dr. Scratch!¡A "
-#~ "ver si lo superas! @DrScratchTool"
+#: templates/upload/dashboard-unregistered.html:181
+#, fuzzy
+#| msgid "Sprite naming"
+msgid "Sprites naming"
+msgstr "Noms poc encertats"
 
-#~ msgid "CT Score in detail:"
-#~ msgstr "Puntuación en detalle:"
+#: templates/upload/dashboard-unregistered.html:190
+#, fuzzy
+#| msgid "Incorrect names"
+msgid "Incorrect name:"
+msgstr "Noms poc encertats"
 
-#~ msgid "Learn more!!!"
-#~ msgstr "¡¡¡Aprende más!!!"
+#: templates/upload/dashboard-unregistered.html:209
+#, fuzzy
+#| msgid "Dead code"
+msgid "Dead Code"
+msgstr "Codi Mort"
 
-#~ msgid "Well done!!!"
-#~ msgstr "¡¡¡Bien hecho!!!"
+#: templates/upload/dashboard-unregistered.html:220
+msgid "blocks"
+msgstr ""
 
-#~ msgid "Sprites naming"
-#~ msgstr "Nombres inadecuados"
+#: templates/upload/dashboard-unregistered.html:242
+#, fuzzy
+#| msgid "Attribute Initialization"
+msgid "Sprite attributes initialization"
+msgstr "Atributs no inicialitzats correctament"
 
-#~ msgid "Incorrect name:"
-#~ msgstr "Nombres no personalizados"
+#: templates/upload/dashboard-unregistered.html:254
+msgid "modified but not initialized correctly."
+msgstr ""
 
-#~ msgid "Dead Code"
-#~ msgstr "Código Muerto"
-
-#~ msgid "blocks"
-#~ msgstr "bloques"
-
-#~ msgid "Sprite attributes initialization"
-#~ msgstr "Atributos no inicializados correctamente"
-
-#~ msgid "modified but not initialized correctly."
-#~ msgstr "ha sido modificado pero no inicializado correctamente."
+#~ msgid "Username"
+#~ msgstr "Nom d'usuari"

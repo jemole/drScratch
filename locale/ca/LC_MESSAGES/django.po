@@ -2053,7 +2053,7 @@ msgid ""
 msgstr ""
 "Benvingut a la web de Dr. Scratch, una aplicació que avalua projectes "
 "Scratch en relació a diferents aspectes del pensament computacional. Aquest "
-"analitzador és una eina molt útil tanto per avaluar els teus projectes "
+"analitzador és una eina molt útil tant per avaluar els teus projectes "
 "Scratch com els dels teus alumnes."
 
 #: templates/main/main.html:115

@@ -2087,7 +2087,7 @@ msgstr "Aprende Más"
 
 #: templates/main/main.html:170
 msgid "There are two options to analyze your Scratch project now!"
-msgstr "Hay dos opciones para analizar un proyecto de Scratch con Dr. Scratch"
+msgstr "Hay dos opciones para anlizar un proyecto de Scratch con Dr. Scratch"
 
 #: templates/main/main.html:175
 msgid ""
