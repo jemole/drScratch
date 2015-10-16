@@ -579,15 +579,21 @@ def organization(request, name):
         if request.user.is_authenticated():
             username = request.user.username
             if username == name:
-                user = Organization.objects.get(username=username)
-                img = user.img
-                dic={'username':username,
-                "img":str(img)}
+                if Organization.objects.filter(username = username):
+                    user = Organization.objects.get(username=username)
+                    img = user.img
+                    dic={'username':username,
+                    "img":str(img)}
 
-                return render_to_response("organization/org_main.html",
-                        dic,
-                        context_instance = RC(request))
+                    return render_to_response("organization/org_main.html",
+                            dic,
+                            context_instance = RC(request))
+                else:
+                    logout(request)
+                    return HttpResponseRedirect("/")
+
             else:
+                #logout(request)
                 return render_to_response("sign/organization.html",
                                         context_instance = RC(request))
         return render_to_response("sign/organization.html", context_instance = RC(request))
@@ -1067,7 +1073,7 @@ def signUpCoder(request):
     if request.method == 'POST':
         form = CoderForm(request.POST)
         if form.is_valid():
-
+            print "OK"
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
@@ -1152,14 +1158,18 @@ def coder(request, name):
         if request.user.is_authenticated():
             username = request.user.username
             if username == name:
-                user = Coder.objects.get(username=username)
-                img = user.img
-                dic={'username':username,
-                "img":str(img)}
+                if Coder.objects.filter(username = username):
+                    user = Coder.objects.get(username=username)
+                    img = user.img
+                    dic={'username':username,
+                    "img":str(img)}
 
-                return render_to_response("coder/coder_main.html",
-                                            dic,
-                                            context_instance = RC(request))
+                    return render_to_response("coder/coder_main.html",
+                                                dic,
+                                                context_instance = RC(request))
+                else:
+                    logout(request)
+                    return HttpResponseRedirect("/organization")
             else:
                 return render_to_response("sign/organization.html",
                                         context_instance = RC(request))
@@ -1167,18 +1177,22 @@ def coder(request, name):
     else:
         return HttpResponseRedirect("/")
 
+
+
 def loginCoder(request):
     """Log in app to user"""
     if request.method == 'POST':
-        form = UserForm(request.POST)
+        flag = False
+        form = LoginOrganizationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return HttpResponseRedirect('/myDashboard')
+            coder = authenticate(username=username, password=password)
+            if coder is not None:
+                if coder.is_active:
+                    login(request, coder)
+                    return HttpResponseRedirect('/coder/' + coder.username)
+
             else:
                 flag = True
                 return render_to_response("password/user_doesntexist.html",
@@ -1189,7 +1203,7 @@ def loginCoder(request):
         return HttpResponseRedirect("/")
 
 
-def logoutUser(request):
+def logoutCoder(request):
     """Method for logging out"""
     logout(request)
     return HttpResponseRedirect('/')

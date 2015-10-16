@@ -30,7 +30,7 @@ urlpatterns = (
 
     #Coders
     url(r'^coderHash', 'app.views.coderHash',),
-    url(r'^coder$', 'app.views.signUpCoder',),
+    url(r'^signUpCoder$', 'app.views.signUpCoder',),
     url(r'^coder/(\w+)', 'app.views.coder',),
     url(r'^loginCoder$', 'app.views.loginCoder',),
     url(r'^logoutCoder$', 'app.views.logoutCoder',),
