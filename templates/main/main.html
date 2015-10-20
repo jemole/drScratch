@@ -76,9 +76,18 @@
                         <li class="navbar-brand"><a href="#section2"><em>{% trans "How?" %}</em></a></li>
                         <li class="navbar-brand"><a href="#section3"><em>{% trans "Working on" %}</em></a></li>
                         <li class="navbar-brand"><a href="#section4"><em>{% trans "Contact us" %}</em></a></li>
-                        <li class="navbar-brand"><a href="/organization"><em class="colored-text">{% trans "Organizations" %}</em></a></li>
+                        <li class="navbar-brand"><a href="/signUpOrganization"><em class="colored-text">{% trans "Organizations" %}</em></a></li>
                       </ul>
 
+                     {% if flagUser %}
+                         <!-- NAVIGATION LINK -->
+                         <ul class="nav navbar-nav navbar-right main-navigation ">
+                             <li class="navbar-brand"><a class="navbar-brand pull-right" href="/coder/{{user}}"><span class="icon-basic-home colored-text"></span><em>{{ user }}</em></a></li>
+                        </ul>
+
+
+
+                     {% else %}
                     <!-- LOGIN REGISTER -->
                     <ul class="nav navbar-nav navbar-right login-register small-text">
                       <li style="display: block;" class="login js-login dropdown">
@@ -124,6 +133,8 @@
                           </ul>
                         </li>
 
+                        {% endif %}
+
                         <li style="display: none;" class="register-button js-register inpage-scroll">
                             <a href="#home" class="navbar-register-button">{% trans "Get Started" %}</a>
                         </li>
@@ -161,7 +172,9 @@
                         </div>
 
                     </div>
+
                     <div class="container">
+                        <br></br>
                     <div class="col-md-5">
 
                         <!-- VERTICAL PROJECT FORM -->
@@ -170,7 +183,7 @@
 
                                 <h5 class="dark-text form-heading"><strong>{% trans "There are two options to analyze your Scratch project now!" %}</strong></h5>
 
-                                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/selector">
+                                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/showDashboard">
                                 {% csrf_token %}
 
                                     {% trans "1. Introduce the <span class='colored-text'><a data-toggle='modal' href='#modalUrl'>url</a></span> of your Scratch project, you don't have to download it:" %}

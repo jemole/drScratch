@@ -22,7 +22,12 @@
                             <h4>{% trans "You must to complete all fields." %}</h4>
                         {% endif %}
                         <div>
+                        {% if flagOrganization %}
                             <a class="btn btn-primary standard-button" href="organization">{% trans "Retry" %}</a>
+                        {% endif %}
+                        {% if flagCoder %}
+                            <a class="btn btn-primary standard-button" href="/">{% trans "Retry" %}</a>
+                        {% endif %}
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,7 @@ urlpatterns = (
     #Blog
     url(r'^blog$', RedirectView.as_view(url='https://drscratchblog.wordpress.com')),
     #url(r'^profile', 'DrScratchApp.views.profileSettings',),
-    url(r'^selector', 'app.views.selector',),
+    url(r'^showDashboard', 'app.views.showDashboard',),
     url(r'^statistics$', 'app.views.statistics',),
     url(r'^collaborators$', 'app.views.collaborators',),
 
@@ -19,21 +19,28 @@ urlpatterns = (
     url(r'^reset_password_confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', 'app.views.reset_password_confirm',name="reset_password_confirm"),
     url(r'^changePwd$', 'app.views.changePwd',),
     url(r'^organizationHash', 'app.views.organizationHash',),
-    url(r'^organization$', 'app.views.signUpOrganization',),
-    url(r'^organization/stats/(\w+)', 'app.views.organization_stats',),
-    url(r'^organization/downloads/(\w+)', 'app.views.organization_downloads',),
-    url(r'^organization/settings/(\w+)', 'app.views.organization_settings',),
+    url(r'^signUpOrganization$', 'app.views.signUpOrganization',),
+    url(r'^organization/stats/(\w+)', 'app.views.stats',),
+    url(r'^organization/downloads/(\w+)', 'app.views.downloads',),
+    url(r'^organization/settings/(\w+)', 'app.views.settings',),
     url(r'^organization/(\w+)', 'app.views.organization',),
     url(r'^loginOrganization$', 'app.views.loginOrganization',),
     url(r'^logoutOrganization$', 'app.views.logoutOrganization',),
-    url(r'^analyzeCSV$', 'app.views.analyzeCSV',),
+
 
     #Coders
     url(r'^coderHash', 'app.views.coderHash',),
     url(r'^signUpCoder$', 'app.views.signUpCoder',),
+    url(r'^coder/stats/(\w+)', 'app.views.stats',),
+    url(r'^coder/downloads/(\w+)', 'app.views.downloads',),
+    url(r'^coder/settings/(\w+)', 'app.views.settings',),
     url(r'^coder/(\w+)', 'app.views.coder',),
     url(r'^loginCoder$', 'app.views.loginCoder',),
     url(r'^logoutCoder$', 'app.views.logoutCoder',),
+
+    #Upload a .CSV
+    url(r'^analyzeCSV$', 'app.views.analyzeCSV',),
+
 
     #Error pages
     #url(r'^500', 'app.views.error500',),

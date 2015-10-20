@@ -52,5 +52,6 @@ def translate_CT(lang):
                "dup_scripts":"Duplicate scripts",
                "sprite_naming":"Sprite naming",
                "dead_code":"Dead code",
-               "attr_init":"Sprite attributes"}
+               "attr_init":"Sprite attributes",
+               "error":"Error analyzing project"}
     return dic

@@ -1,4 +1,4 @@
-{% extends 'organization/base.html' %}
+{% extends 'coder/base.html' %}
 {% load i18n %}
 {% block content %}
         <div class="col-sm-12 col-md-12 main">
@@ -19,7 +19,8 @@
                 {% for file in csv %}
                 <tr>
                 <td>{{ file.date}}</td>
-                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/organization/downloads/{{ username }}">
+                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/coder/downloads/{{ username }}">
+                {% csrf_token %}
                 <td><button value="{{ file.filename }}" name="csv"type="submit">{% trans "Download" %}</button></td>
                 </form>
 

@@ -10,9 +10,17 @@
                 <div class="row marketing">
                     <div class="jumbotron">
                         <h4>{% trans "User doesn't exist or the password is incorrect." %}</h4>
+                        {% if flagOrganization %}
                         <div>
                             <a class="btn btn-primary standard-button" href="/organization">{% trans "Retry" %}</a>
                         </div>
+                        {% endif %}
+                        {% if flagCoder %}
+                        <div>
+                            <a class="btn btn-primary standard-button" href="/">{% trans "Retry" %}</a>
+                        </div>
+                        {% endif %}
+
                     </div>
                 </div>
             </div>

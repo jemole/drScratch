@@ -1,7 +1,7 @@
-{% extends 'organization/base.html' %}
+{% extends 'coder/base.html' %}
 {% load i18n %}
 {% block content %}
-    
+
         <div class="col-sm-12 col-md-12 main">
           <h2 class="page-header">{% trans "Analysis" %}</h2>
             <div class="row">
@@ -12,8 +12,7 @@
                     <h4>  {% trans "Do you want to analyze one project?" %}</h4>
 
                       <h5 class="dark-text form-heading"><strong>{% trans "There are two options to analyze your Scratch project now!" %}</strong></h5>
-
-                      <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/selector">
+                      <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/showDashboard">
                       {% csrf_token %}
 
                           {% trans "1. Introduce the <span class='colored-text'><a data-toggle='modal' href='#modalUrl'>url</a></span> of your Scratch project, you don't have to download it:" %}

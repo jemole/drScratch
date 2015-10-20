@@ -20,6 +20,7 @@
                 <tr>
                 <td>{{ file.date}}</td>
                 <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/organization/downloads/{{ username }}">
+                {% csrf_token %}
                 <td><button value="{{ file.filename }}" name="csv"type="submit">{% trans "Download" %}</button></td>
                 </form>
 
