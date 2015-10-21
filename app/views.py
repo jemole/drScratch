@@ -63,10 +63,15 @@ def main(request):
     flagUser = 0
     if request.user.is_authenticated():
         user = request.user.username
+        if Organization.objects.filter(username=user):
+            page = 'organization'
+        elif Coder.objects.filter(username=user):
+            page = 'coder'
         flagUser = 1
         createDashboards()
         return render_to_response('main/main.html',
                                     {'user':user,
+                                     'page':page,
                                      'flagUser': flagUser})
     else:
         user = None
@@ -100,94 +105,80 @@ def error500(request):
 def showDashboard(request):
     """Show the different dashboards"""
     if request.method == 'POST':
+        error = False
+        id_error = False
+        no_exists = False
         #Analyze the project and looking for errors
         d = selector(request)
+        #Find which is authenticated (organization or coder or none)
+        user = str(segmentation(request))
+        #Find if any error has occurred
+        if d['Error'] == 'analyzing':
+            return render_to_response(user + '/error_analyzing.html',
+                                      RC(request))
+        elif d['Error'] == 'MultiValueDict':
+            error = True
+            return render_to_response(user + '/main.html',
+                        {'error':error},
+                        RC(request))
+        elif d['Error'] == 'id_error':
+            id_error = True
+            return render_to_response(user + '/main.html',
+                        {'id_error':id_error},
+                        RC(request))
+        elif d['Error'] == 'no_exists':
+            no_exists = True
+            return render_to_response(user + '/main.html',
+                {'no_exists':no_exists},
+                RC(request))
 
-        #Find which is authenticated (organization or coder)
-        if request.user.is_authenticated():
-            username = request.user.username
-            if Organization.objects.filter(username = username):
-                if d["mastery"]["points"] >= 15:
-                    return render_to_response("organization/dashboard-unregistered-master.html",d, RC(request))
-                elif d["mastery"]["points"] > 7:
-                    return render_to_response("organization/dashboard-unregistered-developing.html",d, RC(request))
-                else:
-                    return render_to_response("organization/dashboard-unregistered-basic.html", d, RC(request))
-            elif Coder.objects.filter(username = username):
-                if d["mastery"]["points"] >= 15:
-                    return render_to_response("coder/dashboard-unregistered-master.html",d, RC(request))
-                elif d["mastery"]["points"] > 7:
-                    return render_to_response("coder/dashboard-unregistered-developing.html",d, RC(request))
-                else:
-                    return render_to_response("coder/dashboard-unregistered-basic.html", d, RC(request))
-
+        #Show the dashboard according the CT level
         else:
             if d["mastery"]["points"] >= 15:
-                return render_to_response("upload/dashboard-unregistered-master.html",d, RC(request))
+                return render_to_response(user + "/dashboard-unregistered-master.html",d, RC(request))
             elif d["mastery"]["points"] > 7:
-                return render_to_response("upload/dashboard-unregistered-developing.html",d, RC(request))
+                return render_to_response(user + "/dashboard-unregistered-developing.html",d, RC(request))
             else:
-                return render_to_response("upload/dashboard-unregistered-basic.html",d, RC(request))
+                return render_to_response(user + "/dashboard-unregistered-basic.html", d, RC(request))
 
     else:
         return HttpResponseRedirect('/')
 
 
 def selector(request):
-    """Choose between analysis by URL or project and if any error is occurring"""
-    if request.method == 'POST':
-        error = False
-        id_error = False
-        no_exists = False
+    """Choose between analysis by URL or project"""
+    error = False
+    id_error = False
+    no_exists = False
 
-        if "_upload" in request.POST:
-            d = uploadUnregistered(request)
-            if d['Error'] == 'analyzing':
-                return render_to_response('error/analyzing.html',
-                                          RC(request))
-            elif d['Error'] == 'MultiValueDict':
-                error = True
-                return render_to_response('main/main.html',
-                            {'error':error},
-                            RC(request))
-            else:
-                dic = {'url': ""}
-                d.update(dic)
+    if "_upload" in request.POST:
+        d = uploadUnregistered(request)
+        if (d['Error'] != 'analyzing') and (d['Error'] != 'MultiValueDict'):
+            dic = {'url': ""}
+            d.update(dic)
 
-        elif '_url' in request.POST:
-            d = urlUnregistered(request)
-            if d['Error'] == 'analyzing':
-                return render_to_response('error/analyzing.html',
-                                          RC(request))
-            elif d['Error'] == 'MultiValueDict':
-                error = True
-                return render_to_response('main/main.html',
-                            {'error':error},
-                            RC(request))
-            elif d['Error'] == 'id_error':
-                id_error = True
-                return render_to_response('main/main.html',
-                            {'id_error':id_error},
-                            RC(request))
-            elif d['Error'] == 'no_exists':
-                no_exists = True
-                return render_to_response('main/main.html',
-                    {'no_exists':no_exists},
-                    RC(request))
-            else:
-                form = UrlForm(request.POST)
-                url = request.POST['urlProject']
-                dic = {'url': url}
-                d.update(dic)
+    elif '_url' in request.POST:
+        d = urlUnregistered(request)
+        if (d['Error'] != 'analyzing') and (d['Error'] != 'MultiValueDict') and (d['Error'] != 'id_error') and (d['Error'] == 'no_exists'):
+            form = UrlForm(request.POST)
+            url = request.POST['urlProject']
+            dic = {'url': url}
+            d.update(dic)
 
-        return d
+    return d
 
+def segmentation(request):
+    """Find which is authenticated (organization or coder or none)"""
+    if request.user.is_authenticated():
+        username = request.user.username
+        if Organization.objects.filter(username = username):
+            user = 'organization'
+        elif Coder.objects.filter(username = username):
+            user = 'coder'
     else:
-        return HttpResponseRedirect('/')
+        user = 'main'
 
-
-
-
+    return user
 
 def handler_upload(fileSaved, counter):
     """ Necessary to uploadUnregistered"""
@@ -326,9 +317,12 @@ def urlUnregistered(request):
                 return d
             else:
                 try:
-                    organization = ""
+                    if request.user.is_authenticated():
+                        username = request.user.username
+                    else:
+                        username = None
                     method = "url"
-                    (pathProject, file) = sendRequestgetSB2(idProject, organization, method)
+                    (pathProject, file) = sendRequestgetSB2(idProject, username, method)
                 except:
                     #When your project doesn't exist
                     d = {'Error': 'no_exists'}
@@ -408,6 +402,14 @@ def sendRequestgetSB2(idProject, username, method):
                          userInteractivity = 0, dataRepresentation = 0,
                          spriteNaming = 0 ,initialization = 0,
                          deadCode = 0, duplicateScript = 0)
+    else:
+        fileName = File (filename = fileURL,
+                         method = method , time = now,
+                         score = 0, abstraction = 0, parallelization = 0,
+                         logic = 0, synchronization = 0, flowControl = 0,
+                         userInteractivity = 0, dataRepresentation = 0,
+                         spriteNaming = 0 ,initialization = 0,
+                         deadCode = 0, duplicateScript = 0)
     fileName.save()
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
@@ -436,8 +438,14 @@ def createJson(d):
 #________________________ LEARN MORE __________________________________#
 
 def learn(request,page):
+    flagUser = 0
+
     #Unicode to string(page)
     page = unicodedata.normalize('NFKD',page).encode('ascii','ignore')
+
+    if request.user.is_authenticated():
+        user = request.user.username
+        flagUser = 1
 
     if request.LANGUAGE_CODE == "en":
             dic = {'Logic':'Logic',
@@ -474,7 +482,7 @@ def learn(request,page):
 
     if request.user.is_authenticated():
 
-        return render_to_response(page,
+        return render_to_response(page, {'flagUser':flagUser, 'user':user},
                                 RC(request))
     else:
 
@@ -640,7 +648,7 @@ def organization(request, name):
                     dic={'username':username,
                     "img":str(img)}
 
-                    return render_to_response("organization/org_main.html",
+                    return render_to_response("organization/main.html",
                             dic,
                             context_instance = RC(request))
                 else:
@@ -662,9 +670,11 @@ def stats(request,username):
     flagCoder = 0
     if Organization.objects.filter(username=username):
         flagOrganization = 1
+        page = 'organization'
         user = Organization.objects.get(username=username)
     elif Coder.objects.filter(username=username):
         flagCoder = 1
+        page = 'coder'
         user = Coder.objects.get(username=username)
 
     date_joined= user.date_joined
@@ -743,14 +753,10 @@ def stats(request,username):
         "spriteNaming":spriteNaming,
         "initialization":initialization }}
 
-    if flagOrganization:
-        return render_to_response("organization/org_stats.html",
+    return render_to_response(page + "/stats.html",
                             dic,
                             context_instance = RC(request))
-    elif flagCoder:
-        return render_to_response("coder/coder_stats.html",
-                            dic,
-                            context_instance = RC(request))
+
 
 def settings(request,username):
     """Allow to Coders and Organizations change the image and password"""
@@ -758,10 +764,10 @@ def settings(request,username):
     flagOrganization = 0
     flagCoder = 0
     if Organization.objects.filter(username=username):
-        flagOrganization = 1
+        page = 'organization'
         user = Organization.objects.get(username=username)
     elif Coder.objects.filter(username=username):
-        flagCoder = 1
+        page = 'coder'
         user = Coder.objects.get(username=username)
 
     if request.method == "POST":
@@ -774,14 +780,9 @@ def settings(request,username):
     "username": username,
     "img": user.img
     }
-    if flagOrganization:
-        return render_to_response("organization/org_settings.html",
-                            dic,
-                            context_instance = RC(request))
-    elif flagCoder:
-        return render_to_response("coder/coder_settings.html",
-                            dic,
-                            context_instance = RC(request))
+    return render_to_response( page + "/settings.html",
+                        dic,
+                        context_instance = RC(request))
 
 def downloads(request,username, filename=""):
     """Allow to Coders and Organizations download the files.CSV already analyzed"""
@@ -796,9 +797,14 @@ def downloads(request,username, filename=""):
         user = Coder.objects.get(username=username)
 
     if flagOrganization:
-        csv = CSVs.objects.filter(organization=username)
+        csv = CSVs.objects.all().filter(organization=username)
+        page = 'organization'
     elif flagCoder:
-        csv = CSVs.objects.filter(coder=username)
+        csv = CSVs.objects.all().filter(coder=username)
+        page = 'coder'
+
+    #LIFO to show the files.CSV
+    csv.reverse()
 
     dic = {
     "username": username,
@@ -814,14 +820,10 @@ def downloads(request,username, filename=""):
         response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(filename)
         return response
 
-    if flagOrganization:
-        return render_to_response("organization/org_downloads.html",
-                            dic,
-                            context_instance = RC(request))
-    elif flagCoder:
-        return render_to_response("coder/coder_downloads.html",
-                            dic,
-                            context_instance = RC(request))
+
+    return render_to_response(page + "/downloads.html",
+                        dic,
+                        context_instance = RC(request))
 
 
 #________________________ ANALYZE CSV FOR ORGANIZATIONS ____________#
@@ -893,23 +895,18 @@ def analyzeCSV(request):
                     dic[url] = d
                     dictionary.update(dic)
             #infile.close()
-            try:
-                csv_data = generatorCSV(request, dictionary, file_name, type_csv)
-                flag_csv = True
-            except:
-                flag_csv = False
+            csv_data = generatorCSV(request, dictionary, file_name, type_csv)
 
 
             if Organization.objects.filter(username = username):
                 csv_save = CSVs(filename = file_name, directory = csv_data, organization = username)
+                page = 'organization'
             elif Coder.objects.filter(username = username):
                 csv_save = CSVs(filename = file_name, directory = csv_data, coder = username)
+                page = 'coder'
             csv_save.save()
 
-            return render_to_response("upload/dashboard-organization.html",
-                                    {'username': username,
-                                     'flag_csv': flag_csv,},
-                                     context_instance=RC(request))
+            return HttpResponseRedirect('/' + page + "/downloads/" + username)
 
         elif "_download" in request.POST:
             """Export a CSV File"""
@@ -1125,7 +1122,7 @@ def signUpCoder(request):
 #_________________________ TO SHOW USER'S DASHBOARD ___________#
 
 def coder(request, name):
-    if request.method == 'GET':
+    if (request.method == 'GET') or (request.method == 'POST'):
         if request.user.is_authenticated():
             username = request.user.username
             if username == name:
@@ -1135,7 +1132,7 @@ def coder(request, name):
                     dic={'username':username,
                     "img":str(img)}
 
-                    return render_to_response("coder/coder_main.html",
+                    return render_to_response("coder/main.html",
                                                 dic,
                                                 context_instance = RC(request))
                 else:
@@ -1188,7 +1185,12 @@ def changePwd(request):
     if request.method == 'POST':
         recipient = request.POST['email']
         try:
-            user=Organization.objects.get(email=recipient)
+            if Organization.objects.filter(email=recipient):
+                user = Organization.objects.get(email=recipient)
+                page = 'organization'
+            elif Coder.objects.filter(email=recipient):
+                user = Coder.objects.get(email=recipient)
+                page = 'coder'
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token=default_token_generator.make_token(user)
 
@@ -1198,7 +1200,7 @@ def changePwd(request):
                     'token':token,
                     'id':user.username}
 
-            body = render_to_string("password/email.html",c)
+            body = render_to_string(page + "/email.html",c)
 
             try:
                 subject = "Dr.Scratch: Did you forget your password?"
@@ -1223,10 +1225,16 @@ def changePwd(request):
 def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
     UserModel = get_user_model()
     try:
-        uid=urlsafe_base64_decode(uidb64)
-        user=Organization._default_manager.get(pk=uid)
+        uid = urlsafe_base64_decode(uidb64)
+        if Organization.objects.filter(pk=uid):
+            user = Organization._default_manager.get(pk=uid)
+            page = 'organization'
+        elif Coder.objects.filter(pk=uid):
+            user = Coder._default_manager.get(pk=uid)
+            page = 'coder'
     except (TypeError, ValueError, OverflowError, UserModel.DoesNotExist):
         user = None
+
     if request.method == "POST":
         flag_error = False
         if user is not None and default_token_generator.check_token(user, token):
@@ -1239,7 +1247,11 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
             elif new_password == new_confirm:
                 user.set_password(new_password)
                 user.save()
-                return render_to_response("sign/organization.html",
+                logout(request)
+                user = authenticate(username=user.username, password=new_password)
+                login(request, user)
+                return HttpResponseRedirect('/' + page + '/' + user.username)
+                return render_to_response(page + "/main.html",
                                             context_instance = RC(request))
             else:
                 flag_error = True
@@ -1252,7 +1264,7 @@ def reset_password_confirm(request,uidb64=None,token=None,*arg,**kwargs):
              return render_to_response("password/new_password.html",
                                         context_instance=RC(request))
          else:
-             return render_to_response("sign/organization.html",
+             return render_to_response(page + "main.html",
                         context_instance = RC(request))
 
 #_______________________ STATISTICS _________________________________#

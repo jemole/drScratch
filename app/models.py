@@ -11,8 +11,8 @@ class CSVs(models.Model):
     coder = models.CharField(max_length=100, default='drscratch')
     date = models.DateTimeField(default=datetime.datetime.now)
 
-    class Meta:
-        get_latest_by = 'date'
+    #class Meta:
+    #    get_latest_by = 'date'
 
 class File(models.Model):
     filename = models.CharField(max_length=100)
