@@ -772,9 +772,8 @@ def settings(request,username):
 
     if request.method == "POST":
         #Saving image in DB
-        user.img = str(username) +"_"+str(request.FILES["img"])
-        user.save()
-       # path_to_file = os.path.dirname(os.path.dirname(__file__)) + "/img/" + str(username) +"_"+str(request.FILES["img"])
+        user.img = request.FILES["img"]
+        user.img.name = str(username)+ "."+ str(request.FILES["img"]).split(".")[1]
 
     dic = {
     "username": username,

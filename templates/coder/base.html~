@@ -321,7 +321,7 @@
                         <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li> <a href='/changePwd'>{% trans "Change password" %}</a> </li>
                             <li>
-                                <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
+                                <a id="logout" type="submit" href="/logoutCoder">{% trans "Logout" %}</a>
                             </li>
 
                         </ul>
@@ -339,11 +339,11 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <br>
           <div class="thumbnail">
-            <img src="/img/{{ img }}">
+            <img src="{{ img }}">
           </div>
           <ul class="nav nav-sidebar">
-            <li><a class="litext" href="/organization/{{ username }}"><span class="glyphicon glyphicon-dashboard"></span> {% trans "Analysis" %}</a></li>
-            <li><a class="litext" href="/organization/stats/{{ username }}"><span class="glyphicon glyphicon-stats"></span> {% trans "Stats"%}</a></li>
+            <li><a class="litext" href="/coder/{{ username }}"><span class="glyphicon glyphicon-dashboard"></span> {% trans "Analysis" %}</a></li>
+            <li><a class="litext" href="/coder/stats/{{ username }}"><span class="glyphicon glyphicon-stats"></span> {% trans "Stats"%}</a></li>
             <li><a class="litext" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><span class="glyphicon glyphicon-book"></span> {% trans "Learn more" %} <span class="caret"></span></a>
               <ul class="dropdown-menu pull-right">
                 <li><a href="/learn/Logic/">{% trans "Logic" %}</a></li>
@@ -360,8 +360,8 @@
                 <li><a href="/learn/attrInit/">{% trans "Attribute initialization" %}</a></li>
               </ul>
             </li>
-            <li><a class="litext" href="/organization/downloads/{{ username }}"><span class="glyphicon glyphicon-download-alt"></span> {% trans "Downloads"%}</a></li>
-            <li><a class="litext" href="/organization/settings/{{ username }}"><span class="glyphicon glyphicon-cog"></span> {% trans "Settings" %}</a></li>
+            <li><a class="litext" href="/coder/downloads/{{ username }}"><span class="glyphicon glyphicon-download-alt"></span> {% trans "Downloads"%}</a></li>
+            <li><a class="litext" href="/coder/settings/{{ username }}"><span class="glyphicon glyphicon-cog"></span> {% trans "Settings" %}</a></li>
           </ul>
         </div>
 
