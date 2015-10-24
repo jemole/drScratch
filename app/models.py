@@ -36,7 +36,7 @@ class File(models.Model):
 
 class Coder(User):
     hashkey = models.TextField()
-        img = models.ImageField(upload_to="img/", default="app/images/drScratch.png")
+    img = models.ImageField(upload_to="img/", default="app/images/drScratch.png")
 
 
 
