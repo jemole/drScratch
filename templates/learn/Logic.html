@@ -18,23 +18,23 @@
 
     {% trans "The most basic block you can start working logical thinking is this:" %} <br><br>
 
-                    <pre class='blocks'>   {% trans "if &lt; touching color [#0000FF]?&gt; then" %}
+                    <pre class='blocks'>   {% trans "if &lt; touching color [#0000FF]?  &gt;then" %}
                                             {% trans "say [I have reached the goal!] for (2) secs" %}</pre><br>
     {% trans "How this block works? When execution reaches this point, the condition on the block is evaluated, and if this is true, the set of blocks that are within the if executed." %}
 {% trans "In the example, if the character is touching the blue color, he says 'I reached the goal.'" %}<br>
-                </section>    
+                </section>
             </div>
         </div>
-    
+
     <div class="panel panel-default">
         <div class="panel-body col-lg-10 col-lg-offset-1">
             <section id="level1">
                 <h3>{% trans "If you get 1 point..." %}</h3>
     {% trans "Now that you know the instructions <i>if</i>, perhaps you can start using blocks <i>if / else</i>, which can be very practical in many types of projects. The blocks <i>if / else</i> are very similar to the block <i>if</i>, but contain two sets of blocks inside." %}<br><br>
-                <pre class='blocks'>   {% trans "if &lt; touching color [#0000FF]? &gt;" %}
+                <pre class='blocks'>   {% trans "if &lt; touching color [#0000FF]? &gt;then" %}
                                        {% trans "say [I have reached the goal!] for (2) secs" %}
                                        {% trans "else" %}
-                                       {% trans "say [I have reached the goal!] for (2) secs" %}</pre><br>  
+                                       {% trans "say [I have reached the goal!] for (2) secs" %}</pre><br>
 {% trans "How this block works? When execution reaches this point, the condition on the block is evaluated, and if this is true, the set of blocks that are within the 'if' is executed, but if the condition is false, then the set of  blocks that are within the 'else' is executed." %}
 
 {% trans "In the example, if the character is touching the blue color, he says  'I reached the goal!', but ,if you are not touching the purple color, says 'I have not reached the goal'." %}
@@ -46,7 +46,7 @@
             <section id="level2">
                 <h3>{% trans "If you get 2 points..." %}</h3>
 {% trans "To make decisions on some projects sometimes is necessary to evaluate more than one condition at the same time to know what to execute. In these situations it is very helpful to use <b>logical operations</b> that combine the conditions. Logical operations are available in Scratch <i>AND, OR and No</i>." %}<br><br>
-                <pre class='blocks'>   {% trans "if &lt;&lt; touching [Enemy v]? &gt; and &lt;(lives) = [0]&gt;&gt;then" %}
+                <pre class='blocks'>   {% trans "if &lt;&lt; touching [Enemy v]? &gt; and &lt;(lives) = [0]&gt;&gt; then" %}
                                        {% trans "say [Game over]" %}
                                        {% trans "stop [all v]" %}
                                        {% trans "end" %}
