@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-25 00:09+0000\n"
+"POT-Creation-Date: 2015-10-25 10:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2853,13 +2853,21 @@ msgid "Pau Nin"
 msgstr ""
 
 #: templates/main/collaborators.html:410
+#, fuzzy
+#| msgid ""
+#| "Pau Nin works as Elementary School teacher and Masters degree in "
+#| "Innovation Pedagogical and Education Leadership in the XXI century. He's "
+#| "an enthusiast of the Programmation and educational robotic. Also he loves "
+#| "sharing with other teachers the possibilities of both(programmation and "
+#| "robotic) as one of the most powerful motivational tools available today "
+#| "to teach in the classroom.."
 msgid ""
 "Pau Nin works as Elementary School teacher and Masters degree in Innovation "
 "Pedagogical and Education Leadership in the XXI century. He's an enthusiast "
 "of the Programmation and educational robotic. Also he loves sharing with "
 "other teachers the possibilities of both(programmation and robotic) as one "
 "of the most powerful motivational tools available today to teach in the "
-"classroom.."
+"classroom."
 msgstr ""
 "Pau Nin es maestro de Educación Primaria y Máster en Innovación Pedagógica y "
 "Liderazgo Educativo en el S.XXI. Es un entusiasta de la programación y la "
@@ -2937,8 +2945,8 @@ msgid ""
 "<input type='text' name='email' id='email' placeholder='Email' style='margin-"
 "bottom: 15px;'>"
 msgstr ""
-"<input type='text' name='email' id='email' placeholder='Email'"
-"style='margin-bottom: 15px;'>"
+"<input type='text' name='email' id='email' placeholder='Email'style='margin-"
+"bottom: 15px;'>"
 
 #: templates/main/main.html:104 templates/main/main.html.py:125
 #: templates/sign/organization.html:89
@@ -2969,9 +2977,9 @@ msgstr ""
 msgid "I forgot my password"
 msgstr "¿Has olvidado tu contraseña?"
 
-#: templates/main/main.html:129
+#: templates/main/main.html:129 templates/sign/organization.html:96
 msgid ""
-"<input type='submit' value='Sign In' id='sign-in' class='btn-group btn-group-"
+"<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-"
 "justified colored-text'>"
 msgstr ""
 "<input type='submit' value='Ingresar' id='sign-in' class='btn-group btn-"
@@ -3096,14 +3104,6 @@ msgstr ""
 "Estas recibiendo este email porque has pedido restaurar tu cuenta en Dr. "
 "Scratch."
 
-#: templates/sign/organization.html:96
-msgid ""
-"<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-"
-"justified colored-text'>"
-msgstr ""
-"<input type='submit' value='Ingresar' id='sign-in' class='btn-group btn-"
-"group-justified colored-text'>"
-
 #: templates/sign/organization.html:129
 msgid "Welcome to the organizations version of Dr. Scratch"
 msgstr "Bienvenido a la versión de Dr. Scratch para organizaciones"
@@ -3199,6 +3199,13 @@ msgstr "<img class='framed' src='../../static/app/images/url-es.png' />"
 #: templates/upload/dashboard-organization.html:270
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
 msgstr "<img class='framed' src='../../static/app/images/project-es.png' />"
+
+#~ msgid ""
+#~ "<input type='submit' value='Sign In' id='sign-in' class='btn-group btn-"
+#~ "group-justified colored-text'>"
+#~ msgstr ""
+#~ "<input type='submit' value='Ingresar' id='sign-in' class='btn-group btn-"
+#~ "group-justified colored-text'>"
 
 #~ msgid "change y by (0)"
 #~ msgstr "cambiar y por (0)"
