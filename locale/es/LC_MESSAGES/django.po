@@ -2853,14 +2853,6 @@ msgid "Pau Nin"
 msgstr ""
 
 #: templates/main/collaborators.html:410
-#, fuzzy
-#| msgid ""
-#| "Pau Nin works as Elementary School teacher and Masters degree in "
-#| "Innovation Pedagogical and Education Leadership in the XXI century. He's "
-#| "an enthusiast of the Programmation and educational robotic. Also he loves "
-#| "sharing with other teachers the possibilities of both(programmation and "
-#| "robotic) as one of the most powerful motivational tools available today "
-#| "to teach in the classroom.."
 msgid ""
 "Pau Nin works as Elementary School teacher and Masters degree in Innovation "
 "Pedagogical and Education Leadership in the XXI century. He's an enthusiast "
