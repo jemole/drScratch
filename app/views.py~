@@ -82,6 +82,7 @@ def main(request):
 
 #___________________________ CONTEST ____________________________________#
 def contest(request):
+
     return render_to_response('contest.html',
                                     {})
 #___________________________ REDIRECT ____________________________________#

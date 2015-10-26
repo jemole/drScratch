@@ -40,7 +40,9 @@ urlpatterns = (
 
     #Upload a .CSV
     url(r'^analyzeCSV$', 'app.views.analyzeCSV',),
-
+    
+    #Contest: Temporary url
+    url(r'^contest$', 'app.views.contest',),
 
     #Error pages
     #url(r'^500', 'app.views.error500',),
