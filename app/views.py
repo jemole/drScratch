@@ -475,6 +475,24 @@ def learn(request,page):
                'Controls':'Flow',
                'Abstraccio':'Abstraction'}
 
+    elif request.LANGUAGE_CODE == "gl":
+        dic = {'Loxica':'Logic',
+               'Paralelismo':'Parallelism',
+               'Representacion':'Data',
+               'Sincronizacion':'Synchronization',
+               'Interactividade':'User',
+               'Control':'Flow',
+               'Abstraccion':'Abstraction'}
+
+    elif request.LANGUAGE_CODE == "pt":
+        dic = {'Logica':'Logic',
+               'Paralelismo':'Parallelism',
+               'Representação':'Data',
+               'Sincronização':'Synchronization',
+               'Interactividade':'User',
+               'Controle':'Flow',
+               'Abstração':'Abstraction'}
+
     if page in dic:
         page = dic[page]
 
@@ -1399,6 +1417,31 @@ def translate(request,d, fileName):
         fileName.language = "ca"
         fileName.save()
         return d_translate_ca
+    elif request.LANGUAGE_CODE == "gl":
+        d_translate_gl = {}
+        d_translate_gl['Abstracción'] = d['Abstraction']
+        d_translate_gl['Paralelismo'] = d['Parallelization']
+        d_translate_gl['Lóxica'] = d['Logic']
+        d_translate_gl['Sincronización'] = d['Synchronization']
+        d_translate_gl['Control de fluxo'] = d['FlowControl']
+        d_translate_gl["Interactividade do susario"] = d['UserInteractivity']
+        d_translate_gl['Representación dos datos'] = d['DataRepresentation']
+        fileName.language = "gl"
+        fileName.save()
+        return d_translate_gl
+
+    elif request.LANGUAGE_CODE == "pt":
+        d_translate_pt = {}
+        d_translate_pt['Abstração'] = d['Abstraction']
+        d_translate_pt['Paralelismo'] = d['Parallelization']
+        d_translate_pt['Lógica'] = d['Logic']
+        d_translate_pt['Sincronização'] = d['Synchronization']
+        d_translate_pt['Controle de fluxo'] = d['FlowControl']
+        d_translate_pt["Interatividade com o usuário"] = d['UserInteractivity']
+        d_translate_pt['Representação de dados'] = d['DataRepresentation']
+        fileName.language = "pt"
+        fileName.save()
+        return d_translate_pt
     else:
         return d
 

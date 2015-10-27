@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-25 10:50+0000\n"
+"POT-Creation-Date: 2015-10-26 09:45+0000\n"
 "PO-Revision-Date: 2015-10-18 17:33-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -30,9 +30,17 @@ msgstr "Inglês"
 msgid "Catalan"
 msgstr "Catalão"
 
-#: drScratch/settings.py:109
+#: drScratch/settings.py:109 templates/main/collaborators.html:481
+msgid "Galician"
+msgstr "Galício"
+
+#: drScratch/settings.py:110
 msgid "Portuguese"
 msgstr "Português"
+
+#: drScratch/settings.py:111 templates/main/collaborators.html:389
+msgid "Greek"
+msgstr "Grego"
 
 #: templates/coder/base.html:79 templates/organization/base.html:79
 #: templates/statistics/statistics.html:65
@@ -114,7 +122,7 @@ msgstr "Código morto"
 
 #: templates/coder/base.html:214 templates/coder/base.html.py:357
 #: templates/coder/dashboard-unregistered-master.html:243
-#: templates/learn/base.html:106
+#: templates/learn/base.html:106 templates/learn/duplicatedScripts.html:4
 #: templates/main/dashboard-unregistered-master.html:240
 #: templates/organization/base.html:214 templates/organization/base.html:357
 #: templates/organization/dashboard-unregistered-master.html:243
@@ -123,10 +131,10 @@ msgstr "Código morto"
 msgid "Duplicated scripts"
 msgstr "Scripts duplicados"
 
-#: templates/coder/base.html:217 templates/learn/attrInit.html:4
-#: templates/organization/base.html:217
-#: templates/statistics/statistics.html:203
-msgid "Attribute Initialization"
+#: templates/coder/base.html:217 templates/coder/base.html.py:360
+#: templates/learn/base.html:109 templates/organization/base.html:217
+#: templates/organization/base.html:360
+msgid "Attribute initialization"
 msgstr "Inicialização de atributos"
 
 #: templates/coder/base.html:220
@@ -169,11 +177,12 @@ msgstr "Paralelismo"
 msgid "Logic"
 msgstr "Lógica"
 
-#: templates/coder/base.html:274 templates/learn/Flow.html:4
-#: templates/organization/base.html:274
+#: templates/coder/base.html:274 templates/coder/base.html.py:354
+#: templates/learn/Flow.html:4 templates/learn/base.html:102
+#: templates/organization/base.html:274 templates/organization/base.html:354
 #: templates/statistics/statistics.html:260
-msgid "Flow Control"
-msgstr "Controle de Fluxo"
+msgid "Flow control"
+msgstr "Controle de fluxo"
 
 #: templates/coder/base.html:277 templates/coder/base.html.py:353
 #: templates/learn/User.html:5 templates/learn/base.html:101
@@ -230,24 +239,15 @@ msgstr "Análise"
 msgid "Stats"
 msgstr "Estatísitcas"
 
-#: templates/coder/base.html:347 templates/organization/base.html:347
+#: templates/coder/base.html:347 templates/main/main.html:168
+#: templates/organization/base.html:347
 msgid "Learn more"
 msgstr "Aprenda mais"
-
-#: templates/coder/base.html:354 templates/learn/base.html:102
-#: templates/organization/base.html:354
-msgid "Flow control"
-msgstr "Controle de fluxo"
 
 #: templates/coder/base.html:358 templates/learn/base.html:107
 #: templates/learn/spriteNaming.html:5 templates/organization/base.html:358
 msgid "Incorrect names"
 msgstr "Nomes incorretos"
-
-#: templates/coder/base.html:360 templates/learn/base.html:109
-#: templates/organization/base.html:360
-msgid "Attribute initialization"
-msgstr "Inicialização de atributos"
 
 #: templates/coder/base.html:363 templates/coder/downloads.html:15
 #: templates/organization/base.html:363
@@ -266,8 +266,7 @@ msgstr "Configurações"
 #: templates/coder/dashboard-unregistered-master.html:356
 #: templates/coder/error_analyzing.html:70 templates/error/404.html:67
 #: templates/error/500.html:67 templates/error/analyzing.html:70
-#: templates/learn/base.html:119 templates/login/login.html:536
-#: templates/main/collaborators.html:594
+#: templates/learn/base.html:119 templates/main/collaborators.html:594
 #: templates/main/dashboard-unregistered-basic.html:254
 #: templates/main/dashboard-unregistered-developing.html:292
 #: templates/main/dashboard-unregistered-master.html:353
@@ -298,15 +297,15 @@ msgid ""
 msgstr ""
 "Você deve escrever somente o número de projetos dos estudantes. Fácil, não é?"
 
-#: templates/coder/base.html:422 templates/login/login.html:563
-#: templates/main/main.html:647 templates/organization/base.html:422
+#: templates/coder/base.html:422 templates/main/main.html:647
+#: templates/organization/base.html:422
 #: templates/upload/dashboard-coder.html:239
 #: templates/upload/dashboard-organization.html:239
 msgid "What is an url?"
 msgstr "O que é uma url?"
 
-#: templates/coder/base.html:424 templates/login/login.html:565
-#: templates/main/main.html:649 templates/organization/base.html:424
+#: templates/coder/base.html:424 templates/main/main.html:649
+#: templates/organization/base.html:424
 #: templates/upload/dashboard-coder.html:241
 #: templates/upload/dashboard-organization.html:241
 msgid "How I can know my Scratch project's url?"
@@ -316,15 +315,15 @@ msgstr "Como posso saber a url de meu projeto no Scratch"
 msgid "<img class='framed' src='../static/app/images/url-en.png' />"
 msgstr "<img class='framed' src='../static/app/images/url-pt.png' />"
 
-#: templates/coder/base.html:447 templates/login/login.html:588
-#: templates/main/main.html:672 templates/organization/base.html:447
+#: templates/coder/base.html:447 templates/main/main.html:672
+#: templates/organization/base.html:447
 #: templates/upload/dashboard-coder.html:264
 #: templates/upload/dashboard-organization.html:264
 msgid "I want to download my project from Scratch!"
 msgstr "Quero fazer o download de meu projeto no Scratch"
 
-#: templates/coder/base.html:449 templates/login/login.html:590
-#: templates/main/main.html:674 templates/organization/base.html:449
+#: templates/coder/base.html:449 templates/main/main.html:674
+#: templates/organization/base.html:449
 #: templates/upload/dashboard-coder.html:266
 #: templates/upload/dashboard-organization.html:266
 msgid "How I can download my Scratch project to my computer?"
@@ -335,13 +334,13 @@ msgstr ""
 msgid "<img class='framed' src='../static/app/images/project-en.png' />"
 msgstr "<img class='framed' src='../static/app/images/project-pt.png' />"
 
-#: templates/coder/base.html:473 templates/login/login.html:614
-#: templates/main/main.html:698 templates/organization/base.html:473
-msgid "Wait a moment please"
+#: templates/coder/base.html:473 templates/main/main.html:698
+#: templates/organization/base.html:473
+msgid "Wait a moment, please."
 msgstr "Espere um pouco, por favor"
 
-#: templates/coder/base.html:491 templates/login/login.html:632
-#: templates/main/main.html:716 templates/organization/base.html:491
+#: templates/coder/base.html:491 templates/main/main.html:716
+#: templates/organization/base.html:491
 msgid "loading..."
 msgstr "carregando..."
 
@@ -847,7 +846,6 @@ msgstr ""
 
 #: templates/coder/error_analyzing.html:62 templates/error/404.html:59
 #: templates/error/500.html:59 templates/error/analyzing.html:62
-#: templates/login/login.html:104 templates/login/login.html.py:525
 #: templates/main/collaborators.html:84 templates/main/error_analyzing.html:62
 #: templates/main/main.html:139 templates/main/main.html.py:609
 #: templates/organization/error_analyzing.html:62 templates/sign/coder.html:81
@@ -1062,12 +1060,12 @@ msgstr ""
 #: templates/learn/Synchronization.html:45 templates/learn/User.html:23
 #: templates/learn/attrInit.html:25
 msgid "when gf clicked"
-msgstr "Quando gf é clicado"
+msgstr "Quando alguém clicar em gf"
 
 #: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
 #: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
 msgid "clear"
-msgstr "limpar"
+msgstr "apaga tudo do palco"
 
 #: templates/learn/Abstraction.html:22 templates/learn/Abstraction.html:37
 msgid "go to x:(-100) y:(30)"
@@ -1082,7 +1080,7 @@ msgstr "use a caneta"
 #: templates/learn/Abstraction.html:24 templates/learn/Abstraction.html:39
 #: templates/learn/Abstraction.html:72
 msgid "move (200) steps"
-msgstr "mova 200 passos"
+msgstr "anda (200) passos"
 
 #: templates/learn/Abstraction.html:25 templates/learn/Abstraction.html:30
 #: templates/learn/Abstraction.html:40 templates/learn/Abstraction.html:46
@@ -1111,7 +1109,7 @@ msgstr "Mude a cor da caneta para [#FFA500]"
 #: templates/learn/Abstraction.html:29 templates/learn/Abstraction.html:45
 #: templates/learn/Abstraction.html:66
 msgid "move (100) steps"
-msgstr "mova 100 passos"
+msgstr "anda (100) passos"
 
 #: templates/learn/Abstraction.html:33
 msgid ""
@@ -1183,7 +1181,7 @@ msgstr "defina PaintedOrange (comprimento)"
 
 #: templates/learn/Abstraction.html:82
 msgid "move (length) steps"
-msgstr "mova (comprimento) passos"
+msgstr "anda (comprimento) passos"
 
 #: templates/learn/Abstraction.html:89
 msgid ""
@@ -1337,7 +1335,7 @@ msgstr "Posição:"
 #: templates/learn/Flow.html.py:42 templates/learn/Flow.html:51
 #: templates/learn/Parallelism.html:42 templates/learn/User.html:40
 msgid "move (10) steps"
-msgstr "mova (10) passos"
+msgstr "anda (10) passos"
 
 #: templates/learn/Data.html:30 templates/learn/attrInit.html:26
 msgid "go to x:(0) y:(0)"
@@ -1615,7 +1613,7 @@ msgstr "espere (0.5) segundos"
 
 #: templates/learn/Flow.html:27 templates/learn/Flow.html.py:46
 msgid "move (-10) steps"
-msgstr "mova (-10) passos"
+msgstr "anda (-10) passos"
 
 #: templates/learn/Flow.html:29
 msgid ""
@@ -1662,11 +1660,11 @@ msgid ""
 "that the block 'repeat' has an arrow at the bottom indicating that <b>when "
 "they finish executing the blocks back again up</b>."
 msgstr ""
-"No bloco <i>'repete'</i>, quando a execução atinge esse ponto, é repetida tantas "
-"vezes quantas indicadas no parâmetros do bloco 'repete'. No exemplo, seriam "
-"3 vezes, todos os blocos inclusos dentro do bloco. Nós podemos ver que o "
-"bloco 'repete' tem uma flecha no final, indicando que quando eles terminam a "
-"execução, os blocos voltam para cima."
+"No bloco <i>'repete'</i>, quando a execução atinge esse ponto, é repetida "
+"tantas vezes quantas indicadas no parâmetros do bloco 'repete'. No exemplo, "
+"seriam 3 vezes, todos os blocos inclusos dentro do bloco. Nós podemos ver "
+"que o bloco 'repete' tem uma flecha no final, indicando que quando eles "
+"terminam a execução, os blocos voltam para cima."
 
 #: templates/learn/Flow.html:58
 msgid ""
@@ -2223,7 +2221,6 @@ msgid "say &lt;join [Hello,]&lt;answer"
 msgstr "diz &lt;a junção de [Olá,] com &lt;a resposta"
 
 #: templates/learn/User.html:48
-
 msgid "if &lt;touching [mouse-pointer v] &gt; then"
 msgstr "se &lt; está tocando [mouse pointer v]? &gt; então"
 
@@ -2291,6 +2288,10 @@ msgstr ""
 "certo limiar, ou quando ocorre algum movimento de algum objeto ou do fundo "
 "no vídeo. As possibilidades desses blocos são muito grandes e permitem que "
 "suas criações com Scratch sejam completamente interativas com os usuários."
+
+#: templates/learn/attrInit.html:4 templates/statistics/statistics.html:203
+msgid "Attribute Initialization"
+msgstr "Inicialização de atributos"
 
 #: templates/learn/attrInit.html:11
 msgid ""
@@ -2383,10 +2384,6 @@ msgstr ""
 "Essas situações normalmente fazem com que os projetos não funcionem como "
 "esperado, então tente evitar código morto em seus programas!"
 
-#: templates/learn/duplicatedScripts.html:4
-msgid "Duplicated Scripts"
-msgstr "Scripts duplicados"
-
 #: templates/learn/duplicatedScripts.html:11
 msgid ""
 "Imagine that in a project we have two programs formed by the same blocks and "
@@ -2407,7 +2404,7 @@ msgstr "repita (10) vezes"
 
 #: templates/learn/duplicatedScripts.html:17
 msgid "move (2) steps"
-msgstr "mova (2) passos"
+msgstr "anda (2) passos"
 
 #: templates/learn/duplicatedScripts.html:22
 msgid "when I receive [message2 v]"
@@ -2419,7 +2416,7 @@ msgstr "repita (5) vezes"
 
 #: templates/learn/duplicatedScripts.html:25
 msgid "move (4) steps"
-msgstr "mova (4) passos"
+msgstr "anda (4) passos"
 
 #: templates/learn/duplicatedScripts.html:33
 msgid ""
@@ -2444,7 +2441,7 @@ msgstr "repita (repetitions) vezes"
 
 #: templates/learn/duplicatedScripts.html:39
 msgid "move (step) steps"
-msgstr "mova (step) passos"
+msgstr "anda (step) passos"
 
 #: templates/learn/duplicatedScripts.html:42
 msgid "wait (pause) secs"
@@ -2473,272 +2470,6 @@ msgstr ""
 "personagens aumenta, a situação é mais complicada. Então, uma boa prática é "
 "nomear (com nomes facilmente identificados) cada personagem do projeto, pois "
 "fica mais fácil de entender o projeto. Evite nomes padrão!"
-
-#: templates/login/login.html:81 templates/main/main.html:116
-#: templates/sign/organization.html:78
-msgid "Sign in"
-msgstr "Entrar"
-
-#: templates/login/login.html:92 templates/sign/organization.html:91
-msgid "Remember me"
-msgstr "Lembre de mim"
-
-#: templates/login/login.html:127 templates/sign/coder.html:104
-#: templates/sign/coder.html.py:163 templates/sign/organization.html:128
-#: templates/sign/organization.html:187
-msgid "Dr. Scratch for Organizations"
-msgstr "Dr. Scratch para Instituições"
-
-#: templates/login/login.html:129 templates/sign/coder.html:106
-msgid ""
-"Welcome to the Dr. Scratch website (version for organizations), an "
-"analytical tool that evaluates your Scratch projects in a variety of "
-"computational areas. This analyzer is a helpful tool to evaluate your "
-"students' Scratch projects. You'll have a smart dashboard where you can see "
-"the most important information about your students and their development."
-msgstr ""
-"Bem-vindo ao site do Dr. Scratch, uma ferramenta de análise que avalia seus "
-"projetos Scratch em várias áreas da computação. Esse analisador é uma "
-"ferramenta muito útil para avaliar seus próprios projetos ou os dos seus "
-"estudantes."
-
-#: templates/login/login.html:133 templates/sign/coder.html:75
-#: templates/sign/coder.html.py:110 templates/sign/coder.html:208
-#: templates/sign/organization.html:134 templates/sign/organization.html:241
-msgid "Sign up!"
-msgstr "Cadastre-se!"
-
-#: templates/login/login.html:187 templates/main/main.html:269
-msgid "WHY?"
-msgstr "Por quê?"
-
-#: templates/login/login.html:189 templates/main/main.html:271
-#: templates/sign/coder.html:165
-msgid "Why "
-msgstr "Por que"
-
-#: templates/login/login.html:189 templates/main/main.html:271
-#: templates/sign/coder.html:165
-msgid "you’ll love Dr. Scratch"
-msgstr "você vai adorar Dr. Scratch"
-
-#: templates/login/login.html:193 templates/main/main.html:275
-msgid "A powerful tool to analyze your Scratch projects"
-msgstr "Uma ferramenta poderosa para analisar seus projetos do Scratch"
-
-#: templates/login/login.html:205 templates/main/main.html:287
-msgid "Simple & Fun"
-msgstr "Simples & Divertido"
-
-#: templates/login/login.html:207 templates/main/main.html:289
-msgid ""
-"Your students can easily learn how to improve their programming skills in a "
-"fun way."
-msgstr ""
-"Seus estudantes podem aprender facilmente a melhorar suas habilidades de "
-"programação de um jeito divertido."
-
-#: templates/login/login.html:218 templates/main/main.html:300
-msgid "Improve your skills"
-msgstr "Melhore suas habilidades"
-
-#: templates/login/login.html:220 templates/main/main.html:302
-msgid ""
-"We provide feedback on several aspects which are related to Computational "
-"Thinking."
-msgstr ""
-"Nós damos feedback sobre vários aspectos relacionados ao Pensamento "
-"Computacional."
-
-#: templates/login/login.html:231 templates/main/main.html:313
-msgid "Always improving"
-msgstr "Sempre melhorando"
-
-#: templates/login/login.html:233 templates/main/main.html:315
-msgid ""
-"We're continually enhancing the features of Dr. Scratch, and we'd love to "
-"hear your thoughts"
-msgstr ""
-"Estamos sempre melhorando o Dr. Scratch, e adoraríamos ouvir sua opinião"
-
-#: templates/login/login.html:270 templates/main/main.html:352
-msgid "How"
-msgstr "Como"
-
-#: templates/login/login.html:272 templates/main/main.html:354
-#: templates/sign/organization.html:189
-msgid "How "
-msgstr "Como "
-
-#: templates/login/login.html:272 templates/main/main.html:354
-msgid "it works"
-msgstr "funciona"
-
-#: templates/login/login.html:276 templates/main/main.html:358
-msgid "There are two options to analyze a Scratch project with Dr. Scratch"
-msgstr "Há duas opções para analisar um projeto do Scratch com Dr. Scratch"
-
-#: templates/login/login.html:277 templates/main/main.html:359
-msgid "project.png"
-msgstr "projeto.png"
-
-#: templates/login/login.html:279 templates/main/main.html:361
-msgid ""
-"You can upload an sb2 file or just provide the project url, avoiding the "
-"need to previously download the project to your computer. By analyzing your "
-"projects with Dr. Scratch, you can easily check your Computational Thinking "
-"Score."
-msgstr ""
-"Você pode enviar um arquivo sb2 ou entrar com o endereço do projeto, sem "
-"precisar carregar o projeto para o seu computador. Analisando seus projetos "
-"com Dr. Scratch, você pode facilmente conferir sua Pontuação de Pensamento "
-"Computacional."
-
-#: templates/login/login.html:288 templates/main/main.html:370
-msgid "It is extremely easy to use, both for begginers and expert programmers."
-msgstr "É muito fácil de usar, para iniciantes e programadores experientes."
-
-#: templates/login/login.html:292 templates/main/main.html:374
-msgid "You receive feedback to improve your coding skills."
-msgstr "Você recebe feedback para melhorar suas habilidades de programação."
-
-#: templates/login/login.html:300 templates/main/main.html:382
-msgid ""
-"You can keep on improving your programming skills by yourself even from home."
-msgstr ""
-"Você pode continuar melhorando suas habilidades de programação até em casa."
-
-#: templates/login/login.html:304 templates/main/main.html:386
-msgid "You can track your progress through charts and stats."
-msgstr "Você pode conferir seu progresso usando gráficos e estatísticas."
-
-#: templates/login/login.html:323 templates/main/main.html:405
-msgid "NEW FEATURES"
-msgstr "NOVAS FUNÇÕES"
-
-#: templates/login/login.html:325 templates/main/main.html:407
-msgid "Coming "
-msgstr "Chegando"
-
-#: templates/login/login.html:325 templates/main/main.html:407
-msgid "Soon"
-msgstr "Em breve"
-
-#: templates/login/login.html:329 templates/main/main.html:411
-msgid "We are working on new features to improve Dr. Scratch"
-msgstr "Estamos trabalhando em novas funções para melhorar Dr. Scratch"
-
-#: templates/login/login.html:344 templates/main/main.html:426
-msgid "Multilingual Website"
-msgstr "Site Multilíngue"
-
-#: templates/login/login.html:348 templates/main/collaborators.html:350
-#: templates/main/main.html:430
-msgid ""
-"We know the importance of receiving feedback on your own language to "
-"understand every little detail or hint, so we'll translate Dr. Scratch to "
-"facilitate coding learning to as many people as possible."
-msgstr ""
-"Nós sabemos a importância de receber feedback em sua própria língua para "
-"entender cada pequeno detalhe ou dica. É por isso que vamos traduzir o Dr."
-"Scratch para facilitar o aprendizado de programação para o maior número "
-"possível de pessoas."
-
-#: templates/login/login.html:359 templates/main/main.html:441
-msgid "Teacher Accounts"
-msgstr "Contas para professores"
-
-#: templates/login/login.html:363 templates/main/main.html:445
-msgid ""
-"Teachers will be able to group (and follow) their students to keep track of "
-"their progress in a fast and simple way."
-msgstr ""
-"Professores poderão agrupar (e seguir) seus estudantes para acompanhar seu "
-"progresso de uma forma rápida e simples."
-
-#: templates/login/login.html:374 templates/main/main.html:456
-msgid "Cloud Platform"
-msgstr "Plataforma em Nuvem"
-
-#: templates/login/login.html:378 templates/main/main.html:460
-msgid ""
-"We are in the process of migrating our servers to the Cloud with the aim of "
-"providing a better performance."
-msgstr ""
-"Estamos migrando nossos servidores para a Nuvem, com o objetivo de prover um "
-"melhor desempenho."
-
-#: templates/login/login.html:403 templates/main/main.html:485
-msgid ""
-"With Dr. Scratch plug-ins for Chrome and Firefox, students will analyze "
-"their project WHILE programming on the Scratch website."
-msgstr ""
-"Com os plugins do Dr. Scratch para Chrome e Firefox, os estudantes analisarão "
-"seus projetos ENQUANTO programam no site do Scratch."
-
-#: templates/login/login.html:414 templates/main/main.html:496
-msgid "Gamification"
-msgstr "Gamificação"
-
-#: templates/login/login.html:418 templates/main/main.html:500
-msgid ""
-"We'd like to take learners curiosity one step further. Do you have cool "
-"ideas to gamify our platform?"
-msgstr ""
-"Gostaríamos de elevar a curiosidade dos aprendizes um nível acima. Você tem "
-"ideias para gameficar nossa plataforma?"
-
-#: templates/login/login.html:429 templates/main/main.html:511
-msgid "Social Network"
-msgstr "Rede Social"
-
-#: templates/login/login.html:433 templates/main/main.html:515
-msgid ""
-"The new social network funcionalities will allow users to communicate with "
-"each other to exchange ideas and challenges."
-msgstr ""
-"As novas funcionalidades da rede social vão permir que os usuários se "
-"comuniquem para trocar ideias e desafios."
-
-#: templates/login/login.html:453 templates/main/main.html:535
-msgid "Contact"
-msgstr "Contato"
-
-#: templates/login/login.html:455 templates/main/main.html:537
-msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
-msgstr "<strong>Entre em contato com </strong> o time do Dr. Scratch</h2>"
-
-#: templates/login/login.html:459 templates/main/main.html:541
-msgid "We would be pleased to receive your feedback"
-msgstr "Gostaríamos de receber seus comentários"
-
-#: templates/login/login.html:498 templates/main/main.html:580
-msgid ""
-"We would like to thank many people for their collaboration and we have done "
-"one special section."
-msgstr ""
-"Gostaríamos de agradecer a todos por sua colaboração e para isso fizemos "
-"essa seção especial."
-
-#: templates/login/login.html:501 templates/main/main.html:584
-msgid "Collaborators"
-msgstr "COlaboradores"
-
-#: templates/login/login.html:520 templates/main/main.html:604
-msgid "Are you a Dr. Scratch user?"
-msgstr "Você é um usuário do Dr. Scratch?"
-
-#: templates/login/login.html:523 templates/main/main.html:607
-msgid "Join now!"
-msgstr "Inscreva-se agora!"
-
-#: templates/login/login.html:569 templates/main/main.html:653
-msgid "<img class='framed' src='static/app/images/url-en.png' />"
-msgstr "<img class='framed' src='static/app/images/url-en.png' />"
-
-#: templates/login/login.html:594 templates/main/main.html:678
-msgid "<img class='framed' src='static/app/images/project-en.png' />"
-msgstr "<img class='framed' src='static/app/images/project-en.png' />"
 
 #: templates/main/collaborators.html:75 templates/main/collaborators.html:162
 msgid "Who we are"
@@ -2785,8 +2516,8 @@ msgid "Eva Hu Garres"
 msgstr "Eva Hu Garres"
 
 #: templates/main/collaborators.html:226 templates/main/collaborators.html:248
-msgid "Web Developer"
-msgstr "Web Developer"
+msgid "Web developer"
+msgstr "Web developer"
 
 #: templates/main/collaborators.html:246
 msgid "Mari Luz Aguado Jiménez"
@@ -2804,6 +2535,17 @@ msgstr "Anônimo"
 msgid "Lenguage"
 msgstr "Idioma"
 
+#: templates/main/collaborators.html:350 templates/main/main.html:430
+msgid ""
+"We know the importance of receiving feedback on your own language to "
+"understand every little detail or hint, so we'll translate Dr. Scratch to "
+"facilitate coding learning to as many people as possible."
+msgstr ""
+"Nós sabemos a importância de receber feedback em sua própria língua para "
+"entender cada pequeno detalhe ou dica. É por isso que vamos traduzir o Dr."
+"Scratch para facilitar o aprendizado de programação para o maior número "
+"possível de pessoas."
+
 #: templates/main/collaborators.html:351
 msgid ""
 "Would you like help us to translate Dr. Scratch to your language? Many "
@@ -2815,10 +2557,6 @@ msgstr ""
 #: templates/main/collaborators.html:367
 msgid "Portuguese from Brazil"
 msgstr "Português brasileiro"
-
-#: templates/main/collaborators.html:389
-msgid "Greek"
-msgstr "Grego"
 
 #: templates/main/collaborators.html:409
 msgid "Pau Nin"
@@ -2837,10 +2575,6 @@ msgstr ""
 #: templates/main/collaborators.html:458
 msgid "Basque"
 msgstr "Basco"
-
-#: templates/main/collaborators.html:481
-msgid "Galician"
-msgstr "Galício"
 
 #: templates/main/collaborators.html:532
 msgid ""
@@ -2906,8 +2640,8 @@ msgid ""
 "<input type='text' name='email' id='email' placeholder='Email' style='margin-"
 "bottom: 15px;'>"
 msgstr ""
-"<input type='text' name='email' id='email' placeholder='Email' "
-"style='margin-bottom: 15px;'>"
+"<input type='text' name='email' id='email' placeholder='Email' style='margin-"
+"bottom: 15px;'>"
 
 #: templates/main/main.html:104 templates/main/main.html.py:125
 #: templates/sign/organization.html:89
@@ -2928,11 +2662,15 @@ msgstr ""
 
 #: templates/main/main.html:106
 msgid ""
-"<input type='submit' value='Sign Up' id='sign-up' class='btn-group btn-group-"
+"<input type='submit' value='Sign up' id='sign-up' class='btn-group btn-group-"
 "justified colored-text'>"
 msgstr ""
-"<input type='submit' value='Sign Up' id='sign-up' class='btn-group btn-group-"
+"<input type='submit' value='Sign up' id='sign-up' class='btn-group btn-group-"
 "justified colored-text'>"
+
+#: templates/main/main.html:116 templates/sign/organization.html:78
+msgid "Sign in"
+msgstr "Entrar"
 
 #: templates/main/main.html:127 templates/sign/organization.html:93
 msgid "I forgot my password"
@@ -2962,21 +2700,234 @@ msgstr ""
 "ferramenta muito útil para avaliar seus próprios projetos ou os dos seus "
 "estudantes."
 
-#: templates/main/main.html:168
-msgid "Learn More"
-msgstr "Aprenda Mais"
+#: templates/main/main.html:269
+msgid "WHY?"
+msgstr "Por quê?"
+
+#: templates/main/main.html:271 templates/sign/coder.html:165
+msgid "Why "
+msgstr "Por que"
+
+#: templates/main/main.html:271 templates/sign/coder.html:165
+msgid "you’ll love Dr. Scratch"
+msgstr "você vai adorar Dr. Scratch"
+
+#: templates/main/main.html:275
+msgid "A powerful tool to analyze your Scratch projects"
+msgstr "Uma ferramenta poderosa para analisar seus projetos do Scratch"
+
+#: templates/main/main.html:287
+msgid "Simple & Fun"
+msgstr "Simples & Divertido"
+
+#: templates/main/main.html:289
+msgid ""
+"Your students can easily learn how to improve their programming skills in a "
+"fun way."
+msgstr ""
+"Seus estudantes podem aprender facilmente a melhorar suas habilidades de "
+"programação de um jeito divertido."
+
+#: templates/main/main.html:300
+msgid "Improve your skills"
+msgstr "Melhore suas habilidades"
+
+#: templates/main/main.html:302
+msgid ""
+"We provide feedback on several aspects which are related to Computational "
+"Thinking."
+msgstr ""
+"Nós damos feedback sobre vários aspectos relacionados ao Pensamento "
+"Computacional."
+
+#: templates/main/main.html:313
+msgid "Always improving"
+msgstr "Sempre melhorando"
+
+#: templates/main/main.html:315
+msgid ""
+"We're continually enhancing the features of Dr. Scratch, and we'd love to "
+"hear your thoughts"
+msgstr ""
+"Estamos sempre melhorando o Dr. Scratch, e adoraríamos ouvir sua opinião"
+
+#: templates/main/main.html:352
+msgid "How"
+msgstr "Como"
+
+#: templates/main/main.html:354 templates/sign/organization.html:189
+msgid "How "
+msgstr "Como "
+
+#: templates/main/main.html:354
+msgid "it works"
+msgstr "funciona"
+
+#: templates/main/main.html:358
+msgid "There are two options to analyze a Scratch project with Dr. Scratch"
+msgstr "Há duas opções para analisar um projeto do Scratch com Dr. Scratch"
+
+#: templates/main/main.html:359
+msgid "project.png"
+msgstr "projeto.png"
+
+#: templates/main/main.html:361
+msgid ""
+"You can upload an sb2 file or just provide the project url, avoiding the "
+"need to previously download the project to your computer. By analyzing your "
+"projects with Dr. Scratch, you can easily check your Computational Thinking "
+"Score."
+msgstr ""
+"Você pode enviar um arquivo sb2 ou entrar com o endereço do projeto, sem "
+"precisar carregar o projeto para o seu computador. Analisando seus projetos "
+"com Dr. Scratch, você pode facilmente conferir sua Pontuação de Pensamento "
+"Computacional."
+
+#: templates/main/main.html:370
+msgid "It is extremely easy to use, both for begginers and expert programmers."
+msgstr "É muito fácil de usar, para iniciantes e programadores experientes."
+
+#: templates/main/main.html:374
+msgid "You receive feedback to improve your coding skills."
+msgstr "Você recebe feedback para melhorar suas habilidades de programação."
+
+#: templates/main/main.html:382
+msgid ""
+"You can keep on improving your programming skills by yourself even from home."
+msgstr ""
+"Você pode continuar melhorando suas habilidades de programação até em casa."
+
+#: templates/main/main.html:386
+msgid "You can track your progress through charts and stats."
+msgstr "Você pode conferir seu progresso usando gráficos e estatísticas."
+
+#: templates/main/main.html:405
+msgid "NEW FEATURES"
+msgstr "NOVAS FUNÇÕES"
+
+#: templates/main/main.html:407
+msgid "Coming "
+msgstr "Chegando"
+
+#: templates/main/main.html:407
+msgid "Soon"
+msgstr "Em breve"
+
+#: templates/main/main.html:411
+msgid "We are working on new features to improve Dr. Scratch"
+msgstr "Estamos trabalhando em novas funções para melhorar Dr. Scratch"
+
+#: templates/main/main.html:426
+msgid "Multilingual website"
+msgstr "Site multilíngue"
+
+#: templates/main/main.html:441
+msgid "Teacher accounts"
+msgstr "Contas para professores"
+
+#: templates/main/main.html:445
+msgid ""
+"Teachers will be able to group (and follow) their students to keep track of "
+"their progress in a fast and simple way."
+msgstr ""
+"Professores poderão agrupar (e seguir) seus estudantes para acompanhar seu "
+"progresso de uma forma rápida e simples."
+
+#: templates/main/main.html:456
+msgid "Cloud platform"
+msgstr "Plataforma em nuvem"
+
+#: templates/main/main.html:460
+msgid ""
+"We are in the process of migrating our servers to the Cloud with the aim of "
+"providing a better performance."
+msgstr ""
+"Estamos migrando nossos servidores para a Nuvem, com o objetivo de prover um "
+"melhor desempenho."
+
+#: templates/main/main.html:485
+msgid ""
+"With Dr. Scratch plug-ins for Chrome and Firefox, students will analyze "
+"their project WHILE programming on the Scratch website."
+msgstr ""
+"Com os plugins do Dr. Scratch para Chrome e Firefox, os estudantes "
+"analisarão seus projetos ENQUANTO programam no site do Scratch."
+
+#: templates/main/main.html:496
+msgid "Gamification"
+msgstr "Gamificação"
+
+#: templates/main/main.html:500
+msgid ""
+"We'd like to take learners curiosity one step further. Do you have cool "
+"ideas to gamify our platform?"
+msgstr ""
+"Gostaríamos de elevar a curiosidade dos aprendizes um nível acima. Você tem "
+"ideias para gameficar nossa plataforma?"
+
+#: templates/main/main.html:511
+msgid "Social network"
+msgstr "Rede social"
+
+#: templates/main/main.html:515
+msgid ""
+"The new social network funcionalities will allow users to communicate with "
+"each other to exchange ideas and challenges."
+msgstr ""
+"As novas funcionalidades da rede social vão permir que os usuários se "
+"comuniquem para trocar ideias e desafios."
+
+#: templates/main/main.html:535
+msgid "Contact"
+msgstr "Contato"
+
+#: templates/main/main.html:537
+msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
+msgstr "<strong>Entre em contato com </strong> o time do Dr. Scratch</h2>"
+
+#: templates/main/main.html:541
+msgid "We would be pleased to receive your feedback"
+msgstr "Gostaríamos de receber seus comentários"
+
+#: templates/main/main.html:580
+msgid ""
+"We would like to thank many people for their collaboration and we have done "
+"one special section."
+msgstr ""
+"Gostaríamos de agradecer a todos por sua colaboração e para isso fizemos "
+"essa seção especial."
+
+#: templates/main/main.html:584
+msgid "Collaborators"
+msgstr "COlaboradores"
 
 #: templates/main/main.html:585
 msgid "Blog"
 msgstr ""
+
+#: templates/main/main.html:604
+msgid "Are you a Dr. Scratch user?"
+msgstr "Você é um usuário do Dr. Scratch?"
+
+#: templates/main/main.html:607
+msgid "Join now!"
+msgstr "Inscreva-se agora!"
+
+#: templates/main/main.html:653
+msgid "<img class='framed' src='static/app/images/url-en.png' />"
+msgstr "<img class='framed' src='static/app/images/url-en.png' />"
+
+#: templates/main/main.html:678
+msgid "<img class='framed' src='static/app/images/project-en.png' />"
+msgstr "<img class='framed' src='static/app/images/project-en.png' />"
 
 #: templates/organization/settings.html:21
 msgid ""
 "<input  name='img' type='file' class='filestyle' data-buttonText='Choose "
 "img'>"
 msgstr ""
-"<input  name='img' type='file' class='filestyle' data-"
-"buttonText='Escolha Projeto'>"
+"<input  name='img' type='file' class='filestyle' data-buttonText='Escolha "
+"Projeto'>"
 
 #: templates/password/email_sended.html:12
 msgid "We sended to you an email."
@@ -3021,6 +2972,30 @@ msgstr "Repetir"
 msgid "You must to complete all the fields."
 msgstr "Você deve completar todos os campos."
 
+#: templates/sign/coder.html:75 templates/sign/coder.html.py:110
+#: templates/sign/coder.html:208 templates/sign/organization.html:134
+#: templates/sign/organization.html:241
+msgid "Sign up!"
+msgstr "Cadastre-se!"
+
+#: templates/sign/coder.html:104 templates/sign/coder.html.py:163
+#: templates/sign/organization.html:128 templates/sign/organization.html:187
+msgid "Dr. Scratch for organizations"
+msgstr "Dr. Scratch para instituições"
+
+#: templates/sign/coder.html:106
+msgid ""
+"Welcome to the Dr. Scratch website (version for organizations), an "
+"analytical tool that evaluates your Scratch projects in a variety of "
+"computational areas. This analyzer is a helpful tool to evaluate your "
+"students' Scratch projects. You'll have a smart dashboard where you can see "
+"the most important information about your students and their development."
+msgstr ""
+"Bem-vindo ao site do Dr. Scratch, uma ferramenta de análise que avalia seus "
+"projetos Scratch em várias áreas da computação. Esse analisador é uma "
+"ferramenta muito útil para avaliar seus próprios projetos ou os dos seus "
+"estudantes."
+
 #: templates/sign/coder.html:168
 msgid ""
 "You'll evaluate the projects of all your student in few time. Also, you'll "
@@ -3062,6 +3037,10 @@ msgid ""
 msgstr ""
 "Você está recebendo esse e-mail porque entrou com êxito em sua conta Dr. "
 "Scratch para organizações."
+
+#: templates/sign/organization.html:91
+msgid "Remember me"
+msgstr "Lembre de mim"
 
 #: templates/sign/organization.html:129
 msgid "Welcome to the organizations version of Dr. Scratch"
@@ -3144,8 +3123,7 @@ msgstr "Analise novamente!"
 #: templates/upload/dashboard-coder.html:163
 #: templates/upload/dashboard-organization.html:163
 msgid "Error! Please choose a .csv file"
-msgstr ""
-"Erro! Por favor, escolha um arquivo .csv"
+msgstr "Erro! Por favor, escolha um arquivo .csv"
 
 #: templates/upload/dashboard-coder.html:245
 #: templates/upload/dashboard-organization.html:245
@@ -3156,6 +3134,27 @@ msgstr "<img class='framed' src='../../static/app/images/url-en.png' />"
 #: templates/upload/dashboard-organization.html:270
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
 msgstr "<img class='framed' src='static/app/images/project-en.png' />"
+
+#~ msgid "Learn More"
+#~ msgstr "Aprenda Mais"
+
+#~ msgid "Multilingual Website"
+#~ msgstr "Site Multilíngue"
+
+#~ msgid "Cloud Platform"
+#~ msgstr "Plataforma em Nuvem"
+
+#~ msgid "Social Network"
+#~ msgstr "Rede Social"
+
+#~ msgid "Duplicated Scripts"
+#~ msgstr "Scripts duplicados"
+
+#~ msgid "Wait a moment please"
+#~ msgstr "Espere um pouco, por favor"
+
+#~ msgid "Flow Control"
+#~ msgstr "Controle de Fluxo"
 
 #~ msgid "if &lt; touching color [#0000FF]? &gt;"
 #~ msgstr "se a cor &lt; está tocando a cor[#0000FF]? &gt;"
