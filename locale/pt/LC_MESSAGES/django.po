@@ -869,7 +869,7 @@ msgid ""
 "href='#modalUrl'>url</a></span> of your Scratch project, you don't have to "
 "download it:"
 msgstr ""
-"1. Introduza a url <span class='colored-text'><a data-toggle='modal' "
+"1. Introduza a <span class='colored-text'><a data-toggle='modal' "
 "href='#modalUrl'>url</a></span> de seu projeto no Scratch, assim você não "
 "precisa fazer seu download:"
 
@@ -1023,9 +1023,9 @@ msgid ""
 "<b>break a problem into smaller parts that are easier to understand, program "
 "and debug.</b>"
 msgstr ""
-"A habilidade de abstrair e decompor problemas lhe ajuda a quebrar um "
+"A habilidade de abstrair e decompor problemas lhe ajuda a <b>quebrar um "
 "problema em partes menores, mais fáceis de entender, a programar e depurar "
-"(corrigir os erros)."
+"(corrigir os erros).</b>"
 
 #: templates/learn/Abstraction.html:17 templates/learn/Data.html:19
 #: templates/learn/Flow.html:17 templates/learn/Logic.html:17
@@ -1044,9 +1044,9 @@ msgid ""
 msgstr ""
 "Quando você começa a programar com Scracth, às vezes, parece que asolução "
 "mais simples é programar todo o comportamento de um personagem em um único "
-"programa. Entretanto, o melhor é que o comportamento do personagem seja "
+"programa. Entretanto,  <b>o melhor é que o comportamento do personagem seja "
 "controlado por diferentes programas e que cada um deles cuide de uma questão "
-"particular. Aqui tem um exemplo:"
+"particular </b>. Aqui tem um exemplo:"
 
 #: templates/learn/Abstraction.html:20 templates/learn/Abstraction.html:35
 #: templates/learn/Abstraction.html:41 templates/learn/Abstraction.html:61
@@ -1060,7 +1060,7 @@ msgstr ""
 #: templates/learn/Synchronization.html:45 templates/learn/User.html:23
 #: templates/learn/attrInit.html:25
 msgid "when gf clicked"
-msgstr "Quando alguém clicar em gf"
+msgstr "Quando alguém clicar em @"
 
 #: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
 #: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
@@ -1069,13 +1069,13 @@ msgstr "apaga tudo do palco"
 
 #: templates/learn/Abstraction.html:22 templates/learn/Abstraction.html:37
 msgid "go to x:(-100) y:(30)"
-msgstr "ir para x:(-100) y:(30)"
+msgstr "vai para as coordenadas x:(-100), y:(30)"
 
 #: templates/learn/Abstraction.html:23 templates/learn/Abstraction.html:38
 #: templates/learn/Abstraction.html:65 templates/learn/Abstraction.html:71
 #: templates/learn/Abstraction.html:81
 msgid "pen down"
-msgstr "use a caneta"
+msgstr "baixa a tua caneta"
 
 #: templates/learn/Abstraction.html:24 templates/learn/Abstraction.html:39
 #: templates/learn/Abstraction.html:72
@@ -1087,24 +1087,24 @@ msgstr "anda (200) passos"
 #: templates/learn/Abstraction.html:67 templates/learn/Abstraction.html:73
 #: templates/learn/Abstraction.html:83
 msgid "pen up"
-msgstr "levante a caneta"
+msgstr "levanta a tua caneta"
 
 #: templates/learn/Abstraction.html:26 templates/learn/Abstraction.html:42
 #: templates/learn/Abstraction.html:68 templates/learn/Abstraction.html:96
 #: templates/learn/Synchronization.html:25
 #: templates/learn/duplicatedScripts.html:20
 msgid "wait (1) secs"
-msgstr "espere 1 segundo"
+msgstr "espera (1) s"
 
 #: templates/learn/Abstraction.html:27 templates/learn/Abstraction.html:43
 msgid "go to x:(-44) y:(-24)"
-msgstr "ir para x:(-44) y:(-24)"
+msgstr "vai para as coordenadas x:(-44), y:(-24)"
 
 #: templates/learn/Abstraction.html:28 templates/learn/Abstraction.html:44
 #: templates/learn/Abstraction.html:64 templates/learn/Abstraction.html:70
 #: templates/learn/Abstraction.html:80
 msgid "set pen color to [#FFA500]"
-msgstr "Mude a cor da caneta para [#FFA500]"
+msgstr "altera a cor da tua caneta para [#FFA500]"
 
 #: templates/learn/Abstraction.html:29 templates/learn/Abstraction.html:45
 #: templates/learn/Abstraction.html:66
@@ -1153,11 +1153,11 @@ msgstr ""
 
 #: templates/learn/Abstraction.html:63 templates/learn/Abstraction.html:94
 msgid "go to x:(-200) y:(40)"
-msgstr "ir para x:(-200) y:(40)"
+msgstr "vai para as coordenadas x:(-200), y:(40)"
 
 #: templates/learn/Abstraction.html:69 templates/learn/Abstraction.html:97
 msgid "go to x:(-200) y:(0)"
-msgstr "ir para x:(-200) y:(0)"
+msgstr "vai para as coordenadas x:(-200), y:(0)"
 
 #: templates/learn/Abstraction.html:76
 msgid ""
@@ -1177,7 +1177,7 @@ msgstr ""
 
 #: templates/learn/Abstraction.html:79
 msgid "define PaintedOrange(length)"
-msgstr "defina PaintedOrange (comprimento)"
+msgstr "define PaintedOrange (comprimento)"
 
 #: templates/learn/Abstraction.html:82
 msgid "move (length) steps"
@@ -1193,11 +1193,11 @@ msgstr ""
 
 #: templates/learn/Abstraction.html:95
 msgid "PaintedOrange(100):: looks stack"
-msgstr "PaintedOrange(100):: parece travado"
+msgstr "PaintedOrange(100):: looks stack"
 
 #: templates/learn/Abstraction.html:98
 msgid "PaintedOrange(200):: looks stack"
-msgstr "PaintedOrange(200):: parece travado"
+msgstr "PaintedOrange(200):: looks stack"
 
 #: templates/learn/Abstraction.html:102
 msgid ""
@@ -1208,7 +1208,7 @@ msgid ""
 msgstr ""
 "Dessa forma, nós evitamos repetir código e isso deixa nossos projetos mais "
 "fáceis de programar e manter. Como pode ser visto, na primeira vez que o "
-"bloco foi usado, 'DesenhaLaranja' recebeu um comprimento de 100 passos, "
+"bloco foi usado, <i>DesenhaLaranja</i> recebeu um comprimento de 100 passos, "
 "enquanto que na segunda vez, o comprimento foi de 200 passos."
 
 #: templates/learn/Abstraction.html:111 templates/learn/Data.html:99
@@ -1240,8 +1240,8 @@ msgid ""
 "abstraction that helps us to program a single object, and dynamically "
 "<b>create exact copies with the same behavior.</b>"
 msgstr ""
-"Nessas situalções, é melhor usar clones, um tipo de abstração que nos ajuda "
-"a programar um objeto único e criar cópias exatas com o mesmo comportamento."
+"Nessas situalções, é melhor usar <b>clones</b>, um tipo de abstração que nos ajuda "
+"a programar um objeto único e <b>criar cópias exatas com o mesmo comportamento.</b>"
 
 #: templates/learn/Abstraction.html:116
 msgid ""
@@ -1259,27 +1259,27 @@ msgstr ""
 #: templates/learn/Parallelism.html:41 templates/learn/Parallelism.html:46
 #: templates/learn/Synchronization.html:47
 msgid "forever"
-msgstr "sempre"
+msgstr "repete para sempre"
 
 #: templates/learn/Abstraction.html:120
 msgid "create clone of [myself v]"
-msgstr "crie clone de (este ator)"
+msgstr "cria um clone de [ti mesmo v]"
 
 #: templates/learn/Abstraction.html:121
 msgid "wait (0.2) secs"
-msgstr "espere (0.2) segundos"
+msgstr "espera (0.2) s"
 
 #: templates/learn/Abstraction.html:122
 msgid "go to x:(pick random(-200) to (200)) y:(200)"
-msgstr "vá para x:(escolha número entre (-200) e (200)) y:(200)"
+msgstr "vai para as coordenadas x:(um valor ao acaso entre (-200) e (200)), y:(200)"
 
 #: templates/learn/Abstraction.html:123
 msgid "glide (3) secs to x:(x position) y:(-180)"
-msgstr "deslize (3) segundos para x:(posição x) y:(-180)"
+msgstr "desliza em (3)s para as coordenadas x:(a coordenada x da posição), y:(-180)"
 
 #: templates/learn/Abstraction.html:124
 msgid "delete this clone"
-msgstr "apague este clone"
+msgstr "remove-te como clone"
 
 #: templates/learn/Abstraction.html:127
 msgid ""
@@ -1305,8 +1305,8 @@ msgid ""
 "lives, the rewards collected ..."
 msgstr ""
 "Cada projeto Scratch precisa de um conjunto de informações sobre os "
-"personagens para funcionar corretamente. Por exemplo, precisamos saber a "
-"posição de cada personagem, a direção que está apontando, tamanho, etc. Além "
+"personagens para funcionar corretamente. Por exemplo, <b>precisamos saber a "
+"posição de cada personagem, a direção que está apontando, tamanho, etc.</b> Além "
 "disso, programadores podem criar novos repositórios de informação para "
 "armazenar dados como o nível em que nos encontramos, o tempo decorrido, a "
 "classificação, as vidas, as recompensas coletadas..."
@@ -2915,11 +2915,11 @@ msgstr "Inscreva-se agora!"
 
 #: templates/main/main.html:653
 msgid "<img class='framed' src='static/app/images/url-en.png' />"
-msgstr "<img class='framed' src='static/app/images/url-en.png' />"
+msgstr "<img class='framed' src='static/app/images/url-pt.png' />"
 
 #: templates/main/main.html:678
 msgid "<img class='framed' src='static/app/images/project-en.png' />"
-msgstr "<img class='framed' src='static/app/images/project-en.png' />"
+msgstr "<img class='framed' src='static/app/images/project-pt.png' />"
 
 #: templates/organization/settings.html:21
 msgid ""
@@ -3128,12 +3128,12 @@ msgstr "Erro! Por favor, escolha um arquivo .csv"
 #: templates/upload/dashboard-coder.html:245
 #: templates/upload/dashboard-organization.html:245
 msgid "<img class='framed' src='../../static/app/images/url-en.png' />"
-msgstr "<img class='framed' src='../../static/app/images/url-en.png' />"
+msgstr "<img class='framed' src='../../static/app/images/url-pt.png' />"
 
 #: templates/upload/dashboard-coder.html:270
 #: templates/upload/dashboard-organization.html:270
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
-msgstr "<img class='framed' src='static/app/images/project-en.png' />"
+msgstr "<img class='framed' src='static/app/images/project-pt.png' />"
 
 #~ msgid "Learn More"
 #~ msgstr "Aprenda Mais"
