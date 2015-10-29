@@ -1061,7 +1061,7 @@ msgstr ""
 #: templates/learn/Synchronization.html:45 templates/learn/User.html:23
 #: templates/learn/attrInit.html:25
 msgid "when gf clicked"
-msgstr "quan la ⚑ es premi"
+msgstr "quan la gf es premi"
 
 #: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
 #: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
