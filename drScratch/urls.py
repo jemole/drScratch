@@ -3,13 +3,12 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.views.generic import RedirectView
-from app.main import MainPage
 admin.autodiscover()
 
 urlpatterns = (
     url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
-    url(r'^blocks$', 'MainPage.as_view()'),
+    url(r'^blocks$', 'app.views.blocks'),
     #Blog
     url(r'^blog$', RedirectView.as_view(url='https://drscratchblog.wordpress.com')),
     #url(r'^profile', 'DrScratchApp.views.profileSettings',),

@@ -53,6 +53,16 @@ pSpriteNaming = "hairball -p convention.SpriteNaming "
 pDeadCode = "hairball -p blocks.DeadCode "
 pInitialization = "hairball -p initialization.AttributeInitialization "
 
+#____________________________ BLOCKS _____________________________________#
+def blocks(request):
+    callback = request.GET.get('callback')
+    headers = {}
+    headers['Accept-Language'] = str(request.LANGUAGE_CODE)
+
+    headers = json.dumps(headers)
+    if callback:
+        headers = '%s(%s)' % (callback, headers)
+        return HttpResponse(headers, content_type="application/json")
 
 #_____________________________ MAIN ______________________________________#
 

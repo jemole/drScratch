@@ -105,6 +105,7 @@ LANGUAGES = (
     ('es', _('Spanish')),
     ('en', _('English')),
     ('ca', _('Catalan')),
+    ('ca', _('Catalan')),
     ('gl', _('Galician')),
     ('pt', _('Portuguese')),
     ('el', _('Greek')),

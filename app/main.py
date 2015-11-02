@@ -2,7 +2,6 @@ import webapp2
 
 
 class MainPage(webapp2.RequestHandler):
-    print "SI"
     def get(self):
         callback = self.request.get('callback')
 
@@ -15,5 +14,5 @@ class MainPage(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/learn', MainPage),
+    ('/blocks', MainPage),
 ], debug=False)
