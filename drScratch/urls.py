@@ -3,11 +3,13 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.views.generic import RedirectView
+from app.main import MainPage
 admin.autodiscover()
 
 urlpatterns = (
     url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
+    url(r'^blocks$', 'MainPage.as_view()'),
     #Blog
     url(r'^blog$', RedirectView.as_view(url='https://drscratchblog.wordpress.com')),
     #url(r'^profile', 'DrScratchApp.views.profileSettings',),
@@ -40,7 +42,7 @@ urlpatterns = (
 
     #Upload a .CSV
     url(r'^analyzeCSV$', 'app.views.analyzeCSV',),
-    
+
     #Contest: Temporary url
     url(r'^contest$', 'app.views.contest',),
 

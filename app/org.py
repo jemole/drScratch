@@ -54,4 +54,21 @@ def translate_CT(lang):
                "dead_code":"Dead code",
                "attr_init":"Sprite attributes",
                "error":"Error analyzing project"}
+
+    elif lang == "pt":
+        dic = {"code":"CODE",
+               "url":"URL",
+               "mastery":"Mastery",
+               "abstraction":"Abstracció",
+               "parallelism":"Parallelism",
+               "logic":"Lògica ",
+               "sync":"Sincronització",
+               "flow_control":"Controls de flux ",
+               "user_inter":"Interactivitat de l'usuari",
+               "data_rep":"Representació de dades",
+               "dup_scripts":"Programes duplicats",
+               "sprite_naming":"Noms per defecte",
+               "dead_code":"Codi mort",
+               "attr_init":"Atributs no inicialitzats correctament",
+               "error":"Error analitzant el projecte"}
     return dic

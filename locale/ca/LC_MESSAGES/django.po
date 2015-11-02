@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-26 09:45+0000\n"
+"POT-Creation-Date: 2015-11-02 18:03+0000\n"
 "PO-Revision-Date: 2015-08-30 23:02+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -111,7 +111,7 @@ msgstr "Mals hàbits"
 
 #: templates/coder/base.html:211 templates/coder/base.html.py:359
 #: templates/coder/dashboard-unregistered-master.html:249
-#: templates/learn/base.html:108 templates/learn/deadCode.html:4
+#: templates/learn/base.html:113 templates/learn/deadCode.html:4
 #: templates/main/dashboard-unregistered-master.html:246
 #: templates/organization/base.html:211 templates/organization/base.html:359
 #: templates/organization/dashboard-unregistered-master.html:249
@@ -122,7 +122,7 @@ msgstr "Codi mort"
 
 #: templates/coder/base.html:214 templates/coder/base.html.py:357
 #: templates/coder/dashboard-unregistered-master.html:243
-#: templates/learn/base.html:106 templates/learn/duplicatedScripts.html:4
+#: templates/learn/base.html:111 templates/learn/duplicatedScripts.html:4
 #: templates/main/dashboard-unregistered-master.html:240
 #: templates/organization/base.html:214 templates/organization/base.html:357
 #: templates/organization/dashboard-unregistered-master.html:243
@@ -132,7 +132,7 @@ msgid "Duplicated scripts"
 msgstr "Programes duplicats"
 
 #: templates/coder/base.html:217 templates/coder/base.html.py:360
-#: templates/learn/base.html:109 templates/organization/base.html:217
+#: templates/learn/base.html:114 templates/organization/base.html:217
 #: templates/organization/base.html:360
 msgid "Attribute initialization"
 msgstr "Atributs no inicialitzats correctament"
@@ -164,67 +164,70 @@ msgid "Programming skill"
 msgstr "Habilitat de programació"
 
 #: templates/coder/base.html:268 templates/coder/base.html.py:351
-#: templates/learn/Parallelism.html:4 templates/learn/base.html:99
+#: templates/learn/Parallelism.html:4 templates/learn/base.html:104
 #: templates/organization/base.html:268 templates/organization/base.html:351
 #: templates/statistics/statistics.html:254
 msgid "Parallelism"
 msgstr "Paral·lelisme"
 
 #: templates/coder/base.html:271 templates/coder/base.html.py:349
-#: templates/learn/Logic.html:4 templates/learn/base.html:97
+#: templates/learn/Logic.html:4 templates/learn/base.html:102
 #: templates/organization/base.html:271 templates/organization/base.html:349
 #: templates/statistics/statistics.html:257
 msgid "Logic"
 msgstr "Lògica"
 
 #: templates/coder/base.html:274 templates/coder/base.html.py:354
-#: templates/learn/Flow.html:4 templates/learn/base.html:102
+#: templates/learn/Flow.html:22 templates/learn/base.html:107
 #: templates/organization/base.html:274 templates/organization/base.html:354
 #: templates/statistics/statistics.html:260
 msgid "Flow control"
 msgstr "Controls de flux"
 
 #: templates/coder/base.html:277 templates/coder/base.html.py:353
-#: templates/learn/User.html:5 templates/learn/base.html:101
+#: templates/learn/User.html:5 templates/learn/base.html:106
 #: templates/organization/base.html:277 templates/organization/base.html:353
 #: templates/statistics/statistics.html:263
 msgid "User interactivity"
 msgstr "Interactivitat de l'usuari"
 
 #: templates/coder/base.html:280 templates/coder/base.html.py:350
-#: templates/learn/base.html:98 templates/organization/base.html:280
+#: templates/learn/base.html:103 templates/organization/base.html:280
 #: templates/organization/base.html:350
 #: templates/statistics/statistics.html:266
 msgid "Data representation"
 msgstr "Representació de dades"
 
 #: templates/coder/base.html:283 templates/coder/base.html.py:355
-#: templates/learn/Abstraction.html:4 templates/learn/base.html:103
+#: templates/learn/Abstraction.html:4 templates/learn/base.html:108
 #: templates/organization/base.html:283 templates/organization/base.html:355
 #: templates/statistics/statistics.html:269
 msgid "Abstraction"
 msgstr "Abstracció"
 
 #: templates/coder/base.html:286 templates/coder/base.html.py:352
-#: templates/learn/Synchronization.html:5 templates/learn/base.html:100
+#: templates/learn/Synchronization.html:5 templates/learn/base.html:105
 #: templates/organization/base.html:286 templates/organization/base.html:352
 #: templates/statistics/statistics.html:272
 msgid "Synchronization"
 msgstr "Sincronització"
 
-#: templates/coder/base.html:320 templates/organization/base.html:320
+#: templates/coder/base.html:320 templates/contest.html:94
+#: templates/organization/base.html:320
 #: templates/upload/dashboard-coder.html:81
 #: templates/upload/dashboard-organization.html:81
 msgid "Logged in as "
 msgstr "Connectat com "
 
-#: templates/coder/base.html:322 templates/organization/base.html:322
+#: templates/coder/base.html:322 templates/contest.html:96
+#: templates/organization/base.html:322
 #: templates/upload/dashboard-coder.html:83
 #: templates/upload/dashboard-organization.html:83
 msgid "Change password"
 msgstr "Canviar contrasenya"
 
-#: templates/coder/base.html:324 templates/organization/base.html:324
+#: templates/coder/base.html:324 templates/contest.html:98
+#: templates/organization/base.html:324
 #: templates/upload/dashboard-coder.html:85
 #: templates/upload/dashboard-organization.html:85
 msgid "Logout"
@@ -244,7 +247,7 @@ msgstr "Estadístiques"
 msgid "Learn more"
 msgstr "Aprèn més"
 
-#: templates/coder/base.html:358 templates/learn/base.html:107
+#: templates/coder/base.html:358 templates/learn/base.html:112
 #: templates/learn/spriteNaming.html:5 templates/organization/base.html:358
 msgid "Incorrect names"
 msgstr "Noms poc encertats"
@@ -264,9 +267,10 @@ msgstr "Ajustos"
 #: templates/coder/dashboard-unregistered-basic.html:258
 #: templates/coder/dashboard-unregistered-developing.html:295
 #: templates/coder/dashboard-unregistered-master.html:356
-#: templates/coder/error_analyzing.html:70 templates/error/404.html:67
-#: templates/error/500.html:67 templates/error/analyzing.html:70
-#: templates/learn/base.html:119 templates/main/collaborators.html:594
+#: templates/coder/error_analyzing.html:70 templates/contest.html:196
+#: templates/error/404.html:67 templates/error/500.html:67
+#: templates/error/analyzing.html:70 templates/learn/base.html:124
+#: templates/main/collaborators.html:594
 #: templates/main/dashboard-unregistered-basic.html:254
 #: templates/main/dashboard-unregistered-developing.html:292
 #: templates/main/dashboard-unregistered-master.html:353
@@ -339,8 +343,8 @@ msgstr "<img class='framed' src='../static/app/images/project-ca.png' />"
 msgid "Wait a moment, please."
 msgstr "Espereu un moment, si us plau."
 
-#: templates/coder/base.html:491 templates/main/main.html:716
-#: templates/organization/base.html:491
+#: templates/coder/base.html:491 templates/contest.html:238
+#: templates/main/main.html:716 templates/organization/base.html:491
 msgid "loading..."
 msgstr "carregant..."
 
@@ -441,7 +445,7 @@ msgstr ""
 #: templates/coder/dashboard-unregistered-basic.html:103
 #: templates/coder/dashboard-unregistered-developing.html:113
 #: templates/coder/dashboard-unregistered-master.html:151
-#: templates/learn/base.html:84
+#: templates/learn/base.html:89
 #: templates/main/dashboard-unregistered-basic.html:99
 #: templates/main/dashboard-unregistered-developing.html:110
 #: templates/main/dashboard-unregistered-master.html:148
@@ -1006,6 +1010,12 @@ msgstr "Canviar foto"
 msgid "Statistics"
 msgstr "Estadístiques"
 
+#: templates/contest.html:220
+#, fuzzy
+#| msgid "Wait a moment, please."
+msgid "Wait a moment please"
+msgstr "Espereu un moment, si us plau."
+
 #: templates/error/404.html:36
 msgid "ERROR 404 - Page Not Found"
 msgstr "ERROR 404 - Pàgina No Trobada"
@@ -1029,7 +1039,7 @@ msgstr ""
 "programar i depurar.</b>"
 
 #: templates/learn/Abstraction.html:17 templates/learn/Data.html:19
-#: templates/learn/Flow.html:17 templates/learn/Logic.html:17
+#: templates/learn/Flow.html:35 templates/learn/Logic.html:17
 #: templates/learn/Parallelism.html:17 templates/learn/Synchronization.html:18
 #: templates/learn/User.html:18
 msgid "If you get 0 points..."
@@ -1053,15 +1063,15 @@ msgstr ""
 #: templates/learn/Abstraction.html:41 templates/learn/Abstraction.html:61
 #: templates/learn/Abstraction.html:92 templates/learn/Abstraction.html:118
 #: templates/learn/Data.html:85 templates/learn/Data.html.py:104
-#: templates/learn/Data.html:117 templates/learn/Flow.html:21
-#: templates/learn/Flow.html.py:39 templates/learn/Flow.html:49
-#: templates/learn/Flow.html.py:67 templates/learn/Parallelism.html:21
+#: templates/learn/Data.html:117 templates/learn/Flow.html:39
+#: templates/learn/Flow.html.py:57 templates/learn/Flow.html:67
+#: templates/learn/Flow.html.py:85 templates/learn/Parallelism.html:21
 #: templates/learn/Synchronization.html:21
 #: templates/learn/Synchronization.html:27
 #: templates/learn/Synchronization.html:45 templates/learn/User.html:23
 #: templates/learn/attrInit.html:25
 msgid "when gf clicked"
-msgstr "quan la gf es premi"
+msgstr "quan la @ es premi"
 
 #: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
 #: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
@@ -1136,7 +1146,7 @@ msgstr ""
 "canvis."
 
 #: templates/learn/Abstraction.html:59 templates/learn/Data.html:80
-#: templates/learn/Flow.html:37 templates/learn/Logic.html:32
+#: templates/learn/Flow.html:55 templates/learn/Logic.html:32
 #: templates/learn/Parallelism.html:32 templates/learn/Synchronization.html:43
 #: templates/learn/User.html:36
 msgid "If you get 1 point..."
@@ -1214,7 +1224,7 @@ msgstr ""
 "llargada és de 200 passos."
 
 #: templates/learn/Abstraction.html:111 templates/learn/Data.html:99
-#: templates/learn/Flow.html:65 templates/learn/Logic.html:47
+#: templates/learn/Flow.html:83 templates/learn/Logic.html:47
 #: templates/learn/Parallelism.html:65 templates/learn/Synchronization.html:67
 #: templates/learn/User.html:66
 msgid "If you get 2 points..."
@@ -1260,7 +1270,7 @@ msgstr ""
 "còpies que apareguin a la part superior de la pantalla i vagin caient fins a "
 "la part inferior:"
 
-#: templates/learn/Abstraction.html:119 templates/learn/Flow.html:50
+#: templates/learn/Abstraction.html:119 templates/learn/Flow.html:68
 #: templates/learn/Parallelism.html:41 templates/learn/Parallelism.html:46
 #: templates/learn/Synchronization.html:47
 msgid "forever"
@@ -1338,8 +1348,8 @@ msgstr ""
 msgid "Position:"
 msgstr "Posició:"
 
-#: templates/learn/Data.html:29 templates/learn/Flow.html:23
-#: templates/learn/Flow.html.py:42 templates/learn/Flow.html:51
+#: templates/learn/Data.html:29 templates/learn/Flow.html:41
+#: templates/learn/Flow.html.py:60 templates/learn/Flow.html:69
 #: templates/learn/Parallelism.html:42 templates/learn/User.html:40
 msgid "move (10) steps"
 msgstr "mou-te (10) passos"
@@ -1350,7 +1360,8 @@ msgstr "vés a x:(0) y:(0)"
 
 #: templates/learn/Data.html:31
 msgid "glide (1) secs to x:(0) y:(0)"
-msgstr "llisca en (1) segons a x:(0) y:(0)"
+msgstr "llisca en (1) segons fins a x:(0) y:(0)"
+
 
 #: templates/learn/Data.html:32
 msgid "set x to (0)"
@@ -1388,13 +1399,13 @@ msgstr "apunta en direcció (90 v)"
 msgid "point towards [v]"
 msgstr "apunta cap a [v]"
 
-#: templates/learn/Data.html:53 templates/learn/Flow.html:24
-#: templates/learn/Flow.html.py:43
+#: templates/learn/Data.html:53 templates/learn/Flow.html:42
+#: templates/learn/Flow.html.py:61
 msgid "turn cw (15) degrees"
 msgstr "gira ↻ (15) graus"
 
-#: templates/learn/Data.html:54 templates/learn/Flow.html:26
-#: templates/learn/Flow.html.py:45
+#: templates/learn/Data.html:54 templates/learn/Flow.html:44
+#: templates/learn/Flow.html.py:63
 msgid "turn ccw (15) degrees"
 msgstr "gira ↺ (15) graus"
 
@@ -1518,7 +1529,7 @@ msgid "delete (all v) of [Students v]"
 msgstr "esborra l'element (tots v) de [Estudiants v]"
 
 #: templates/learn/Data.html:106 templates/learn/Data.html.py:119
-#: templates/learn/Flow.html:41
+#: templates/learn/Flow.html:59
 msgid "repeat (3)"
 msgstr "repeteix (3) vegades"
 
@@ -1555,8 +1566,8 @@ msgstr ""
 "alumne i que realitzi un exercici a la pissarra digital. Fixeu-vos en les "
 "noves instruccions que afegim al programa:"
 
-#: templates/learn/Data.html:122 templates/learn/Flow.html:48
-#: templates/learn/Flow.html.py:70 templates/learn/Logic.html:52
+#: templates/learn/Data.html:122 templates/learn/Flow.html:66
+#: templates/learn/Flow.html.py:88 templates/learn/Logic.html:52
 #: templates/learn/Logic.html.py:55 templates/learn/Logic.html:58
 #: templates/learn/Parallelism.html:44 templates/learn/Parallelism.html:49
 #: templates/learn/Synchronization.html:50 templates/learn/User.html:50
@@ -1594,7 +1605,7 @@ msgstr ""
 "Les llistes tenen moltes possibilitats i moltes operacions possibles... "
 "t'animes a investigar com funcionen?"
 
-#: templates/learn/Flow.html:10
+#: templates/learn/Flow.html:28
 msgid ""
 "Instructions related to algorithmic notions of flow control can help you to "
 "<b>control the behavior of your characters</b>, making, for example, certain "
@@ -1605,7 +1616,7 @@ msgstr ""
 "fent per exemple que repeteixin determinats blocs un nombre de vegades "
 "concret o que el repeteixin fins que es produeixi una situació."
 
-#: templates/learn/Flow.html:19
+#: templates/learn/Flow.html:37
 msgid ""
 "The most basic way to control the behavior of your characters is creating a "
 "<b>program composed of a set of blocks are executed one after another</b>, "
@@ -1615,20 +1626,20 @@ msgstr ""
 "creant un <b>programa compost per un conjunt de blocs que s'executen un "
 "darrere l'altre</b>, tal com veiem en la imatge:"
 
-#: templates/learn/Flow.html:22 templates/learn/Flow.html.py:40
+#: templates/learn/Flow.html:40 templates/learn/Flow.html.py:58
 msgid "say [I'm a dancer cat] for (2) secs"
 msgstr "digues [Sóc un gat ballarí] durant (2) segons"
 
-#: templates/learn/Flow.html:25 templates/learn/Flow.html.py:44
-#: templates/learn/Flow.html:47 templates/learn/duplicatedScripts.html:28
+#: templates/learn/Flow.html:43 templates/learn/Flow.html.py:62
+#: templates/learn/Flow.html:65 templates/learn/duplicatedScripts.html:28
 msgid "wait (0.5) secs"
 msgstr "espera (0.5) segons"
 
-#: templates/learn/Flow.html:27 templates/learn/Flow.html.py:46
+#: templates/learn/Flow.html:45 templates/learn/Flow.html.py:64
 msgid "move (-10) steps"
 msgstr "mou-te (-10) passos"
 
-#: templates/learn/Flow.html:29
+#: templates/learn/Flow.html:47
 msgid ""
 "How does this program works? When the user click on the green flag run "
 "behind one another all blocks that have been included in the program. Start "
@@ -1642,7 +1653,7 @@ msgstr ""
 "\"mou-te 10 passos\"</i>, a continuació <i>\"gira 15 graus cap a la dreta\"</"
 "i>, i així fins arribar al darrer bloc del programa."
 
-#: templates/learn/Flow.html:38
+#: templates/learn/Flow.html:56
 msgid ""
 "Sometimes when we want a set of blocks is constantly repeated, instead of "
 "repeating the same blocks over and over again, you can use a repeat "
@@ -1654,18 +1665,18 @@ msgstr ""
 "d'instruccions de repetició que permetin aconseguir el mateix efecte, però "
 "d'una manera més còmode i manejable. Vegem un parell d'exemples:"
 
-#: templates/learn/Flow.html:52 templates/learn/Parallelism.html:43
+#: templates/learn/Flow.html:70 templates/learn/Parallelism.html:43
 #: templates/learn/duplicatedScripts.html:19
 #: templates/learn/duplicatedScripts.html:27
 #: templates/learn/duplicatedScripts.html:41
 msgid "if on edge, bounce"
 msgstr "rebota en tocar una vora"
 
-#: templates/learn/Flow.html:54
+#: templates/learn/Flow.html:72
 msgid "How these control blocks works?"
 msgstr "Com funcionen aquests blocs de control?"
 
-#: templates/learn/Flow.html:56
+#: templates/learn/Flow.html:74
 msgid ""
 "In the block <i>'repeat'</i> when execution reaches this point is repeated "
 "as often as has been indicated in the parameter block 'repeat', in the "
@@ -1680,7 +1691,7 @@ msgstr ""
 "inferior que indica que <b>quan s'acaben d'executar els blocs, aquests es "
 "tornen a repetir de nou</b> "
 
-#: templates/learn/Flow.html:58
+#: templates/learn/Flow.html:76
 msgid ""
 "The block <i>'forever'</i> works like the 'repeat' but never finish "
 "executing the blocks containing in its interior."
@@ -1689,7 +1700,7 @@ msgstr ""
 "'repeteix' però no deixa mai d'executar els blocs que conté en el seu "
 "interior."
 
-#: templates/learn/Flow.html:66
+#: templates/learn/Flow.html:84
 msgid ""
 "Sometimes we don't know previously  the number of times you want a set of "
 "blocks is executed, as this depends on a given situation. In these cases, "
@@ -1700,19 +1711,19 @@ msgstr ""
 "aquestes ocasions, el bloc 'repetir fins que...' és realment útil. Vegem un "
 "exemple:"
 
-#: templates/learn/Flow.html:68
+#: templates/learn/Flow.html:86
 msgid "repeat until &lt; touching [Enemy v] ?&gt;"
 msgstr "repeteix fins &lt; tocant [Enemic v]? &gt;"
 
-#: templates/learn/Flow.html:69
+#: templates/learn/Flow.html:87
 msgid "say [You don't catch me]"
 msgstr "digues [No m'atrapes...]"
 
-#: templates/learn/Flow.html:71
+#: templates/learn/Flow.html:89
 msgid "say [You catch me]"
 msgstr "digues [M'has atrapat!]"
 
-#: templates/learn/Flow.html:74
+#: templates/learn/Flow.html:92
 msgid ""
 "In the example, the character will constantly repeat the instruction say "
 "'You don't caught me...' while he don't touch the enemy. At the time that "
@@ -2287,8 +2298,8 @@ msgstr ""
 "Scratch o el so per provocar determinades accions.</b>"
 
 #: templates/learn/User.html:69
-msgid "if &lt;(lives) >[30]&gt; then"
-msgstr "si &lt;(vides) >[30]&gt; llavors"
+msgid "if &lt;(loudness) >[30]&gt; then"
+msgstr "si &lt;(volum del so) >[30]&gt; llavors"
 
 #: templates/learn/User.html:70
 msgid "say [There is much noise...]"
@@ -2392,7 +2403,7 @@ msgstr "si &lt; tecla [fletxa esquerra v] premuda?&gt; llavors"
 
 #: templates/learn/deadCode.html:18
 msgid "when I receive [startcc v] //Blocks that start with a hat block."
-msgstr "al rebre [startcc v] // Blocs que comencen amb un bloc d'inici."
+msgstr "quan rebi [startcc v] // Blocs que comencen amb un bloc d'inici."
 
 #: templates/learn/deadCode.html:19
 msgid "switch costume to [costume2 v]"
@@ -2422,7 +2433,7 @@ msgstr ""
 #: templates/learn/duplicatedScripts.html:23
 #: templates/learn/duplicatedScripts.html:37
 msgid "set rotation style [left-rigt v]"
-msgstr "fixa l'estil de rotació a [esquerra-dreta v]"
+msgstr "fixa la rotació a [esquerra-dreta v]"
 
 #: templates/learn/duplicatedScripts.html:16
 msgid "repeat (10)"
@@ -3176,7 +3187,6 @@ msgstr "<img class='framed' src='../../static/app/images/url-ca.png' />"
 #: templates/upload/dashboard-organization.html:270
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
 msgstr "<img class='framed' src='../../static/app/images/project-ca.png' />"
-
 
 #~ msgid "Hungarian"
 #~ msgstr "Hongarès"

@@ -491,11 +491,11 @@ def learn(request,page):
     elif request.LANGUAGE_CODE == "pt":
         dic = {'Logica':'Logic',
                'Paralelismo':'Parallelism',
-               'Representação':'Data',
-               'Sincronização':'Synchronization',
-               'Interactividade':'User',
+               'Representacao':'Data',
+               'Sincronizacao':'Synchronization',
+               'Interatividade':'User',
                'Controle':'Flow',
-               'Abstração':'Abstraction'}
+               'Abstracao':'Abstraction'}
 
     if page in dic:
         page = dic[page]

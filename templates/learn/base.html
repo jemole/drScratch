@@ -49,21 +49,22 @@
 
     <script type="text/javascript">
 
-    $.ajax({ 
-            url: "http://ajaxhttpheaders.appspot.com", 
-            dataType: 'jsonp', 
+    $.ajax({
+            url: "http://ajaxhttpheaders.appspot.com",
+            //url: "http://localhost:1234/blocks",
+            dataType: 'jsonp',
             success: function(headers) {
                 language = headers['Accept-Language'];
                 language = language.split(",")[0];
                 scratchblocks2.reset_languages();
                 if (language) var lang_dict = scratchblocks2._translations[language];
                 if (lang_dict) scratchblocks2.load_language(lang_dict);
-        $(document).ready(function () {  
+        $(document).ready(function () {
             scratchblocks2.parse();
         });
             }
         });
-    
+
     </script>
 </head>
 <body>
