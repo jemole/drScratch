@@ -2647,7 +2647,7 @@ msgid ""
 "<input type='text' name='username' id='username' placeholder='Username' "
 "style='margin-bottom: 15px;'>"
 msgstr ""
-"<input type='text' name='usuário' id='usuário' placeholder='Usuário' "
+"<input type='text' name='username' id='username' placeholder='Usuário' "
 "style='margin-bottom: 15px;'>"
 
 #: templates/main/main.html:103
@@ -3028,7 +3028,7 @@ msgid ""
 "<input type='password' class='form-control' name='password' "
 "placeholder='Password'>"
 msgstr ""
-"<input type='senha' class='form-control' name='senha' placeholder='Senha'>"
+"<input type='password' class='form-control' name='password' placeholder='Senha'>"
 
 #: templates/sign/coder.html:202 templates/sign/organization.html:231
 msgid "Hashkey"
@@ -3039,7 +3039,7 @@ msgid ""
 "<input type='password' class='form-control' name='hashkey' "
 "placeholder='Password'>"
 msgstr ""
-"<input type='senha' class='form-control' name='código' placeholder='Senha'>"
+"<input type='password' class='form-control' name='hashkey' placeholder='Còdigo'>"
 
 #: templates/sign/email.html:5
 msgid "New organization in Dr. Scratch!"
@@ -3082,12 +3082,12 @@ msgid ""
 "feature? Just drop us a line at "
 msgstr ""
 "Você gostaria de ser uma das 10 primeiras organizações a testar essa "
-"ferramenta? Deixe uma mensagem em"
+"ferramenta? Deixe uma mensagem em "
 
 #: templates/sign/organization.html:192
 msgid ""
 " and we'll send you a hash key that will allow you to sign up in the web"
-msgstr "e enviaremos um código que permitirá que você se cadastre no site."
+msgstr " e enviaremos um código que permitirá que você se cadastre no site."
 
 #: templates/sign/signup_error.html:13
 msgid "This name already exists. Choose another, please."
