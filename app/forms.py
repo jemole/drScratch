@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from models import OrganizationHash
+from models import OrganizationHash, CoderHash
 
 class UploadFileForm(forms.Form):
 	filename = forms.CharField(max_length=50)
@@ -27,23 +27,37 @@ class UpdateForm(forms.Form):
 class TeacherForm(forms.Form):
     username = forms.CharField(max_length=50)
     password = forms.CharField(max_length=50)
-    email = forms.CharField(max_length=50)  
+    email = forms.CharField(max_length=50)
     hashkey = forms.CharField(max_length=50)
     #classroom = forms.CharField(max_length=50)
-
-
-class OrganizationForm(forms.Form):
-    username = forms.CharField(max_length=50)
-    email = forms.CharField(max_length=50) 
-    password = forms.CharField(max_length=50) 
-    hashkey = forms.CharField(max_length=70)  
 
 class OrganizationHashForm(ModelForm):
     class Meta:
         model = OrganizationHash
         fields = ['hashkey']
 
+class OrganizationForm(forms.Form):
+    username = forms.CharField(max_length=50)
+    email = forms.CharField(max_length=50)
+    password = forms.CharField(max_length=50)
+    hashkey = forms.CharField(max_length=70)
+
+class CoderHashForm(ModelForm):
+    class Meta:
+        model = CoderHash
+        fields = ['hashkey']
+
+class CoderForm(forms.Form):
+    username = forms.CharField(max_length=50)
+    email = forms.CharField(max_length=50)
+    password = forms.CharField(max_length=50)
+    hashkey = forms.CharField(max_length=70)
+
+
 class LoginOrganizationForm(forms.Form):
-    username = forms.CharField(max_length=50) 
-    password = forms.CharField(max_length=50) 
-    
+    username = forms.CharField(max_length=50)
+    password = forms.CharField(max_length=50)
+
+class LoginCoderForm(forms.Form):
+    username = forms.CharField(max_length=50)
+    password = forms.CharField(max_length=50)

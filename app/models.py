@@ -7,15 +7,17 @@ from django.contrib.auth.models import User
 class CSVs(models.Model):
     filename = models.CharField(max_length=100)
     directory = models.CharField(max_length=100)
-    organization = models.CharField(max_length=100)
+    organization = models.CharField(max_length=100, default='drscratch')
+    coder = models.CharField(max_length=100, default='drscratch')
     date = models.DateTimeField(default=datetime.datetime.now)
 
-    class Meta:
-        get_latest_by = 'date'
+    #class Meta:
+    #    get_latest_by = 'date'
 
 class File(models.Model):
     filename = models.CharField(max_length=100)
-    organization = models.CharField(max_length=100)
+    organization = models.CharField(max_length=100, default='drscratch')
+    coder = models.CharField(max_length=100, default='drscratch')
     method = models.CharField(max_length=100)
     time = models.DateField(auto_now=False)
     language = models.TextField(default="en")
@@ -32,8 +34,19 @@ class File(models.Model):
     deadCode = models.IntegerField()
     duplicateScript = models.IntegerField()
 
+class Coder(User):
+    hashkey = models.TextField()
+    img = models.ImageField(upload_to="img/", default="app/images/drScratch.png")
+
+
+
+class CoderHash(models.Model):
+    hashkey = models.TextField()
+
+
 class Student(models.Model):
-    student = models.ForeignKey(User, unique=True)  
+    #student = models.ForeignKey(User, unique=True)
+    student = models.OneToOneField(User)
 
 class Classroom(models.Model):
     name = models.CharField(max_length=100)
@@ -41,7 +54,8 @@ class Classroom(models.Model):
 
 
 class Teacher(models.Model):
-    teacher = models.ForeignKey(User, unique=True)
+    #teacher = models.ForeignKey(User, unique=True)
+    teacher = models.OneToOneField(User)
     username = models.TextField()
     password = models.TextField()
     email = models.TextField()
@@ -51,6 +65,9 @@ class Teacher(models.Model):
 
 class Organization(User):
     hashkey = models.TextField()
+    img = models.ImageField(upload_to="img/", default="app/images/drScratch.png")
+
+
 
 class OrganizationHash(models.Model):
     hashkey = models.TextField()
@@ -67,7 +84,7 @@ class Project(models.Model):
 	path = models.TextField()
 	fupdate = models.TextField()
 	dashboard = models.ForeignKey(Dashboard)
-	
+
 class Attribute(models.Model):
 	myproject = models.ForeignKey(Project)
 	character = models.TextField()
@@ -99,7 +116,7 @@ class Mastery(models.Model):
 	flowcontrol = models.IntegerField()
 	interactivity = models.IntegerField()
 	representation = models.IntegerField()
-	scoring = models.IntegerField()	
+	scoring = models.IntegerField()
 
 class Comment(models.Model):
 	user = models.TextField()

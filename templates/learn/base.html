@@ -47,20 +47,24 @@
     <!-- DEFAULT COLOR/ CURRENTLY USING -->
     <link rel="stylesheet" href="../../static/app/content/red.css">
 
-    <script>
-        $(document).ready(function() {
+    <script type="text/javascript">
+
+    $.ajax({
+            url: "http://localhost:1234/blocks",
+            dataType: 'jsonp',
+            success: function(headers) {
+                language = headers['Accept-Language'];
+                language = language.split(",")[0];
+                scratchblocks2.reset_languages();
+                if (language) var lang_dict = scratchblocks2._translations[language];
+                if (lang_dict) scratchblocks2.load_language(lang_dict);
+        $(document).ready(function () {
             scratchblocks2.parse();
         });
+            }
+        });
 
-        var choose_lang = x=window.navigator.language||navigator.browserLanguage;
-        choose_lang = choose_lang.split("-")[0];
-
-
-        scratchblocks2.reset_languages();
-        var lang_dict = scratchblocks2._translations[choose_lang];
-
-          if (lang_dict) scratchblocks2.load_language(lang_dict);
-        </script>
+    </script>
 </head>
 <body>
    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">

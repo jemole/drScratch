@@ -20,14 +20,14 @@
 
     <link rel="stylesheet" href="../../static/app/content/style.css">
     <!-- =========================
-     FAV AND TOUCH ICONS AND FONT  
+     FAV AND TOUCH ICONS AND FONT
     ============================== -->
     <link rel="icon" href="../../static/app/images/favicon.ico">
-    <link rel="stylesheet" href="../../static/app/icons/icons.css">  
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
     <!-- =========================
-     STYLESHEETS   
+     STYLESHEETS
     ============================== -->
     <!-- BOOTSTRAP AND ANIMATION -->
     <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="../../static/app/content/styles.css">
     <link rel="stylesheet" href="../../static/app/content/cloud.css">
 
-    
+
     <!-- RESPONSIVE FIXES -->
     <link rel="stylesheet" href="../../static/app/content/responsive.css">
 
@@ -59,7 +59,7 @@
         date_list[date_list.length-1] = date_list[date_list.length-1].slice(0,-1)
     });
 $(function () {
-   
+
     $('#chart-panel').highcharts({
         title: {
             text: '{% trans "Scores of 2015" %}',
@@ -68,7 +68,7 @@ $(function () {
         xAxis: {
             categories: date_list
         },
-       
+
         tooltip: {
             valueSuffix: '{% trans " points"%}'
         },
@@ -86,7 +86,7 @@ $(function () {
 });
 
 $(function () {
-   
+
     $('#total-projects').highcharts({
         title: {
             text: '{% trans "Number of projects analyzed in 2015" %}',
@@ -95,7 +95,7 @@ $(function () {
         xAxis: {
             categories: date_list
         },
-       
+
         tooltip: {
             valueSuffix: '{% trans " projects" %}'
         },
@@ -257,7 +257,7 @@ $(function () {
                 name: "{% trans 'Logic' %}",
                 y: {{ skillRate.logic }},
             }, {
-                name: "{% trans 'Flow Control' %}",
+                name: "{% trans 'Flow control' %}",
                 y: {{ skillRate.flowControl }},
             }, {
                 name: "{% trans 'User interactivity' %}",
@@ -282,7 +282,7 @@ $(function () {
 <body>
 
    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
-        <div class="container">          
+        <div class="container">
                     <!-- TOP BAR -->
 
             <div class="navbar-collapse collapse" id="stamp-navigation">
@@ -302,10 +302,13 @@ $(function () {
       </div>
             <!-- /END STICKY NAVIGATION -->
     <!-- JUMBOTRON -->
-     
+
       <div id ="cloud"><h2>{% trans "Statistics" %}</h2><span class='shadow'></span></div>
     <!-- /END JUMBOTRON -->
     <!-- PANEL-->
+    <div class="container">
+    <div class="text-right">{% trans "These statistics are update every night at 00.00h CEST." %}</div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -353,7 +356,7 @@ $(function () {
                     </li>
                     <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
                     </li>
-                    
+
                 </ul>
         </div>
     </footer>

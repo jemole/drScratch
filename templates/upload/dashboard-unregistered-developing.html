@@ -123,13 +123,13 @@
                         <div class="panel-heading" id="stepone">
                             <img src="static/app/images/monkey.png" class="img-responsive col-md-4">
                             <h2 id="score" class="panel-title dark-text"><strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}
-                            <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>
-                        
+                            <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>                      
                         </div>
                         <div class="panel-body">
                             <div class="container">
-                            {% trans "<h3 class='text-left dark-text'>Your level is... <br></br> <strong>DEVELOPING! </strong></h3>" %}
-                            <p class='text-left dark-text'> {% trans "You're doing a great job.<br> Keep it up!!!" %}</p>
+                            <br></br> 
+                            {% trans "<h3 class='text-left dark-text'>Your level is... <strong>DEVELOPING! </strong></h3>" %}
+                            <p class='text-left dark-text'> {% trans "You're doing a great job. Keep it up!!!" %}</p>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,25 @@
 {% extends 'learn/base.html' %}
 {% load i18n %}
+    <script>
+        
+        $(document).ready(function() {
+            scratchblocks2.parse();
+        });
+
+        var choose_lang = x=window.navigator.language||navigator.browserLanguage;
+        console.log("HOLA");
+        choose_lang = choose_lang.split("-")[0];
+        console.log(choose_lang);
+        
+
+
+        scratchblocks2.reset_languages();
+        var lang_dict = scratchblocks2._translations[choose_lang];
+
+          if (lang_dict) scratchblocks2.load_language(lang_dict);
+  </script>
     <!-- JUMBOTRON -->
-    <div id = "cloud"><h2>{% block title %}{% trans "Flow Control" %}{% endblock %}</h2><span class='shadow'></span></div>
+    <div id = "cloud"><h2>{% block title %}{% trans "Flow control" %}{% endblock %}</h2><span class='shadow'></span></div>
     <!-- /END JUMBOTRON -->
     <!-- PANEL-->
 {% block content %}
@@ -30,7 +48,7 @@
             </section>
         </div>
     </div>
-    
+
     <div class="panel panel-default">
         <div class="panel-body col-lg-10 col-lg-offset-1">
             <section id="level1">
@@ -69,7 +87,7 @@
                                                 {% trans "say [You don't catch me]" %}
                                                 {% trans "end" %}
                                                 {% trans "say [You catch me]" %}
-                                                
+
                               </pre><br>
 {% trans "In the example, the character will constantly repeat the instruction say 'You don't caught me...' while he don't touch the enemy. At the time that the condition is met instruction <i>'repeat until ...'</i>, the contents inside will finish run and will jump to the next instruction, in this case say 'You caught me!'." %}<br><br>
             </section>
