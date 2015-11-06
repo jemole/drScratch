@@ -141,13 +141,13 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                 <a class="navbar-brand" href="/">
                     <img src="static/app/images/logo_main.png" alt="">
                 </a>
-                <ul class="nav navbar-nav navbar-right main-navigation ">
-                  <li class="navbar-brand"><a class="navbar-brand pull-right" href="/organization/{{user.username}}"><span class="icon-basic-home colored-text"></span>{{ user.username }}</a></li>
+                <ul class="nav navbar-nav navbar-center main-navigation ">
+                  <li class="navbar-brand"><a class="navbar-brand pull-center" href="/organization/{{user.username}}"><span class="icon-basic-home colored-text"></span>{{ user.username }}</a></li>
                </ul>
                 <ul class="nav navbar-nav navbar-right main-navigation ">
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
-<li class="navbar-brand"><a class="btn btn-default" id="tour">TOUR</a></li>
+<li class="navbar-brand"><a class="btn btn-default" id="tour">{% trans "HELP" %}</a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr. Scratch(Beta Version)" %}</a></li>
                 </ul>
             </div>

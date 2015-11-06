@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="../../static/app/content/bootstrap-tour.css">
     <script src="../../static/app/scripts/bootstrap.min.js"></script>
     <script src="../../static/app/scripts/bootstrap-tour.js"></script>
-    
+
 
     <!-- SITE TITLE -->
     <title>Dr. Scratch</title>
@@ -23,14 +23,14 @@
 
     <link rel="stylesheet" href="/static/app/content/style.css">
     <!-- =========================
-     FAV AND TOUCH ICONS AND FONT  
+     FAV AND TOUCH ICONS AND FONT
     ============================== -->
     <link rel="icon" href="/static/app/images/favicon.ico">
-    <link rel="stylesheet" href="static/app/icons/icons.css">  
+    <link rel="stylesheet" href="static/app/icons/icons.css">
     <link type="text/css" rel="stylesheet" href="/static/app/content/css_002.css">
     <link type="text/css" rel="stylesheet" href="/static/app/content/css.css">
     <!-- =========================
-     STYLESHEETS   
+     STYLESHEETS
     ============================== -->
     <!-- BOOTSTRAP AND ANIMATION -->
     <link rel="stylesheet" href="/static/app/content/bootstrap.min.css">
@@ -96,8 +96,8 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
     ]});
      tour.init();
     // Initialize the tour
-    
-           
+
+
             tour.start();
 
         });
@@ -135,7 +135,7 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
     <!-- TOP BAR -->
 <div id="wrap">
     <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
-        <div class="container">          
+        <div class="container">
             <div class="navbar-collapse collapse" id="stamp-navigation">
                     <!-- NAVIGATION LINK -->
                 <a class="navbar-brand" href="/">
@@ -144,35 +144,35 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                 <ul class="nav navbar-nav navbar-right main-navigation ">
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
-<li class="navbar-brand"><a class="btn btn-default" id="tour">TOUR</a></li>
+<li class="navbar-brand"><a class="btn btn-default" id="tour">{% trans "HELP" %}</a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr. Scratch(Beta Version)" %}</a></li>
                 </ul>
             </div>
         </div>
     </div>
     <!-- /END TOP BAR -->
-    
+
 <div class="container">
     <!-- BODY -->
     <section id="blackboard" class="services col-md-5">
     <!-- POINTS PANEL -->
         <div class="devpanel">
-      
+
             <div class="panel panel-success" id="devpanel">
                 <div class="panel-heading" id="stepone" >
                     <img src="static/app/images/cat.png" class="img-responsive col-md-4">
-                    <h2 id="score" class="panel-title dark-text"> <strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}                   
-                    <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>                                          
+                    <h2 id="score" class="panel-title dark-text"> <strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}
+                    <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>
                 </div>
-                <div class="panel-body">                    
+                <div class="panel-body">
                     <div class="container">
                             <br></br>
                             {% trans "<h3 class='text-left dark-text'>Your level is...  <strong> MASTER! </strong></h3>" %}
-                            <p class='text-left dark-text'> {% trans "You're the master of the universe!!! " %}</p> 
+                            <p class='text-left dark-text'> {% trans "You're the master of the universe!!! " %}</p>
                     </div>
                 </div>
             </div>
-          
+
         </div>
     <!-- /POINTS PANNEL -->
 
@@ -200,39 +200,39 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                                         {% endblocktrans %}
                                  </a>
                                 <br>
-                                   
+
                                 </tr>
                                     {% elif value == 1 %}
                                 <a  href="/learn/{{ key }}/#level1">
-                                    <img src="static/app/images/little_bulb.png" alt=""> 
+                                    <img src="static/app/images/little_bulb.png" alt="">
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
-                                
+
                                  </a>
                                 <br>
                                 </tr>
                                     {% elif value == 2 %}
                                  <a  href="/learn/{{ key }}/#level2">
-                                    <img src="static/app/images/little_bulb.png" alt=""> 
+                                    <img src="static/app/images/little_bulb.png" alt="">
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
-                                 
+
                                  </a>
                                 <br>
                                 </tr>
-                            {% endif %}   
+                            {% endif %}
                                 {% endif %}
-                                {% endif %}         
+                                {% endif %}
                                 {% if forloop.counter|divisibleby:1 or forloop.last %}
                                {% endif %}
                                 {% endfor %}
-                                
+
                     </div>
                 </div>
                  <div id="stepthree">
-                    
+
                     <div class="panel-heading" >
                         <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
                     </div>
@@ -248,7 +248,7 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                         {% if key != 'number' %}
                         {% if deadCode.number == 0 %}
                         {% trans 'Your project does not have dead code, good job!' %}
-                        {% else %} 
+                        {% else %}
                         {% trans 'You have dead code in ' %}{{ key }}({{ value }}):
                         {% endif %}
                         {% endif%}
@@ -267,14 +267,14 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                         {% endif%}
                         {% endif%}
                         {% endfor%}" data-trigger="hover" href="learn/attrInit"> {{ initialization.number }} {% trans " sprite attributes." %}
-                        
+
 </a>
                     </div>
                     </div>
                 </div>
             </div>
 
-            </section>    
+            </section>
 <!-- /HOW TO IMPROVE -->
 
   <!-- Score in detail -->
@@ -296,7 +296,7 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                                 {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
                                 {% if key != "points" %}
                                 {% if key != "maxi" %}
-                                      
+
                                       <td>
                                         {% if value = 3 %}
                                         <span class="glyphicon glyphicon-star" id="star"></span>
@@ -311,7 +311,7 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                                                 <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
                                                     <span><strong>{{ value }}/3</strong></span>
                                                 </div>
-                                             <div>  
+                                             <div>
                                             {% elif value = 1 %}
                                             <div class="progress">
                                                 <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
@@ -332,9 +332,9 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                                              <div>
                                             {% endif %}
                                        </td>
-                                       
+
                                 {% endif %}
-                                {% endif %}         
+                                {% endif %}
                                 {% if forloop.counter|divisibleby:1 or forloop.last %}
                                 </tr>{% endif %}
                                 {% endfor %}
@@ -358,7 +358,7 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                 </li>
                 <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
                 </li>
-                
+
             </ul>
         </div>
     </footer>

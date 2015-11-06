@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-06 07:52+0000\n"
+"POT-Creation-Date: 2015-11-06 09:21+0000\n"
 "PO-Revision-Date: 2015-10-18 17:33-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -26,11 +26,11 @@ msgstr "Espanhol"
 msgid "English"
 msgstr "Inglês"
 
-#: drScratch/settings.py:108 templates/main/collaborators.html:412
+#: drScratch/settings.py:108 templates/main/collaborators.html:273
 msgid "Catalan"
 msgstr "Catalão"
 
-#: drScratch/settings.py:109 templates/main/collaborators.html:481
+#: drScratch/settings.py:109 templates/main/collaborators.html:342
 msgid "Galician"
 msgstr "Galício"
 
@@ -38,7 +38,7 @@ msgstr "Galício"
 msgid "Portuguese"
 msgstr "Português"
 
-#: drScratch/settings.py:111 templates/main/collaborators.html:389
+#: drScratch/settings.py:111 templates/main/collaborators.html:250
 msgid "Greek"
 msgstr "Grego"
 
@@ -270,7 +270,7 @@ msgstr "Configurações"
 #: templates/coder/error_analyzing.html:70 templates/contest.html:196
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70 templates/learn/base.html:123
-#: templates/main/collaborators.html:594
+#: templates/main/collaborators.html:455
 #: templates/main/dashboard-unregistered-basic.html:254
 #: templates/main/dashboard-unregistered-developing.html:292
 #: templates/main/dashboard-unregistered-master.html:353
@@ -438,6 +438,18 @@ msgstr "Pontuação em detalhes."
 #: templates/upload/dashboard-unregistered-master.html:93
 msgid "Here we show the score in each programming skill."
 msgstr "Aqui nós mostramos "
+
+#: templates/coder/dashboard-unregistered-basic.html:102
+#: templates/coder/dashboard-unregistered-developing.html:112
+#: templates/coder/dashboard-unregistered-master.html:150
+#: templates/main/dashboard-unregistered-basic.html:98
+#: templates/main/dashboard-unregistered-developing.html:109
+#: templates/main/dashboard-unregistered-master.html:147
+#: templates/organization/dashboard-unregistered-basic.html:102
+#: templates/organization/dashboard-unregistered-developing.html:112
+#: templates/organization/dashboard-unregistered-master.html:150
+msgid "HELP"
+msgstr ""
 
 #: templates/coder/dashboard-unregistered-basic.html:103
 #: templates/coder/dashboard-unregistered-developing.html:113
@@ -2494,11 +2506,11 @@ msgstr ""
 msgid "Who we are"
 msgstr "Quem somos"
 
-#: templates/main/collaborators.html:76 templates/main/collaborators.html:346
+#: templates/main/collaborators.html:76 templates/main/collaborators.html:207
 msgid "Translations"
 msgstr "Traduções"
 
-#: templates/main/collaborators.html:77 templates/main/collaborators.html:528
+#: templates/main/collaborators.html:77 templates/main/collaborators.html:389
 msgid "Workshops"
 msgstr "Workshops"
 
@@ -2525,36 +2537,11 @@ msgid "Dr. Scratch's team likes to thank you for your contributions."
 msgstr ""
 "A equipe do Dr. Scratch gostaria de agradecer a todos por sua contribuição."
 
-#: templates/main/collaborators.html:182 templates/main/collaborators.html:204
-#: templates/main/collaborators.html:272 templates/main/collaborators.html:295
+#: templates/main/collaborators.html:182
 msgid " "
 msgstr ""
 
-#: templates/main/collaborators.html:224
-msgid "Eva Hu Garres"
-msgstr "Eva Hu Garres"
-
-#: templates/main/collaborators.html:226 templates/main/collaborators.html:248
-msgid "Web developer"
-msgstr "Web developer"
-
-#: templates/main/collaborators.html:246
-msgid "Mari Luz Aguado Jiménez"
-msgstr "Mari Luz Aguado Jiménez"
-
-#: templates/main/collaborators.html:270 templates/main/collaborators.html:293
-#: templates/main/collaborators.html:315 templates/main/collaborators.html:432
-#: templates/main/collaborators.html:456 templates/main/collaborators.html:479
-#: templates/main/collaborators.html:501
-msgid "Anonymous"
-msgstr "Anônimo"
-
-#: templates/main/collaborators.html:317 templates/main/collaborators.html:434
-#: templates/main/collaborators.html:503
-msgid "Lenguage"
-msgstr "Idioma"
-
-#: templates/main/collaborators.html:350 templates/main/main.html:430
+#: templates/main/collaborators.html:211 templates/main/main.html:430
 msgid ""
 "We know the importance of receiving feedback on your own language to "
 "understand every little detail or hint, so we'll translate Dr. Scratch to "
@@ -2565,7 +2552,7 @@ msgstr ""
 "Scratch para facilitar o aprendizado de programação para o maior número "
 "possível de pessoas."
 
-#: templates/main/collaborators.html:351
+#: templates/main/collaborators.html:212
 msgid ""
 "Would you like help us to translate Dr. Scratch to your language? Many "
 "people have already helped us! "
@@ -2573,15 +2560,15 @@ msgstr ""
 "Você gostaria de traduzir Dr. Scratch para o seu idioma? Muitas pessoas já "
 "nos ajudaram!"
 
-#: templates/main/collaborators.html:367
+#: templates/main/collaborators.html:228
 msgid "Portuguese from Brazil"
 msgstr "Português brasileiro"
 
-#: templates/main/collaborators.html:409
+#: templates/main/collaborators.html:270
 msgid "Pau Nin"
 msgstr ""
 
-#: templates/main/collaborators.html:410
+#: templates/main/collaborators.html:271
 msgid ""
 "Pau Nin works as Elementary School teacher and Masters degree in Innovation "
 "Pedagogical and Education Leadership in the XXI century. He's an enthusiast "
@@ -2591,11 +2578,20 @@ msgid ""
 "classroom."
 msgstr ""
 
-#: templates/main/collaborators.html:458
+#: templates/main/collaborators.html:293 templates/main/collaborators.html:317
+#: templates/main/collaborators.html:340 templates/main/collaborators.html:362
+msgid "Anonymous"
+msgstr "Anônimo"
+
+#: templates/main/collaborators.html:295 templates/main/collaborators.html:364
+msgid "Lenguage"
+msgstr "Idioma"
+
+#: templates/main/collaborators.html:319
 msgid "Basque"
 msgstr "Basco"
 
-#: templates/main/collaborators.html:532
+#: templates/main/collaborators.html:393
 msgid ""
 "We are collaborating with several schools where we can prove the website "
 "with children and see which features they need."
@@ -2603,21 +2599,21 @@ msgstr ""
 "Trabalhamos em parceria com várias escolas, onde podemos testar a plataforma "
 "com crianças e identificar suas necessidades."
 
-#: templates/main/collaborators.html:533
+#: templates/main/collaborators.html:394
 msgid "Thanks all of children and teachers who help us with the development!"
 msgstr ""
 "Obrigado a todos os alunos e professores que nos ajudam com o "
 "desenvolvimento da plataforma!"
 
-#: templates/main/collaborators.html:562
+#: templates/main/collaborators.html:423
 msgid "CEIP Lope de Vega"
 msgstr "CEIP Lope de Vega"
 
-#: templates/main/collaborators.html:566
+#: templates/main/collaborators.html:427
 msgid "Teacher: Jorge Lobo"
 msgstr "Professor: Jorge Lobo"
 
-#: templates/main/collaborators.html:585
+#: templates/main/collaborators.html:446
 msgid "<strong>More thanks</strong></h2>"
 msgstr "<strong>Mais graças</strong></h2>"
 
@@ -3155,6 +3151,15 @@ msgstr "<img class='framed' src='../../static/app/images/url-pt.png' />"
 #: templates/upload/dashboard-organization.html:270
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
 msgstr "<img class='framed' src='static/app/images/project-pt.png' />"
+
+#~ msgid "Eva Hu Garres"
+#~ msgstr "Eva Hu Garres"
+
+#~ msgid "Web developer"
+#~ msgstr "Web developer"
+
+#~ msgid "Mari Luz Aguado Jiménez"
+#~ msgstr "Mari Luz Aguado Jiménez"
 
 #~ msgid "Learn More"
 #~ msgstr "Aprenda Mais"

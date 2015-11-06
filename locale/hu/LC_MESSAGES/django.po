@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-06 07:52+0000\n"
+"POT-Creation-Date: 2015-11-06 09:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: drScratch/settings.py:108 templates/main/collaborators.html:412
+#: drScratch/settings.py:108 templates/main/collaborators.html:273
 msgid "Catalan"
 msgstr ""
 
-#: drScratch/settings.py:109 templates/main/collaborators.html:481
+#: drScratch/settings.py:109 templates/main/collaborators.html:342
 msgid "Galician"
 msgstr ""
 
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#: drScratch/settings.py:111 templates/main/collaborators.html:389
+#: drScratch/settings.py:111 templates/main/collaborators.html:250
 msgid "Greek"
 msgstr ""
 
@@ -270,7 +270,7 @@ msgstr ""
 #: templates/coder/error_analyzing.html:70 templates/contest.html:196
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70 templates/learn/base.html:123
-#: templates/main/collaborators.html:594
+#: templates/main/collaborators.html:455
 #: templates/main/dashboard-unregistered-basic.html:254
 #: templates/main/dashboard-unregistered-developing.html:292
 #: templates/main/dashboard-unregistered-master.html:353
@@ -435,6 +435,18 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-developing.html:74
 #: templates/upload/dashboard-unregistered-master.html:93
 msgid "Here we show the score in each programming skill."
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-basic.html:102
+#: templates/coder/dashboard-unregistered-developing.html:112
+#: templates/coder/dashboard-unregistered-master.html:150
+#: templates/main/dashboard-unregistered-basic.html:98
+#: templates/main/dashboard-unregistered-developing.html:109
+#: templates/main/dashboard-unregistered-master.html:147
+#: templates/organization/dashboard-unregistered-basic.html:102
+#: templates/organization/dashboard-unregistered-developing.html:112
+#: templates/organization/dashboard-unregistered-master.html:150
+msgid "HELP"
 msgstr ""
 
 #: templates/coder/dashboard-unregistered-basic.html:103
@@ -2165,11 +2177,11 @@ msgstr ""
 msgid "Who we are"
 msgstr ""
 
-#: templates/main/collaborators.html:76 templates/main/collaborators.html:346
+#: templates/main/collaborators.html:76 templates/main/collaborators.html:207
 msgid "Translations"
 msgstr ""
 
-#: templates/main/collaborators.html:77 templates/main/collaborators.html:528
+#: templates/main/collaborators.html:77 templates/main/collaborators.html:389
 msgid "Workshops"
 msgstr ""
 
@@ -2192,57 +2204,32 @@ msgstr ""
 msgid "Dr. Scratch's team likes to thank you for your contributions."
 msgstr ""
 
-#: templates/main/collaborators.html:182 templates/main/collaborators.html:204
-#: templates/main/collaborators.html:272 templates/main/collaborators.html:295
+#: templates/main/collaborators.html:182
 msgid " "
 msgstr ""
 
-#: templates/main/collaborators.html:224
-msgid "Eva Hu Garres"
-msgstr ""
-
-#: templates/main/collaborators.html:226 templates/main/collaborators.html:248
-msgid "Web developer"
-msgstr ""
-
-#: templates/main/collaborators.html:246
-msgid "Mari Luz Aguado Jiménez"
-msgstr ""
-
-#: templates/main/collaborators.html:270 templates/main/collaborators.html:293
-#: templates/main/collaborators.html:315 templates/main/collaborators.html:432
-#: templates/main/collaborators.html:456 templates/main/collaborators.html:479
-#: templates/main/collaborators.html:501
-msgid "Anonymous"
-msgstr ""
-
-#: templates/main/collaborators.html:317 templates/main/collaborators.html:434
-#: templates/main/collaborators.html:503
-msgid "Lenguage"
-msgstr ""
-
-#: templates/main/collaborators.html:350 templates/main/main.html:430
+#: templates/main/collaborators.html:211 templates/main/main.html:430
 msgid ""
 "We know the importance of receiving feedback on your own language to "
 "understand every little detail or hint, so we'll translate Dr. Scratch to "
 "facilitate coding learning to as many people as possible."
 msgstr ""
 
-#: templates/main/collaborators.html:351
+#: templates/main/collaborators.html:212
 msgid ""
 "Would you like help us to translate Dr. Scratch to your language? Many "
 "people have already helped us! "
 msgstr ""
 
-#: templates/main/collaborators.html:367
+#: templates/main/collaborators.html:228
 msgid "Portuguese from Brazil"
 msgstr ""
 
-#: templates/main/collaborators.html:409
+#: templates/main/collaborators.html:270
 msgid "Pau Nin"
 msgstr ""
 
-#: templates/main/collaborators.html:410
+#: templates/main/collaborators.html:271
 msgid ""
 "Pau Nin works as Elementary School teacher and Masters degree in Innovation "
 "Pedagogical and Education Leadership in the XXI century. He's an enthusiast "
@@ -2252,29 +2239,38 @@ msgid ""
 "classroom."
 msgstr ""
 
-#: templates/main/collaborators.html:458
+#: templates/main/collaborators.html:293 templates/main/collaborators.html:317
+#: templates/main/collaborators.html:340 templates/main/collaborators.html:362
+msgid "Anonymous"
+msgstr ""
+
+#: templates/main/collaborators.html:295 templates/main/collaborators.html:364
+msgid "Lenguage"
+msgstr ""
+
+#: templates/main/collaborators.html:319
 msgid "Basque"
 msgstr ""
 
-#: templates/main/collaborators.html:532
+#: templates/main/collaborators.html:393
 msgid ""
 "We are collaborating with several schools where we can prove the website "
 "with children and see which features they need."
 msgstr ""
 
-#: templates/main/collaborators.html:533
+#: templates/main/collaborators.html:394
 msgid "Thanks all of children and teachers who help us with the development!"
 msgstr ""
 
-#: templates/main/collaborators.html:562
+#: templates/main/collaborators.html:423
 msgid "CEIP Lope de Vega"
 msgstr ""
 
-#: templates/main/collaborators.html:566
+#: templates/main/collaborators.html:427
 msgid "Teacher: Jorge Lobo"
 msgstr ""
 
-#: templates/main/collaborators.html:585
+#: templates/main/collaborators.html:446
 msgid "<strong>More thanks</strong></h2>"
 msgstr ""
 

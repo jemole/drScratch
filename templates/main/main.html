@@ -76,10 +76,14 @@
                         <li class="navbar-brand"><a href="#section2"><em>{% trans "How?" %}</em></a></li>
                         <li class="navbar-brand"><a href="#section3"><em>{% trans "Working on" %}</em></a></li>
                         <li class="navbar-brand"><a href="#section4"><em>{% trans "Contact us" %}</em></a></li>
+                        {% if not flagUser %}
                         <li class="navbar-brand"><a href="/signUpOrganization"><em class="colored-text">{% trans "Organizations" %}</em></a></li>
+                        {% endif %}
                       </ul>
 
-                     {% if flagUser %}
+
+
+                 {% if flagUser %}
                          <!-- NAVIGATION LINK -->
                          <ul class="nav navbar-nav navbar-left main-navigation ">
                              <li class="navbar-brand"><a class="navbar-brand pull-left" href="/{{page}}/{{user}}"><span class="icon-basic-home colored-text"></span><em>{{ user }}</em></a></li>
@@ -89,14 +93,40 @@
 
                      {% else %}
                     <!-- LOGIN REGISTER -->
+
+
                     <ul class="nav navbar-nav navbar-right login-register small-text">
+                      <ul class="nav navbar-nav navbar-left main-navigation ">
+
+                        <li style="display: block;" class="login js-login dropdown">
+                          <a aria-expanded="false" type="button" data-toggle="dropdown" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                            <span class="glyphicon glyphicon-book"><span class="icon-basic-world"></span></span>
+                          </a>
+                          <ul role="menu" class="dropdown-menu">
+                            <li>
+                            <div style="padding: 15px; padding-bottom: 10px;">
+                            <form action="/i18n/setlang/" method="post" type="hidden">
+                              {% csrf_token %}
+                              <input name="next" type="hidden" value="{{ redirect_to }}" />
+                              <select name="language" type="hidden">
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                             <option style="padding: 15px;" type="submit" class='btn-group btn-group-justified colored-text' value="{{ language.code }}">{{ language.name }} ({{ language.code }})</option>
+                            {% endfor %}
+                          </select>
+                          <input type="submit" value="Change language" class='btn-group btn-group-justified colored-text'/>
+                          </form>
+                        </div>
+                      </li>
+                    </ul>
+                      </li>
                       <li style="display: block;" class="login js-login dropdown">
                         <a aria-expanded="false" role="button" href="#modalSign" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign up" %}
                           <span class="caret"></span>
                         </a>
                         <ul role="menu" class="dropdown-menu">
                           <li>
-                          <div style="padding: 15px; padding-bottom: 0px;">
+                          <div style="padding: 15px; padding-bottom: 10px;">
                             <form accept-charset="UTF-8" action="/signUpCoder" method="post">
                             {% csrf_token %}
                               {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
@@ -118,7 +148,7 @@
                         </a>
                         <ul role="menu" class="dropdown-menu">
                           <li>
-                          <div style="padding: 15px; padding-bottom: 0px;">
+                          <div style="padding: 15px; padding-bottom: 10px;">
                             <form accept-charset="UTF-8" action="/loginCoder" method="post">
                                           {% csrf_token %}
                               {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}

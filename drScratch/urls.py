@@ -7,14 +7,23 @@ admin.autodiscover()
 
 urlpatterns = (
     url(r'^admin/', include(admin.site.urls)),
+
+    #Statistics
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
-    url(r'^blocks$', 'app.views.blocks'),
+    url(r'^statistics$', 'app.views.statistics',),
+
+    #Collaborators
+    url(r'^collaborators$', 'app.views.collaborators',),
+
     #Blog
     url(r'^blog$', RedirectView.as_view(url='https://drscratchblog.wordpress.com')),
-    #url(r'^profile', 'DrScratchApp.views.profileSettings',),
+
+    #Dashboards
     url(r'^showDashboard', 'app.views.showDashboard',),
-    url(r'^statistics$', 'app.views.statistics',),
-    url(r'^collaborators$', 'app.views.collaborators',),
+
+    #Translation
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^blocks$', 'app.views.blocks'),
 
     #Organizations
     url(r'^reset_password_confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', 'app.views.reset_password_confirm',name="reset_password_confirm"),

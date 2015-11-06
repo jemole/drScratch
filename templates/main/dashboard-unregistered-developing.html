@@ -17,15 +17,15 @@
 
     <link rel="stylesheet" href="../../static/app/content/style.css">
     <!-- =========================
-     FAV AND TOUCH ICONS AND FONT  
+     FAV AND TOUCH ICONS AND FONT
     ============================== -->
     <link rel="icon" href="../../static/app/images/favicon.ico">
-    <link rel="stylesheet" href="static/app/icons/icons.css">  
+    <link rel="stylesheet" href="static/app/icons/icons.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
-  
+
     <!-- =========================
-     STYLESHEETS   
+     STYLESHEETS
     ============================== -->
     <!-- BOOTSTRAP AND ANIMATION -->
     <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
@@ -77,8 +77,8 @@
     ]});
      tour.init();
     // Initialize the tour
-    
-           
+
+
             tour.start();
 
         });
@@ -96,7 +96,7 @@
 <body>
     <div id="wrap">
     <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
-        <div class="container">          
+        <div class="container">
                     <!-- TOP BAR -->
             <div class="navbar-collapse collapse" id="stamp-navigation">
                     <!-- NAVIGATION LINK -->
@@ -106,7 +106,7 @@
                 <ul class="nav navbar-nav navbar-right main-navigation ">
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
-                        <li class="navbar-brand"><a class="btn btn-default" id="tour">TOUR</a></li>
+                        <li class="navbar-brand"><a class="btn btn-default" id="tour">{% trans "HELP" %}</a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr. Scratch(Beta Version)" %}</a></li>
                       </ul>
             </div>
@@ -123,11 +123,11 @@
                         <div class="panel-heading" id="stepone">
                             <img src="static/app/images/monkey.png" class="img-responsive col-md-4">
                             <h2 id="score" class="panel-title dark-text"><strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}
-                            <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>                      
+                            <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>
                         </div>
                         <div class="panel-body">
                             <div class="container">
-                            <br></br> 
+                            <br></br>
                             {% trans "<h3 class='text-left dark-text'>Your level is... <strong>DEVELOPING! </strong></h3>" %}
                             <p class='text-left dark-text'> {% trans "You're doing a great job. Keep it up!!!" %}</p>
                             </div>
@@ -156,12 +156,12 @@
                                         {{ key }}
                                         {% endblocktrans %}
                                  </a><br>
-                                   
+
                                 </tr>
                             {% elif value == 1 %}
 
                                 <a href="/learn/{{ key }}/#level1">
-                                    <img src="static/app/images/little_bulb.png" alt=""> 
+                                    <img src="static/app/images/little_bulb.png" alt="">
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
@@ -169,23 +169,23 @@
                              {% elif value == 2 %}
 
                                 <a href="/learn/{{ key }}/#level2">
-                                    <img src="static/app/images/little_bulb.png" alt=""> 
+                                    <img src="static/app/images/little_bulb.png" alt="">
                                         {% blocktrans %}
                                         {{ key }}
                                         {% endblocktrans %}
                                  </a><br>
-                            
+
                             {% endif %}
- 
+
                                 {% endif %}
-                                {% endif %}         
+                                {% endif %}
                                 {% if forloop.counter|divisibleby:1 or forloop.last %}
                                {% endif %}
                                 {% endfor %}
-                                
+
                     </div>
                     <div id="stepthree">
-                    
+
                     <div class="panel-heading" >
                         <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
                     </div>
@@ -201,7 +201,7 @@
                         {% endif%}
                         {% endif%}
                         {% endfor%}" data-trigger="hover" href="learn/attrInit"> {{ initialization.number }} {% trans " sprite attributes." %}
-                        
+
 </a><br>
                         <a class="glyphicon glyphicon-pencil"/> <a class="desplegable" data-toggle="popover" title="{% trans 'Sprite naming' %}" data-content=" {% for value in spriteNaming.sprite %}
                                     {{ value }}.
@@ -210,10 +210,10 @@
                  </div>
                 </div>
                 </div>
-                
+
             </div>
 
-            </section>    
+            </section>
 
 
   <!-- Score in detail -->
@@ -235,7 +235,7 @@
                                 {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
                                 {% if key != "points" %}
                                 {% if key != "maxi" %}
-                                      
+
                                       <td>
                                         {% if value = 3 %}
                                         <span class="glyphicon glyphicon-star" id="star"></span>
@@ -250,7 +250,7 @@
                                                 <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
                                                     <span><strong>{{ value }}/3</strong></span>
                                                 </div>
-                                             <div>  
+                                             <div>
                                             {% elif value = 1 %}
                                             <div class="progress">
                                                 <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
@@ -271,9 +271,9 @@
                                              <div>
                                             {% endif %}
                                        </td>
-                                       
+
                                 {% endif %}
-                                {% endif %}         
+                                {% endif %}
                                 {% if forloop.counter|divisibleby:1 or forloop.last %}
                                 </tr>{% endif %}
                                 {% endfor %}
@@ -297,7 +297,7 @@
                     </li>
                     <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
                     </li>
-                    
+
                 </ul>
         </div>
     </footer>

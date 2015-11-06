@@ -14,7 +14,6 @@ from django.template.loader import render_to_string
 from django.contrib import messages
 from django.contrib.auth import logout, login, authenticate,get_user_model
 from django.contrib.auth.tokens import default_token_generator
-from django.utils.translation import ugettext as _
 from django.utils.encoding import force_bytes
 from django.db.models import Avg
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
@@ -27,11 +26,13 @@ from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherFor
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
 from app.forms import CoderForm, CoderHashForm, LoginCoderForm
 from app import org
+from app import trans
 from django.contrib.auth.models import User
 from datetime import datetime,timedelta,date
 from django.contrib.auth.decorators import login_required
 from email.MIMEText import MIMEText
 from django.utils.encoding import smart_str
+from django.utils.translation import activate
 import smtplib
 import email.utils
 import os
@@ -53,7 +54,8 @@ pSpriteNaming = "hairball -p convention.SpriteNaming "
 pDeadCode = "hairball -p blocks.DeadCode "
 pInitialization = "hairball -p initialization.AttributeInitialization "
 
-#____________________________ BLOCKS _____________________________________#
+#____________________________ TRANSLATION _____________________________________#
+
 def blocks(request):
     callback = request.GET.get('callback')
     headers = {}
@@ -161,23 +163,18 @@ def showDashboard(request):
 
 def selector(request):
     """Choose between analysis by URL or project"""
-    error = False
-    id_error = False
-    no_exists = False
 
     if "_upload" in request.POST:
         d = uploadUnregistered(request)
-        if (d['Error'] != 'analyzing') and (d['Error'] != 'MultiValueDict'):
-            dic = {'url': ""}
-            d.update(dic)
+        dic = {'url': ""}
+        d.update(dic)
 
     elif '_url' in request.POST:
         d = urlUnregistered(request)
-        if (d['Error'] != 'analyzing') and (d['Error'] != 'MultiValueDict') and (d['Error'] != 'id_error') and (d['Error'] == 'no_exists'):
-            form = UrlForm(request.POST)
-            url = request.POST['urlProject']
-            dic = {'url': url}
-            d.update(dic)
+        form = UrlForm(request.POST)
+        url = request.POST['urlProject']
+        dic = {'url': url}
+        d.update(dic)
 
     return d
 
