@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-26 09:45+0000\n"
+"POT-Creation-Date: 2015-11-06 07:52+0000\n"
 "PO-Revision-Date: 2015-06-29 18:07+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -45,7 +45,7 @@ msgstr ""
 #: templates/coder/base.html:79 templates/organization/base.html:79
 #: templates/statistics/statistics.html:65
 msgid "Scores of 2015"
-msgstr ""
+msgstr "Puntuación de 2015"
 
 #: templates/coder/base.html:87 templates/organization/base.html:87
 #: templates/statistics/statistics.html:73
@@ -111,7 +111,7 @@ msgstr ""
 
 #: templates/coder/base.html:211 templates/coder/base.html.py:359
 #: templates/coder/dashboard-unregistered-master.html:249
-#: templates/learn/base.html:108 templates/learn/deadCode.html:4
+#: templates/learn/base.html:112 templates/learn/deadCode.html:4
 #: templates/main/dashboard-unregistered-master.html:246
 #: templates/organization/base.html:211 templates/organization/base.html:359
 #: templates/organization/dashboard-unregistered-master.html:249
@@ -122,7 +122,7 @@ msgstr "Código morto"
 
 #: templates/coder/base.html:214 templates/coder/base.html.py:357
 #: templates/coder/dashboard-unregistered-master.html:243
-#: templates/learn/base.html:106 templates/learn/duplicatedScripts.html:4
+#: templates/learn/base.html:110 templates/learn/duplicatedScripts.html:4
 #: templates/main/dashboard-unregistered-master.html:240
 #: templates/organization/base.html:214 templates/organization/base.html:357
 #: templates/organization/dashboard-unregistered-master.html:243
@@ -132,7 +132,7 @@ msgid "Duplicated scripts"
 msgstr "Programas duplicados"
 
 #: templates/coder/base.html:217 templates/coder/base.html.py:360
-#: templates/learn/base.html:109 templates/organization/base.html:217
+#: templates/learn/base.html:113 templates/organization/base.html:217
 #: templates/organization/base.html:360
 msgid "Attribute initialization"
 msgstr "Inicialización de atributos incorrecta"
@@ -164,67 +164,70 @@ msgid "Programming skill"
 msgstr ""
 
 #: templates/coder/base.html:268 templates/coder/base.html.py:351
-#: templates/learn/Parallelism.html:4 templates/learn/base.html:99
+#: templates/learn/Parallelism.html:4 templates/learn/base.html:103
 #: templates/organization/base.html:268 templates/organization/base.html:351
 #: templates/statistics/statistics.html:254
 msgid "Parallelism"
 msgstr "Paralelismo"
 
 #: templates/coder/base.html:271 templates/coder/base.html.py:349
-#: templates/learn/Logic.html:4 templates/learn/base.html:97
+#: templates/learn/Logic.html:4 templates/learn/base.html:101
 #: templates/organization/base.html:271 templates/organization/base.html:349
 #: templates/statistics/statistics.html:257
 msgid "Logic"
 msgstr "Lóxica"
 
 #: templates/coder/base.html:274 templates/coder/base.html.py:354
-#: templates/learn/Flow.html:4 templates/learn/base.html:102
+#: templates/learn/Flow.html:22 templates/learn/base.html:106
 #: templates/organization/base.html:274 templates/organization/base.html:354
 #: templates/statistics/statistics.html:260
 msgid "Flow control"
 msgstr "Control de fluxo"
 
 #: templates/coder/base.html:277 templates/coder/base.html.py:353
-#: templates/learn/User.html:5 templates/learn/base.html:101
+#: templates/learn/User.html:5 templates/learn/base.html:105
 #: templates/organization/base.html:277 templates/organization/base.html:353
 #: templates/statistics/statistics.html:263
 msgid "User interactivity"
 msgstr "Interactividade do susario"
 
 #: templates/coder/base.html:280 templates/coder/base.html.py:350
-#: templates/learn/base.html:98 templates/organization/base.html:280
+#: templates/learn/base.html:102 templates/organization/base.html:280
 #: templates/organization/base.html:350
 #: templates/statistics/statistics.html:266
 msgid "Data representation"
 msgstr "Representación dos datos"
 
 #: templates/coder/base.html:283 templates/coder/base.html.py:355
-#: templates/learn/Abstraction.html:4 templates/learn/base.html:103
+#: templates/learn/Abstraction.html:4 templates/learn/base.html:107
 #: templates/organization/base.html:283 templates/organization/base.html:355
 #: templates/statistics/statistics.html:269
 msgid "Abstraction"
 msgstr "Abstracción"
 
 #: templates/coder/base.html:286 templates/coder/base.html.py:352
-#: templates/learn/Synchronization.html:5 templates/learn/base.html:100
+#: templates/learn/Synchronization.html:5 templates/learn/base.html:104
 #: templates/organization/base.html:286 templates/organization/base.html:352
 #: templates/statistics/statistics.html:272
 msgid "Synchronization"
 msgstr "Sincronización"
 
-#: templates/coder/base.html:320 templates/organization/base.html:320
+#: templates/coder/base.html:320 templates/contest.html:94
+#: templates/organization/base.html:320
 #: templates/upload/dashboard-coder.html:81
 #: templates/upload/dashboard-organization.html:81
 msgid "Logged in as "
 msgstr ""
 
-#: templates/coder/base.html:322 templates/organization/base.html:322
+#: templates/coder/base.html:322 templates/contest.html:96
+#: templates/organization/base.html:322
 #: templates/upload/dashboard-coder.html:83
 #: templates/upload/dashboard-organization.html:83
 msgid "Change password"
 msgstr ""
 
-#: templates/coder/base.html:324 templates/organization/base.html:324
+#: templates/coder/base.html:324 templates/contest.html:98
+#: templates/organization/base.html:324
 #: templates/upload/dashboard-coder.html:85
 #: templates/upload/dashboard-organization.html:85
 msgid "Logout"
@@ -244,10 +247,10 @@ msgstr ""
 msgid "Learn more"
 msgstr "Aprende máis"
 
-#: templates/coder/base.html:358 templates/learn/base.html:107
+#: templates/coder/base.html:358 templates/learn/base.html:111
 #: templates/learn/spriteNaming.html:5 templates/organization/base.html:358
 msgid "Incorrect names"
-msgstr "Nomes incorrectos:"
+msgstr "Nomes incorrectos"
 
 #: templates/coder/base.html:363 templates/coder/downloads.html:15
 #: templates/organization/base.html:363
@@ -264,9 +267,10 @@ msgstr "Definicións"
 #: templates/coder/dashboard-unregistered-basic.html:258
 #: templates/coder/dashboard-unregistered-developing.html:295
 #: templates/coder/dashboard-unregistered-master.html:356
-#: templates/coder/error_analyzing.html:70 templates/error/404.html:67
-#: templates/error/500.html:67 templates/error/analyzing.html:70
-#: templates/learn/base.html:119 templates/main/collaborators.html:594
+#: templates/coder/error_analyzing.html:70 templates/contest.html:196
+#: templates/error/404.html:67 templates/error/500.html:67
+#: templates/error/analyzing.html:70 templates/learn/base.html:123
+#: templates/main/collaborators.html:594
 #: templates/main/dashboard-unregistered-basic.html:254
 #: templates/main/dashboard-unregistered-developing.html:292
 #: templates/main/dashboard-unregistered-master.html:353
@@ -337,8 +341,8 @@ msgstr ""
 msgid "Wait a moment, please."
 msgstr "Agarda un intre, por favor."
 
-#: templates/coder/base.html:491 templates/main/main.html:716
-#: templates/organization/base.html:491
+#: templates/coder/base.html:491 templates/contest.html:238
+#: templates/main/main.html:716 templates/organization/base.html:491
 msgid "loading..."
 msgstr "cargando..."
 
@@ -436,7 +440,7 @@ msgstr ""
 #: templates/coder/dashboard-unregistered-basic.html:103
 #: templates/coder/dashboard-unregistered-developing.html:113
 #: templates/coder/dashboard-unregistered-master.html:151
-#: templates/learn/base.html:84
+#: templates/learn/base.html:88
 #: templates/main/dashboard-unregistered-basic.html:99
 #: templates/main/dashboard-unregistered-developing.html:110
 #: templates/main/dashboard-unregistered-master.html:148
@@ -478,6 +482,7 @@ msgstr "Puntuación:"
 #: templates/upload/dashboard-unregistered-basic.html:117
 #: templates/upload/dashboard-unregistered-developing.html:126
 #: templates/upload/dashboard-unregistered-master.html:165
+#, python-format
 msgid ""
 " I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
 "Beat it! @DrScratchTool "
@@ -493,7 +498,8 @@ msgid ""
 "<h3 class='text-left dark-text'>Your level is... <strong>BASIC! </strong></"
 "h3>"
 msgstr ""
-"<h3 class='text-left dark-text'>O teu nivel é... <strong>BÁSICO! </strong></h3>"
+"<h3 class='text-left dark-text'>O teu nivel é... <strong>BÁSICO! </strong></"
+"h3>"
 
 #: templates/coder/dashboard-unregistered-basic.html:126
 #: templates/main/dashboard-unregistered-basic.html:122
@@ -648,7 +654,8 @@ msgid ""
 "<h3 class='text-left dark-text'>Your level is... <strong>DEVELOPING! </"
 "strong></h3>"
 msgstr ""
-"<h3 class='text-left dark-text'>O teu nivel é... <strong>MEDIO! </strong></h3>"
+"<h3 class='text-left dark-text'>O teu nivel é... <strong>MEDIO! </strong></"
+"h3>"
 
 #: templates/coder/dashboard-unregistered-developing.html:135
 #: templates/main/dashboard-unregistered-developing.html:132
@@ -720,7 +727,8 @@ msgid ""
 "<h3 class='text-left dark-text'>Your level is...  <strong> MASTER! </"
 "strong></h3>"
 msgstr ""
-"<h3 class='text-left dark-text'><small>O teu nivel é... <strong>ALTO!</strong></h3>"
+"<h3 class='text-left dark-text'><small>O teu nivel é... <strong>ALTO!</"
+"strong></h3>"
 
 #: templates/coder/dashboard-unregistered-master.html:174
 #: templates/main/dashboard-unregistered-master.html:171
@@ -860,7 +868,8 @@ msgid ""
 "download it:"
 msgstr ""
 "1. Introduza o <span class='colored-text'><a data-toggle='modal' "
-"href='#modalUrl'>url</a></span> do seu proxecto, non é preciso facer a descarga:"
+"href='#modalUrl'>url</a></span> do seu proxecto, non é preciso facer a "
+"descarga:"
 
 #: templates/coder/main.html:19 templates/main/main.html:190
 #: templates/organization/main.html:20
@@ -870,8 +879,8 @@ msgid ""
 "type=\"text\">"
 msgstr ""
 "<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
-"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/seu_número\" "
-"type=\"text\">"
+"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/seu_número\" type="
+"\"text\">"
 
 #: templates/coder/main.html:20 templates/main/main.html:191
 #: templates/organization/main.html:21
@@ -886,7 +895,8 @@ msgid ""
 "analyze it here:"
 msgstr ""
 "2. Se ten descargado o seu <span class='colored-text'><a data-toggle='modal' "
-"href='#modalProject'>proxecto</a></span> para o ordenador, pode analiza-lo aquí:"
+"href='#modalProject'>proxecto</a></span> para o ordenador, pode analiza-lo "
+"aquí:"
 
 #: templates/coder/main.html:26 templates/main/main.html:197
 #: templates/organization/main.html:27
@@ -894,7 +904,8 @@ msgid ""
 "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
 "Project'>"
 msgstr ""
-"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Escoller proxecto'>"
+"<input  name='zipFile' type='file' class='filestyle' data-"
+"buttonText='Escoller proxecto'>"
 
 #: templates/coder/main.html:27 templates/main/main.html:198
 #: templates/organization/main.html:28
@@ -957,8 +968,8 @@ msgid ""
 "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose "
 "File .csv'>"
 msgstr ""
-"<input  name='csvFile' type='file' class='filestyle' data-buttonText='Escoller "
-"proxecto'>"
+"<input  name='csvFile' type='file' class='filestyle' data-"
+"buttonText='Escoller proxecto'>"
 
 #: templates/coder/main.html:61 templates/organization/main.html:62
 #: templates/upload/dashboard-coder.html:155
@@ -989,6 +1000,10 @@ msgstr "Cambiar a miña foto"
 msgid "Statistics"
 msgstr "Estatísticas"
 
+#: templates/contest.html:220
+msgid "Wait a moment please"
+msgstr "Agarda un intre, por favor"
+
 #: templates/error/404.html:36
 msgid "ERROR 404 - Page Not Found"
 msgstr "ERRO 404 - Páxina non atopada"
@@ -1007,12 +1022,12 @@ msgid ""
 "<b>break a problem into smaller parts that are easier to understand, program "
 "and debug.</b>"
 msgstr ""
-"A habilidade de abstracción e descomposición de problemas axúdate a <b>dividir "
-"o problema en partes máis pequenas que che son máis fáciles de entender, "
-"programar e depurar</b>."
+"A habilidade de abstracción e descomposición de problemas axúdate a "
+"<b>dividir o problema en partes máis pequenas que che son máis fáciles de "
+"entender, programar e depurar</b>."
 
 #: templates/learn/Abstraction.html:17 templates/learn/Data.html:19
-#: templates/learn/Flow.html:17 templates/learn/Logic.html:17
+#: templates/learn/Flow.html:35 templates/learn/Logic.html:17
 #: templates/learn/Parallelism.html:17 templates/learn/Synchronization.html:18
 #: templates/learn/User.html:18
 msgid "If you get 0 points..."
@@ -1036,9 +1051,9 @@ msgstr ""
 #: templates/learn/Abstraction.html:41 templates/learn/Abstraction.html:61
 #: templates/learn/Abstraction.html:92 templates/learn/Abstraction.html:118
 #: templates/learn/Data.html:85 templates/learn/Data.html.py:104
-#: templates/learn/Data.html:117 templates/learn/Flow.html:21
-#: templates/learn/Flow.html.py:39 templates/learn/Flow.html:49
-#: templates/learn/Flow.html.py:67 templates/learn/Parallelism.html:21
+#: templates/learn/Data.html:117 templates/learn/Flow.html:39
+#: templates/learn/Flow.html.py:57 templates/learn/Flow.html:67
+#: templates/learn/Flow.html.py:85 templates/learn/Parallelism.html:21
 #: templates/learn/Synchronization.html:21
 #: templates/learn/Synchronization.html:27
 #: templates/learn/Synchronization.html:45 templates/learn/User.html:23
@@ -1118,7 +1133,7 @@ msgstr ""
 "sinxelo saber en que parte do programa temos que introducir os cambios."
 
 #: templates/learn/Abstraction.html:59 templates/learn/Data.html:80
-#: templates/learn/Flow.html:37 templates/learn/Logic.html:32
+#: templates/learn/Flow.html:55 templates/learn/Logic.html:32
 #: templates/learn/Parallelism.html:32 templates/learn/Synchronization.html:43
 #: templates/learn/User.html:36
 msgid "If you get 1 point..."
@@ -1194,7 +1209,7 @@ msgstr ""
 "mentres que a segunda vez a lonxitude é 200 pasos."
 
 #: templates/learn/Abstraction.html:111 templates/learn/Data.html:99
-#: templates/learn/Flow.html:65 templates/learn/Logic.html:47
+#: templates/learn/Flow.html:83 templates/learn/Logic.html:47
 #: templates/learn/Parallelism.html:65 templates/learn/Synchronization.html:67
 #: templates/learn/User.html:66
 msgid "If you get 2 points..."
@@ -1223,9 +1238,9 @@ msgid ""
 "abstraction that helps us to program a single object, and dynamically "
 "<b>create exact copies with the same behavior.</b>"
 msgstr ""
-"Para esas situacións é preferible usar <b>clons</b>, un tipo de abstracción que nos "
-"axuda a programar un único obxecto, e <b>crear de xeito dinámico copias "
-"idénticas co mesmo comportamento.</b>"
+"Para esas situacións é preferible usar <b>clons</b>, un tipo de abstracción "
+"que nos axuda a programar un único obxecto, e <b>crear de xeito dinámico "
+"copias idénticas co mesmo comportamento.</b>"
 
 #: templates/learn/Abstraction.html:116
 msgid ""
@@ -1239,7 +1254,7 @@ msgstr ""
 "empezas a implementar o proxecto, crear constantemente clons que aparezan no "
 "extremo superior da pantalla e caian cara abaixo:"
 
-#: templates/learn/Abstraction.html:119 templates/learn/Flow.html:50
+#: templates/learn/Abstraction.html:119 templates/learn/Flow.html:68
 #: templates/learn/Parallelism.html:41 templates/learn/Parallelism.html:46
 #: templates/learn/Synchronization.html:47
 msgid "forever"
@@ -1251,7 +1266,7 @@ msgstr "crear clon de [a min mesmo v]"
 
 #: templates/learn/Abstraction.html:121
 msgid "wait (0.2) secs"
-msgstr "agardar (0.2) secs"
+msgstr "agardar (0.2) segundos"
 
 #: templates/learn/Abstraction.html:122
 msgid "go to x:(pick random(-200) to (200)) y:(200)"
@@ -1315,8 +1330,8 @@ msgstr ""
 msgid "Position:"
 msgstr "Posición:"
 
-#: templates/learn/Data.html:29 templates/learn/Flow.html:23
-#: templates/learn/Flow.html.py:42 templates/learn/Flow.html:51
+#: templates/learn/Data.html:29 templates/learn/Flow.html:41
+#: templates/learn/Flow.html.py:60 templates/learn/Flow.html:69
 #: templates/learn/Parallelism.html:42 templates/learn/User.html:40
 msgid "move (10) steps"
 msgstr "mover (10) pasos"
@@ -1365,13 +1380,13 @@ msgstr "apuntar cara á dirección (90 v)"
 msgid "point towards [v]"
 msgstr "apuntar cara [v]"
 
-#: templates/learn/Data.html:53 templates/learn/Flow.html:24
-#: templates/learn/Flow.html.py:43
+#: templates/learn/Data.html:53 templates/learn/Flow.html:42
+#: templates/learn/Flow.html.py:61
 msgid "turn cw (15) degrees"
 msgstr "xirar ↻ (15) grados"
 
-#: templates/learn/Data.html:54 templates/learn/Flow.html:26
-#: templates/learn/Flow.html.py:45
+#: templates/learn/Data.html:54 templates/learn/Flow.html:44
+#: templates/learn/Flow.html.py:63
 msgid "turn ccw (15) degrees"
 msgstr "xirar ↺ (15) grados"
 
@@ -1418,10 +1433,10 @@ msgid ""
 "have left, how many points we, how is called the user ..."
 msgstr ""
 "Ademáis de modificar os atributos dos personaxes, os programadores podemos "
-"usar outros mecanismos para almacenar información nun proxecto Scratch.<b> Un "
-"desdes mecanismos son as variables que poden almacenar un valor de distintos "
-"tipos de datos que podemos necesitar: en que nivel estamos</b>, cantas vidas nos "
-"quedan, cantos puntos temos, como se chama o usuario ..."
+"usar outros mecanismos para almacenar información nun proxecto Scratch.<b> "
+"Un desdes mecanismos son as variables que poden almacenar un valor de "
+"distintos tipos de datos que podemos necesitar: en que nivel estamos</b>, "
+"cantas vidas nos quedan, cantos puntos temos, como se chama o usuario ..."
 
 #: templates/learn/Data.html:83
 msgid ""
@@ -1462,10 +1477,10 @@ msgstr ""
 "personaxe teña ao principio do xogo, neste caso 0, para o que usamos o "
 "bloque <i>'fixar os puntos a 0'</i>. En cambio no programa da dereita, o que "
 "facemos é que cando o personaxe toca a cor azul, que pode ser un obxectivo, "
-"engades un punto, para o que usamos o bloque <i>'cambiar Puntos nun'</i>. Neste "
-"caso, o bloque <i>'cambiar'</i> comprobaría o valor actual da variable puntos e lle "
-"engadería 1: se vale 0, engádolle 1 e agora vale 1; se vale 1, engádolle 1 e "
-"agora vale 2 ..."
+"engades un punto, para o que usamos o bloque <i>'cambiar Puntos nun'</i>. "
+"Neste caso, o bloque <i>'cambiar'</i> comprobaría o valor actual da variable "
+"puntos e lle engadería 1: se vale 0, engádolle 1 e agora vale 1; se vale 1, "
+"engádolle 1 e agora vale 2 ..."
 
 #: templates/learn/Data.html:100
 msgid ""
@@ -1475,10 +1490,10 @@ msgid ""
 "recovered by a character or set of names, raise a couple of examples.</b>"
 msgstr ""
 "Ademáis das variables, Scratch permite usar outro tipo de datos para "
-"almacenar información do proxecto:<b> as listas. As listas poden almacenar máis "
-"dun valor ao mesmo tempo, polo que son ideais para almacenar recompensas que "
-"o personaxe pode recuperar ou un conxunto de nomes, por poñer un par de "
-"exemplos.</b>"
+"almacenar información do proxecto:<b> as listas. As listas poden almacenar "
+"máis dun valor ao mesmo tempo, polo que son ideais para almacenar "
+"recompensas que o personaxe pode recuperar ou un conxunto de nomes, por "
+"poñer un par de exemplos.</b>"
 
 #: templates/learn/Data.html:102
 msgid ""
@@ -1493,7 +1508,7 @@ msgid "delete (all v) of [Students v]"
 msgstr "borrar (todos v) de [Alumnos v]"
 
 #: templates/learn/Data.html:106 templates/learn/Data.html.py:119
-#: templates/learn/Flow.html:41
+#: templates/learn/Flow.html:59
 msgid "repeat (3)"
 msgstr "repetir (3)"
 
@@ -1529,8 +1544,8 @@ msgstr ""
 "voluntario que faga un exercicio na pizarra. Fixádevos nas novas "
 "instruccións que engadimos ao programa:"
 
-#: templates/learn/Data.html:122 templates/learn/Flow.html:48
-#: templates/learn/Flow.html.py:70 templates/learn/Logic.html:52
+#: templates/learn/Data.html:122 templates/learn/Flow.html:66
+#: templates/learn/Flow.html.py:88 templates/learn/Logic.html:52
 #: templates/learn/Logic.html.py:55 templates/learn/Logic.html:58
 #: templates/learn/Parallelism.html:44 templates/learn/Parallelism.html:49
 #: templates/learn/Synchronization.html:50 templates/learn/User.html:50
@@ -1544,7 +1559,9 @@ msgstr "dicir [O voluntario hoxe será ...] durante (2) segundos"
 
 #: templates/learn/Data.html:124
 msgid "say (item(pick random (1) to (3)) of [Students v]) for (2) secs"
-msgstr "dicir(elemento(número au chou entre (1) e (3)) de [Alumnos v]) durante (2) segundos"
+msgstr ""
+"dicir(elemento(número ao chou entre (1) e (3)) de [Alumnos v]) durante (2) "
+"segundos"
 
 #: templates/learn/Data.html:128
 msgid ""
@@ -1566,18 +1583,18 @@ msgstr ""
 "As listas teñen moitas posibilidades e dispoñen de moitas operacións ... "
 "anímaste a investigar como funcionan?"
 
-#: templates/learn/Flow.html:10
+#: templates/learn/Flow.html:28
 msgid ""
 "Instructions related to algorithmic notions of flow control can help you to "
 "<b>control the behavior of your characters</b>, making, for example, certain "
 "blocks that are repeated a number of times,  or until a situation arises."
 msgstr ""
 "As instruccións relacionadas con nocións algorítmicas de control de fluxo "
-"poden axudar a <b>controlar o comportamento dos teus personaxes</b>, facendo, por "
-"exemplo, repetir certos bloques un número de veces, ou ata que aconteza unha "
-"situación."
+"poden axudar a <b>controlar o comportamento dos teus personaxes</b>, "
+"facendo, por exemplo, repetir certos bloques un número de veces, ou ata que "
+"aconteza unha situación."
 
-#: templates/learn/Flow.html:19
+#: templates/learn/Flow.html:37
 msgid ""
 "The most basic way to control the behavior of your characters is creating a "
 "<b>program composed of a set of blocks are executed one after another</b>, "
@@ -1587,20 +1604,20 @@ msgstr ""
 "un programa composto dun conxunto de bloques que se executan un despois do "
 "outro, como se poder ver na imaxe:"
 
-#: templates/learn/Flow.html:22 templates/learn/Flow.html.py:40
+#: templates/learn/Flow.html:40 templates/learn/Flow.html.py:58
 msgid "say [I'm a dancer cat] for (2) secs"
 msgstr "dicir [Eu son un bailarín gato] durante (2) segundos"
 
-#: templates/learn/Flow.html:25 templates/learn/Flow.html.py:44
-#: templates/learn/Flow.html:47 templates/learn/duplicatedScripts.html:28
+#: templates/learn/Flow.html:43 templates/learn/Flow.html.py:62
+#: templates/learn/Flow.html:65 templates/learn/duplicatedScripts.html:28
 msgid "wait (0.5) secs"
 msgstr "agardar (0.5) segundos"
 
-#: templates/learn/Flow.html:27 templates/learn/Flow.html.py:46
+#: templates/learn/Flow.html:45 templates/learn/Flow.html.py:64
 msgid "move (-10) steps"
 msgstr "mover (-10) pasos"
 
-#: templates/learn/Flow.html:29
+#: templates/learn/Flow.html:47
 msgid ""
 "How does this program works? When the user click on the green flag run "
 "behind one another all blocks that have been included in the program. Start "
@@ -1610,11 +1627,11 @@ msgid ""
 msgstr ""
 "Como funciona este programa? Cando o usuario preme na bandeira verde todos "
 "os bloques incluidos no programa se executan un tras o outro. Empeza co "
-"bloque <i>'dicir son un gato que baila durante 2 segundos'</i>, entón executa "
-"<i>'mover 10 pasos'</i> entón <i>'xirar 15 grados á dereita'</i> e así sucesivamente ata o "
-"derradeiro bloque do programa."
+"bloque <i>'dicir son un gato que baila durante 2 segundos'</i>, entón "
+"executa <i>'mover 10 pasos'</i> entón <i>'xirar 15 grados á dereita'</i> e "
+"así sucesivamente ata o derradeiro bloque do programa."
 
-#: templates/learn/Flow.html:38
+#: templates/learn/Flow.html:56
 msgid ""
 "Sometimes when we want a set of blocks is constantly repeated, instead of "
 "repeating the same blocks over and over again, you can use a repeat "
@@ -1626,18 +1643,18 @@ msgstr ""
 "podemos usar unha instrucción de repetición que consegue o mesmo efecto, "
 "pero de un xeito máis cómodo e controlable. Vexamos un par de exemplos:"
 
-#: templates/learn/Flow.html:52 templates/learn/Parallelism.html:43
+#: templates/learn/Flow.html:70 templates/learn/Parallelism.html:43
 #: templates/learn/duplicatedScripts.html:19
 #: templates/learn/duplicatedScripts.html:27
 #: templates/learn/duplicatedScripts.html:41
 msgid "if on edge, bounce"
 msgstr "rebotar se toca un bordo"
 
-#: templates/learn/Flow.html:54
+#: templates/learn/Flow.html:72
 msgid "How these control blocks works?"
 msgstr "Como funcionan estes bloques de control?"
 
-#: templates/learn/Flow.html:56
+#: templates/learn/Flow.html:74
 msgid ""
 "In the block <i>'repeat'</i> when execution reaches this point is repeated "
 "as often as has been indicated in the parameter block 'repeat', in the "
@@ -1645,13 +1662,14 @@ msgid ""
 "that the block 'repeat' has an arrow at the bottom indicating that <b>when "
 "they finish executing the blocks back again up</b>."
 msgstr ""
-"No bloque <i>'repetir'</i>, cando a execución chega a este punto, todos os bloques "
-"incluidos neste bloque se repiten tanta veces coma estea especificado no "
-"parámetro do bloque 'repetir', no caso do exemplo serán 3 veces. Podemos ver "
-"que o bloque 'repetir' ten unha frechiña na parte inferior que, <b>cando remata "
-"a execución dos bloques, vólvese outra vez cara arriba</b>."
+"No bloque <i>'repetir'</i>, cando a execución chega a este punto, todos os "
+"bloques incluidos neste bloque se repiten tanta veces coma estea "
+"especificado no parámetro do bloque 'repetir', no caso do exemplo serán 3 "
+"veces. Podemos ver que o bloque 'repetir' ten unha frechiña na parte "
+"inferior que, <b>cando remata a execución dos bloques, vólvese outra vez "
+"cara arriba</b>."
 
-#: templates/learn/Flow.html:58
+#: templates/learn/Flow.html:76
 msgid ""
 "The block <i>'forever'</i> works like the 'repeat' but never finish "
 "executing the blocks containing in its interior."
@@ -1659,7 +1677,7 @@ msgstr ""
 "O bloque <i>'para sempre'</i> funciona coma o 'repetir' pero nunca remata a "
 "execución dos bloques contidos nel."
 
-#: templates/learn/Flow.html:66
+#: templates/learn/Flow.html:84
 msgid ""
 "Sometimes we don't know previously  the number of times you want a set of "
 "blocks is executed, as this depends on a given situation. In these cases, "
@@ -1669,19 +1687,19 @@ msgstr ""
 "conxunto de bloques, dado que depende da situación. Nestes casos, o bloque "
 "'repetir ata...' é realmente útil. Velaquí un exemplo:"
 
-#: templates/learn/Flow.html:68
+#: templates/learn/Flow.html:86
 msgid "repeat until &lt; touching [Enemy v] ?&gt;"
 msgstr "repetir ata &lt; tocando [Inimigo v] ?&gt;"
 
-#: templates/learn/Flow.html:69
+#: templates/learn/Flow.html:87
 msgid "say [You don't catch me]"
 msgstr "dicir []"
 
-#: templates/learn/Flow.html:71
+#: templates/learn/Flow.html:89
 msgid "say [You catch me]"
 msgstr ""
 
-#: templates/learn/Flow.html:74
+#: templates/learn/Flow.html:92
 msgid ""
 "In the example, the character will constantly repeat the instruction say "
 "'You don't caught me...' while he don't touch the enemy. At the time that "
@@ -1749,8 +1767,8 @@ msgid ""
 "projects. The blocks <i>if / else</i> are very similar to the block <i>if</"
 "i>, but contain two sets of blocks inside."
 msgstr ""
-"Agora que xa coñeces as instruccións <i>si</i>, quizáis podes comezar a usar os "
-"bloques <i>si / senón</i>, que poden ser moi prácticos en moitos tipos de "
+"Agora que xa coñeces as instruccións <i>si</i>, quizáis podes comezar a usar "
+"os bloques <i>si / senón</i>, que poden ser moi prácticos en moitos tipos de "
 "proxectos. Os bloques se / senón son moi similares ao bloque <i>si</i>, pero "
 "conteñen dous conxuntos de bloques no seu interior."
 
@@ -1794,11 +1812,13 @@ msgstr ""
 "Para tomar decisións sobre algúns proxectos, ás veces é necesario avaliar "
 "máis dunha condición ao mesmo tempo para saber cal executar. Nestas "
 "situacións é de moita axuda o uso de operacións lóxicas que combinen as "
-"condicións. As operacións lóxicas dispoñobles en Scratch son <i>E, OU e Non</i>."
+"condicións. As operacións lóxicas dispoñobles en Scratch son <i>E, OU e Non</"
+"i>."
 
 #: templates/learn/Logic.html:49
 msgid "if &lt;&lt; touching [Enemy v]? &gt; and &lt;(lives) = [0]&gt;&gt; then"
-msgstr "si &lt;&lt; tocando [Inimigo v]? &gt; e &lt;(vidas) = [0]&gt;&gt; entón"
+msgstr ""
+"si &lt;&lt; tocando [Inimigo v]? &gt; e &lt;(vidas) = [0]&gt;&gt; entón"
 
 #: templates/learn/Logic.html:50
 msgid "say [Game over]"
@@ -1812,7 +1832,8 @@ msgstr "deter todo"
 msgid ""
 "if &lt;&lt; touching [edge v]? &gt; or &lt; touching [Enemy v]? &gt;&gt;then"
 msgstr ""
-"si &lt;&lt; tocando [bordo v]? &gt; ou &lt; tocando [Inimigo v]? &gt;&gt;entón"
+"si &lt;&lt; tocando [bordo v]? &gt; ou &lt; tocando [Inimigo v]? &gt;&gt;"
+"entón"
 
 #: templates/learn/Logic.html:54
 msgid "change [lives v] by (-1)"
@@ -1833,10 +1854,10 @@ msgid ""
 "evaluated. And the operation otherwise not worth the condition, ie, if the "
 "condition is true, not returns false and vice versa."
 msgstr ""
-"A operación <i>E</i> é certa cando as dúas condicións son avaliadas certas. A "
-"operación <i>OU</i> é certa cando unha das dúas condición é avaliada certa. E a "
-"operación Non vale o contrario da condición, é dicir, se a condición é "
-"verdadeira Non devolve falso e viceversa."
+"A operación <i>E</i> é certa cando as dúas condicións son avaliadas certas. "
+"A operación <i>OU</i> é certa cando unha das dúas condición é avaliada "
+"certa. E a operación Non vale o contrario da condición, é dicir, se a "
+"condición é verdadeira Non devolve falso e viceversa."
 
 #: templates/learn/Parallelism.html:10
 msgid ""
@@ -1903,7 +1924,7 @@ msgstr "si &lt;tocando [punteiro do rato v]? &gt; entón"
 
 #: templates/learn/Parallelism.html:48
 msgid "turn cw (30) degrees"
-msgstr "xirar cw (30) grados"
+msgstr "xirar ↻ (30) grados"
 
 #: templates/learn/Parallelism.html:53
 msgid "How these blocks works?"
@@ -1928,8 +1949,8 @@ msgid ""
 "this character, both programs will begin to run simultaneously, in parallel."
 msgstr ""
 "No segundo exemplo vemos que o personaxe ten dous programas que comezan con "
-"<i>'cando se prema neste obxecto'</i>. Polo tanto, cando o usuario preme neste "
-"personaxe, ámbolos dous programas se excecutarán simultaneamente, en "
+"<i>'cando se prema neste obxecto'</i>. Polo tanto, cando o usuario preme "
+"neste personaxe, ámbolos dous programas se excecutarán simultaneamente, en "
 "paralelo."
 
 #: templates/learn/Parallelism.html:66
@@ -1951,11 +1972,11 @@ msgstr "cando o [volume do son v] sexa &gt (10)"
 
 #: templates/learn/Parallelism.html:70
 msgid "when [video motion v] &gt; (2)"
-msgstr "cando o [movemento do vídeo] sexa &gt (2)"
+msgstr "cando o [movemento do vídeo v] sexa &gt (2)"
 
 #: templates/learn/Parallelism.html:71
 msgid "when [timer v] &gt; (45)"
-msgstr "cando o [cronómetro v] &gt (45)"
+msgstr "cando o [cronómetro v] sexa &gt (45)"
 
 #: templates/learn/Parallelism.html:73
 msgid ""
@@ -1980,8 +2001,8 @@ msgid ""
 "Instructions related to synchronization <b>allow our characters to organize "
 "things happen in the order we want</b>."
 msgstr ""
-"As instruccións relacionadas coa sincronización <b>permiten organizar os nosos "
-"personaxes para que as cousas acontezan na orde que nós queiramos</b>."
+"As instruccións relacionadas coa sincronización <b>permiten organizar os "
+"nosos personaxes para que as cousas acontezan na orde que nós queiramos</b>."
 
 #: templates/learn/Synchronization.html:20
 msgid ""
@@ -2007,7 +2028,7 @@ msgstr "agardar (2) segundos"
 
 #: templates/learn/Synchronization.html:24
 msgid "say [Well, do you want to play hide-and seek?] for (3) secs"
-msgstr "dicir [Quere xogar agachadas?] durante (3) "
+msgstr "dicir [Quere xogar agachadas?] durante (3) segundos"
 
 #: templates/learn/Synchronization.html:26
 msgid "say [Let's go] for (2) secs"
@@ -2019,7 +2040,7 @@ msgstr "dicir [Eu estou ben,grazas!] durante (2) segundos"
 
 #: templates/learn/Synchronization.html:30
 msgid "wait (3) secs"
-msgstr "agardar (3) segudnos"
+msgstr "agardar (3) segundos"
 
 #: templates/learn/Synchronization.html:31
 msgid "say [Yes] for (1) secs"
@@ -2047,10 +2068,10 @@ msgid ""
 "previously, it is more efficient to use other modes of synchronization and "
 "messages. Here's an example:"
 msgstr ""
-"A sincronización usando bloques <i>'agardar'</i> é moi sinxela cando os programas "
-"son pequenos e teñen poucos personaxes, mais cando son largos ou teñen "
-"moitos personaxes, ou cando as condicións que xeran unha reacción non se "
-"poden medir previamente, é máis eficiente usar outros modos de "
+"A sincronización usando bloques <i>'agardar'</i> é moi sinxela cando os "
+"programas son pequenos e teñen poucos personaxes, mais cando son largos ou "
+"teñen moitos personaxes, ou cando as condicións que xeran unha reacción non "
+"se poden medir previamente, é máis eficiente usar outros modos de "
 "sincronización e mensaxes. Velaquí un exemplo:"
 
 #: templates/learn/Synchronization.html:48
@@ -2099,8 +2120,8 @@ msgid ""
 "until'</i> or <i>'when the background changes to ...'</i>."
 msgstr ""
 "A máis do envío de mensaxes, podes sincronizar personaxes para facer cousas "
-"na orde desexada utilizando outros bloques, coma o <i>'agardar ata que'</i> ou "
-"<i>'cando o fondo cambia a</i> ...'"
+"na orde desexada utilizando outros bloques, coma o <i>'agardar ata que'</i> "
+"ou <i>'cando o fondo cambia a</i> ...'"
 
 #: templates/learn/Synchronization.html:69
 msgid "wait until &lt;(lives) =[0]&gt;"
@@ -2129,8 +2150,8 @@ msgstr ""
 "No primeiro exemplo, cando a execución do programa acada ese punto, esperará "
 "ata que a condición se cumpra, neste caso ata que as vidas sexan 0. No "
 "momento en que o número de vidas sexa 0, entón continúa a execución dos "
-"bloques restantes, neste caso, <i>'dicir Xogo finalizado'</i> e <i>'parar todo'</i>, que "
-"termina a execución do proxecto."
+"bloques restantes, neste caso, <i>'dicir Xogo finalizado'</i> e <i>'parar "
+"todo'</i>, que termina a execución do proxecto."
 
 #: templates/learn/Synchronization.html:80
 msgid ""
@@ -2153,11 +2174,11 @@ msgid ""
 "or playing computer webcam, among many other possibilities."
 msgstr ""
 "As instrucción relacionadas coa interactividade do usuario poden <b>axudar a "
-"facer os teus proxectos Scratch máis interactivos</b>, é dicir, que a persoa que "
-"os estea executando poda desenvolver accións que provoquen novas situación "
-"no proxecto. Por exemplo, podo usar o teclado ou o rato para mover un "
-"personaxe, podes responder preguntas ou acender a cámara web do ordenador, "
-"entre outras posibilidades."
+"facer os teus proxectos Scratch máis interactivos</b>, é dicir, que a persoa "
+"que os estea executando poda desenvolver accións que provoquen novas "
+"situación no proxecto. Por exemplo, podo usar o teclado ou o rato para mover "
+"un personaxe, podes responder preguntas ou acender a cámara web do "
+"ordenador, entre outras posibilidades."
 
 #: templates/learn/User.html:20
 msgid ""
@@ -2175,9 +2196,9 @@ msgid ""
 "need to start with this block."
 msgstr ""
 "Como funciona este bloque? Cando o usuario que quere executar o teu proxecto "
-"de Scratch <i>preme sobre a bandeira verde</i>, todos os bloques situados baixo o "
-"bloque 'cando se prema na bandeira verde' comezan a executarse. Podes ter "
-"cantos programas necesites para comezar con este bloque."
+"de Scratch <i>preme sobre a bandeira verde</i>, todos os bloques situados "
+"baixo o bloque 'cando se prema na bandeira verde' comezan a executarse. "
+"Podes ter cantos programas necesites para comezar con este bloque."
 
 #: templates/learn/User.html:37
 msgid ""
@@ -2189,7 +2210,7 @@ msgstr ""
 
 #: templates/learn/User.html:39
 msgid " when [right arrow v] key pressed"
-msgstr "ao premer [frecha dereita v]"
+msgstr "ao premer a tecla [frecha dereita v]"
 
 #: templates/learn/User.html:43
 msgid "say [Hello] for (2) secs"
@@ -2213,7 +2234,7 @@ msgstr "dicir [Vostede me collido!]"
 
 #: templates/learn/User.html:52
 msgid "mouse down?"
-msgstr "botón esquerdo do rato premido?"
+msgstr "botón esquerdo no rato premido?"
 
 #: templates/learn/User.html:54
 msgid "go to [mouse-pointer v]"
@@ -2240,13 +2261,13 @@ msgid ""
 "b>"
 msgstr ""
 "Unha das posibilidades máis divertidas de Scratch en termos de "
-"interactividade é a posibilidade de que <b>o usuario poda utilizar a súa cámara "
-"web ou micrófono para interactuar cos personaxes desde Scratch ou utilizar "
-"sonidos como iniciadores de algunhas accións.</b>"
+"interactividade é a posibilidade de que <b>o usuario poda utilizar a súa "
+"cámara web ou micrófono para interactuar cos personaxes desde Scratch ou "
+"utilizar sonidos como iniciadores de algunhas accións.</b>"
 
 #: templates/learn/User.html:69
-msgid "if &lt;(lives) >[30]&gt; then"
-msgstr "si &lt;(vides) >[30]&gt; entón"
+msgid "if &lt;(loudness) >[30]&gt; then"
+msgstr "si &lt;(volume do son) >[30]&gt; entón"
 
 #: templates/learn/User.html:70
 msgid "say [There is much noise...]"
@@ -2298,7 +2319,7 @@ msgstr ""
 
 #: templates/learn/attrInit.html:15
 msgid "when [right arrow v] key pressed //Not initialized correctly."
-msgstr "ao premer tecla [frexa dereita v] //Non iniciar correctamente."
+msgstr "ao premer a tecla [frexa dereita v] //Non iniciar correctamente."
 
 #: templates/learn/attrInit.html:16 templates/learn/attrInit.html.py:22
 #: templates/learn/deadCode.html:16
@@ -2307,15 +2328,15 @@ msgstr "trocar x por (10)"
 
 #: templates/learn/attrInit.html:17 templates/learn/attrInit.html.py:23
 msgid "when [left arrow v] key pressed"
-msgstr "ao premer [frexa esquerda v]"
+msgstr "ao premer a tecla [frexa esquerda v]"
 
 #: templates/learn/attrInit.html:18 templates/learn/attrInit.html.py:24
 msgid "change x by (-10)"
 msgstr "trocar x por (-10)"
 
 #: templates/learn/attrInit.html:21
-msgid "when [right arrow v] key pressed  //Iniciar correctamente."
-msgstr "ao premer [frexa dereita v] // "
+msgid "when [right arrow v] key pressed  //Initialized correctly."
+msgstr "ao premer a tecla [frexa dereita v] //Inicializada correctamente."
 
 #: templates/learn/deadCode.html:11
 msgid ""
@@ -2784,8 +2805,8 @@ msgid ""
 "With Dr. Scratch plug-ins for Chrome and Firefox, students will analyze "
 "their project WHILE programming on the Scratch website."
 msgstr ""
-"Cos plugins de Dr. Scratch para Chrome e Firefox, os alumnos poderán analizar "
-"o seu proxecto MENTRES programan no sitio web de Scratch."
+"Cos plugins de Dr. Scratch para Chrome e Firefox, os alumnos poderán "
+"analizar o seu proxecto MENTRES programan no sitio web de Scratch."
 
 #: templates/main/main.html:496
 msgid "Gamification"
@@ -3055,6 +3076,9 @@ msgstr ""
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
 msgstr ""
 
+#~ msgid "when [right arrow v] key pressed  //Iniciar correctamente."
+#~ msgstr "ao premer [frexa dereita v] // "
+
 #~ msgid "Learn More"
 #~ msgstr "Aprende máis"
 
@@ -3069,9 +3093,6 @@ msgstr ""
 
 #~ msgid "Duplicated Scripts"
 #~ msgstr "Programas duplicados"
-
-#~ msgid "Wait a moment please"
-#~ msgstr "Agarda un intre, por favor"
 
 #~ msgid "Flow Control"
 #~ msgstr "Control de fluxo"

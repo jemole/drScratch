@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-02 18:03+0000\n"
+"POT-Creation-Date: 2015-11-06 07:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,7 +115,7 @@ msgstr "Malos hábitos"
 
 #: templates/coder/base.html:211 templates/coder/base.html.py:359
 #: templates/coder/dashboard-unregistered-master.html:249
-#: templates/learn/base.html:113 templates/learn/deadCode.html:4
+#: templates/learn/base.html:112 templates/learn/deadCode.html:4
 #: templates/main/dashboard-unregistered-master.html:246
 #: templates/organization/base.html:211 templates/organization/base.html:359
 #: templates/organization/dashboard-unregistered-master.html:249
@@ -126,7 +126,7 @@ msgstr "Código Muerto"
 
 #: templates/coder/base.html:214 templates/coder/base.html.py:357
 #: templates/coder/dashboard-unregistered-master.html:243
-#: templates/learn/base.html:111 templates/learn/duplicatedScripts.html:4
+#: templates/learn/base.html:110 templates/learn/duplicatedScripts.html:4
 #: templates/main/dashboard-unregistered-master.html:240
 #: templates/organization/base.html:214 templates/organization/base.html:357
 #: templates/organization/dashboard-unregistered-master.html:243
@@ -136,7 +136,7 @@ msgid "Duplicated scripts"
 msgstr "Programas duplicados"
 
 #: templates/coder/base.html:217 templates/coder/base.html.py:360
-#: templates/learn/base.html:114 templates/organization/base.html:217
+#: templates/learn/base.html:113 templates/organization/base.html:217
 #: templates/organization/base.html:360
 msgid "Attribute initialization"
 msgstr "Atributos no inicializados correctamente"
@@ -168,49 +168,49 @@ msgid "Programming skill"
 msgstr "Habilidad de programación"
 
 #: templates/coder/base.html:268 templates/coder/base.html.py:351
-#: templates/learn/Parallelism.html:4 templates/learn/base.html:104
+#: templates/learn/Parallelism.html:4 templates/learn/base.html:103
 #: templates/organization/base.html:268 templates/organization/base.html:351
 #: templates/statistics/statistics.html:254
 msgid "Parallelism"
 msgstr "Paralelismo"
 
 #: templates/coder/base.html:271 templates/coder/base.html.py:349
-#: templates/learn/Logic.html:4 templates/learn/base.html:102
+#: templates/learn/Logic.html:4 templates/learn/base.html:101
 #: templates/organization/base.html:271 templates/organization/base.html:349
 #: templates/statistics/statistics.html:257
 msgid "Logic"
 msgstr "Lógica"
 
 #: templates/coder/base.html:274 templates/coder/base.html.py:354
-#: templates/learn/Flow.html:22 templates/learn/base.html:107
+#: templates/learn/Flow.html:22 templates/learn/base.html:106
 #: templates/organization/base.html:274 templates/organization/base.html:354
 #: templates/statistics/statistics.html:260
 msgid "Flow control"
 msgstr "Control de flujo"
 
 #: templates/coder/base.html:277 templates/coder/base.html.py:353
-#: templates/learn/User.html:5 templates/learn/base.html:106
+#: templates/learn/User.html:5 templates/learn/base.html:105
 #: templates/organization/base.html:277 templates/organization/base.html:353
 #: templates/statistics/statistics.html:263
 msgid "User interactivity"
 msgstr "Interactividad del usuario"
 
 #: templates/coder/base.html:280 templates/coder/base.html.py:350
-#: templates/learn/base.html:103 templates/organization/base.html:280
+#: templates/learn/base.html:102 templates/organization/base.html:280
 #: templates/organization/base.html:350
 #: templates/statistics/statistics.html:266
 msgid "Data representation"
 msgstr "Representación de los datos"
 
 #: templates/coder/base.html:283 templates/coder/base.html.py:355
-#: templates/learn/Abstraction.html:4 templates/learn/base.html:108
+#: templates/learn/Abstraction.html:4 templates/learn/base.html:107
 #: templates/organization/base.html:283 templates/organization/base.html:355
 #: templates/statistics/statistics.html:269
 msgid "Abstraction"
 msgstr "Abstracción"
 
 #: templates/coder/base.html:286 templates/coder/base.html.py:352
-#: templates/learn/Synchronization.html:5 templates/learn/base.html:105
+#: templates/learn/Synchronization.html:5 templates/learn/base.html:104
 #: templates/organization/base.html:286 templates/organization/base.html:352
 #: templates/statistics/statistics.html:272
 msgid "Synchronization"
@@ -251,7 +251,7 @@ msgstr "Gráficas"
 msgid "Learn more"
 msgstr "Aprende más"
 
-#: templates/coder/base.html:358 templates/learn/base.html:112
+#: templates/coder/base.html:358 templates/learn/base.html:111
 #: templates/learn/spriteNaming.html:5 templates/organization/base.html:358
 msgid "Incorrect names"
 msgstr "Nombres inadecuados"
@@ -273,7 +273,7 @@ msgstr "Ajustes"
 #: templates/coder/dashboard-unregistered-master.html:356
 #: templates/coder/error_analyzing.html:70 templates/contest.html:196
 #: templates/error/404.html:67 templates/error/500.html:67
-#: templates/error/analyzing.html:70 templates/learn/base.html:124
+#: templates/error/analyzing.html:70 templates/learn/base.html:123
 #: templates/main/collaborators.html:594
 #: templates/main/dashboard-unregistered-basic.html:254
 #: templates/main/dashboard-unregistered-developing.html:292
@@ -450,7 +450,7 @@ msgstr ""
 #: templates/coder/dashboard-unregistered-basic.html:103
 #: templates/coder/dashboard-unregistered-developing.html:113
 #: templates/coder/dashboard-unregistered-master.html:151
-#: templates/learn/base.html:89
+#: templates/learn/base.html:88
 #: templates/main/dashboard-unregistered-basic.html:99
 #: templates/main/dashboard-unregistered-developing.html:110
 #: templates/main/dashboard-unregistered-master.html:148
