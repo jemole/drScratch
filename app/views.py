@@ -863,8 +863,9 @@ def analyzeCSV(request):
         if "_upload" in request.POST:
             csv_data = 0
             flag_csv = False
+            print request
             file = request.FILES['csvFile']
-            file_name = file.name.encode('utf-8')
+            file_name = request.user.username +"_"+str(datetime.now()) +".csv"# file.name.encode('utf-8')
             dir_csvs = os.path.dirname(os.path.dirname(__file__)) + "/csvs/" + file_name
             #Save file .csv
             with open(dir_csvs, 'wb+') as destination:
