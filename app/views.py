@@ -789,7 +789,7 @@ def stats(request,username):
 
 def settings(request,username):
     """Allow to Coders and Organizations change the image and password"""
-
+    base_dir = os.getcwd()
     flagOrganization = 0
     flagCoder = 0
     if Organization.objects.filter(username=username):
@@ -800,18 +800,28 @@ def settings(request,username):
         user = Coder.objects.get(username=username)
 
     if request.method == "POST":
+        
         #Saving image in DB
         user.img = request.FILES["img"]
-        #user.img.name = str(username)+ "."+ str(request.FILES["img"]).split(".")[1]
+        os.chdir(base_dir+"/static/img")
+        user.img.name = str(username)+ "."+ str(request.FILES["img"]).split(".")[1]
+
+        if os.path.exists(user.img.name):
+            os.remove(user.img.name)
+
+        os.chdir(base_dir)
         user.save()
-    
+
     dic = {
     "username": username,
     "img": user.img
     }
+    
+
     return render_to_response( page + "/settings.html",
                         dic,
                         context_instance = RC(request))
+
 
 def downloads(request,username, filename=""):
     """Allow to Coders and Organizations download the files.CSV already analyzed"""
