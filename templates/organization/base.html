@@ -336,7 +336,11 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <br>
           <div class="thumbnail">
+            {% if img == "app/images/drScratch.png" %}
             <img src="../../static/{{ img }}">
+            {% else %}
+            <img src="/img/{{ img }}">
+            {% endif %}
           </div>
           <ul class="nav nav-sidebar" >
             <li><a class="litext" href="/organization/{{ username }}"><span class="glyphicon glyphicon-dashboard"></span> {% trans "Analysis" %}</a></li>
