@@ -93,7 +93,6 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = 'static'
-MEDIA_URL = os.path.join(BASE_DIR, 'static/img/')
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

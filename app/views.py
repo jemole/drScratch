@@ -391,7 +391,9 @@ def processStringUrl(url):
 
 def sendRequestgetSB2(idProject, username, method):
     """First request to getSB2"""
-    getRequestSb2 = "http://drscratch-getsb2.herokuapp.com/" + idProject
+    #Check the length of idProject, it must have 8 digits.
+    
+    getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
     fileURL = idProject + ".sb2"
     # Create DB of files
     now = datetime.now()
@@ -800,7 +802,7 @@ def settings(request,username):
         user = Coder.objects.get(username=username)
 
     if request.method == "POST":
-        
+
         #Saving image in DB
         user.img = request.FILES["img"]
         os.chdir(base_dir+"/static/img")
@@ -816,7 +818,7 @@ def settings(request,username):
     "username": username,
     "img": user.img
     }
-    
+
 
     return render_to_response( page + "/settings.html",
                         dic,
@@ -874,7 +876,6 @@ def analyzeCSV(request):
         if "_upload" in request.POST:
             csv_data = 0
             flag_csv = False
-            print request
             file = request.FILES['csvFile']
             file_name = request.user.username +"_"+str(datetime.now()) +".csv"# file.name.encode('utf-8')
             dir_csvs = os.path.dirname(os.path.dirname(__file__)) + "/csvs/" + file_name
