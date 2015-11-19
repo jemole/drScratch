@@ -54,6 +54,45 @@ pSpriteNaming = "hairball -p convention.SpriteNaming "
 pDeadCode = "hairball -p blocks.DeadCode "
 pInitialization = "hairball -p initialization.AttributeInitialization "
 
+#____________________________ PLUG-INS ________________________________________#
+
+def plugin(request,urlProject):
+    print "URLPROJECT: " + urlProject
+    idProject = processStringUrl(urlProject)
+    print "IDPROJECT: " + idProject
+    d = generatorDic(request,idProject)
+    #Find if any error has occurred
+    if d['Error'] == 'analyzing':
+        return render_to_response(user + '/error_analyzing.html',
+                                  RC(request))
+    elif d['Error'] == 'MultiValueDict':
+        error = True
+        return render_to_response(user + '/main.html',
+                    {'error':error},
+                    RC(request))
+    elif d['Error'] == 'id_error':
+        id_error = True
+        return render_to_response(user + '/main.html',
+                    {'id_error':id_error},
+                    RC(request))
+    elif d['Error'] == 'no_exists':
+        no_exists = True
+        return render_to_response(user + '/main.html',
+            {'no_exists':no_exists},
+            RC(request))
+
+    #Show the dashboard according the CT level
+    else:
+        user = "main"
+        base_dir = os.getcwd()
+        print (base_dir)
+        if d["mastery"]["points"] >= 15:
+            return render_to_response(user + "/dashboard-unregistered-master.html",d, RC(request))
+        elif d["mastery"]["points"] > 7:
+            return render_to_response(user + "/dashboard-unregistered-developing.html",d, RC(request))
+        else:
+            return render_to_response(user + "/dashboard-unregistered-basic.html", d, RC(request))
+
 #____________________________ TRANSLATION _____________________________________#
 
 def blocks(request):
@@ -323,42 +362,8 @@ def urlUnregistered(request):
             d = {}
             url = form.cleaned_data['urlProject']
             idProject = processStringUrl(url)
-            if idProject == "error":
-                d = {'Error': 'id_error'}
-                return d
-            else:
-                try:
-                    if request.user.is_authenticated():
-                        username = request.user.username
-                    else:
-                        username = None
-                    method = "url"
-                    (pathProject, file) = sendRequestgetSB2(idProject, username, method)
-                except:
-                    #When your project doesn't exist
-                    d = {'Error': 'no_exists'}
-                    return d
-                try:
-                    d = analyzeProject(request, pathProject, file)
-                except:
-                    #There ir an error with kutz or hairball
-                    #We save the project in folder called error_analyzing
-                    file.method = 'url/error'
-                    file.save()
-                    oldPathProject = pathProject
-                    newPathProject = pathProject.split("/uploads/")[0] + \
-                                     "/error_analyzing/" + \
-                                     pathProject.split("/uploads/")[1]
-                    shutil.copy(oldPathProject, newPathProject)
-                    d = {'Error': 'analyzing'}
-                    return d
-
-                #Create Json
-                djson = createJson(d)
-
-                # Redirect to dashboard for unregistered user
-                d['Error'] = 'None'
-                return d
+            d = generatorDic(request,idProject)
+            return d
         else:
             d = {'Error': 'MultiValueDict'}
             return  d
@@ -389,10 +394,50 @@ def processStringUrl(url):
         idProject = "error"
     return idProject
 
+def generatorDic(request, idProject):
+    if idProject == "error":
+        d = {'Error': 'id_error'}
+        return d
+    else:
+        try:
+            if request.user.is_authenticated():
+                username = request.user.username
+            else:
+                username = None
+            method = "url"
+            (pathProject, file) = sendRequestgetSB2(idProject, username, method)
+        except:
+            #When your project doesn't exist
+            d = {'Error': 'no_exists'}
+            return d
+        try:
+            d = analyzeProject(request, pathProject, file)
+        except:
+            #There ir an error with kutz or hairball
+            #We save the project in folder called error_analyzing
+            file.method = 'url/error'
+            file.save()
+            oldPathProject = pathProject
+            newPathProject = pathProject.split("/uploads/")[0] + \
+                             "/error_analyzing/" + \
+                             pathProject.split("/uploads/")[1]
+            shutil.copy(oldPathProject, newPathProject)
+            d = {'Error': 'analyzing'}
+            return d
+
+        #Create Json
+        djson = createJson(d)
+
+        # Redirect to dashboard for unregistered user
+        d['Error'] = 'None'
+        return d
+
+
+
 def sendRequestgetSB2(idProject, username, method):
     """First request to getSB2"""
     #Check the length of idProject, it must have 8 digits.
-    
+
     getRequestSb2 = "http://drscratch.cloudapp.net:8080/" + idProject
     fileURL = idProject + ".sb2"
     # Create DB of files

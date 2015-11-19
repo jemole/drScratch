@@ -1,0 +1,168 @@
+/* PRELOADER IMAGE BACKGROUND */
+.status {
+	background-image: url("../images/loader-red.gif");
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+/* THE OVERLAY COLORS WHICH WILL SHOW IN FRONT OF BACKGROUND IMAGES*/
+.overlay-layer {
+	background: url("../images/pixel.png") repeat scroll left top rgba(0, 5, 8, 0.75);
+}
+
+.overlay-layer-2 {
+	background: rgba(0, 5, 8, 0.90);
+}
+
+/* NAVBAR AND LINK COLORS */
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+	color: #fc3b3b;
+}
+
+a {
+	color: #fc3b3b;
+}
+
+a:hover {
+	color: #fc3b3b;
+}
+
+.border-bottom-hover:hover {
+	border-bottom-color: #fc3b3b;
+}
+
+.sticky-navigation .main-navigation li a:hover,
+.sticky-navigation .login-register li.login a:hover {
+	color: #fc3b3b;
+}
+
+.sticky-navigation .main-navigation li.current a {
+	color: #fc3b3b;
+}
+
+/* INPUT FIXES */
+.input-box:active,
+.textarea-box:active,
+.input-box:focus,
+.textarea-box:focus {
+	border-color: #fc3b3b;
+}
+
+/* CLIENT PHOTO */
+.feedback .pic-container {
+	-webkit-box-shadow: 0px 0px 0px 1px #fc3b3b;
+	box-shadow: 0px 0px 0px 1px #fc3b3b;
+}
+
+/* BUTTONS*/
+.standard-button,
+.navbar-register-button {
+	background: #fc3b3b;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YyNTQ1NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmYzNiM2IiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f25454), color-stop(100%, #fc3b3b));
+	background: -webkit-linear-gradient(top, #f25454 0%, #fc3b3b 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f25454), to(#fc3b3b));
+	background: linear-gradient(to bottom, #f25454 0%, #fc3b3b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
+	-webkit-box-shadow: 0px 3px 0px #d00f0f;
+	box-shadow: 0px 3px 0px #d00f0f;
+}
+
+.standard-button:hover,
+.navbar-register-button:hover {
+	color: #ffffff;
+	background: #fc3b3b !important;
+	text-decoration: none;
+}
+
+.standard-button:focus,
+.navbar-register-button:focus {
+	color: #ffffff;
+}
+
+.standard-button:active,
+.navbar-register-button:active {
+	background: #fc3b3b !important;
+	border-color: inherit !important;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+
+
+.small-button,
+.navbar-register-button {
+	background: #fc3b3b;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YyNTQ1NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmYzNiM2IiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f25454), color-stop(100%, #fc3b3b));
+	background: -webkit-linear-gradient(top, #f25454 0%, #fc3b3b 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f25454), to(#fc3b3b));
+	background: linear-gradient(to bottom, #f25454 0%, #fc3b3b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
+	-webkit-box-shadow: 0px 3px 0px #d00f0f;
+	box-shadow: 0px 3px 0px #d00f0f;
+}
+
+.small-button:hover,
+.navbar-register-button:hover {
+	color: #ffffff;
+	background: #fc3b3b !important;
+	text-decoration: none;
+}
+
+.small-button:focus,
+.navbar-register-button:focus {
+	color: #ffffff;
+}
+
+.small-button:active,
+.navbar-register-button:active {
+	background: #fc3b3b !important;
+	border-color: inherit !important;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+/* COLORED BACKGROUND AND TEXT*/
+.color-bg {
+	background: #fc3b3b;
+}
+
+.colored-text {
+	color: #fc3b3b;
+}
+
+/* COLORED BORDERS AND LINES */
+.colored-line-left,
+.colored-line-right,
+.colored-line {
+	background: #fc3b3b;
+}
+
+.border-right-colored {
+	border-right: 1px solid rgba(252, 59, 59, 0.3);
+}
+
+.border-left-colored {
+	border-left: 1px solid rgba(252, 59, 59, 0.3);
+}
+
+.long-transparent-line {
+	height: 1px;
+	width: 200px;
+	background: rgba(252, 59, 59, 0.3);
+	margin: auto;
+}
+
+/* LOGIN*/
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #fc3b3b;
+    color: #fff !important;
+}
+
+/*.sticky-navigation .login-register li.open a:hover {
+	color: #fff !important;
+}*/

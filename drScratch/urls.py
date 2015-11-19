@@ -8,8 +8,11 @@ admin.autodiscover()
 urlpatterns = (
     url(r'^admin/', include(admin.site.urls)),
 
-    #Statistics
+    #Statics
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
+    url(r'^(.*)/static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
+
+    #Statistics
     url(r'^statistics$', 'app.views.statistics',),
 
     #Collaborators
@@ -50,6 +53,9 @@ urlpatterns = (
 
     #Upload a .CSV
     url(r'^analyzeCSV$', 'app.views.analyzeCSV',),
+
+    #Plugins
+    url(r'^plugin/(.*)', 'app.views.plugin',),
 
     #Contest: Temporary url
     url(r'^contest$', 'app.views.contest',),

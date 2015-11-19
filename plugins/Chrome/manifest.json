@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Dr. Scratch's plugin",
+  "description": "This extension allows to analyze your Scratch's project with Dr. Scratch.",
+  "version": "1.0",
+  "author": "Dr. Scratch's team",
+  "icons":{
+    "48": "icon48.png",
+    "16": "header.png"
+        },
+
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Dr. Scratch",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
