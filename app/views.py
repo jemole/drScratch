@@ -273,9 +273,9 @@ def download_certificate(request):
         filename = data.split(",")[0]
         level = data.split(",")[1]
         pyploma.generate(filename,level)
-        path_to_file = os.path.dirname(os.path.dirname(__file__)) + "app/certi/certi.pdf"
+        path_to_file = os.path.dirname(os.path.dirname(__file__)) + "/app/output.pdf"
         pdf_data = open(path_to_file, 'r')
-        response = HttpResponse(csv_data, content_type='application/pdf')
+        response = HttpResponse(pdf_data, content_type='application/pdf')
         response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(filename)
         return response
 
