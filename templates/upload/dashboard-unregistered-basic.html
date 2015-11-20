@@ -17,14 +17,14 @@
 
     <link rel="stylesheet" href="../../static/app/content/style.css">
     <!-- =========================
-     FAV AND TOUCH ICONS AND FONT  
+     FAV AND TOUCH ICONS AND FONT
     ============================== -->
     <link rel="icon" href="../../static/app/images/favicon.ico">
-    <link rel="stylesheet" href="static/app/icons/icons.css">  
+    <link rel="stylesheet" href="static/app/icons/icons.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
     <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
     <!-- =========================
-     STYLESHEETS   
+     STYLESHEETS
     ============================== -->
     <!-- BOOTSTRAP AND ANIMATION -->
     <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
@@ -65,13 +65,13 @@
       },
       {
         element: "#steptwo",
-        title: "{% trans 'Improve the score'%}",
-        content: "{% trans 'You do not like the score that you got? Improve it following our advice.' %}"
+        title: "{% trans 'Certificate' %}",
+        content:"{% trans 'Want to show off level? Download your certificate!'%}"
       },
       {
         element: "#stepthree",
         title: "{% trans 'Score in detail'%}",
-        content: "{% trans 'Here we show the score in each programming skill.' %}",
+        content: "{% trans 'Here we show the score in each programming skill as well as links to sites that can help you to level up.' %}",
         placement:'left'
       }
     ]});
@@ -81,21 +81,33 @@
         });
 });
     </script>
+    <script>
+    $(document).ready(function(){
+
+    var filename = "{{ filename }}";
+    var level = "{{ mastery.points}}/{{ mastery.maxi }}";
+    var list =[filename,level];
+    $("#certificate").val(list.toString());
+    });
+
+    </script>
+
 </head>
 <body>
 <div id="wrap">
     <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation" role="navigation">
-        <div class="container">          
+        <div class="container">
                     <!-- TOP BAR -->
             <div class="navbar-collapse collapse" id="stamp-navigation">
                     <!-- NAVIGATION LINK -->
                 <a class="navbar-brand" href="/">
                     <img src="static/app/images/logo_main.png" alt="">
                 </a>
+
                 <ul class="nav navbar-nav navbar-right main-navigation ">
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
-                         <li class="navbar-brand"><a class="btn btn-default" id="tour">TOUR</a></li>
+                         <li class="navbar-brand"><a class="btn btn-default" id="tour">{% trans "HELP" %}</a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr. Scratch(Beta Version)" %}</a></li>
                       </ul>
             </div>
@@ -103,12 +115,12 @@
         </div>
                 <!-- /END CONTAINER -->
     </div>
-    
+
             <!-- /END STICKY NAVIGATION -->
     <!-- JUMBOTRON -->
 <div class="container">
             <section id="blackboard" class="services col-md-5">
-                
+
                 <div class="devpanel">
                     <div class="panel panel-success" id="devpanel">
                         <div class="panel-heading" id="stepone">
@@ -117,7 +129,7 @@
                             <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>
                         </div>
                         <div class="panel-body">
-                            <div class="container">
+                            <div class="container col-md-12">
                             {% trans "<h3 class='text-left dark-text'>Your level is... <strong>BASIC! </strong></h3>" %}
                             <p class='text-left dark-text'> {% trans "You're at the beginning of a <br>great adventure . . . Keep it up!" %}</br></p>
                             </div>
@@ -125,54 +137,27 @@
                     </div>
                 </div>
                 <!-- HOW TO IMPROVE -->
-            <div class="improve">
-                <div class="panel panel-success" id="improve">
+                <div class="improve" >
+                    <div class="panel panel-success" id="improve">
+                        <div id="steptwo">
 
-                    <div class="panel-heading" id="steptwo">
-                        <h2 id="score" class="panel-title dark-text">{% trans "Want to level up?"%}</h2>
-                         {% if url != "" %}
-                        <a href="{{ url }}" target="_blank"><span class="glyphicon glyphicon-hand-right"></span>{% trans "Come back to your Scratch project." %}</a>
-                        {% endif %}
-                    </div>
-                    <div class="panel-body text-left">
+                            <div class="panel-heading" >
+                                <h2 id="score" class="panel-title dark-text">{% trans "Project certificate"%}</h2>
+                            </div>
+                            <div class="panel-body" >
+                                <h4>{{ filename }}: <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/download_certificate">
+                                {% csrf_token %}
+                                <button value="{{ filename }}" name="certificate" type="submit" id ="certificate">{% trans "Download" %}</button>
+                                </form></h4>
+                            </div>
 
-                                {% for key, value in mastery.items %}
-                                {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
-                                {% if key != "points" %}
-                                {% if key != "maxi" %}
-                                {% if value != 2 %}
-                                      {% if value == 0 %}
-                                  <a  href="/learn/{{ key }}/#level0">
-                                    <img src="static/app/images/little_bulb.png" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
-                                 </a><br>
-                                   
-                                </tr>
-                            {% elif value == 1 %}
-                                <a href="/learn/{{ key }}/#level1">
-                                    <img src="static/app/images/little_bulb.png" alt=""> 
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
-                                 </a><br>
-                            
-                            
-                            {% endif %}
-                            {% endif %}   
-                                {% endif %}
-                                {% endif %}         
-                                {% if forloop.counter|divisibleby:1 or forloop.last %}
-                               {% endif %}
-                                {% endfor %}
-                                
+                        </div>
                     </div>
-                    
+
                 </div>
-            </div>
-            
-            </section>    
+
+
+            </section>
 
 
   <!-- Score in detail -->
@@ -185,8 +170,8 @@
                             <table class="table tablesorter">
                                 <thead>
                                     <tr>
-                                    <th><h4>{% trans "Concept" %}</h4></th>
-                                    <th class="col-md-5"><h4>{% trans "Points" %}</h4></th>
+                                    <th><h4>{% trans "Level up" %}</h4></th>
+                                    <th class="col-md-5"><h4>{% trans "Level" %}</h4></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -194,15 +179,15 @@
                                 {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
                                 {% if key != "points" %}
                                 {% if key != "maxi" %}
-                                      
+
                                       <td>
                                         {% if value = 3 %}
                                         <span class="glyphicon glyphicon-star" id="star"></span>
                                         {% endif %}
                                         {% blocktrans %}
-                                        {{ key }}
+                                        <a href="/learn/{{ key }}/">{{ key }}</a>
                                         {% endblocktrans %}
-                                        
+
                                       </td>
                                       <td>
                                             {% if value = 0 %}
@@ -210,15 +195,15 @@
                                                 <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
                                                     <span><strong>{{ value }}/3</strong></span>
                                                 </div>
-                                             <div>  
+                                             <div>
                                             {% elif value = 1 %}
-                                            
+
                                             <div class="progress">
                                                 <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
                                                     <span><strong>{{ value }}/3</strong></span>
                                                 </div>
                                              <div>
-                                            
+
                                             {% elif value = 2 %}
                                             <div class="progress">
                                                 <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
@@ -233,9 +218,9 @@
                                              <div>
                                             {% endif %}
                                        </td>
-                                       
+
                                 {% endif %}
-                                {% endif %}         
+                                {% endif %}
                                 {% if forloop.counter|divisibleby:1 or forloop.last %}
                                 </tr>{% endif %}
                                 {% endfor %}
@@ -260,8 +245,8 @@
                 <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
                 </li>
             </ul>
-                
-        </div>    
+
+        </div>
 
     </footer>
 

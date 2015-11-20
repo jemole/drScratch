@@ -52,19 +52,6 @@
     <link rel="stylesheet" href="../../static/app/content/red.css">
 
     <script>
-    $(document).ready(function() {
-        scratchblocks2.parse();
-    });
-var choose_lang = x=window.navigator.language||navigator.browserLanguage;
-    choose_lang = choose_lang.split("-")[0];
-    console.log(choose_lang);
-
-    scratchblocks2.reset_languages();
-    var lang_dict = scratchblocks2._translations[choose_lang];
-      console.log(lang_dict.blocks);
-      if (lang_dict) scratchblocks2.load_language(lang_dict);
-    </script>
-<script>
     // Instance the tour
     $(document).ready(function(){
         $("#tour").click(function(){
@@ -79,18 +66,18 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
       },
       {
         element: "#steptwo",
-        title: "{% trans 'Improve the score'%}",
-        content: "{% trans 'You do not like the score that you got? Improve it following our advice.' %}"
-      },
-      {
-        element: "#stepthree",
         title: "{% trans 'Bad habits in programming' %}",
         content:"{% trans 'If you correct your bad habits in programming, you will avoid problems in the future.'%}"
       },
       {
+        element: "#stepthree",
+        title: "{% trans 'Certificate' %}",
+        content:"{% trans 'Want to show off level? Download your certificate!'%}"
+      },
+      {
         element: "#stepfour",
         title: "{% trans 'Score in detail'%}",
-        content: "{% trans 'Here we show the score in each programming skill.' %}",
+        content: "{% trans 'Here we show the score in each programming skill as well as links to sites that can help you to level up.' %}",
         placement:'left'
       }
     ]});
@@ -130,6 +117,17 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
 
     });
     </script>
+    <script>
+    $(document).ready(function(){
+
+    var filename = "{{ filename }}";
+    var level = "{{ mastery.points}}/{{ mastery.maxi }}";
+    var list =[filename,level];
+    $("#certificate").val(list.toString());
+    alert(list.toString());
+    });
+
+    </script>
 </head>
 <body>
     <!-- TOP BAR -->
@@ -141,8 +139,8 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                 <a class="navbar-brand" href="/">
                     <img src="static/app/images/logo_main.png" alt="">
                 </a>
-                <ul class="nav navbar-nav navbar-center main-navigation ">
-                  <li class="navbar-brand"><a class="navbar-brand pull-center" href="/organization/{{user.username}}"><span class="icon-basic-home colored-text"></span>{{ user.username }}</a></li>
+                <ul class="nav navbar-nav navbar-left main-navigation ">
+                  <li class="navbar-brand"><a class="navbar-brand pull-left" href="/organization/{{user.username}}"><span class="icon-basic-home colored-text"></span>{{ user.username }}</a></li>
                </ul>
                 <ul class="nav navbar-nav navbar-right main-navigation ">
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
@@ -168,8 +166,7 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                     <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>
                 </div>
                 <div class="panel-body">
-                    <div class="container">
-                            <br></br>
+                    <div class="container col-md-12">
                             {% trans "<h3 class='text-left dark-text'>Your level is...  <strong> MASTER! </strong></h3>" %}
                             <p class='text-left dark-text'> {% trans "You're the master of the universe!!! " %}</p>
                     </div>
@@ -182,59 +179,8 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
     <!-- HOW TO IMPROVE -->
             <div class="improve">
                 <div class="panel panel-success" id="improve">
-                    <div id="steptwo">
-                    <div class="panel-heading" >
-                        <h2 id="score" class="panel-title dark-text">{% trans "Want to level up?"%}</h2>
-                        {% if url != "" %}
-                        <a href="{{ url }}" target="_blank"><span class="glyphicon glyphicon-hand-right"></span>{% trans "Come back to your Scratch project." %}</a>
-                        {% endif %}
-                    </div>
-                    <div class="panel-body text-left">
 
-                                {% for key, value in mastery.items %}
-                                {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
-                                {% if key != "points" %}
-                                {% if key != "maxi" %}
-                                      {% if value == 0 %}
-                                  <a  href="/learn/{{ key }}/#level0">
-                                    <img src="static/app/images/little_bulb.png" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
-                                 </a>
-                                <br>
-
-                                </tr>
-                                    {% elif value == 1 %}
-                                <a  href="/learn/{{ key }}/#level1">
-                                    <img src="static/app/images/little_bulb.png" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
-
-                                 </a>
-                                <br>
-                                </tr>
-                                    {% elif value == 2 %}
-                                 <a  href="/learn/{{ key }}/#level2">
-                                    <img src="static/app/images/little_bulb.png" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
-
-                                 </a>
-                                <br>
-                                </tr>
-                            {% endif %}
-                                {% endif %}
-                                {% endif %}
-                                {% if forloop.counter|divisibleby:1 or forloop.last %}
-                               {% endif %}
-                                {% endfor %}
-
-                    </div>
-                </div>
-                 <div id="stepthree">
+                 <div id="steptwo">
 
                     <div class="panel-heading" >
                         <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
@@ -276,6 +222,24 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                     </div>
                 </div>
             </div>
+            <div class="improve" >
+                <div class="panel panel-success" id="improve">
+                    <div id="stepthree">
+
+                        <div class="panel-heading" >
+                            <h2 id="score" class="panel-title dark-text">{% trans "Project certificate"%}</h2>
+                        </div>
+                        <div class="panel-body" >
+                            <h4>{{ filename }}: <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/download_certificate">
+                            {% csrf_token %}
+                            <button value="{{ filename }}" name="certificate" type="submit" id ="certificate">{% trans "Download" %}</button>
+                            </form></h4>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
 
             </section>
 <!-- /HOW TO IMPROVE -->
@@ -290,8 +254,8 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                             <table class="table tablesorter">
                                 <thead>
                                     <tr>
-                                    <th><h4>{% trans "Concept" %}</h4></th>
-                                    <th class="col-md-5"><h4>{% trans "Points" %}</h4></th>
+                                    <th><h4>{% trans "Level up" %}</h4></th>
+                                    <th class="col-md-5"><h4>{% trans "Level" %}</h4></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -305,7 +269,7 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                                         <span class="glyphicon glyphicon-star" id="star"></span>
                                         {% endif %}
                                         {% blocktrans %}
-                                        {{ key }}
+                                        <a href="/learn/{{ key }}/">{{ key }}</a>
                                         {% endblocktrans %}
                                       </td>
                                       <td>
