@@ -23,7 +23,7 @@ urlpatterns = (
 
     #Dashboards
     url(r'^showDashboard', 'app.views.showDashboard',),
-    url(r'^download_certificate', 'app.views.download_certificate',), 
+
     #Translation
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^blocks$', 'app.views.blocks'),

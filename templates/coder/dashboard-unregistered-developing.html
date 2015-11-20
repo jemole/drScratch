@@ -90,8 +90,19 @@
     });
     </script>
     <script>
-                    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-                    </script>
+      window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+    </script>
+    <script>
+    $(document).ready(function(){
+
+    var filename = "{{ filename }}";
+    var level = "{{ mastery.points}}/{{ mastery.maxi }}";
+    var list =[filename,level];
+    $("#certificate").val(list.toString());
+    alert(list.toString());
+    });
+
+    </script>
 </head>
 <body>
     <div id="wrap">
@@ -129,10 +140,13 @@
                             <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>
                         </div>
                         <div class="panel-body">
-                            <div class="container">
-                            <br></br>
+                            <div class="container col-md-12">
                             {% trans "<h3 class='text-left dark-text'>Your level is... <strong>DEVELOPING! </strong></h3>" %}
                             <p class='text-left dark-text'> {% trans "You're doing a great job. Keep it up!!!" %}</p>
+
+                            {% if url != "" %}
+                           <a href="{{ url }}" target="_blank"><span class="glyphicon glyphicon-hand-right"></span>{% trans "Come back to your Scratch project." %}</a>
+                           {% endif %}
                             </div>
                         </div>
                     </div>
@@ -140,57 +154,10 @@
                 <!-- HOW TO IMPROVE -->
             <div class="improve" >
                 <div class="panel panel-success" id="improve">
-                    <div class="panel-heading" id="steptwo">
-                        <h2 id="score" class="panel-title dark-text">{% trans "Want to level up?"%}</h2>
-                         {% if url != "" %}
-                        <a href="{{ url }}" target="_blank"><span class="glyphicon glyphicon-hand-right"></span>{% trans "Come back to your Scratch project." %}</a>
-                        {% endif %}
-                    </div>
-                    <div class="panel-body text-left">
-
-                                {% for key, value in mastery.items %}
-                                {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
-                                {% if key != "points" %}
-                                {% if key != "maxi" %}
-                                      {% if value == 0 %}
-                                  <a  href="/learn/{{ key }}/#level0">
-                                    <img src="static/app/images/little_bulb.png" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
-                                 </a><br>
-
-                                </tr>
-                            {% elif value == 1 %}
-
-                                <a href="/learn/{{ key }}/#level1">
-                                    <img src="static/app/images/little_bulb.png" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
-                                 </a><br>
-                             {% elif value == 2 %}
-
-                                <a href="/learn/{{ key }}/#level2">
-                                    <img src="static/app/images/little_bulb.png" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
-                                 </a><br>
-
-                            {% endif %}
-
-                                {% endif %}
-                                {% endif %}
-                                {% if forloop.counter|divisibleby:1 or forloop.last %}
-                               {% endif %}
-                                {% endfor %}
-
-                    </div>
                     <div id="stepthree">
 
                     <div class="panel-heading" >
-                        <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
+                        <h2 id="score" class="panel-title dark-text">{% trans "Best practice"%}</h2>
                     </div>
                     <div class="panel-body text-left typ">
                          <a class="glyphicon glyphicon-exclamation-sign"/><a class="desplegable" data-toggle="popover" title="{% trans 'Sprites attributes' %}" data-content=" {% for key,value in initialization.items%}
@@ -216,6 +183,25 @@
 
             </div>
 
+            <div class="improve" >
+                <div class="panel panel-success" id="improve">
+                    <div id="stepthree">
+
+                        <div class="panel-heading" >
+                            <h2 id="score" class="panel-title dark-text">{% trans "Project certificate"%}</h2>
+                        </div>
+                        <div class="panel-body" >
+                            <h4>{{ filename }}: <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/download_certificate">
+                            {% csrf_token %}
+                            <button value="{{ filename }}" name="certificate" type="submit" id ="certificate">{% trans "Download" %}</button>
+                            </form></h4>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
             </section>
 
 
@@ -229,8 +215,8 @@
                             <table class="table tablesorter">
                                 <thead>
                                     <tr>
-                                    <th><h4>{% trans "Concept" %}</h4></th>
-                                    <th class="col-md-5"><h4>{% trans "Points" %}</h4></th>
+                                    <th><h4>{% trans "Level up" %}</h4></th>
+                                    <th class="col-md-5"><h4>{% trans "Level" %}</h4></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -244,7 +230,7 @@
                                         <span class="glyphicon glyphicon-star" id="star"></span>
                                         {% endif %}
                                         {% blocktrans %}
-                                        {{ key }}
+                                        <a href="/learn/{{ key }}/">{{ key }}</a>
                                         {% endblocktrans %}
                                       </td>
                                       <td>
@@ -306,4 +292,5 @@
     </footer>
 
 </body>
+
 </html>

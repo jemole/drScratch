@@ -200,13 +200,13 @@ def showDashboard(request):
     else:
         return HttpResponseRedirect('/')
 
+
 def selector(request):
     """Choose between analysis by URL or project"""
 
     if "_upload" in request.POST:
         d = uploadUnregistered(request)
-        filename = request.FILES['zipFile'].name.encode('utf-8')
-        dic = {'url': "",'filename':filename}
+        dic = {'url': ""}
         d.update(dic)
 
     elif '_url' in request.POST:
