@@ -44,20 +44,15 @@
 
     <!-- CUSTOM STYLESHEETS -->
     <link rel="stylesheet" href="../../static/app/content/styles.css">
-    <link href="../../static/app/content//dashboard.css" rel="stylesheet">
-
+    <link href="../../static/app/content/dashboard.css" rel="stylesheet">
+    <link href="../../static/app/content/dropdowns-enhancement.css" rel="stylesheet">
 
     <!-- RESPONSIVE FIXES -->
     <link rel="stylesheet" href="../../static/app/content/responsive.css">
 
     <!-- DEFAULT COLOR/ CURRENTLY USING -->
     <link rel="stylesheet" href="../../static/app/content/red.css">
-
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="Dashboard%20Template%20for%20Bootstrap_files/ie-emulation-modes-warning.js"></script>
-
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -339,13 +334,18 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <br>
           <div class="thumbnail">
-            <img src="/img/{{ img }}">
+            {% if img == "app/images/drScratch.png" %}
+            <img src="../../static/{{ img }}">
+            {% else %}
+            <img src="../../static/{{ img }}">
+            {% endif %}
           </div>
           <ul class="nav nav-sidebar">
             <li><a class="litext" href="/coder/{{ username }}"><span class="glyphicon glyphicon-dashboard"></span> {% trans "Analysis" %}</a></li>
             <li><a class="litext" href="/coder/stats/{{ username }}"><span class="glyphicon glyphicon-stats"></span> {% trans "Stats"%}</a></li>
-            <li><a class="litext" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><span class="glyphicon glyphicon-book"></span> {% trans "Learn more" %} <span class="caret"></span></a>
-              <ul class="dropdown-menu pull-right">
+            <li  data-toggle="collapse" data-target="#learn" class="collapsed">
+              <a href="#" class="litext"><span class="glyphicon glyphicon-book"></span> {% trans "Learn more" %} <span class="caret"></span></a>
+                 <ul class="sub-menu collapse" id="learn">
                 <li><a href="/learn/Logic/">{% trans "Logic" %}</a></li>
                 <li><a href="/learn/Data/">{% trans "Data representation" %}</a></li>
                 <li><a href="/learn/Parallelism/">{% trans "Parallelism" %}</a></li>
@@ -521,6 +521,6 @@
         <script src="../../static/app/scripts/nivo-lightbox.js"></script>
         <script src="../../static/app/scripts/owl.js"></script>
         <script src="../../static/app/scripts/progress-bar.js"></script>
-
+        <script src="../../static/app/scripts/dropdowns-enhancement.js"></script>
 
         </body></html>

@@ -57,7 +57,9 @@ pInitialization = "hairball -p initialization.AttributeInitialization "
 #____________________________ PLUG-INS ________________________________________#
 
 def plugin(request,urlProject):
+    print "URLPROJECT: " + urlProject
     idProject = processStringUrl(urlProject)
+    print "IDPROJECT: " + idProject
     d = generatorDic(request,idProject)
     #Find if any error has occurred
     if d['Error'] == 'analyzing':

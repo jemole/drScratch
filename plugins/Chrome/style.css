@@ -1,0 +1,47 @@
+body {
+    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 100%;
+    background:#D5D5D5; !important
+    
+}
+
+.section-header {
+    margin:0px;
+    width: 320px; 
+    height: 200px;
+    background-image:url("icon48.png");
+    background:#FFF;
+}
+
+
+.section-form {
+	margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 300px; 
+    height: 200px;
+    background-image:url("icon48.png");
+    background:#FFF;
+    border-radius: 15px;
+}
+
+.registration-buttom{
+    margin: 2px;
+}
+.text-size{
+    font-size:75%;
+}
+
+.section-header h2 {
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+#status {
+    /* avoid an excessively wide status text */
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 400px;
+}
