@@ -1713,7 +1713,7 @@ def discuss(request):
            # form = DiscussForm()
         
     comments["form"] = form
-    comments["comments"] = Discuss.objects.all().order_by("-date")
+    comments["comments"] = Discuss.objects.all().order_by("date")
     print comments
     
 

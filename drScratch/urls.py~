@@ -60,8 +60,6 @@ urlpatterns = (
     #Contest: Temporary url
     url(r'^contest$', 'app.views.contest',),
 
-    url(r'^discuss/$', 'app.views.discuss',),
-
     #Error pages
     #url(r'^500', 'app.views.error500',),
     #url(r'^404', 'app.views.error404',),

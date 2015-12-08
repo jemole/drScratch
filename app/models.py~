@@ -127,12 +127,6 @@ class Activity(models.Model):
 	text = models.TextField()
 	date = models.DateField()
 
-class Discuss(models.Model):
-    nick = models.TextField()
-    email = models.TextField(blank=True)
-    date = models.DateField()
-    comment = models.TextField()
-
 class Stats(models.Model):
     daily_score = models.TextField()
     basic = models.TextField(default="")
