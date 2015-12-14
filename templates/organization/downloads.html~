@@ -37,7 +37,7 @@
                 <div class="col-md-7 col-md-offset-4">
                 <div class="btn-toolbar" role="toolbar">
                     <div class="btn-group">
-                        {% for key,value in csv.items reverse %}
+                        {% for key,value in csv.items reversed %}
                         <button type="button" class="btn btn-secondary" onclick="change_page({{ key }})">{{ key }}</button>
                         {% endfor %}
                     </div>

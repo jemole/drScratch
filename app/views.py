@@ -1712,9 +1712,8 @@ def discuss(request):
     comments = dict()
     form = DiscussForm()
     if request.method == "POST":
-        print "ES POST"
+
         form = DiscussForm(request.POST)
-        print form
         if form.is_valid():
             nick = form.cleaned_data["nick"]
             email = form.cleaned_data["email"]
@@ -1727,14 +1726,20 @@ def discuss(request):
             new_comment.save()
         else:
             print form.errors
-           # form = DiscussForm()
-        
-    comments["form"] = form
-    comments["comments"] = Discuss.objects.all().order_by("-date")
-    print comments
-    
+        comments["form"] = form
+
+    data = Discuss.objects.all().order_by("-date")
+    lower = 0
+    upper = 10
+    list_comments = {}
+    if len(data) > 10:
+        for n in range((len(data)/10)+1):
+            list_comments[str(n)]= data[lower:upper-1]
+            lower = upper
+            upper = upper + 10
 
 
+    comments["comments"] = list_comments
     return render_to_response("discuss/discuss.html",
                              comments,
                              context_instance=RC(request))
