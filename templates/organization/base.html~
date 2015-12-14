@@ -532,7 +532,7 @@
             $(active).show();
         });
         function change_page(page){  
-             $(active).hide("fast");
+             $(active).hide();
              active = "."+page;
              $(active).show("slow");
              

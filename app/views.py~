@@ -905,13 +905,28 @@ def downloads(request,username, filename=""):
         page = 'coder'
 
     #LIFO to show the files.CSV
+
     csv.reverse()
+
+    csv_len = len(csv)
+    lower = 0
+    upper = 10
+    list_csv = {}
+
+    if csv_len > 10:
+        for n in range((csv_len/10)+1):
+            list_csv[str(n)]= csv[lower:upper-1]
+            lower = upper
+            upper = upper + 10
+            print list_csv
+
 
     dic = {
     "username": username,
     "img": user.img,
-    "csv":csv
+    "csv": list_csv.reverse()
     }
+
     if request.method == "POST":
         #Downloading CSV
         filename = request.POST["csv"]
@@ -1713,7 +1728,7 @@ def discuss(request):
            # form = DiscussForm()
         
     comments["form"] = form
-    comments["comments"] = Discuss.objects.all().order_by("date")
+    comments["comments"] = Discuss.objects.all().order_by("-date")
     print comments
     
 
