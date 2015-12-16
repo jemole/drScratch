@@ -1470,11 +1470,12 @@ def analyzeProject(request,file_name, fileName):
         dictionary.update(procInitialization(resultInitialization, fileName))
         code = {'dupCode':DuplicateScriptToScratchBlock(resultDuplicateScript)}
         dictionary.update(code)
-        code = {'dCode':DeadCodeToScratchBlock(resultDeadCode)}
+       # code = {'dCode':DeadCodeToScratchBlock(resultDeadCode)}
         dictionary.update(code)
         #Plug-ins not used yet
         #dictionary.update(procBroadcastReceive(resultBroadcastReceive))
         #dictionary.update(procBlockCounts(resultBlockCounts))
+        #print dictionary
         return dictionary
     else:
         return HttpResponseRedirect('/')
@@ -1614,34 +1615,23 @@ def procSpriteNaming(lines, fileName):
 
 
 def procDeadCode(lines, fileName):
-    """Number of dead code with characters and blocks"""
-    lLines = lines.split('\n')
-    lLines = lLines[1:]
-    lcharacter = []
-    literator = []
-    iterator = 0
-    for frame in lLines:
-        if '[kurt.Script' in frame:
-            # Found an object
-            name = frame.split("'")[1]
-            lcharacter.append(name)
-            if iterator != 0:
-                literator.append(iterator)
-                iterator = 0
-        if 'kurt.Block' in frame:
-            iterator += 1
-    literator.append(iterator)
+    """ Return the number of dead code and their blocks"""
+    lines = lines.split("\n")[1:]
+    lines2dic = ast.literal_eval(str(lines))
+    lines2dic = ast.literal_eval(lines2dic[0])
 
-    number = len(lcharacter)
-    dic = {}
-    dic["deadCode"] = dic
-    dic["deadCode"]["number"] = number
-    for i in range(number):
-        dic["deadCode"][lcharacter[i]] = literator[i]
-
+    keys = lines2dic.keys()
+    total = 0
+    blocks = ""
+    for n in keys: 
+        total += len(lines2dic[n])
+        blocks += n + "\n" +str(lines2dic[n])
+     
+    dic = {"deadCode":{"blocks":blocks,"number":total}}
     #Save in DB
-    fileName.deadCode = number
+    fileName.deadCode = total
     fileName.save()
+    
 
     return dic
 
@@ -1691,21 +1681,16 @@ def procInitialization(lines, fileName):
 
 def DuplicateScriptToScratchBlock(code):
     try:
-        code = code.split("\n")[2:][0]
-        code = code[1:-1].split(",")
-    except:
-        code = ""
-
-    return code
-
-def DeadCodeToScratchBlock(code):
-    try:
-        code = code.split("\n")[2:-1]
+        dupCode = ""
+        dup = []
+        code = code.split("\n")[2:]
         for n in code:
-            n = n[15:-2]
+            dupCode = n[1:-1].split(",")
+            dup.append(dupCode)
     except:
-        code = ""
-    return code
+        dup = []
+   
+    return dup
 
 #________________________ DISCUSS ____________________________#
 def discuss(request):
@@ -1737,6 +1722,8 @@ def discuss(request):
             list_comments[str(n)]= data[lower:upper-1]
             lower = upper
             upper = upper + 10
+    else:
+        list_comments[0] = data
 
 
     comments["comments"] = list_comments
@@ -1768,7 +1755,7 @@ def createDashboards():
 
 
 def myDashboard(request):
-    """Dashboard page"""
+    """Dashboard """
     if request.user.is_authenticated():
         user = request.user.username
         # The main page of user

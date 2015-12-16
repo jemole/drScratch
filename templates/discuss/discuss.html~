@@ -115,7 +115,7 @@
         <div class="btn-toolbar" role="toolbar">
             <div class="btn-group" style="border-color:blue">
             {% for key,value in comments.items reversed %}
-                <button type="button" class="btn btn-infoonclick="change_page({{ key }})">{{ key }}</button>
+                <button type="button" class="btn btn-info" onclick="change_page({{ key }})">{{ key }}</button>
             {% endfor %}
             </div>
         </div>

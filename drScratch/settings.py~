@@ -1,4 +1,4 @@
-from django.conf import global_settings
+Efrom django.conf import global_settings
 
 """
 Django settings for drScratch project.

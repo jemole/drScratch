@@ -111,7 +111,6 @@
                     else{
                     str[n] = str[n].slice(13,-11)};
                 };
-               // alert(
                 $("#dupCode").attr("data-content",str.join("\n"));
             }
 
@@ -124,7 +123,6 @@
     var level = "{{ mastery.points}}/{{ mastery.maxi }}";
     var list =[filename,level];
     $("#certificate").val(list.toString());
-    alert(list.toString());
     });
 
     </script>
@@ -139,9 +137,7 @@
                 <a class="navbar-brand" href="/">
                     <img src="static/app/images/logo_main.png" alt="">
                 </a>
-                <ul class="nav navbar-nav navbar-left main-navigation ">
-                  <li class="navbar-brand"><a class="navbar-brand pull-left" href="/coder/{{user.username}}"><span class="icon-basic-home colored-text"></span>{{ user.username }}</a></li>
-               </ul>
+                
                 <ul class="nav navbar-nav navbar-right main-navigation ">
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
                         <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
@@ -198,7 +194,7 @@
                         {% if deadCode.number == 0 %}
                         {% trans 'Your project does not have dead code, good job!' %}
                         {% else %}
-                        {% trans 'You have dead code in ' %}{{ key }}({{ value }}):
+                        {% trans 'You have dead code in ' %}({{ value }}):
                         {% endif %}
                         {% endif%}
                         {% endif%}
