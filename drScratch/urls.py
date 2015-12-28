@@ -3,6 +3,7 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.views.generic import RedirectView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
 urlpatterns = (
@@ -62,6 +63,11 @@ urlpatterns = (
 
     url(r'^discuss/$', 'app.views.discuss',),
 
+    #Ajax
+    url(r'searchemail/$', 'app.views.searchemail',),
+    url(r'searchusername/$', 'app.views.searchusername',),
+    url(r'searchehashkey/$', 'app.views.searchhashkey',),
+
     #Error pages
     #url(r'^500', 'app.views.error500',),
     #url(r'^404', 'app.views.error404',),
@@ -76,3 +82,4 @@ urlpatterns = (
     url(r'^.*', 'app.views.redirectMain',),
 
 )
+

@@ -41,6 +41,7 @@ TEMPLATE_LOADERS = (
 #'django.template.loaders.eggs.Loader',
 )
 
+
 TEMPLATE_DIRS = ('templates',)
 
 ALLOWED_HOSTS = ['localhost']
@@ -68,6 +69,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+
 
 ROOT_URLCONF = 'drScratch.urls'
 

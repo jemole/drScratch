@@ -64,9 +64,7 @@ class LoginCoderForm(forms.Form):
     password = forms.CharField(max_length=50)
 
 class DiscussForm(forms.Form):
-    nick = forms.CharField()
-    email = forms.EmailField(required=False)
-    comment = forms.CharField()
+    comment = forms.CharField(help_text="Please, write your comment.")
 
     class Meta:
         model = Discuss

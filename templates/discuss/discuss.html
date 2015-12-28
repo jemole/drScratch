@@ -58,6 +58,11 @@
                 <a class="navbar-brand" href="/">
                     <img src="static/app/images/logo_main.png" alt="">
                 </a>
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav navbar-left main-navigation ">
+                  <li class="navbar-brand"><a class="navbar-brand pull-left"><span class="icon-basic-home colored-text"></span>{{ user.username }}</a></li>
+               </ul>
+                {% endif %}
 
                 <ul class="nav navbar-nav navbar-right main-navigation ">
                     <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
@@ -75,9 +80,16 @@
     <div class="col-md-3">
         <div class="panel panel-info paneldash">
           <div class="panel-body" style="word-break:break-all;">
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-  {% trans "Leave your comment" %}
-</button>
+        {% if user.is_authenticated %}
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">  
+        {% trans "Leave your comment" %}
+        </button>
+        {% else %}
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" disabled>
+        {% trans "Sign up or sign in" %}
+        </button>
+        {% endif %}
+
           </div>
         </div>
       </div>
@@ -111,7 +123,7 @@
 
     </div>
 
-    <div class="center-block">
+    <div class="col-md-offset-5">
         <div class="btn-toolbar" role="toolbar">
             <div class="btn-group" style="border-color:blue">
             {% for key,value in comments.items reversed %}
@@ -145,28 +157,18 @@
            <div class="modal-content">
              <div class="modal-header">
                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-               <h4 class="modal-title" id="myModalLabel">{% trans "Message" %}</h4>
+               <h4 class="modal-title" id="myModalLabel">{% trans "Hi " %}{{ user.username }}</h4>
              </div>
              <div class="modal-body">
                  <form accept-charset="UTF-8" action="/discuss/" method="post">
                    {% csrf_token %}
-   
-                       <div class="input-group">
-                         <span class="input-group-addon" id="basic-addon1">{% trans "Enter your name" %}</span>
-                         <input type="text" name="nick" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                       </div>
-                       <br>
-                       <div class="input-group">
-                         <span class="input-group-addon" id="basic-addon1">{% trans "Enter your email" %}</span>
-                         <input type="text" name="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
-                       </div>
-                       <br>
                        <div class="form-group">
                          <label class="col-md-4 control-label" for="textarea">{% trans "Message" %}</label>
                          <div class="col-md-8">
                            <textarea class="form-control" id="textarea" name="comment"></textarea>
                          </div>
                        </div>
+                       <br>
                        <br>
                        <br>
                        <button type="submit" class="btn btn-primary">{% trans "Send" %}</button>

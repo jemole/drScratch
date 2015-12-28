@@ -17,6 +17,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.db.models import Avg
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
+from django.utils import timezone
 from app.models import Project, Dashboard, Attribute
 from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
 from app.models import Teacher, Student, Classroom, Stats
@@ -56,6 +57,24 @@ pSpriteNaming = "hairball -p convention.SpriteNaming "
 pDeadCode = "hairball -p blocks.DeadCode "
 pInitialization = "hairball -p initialization.AttributeInitialization "
 
+
+def searchemail(request):
+    if request.is_ajax():
+        user = Organization.objects.filter(email=request.GET['email'])
+        if user:
+            return HttpResponse(json.dumps({"exist":"yes"}), content_type ='application/json')
+
+def searchusername(request):
+    if request.is_ajax():
+        user = Organization.objects.filter(username=request.GET['username'])
+        if user:
+            return HttpResponse(json.dumps({"exist":"yes"}), content_type ='application/json')
+
+def searchhashkey(request):
+    if request.is_ajax():
+        user = OrganizationHash.objects.filter(hashkey=request.GET['hashkey'])
+        if not user:
+            return HttpResponse(json.dumps({"exist":"yes"}), content_type ='application/json')
 #____________________________ PLUG-INS ________________________________________#
 
 def plugin(request,urlProject):
@@ -1696,27 +1715,29 @@ def DuplicateScriptToScratchBlock(code):
 def discuss(request):
     comments = dict()
     form = DiscussForm()
+    if request.user.is_authenticated():
+        user = request.user.username
+    else:
+        user = ""
     if request.method == "POST":
 
         form = DiscussForm(request.POST)
         if form.is_valid():
-            nick = form.cleaned_data["nick"]
-            email = form.cleaned_data["email"]
-            date = datetime.now()
+            nick = user
+            date = timezone.now()
             comment = form.cleaned_data["comment"]
             new_comment = Discuss(nick = nick,
-                                email = email,
                                 date = date,
                                 comment=comment)
             new_comment.save()
         else:
-            print form.errors
-        comments["form"] = form
+            comments["form"] = form
 
     data = Discuss.objects.all().order_by("-date")
     lower = 0
     upper = 10
     list_comments = {}
+   
     if len(data) > 10:
         for n in range((len(data)/10)+1):
             list_comments[str(n)]= data[lower:upper-1]
@@ -1727,6 +1748,7 @@ def discuss(request):
 
 
     comments["comments"] = list_comments
+
     return render_to_response("discuss/discuss.html",
                              comments,
                              context_instance=RC(request))

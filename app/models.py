@@ -129,8 +129,7 @@ class Activity(models.Model):
 
 class Discuss(models.Model):
     nick = models.TextField()
-    email = models.TextField(blank=True)
-    date = models.DateField()
+    date = models.DateTimeField()
     comment = models.TextField()
 
 class Stats(models.Model):

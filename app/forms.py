@@ -64,8 +64,6 @@ class LoginCoderForm(forms.Form):
     password = forms.CharField(max_length=50)
 
 class DiscussForm(forms.Form):
-    nick = forms.CharField(help_text="Please, enter your nickname.")
-    email = forms.EmailField(required=False, help_text="Please, enter your email.")
     comment = forms.CharField(help_text="Please, write your comment.")
 
     class Meta:

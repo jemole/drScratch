@@ -3,6 +3,7 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.views.generic import RedirectView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
 urlpatterns = (
@@ -60,6 +61,11 @@ urlpatterns = (
     #Contest: Temporary url
     url(r'^contest$', 'app.views.contest',),
 
+    url(r'^discuss/$', 'app.views.discuss',),
+
+    #Ajax
+    url(r'search/$', 'app.views.search',),
+
     #Error pages
     #url(r'^500', 'app.views.error500',),
     #url(r'^404', 'app.views.error404',),
@@ -74,3 +80,4 @@ urlpatterns = (
     url(r'^.*', 'app.views.redirectMain',),
 
 )
+

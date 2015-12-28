@@ -202,7 +202,7 @@
         <img src="../../static/app/images/drScratch.png" alt=""  width="200" height="200" />
         <form action="/signUpOrganization" method="post" class="vertical-registration-form" role="form">
        {% csrf_token %}
-       <div class="col-lg-8" id="user">
+       <div class="col-lg-8" id="username">
         <label class="col-md-6 text-left control-label">{% trans "Organization's name" %}</label>
           <input class='form-control' name='username' id="searchusername" placeholder='ID'>
         </div>
