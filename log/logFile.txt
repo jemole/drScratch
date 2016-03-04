@@ -80,3 +80,5 @@ FileName: Trash.sb2			ID: 770			Method: project			Time: 2015-12-16 18:45:47.9002
 FileName: Trash.sb2			ID: 771			Method: project			Time: 2015-12-16 18:47:15.890007
 FileName: Trash.sb2			ID: 772			Method: project			Time: 2015-12-16 18:49:01.358736
 FileName: Trash.sb2			ID: 773			Method: project			Time: 2015-12-16 18:49:30.445805
+FileName: Testing-master-dup(1).sb2			ID: 774			Method: project			Time: 2016-02-10 15:17:40.698803
+FileName: Testing.sb2			ID: 775			Method: project			Time: 2016-03-04 14:05:19.402661

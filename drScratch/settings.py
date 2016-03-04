@@ -110,6 +110,7 @@ LANGUAGES = (
     ('ca', _('Catalan')),
     ('gl', _('Galician')),
     ('pt', _('Portuguese')),
+    ('ru', _('Russian')),
 )
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = False
