@@ -310,15 +310,42 @@
               <a class="navbar-brand" href="/">
                 <img src="../../static/app/images/logo_main.png" alt="">
               </a>
+              <ul class="nav navbar-nav navbar-right login-register small-text">
+                <ul class="nav navbar-nav navbar-left main-navigation ">
+
+                  <li style="display: block;" class="login js-login dropdown">
+                    <a aria-expanded="false" type="button" data-toggle="dropdown" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                    <span class="icon-basic-world"></span></span>
+                    </a>
+                    <ul role="menu" class="dropdown-menu">
+                      <li>
+                      <div style="padding: 15px; padding-bottom: 10px;">
+                      <form action="/i18n/setlang/" method="post" type="hidden">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}" />
+                        <select name="language" type="hidden">
+                      {% get_language_info_list for LANGUAGES as languages %}
+                      {% for language in languages %}
+                       <option style="padding: 15px;" type="submit" class='btn-group btn-group-justified colored-text' value="{{ language.code }}">{{ language.name }} ({{ language.code }})</option>
+                      {% endfor %}
+                    </select>
+                    {% trans "<input type='submit' value='Change language' class='btn-group btn-group-justified colored-text'/>" %}
+                    </form>
+                  </div>
+                </li>
+                </ul>
+                </li>
+              </ul>
+            </ul>
 
             <!-- LOGIN REGISTER -->
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                         <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
                         <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li> <a href='/changePwd'>{% trans "Change password" %}</a> </li>
+                            <li> <a href='/change_pwd'>{% trans "Change password" %}</a> </li>
                             <li>
-                                <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
+                                <a id="logout" type="submit" href="/logout_organization">{% trans "Logout" %}</a>
                             </li>
 
                         </ul>
@@ -366,7 +393,7 @@
             <li><a class="litext" href="/organization/settings/{{ username }}"><span class="glyphicon glyphicon-cog"></span> {% trans "Settings" %}</a></li>
           </ul>
         </div>
-</div>
+
 
         {% block content %}
          {% endblock %}
@@ -532,7 +559,7 @@
             $(active).show();
         });
         function change_page(page){  
-             $(active).hide();
+             $(active).hide("fast");
              active = "."+page;
              $(active).show("slow");
              

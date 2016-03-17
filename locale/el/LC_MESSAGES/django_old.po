@@ -1,0 +1,3029 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-06 09:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: drScratch/settings.py:106
+msgid "Spanish"
+msgstr "Ισπανικά"
+
+#: drScratch/settings.py:107
+msgid "English"
+msgstr "English"
+
+#: drScratch/settings.py:108 templates/main/collaborators.html:273
+msgid "Catalan"
+msgstr ""
+
+#: drScratch/settings.py:109 templates/main/collaborators.html:342
+msgid "Galician"
+msgstr ""
+
+#: drScratch/settings.py:110
+msgid "Portuguese"
+msgstr ""
+
+#: drScratch/settings.py:111 templates/main/collaborators.html:250
+msgid "Greek"
+msgstr ""
+
+#: templates/coder/base.html:79 templates/organization/base.html:79
+#: templates/statistics/statistics.html:65
+msgid "Scores of 2015"
+msgstr ""
+
+#: templates/coder/base.html:87 templates/organization/base.html:87
+#: templates/statistics/statistics.html:73
+#, fuzzy
+#| msgid "Points"
+msgid " points"
+msgstr "Βαθμοί"
+
+#: templates/coder/base.html:96 templates/organization/base.html:96
+#: templates/statistics/statistics.html:82
+#, fuzzy
+#| msgid "CT Score:"
+msgid "Total score"
+msgstr "Βαθμολογία Υπολογιστικής Σκέψης:"
+
+#: templates/coder/base.html:106 templates/organization/base.html:106
+#: templates/statistics/statistics.html:92
+msgid "Number of projects analyzed in 2015"
+msgstr ""
+
+#: templates/coder/base.html:114 templates/organization/base.html:114
+#: templates/statistics/statistics.html:100
+#, fuzzy
+#| msgid "project.png"
+msgid " projects"
+msgstr "project.png"
+
+#: templates/coder/base.html:123 templates/organization/base.html:123
+#: templates/statistics/statistics.html:109
+msgid "Total projects"
+msgstr ""
+
+#: templates/coder/base.html:137 templates/organization/base.html:137
+#: templates/statistics/statistics.html:123
+msgid "Percent levels"
+msgstr ""
+
+#: templates/coder/base.html:156 templates/organization/base.html:156
+#: templates/statistics/statistics.html:142
+msgid "Level"
+msgstr ""
+
+#: templates/coder/base.html:159 templates/organization/base.html:159
+#: templates/statistics/statistics.html:145
+msgid "Basic"
+msgstr "Basic"
+
+#: templates/coder/base.html:162 templates/organization/base.html:162
+#: templates/statistics/statistics.html:148
+#, fuzzy
+#| msgid "Developing"
+msgid "Development"
+msgstr "Developing"
+
+#: templates/coder/base.html:165 templates/organization/base.html:165
+#: templates/statistics/statistics.html:151
+msgid "Master"
+msgstr "Master"
+
+#: templates/coder/base.html:178 templates/coder/base.html.py:185
+#: templates/organization/base.html:178 templates/organization/base.html:185
+#: templates/statistics/statistics.html:164
+#: templates/statistics/statistics.html:171
+msgid "Average rate by code smell"
+msgstr ""
+
+#: templates/coder/base.html:208 templates/organization/base.html:208
+#: templates/statistics/statistics.html:194
+msgid "Code smell"
+msgstr ""
+
+#: templates/coder/base.html:211 templates/coder/base.html.py:359
+#: templates/coder/dashboard-unregistered-master.html:249
+#: templates/learn/base.html:112 templates/learn/deadCode.html:4
+#: templates/main/dashboard-unregistered-master.html:246
+#: templates/organization/base.html:211 templates/organization/base.html:359
+#: templates/organization/dashboard-unregistered-master.html:249
+#: templates/statistics/statistics.html:197
+#: templates/upload/dashboard-unregistered-master.html:246
+#, fuzzy
+#| msgid "Dead Code"
+msgid "Dead code"
+msgstr "Κώδικας που δεν εκτελείται"
+
+#: templates/coder/base.html:214 templates/coder/base.html.py:357
+#: templates/coder/dashboard-unregistered-master.html:243
+#: templates/learn/base.html:110 templates/learn/duplicatedScripts.html:4
+#: templates/main/dashboard-unregistered-master.html:240
+#: templates/organization/base.html:214 templates/organization/base.html:357
+#: templates/organization/dashboard-unregistered-master.html:243
+#: templates/statistics/statistics.html:200
+#: templates/upload/dashboard-unregistered-master.html:240
+#, fuzzy
+#| msgid "Duplicated Scripts"
+msgid "Duplicated scripts"
+msgstr "Διπλά σενάρια"
+
+#: templates/coder/base.html:217 templates/coder/base.html.py:360
+#: templates/learn/base.html:113 templates/organization/base.html:217
+#: templates/organization/base.html:360
+#, fuzzy
+#| msgid "Sprite attributes initialization"
+msgid "Attribute initialization"
+msgstr "Αρχικοποίηση ιδιοτήτων αντικειμένων"
+
+#: templates/coder/base.html:220
+#: templates/coder/dashboard-unregistered-developing.html:209
+#: templates/coder/dashboard-unregistered-master.html:245
+#: templates/main/dashboard-unregistered-developing.html:206
+#: templates/main/dashboard-unregistered-master.html:242
+#: templates/organization/base.html:220
+#: templates/organization/dashboard-unregistered-developing.html:209
+#: templates/organization/dashboard-unregistered-master.html:245
+#: templates/statistics/statistics.html:206
+#: templates/upload/dashboard-unregistered-developing.html:206
+#: templates/upload/dashboard-unregistered-master.html:242
+#, fuzzy
+#| msgid "Sprites naming"
+msgid "Sprite naming"
+msgstr "Ονόματα αντικειμένων"
+
+#: templates/coder/base.html:235 templates/coder/base.html.py:242
+#: templates/organization/base.html:235 templates/organization/base.html:242
+#: templates/statistics/statistics.html:221
+#: templates/statistics/statistics.html:228
+msgid "Average rate by programming skill"
+msgstr ""
+
+#: templates/coder/base.html:265 templates/organization/base.html:265
+#: templates/statistics/statistics.html:251
+msgid "Programming skill"
+msgstr ""
+
+#: templates/coder/base.html:268 templates/coder/base.html.py:351
+#: templates/learn/Parallelism.html:4 templates/learn/base.html:103
+#: templates/organization/base.html:268 templates/organization/base.html:351
+#: templates/statistics/statistics.html:254
+msgid "Parallelism"
+msgstr ""
+
+#: templates/coder/base.html:271 templates/coder/base.html.py:349
+#: templates/learn/Logic.html:4 templates/learn/base.html:101
+#: templates/organization/base.html:271 templates/organization/base.html:349
+#: templates/statistics/statistics.html:257
+msgid "Logic"
+msgstr ""
+
+#: templates/coder/base.html:274 templates/coder/base.html.py:354
+#: templates/learn/Flow.html:22 templates/learn/base.html:106
+#: templates/organization/base.html:274 templates/organization/base.html:354
+#: templates/statistics/statistics.html:260
+msgid "Flow control"
+msgstr ""
+
+#: templates/coder/base.html:277 templates/coder/base.html.py:353
+#: templates/learn/User.html:5 templates/learn/base.html:105
+#: templates/organization/base.html:277 templates/organization/base.html:353
+#: templates/statistics/statistics.html:263
+msgid "User interactivity"
+msgstr ""
+
+#: templates/coder/base.html:280 templates/coder/base.html.py:350
+#: templates/learn/base.html:102 templates/organization/base.html:280
+#: templates/organization/base.html:350
+#: templates/statistics/statistics.html:266
+msgid "Data representation"
+msgstr ""
+
+#: templates/coder/base.html:283 templates/coder/base.html.py:355
+#: templates/learn/Abstraction.html:4 templates/learn/base.html:107
+#: templates/organization/base.html:283 templates/organization/base.html:355
+#: templates/statistics/statistics.html:269
+msgid "Abstraction"
+msgstr ""
+
+#: templates/coder/base.html:286 templates/coder/base.html.py:352
+#: templates/learn/Synchronization.html:5 templates/learn/base.html:104
+#: templates/organization/base.html:286 templates/organization/base.html:352
+#: templates/statistics/statistics.html:272
+msgid "Synchronization"
+msgstr ""
+
+#: templates/coder/base.html:320 templates/contest.html:94
+#: templates/organization/base.html:320
+#: templates/upload/dashboard-coder.html:81
+#: templates/upload/dashboard-organization.html:81
+msgid "Logged in as "
+msgstr ""
+
+#: templates/coder/base.html:322 templates/contest.html:96
+#: templates/organization/base.html:322
+#: templates/upload/dashboard-coder.html:83
+#: templates/upload/dashboard-organization.html:83
+msgid "Change password"
+msgstr ""
+
+#: templates/coder/base.html:324 templates/contest.html:98
+#: templates/organization/base.html:324
+#: templates/upload/dashboard-coder.html:85
+#: templates/upload/dashboard-organization.html:85
+msgid "Logout"
+msgstr ""
+
+#: templates/coder/base.html:345 templates/coder/main.html:6
+#: templates/organization/base.html:345 templates/organization/main.html:6
+msgid "Analysis"
+msgstr ""
+
+#: templates/coder/base.html:346 templates/organization/base.html:346
+msgid "Stats"
+msgstr ""
+
+#: templates/coder/base.html:347 templates/main/main.html:168
+#: templates/organization/base.html:347
+msgid "Learn more"
+msgstr "Μάθετε περισσότερα"
+
+#: templates/coder/base.html:358 templates/learn/base.html:111
+#: templates/learn/spriteNaming.html:5 templates/organization/base.html:358
+#, fuzzy
+#| msgid "Incorrect name:"
+msgid "Incorrect names"
+msgstr "Λάθος όνομα:"
+
+#: templates/coder/base.html:363 templates/coder/downloads.html:15
+#: templates/organization/base.html:363
+#: templates/organization/downloads.html:15
+msgid "Downloads"
+msgstr ""
+
+#: templates/coder/base.html:364 templates/coder/settings.html:5
+#: templates/organization/base.html:364 templates/organization/settings.html:5
+msgid "Settings"
+msgstr ""
+
+#: templates/coder/base.html:372
+#: templates/coder/dashboard-unregistered-basic.html:258
+#: templates/coder/dashboard-unregistered-developing.html:295
+#: templates/coder/dashboard-unregistered-master.html:356
+#: templates/coder/error_analyzing.html:70 templates/contest.html:196
+#: templates/error/404.html:67 templates/error/500.html:67
+#: templates/error/analyzing.html:70 templates/learn/base.html:123
+#: templates/main/collaborators.html:455
+#: templates/main/dashboard-unregistered-basic.html:254
+#: templates/main/dashboard-unregistered-developing.html:292
+#: templates/main/dashboard-unregistered-master.html:353
+#: templates/main/error_analyzing.html:70 templates/main/main.html:620
+#: templates/organization/base.html:372
+#: templates/organization/dashboard-unregistered-basic.html:258
+#: templates/organization/dashboard-unregistered-developing.html:295
+#: templates/organization/dashboard-unregistered-master.html:356
+#: templates/organization/error_analyzing.html:70
+#: templates/password/base.html:104 templates/sign/base.html:104
+#: templates/sign/coder.html:255 templates/sign/organization.html:288
+#: templates/statistics/statistics.html:350
+#: templates/upload/dashboard-coder.html:212
+#: templates/upload/dashboard-organization.html:212
+#: templates/upload/dashboard-unregistered-basic.html:254
+#: templates/upload/dashboard-unregistered-developing.html:292
+#: templates/upload/dashboard-unregistered-master.html:353
+#, fuzzy
+#| msgid "©2014 Dr.Scratch is powered by"
+msgid "©2014 Dr. Scratch is powered by "
+msgstr "©2014 Το Dr.Scratch λειτουργεί από"
+
+#: templates/coder/base.html:399 templates/organization/base.html:399
+msgid "How is the file .csv?"
+msgstr ""
+
+#: templates/coder/base.html:401 templates/organization/base.html:401
+msgid ""
+"You must to write only the number of your students' projects. Easy, isn't it?"
+msgstr ""
+
+#: templates/coder/base.html:422 templates/main/main.html:647
+#: templates/organization/base.html:422
+#: templates/upload/dashboard-coder.html:239
+#: templates/upload/dashboard-organization.html:239
+msgid "What is an url?"
+msgstr ""
+
+#: templates/coder/base.html:424 templates/main/main.html:649
+#: templates/organization/base.html:424
+#: templates/upload/dashboard-coder.html:241
+#: templates/upload/dashboard-organization.html:241
+msgid "How I can know my Scratch project's url?"
+msgstr ""
+
+#: templates/coder/base.html:428 templates/organization/base.html:428
+msgid "<img class='framed' src='../static/app/images/url-en.png' />"
+msgstr ""
+
+#: templates/coder/base.html:447 templates/main/main.html:672
+#: templates/organization/base.html:447
+#: templates/upload/dashboard-coder.html:264
+#: templates/upload/dashboard-organization.html:264
+msgid "I want to download my project from Scratch!"
+msgstr ""
+
+#: templates/coder/base.html:449 templates/main/main.html:674
+#: templates/organization/base.html:449
+#: templates/upload/dashboard-coder.html:266
+#: templates/upload/dashboard-organization.html:266
+msgid "How I can download my Scratch project to my computer?"
+msgstr ""
+
+#: templates/coder/base.html:453 templates/organization/base.html:453
+msgid "<img class='framed' src='../static/app/images/project-en.png' />"
+msgstr ""
+
+#: templates/coder/base.html:473 templates/main/main.html:698
+#: templates/organization/base.html:473
+#, fuzzy
+#| msgid "Wait a moment please"
+msgid "Wait a moment, please."
+msgstr "Περιμένετε ένα λεπτό"
+
+#: templates/coder/base.html:491 templates/contest.html:238
+#: templates/main/main.html:716 templates/organization/base.html:491
+msgid "loading..."
+msgstr "φόρτωση..."
+
+#: templates/coder/dashboard-unregistered-basic.html:63
+#: templates/coder/dashboard-unregistered-developing.html:58
+#: templates/coder/dashboard-unregistered-master.html:77
+#: templates/main/dashboard-unregistered-basic.html:63
+#: templates/main/dashboard-unregistered-developing.html:58
+#: templates/main/dashboard-unregistered-master.html:77
+#: templates/organization/dashboard-unregistered-basic.html:63
+#: templates/organization/dashboard-unregistered-developing.html:58
+#: templates/organization/dashboard-unregistered-master.html:77
+#: templates/upload/dashboard-unregistered-basic.html:63
+#: templates/upload/dashboard-unregistered-developing.html:58
+#: templates/upload/dashboard-unregistered-master.html:77
+#, fuzzy
+#| msgid "Score:"
+msgid "Score"
+msgstr "Βαθμολογία:"
+
+#: templates/coder/dashboard-unregistered-basic.html:64
+#: templates/coder/dashboard-unregistered-developing.html:59
+#: templates/coder/dashboard-unregistered-master.html:78
+#: templates/main/dashboard-unregistered-basic.html:64
+#: templates/main/dashboard-unregistered-developing.html:59
+#: templates/main/dashboard-unregistered-master.html:78
+#: templates/organization/dashboard-unregistered-basic.html:64
+#: templates/organization/dashboard-unregistered-developing.html:59
+#: templates/organization/dashboard-unregistered-master.html:78
+#: templates/upload/dashboard-unregistered-basic.html:64
+#: templates/upload/dashboard-unregistered-developing.html:59
+#: templates/upload/dashboard-unregistered-master.html:78
+msgid "This section shows the total score."
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-basic.html:68
+#: templates/coder/dashboard-unregistered-developing.html:63
+#: templates/coder/dashboard-unregistered-master.html:82
+#: templates/main/dashboard-unregistered-basic.html:68
+#: templates/main/dashboard-unregistered-developing.html:63
+#: templates/main/dashboard-unregistered-master.html:82
+#: templates/organization/dashboard-unregistered-basic.html:68
+#: templates/organization/dashboard-unregistered-developing.html:63
+#: templates/organization/dashboard-unregistered-master.html:82
+#: templates/upload/dashboard-unregistered-basic.html:68
+#: templates/upload/dashboard-unregistered-developing.html:63
+#: templates/upload/dashboard-unregistered-master.html:82
+msgid "Improve the score"
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-basic.html:69
+#: templates/coder/dashboard-unregistered-developing.html:64
+#: templates/coder/dashboard-unregistered-master.html:83
+#: templates/main/dashboard-unregistered-basic.html:69
+#: templates/main/dashboard-unregistered-developing.html:64
+#: templates/main/dashboard-unregistered-master.html:83
+#: templates/organization/dashboard-unregistered-basic.html:69
+#: templates/organization/dashboard-unregistered-developing.html:64
+#: templates/organization/dashboard-unregistered-master.html:83
+#: templates/upload/dashboard-unregistered-basic.html:69
+#: templates/upload/dashboard-unregistered-developing.html:64
+#: templates/upload/dashboard-unregistered-master.html:83
+msgid ""
+"You do not like the score that you got? Improve it following our advice."
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-basic.html:73
+#: templates/coder/dashboard-unregistered-developing.html:73
+#: templates/coder/dashboard-unregistered-master.html:92
+#: templates/main/dashboard-unregistered-basic.html:73
+#: templates/main/dashboard-unregistered-developing.html:73
+#: templates/main/dashboard-unregistered-master.html:92
+#: templates/organization/dashboard-unregistered-basic.html:73
+#: templates/organization/dashboard-unregistered-developing.html:73
+#: templates/organization/dashboard-unregistered-master.html:92
+#: templates/upload/dashboard-unregistered-basic.html:73
+#: templates/upload/dashboard-unregistered-developing.html:73
+#: templates/upload/dashboard-unregistered-master.html:92
+#, fuzzy
+#| msgid "CT Score in detail:"
+msgid "Score in detail"
+msgstr "Βαθμολογία Υπολογιστικής Σκέψης με λεπτομέρειες:"
+
+#: templates/coder/dashboard-unregistered-basic.html:74
+#: templates/coder/dashboard-unregistered-developing.html:74
+#: templates/coder/dashboard-unregistered-master.html:93
+#: templates/main/dashboard-unregistered-basic.html:74
+#: templates/main/dashboard-unregistered-developing.html:74
+#: templates/main/dashboard-unregistered-master.html:93
+#: templates/organization/dashboard-unregistered-basic.html:74
+#: templates/organization/dashboard-unregistered-developing.html:74
+#: templates/organization/dashboard-unregistered-master.html:93
+#: templates/upload/dashboard-unregistered-basic.html:74
+#: templates/upload/dashboard-unregistered-developing.html:74
+#: templates/upload/dashboard-unregistered-master.html:93
+msgid "Here we show the score in each programming skill."
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-basic.html:102
+#: templates/coder/dashboard-unregistered-developing.html:112
+#: templates/coder/dashboard-unregistered-master.html:150
+#: templates/main/dashboard-unregistered-basic.html:98
+#: templates/main/dashboard-unregistered-developing.html:109
+#: templates/main/dashboard-unregistered-master.html:147
+#: templates/organization/dashboard-unregistered-basic.html:102
+#: templates/organization/dashboard-unregistered-developing.html:112
+#: templates/organization/dashboard-unregistered-master.html:150
+msgid "HELP"
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-basic.html:103
+#: templates/coder/dashboard-unregistered-developing.html:113
+#: templates/coder/dashboard-unregistered-master.html:151
+#: templates/learn/base.html:88
+#: templates/main/dashboard-unregistered-basic.html:99
+#: templates/main/dashboard-unregistered-developing.html:110
+#: templates/main/dashboard-unregistered-master.html:148
+#: templates/organization/dashboard-unregistered-basic.html:103
+#: templates/organization/dashboard-unregistered-developing.html:113
+#: templates/organization/dashboard-unregistered-master.html:151
+#: templates/password/base.html:88 templates/sign/base.html:88
+#: templates/statistics/statistics.html:296
+#: templates/upload/dashboard-unregistered-basic.html:99
+#: templates/upload/dashboard-unregistered-developing.html:110
+#: templates/upload/dashboard-unregistered-master.html:148
+#, fuzzy
+#| msgid "Dr.Scratch(Beta Version)"
+msgid "Dr. Scratch(Beta Version)"
+msgstr "Dr.Scratch(Έκδοση Beta)"
+
+#: templates/coder/dashboard-unregistered-basic.html:120
+#: templates/coder/dashboard-unregistered-developing.html:128
+#: templates/coder/dashboard-unregistered-master.html:167
+#: templates/main/dashboard-unregistered-basic.html:116
+#: templates/main/dashboard-unregistered-developing.html:125
+#: templates/main/dashboard-unregistered-master.html:164
+#: templates/organization/dashboard-unregistered-basic.html:120
+#: templates/organization/dashboard-unregistered-developing.html:128
+#: templates/organization/dashboard-unregistered-master.html:167
+#: templates/upload/dashboard-unregistered-basic.html:116
+#: templates/upload/dashboard-unregistered-developing.html:125
+#: templates/upload/dashboard-unregistered-master.html:164
+msgid "Score:"
+msgstr "Βαθμολογία:"
+
+#: templates/coder/dashboard-unregistered-basic.html:121
+#: templates/coder/dashboard-unregistered-developing.html:129
+#: templates/coder/dashboard-unregistered-master.html:168
+#: templates/main/dashboard-unregistered-basic.html:117
+#: templates/main/dashboard-unregistered-developing.html:126
+#: templates/main/dashboard-unregistered-master.html:165
+#: templates/organization/dashboard-unregistered-basic.html:121
+#: templates/organization/dashboard-unregistered-developing.html:129
+#: templates/organization/dashboard-unregistered-master.html:168
+#: templates/upload/dashboard-unregistered-basic.html:117
+#: templates/upload/dashboard-unregistered-developing.html:126
+#: templates/upload/dashboard-unregistered-master.html:165
+#, fuzzy, python-format
+#| msgid ""
+#| "I have just obtained %(points)s points analyzing my project in Dr. "
+#| "Scratch! Beat it!@DrScratchTool"
+msgid ""
+" I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
+"Beat it! @DrScratchTool "
+msgstr ""
+"Μόλις πήρα %(points)s βαθμούς αναλύοντας το έργο μου με το Dr. Scratch! "
+"Μπορείς να τα πας καλύτερα; @DrScratchTool"
+
+#: templates/coder/dashboard-unregistered-basic.html:125
+#: templates/main/dashboard-unregistered-basic.html:121
+#: templates/organization/dashboard-unregistered-basic.html:125
+#: templates/upload/dashboard-unregistered-basic.html:121
+#, fuzzy
+#| msgid ""
+#| "<h1 class='text-left dark-text'><small>Your level is</small><img "
+#| "src='static/app/images/B.png'><strong>ASIC </strong></h1></img>"
+msgid ""
+"<h3 class='text-left dark-text'>Your level is... <strong>BASIC! </strong></"
+"h3>"
+msgstr ""
+"<h1 class='text-left dark-text'><small>Το επίπεδό σας είναι</small><img "
+"src='static/app/images/B.png'><strong>ASIC </strong></h1></img>"
+
+#: templates/coder/dashboard-unregistered-basic.html:126
+#: templates/main/dashboard-unregistered-basic.html:122
+#: templates/organization/dashboard-unregistered-basic.html:126
+#: templates/upload/dashboard-unregistered-basic.html:122
+#, fuzzy
+#| msgid "You're at the first of a great adventure . . . Continue that way!"
+msgid "You're at the beginning of a <br>great adventure . . . Keep it up!"
+msgstr "Είστε στην αρχή μιας μεγάλης περιπέτειας . . . Συνεχίστε έτσι!"
+
+#: templates/coder/dashboard-unregistered-basic.html:136
+#: templates/coder/dashboard-unregistered-developing.html:144
+#: templates/coder/dashboard-unregistered-master.html:187
+#: templates/main/dashboard-unregistered-basic.html:132
+#: templates/main/dashboard-unregistered-developing.html:141
+#: templates/main/dashboard-unregistered-master.html:184
+#: templates/organization/dashboard-unregistered-basic.html:136
+#: templates/organization/dashboard-unregistered-developing.html:144
+#: templates/organization/dashboard-unregistered-master.html:187
+#: templates/upload/dashboard-unregistered-basic.html:132
+#: templates/upload/dashboard-unregistered-developing.html:141
+#: templates/upload/dashboard-unregistered-master.html:184
+msgid "Want to level up?"
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-basic.html:138
+#: templates/coder/dashboard-unregistered-developing.html:146
+#: templates/coder/dashboard-unregistered-master.html:189
+#: templates/main/dashboard-unregistered-basic.html:134
+#: templates/main/dashboard-unregistered-developing.html:143
+#: templates/main/dashboard-unregistered-master.html:186
+#: templates/organization/dashboard-unregistered-basic.html:138
+#: templates/organization/dashboard-unregistered-developing.html:146
+#: templates/organization/dashboard-unregistered-master.html:189
+#: templates/upload/dashboard-unregistered-basic.html:134
+#: templates/upload/dashboard-unregistered-developing.html:143
+#: templates/upload/dashboard-unregistered-master.html:186
+#, fuzzy
+#| msgid "Analyze your Scratch projects"
+msgid "Come back to your Scratch project."
+msgstr "Αναλύστε το δικό σας έργο Scratch"
+
+#: templates/coder/dashboard-unregistered-basic.html:151
+#: templates/coder/dashboard-unregistered-basic.html:160
+#: templates/coder/dashboard-unregistered-basic.html:206
+#: templates/coder/dashboard-unregistered-developing.html:158
+#: templates/coder/dashboard-unregistered-developing.html:168
+#: templates/coder/dashboard-unregistered-developing.html:176
+#: templates/coder/dashboard-unregistered-developing.html:246
+#: templates/coder/dashboard-unregistered-master.html:201
+#: templates/coder/dashboard-unregistered-master.html:211
+#: templates/coder/dashboard-unregistered-master.html:221
+#: templates/coder/dashboard-unregistered-master.html:307
+#: templates/main/dashboard-unregistered-basic.html:147
+#: templates/main/dashboard-unregistered-basic.html:156
+#: templates/main/dashboard-unregistered-basic.html:202
+#: templates/main/dashboard-unregistered-developing.html:155
+#: templates/main/dashboard-unregistered-developing.html:165
+#: templates/main/dashboard-unregistered-developing.html:173
+#: templates/main/dashboard-unregistered-developing.html:243
+#: templates/main/dashboard-unregistered-master.html:198
+#: templates/main/dashboard-unregistered-master.html:208
+#: templates/main/dashboard-unregistered-master.html:218
+#: templates/main/dashboard-unregistered-master.html:304
+#: templates/organization/dashboard-unregistered-basic.html:151
+#: templates/organization/dashboard-unregistered-basic.html:160
+#: templates/organization/dashboard-unregistered-basic.html:206
+#: templates/organization/dashboard-unregistered-developing.html:158
+#: templates/organization/dashboard-unregistered-developing.html:168
+#: templates/organization/dashboard-unregistered-developing.html:176
+#: templates/organization/dashboard-unregistered-developing.html:246
+#: templates/organization/dashboard-unregistered-master.html:201
+#: templates/organization/dashboard-unregistered-master.html:211
+#: templates/organization/dashboard-unregistered-master.html:221
+#: templates/organization/dashboard-unregistered-master.html:307
+#: templates/upload/dashboard-unregistered-basic.html:147
+#: templates/upload/dashboard-unregistered-basic.html:156
+#: templates/upload/dashboard-unregistered-basic.html:202
+#: templates/upload/dashboard-unregistered-developing.html:155
+#: templates/upload/dashboard-unregistered-developing.html:165
+#: templates/upload/dashboard-unregistered-developing.html:173
+#: templates/upload/dashboard-unregistered-developing.html:243
+#: templates/upload/dashboard-unregistered-master.html:198
+#: templates/upload/dashboard-unregistered-master.html:208
+#: templates/upload/dashboard-unregistered-master.html:218
+#: templates/upload/dashboard-unregistered-master.html:304
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                                    %(key)s\n"
+#| "                                    "
+msgid ""
+"\n"
+"                                        %(key)s\n"
+"                                        "
+msgstr ""
+"\n"
+"                                    %(key)s\n"
+"                                    "
+
+#: templates/coder/dashboard-unregistered-basic.html:192
+#: templates/coder/dashboard-unregistered-developing.html:232
+#: templates/coder/dashboard-unregistered-master.html:293
+#: templates/main/dashboard-unregistered-basic.html:188
+#: templates/main/dashboard-unregistered-developing.html:229
+#: templates/main/dashboard-unregistered-master.html:290
+#: templates/organization/dashboard-unregistered-basic.html:192
+#: templates/organization/dashboard-unregistered-developing.html:232
+#: templates/organization/dashboard-unregistered-master.html:293
+#: templates/upload/dashboard-unregistered-basic.html:188
+#: templates/upload/dashboard-unregistered-developing.html:229
+#: templates/upload/dashboard-unregistered-master.html:290
+msgid "Concept"
+msgstr "Έννοια"
+
+#: templates/coder/dashboard-unregistered-basic.html:193
+#: templates/coder/dashboard-unregistered-developing.html:233
+#: templates/coder/dashboard-unregistered-master.html:294
+#: templates/main/dashboard-unregistered-basic.html:189
+#: templates/main/dashboard-unregistered-developing.html:230
+#: templates/main/dashboard-unregistered-master.html:291
+#: templates/organization/dashboard-unregistered-basic.html:193
+#: templates/organization/dashboard-unregistered-developing.html:233
+#: templates/organization/dashboard-unregistered-master.html:294
+#: templates/upload/dashboard-unregistered-basic.html:189
+#: templates/upload/dashboard-unregistered-developing.html:230
+#: templates/upload/dashboard-unregistered-master.html:291
+msgid "Points"
+msgstr "Βαθμοί"
+
+#: templates/coder/dashboard-unregistered-developing.html:68
+#: templates/coder/dashboard-unregistered-master.html:87
+#: templates/main/dashboard-unregistered-developing.html:68
+#: templates/main/dashboard-unregistered-master.html:87
+#: templates/organization/dashboard-unregistered-developing.html:68
+#: templates/organization/dashboard-unregistered-master.html:87
+#: templates/upload/dashboard-unregistered-developing.html:68
+#: templates/upload/dashboard-unregistered-master.html:87
+msgid "Bad habits in programming"
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-developing.html:69
+#: templates/coder/dashboard-unregistered-master.html:88
+#: templates/main/dashboard-unregistered-developing.html:69
+#: templates/main/dashboard-unregistered-master.html:88
+#: templates/organization/dashboard-unregistered-developing.html:69
+#: templates/organization/dashboard-unregistered-master.html:88
+#: templates/upload/dashboard-unregistered-developing.html:69
+#: templates/upload/dashboard-unregistered-master.html:88
+msgid ""
+"If you correct your bad habits in programming, you will avoid problems in "
+"the future."
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-developing.html:134
+#: templates/main/dashboard-unregistered-developing.html:131
+#: templates/organization/dashboard-unregistered-developing.html:134
+#: templates/upload/dashboard-unregistered-developing.html:131
+#, fuzzy
+#| msgid ""
+#| "<h1 class='text-left dark-text'><small>Your level is</small> <img "
+#| "src='static/app/images/D.png'><strong>EVELOPING </strong></h1></img>"
+msgid ""
+"<h3 class='text-left dark-text'>Your level is... <strong>DEVELOPING! </"
+"strong></h3>"
+msgstr ""
+"<h1 class='text-left dark-text'><small>Το επίπεδό σας είναι</small> <img "
+"src='static/app/images/D.png'><strong>EVELOPING </strong></h1></img>"
+
+#: templates/coder/dashboard-unregistered-developing.html:135
+#: templates/main/dashboard-unregistered-developing.html:132
+#: templates/organization/dashboard-unregistered-developing.html:135
+#: templates/upload/dashboard-unregistered-developing.html:132
+msgid "You're doing a great job. Keep it up!!!"
+msgstr "Καλή δουλειά. Συνεχίστε τη!!!"
+
+#: templates/coder/dashboard-unregistered-developing.html:193
+#: templates/coder/dashboard-unregistered-master.html:240
+#: templates/main/dashboard-unregistered-developing.html:190
+#: templates/main/dashboard-unregistered-master.html:237
+#: templates/organization/dashboard-unregistered-developing.html:193
+#: templates/organization/dashboard-unregistered-master.html:240
+#: templates/upload/dashboard-unregistered-developing.html:190
+#: templates/upload/dashboard-unregistered-master.html:237
+msgid "Details to fix:"
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-developing.html:196
+#: templates/coder/dashboard-unregistered-master.html:262
+#: templates/main/dashboard-unregistered-developing.html:193
+#: templates/main/dashboard-unregistered-master.html:259
+#: templates/organization/dashboard-unregistered-developing.html:196
+#: templates/organization/dashboard-unregistered-master.html:262
+#: templates/upload/dashboard-unregistered-developing.html:193
+#: templates/upload/dashboard-unregistered-master.html:259
+#, fuzzy
+#| msgid "Sprite Atributes"
+msgid "Sprites attributes"
+msgstr "Ιδιότητες αντικείμενων"
+
+#: templates/coder/dashboard-unregistered-developing.html:200
+#: templates/coder/dashboard-unregistered-master.html:266
+#: templates/main/dashboard-unregistered-developing.html:197
+#: templates/main/dashboard-unregistered-master.html:263
+#: templates/organization/dashboard-unregistered-developing.html:200
+#: templates/organization/dashboard-unregistered-master.html:266
+#: templates/upload/dashboard-unregistered-developing.html:197
+#: templates/upload/dashboard-unregistered-master.html:263
+msgid "Your project does not have uninitialized attributes, good job!"
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-developing.html:206
+#: templates/coder/dashboard-unregistered-master.html:272
+#: templates/main/dashboard-unregistered-developing.html:203
+#: templates/main/dashboard-unregistered-master.html:269
+#: templates/organization/dashboard-unregistered-developing.html:206
+#: templates/organization/dashboard-unregistered-master.html:272
+#: templates/upload/dashboard-unregistered-developing.html:203
+#: templates/upload/dashboard-unregistered-master.html:269
+#, fuzzy
+#| msgid "Sprite Atributes"
+msgid " sprite attributes."
+msgstr "Ιδιότητες αντικείμενων"
+
+#: templates/coder/dashboard-unregistered-developing.html:211
+#: templates/coder/dashboard-unregistered-master.html:247
+#: templates/main/dashboard-unregistered-developing.html:208
+#: templates/main/dashboard-unregistered-master.html:244
+#: templates/organization/dashboard-unregistered-developing.html:211
+#: templates/organization/dashboard-unregistered-master.html:247
+#: templates/upload/dashboard-unregistered-developing.html:208
+#: templates/upload/dashboard-unregistered-master.html:244
+#, fuzzy
+#| msgid "Sprites naming"
+msgid " sprite naming."
+msgstr "Ονόματα αντικειμένων"
+
+#: templates/coder/dashboard-unregistered-master.html:173
+#: templates/main/dashboard-unregistered-master.html:170
+#: templates/organization/dashboard-unregistered-master.html:173
+#: templates/upload/dashboard-unregistered-master.html:170
+#, fuzzy
+#| msgid ""
+#| "<h1 class='text-left dark-text'><small>Your level is</small> <img "
+#| "src='static/app/images/M.png'><strong>ASTER </strong></h1></img>"
+msgid ""
+"<h3 class='text-left dark-text'>Your level is...  <strong> MASTER! </"
+"strong></h3>"
+msgstr ""
+"<h1 class='text-left dark-text'><small>Το επίπεδό σας είναι</small> <img "
+"src='static/app/images/M.png'><strong>ASTER </strong></h1></img>"
+
+#: templates/coder/dashboard-unregistered-master.html:174
+#: templates/main/dashboard-unregistered-master.html:171
+#: templates/organization/dashboard-unregistered-master.html:174
+#: templates/upload/dashboard-unregistered-master.html:171
+#, fuzzy
+#| msgid "You're the master of the universe!!!"
+msgid "You're the master of the universe!!! "
+msgstr "Είστε ο άρχοντας του σύμπαντος!!!"
+
+#: templates/coder/dashboard-unregistered-master.html:243
+#: templates/main/dashboard-unregistered-master.html:240
+#: templates/organization/dashboard-unregistered-master.html:243
+#: templates/upload/dashboard-unregistered-master.html:240
+#, fuzzy
+#| msgid "Duplicated Scripts"
+msgid " duplicated scripts."
+msgstr "Διπλά σενάρια"
+
+#: templates/coder/dashboard-unregistered-master.html:253
+#: templates/main/dashboard-unregistered-master.html:250
+#: templates/organization/dashboard-unregistered-master.html:253
+#: templates/upload/dashboard-unregistered-master.html:250
+msgid "Your project does not have dead code, good job!"
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-master.html:255
+#: templates/main/dashboard-unregistered-master.html:252
+#: templates/organization/dashboard-unregistered-master.html:255
+#: templates/upload/dashboard-unregistered-master.html:252
+msgid "You have dead code in "
+msgstr ""
+
+#: templates/coder/dashboard-unregistered-master.html:260
+#: templates/main/dashboard-unregistered-master.html:257
+#: templates/organization/dashboard-unregistered-master.html:260
+#: templates/upload/dashboard-unregistered-master.html:257
+#, fuzzy
+#| msgid "Dead Code"
+msgid " dead code."
+msgstr "Κώδικας που δεν εκτελείται"
+
+#: templates/coder/downloads.html:7 templates/organization/downloads.html:7
+msgid "Download my CSV files."
+msgstr ""
+
+#: templates/coder/downloads.html:9 templates/organization/downloads.html:9
+msgid "Here you can download the CSV files previously analyzed."
+msgstr ""
+
+#: templates/coder/downloads.html:14 templates/organization/downloads.html:14
+msgid "Date"
+msgstr ""
+
+#: templates/coder/downloads.html:24 templates/organization/downloads.html:24
+msgid "Download"
+msgstr ""
+
+#: templates/coder/email.html:4 templates/organization/email.html:4
+#: templates/password/email.html:4
+msgid "Reset password"
+msgstr ""
+
+#: templates/coder/email.html:6 templates/organization/email.html:6
+#: templates/password/email.html:6
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at Dr. Scratch."
+msgstr ""
+
+#: templates/coder/email.html:7 templates/organization/email.html:7
+#: templates/password/email.html:7
+msgid "Please, go to the following page and choose a new password:"
+msgstr ""
+
+#: templates/coder/email.html:9 templates/organization/email.html:9
+#: templates/password/email.html:9
+msgid "Your username is: "
+msgstr ""
+
+#: templates/coder/email.html:13 templates/organization/email.html:13
+#: templates/password/email.html:13 templates/sign/email.html:11
+msgid "Thanks for using our website!"
+msgstr ""
+
+#: templates/coder/email.html:14 templates/organization/email.html:14
+#: templates/password/email.html:14 templates/sign/email.html:12
+#, fuzzy
+#| msgid "Are you a Dr.Scratch user?"
+msgid "The Dr. Scratch team"
+msgstr "Είστε χρήστης του Dr.Scratch;"
+
+#: templates/coder/error_analyzing.html:9 templates/error/404.html:9
+#: templates/error/500.html:9 templates/error/analyzing.html:9
+#: templates/main/error_analyzing.html:9
+#: templates/organization/error_analyzing.html:9
+msgid "Error"
+msgstr "Σφάλμα"
+
+#: templates/coder/error_analyzing.html:36 templates/error/analyzing.html:36
+#: templates/main/error_analyzing.html:36
+#: templates/organization/error_analyzing.html:36
+msgid "There was an error analyzing your project"
+msgstr "Υπήρξε ένα σφάλμα στην ανάλυση του έργου σας"
+
+#: templates/coder/error_analyzing.html:39 templates/error/500.html:39
+#: templates/error/analyzing.html:39 templates/main/error_analyzing.html:39
+#: templates/organization/error_analyzing.html:39
+msgid "We apologize for this inconvenience"
+msgstr "Συγγνώμη για την ταλαιπωρία"
+
+#: templates/coder/error_analyzing.html:54 templates/error/analyzing.html:54
+#: templates/main/error_analyzing.html:54
+#: templates/organization/error_analyzing.html:54
+msgid ""
+"Sometimes we have got problems analyzing some projects. We're working on "
+"this."
+msgstr ""
+"Μερικές φορές έχουμε προβλήματα αναλύοντας κάποια έργα. Εργαζόμαστε για το "
+"θέμα αυτό."
+
+#: templates/coder/error_analyzing.html:62 templates/error/404.html:59
+#: templates/error/500.html:59 templates/error/analyzing.html:62
+#: templates/main/collaborators.html:84 templates/main/error_analyzing.html:62
+#: templates/main/main.html:139 templates/main/main.html.py:609
+#: templates/organization/error_analyzing.html:62 templates/sign/coder.html:81
+#: templates/sign/organization.html:105
+msgid "Get Started"
+msgstr "Εκκίνηση"
+
+#: templates/coder/main.html:12 templates/organization/main.html:12
+#, fuzzy
+#| msgid "A powerful tool to analyze your Scratch projects"
+msgid "Do you want to analyze one project?"
+msgstr "Ένα ισχυρό έργαλείο για την ανάλυση των έργων Scratch"
+
+#: templates/coder/main.html:14 templates/main/main.html:184
+#: templates/organization/main.html:14
+#, fuzzy
+#| msgid "There are two options to analyze a Sratch project with Dr.Scratch"
+msgid "There are two options to analyze your Scratch project now!"
+msgstr ""
+"Υπάρχουν δύο επιλογές για την ανάλυση ενός έργου Scratch με το Dr.Scratch"
+
+#: templates/coder/main.html:18 templates/main/main.html:189
+#: templates/organization/main.html:19
+msgid ""
+"1. Introduce the <span class='colored-text'><a data-toggle='modal' "
+"href='#modalUrl'>url</a></span> of your Scratch project, you don't have to "
+"download it:"
+msgstr ""
+
+#: templates/coder/main.html:19 templates/main/main.html:190
+#: templates/organization/main.html:20
+msgid ""
+"<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
+"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
+"type=\"text\">"
+msgstr ""
+"<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
+"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
+"type=\"text\">"
+
+#: templates/coder/main.html:20 templates/main/main.html:191
+#: templates/organization/main.html:21
+msgid "Analyze by url"
+msgstr ""
+
+#: templates/coder/main.html:25 templates/main/main.html:196
+#: templates/organization/main.html:26
+msgid ""
+"2. If you have your <span class='colored-text'><a data-toggle='modal' "
+"href='#modalProject'>project</a></span> downloaded in the computer you can "
+"analyze it here:"
+msgstr ""
+
+#: templates/coder/main.html:26 templates/main/main.html:197
+#: templates/organization/main.html:27
+msgid ""
+"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
+"Project'>"
+msgstr ""
+"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
+"Project'>"
+
+#: templates/coder/main.html:27 templates/main/main.html:198
+#: templates/organization/main.html:28
+#, fuzzy
+#| msgid "Analyze your Scratch projects"
+msgid "Analyze my project"
+msgstr "Αναλύστε το δικό σας έργο Scratch"
+
+#: templates/coder/main.html:34 templates/coder/main.html.py:37
+#: templates/coder/main.html:66 templates/coder/main.html.py:69
+#: templates/main/main.html:205 templates/main/main.html.py:208
+#: templates/organization/main.html:35 templates/organization/main.html:38
+#: templates/organization/main.html:67 templates/organization/main.html:70
+#, fuzzy
+#| msgid "Error! Please choose a sb2 file or input an url"
+msgid "Error! Please choose a .sb or .sb2 file or input an url"
+msgstr "Σφάλμα! Παρακαλώ επιλέξετε ένα sb2 αρχείο ή εισάγετε διεύθυνση"
+
+#: templates/coder/main.html:41 templates/coder/main.html.py:73
+#: templates/main/main.html:212 templates/organization/main.html:42
+#: templates/organization/main.html:74
+msgid "Error! Your project id is wrong"
+msgstr "Σφάλμα! Το id του έργου είναι λάθος"
+
+#: templates/coder/main.html:45 templates/coder/main.html.py:77
+#: templates/main/main.html:216 templates/organization/main.html:46
+#: templates/organization/main.html:78
+msgid "Error! Your project doesn't exist in Scratch's servers"
+msgstr "Σφάλμα! Το έργο σας δεν υπάρχει στους εξυπηρετητές του Scratch"
+
+#: templates/coder/main.html:54 templates/organization/main.html:55
+#, fuzzy
+#| msgid "A powerful tool to analyze your Scratch projects"
+msgid "Do you want to analyze many projects?"
+msgstr "Ένα ισχυρό έργαλείο για την ανάλυση των έργων Scratch"
+
+#: templates/coder/main.html:56 templates/organization/main.html:57
+#: templates/upload/dashboard-coder.html:150
+#: templates/upload/dashboard-organization.html:150
+msgid ""
+"You can analyze at the same time all the Scratch proyects of your students!"
+msgstr ""
+
+#: templates/coder/main.html:59 templates/organization/main.html:60
+#: templates/upload/dashboard-coder.html:153
+#: templates/upload/dashboard-organization.html:153
+msgid "Only you have to put a "
+msgstr ""
+
+#: templates/coder/main.html:59 templates/organization/main.html:60
+#: templates/upload/dashboard-coder.html:153
+#: templates/upload/dashboard-organization.html:153
+msgid "file CSV "
+msgstr ""
+
+#: templates/coder/main.html:59 templates/organization/main.html:60
+#: templates/upload/dashboard-coder.html:153
+#: templates/upload/dashboard-organization.html:153
+msgid " with the urls of the Scratch projects you want to analyze:"
+msgstr ""
+
+#: templates/coder/main.html:60 templates/organization/main.html:61
+#: templates/upload/dashboard-coder.html:154
+#: templates/upload/dashboard-organization.html:154
+#, fuzzy
+#| msgid ""
+#| "<input  name='zipFile' type='file' class='filestyle' data-"
+#| "buttonText='Choose Project'>"
+msgid ""
+"<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose "
+"File .csv'>"
+msgstr ""
+"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
+"Project'>"
+
+#: templates/coder/main.html:61 templates/organization/main.html:62
+#: templates/upload/dashboard-coder.html:155
+#: templates/upload/dashboard-organization.html:155
+#, fuzzy
+#| msgid "Analyze your Scratch projects"
+msgid "Analyze my projects"
+msgstr "Αναλύστε το δικό σας έργο Scratch"
+
+#: templates/coder/settings.html:8 templates/organization/settings.html:8
+#: templates/sign/coder.html:195 templates/sign/organization.html:222
+msgid "Password"
+msgstr ""
+
+#: templates/coder/settings.html:11 templates/organization/settings.html:11
+msgid "Change my password"
+msgstr ""
+
+#: templates/coder/settings.html:16 templates/organization/settings.html:16
+msgid "Photo"
+msgstr ""
+
+#: templates/coder/settings.html:22 templates/organization/settings.html:22
+msgid "Change my photo"
+msgstr ""
+
+#: templates/coder/stats.html:6 templates/main/main.html:583
+#: templates/organization/stats.html:6
+#: templates/statistics/statistics.html:306
+msgid "Statistics"
+msgstr ""
+
+#: templates/contest.html:220
+msgid "Wait a moment please"
+msgstr "Περιμένετε ένα λεπτό"
+
+#: templates/error/404.html:36
+msgid "ERROR 404 - Page Not Found"
+msgstr "Σφάλμα 404 - Η σελίδα δεν βρέθηκε"
+
+#: templates/error/404.html:39
+msgid "Ops! This page doesn't exist"
+msgstr "Όπα! Αυτή η σελίδα δεν υπάρχει"
+
+#: templates/error/500.html:36
+msgid "500 - Internal Server Error"
+msgstr "500 - Εσωτερικό Σφάλμα"
+
+#: templates/learn/Abstraction.html:10
+msgid ""
+"The ability of abstraction and decomposition of problems helps you to "
+"<b>break a problem into smaller parts that are easier to understand, program "
+"and debug.</b>"
+msgstr ""
+
+#: templates/learn/Abstraction.html:17 templates/learn/Data.html:19
+#: templates/learn/Flow.html:35 templates/learn/Logic.html:17
+#: templates/learn/Parallelism.html:17 templates/learn/Synchronization.html:18
+#: templates/learn/User.html:18
+msgid "If you get 0 points..."
+msgstr ""
+
+#: templates/learn/Abstraction.html:19
+msgid ""
+"When you start programming with Scratch, sometimes it may seem that the "
+"simplest solution is to program all the behavior of a character in a single "
+"program. However, <b>ideally is that character behavior is controlled by "
+"different programs and each of these programs deal with a particular issue</"
+"b>. Here's an example:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:20 templates/learn/Abstraction.html:35
+#: templates/learn/Abstraction.html:41 templates/learn/Abstraction.html:61
+#: templates/learn/Abstraction.html:92 templates/learn/Abstraction.html:118
+#: templates/learn/Data.html:85 templates/learn/Data.html.py:104
+#: templates/learn/Data.html:117 templates/learn/Flow.html:39
+#: templates/learn/Flow.html.py:57 templates/learn/Flow.html:67
+#: templates/learn/Flow.html.py:85 templates/learn/Parallelism.html:21
+#: templates/learn/Synchronization.html:21
+#: templates/learn/Synchronization.html:27
+#: templates/learn/Synchronization.html:45 templates/learn/User.html:23
+#: templates/learn/attrInit.html:25
+msgid "when gf clicked"
+msgstr ""
+
+#: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
+#: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
+msgid "clear"
+msgstr ""
+
+#: templates/learn/Abstraction.html:22 templates/learn/Abstraction.html:37
+msgid "go to x:(-100) y:(30)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:23 templates/learn/Abstraction.html:38
+#: templates/learn/Abstraction.html:65 templates/learn/Abstraction.html:71
+#: templates/learn/Abstraction.html:81
+msgid "pen down"
+msgstr ""
+
+#: templates/learn/Abstraction.html:24 templates/learn/Abstraction.html:39
+#: templates/learn/Abstraction.html:72
+msgid "move (200) steps"
+msgstr ""
+
+#: templates/learn/Abstraction.html:25 templates/learn/Abstraction.html:30
+#: templates/learn/Abstraction.html:40 templates/learn/Abstraction.html:46
+#: templates/learn/Abstraction.html:67 templates/learn/Abstraction.html:73
+#: templates/learn/Abstraction.html:83
+msgid "pen up"
+msgstr ""
+
+#: templates/learn/Abstraction.html:26 templates/learn/Abstraction.html:42
+#: templates/learn/Abstraction.html:68 templates/learn/Abstraction.html:96
+#: templates/learn/Synchronization.html:25
+#: templates/learn/duplicatedScripts.html:20
+msgid "wait (1) secs"
+msgstr ""
+
+#: templates/learn/Abstraction.html:27 templates/learn/Abstraction.html:43
+msgid "go to x:(-44) y:(-24)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:28 templates/learn/Abstraction.html:44
+#: templates/learn/Abstraction.html:64 templates/learn/Abstraction.html:70
+#: templates/learn/Abstraction.html:80
+msgid "set pen color to [#FFA500]"
+msgstr ""
+
+#: templates/learn/Abstraction.html:29 templates/learn/Abstraction.html:45
+#: templates/learn/Abstraction.html:66
+msgid "move (100) steps"
+msgstr ""
+
+#: templates/learn/Abstraction.html:33
+msgid ""
+"This project, which paints a picture on the screen, has been programmed in a "
+"single program that draws the two lines that make up the drawing. Although "
+"it is a valid option, a simpler option to program and maintain the program "
+"is divided into two parts, so that we have two different programs, one to "
+"paint the front and another to paint the second:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:49
+msgid ""
+"Thus, if we make any changes eg in one of the lines drawn, it is much easier "
+"to know which part of the program we need to go to carry out the changes."
+msgstr ""
+
+#: templates/learn/Abstraction.html:59 templates/learn/Data.html:80
+#: templates/learn/Flow.html:55 templates/learn/Logic.html:32
+#: templates/learn/Parallelism.html:32 templates/learn/Synchronization.html:43
+#: templates/learn/User.html:36
+msgid "If you get 1 point..."
+msgstr ""
+
+#: templates/learn/Abstraction.html:60
+msgid ""
+"Scratch allows new user-defined blocks that consist of a sequence of "
+"instructions. These abstractions allow you to create simple programs to "
+"read, program and maintain. Here's an example:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:63 templates/learn/Abstraction.html:94
+msgid "go to x:(-200) y:(40)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:69 templates/learn/Abstraction.html:97
+msgid "go to x:(-200) y:(0)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:76
+msgid ""
+"This Scratch project draws two orange lines of different length  on the "
+"screen. Rather than repeat the code 2 times, as shown in the example, you "
+"can define a <i>'DrawOrange'</i> block consisting of blocks that paint an "
+"orange line on the screen and that you can tell what is the length of the "
+"line. For this you go to the category 'More Blocks' and press the Create "
+"button a block:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:79
+msgid "define PaintedOrange(length)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:82
+msgid "move (length) steps"
+msgstr ""
+
+#: templates/learn/Abstraction.html:89
+msgid ""
+"Having defined the block <i>'DrawOrange'</i> it can be used in any program "
+"of the project, as we see below:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:95
+msgid "PaintedOrange(100):: looks stack"
+msgstr ""
+
+#: templates/learn/Abstraction.html:98
+msgid "PaintedOrange(200):: looks stack"
+msgstr ""
+
+#: templates/learn/Abstraction.html:102
+msgid ""
+"In this way, we avoid repeating code, which makes our projects easier to "
+"program and maintain. As can be seen, the first time the block is used "
+"<i>DrawOrange</i> prompted a length of 100 steps, whereas the second time "
+"length is 200 steps."
+msgstr ""
+
+#: templates/learn/Abstraction.html:111 templates/learn/Data.html:99
+#: templates/learn/Flow.html:83 templates/learn/Logic.html:47
+#: templates/learn/Parallelism.html:65 templates/learn/Synchronization.html:67
+#: templates/learn/User.html:66
+msgid "If you get 2 points..."
+msgstr ""
+
+#: templates/learn/Abstraction.html:113
+msgid ""
+"In some Scratch projects we have many identical characters that exactly "
+"perform the same actions. The first idea that comes to mind to do this is to "
+"create a character, schedule all his behavior and once you're ready, make as "
+"many copies as you need. Therefore, if we want 20 Martians, create 20 "
+"identical objects. However, what if I want to change the program? Would have "
+"to go object by object performing this modification."
+msgstr ""
+
+#: templates/learn/Abstraction.html:115
+msgid ""
+"For such situations it is preferable to use <b>clones</b>, a type of "
+"abstraction that helps us to program a single object, and dynamically "
+"<b>create exact copies with the same behavior.</b>"
+msgstr ""
+
+#: templates/learn/Abstraction.html:116
+msgid ""
+"Let's see how it works with an example. Imagine you want to pretend that it "
+"is snowing on a project. We can draw an object that is a snowflake, and once "
+"you start implementing the project, constantly be creating clones appear at "
+"the top of the screen and they will fall to the bottom:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:119 templates/learn/Flow.html:68
+#: templates/learn/Parallelism.html:41 templates/learn/Parallelism.html:46
+#: templates/learn/Synchronization.html:47
+msgid "forever"
+msgstr ""
+
+#: templates/learn/Abstraction.html:120
+msgid "create clone of [myself v]"
+msgstr ""
+
+#: templates/learn/Abstraction.html:121
+msgid "wait (0.2) secs"
+msgstr ""
+
+#: templates/learn/Abstraction.html:122
+msgid "go to x:(pick random(-200) to (200)) y:(200)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:123
+msgid "glide (3) secs to x:(x position) y:(-180)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:124
+msgid "delete this clone"
+msgstr ""
+
+#: templates/learn/Abstraction.html:127
+msgid ""
+"Thus, just by programming a character, we can have infinite clones  which "
+"are created at a particular time of project implementation and are deleted "
+"when they are no longer needed."
+msgstr ""
+
+#: templates/learn/Data.html:5
+msgid "Data Representation"
+msgstr ""
+
+#: templates/learn/Data.html:11
+msgid ""
+"Every Scratch project needs a set of information about the characters in "
+"order to run properly. For example, <b>we need to know the position of each "
+"character, the direction it is pointing, size, etc.</b> In addition, "
+"programmers can create new information repositories to store other data such "
+"as the level at which we find ourselves, elapsed time, the rating, the "
+"lives, the rewards collected ..."
+msgstr ""
+
+#: templates/learn/Data.html:21
+msgid ""
+"Each character of a Scratch project has a number of features, or attributes, "
+"that every moment of the project have value, and can be modified by "
+"programs. For example, a character has a certain size that can be modified "
+"by block 'resize for 10', making the character appear slightly larger. "
+"Following is the list of attributes that each character and blocks that can "
+"be used to modify:"
+msgstr ""
+
+#: templates/learn/Data.html:25
+msgid "Position:"
+msgstr ""
+
+#: templates/learn/Data.html:29 templates/learn/Flow.html:41
+#: templates/learn/Flow.html.py:60 templates/learn/Flow.html:69
+#: templates/learn/Parallelism.html:42 templates/learn/User.html:40
+msgid "move (10) steps"
+msgstr ""
+
+#: templates/learn/Data.html:30 templates/learn/attrInit.html:26
+msgid "go to x:(0) y:(0)"
+msgstr ""
+
+#: templates/learn/Data.html:31
+msgid "glide (1) secs to x:(0) y:(0)"
+msgstr ""
+
+#: templates/learn/Data.html:32
+msgid "set x to (0)"
+msgstr ""
+
+#: templates/learn/Data.html:33
+msgid "set y to (0)"
+msgstr ""
+
+#: templates/learn/Data.html:34 templates/learn/Data.html.py:35
+msgid "change x by (0)"
+msgstr ""
+
+#: templates/learn/Data.html:38
+msgid "Size:"
+msgstr ""
+
+#: templates/learn/Data.html:42
+msgid "change size by (10)"
+msgstr ""
+
+#: templates/learn/Data.html:43
+msgid "set size to (120) &percnt;"
+msgstr ""
+
+#: templates/learn/Data.html:47
+msgid "Orientation:"
+msgstr ""
+
+#: templates/learn/Data.html:51
+msgid "point in direction (90 v)"
+msgstr ""
+
+#: templates/learn/Data.html:52
+msgid "point towards [v]"
+msgstr ""
+
+#: templates/learn/Data.html:53 templates/learn/Flow.html:42
+#: templates/learn/Flow.html.py:61
+msgid "turn cw (15) degrees"
+msgstr ""
+
+#: templates/learn/Data.html:54 templates/learn/Flow.html:44
+#: templates/learn/Flow.html.py:63
+msgid "turn ccw (15) degrees"
+msgstr ""
+
+#: templates/learn/Data.html:58
+msgid "Costume:"
+msgstr ""
+
+#: templates/learn/Data.html:61
+msgid "switch costume to [butterfly v]"
+msgstr ""
+
+#: templates/learn/Data.html:62 templates/learn/duplicatedScripts.html:18
+#: templates/learn/duplicatedScripts.html:26
+#: templates/learn/duplicatedScripts.html:40
+msgid "next costume"
+msgstr ""
+
+#: templates/learn/Data.html:63
+msgid "change [color v] effect by (25)"
+msgstr ""
+
+#: templates/learn/Data.html:64
+msgid "set [color v] effect to (0)"
+msgstr ""
+
+#: templates/learn/Data.html:67
+msgid "Visibility:"
+msgstr ""
+
+#: templates/learn/Data.html:70 templates/learn/Synchronization.html:74
+msgid "show"
+msgstr ""
+
+#: templates/learn/Data.html:71
+msgid "hide"
+msgstr ""
+
+#: templates/learn/Data.html:81
+msgid ""
+"In addition to modifying the attributes of the characters, programmers can "
+"use other mechanisms to store information on a Scratch project. <b>One of "
+"these mechanisms are variables that can store a value to store different "
+"types of data that may need: at what level we are</b>, how many lives you "
+"have left, how many points we, how is called the user ..."
+msgstr ""
+
+#: templates/learn/Data.html:83
+msgid ""
+"To create a variable you have to go to the category of data, click on "
+"'Create a variable' and give a name. In the example shown below we have "
+"given the name 'Points' as use it to store the number of points you get our "
+"character."
+msgstr ""
+
+#: templates/learn/Data.html:86
+msgid "set [Points v] to [0]"
+msgstr ""
+
+#: templates/learn/Data.html:87
+msgid "if &lt;touching color [#0000FF]&gt; then"
+msgstr ""
+
+#: templates/learn/Data.html:88
+msgid "change [Points v] by (1)"
+msgstr ""
+
+#: templates/learn/Data.html:92
+msgid ""
+"In the program of the top, we assign the number of points that we want the "
+"character has to the beginning of the game, in this case 0, for which we use "
+"the block <i>'fixing points at 0'</i>.  However in the program of the right, "
+"what we do is that when the character touches the blue color, that could be "
+"a target, you will add a point, for which we use the block <i>'change Points "
+"by 1'</i>. In this case, the block <i>'change'</i> would check the current "
+"value of the variable points would add 1: If set to 0, I add 1 and is now "
+"worth 1; when set to 1, I add 1 and is now worth 2 ..."
+msgstr ""
+
+#: templates/learn/Data.html:100
+msgid ""
+"In addition to the variables, Scratch lets you use another data type to "
+"store project information: <b>The lists. The lists can store more than one "
+"value at the same time, so they are ideal for storing rewards have been "
+"recovered by a character or set of names, raise a couple of examples.</b>"
+msgstr ""
+
+#: templates/learn/Data.html:102
+msgid ""
+"To create a list, you have to go to the data category, click on 'Create a "
+"List' and give a name. In the example, we have named our 'Students' list:"
+msgstr ""
+
+#: templates/learn/Data.html:105 templates/learn/Data.html.py:118
+msgid "delete (all v) of [Students v]"
+msgstr ""
+
+#: templates/learn/Data.html:106 templates/learn/Data.html.py:119
+#: templates/learn/Flow.html:59
+msgid "repeat (3)"
+msgstr ""
+
+#: templates/learn/Data.html:107 templates/learn/Data.html.py:120
+msgid "ask [Introduce a student name] and wait"
+msgstr ""
+
+#: templates/learn/Data.html:108 templates/learn/Data.html.py:121
+msgid "insert (answer) at (last v) of [Students v]"
+msgstr ""
+
+#: templates/learn/Data.html:112
+msgid ""
+"What have we done with this program? The first thing we do is, to start "
+"execution, <b>delete all items from the list Students</b>, to empty it "
+"completely and  not appear elements of an previous project implementation. "
+"Then we ask three times the user to enter a name, and each name entered "
+"insert it in the last position in the list Students."
+msgstr ""
+
+#: templates/learn/Data.html:114
+msgid ""
+"What we do with the list? We could, for example, use it to get a volunteer "
+"to carry out an exercise to the whiteboard. Look at the new instructions "
+"added to the program:"
+msgstr ""
+
+#: templates/learn/Data.html:122 templates/learn/Flow.html:66
+#: templates/learn/Flow.html.py:88 templates/learn/Logic.html:52
+#: templates/learn/Logic.html.py:55 templates/learn/Logic.html:58
+#: templates/learn/Parallelism.html:44 templates/learn/Parallelism.html:49
+#: templates/learn/Synchronization.html:50 templates/learn/User.html:50
+#: templates/learn/User.html.py:71
+msgid "end"
+msgstr ""
+
+#: templates/learn/Data.html:123
+msgid "say [Today's volunteer will be...] for (2) secs"
+msgstr ""
+
+#: templates/learn/Data.html:124
+msgid "say (item(pick random (1) to (3)) of [Students v]) for (2) secs"
+msgstr ""
+
+#: templates/learn/Data.html:128
+msgid ""
+"We generated a random number between 1 and 3, which are the elements in the "
+"list, we selected the element that occupies that position in the list. "
+"Sometimes we take the name that is in position 1, others that it is in "
+"position 2 and the other at 3."
+msgstr ""
+
+#: templates/learn/Data.html:130
+msgid ""
+"Lists have many possibilities and many available operations ... you dare to "
+"investigate how they work?"
+msgstr ""
+
+#: templates/learn/Flow.html:28
+msgid ""
+"Instructions related to algorithmic notions of flow control can help you to "
+"<b>control the behavior of your characters</b>, making, for example, certain "
+"blocks that are repeated a number of times,  or until a situation arises."
+msgstr ""
+
+#: templates/learn/Flow.html:37
+msgid ""
+"The most basic way to control the behavior of your characters is creating a "
+"<b>program composed of a set of blocks are executed one after another</b>, "
+"as we see in the picture:"
+msgstr ""
+
+#: templates/learn/Flow.html:40 templates/learn/Flow.html.py:58
+msgid "say [I'm a dancer cat] for (2) secs"
+msgstr ""
+
+#: templates/learn/Flow.html:43 templates/learn/Flow.html.py:62
+#: templates/learn/Flow.html:65 templates/learn/duplicatedScripts.html:28
+msgid "wait (0.5) secs"
+msgstr ""
+
+#: templates/learn/Flow.html:45 templates/learn/Flow.html.py:64
+msgid "move (-10) steps"
+msgstr ""
+
+#: templates/learn/Flow.html:47
+msgid ""
+"How does this program works? When the user click on the green flag run "
+"behind one another all blocks that have been included in the program. Start "
+"with the first block <i>'say I'm a cat dancing for 2 seconds'</i>, then run "
+"<i>'move 10 steps'</i> then <i>'turn 15 degrees right'</i>, and so on to the "
+"last block of the program."
+msgstr ""
+
+#: templates/learn/Flow.html:56
+msgid ""
+"Sometimes when we want a set of blocks is constantly repeated, instead of "
+"repeating the same blocks over and over again, you can use a repeat "
+"instruction allowing achieve the same effect, but more comfortable and "
+"manageable way. Consider a couple of examples:"
+msgstr ""
+
+#: templates/learn/Flow.html:70 templates/learn/Parallelism.html:43
+#: templates/learn/duplicatedScripts.html:19
+#: templates/learn/duplicatedScripts.html:27
+#: templates/learn/duplicatedScripts.html:41
+msgid "if on edge, bounce"
+msgstr ""
+
+#: templates/learn/Flow.html:72
+msgid "How these control blocks works?"
+msgstr ""
+
+#: templates/learn/Flow.html:74
+msgid ""
+"In the block <i>'repeat'</i> when execution reaches this point is repeated "
+"as often as has been indicated in the parameter block 'repeat', in the "
+"example would be 3 times, all blocks included within this block. We can see "
+"that the block 'repeat' has an arrow at the bottom indicating that <b>when "
+"they finish executing the blocks back again up</b>."
+msgstr ""
+
+#: templates/learn/Flow.html:76
+msgid ""
+"The block <i>'forever'</i> works like the 'repeat' but never finish "
+"executing the blocks containing in its interior."
+msgstr ""
+
+#: templates/learn/Flow.html:84
+msgid ""
+"Sometimes we don't know previously  the number of times you want a set of "
+"blocks is executed, as this depends on a given situation. In these cases, "
+"the block 'repeat until ...' is really useful. Here's an example:"
+msgstr ""
+
+#: templates/learn/Flow.html:86
+msgid "repeat until &lt; touching [Enemy v] ?&gt;"
+msgstr ""
+
+#: templates/learn/Flow.html:87
+msgid "say [You don't catch me]"
+msgstr ""
+
+#: templates/learn/Flow.html:89
+msgid "say [You catch me]"
+msgstr ""
+
+#: templates/learn/Flow.html:92
+msgid ""
+"In the example, the character will constantly repeat the instruction say "
+"'You don't caught me...' while he don't touch the enemy. At the time that "
+"the condition is met instruction <i>'repeat until ...'</i>, the contents "
+"inside will finish run and will jump to the next instruction, in this case "
+"say 'You caught me!'."
+msgstr ""
+
+#: templates/learn/Logic.html:10
+msgid ""
+"Instructions related to logical thinking can help your projects are dynamic, "
+"<b>so that they behave differently depending on the situation</b>. In the "
+"stories, for example, these instructions are not as important as they "
+"usually have a linear structure we always want to run the same way, but in "
+"other projects, such as video games are essential to perform different "
+"actions depending on the situation."
+msgstr ""
+
+#: templates/learn/Logic.html:19
+msgid "The most basic block you can start working logical thinking is this:"
+msgstr ""
+
+#: templates/learn/Logic.html:21
+msgid "if &lt; touching color [#0000FF]?  &gt;then"
+msgstr ""
+
+#: templates/learn/Logic.html:22 templates/learn/Logic.html.py:35
+#: templates/learn/Logic.html:37
+msgid "say [I have reached the goal!] for (2) secs"
+msgstr ""
+
+#: templates/learn/Logic.html:23
+msgid ""
+"How this block works? When execution reaches this point, the condition on "
+"the block is evaluated, and if this is true, the set of blocks that are "
+"within the if executed."
+msgstr ""
+
+#: templates/learn/Logic.html:24
+msgid ""
+"In the example, if the character is touching the blue color, he says 'I "
+"reached the goal.'"
+msgstr ""
+
+#: templates/learn/Logic.html:33
+msgid ""
+"Now that you know the instructions <i>if</i>, perhaps you can start using "
+"blocks <i>if / else</i>, which can be very practical in many types of "
+"projects. The blocks <i>if / else</i> are very similar to the block <i>if</"
+"i>, but contain two sets of blocks inside."
+msgstr ""
+
+#: templates/learn/Logic.html:34
+msgid "if &lt; touching color [#0000FF]? &gt;then"
+msgstr ""
+
+#: templates/learn/Logic.html:36
+msgid "else"
+msgstr ""
+
+#: templates/learn/Logic.html:38
+msgid ""
+"How this block works? When execution reaches this point, the condition on "
+"the block is evaluated, and if this is true, the set of blocks that are "
+"within the 'if' is executed, but if the condition is false, then the set of  "
+"blocks that are within the 'else' is executed."
+msgstr ""
+
+#: templates/learn/Logic.html:40
+msgid ""
+"In the example, if the character is touching the blue color, he says  'I "
+"reached the goal!', but ,if you are not touching the purple color, says 'I "
+"have not reached the goal'."
+msgstr ""
+
+#: templates/learn/Logic.html:48
+msgid ""
+"To make decisions on some projects sometimes is necessary to evaluate more "
+"than one condition at the same time to know what to execute. In these "
+"situations it is very helpful to use <b>logical operations</b> that combine "
+"the conditions. Logical operations are available in Scratch <i>AND, OR and "
+"No</i>."
+msgstr ""
+
+#: templates/learn/Logic.html:49
+msgid "if &lt;&lt; touching [Enemy v]? &gt; and &lt;(lives) = [0]&gt;&gt; then"
+msgstr ""
+
+#: templates/learn/Logic.html:50
+msgid "say [Game over]"
+msgstr ""
+
+#: templates/learn/Logic.html:51 templates/learn/Synchronization.html:71
+msgid "stop [all v]"
+msgstr ""
+
+#: templates/learn/Logic.html:53
+msgid ""
+"if &lt;&lt; touching [edge v]? &gt; or &lt; touching [Enemy v]? &gt;&gt;then"
+msgstr ""
+
+#: templates/learn/Logic.html:54
+msgid "change [lives v] by (-1)"
+msgstr ""
+
+#: templates/learn/Logic.html:56
+msgid "if &lt;not&lt; (level) = (5)&gt;&gt;then"
+msgstr ""
+
+#: templates/learn/Logic.html:57
+msgid "say [You still have undiscovered levels] for (2) secs"
+msgstr ""
+
+#: templates/learn/Logic.html:60
+msgid ""
+"The operation <i>AND</i> is true when both conditions are true evaluated. "
+"The <i>OR</i> operation is true when one of two conditions are true "
+"evaluated. And the operation otherwise not worth the condition, ie, if the "
+"condition is true, not returns false and vice versa."
+msgstr ""
+
+#: templates/learn/Parallelism.html:10
+msgid ""
+"In most Scratch creations a certain level of parallelism is required. But "
+"what means parallelism? <b>Parallelism is the possibility that several "
+"things occur simultaneously.</b> For example, two characters perform an "
+"action while a character or do several things at once."
+msgstr ""
+
+#: templates/learn/Parallelism.html:19
+msgid ""
+"The most basic and most obvious way to achieve parallelism is to have "
+"several programs that start with <i>'When green flag is clicked'</i>:"
+msgstr ""
+
+#: templates/learn/Parallelism.html:24
+msgid ""
+"Thus, when the user clicking on the green flag, all programs that start with "
+"this block would begin to run simultaneously, or in parallel, as can also be "
+"said. You could have several programs that start with this block in the same "
+"character, if you want it to do several things at once, or in programs of "
+"different characters, if you want everyone to undertake an action at "
+"beginning of execution."
+msgstr ""
+
+#: templates/learn/Parallelism.html:33
+msgid ""
+"Another way to achieve parallelism in your program is <b>doing several "
+"things occur when the user presses a key or clicks on an object</b>. "
+"Consider a couple of examples:"
+msgstr ""
+
+#: templates/learn/Parallelism.html:35 templates/learn/Parallelism.html:37
+msgid "when [a v] key pressed"
+msgstr ""
+
+#: templates/learn/Parallelism.html:36 templates/learn/Parallelism.html:38
+msgid "say [A] for (2) secs"
+msgstr ""
+
+#: templates/learn/Parallelism.html:40 templates/learn/Parallelism.html:45
+#: templates/learn/User.html:42
+msgid "when this sprite clicked"
+msgstr ""
+
+#: templates/learn/Parallelism.html:47
+msgid "if &lt;touching [the mouse pointer v]? &gt;"
+msgstr ""
+
+#: templates/learn/Parallelism.html:48
+msgid "turn cw (30) degrees"
+msgstr ""
+
+#: templates/learn/Parallelism.html:53
+msgid "How these blocks works?"
+msgstr ""
+
+#: templates/learn/Parallelism.html:55
+msgid ""
+"In the first example, we see two different characters that, when a key is "
+"pressed, perform a certain action. Therefore, when the user press the a key, "
+"in this case, both the cat and the child run at the same time <i>'say A for "
+"2 seconds'</i>"
+msgstr ""
+
+#: templates/learn/Parallelism.html:57
+msgid ""
+"In the second example we see that a character has two programs that begin "
+"with <i>'when clicking this object'</i>. Therefore, when the user clicks on "
+"this character, both programs will begin to run simultaneously, in parallel."
+msgstr ""
+
+#: templates/learn/Parallelism.html:66
+msgid "There are several events more that can achieve parallelism:"
+msgstr ""
+
+#: templates/learn/Parallelism.html:67
+msgid "when backdrop switches to [backdrop1 v]"
+msgstr ""
+
+#: templates/learn/Parallelism.html:68
+#: templates/learn/duplicatedScripts.html:14
+msgid "when I receive [message1 v]"
+msgstr ""
+
+#: templates/learn/Parallelism.html:69
+msgid "when [loudness v] &gt; (10)"
+msgstr ""
+
+#: templates/learn/Parallelism.html:70
+msgid "when [video motion v] &gt; (2)"
+msgstr ""
+
+#: templates/learn/Parallelism.html:71
+msgid "when [timer v] &gt; (45)"
+msgstr ""
+
+#: templates/learn/Parallelism.html:73
+msgid ""
+"As you see, you could create several programs that begin to run when "
+"changing the background to a given scenario, or to receive a particular "
+"message, or when the room volume exceeds a certain threshold, when the video "
+"motion is greater than a number pixel concrete or when the timer has "
+"exceeded the value you want. Therefore, there are many possibilities to make "
+"things happen in your programs simultaneously. Do you dare to investigate "
+"how works?"
+msgstr ""
+
+#: templates/learn/Synchronization.html:11
+msgid ""
+"Instructions related to synchronization <b>allow our characters to organize "
+"things happen in the order we want</b>."
+msgstr ""
+
+#: templates/learn/Synchronization.html:20
+msgid ""
+"The easiest way to synchronize the behavior of your characters is using a "
+"<i>'wait'</i> block, which makes the character waits the number of seconds "
+"you write as a parameter block. An example of how this block can be used to "
+"synchronize two characters:"
+msgstr ""
+
+#: templates/learn/Synchronization.html:22
+#: templates/learn/Synchronization.html:46
+msgid "say [Hello, how are you?] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:23
+#: templates/learn/Synchronization.html:28
+msgid "wait (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:24
+msgid "say [Well, do you want to play hide-and seek?] for (3) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:26
+msgid "say [Let's go] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:29
+msgid "say [I'm fine, thanks!] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:30
+msgid "wait (3) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:31
+msgid "say [Yes] for (1) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:34
+msgid ""
+"In this case it uses blocks <i>'wait'</i> to synchronize these two "
+"characters to maintain a conversation, so that while one speaks, the other "
+"character waits, and vice versa. Note that the number of seconds that each "
+"character expected, are equal to the number of seconds that the other "
+"character speaks, so they never talk at the same time."
+msgstr ""
+
+#: templates/learn/Synchronization.html:44
+msgid ""
+"Synchronization using blocks <i>'wait'</i> is very simple when programs are "
+"small and have few characters, but when are larger, or when we have several "
+"characters, or when conditions to generate a reaction can not be measured "
+"previously, it is more efficient to use other modes of synchronization and "
+"messages. Here's an example:"
+msgstr ""
+
+#: templates/learn/Synchronization.html:48
+msgid "if &lt; touching [mouse pointer v]?&gt;then"
+msgstr ""
+
+#: templates/learn/Synchronization.html:49
+msgid "broadcast [catched! v]"
+msgstr ""
+
+#: templates/learn/Synchronization.html:53
+msgid "when I receive [catched! v]"
+msgstr ""
+
+#: templates/learn/Synchronization.html:54
+msgid "say [You have catched my friend] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:55
+msgid "say [Now, you have to catch me!] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:58
+msgid ""
+"How do these syncblocks work? When a situation occurs in a character we want "
+"to cause a reaction in another character, we can use <b>messaging</b>. In "
+"the example, when the mouse touches the cat, the message 'Caught!', which "
+"will be sent to all the characters of the project is sent. Thus, when the "
+"butterfly receives the message 'Caught!', the instructions on the block "
+"<i>'when receive 'caught!'</i>'. Therefore, when the user touches the cat "
+"whit the mouse, butterfly says, 'You caught my companion. Now you have to "
+"catch me!'."
+msgstr ""
+
+#: templates/learn/Synchronization.html:68
+msgid ""
+"In addition to sending messages, you can synchronize characters to make "
+"things happen in the order we want, using other blocks, such as <i>'wait "
+"until'</i> or <i>'when the background changes to ...'</i>."
+msgstr ""
+
+#: templates/learn/Synchronization.html:69
+msgid "wait until &lt;(lives) =[0]&gt;"
+msgstr ""
+
+#: templates/learn/Synchronization.html:70
+msgid "say [Game over] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:73
+msgid "when backdrop switches to [Spring v]"
+msgstr ""
+
+#: templates/learn/Synchronization.html:75
+msgid "say [Spring has come!] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:78
+msgid ""
+"In the first example, when program execution reaches that point will stop "
+"until the condition is met in this case, until life is equal to 0. When "
+"lives equal to 0, then continue execution of the remaining blocks, this "
+"case, <i>'said Game Over'</i> and <i>'stop all'</i>, which ends the "
+"execution of the project."
+msgstr ""
+
+#: templates/learn/Synchronization.html:80
+msgid ""
+"In the second example, the moment when the scene changes to the backdrop "
+"with the name 'Spring', the character will execute the blocks placed after "
+"the instruction 'when the backdrop changes to Spring', ie to be displayed "
+"and will say 'spring has come!'."
+msgstr ""
+
+#: templates/learn/User.html:11
+msgid ""
+"The instructions related to user interactivity can <b>help your Scratch "
+"projects be more interactive</b>, ie the person who is running it can "
+"perform actions that provoke new situations in the project. For example, I "
+"can use the keyboard or mouse to move a character, you can answer questions "
+"or playing computer webcam, among many other possibilities."
+msgstr ""
+
+#: templates/learn/User.html:20
+msgid ""
+"The most basic block you can start working interactivity with the user is "
+"<i>'when green flag clicked'</i>."
+msgstr ""
+
+#: templates/learn/User.html:27
+msgid ""
+"How this block works? When the user who wants to run your project Scratch "
+"clicks on the green flag, all blocks were placed under the block <i>'when "
+"green flag clicked'</i> begin to run. You can have as many programs as you "
+"need to start with this block."
+msgstr ""
+
+#: templates/learn/User.html:37
+msgid ""
+"Now that you have begun to interact with the user running your Scratch "
+"project, perhaps you can try some of the following blocks:"
+msgstr ""
+
+#: templates/learn/User.html:39
+msgid " when [right arrow v] key pressed"
+msgstr ""
+
+#: templates/learn/User.html:43
+msgid "say [Hello] for (2) secs"
+msgstr ""
+
+#: templates/learn/User.html:45
+msgid "ask [What's your name?] and wait"
+msgstr ""
+
+#: templates/learn/User.html:46
+msgid "say &lt;join [Hello,]&lt;answer"
+msgstr ""
+
+#: templates/learn/User.html:48
+msgid "if &lt;touching [mouse-pointer v] &gt; then"
+msgstr ""
+
+#: templates/learn/User.html:49
+msgid "say [You caught me!]"
+msgstr ""
+
+#: templates/learn/User.html:52
+msgid "mouse down?"
+msgstr ""
+
+#: templates/learn/User.html:54
+msgid "go to [mouse-pointer v]"
+msgstr ""
+
+#: templates/learn/User.html:58
+msgid ""
+"As you see, you can allow users to interact with your characters by pressing "
+"keys to move, writing answers to questions and your characters use user "
+"responses, move characters with the mouse, or perform actions when the user "
+"clicks an object."
+msgstr ""
+
+#: templates/learn/User.html:67
+msgid ""
+"One of the funniest Scratch possibilities in terms of user interactivity is "
+"the possibility that <b>the user can use your webcam or microphone to "
+"interact with characters from Scratch or sound to trigger certain actions.</"
+"b>"
+msgstr ""
+
+#: templates/learn/User.html:69
+msgid "if &lt;(loudness) >[30]&gt; then"
+msgstr ""
+
+#: templates/learn/User.html:70
+msgid "say [There is much noise...]"
+msgstr ""
+
+#: templates/learn/User.html:73
+msgid "video [motion v] on [this sprite v]"
+msgstr ""
+
+#: templates/learn/User.html:75
+msgid "video [direction v] on [this sprite v]"
+msgstr ""
+
+#: templates/learn/User.html:78
+msgid ""
+"As you can see in the examples, we can make certain sets of blocks are "
+"executed when the ambient sound captured by the microphone is greater than a "
+"certain threshold, or when video motion occurs over an object or background. "
+"The possibilities of these blocks are very large and allows your creations "
+"Scratch are fully interactive with users."
+msgstr ""
+
+#: templates/learn/attrInit.html:4 templates/statistics/statistics.html:203
+#, fuzzy
+#| msgid "Sprite attributes initialization"
+msgid "Attribute Initialization"
+msgstr "Αρχικοποίηση ιδιοτήτων αντικειμένων"
+
+#: templates/learn/attrInit.html:11
+msgid ""
+" One of the mistakes that many programmers repeat when they learn to program "
+"is not initialize correctly the objects's attributes. What are the "
+"attributes? They are character's features that can be modified in the "
+"execution of a project, like their position, their size, their color, their "
+"orientation..."
+msgstr ""
+
+#: templates/learn/attrInit.html:13
+msgid ""
+"When you have blocks than modify character's feature, you should always have "
+"a program which, when the program begins, asigns the value that we want to "
+"start. For example, if it modifies the position of a character, we should "
+"have the block 'go to' under the block 'when green flag clicked', in order "
+"to place the character in its initial position."
+msgstr ""
+
+#: templates/learn/attrInit.html:15
+msgid "when [right arrow v] key pressed //Not initialized correctly."
+msgstr ""
+
+#: templates/learn/attrInit.html:16 templates/learn/attrInit.html.py:22
+#: templates/learn/deadCode.html:16
+msgid "change x by (10)"
+msgstr ""
+
+#: templates/learn/attrInit.html:17 templates/learn/attrInit.html.py:23
+msgid "when [left arrow v] key pressed"
+msgstr ""
+
+#: templates/learn/attrInit.html:18 templates/learn/attrInit.html.py:24
+msgid "change x by (-10)"
+msgstr ""
+
+#: templates/learn/attrInit.html:21
+msgid "when [right arrow v] key pressed  //Initialized correctly."
+msgstr ""
+
+#: templates/learn/deadCode.html:11
+msgid ""
+"Dead code are parts of programs that never are executed. How can it form? "
+"For example, when you have a program that isn't start with a hat block, or "
+"when there is a program that is waiting for a message that never is sent."
+msgstr ""
+
+#: templates/learn/deadCode.html:14
+msgid "forever //Blocks that dont's start with a hat block."
+msgstr ""
+
+#: templates/learn/deadCode.html:15
+msgid "if &lt; key [left arrow v] pressed ? &gt; then"
+msgstr ""
+
+#: templates/learn/deadCode.html:18
+msgid "when I receive [startcc v] //Blocks that start with a hat block."
+msgstr ""
+
+#: templates/learn/deadCode.html:19
+msgid "switch costume to [costume2 v]"
+msgstr ""
+
+#: templates/learn/deadCode.html:20
+msgid "say [Let's start] for (2) secs"
+msgstr ""
+
+#: templates/learn/deadCode.html:24
+msgid ""
+"These situations usually causes that projects doesn't work as expected of "
+"them,so,try to avoid dead code in your programs!"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:11
+msgid ""
+"Imagine that in a project we have two programs formed by the same blocks and "
+"where only vary the parameters or values of the blocks."
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:15
+#: templates/learn/duplicatedScripts.html:23
+#: templates/learn/duplicatedScripts.html:37
+msgid "set rotation style [left-rigt v]"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:16
+msgid "repeat (10)"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:17
+msgid "move (2) steps"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:22
+msgid "when I receive [message2 v]"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:24
+msgid "repeat (5)"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:25
+msgid "move (4) steps"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:33
+msgid ""
+"What would happen if we make a small change? We would have to modify both "
+"programs, complicating the maintenance of the code. In these situations is "
+"more appropriate that the programmer make his own block that defines this "
+"behaviour and use this new block in all programs where needed."
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:36
+msgid "define walk (repetitions)(step)(pause)"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:38
+msgid "repeat (repetitions)"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:39
+msgid "move (step) steps"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:42
+msgid "wait (pause) secs"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:47
+msgid ""
+"Thus, if you want a change, you just have to go to the block defined by the "
+"programmer."
+msgstr ""
+
+#: templates/learn/spriteNaming.html:12
+msgid ""
+"When you start to programming with Scratch, is very usually to leave the "
+"default name of the new characters(sprite 1, sprite2, ...). When we have few "
+"characters, is very easy to know what character have each name. However, "
+"when the number of characters increases, it's more complicated. So, is a "
+"good practice naming(to recognize easily) each character of our projects, "
+"because our programs can be read more fast. Avoid default names!"
+msgstr ""
+
+#: templates/main/collaborators.html:75 templates/main/collaborators.html:162
+msgid "Who we are"
+msgstr ""
+
+#: templates/main/collaborators.html:76 templates/main/collaborators.html:207
+msgid "Translations"
+msgstr ""
+
+#: templates/main/collaborators.html:77 templates/main/collaborators.html:389
+msgid "Workshops"
+msgstr ""
+
+#: templates/main/collaborators.html:78
+msgid "More thanks"
+msgstr ""
+
+#: templates/main/collaborators.html:104
+msgid "Thanks all of you!"
+msgstr ""
+
+#: templates/main/collaborators.html:106
+msgid ""
+"We are so pleased to receive so much help of you and we thought that the "
+"best way of show our appreciation is including your work in the website. In "
+"this space you can see who people help us to improve Dr. Scratch!"
+msgstr ""
+
+#: templates/main/collaborators.html:166
+msgid "Dr. Scratch's team likes to thank you for your contributions."
+msgstr ""
+
+#: templates/main/collaborators.html:182
+msgid " "
+msgstr ""
+
+#: templates/main/collaborators.html:211 templates/main/main.html:430
+msgid ""
+"We know the importance of receiving feedback on your own language to "
+"understand every little detail or hint, so we'll translate Dr. Scratch to "
+"facilitate coding learning to as many people as possible."
+msgstr ""
+"Γνωρίζουμε τη σημασία του να λαμβάνετε ανατροφοδότηση στην γλώσσα σας ώστε "
+"να καταλαβαίνετε την κάθε μικρή λεπτομέρεια ή συμβουλή, γι' αυτό και θα "
+"μεταφράσουμε το Dr. Scratch για να διευκολύνουμε την εκμάθηση του "
+"προγραμματισμούγια όσους περισσότερους ανθρώπους μπορούμε."
+
+#: templates/main/collaborators.html:212
+msgid ""
+"Would you like help us to translate Dr. Scratch to your language? Many "
+"people have already helped us! "
+msgstr ""
+
+#: templates/main/collaborators.html:228
+msgid "Portuguese from Brazil"
+msgstr ""
+
+#: templates/main/collaborators.html:270
+msgid "Pau Nin"
+msgstr ""
+
+#: templates/main/collaborators.html:271
+msgid ""
+"Pau Nin works as Elementary School teacher and Masters degree in Innovation "
+"Pedagogical and Education Leadership in the XXI century. He's an enthusiast "
+"of the Programmation and educational robotic. Also he loves sharing with "
+"other teachers the possibilities of both(programmation and robotic) as one "
+"of the most powerful motivational tools available today to teach in the "
+"classroom."
+msgstr ""
+
+#: templates/main/collaborators.html:293 templates/main/collaborators.html:317
+#: templates/main/collaborators.html:340 templates/main/collaborators.html:362
+msgid "Anonymous"
+msgstr ""
+
+#: templates/main/collaborators.html:295 templates/main/collaborators.html:364
+msgid "Lenguage"
+msgstr ""
+
+#: templates/main/collaborators.html:319
+msgid "Basque"
+msgstr ""
+
+#: templates/main/collaborators.html:393
+msgid ""
+"We are collaborating with several schools where we can prove the website "
+"with children and see which features they need."
+msgstr ""
+
+#: templates/main/collaborators.html:394
+msgid "Thanks all of children and teachers who help us with the development!"
+msgstr ""
+
+#: templates/main/collaborators.html:423
+msgid "CEIP Lope de Vega"
+msgstr ""
+
+#: templates/main/collaborators.html:427
+msgid "Teacher: Jorge Lobo"
+msgstr ""
+
+#: templates/main/collaborators.html:446
+#, fuzzy
+#| msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
+msgid "<strong>More thanks</strong></h2>"
+msgstr "Η ομάδα του Dr. Scratch"
+
+#: templates/main/main.html:75
+msgid "Why?"
+msgstr "Γιατί;"
+
+#: templates/main/main.html:76
+msgid "How?"
+msgstr "Πώς;"
+
+#: templates/main/main.html:77
+msgid "Working on"
+msgstr "Εργαζόμαστε για το θέμα αυτό"
+
+#: templates/main/main.html:78
+msgid "Contact us"
+msgstr "Επικοινωνία"
+
+#: templates/main/main.html:79
+msgid "Organizations"
+msgstr ""
+
+#: templates/main/main.html:94
+msgid "Sign up"
+msgstr ""
+
+#: templates/main/main.html:102 templates/main/main.html.py:124
+#: templates/sign/organization.html:88
+msgid ""
+"<input type='text' name='username' id='username' placeholder='Username' "
+"style='margin-bottom: 15px;'>"
+msgstr ""
+
+#: templates/main/main.html:103
+msgid ""
+"<input type='text' name='email' id='email' placeholder='Email' style='margin-"
+"bottom: 15px;'>"
+msgstr ""
+
+#: templates/main/main.html:104 templates/main/main.html.py:125
+#: templates/sign/organization.html:89
+msgid ""
+"<input type='password' name='password' id='password' placeholder='Password' "
+"style='margin-bottom: 15px;'>"
+msgstr ""
+
+#: templates/main/main.html:105
+msgid ""
+"<input class='form-control' type='password' name='hashkey' id='hashkey' "
+"placeholder='Hashkey' style='margin-bottom: 15px;'>"
+msgstr ""
+
+#: templates/main/main.html:106
+msgid ""
+"<input type='submit' value='Sign up' id='sign-up' class='btn-group btn-group-"
+"justified colored-text'>"
+msgstr ""
+
+#: templates/main/main.html:116 templates/sign/organization.html:78
+msgid "Sign in"
+msgstr ""
+
+#: templates/main/main.html:127 templates/sign/organization.html:93
+msgid "I forgot my password"
+msgstr ""
+
+#: templates/main/main.html:129 templates/sign/organization.html:96
+msgid ""
+"<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-"
+"justified colored-text'>"
+msgstr ""
+
+#: templates/main/main.html:162
+msgid "Analyze your Scratch projects"
+msgstr "Αναλύστε το δικό σας έργο Scratch"
+
+#: templates/main/main.html:164
+msgid ""
+"Welcome to the Dr. Scratch website, an analytical tool that evaluates your "
+"Scratch projects in a variety of computational areas. This analyzer is a "
+"helpful tool to evaluate your own projects, or those of your Scratch "
+"students."
+msgstr ""
+"Καλωσήρθατε στον ιστότοπο του Dr. Scratch, ένα εργαλείο ανάλυσης που "
+"αξιολογεί έργα Scratch σε διάφορες υπολογιστικές περιοχές. Είναι ένα χρήσιμο "
+"εργαλείο για να αξιολογήσετε τα δικά σας έργα, ή αυτά των μαθητών σας."
+
+#: templates/main/main.html:269
+msgid "WHY?"
+msgstr "ΓΙΑΤΙ;"
+
+#: templates/main/main.html:271 templates/sign/coder.html:165
+msgid "Why "
+msgstr "Γιατί;"
+
+#: templates/main/main.html:271 templates/sign/coder.html:165
+#, fuzzy
+#| msgid "you’ll love Dr.Scratch"
+msgid "you’ll love Dr. Scratch"
+msgstr "θα σας αρέσει το Dr.Scratch"
+
+#: templates/main/main.html:275
+msgid "A powerful tool to analyze your Scratch projects"
+msgstr "Ένα ισχυρό έργαλείο για την ανάλυση των έργων Scratch"
+
+#: templates/main/main.html:287
+msgid "Simple & Fun"
+msgstr "Απλό και Διασκεδαστικό"
+
+#: templates/main/main.html:289
+msgid ""
+"Your students can easily learn how to improve their programming skills in a "
+"fun way."
+msgstr ""
+"Οι μαθητές μπορούν εύκολα να μάθουν να βελτιώνουν τις προγραμματιστικές τους "
+"ικανότητες διασκεδάζοντας"
+
+#: templates/main/main.html:300
+msgid "Improve your skills"
+msgstr "Βελτιώστε τις δεξιότητές σας"
+
+#: templates/main/main.html:302
+msgid ""
+"We provide feedback on several aspects which are related to Computational "
+"Thinking."
+msgstr ""
+"Παρέχουμε ανατροφοδότηση για διάφορες πτυχές που σχετίζονται με την "
+"Υπολογιστική Σκέψη"
+
+#: templates/main/main.html:313
+msgid "Always improving"
+msgstr "Πάντα βελτιωνόμαστε"
+
+#: templates/main/main.html:315
+msgid ""
+"We're continually enhancing the features of Dr. Scratch, and we'd love to "
+"hear your thoughts"
+msgstr ""
+"Συνεχώς βελτιώνουμε τα χαρακτηριστικά του Dr. Scratch, και θα θέλαμα να "
+"ακούσουμε τις σκέψεις σας"
+
+#: templates/main/main.html:352
+msgid "How"
+msgstr "Πως"
+
+#: templates/main/main.html:354 templates/sign/organization.html:189
+msgid "How "
+msgstr "Πως "
+
+#: templates/main/main.html:354
+msgid "it works"
+msgstr "δουλεύει"
+
+#: templates/main/main.html:358
+#, fuzzy
+#| msgid "There are two options to analyze a Sratch project with Dr.Scratch"
+msgid "There are two options to analyze a Scratch project with Dr. Scratch"
+msgstr ""
+"Υπάρχουν δύο επιλογές για την ανάλυση ενός έργου Scratch με το Dr.Scratch"
+
+#: templates/main/main.html:359
+msgid "project.png"
+msgstr "project.png"
+
+#: templates/main/main.html:361
+#, fuzzy
+#| msgid ""
+#| "You can upload an sb2 file or just provide the project url, avoiding the "
+#| "need to previously download the project to your computer. By analyzing "
+#| "your projects with Dr.Scratch, you can easily check your Computational "
+#| "Thinking Score."
+msgid ""
+"You can upload an sb2 file or just provide the project url, avoiding the "
+"need to previously download the project to your computer. By analyzing your "
+"projects with Dr. Scratch, you can easily check your Computational Thinking "
+"Score."
+msgstr ""
+"Μπορείτε να ανεβάσετε ένα αρχείο .sb2 ή απλά να παρέχετε τη διεύθυνση του "
+"έργου, αποφεύγοντας το κατέβασμα του έργου στον υπολογιστή σας. Αναλύοντας "
+"το έργο σας με το Dr.Scratch, μπορείτε εύκολα να ελέγξετε την βαθμολογία σας "
+"στην Υπολογιστική Σκέψη."
+
+#: templates/main/main.html:370
+msgid "It is extremely easy to use, both for begginers and expert programmers."
+msgstr ""
+"Είναι εύκολο στην χρήση, τόσο για αρχάριους όσο και για έμπειρους "
+"προγραμματιστές"
+
+#: templates/main/main.html:374
+msgid "You receive feedback to improve your coding skills."
+msgstr ""
+"Θα λάβετε ανατροφοδότηση για να βελτιώσετε τις προγραμματιστικές ικανότητές "
+"σας"
+
+#: templates/main/main.html:382
+msgid ""
+"You can keep on improving your programming skills by yourself even from home."
+msgstr ""
+"Μπορείτε να συνεχίσετε να βελτιώνετε τις προγραμματιστικές σας ικανότητες "
+"ακόμη και από το σπίτι."
+
+#: templates/main/main.html:386
+msgid "You can track your progress through charts and stats."
+msgstr "Μπορείτε να παρακολουθείτε την πρόοδό σας με χάρτες και διαγράμματα."
+
+#: templates/main/main.html:405
+msgid "NEW FEATURES"
+msgstr "ΝΕΑ ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ"
+
+#: templates/main/main.html:407
+msgid "Coming "
+msgstr "Έρχονται"
+
+#: templates/main/main.html:407
+msgid "Soon"
+msgstr "Σύντομα"
+
+#: templates/main/main.html:411
+#, fuzzy
+#| msgid "We are working on new features to improve Dr.Scratch"
+msgid "We are working on new features to improve Dr. Scratch"
+msgstr "Δουλεύουμε πάνω σε νέα χαρακτηριστικά για τη βελτίωση του Dr.Scratch"
+
+#: templates/main/main.html:426
+#, fuzzy
+#| msgid "Multilingual Website"
+msgid "Multilingual website"
+msgstr "Πολύγλωσσος ιστότοπος"
+
+#: templates/main/main.html:441
+#, fuzzy
+#| msgid "Teacher Accounts"
+msgid "Teacher accounts"
+msgstr "Λογαριασμοί Εκπαιδευτικών"
+
+#: templates/main/main.html:445
+msgid ""
+"Teachers will be able to group (and follow) their students to keep track of "
+"their progress in a fast and simple way."
+msgstr ""
+"Οι εκπαιδευτικοί θα μπορούν να ομαδοποιούν (και να παρακολουθούν) τους "
+"μαθητές για να καταγράφουν την πρόοδό τους με γρήγορο και απλό τρόπο."
+
+#: templates/main/main.html:456
+#, fuzzy
+#| msgid "Cloud Platform"
+msgid "Cloud platform"
+msgstr "Πλατφόρμα στο Σύννεφο"
+
+#: templates/main/main.html:460
+msgid ""
+"We are in the process of migrating our servers to the Cloud with the aim of "
+"providing a better performance."
+msgstr ""
+"Είμαστε στη διαδικασία της μεταφοράς των εξυπηρετητών μας στο Σύννεφο "
+"σκοπεύοντας σε καλύτερη απόδοση."
+
+#: templates/main/main.html:485
+#, fuzzy
+#| msgid ""
+#| "With Dr.Scratch plug-ins for Chrome and Firefox, students will analyze "
+#| "their project WHILE programming on the Scratch website."
+msgid ""
+"With Dr. Scratch plug-ins for Chrome and Firefox, students will analyze "
+"their project WHILE programming on the Scratch website."
+msgstr ""
+"Με τα πρόσθετα του Dr.Scratch για τον Chrome και τον Firefox, οι μαθητές θα "
+"μπορούν να αναλύουν τα έργα τους ΚΑΘΩΣ προγραμματίζουν στον ιστότοπο του "
+"Scratch."
+
+#: templates/main/main.html:496
+msgid "Gamification"
+msgstr "Παιχνιδοποίηση"
+
+#: templates/main/main.html:500
+msgid ""
+"We'd like to take learners curiosity one step further. Do you have cool "
+"ideas to gamify our platform?"
+msgstr ""
+"Θα θέλαμε να εξάψουμε την περιέργεια των μαθητών. Έχετε ιδέες για το πώς θα "
+"μπορούσαμε να παιχνιδοποιήσουμε την πλατφόρμα;"
+
+#: templates/main/main.html:511
+#, fuzzy
+#| msgid "Social Network"
+msgid "Social network"
+msgstr "Κοινωνικά δίκτυα"
+
+#: templates/main/main.html:515
+msgid ""
+"The new social network funcionalities will allow users to communicate with "
+"each other to exchange ideas and challenges."
+msgstr ""
+"Οι νέες λειτουργίες κοινωνικών δικτύων θα επιτρέψουν στους χρήστες να "
+"επικοινωνούν για να ανταλλάσσουν ιδέες και προκλήσεις."
+
+#: templates/main/main.html:535
+msgid "Contact"
+msgstr "Επικοινωνία"
+
+#: templates/main/main.html:537
+msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
+msgstr "Η ομάδα του Dr. Scratch"
+
+#: templates/main/main.html:541
+msgid "We would be pleased to receive your feedback"
+msgstr "Στείλτε μας τις σκέψεις σας"
+
+#: templates/main/main.html:580
+msgid ""
+"We would like to thank many people for their collaboration and we have done "
+"one special section."
+msgstr ""
+
+#: templates/main/main.html:584
+msgid "Collaborators"
+msgstr ""
+
+#: templates/main/main.html:585
+msgid "Blog"
+msgstr ""
+
+#: templates/main/main.html:604
+#, fuzzy
+#| msgid "Are you a Dr.Scratch user?"
+msgid "Are you a Dr. Scratch user?"
+msgstr "Είστε χρήστης του Dr.Scratch;"
+
+#: templates/main/main.html:607
+msgid "Join now!"
+msgstr "Εγγραφείτε τώρα!"
+
+#: templates/main/main.html:653
+msgid "<img class='framed' src='static/app/images/url-en.png' />"
+msgstr ""
+
+#: templates/main/main.html:678
+msgid "<img class='framed' src='static/app/images/project-en.png' />"
+msgstr ""
+
+#: templates/organization/settings.html:21
+#, fuzzy
+#| msgid ""
+#| "<input  name='zipFile' type='file' class='filestyle' data-"
+#| "buttonText='Choose Project'>"
+msgid ""
+"<input  name='img' type='file' class='filestyle' data-buttonText='Choose "
+"img'>"
+msgstr ""
+"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
+"Project'>"
+
+#: templates/password/email_sended.html:12
+msgid "We sended to you an email."
+msgstr ""
+
+#: templates/password/email_sended.html:13
+msgid "Check with your systems operator to see if the message was blocked."
+msgstr ""
+
+#: templates/password/new_password.html:14
+msgid "Type your new password:"
+msgstr ""
+
+#: templates/password/new_password.html:19
+msgid "Confirm your password:"
+msgstr ""
+
+#: templates/password/new_password.html:25 templates/password/password.html:19
+msgid "Send"
+msgstr ""
+
+#: templates/password/new_password.html:31
+msgid "The Password and Confirm password fields are not identical."
+msgstr ""
+
+#: templates/password/password.html:13
+msgid "Have you forgotten your password? Please introduce your email:"
+msgstr ""
+
+#: templates/password/user_doesntexist.html:12
+msgid "User doesn't exist or the password is incorrect."
+msgstr ""
+
+#: templates/password/user_doesntexist.html:15
+#: templates/password/user_doesntexist.html:20
+#: templates/password/wrong_form.html:14 templates/sign/signup_error.html:26
+#: templates/sign/signup_error.html:29
+msgid "Retry"
+msgstr ""
+
+#: templates/password/wrong_form.html:12
+msgid "You must to complete all the fields."
+msgstr ""
+
+#: templates/sign/coder.html:75 templates/sign/coder.html.py:110
+#: templates/sign/coder.html:208 templates/sign/organization.html:134
+#: templates/sign/organization.html:241
+msgid "Sign up!"
+msgstr ""
+
+#: templates/sign/coder.html:104 templates/sign/coder.html.py:163
+#: templates/sign/organization.html:128 templates/sign/organization.html:187
+msgid "Dr. Scratch for organizations"
+msgstr ""
+
+#: templates/sign/coder.html:106
+#, fuzzy
+#| msgid ""
+#| "Welcome to the Dr. Scratch website, an analytical tool that evaluates "
+#| "your Scratch projects in a variety of computational areas. This analyzer "
+#| "is a helpful tool to evaluate your own projects, or those of your Scratch "
+#| "students."
+msgid ""
+"Welcome to the Dr. Scratch website (version for organizations), an "
+"analytical tool that evaluates your Scratch projects in a variety of "
+"computational areas. This analyzer is a helpful tool to evaluate your "
+"students' Scratch projects. You'll have a smart dashboard where you can see "
+"the most important information about your students and their development."
+msgstr ""
+"Καλωσήρθατε στον ιστότοπο του Dr. Scratch, ένα εργαλείο ανάλυσης που "
+"αξιολογεί έργα Scratch σε διάφορες υπολογιστικές περιοχές. Είναι ένα χρήσιμο "
+"εργαλείο για να αξιολογήσετε τα δικά σας έργα, ή αυτά των μαθητών σας."
+
+#: templates/sign/coder.html:168
+msgid ""
+"You'll evaluate the projects of all your student in few time. Also, you'll "
+"see all the relevant information in a view."
+msgstr ""
+
+#: templates/sign/coder.html:183 templates/sign/organization.html:206
+msgid "Organization's name"
+msgstr ""
+
+#: templates/sign/coder.html:197 templates/sign/organization.html:224
+msgid ""
+"<input type='password' class='form-control' name='password' "
+"placeholder='Password'>"
+msgstr ""
+
+#: templates/sign/coder.html:202 templates/sign/organization.html:231
+msgid "Hashkey"
+msgstr ""
+
+#: templates/sign/coder.html:204 templates/sign/organization.html:233
+msgid ""
+"<input type='password' class='form-control' name='hashkey' "
+"placeholder='Password'>"
+msgstr ""
+
+#: templates/sign/email.html:5
+msgid "New organization in Dr. Scratch!"
+msgstr ""
+
+#: templates/sign/email.html:7
+msgid ""
+"You're receiving this email because you have successfully signed up in Dr. "
+"Scratch for organizations."
+msgstr ""
+
+#: templates/sign/organization.html:91
+msgid "Remember me"
+msgstr ""
+
+#: templates/sign/organization.html:129
+msgid "Welcome to the organizations version of Dr. Scratch"
+msgstr ""
+
+#: templates/sign/organization.html:130
+msgid ""
+"Dr. Scratch for organizations is an analytical tool that can help you "
+"evaluate the Scratch projects of the students participating in your "
+"initiatives to asses their progression in terms of coding and computational "
+"thinking skills. "
+msgstr ""
+
+#: templates/sign/organization.html:189
+msgid "to join Dr. Scratch for organizations?"
+msgstr ""
+
+#: templates/sign/organization.html:192
+msgid ""
+"Would you like to be one of the 10 first organizations testing this new "
+"feature? Just drop us a line at "
+msgstr ""
+
+#: templates/sign/organization.html:192
+msgid ""
+" and we'll send you a hash key that will allow you to sign up in the web"
+msgstr ""
+
+#: templates/sign/signup_error.html:13
+msgid "This name already exists. Choose another, please."
+msgstr ""
+
+#: templates/sign/signup_error.html:16
+msgid "This email already exists. Choose another, please."
+msgstr ""
+
+#: templates/sign/signup_error.html:19
+#, fuzzy
+#| msgid "Ops! This page doesn't exist"
+msgid "This hash doesn't exist."
+msgstr "Όπα! Αυτή η σελίδα δεν υπάρχει"
+
+#: templates/sign/signup_error.html:22
+msgid "You must to complete all fields."
+msgstr ""
+
+#: templates/statistics/statistics.html:310
+msgid "These statistics are update every night at 00.00h CEST."
+msgstr ""
+
+#: templates/upload/dashboard-coder.html:107
+#: templates/upload/dashboard-organization.html:107
+#, fuzzy
+#| msgid "Welcome to Doctor Scratch. Project results."
+msgid "Welcome to the Dr. Scratch website, "
+msgstr "Καλωσήρθατε στο Dr. Scratch. Αποτελέσματα έργου."
+
+#: templates/upload/dashboard-coder.html:122
+#: templates/upload/dashboard-organization.html:122
+msgid "You can download your results. You do click in the following button:"
+msgstr ""
+
+#: templates/upload/dashboard-coder.html:125
+#: templates/upload/dashboard-organization.html:125
+msgid "Download .csv file"
+msgstr ""
+
+#: templates/upload/dashboard-coder.html:132
+#: templates/upload/dashboard-organization.html:132
+msgid "Or...you can analyze another file with more projects:"
+msgstr ""
+
+#: templates/upload/dashboard-coder.html:135
+#: templates/upload/dashboard-organization.html:135
+msgid "Analyze again!"
+msgstr ""
+
+#: templates/upload/dashboard-coder.html:163
+#: templates/upload/dashboard-organization.html:163
+#, fuzzy
+#| msgid "Error! Please choose a sb2 file or input an url"
+msgid "Error! Please choose a .csv file"
+msgstr "Σφάλμα! Παρακαλώ επιλέξετε ένα sb2 αρχείο ή εισάγετε διεύθυνση"
+
+#: templates/upload/dashboard-coder.html:245
+#: templates/upload/dashboard-organization.html:245
+msgid "<img class='framed' src='../../static/app/images/url-en.png' />"
+msgstr ""
+
+#: templates/upload/dashboard-coder.html:270
+#: templates/upload/dashboard-organization.html:270
+msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Developing"
+#~ msgid "Web developer"
+#~ msgstr "Developing"
+
+#~ msgid "Learn More"
+#~ msgstr "Μάθετε περισσότερα"
+
+#~ msgid "Multilingual Website"
+#~ msgstr "Πολύγλωσσος ιστότοπος"
+
+#~ msgid "Cloud Platform"
+#~ msgstr "Πλατφόρμα στο Σύννεφο"
+
+#~ msgid "Social Network"
+#~ msgstr "Κοινωνικά δίκτυα"
+
+#~ msgid "Duplicated Scripts"
+#~ msgstr "Διπλά σενάρια"
+
+#~ msgid "Analyze your Scratch Project now!"
+#~ msgstr "Αναλύστε το δικό σας έργο Scratch τώρα!"
+
+#~ msgid "Add project URL"
+#~ msgstr "Εισάγετε τη διεύθυνση του έργου"
+
+#~ msgid "Add a .sb2 or .sb file"
+#~ msgstr "Εισάγετε ένα αρχείο .sb2 ή .sb"
+
+#~ msgid "Project results"
+#~ msgstr "Αποτελέσματα έργου"
+
+#~ msgid "HOME"
+#~ msgstr "ΑΡΧΙΚΗ"
+
+#~ msgid "You need to improve:"
+#~ msgstr "Πρέπει να βελτιωθείτε:"
+
+#~ msgid "Learn more!!!"
+#~ msgstr "Μάθετε περισσότερα!!!"
+
+#~ msgid "Well done!!!"
+#~ msgstr "Μπράβο!!!"
+
+#~ msgid "Little tricks:"
+#~ msgstr "Μικρά κόλπα:"
+
+#~ msgid "Personalize the name of the characters"
+#~ msgstr "Προσωποποιήστε το όνομα των χαρακτήρων"
+
+#~ msgid "Chose the rotation mode of your characters"
+#~ msgstr "Επιλέξτε τρόπο περιστροφής για τους χαρακτήρες"
+
+#~ msgid "Make your interactive programs!"
+#~ msgstr "Δημιουργήστε τα δικά σας αλληλεπιδραστικά προγράμματα!"
+
+#~ msgid "Previous"
+#~ msgstr "Προηγούμενο"
+
+#~ msgid "Next"
+#~ msgstr "Επόμενο"
+
+#~ msgid "Back to top"
+#~ msgstr "Πίσω στην κορυφή"
+
+#~ msgid "Some advices:"
+#~ msgstr "Μερικές συμβουλές:"
+
+#~ msgid "Sprites Naming"
+#~ msgstr "Ονόματα Αντικειμένων"
+
+#~ msgid "Possible issues to watch out:"
+#~ msgstr "Μερικά ζητήματα που χρειάζονται προσοχή:"
+
+#~ msgid "Dashboard"
+#~ msgstr "Πίνακας"
+
+#~ msgid "Overview"
+#~ msgstr "Σύνοψη"
+
+#~ msgid "Your level:"
+#~ msgstr "Το επίπεδό σας:"
+
+#~ msgid "blocks"
+#~ msgstr "εντολές"
+
+#~ msgid "modified but not initialized correctly."
+#~ msgstr "τροποποιούνται αλλά δεν αρχικοποιούνται σωστά."

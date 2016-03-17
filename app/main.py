@@ -2,6 +2,8 @@ import webapp2
 
 
 class MainPage(webapp2.RequestHandler):
+    """Translate blocks of Scratch Blocks"""
+
     def get(self):
         callback = self.request.get('callback')
 

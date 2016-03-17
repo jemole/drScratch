@@ -46,6 +46,7 @@
 
     <!-- DEFAULT COLOR/ CURRENTLY USING -->
     <link rel="stylesheet" href="../../static/app/content/red.css">
+    <script src="../../static/app/scripts/googleAnalytics.js"></script>
 
     <script type="text/javascript">
 
@@ -79,7 +80,7 @@
                 {% if flagUser %}
                     <!-- NAVIGATION LINK -->
                     <ul class="nav navbar-nav navbar-left main-navigation ">
-                        <li class="navbar-brand"><a class="navbar-brand pull-left" href="/coder/{{user}}"><span class="icon-basic-home colored-text"></span><em>{{ user }}</em></a></li>
+                        <li class="navbar-brand"><a class="navbar-brand pull-left" href="/{{user}}/{{username}}"><span class="icon-basic-home colored-text"></span><em>{{ username }}</em></a></li>
                    </ul>
                 {% endif %}
                 <ul class="nav navbar-nav navbar-right main-navigation ">

@@ -6,6 +6,7 @@ def translate_CT(lang):
     """
     External function to translate CT Skills
     """
+
     if lang == "ca":
         dic = {"code":"CODI",
                "url":"URL",
@@ -22,6 +23,7 @@ def translate_CT(lang):
                "dead_code":"Codi mort",
                "attr_init":"Atributs no inicialitzats correctament",
                "error":"Error analitzant el projecte"}
+
     elif lang == "es":
         dic = {"code":"CÓDIGO",
                "url":"URL",
@@ -94,16 +96,16 @@ def translate_CT(lang):
         dic = {"code":"CODE",
                "url":"URL",
                "mastery":"Mastery",
-               "abstraction":"Abstraction",
-               "parallelism":"Parallelism",
-               "logic":"Logic",
-               "sync":"Synchronization",
-               "flow_control": "Flow control",
-               "user_inter":"User interactivity",
-               "data_rep":"Data representation",
-               "dup_scripts":"Duplicate scripts",
-               "sprite_naming":"Sprite naming",
-               "dead_code":"Dead code",
-               "attr_init":"Sprite attributes",
+               "abstraction":"Αφαίρεση",
+               "parallelism":"Παραλληλισμός",
+               "logic":"Λογική",
+               "sync":"Συγχρονισμός",
+               "flow_control": "Έλεγχος ροής",
+               "user_inter":"Αλληλεπίδραση χρήστη",
+               "data_rep":"Αναπαράσταση δεδομένων",
+               "dup_scripts":"Διπλασιασμένα προγράμματα",
+               "sprite_naming":"Ονόματα αντικειμένων",
+               "dead_code":"Κώδικας που δεν εκτελείται",
+               "attr_init":"Αρχικοποίηση ιδιοτήτων",
                "error":"Error analyzing project"}
     return dic

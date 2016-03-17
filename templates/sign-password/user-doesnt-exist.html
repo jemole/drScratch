@@ -1,0 +1,30 @@
+{% extends 'sign-password/base.html' %}
+{% load i18n %}
+
+
+{% block content %}
+<div class="container">
+    <div class="col-md-7 col-lg-offset-2">
+        <section id="dashboard">
+            <div class="container-fluid">
+                <div class="row marketing">
+                    <div class="jumbotron">
+                        <h4>{% trans "User doesn't exist or the password is incorrect." %}</h4>
+                        {% if flagOrganization %}
+                        <div>
+                            <a class="btn btn-primary standard-button" href="/sign_up_organization">{% trans "Retry" %}</a>
+                        </div>
+                        {% endif %}
+                        {% if flagCoder %}
+                        <div>
+                            <a class="btn btn-primary standard-button" href="/">{% trans "Retry" %}</a>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

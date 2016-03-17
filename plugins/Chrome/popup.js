@@ -17,8 +17,8 @@ function renderStatus(url) {
   document.getElementById('label').value = url;
 }
 
-function analyzeProject(url) {
-    url = "http://drscratchpre.programamos.es/plugin/" + url
+function analyze_project(url) {
+    url = "http://localhost:1234/plugin/" + url
     //window.open(url, "Dr. Scratch", "directories=no, location=no, menubar=no, scrollbars=yes, statusbar=no, tittlebar=no, width=400, height=400");
     window.open(url, '_blank');
 }
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var button = document.getElementById('button');
   button.addEventListener('click', function() {
     getCurrentTabUrl(function(url) { 
-        analyzeProject(url);
+        analyze_project(url);
     });
   });
 });

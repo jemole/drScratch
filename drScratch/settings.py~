@@ -44,7 +44,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_DIRS = ('templates',)
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', '193.147.51.252','drscratchpre.programamos.es']
 
 
 # Application definition
@@ -63,61 +63,60 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-
-
 ROOT_URLCONF = 'drScratch.urls'
 
 WSGI_APPLICATION = 'drScratch.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'drscratch',
-        'USER': 'root',
-        'PASSWORD': 'Holamundo314',
-        'HOST': 'localhost',
-        'PORT': '',
+	'USER': 'root',
+	'PASSWORD': 'Mysql.drscratch',
+	'HOST': 'localhost',
+	'PORT': '',
     }
 }
+
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'mail.drscratch.org'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = 'no-reply@drscratch.org'
+EMAIL_HOST_PASSWORD = 'N-r-drscratch'
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = 'static'
-MEDIA_URL = os.path.join(BASE_DIR, 'static/img/')
+
 # Internationalization
+
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'en-us'
 
 _ = lambda s: s
 
 LANGUAGES = (
-    ('es', _('Spanish')),
     ('en', _('English')),
+    ('es', _('Spanish')),
     ('ca', _('Catalan')),
     ('gl', _('Galician')),
     ('pt', _('Portuguese')),
+    ('el', _('Greek')),
 )
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = False
-EMAIL_HOST = 'server.programamos.es'
-EMAIL_PORT = 2525
-EMAIL_HOST_USER = 'no-reply@drscratch.org'
-EMAIL_HOST_PASSWORD='N-r-drscratch'
-
 
 
 LOCALE_PATHS = (

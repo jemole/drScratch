@@ -1,0 +1,60 @@
+$(document).ready(function(){
+    $('#search_email').keyup(function(e){
+        query = $('#search_email').val();
+       
+        $.ajax({
+            data:{'email':query},
+            url:'/search_email/',
+            type: 'get',
+            success: function(data){
+                email_exists();
+                }
+                });
+    });
+});
+$(document).ready(function(){
+    $('#search_username').keyup(function(e){
+        query = $('#search_username').val();
+       
+        $.ajax({
+            data:{'username':query},
+            url:'/search_username/',
+            type: 'get',
+            success: function(data){
+                console.log("User exists")
+                user_exists();
+                }
+                });
+    });
+});
+$(document).ready(function(){
+    $('#search_hashkey').keyup(function(e){
+        query = $('#search_hashkey').val();
+       
+        $.ajax({
+            data:{'hashkey':query},
+            url:'/search_hashkey/',
+            type: 'get',
+            success: function(data){
+                hashkey_exists();
+                }
+                });
+    });
+});
+
+function email_exists(){
+
+        $("#email").append('<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{% trans "This email already exists. Choose another, please."%}</div>');
+    
+    }
+function user_exists(){
+        console.log("dentro de user_exists()");
+        $("#user").append('<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{% trans "This username already exists. Choose another, please."%}</div>');
+    
+    }
+function hashkey_exists(){
+
+        $("#hashkey").append('<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{% trans "This hashkey does not exist. Choose another, please."%}</div>');
+    
+    }
+
