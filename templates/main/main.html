@@ -215,19 +215,19 @@
 
                                 <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/show_dashboard">
                                 {% csrf_token %}
-
+                                    {{ form.as_p }}
                                     {% trans "1. Introduce the <span class='colored-text'><a data-toggle='modal' href='#modalUrl'>url</a></span> of your Scratch project, you don't have to download it:" %}
                                     {% trans '<input name="urlProject" id="cf-name" class="form-control input-box placeholder" placeholder="http:/scratch.mit.edu/projects/your_number" type="text">' %}
                                     <button id="url" name='_url' type="submit" class="btn btn-primary standard-button">{% trans "Analyze by url" %}</button>
 
-
                                     {% csrf_token %}
+                                    {{ form.as_p }}
                                     <br></br>
                                     {% trans "2. If you have your <span class='colored-text'><a data-toggle='modal' href='#modalProject'>project</a></span> downloaded in the computer you can analyze it here:" %}
                                     {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose Project'>" %}
                                     <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my project" %}</button>
-                                    {% csrf_token %}
 
+                                    {{ form.as_p }}
                                 </form>
 
                                 <!-- FORM SUBMIT SUCCESS / ERROR MESSAGES -->

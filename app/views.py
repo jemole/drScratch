@@ -68,11 +68,16 @@ def main(request):
         username = request.user.username
         #Find which is authenticated (organization or coder or none)
         page = segmentation(request)
-        flagUser = 1
-        return render_to_response('main/main.html',
-                                    {'username':username,
-                                     'page':page,
-                                     'flagUser': flagUser})
+        if page == 'coder':
+            user = Coder.objects.get(username=username)
+        elif page == 'organization':
+            user = Organization.objects.get(username=username)
+        img = user.img
+        dic={'username':username,
+        "img":str(img)}
+        return render_to_response(page + "/main.html",
+                dic,
+                context_instance = RC(request))
     else:
         username = None
         #Show main page of Dr. Scratch: www.drscratch.org/

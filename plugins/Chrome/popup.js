@@ -18,7 +18,7 @@ function renderStatus(url) {
 }
 
 function analyze_project(url) {
-    url = "http://localhost:1234/plugin/" + url
+    url = "http://www.drscratch.org/plugin/" + url
     //window.open(url, "Dr. Scratch", "directories=no, location=no, menubar=no, scrollbars=yes, statusbar=no, tittlebar=no, width=400, height=400");
     window.open(url, '_blank');
 }
