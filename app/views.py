@@ -24,6 +24,7 @@ from app.models import Teacher, Student, Classroom, Stats
 from app.models import Organization, OrganizationHash
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginOrganizationForm
+from app.serializers import UserSerializer
 from django.contrib.auth.models import User
 from datetime import datetime,timedelta,date
 from django.contrib.auth.decorators import login_required
@@ -42,6 +43,7 @@ import csv
 import kurt
 import zipfile
 from zipfile import ZipFile
+from rest_framework import viewsets
 
 #Global variables
 pMastery = "hairball -p mastery.Mastery "
@@ -1593,3 +1595,8 @@ def uncompress_zip(zip_file):
         if file_path == 'project.json':
             file_content = unziped.read(file_path)
     show_file(file_content)
+
+# API
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

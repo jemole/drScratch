@@ -2,12 +2,21 @@ from django.conf.urls import include, url, patterns
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from rest_framework import routers
+from app.views import UserViewSet
 admin.autodiscover()
+
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
 
 urlpatterns = (
     # Examples:
     # url(r'^$', 'drScratch.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
+
+    # API
+    url(r'^api', include(router.urls)),
+
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
@@ -36,7 +45,9 @@ urlpatterns = (
     url(r'^myHistoric', 'app.views.myHistoric',),
     url(r'^myProjects', 'app.views.myProjects',),
     url(r'^myRoles', 'app.views.myRoles',),
+
     url(r'^$', 'app.views.main',),
     url(r'^.*', 'app.views.redirectMain',),
-    
+
 )
+

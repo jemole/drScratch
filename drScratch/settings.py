@@ -50,13 +50,13 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'app',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework'
+    'django.contrib.staticfiles'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,10 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'drscratchdb',
-	'USER': '',
-	'PASSWORD':'',
-	'HOST': '',
-	'PORT': '',
+        'USER': '',
+        'PASSWORD':'',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
@@ -132,3 +132,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
