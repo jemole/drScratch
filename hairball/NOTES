@@ -1,0 +1,49 @@
+POTENTIAL -> CORRECT
+           | INCORRECT
+           | IGNORE
+
+CORRECT -> SHOW_MESSAGE PLAYDONE_LIST HIDE_MESSAGE
+         | SHOW_MESSAGE PLAYDONE_LIST POTENTIAL
+
+INCORRECT -> SHOW_MESSAGE PLAYDONE_LIST <EOF>
+           | ... # TODO: expand on this
+
+IGNORE -> SHOW_MESSAGE <EOF>
+        | SHOW_MESSAGE OTHER_BLOCK
+
+PLAYDONE_LIST -> PLAYDONE_LIST [play until done]
+
+OTHER_BLOCK -> (any block but show, think, play until done)
+
+MESSAGE_DURATION -> [show "*" for]
+                  | [think "*" for]
+
+SHOW_MESSAGE -> [show ".+"]
+              | [think ".+"]
+
+HIDE_MESSAGE -> [show ""]
+              | [think ""]
+
+
+
+# Simple accept (correct: 1)
+[show ".+"]
+[play until done]
+[show ""]
+
+# Multiple accept (correct: 3)
+[show ".+"]
+[play until done]
+[show ".+"]
+[play until done]
+[show ".+"]
+[play until done]
+[show ""]
+
+# Mixed (correct: 1, incorrect: 1)
+[show ".+"]
+[play until done]
+[show ".+"]  # <- This message is hidden, ends the first correct
+[show ".+"] # <- This messsage begins the second correct
+[play until done]
+[show ""]

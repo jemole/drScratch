@@ -1,0 +1,7 @@
+/api/projects/all/<username>
+/api/projects/<project_id>
+/api/projects/plugins/deadcode/<project_id>
+/api/projects/plugins/initialization/<project_id>
+/api/projects/plugins/sprite/<project_id>
+/api/projects/plugins/duplicate/<project_id>
+/api/projects/plugins/mastery/<project_id>
