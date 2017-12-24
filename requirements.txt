@@ -1,0 +1,9 @@
+construct==2.0.6
+Django==1.8
+django-filter==1.1.0
+djangorestframework==2.4.8
+hairball==0.1rc3
+kurt==2.0.5
+Markdown==2.6.10
+olefile==0.44
+Pillow==4.3.0
