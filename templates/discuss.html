@@ -1,0 +1,198 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Analyze your Scratch projects to assess your Computational Thinking skills">
+    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="author" content="Programamos URJC Libresoft FECyT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link rel="stylesheet" href="../../static/app/content/bootstrap-tour.css">
+    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+    <script src="../../static/app/scripts/bootstrap-tour.js"></script>
+
+    <!-- SITE TITLE -->
+    <title>Dr. Scratch</title>
+
+
+    <link rel="stylesheet" href="../../static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT
+    ============================== -->
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="stylesheet" href="static/app/icons/icons.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+
+    <!-- =========================
+     STYLESHEETS
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="../../static/app/content/styles.css">
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+    <link rel="stylesheet" href="../../static/app/content/cloud.css">
+
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+    <script src="../../static/app/scripts/googleAnalytics.js"></script>
+
+</head>
+
+<body>
+    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+        <div class="container">
+                    <!-- TOP BAR -->
+            <div class="navbar-collapse collapse" id="stamp-navigation">
+                    <!-- NAVIGATION LINK -->
+                <a class="navbar-brand" href="/">
+                    <img src="static/app/images/logo_main.png" alt="">
+                </a>
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav navbar-left main-navigation ">
+                  <li class="navbar-brand"><a class="navbar-brand pull-left"><span class="icon-basic-home colored-text"></span>{{ user.username }}</a></li>
+               </ul>
+                {% endif %}
+
+                <ul class="nav navbar-nav navbar-right main-navigation ">
+                    <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
+                    <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
+                    <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr. Scratch(Beta Version)" %}</a></li>
+                </ul>
+            </div>
+                    <!-- /END TOP BAR -->
+        </div>
+    </div>
+                <!-- /END CONTAINER -->
+    <div id ="cloud"><h2>{% trans "What do you think about Dr. Scratch?" %}</h2><span class='shadow'></span></div>
+<hr>
+    <div class="container">
+    <div class="col-md-3">
+        <div class="panel panel-info paneldash">
+          <div class="panel-body" style="word-break:break-all;">
+        {% if user.is_authenticated %}
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">  
+        {% trans "Leave your comment" %}
+        </button>
+        {% else %}
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" disabled>
+        {% trans "Sign up or sign in" %}
+        </button>
+        {% endif %}
+
+          </div>
+        </div>
+      </div>
+        <div class="col-md-8">
+        <div class="panel panel-info paneldash">
+          <div class="panel-body" style="word-break:break-all;">
+            <h5>{% trans "Tell us what do you think about Dr. Scratch, your thoughts, suggestions,etc..." %}<span class="glyphicon glyphicon-heart"></span></h5>
+</button>
+          </div>
+        </div>
+      </div>
+{% for key,value in comments.items %}
+       <div class="{{ key }}">
+      {% for comment in value %}
+
+      <div class="col-md-11">
+        <div class="panel panel-info paneldash">
+          <div class="panel-heading text-left col-md-offset-1">
+            <h3 class="panel-title">  {{ comment.nick }} {% trans "says.."%} <span class="icon-basic-elaboration-message-happy"></span></h3>
+          </div>
+          <div class="panel-body text-left" style="word-break:break-all;">
+            <div class="col-md-12"> {{ comment.comment }}</div>
+            <br><br>
+            <small>{{ comment.date }}</small>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+        </div>
+{% endfor %}
+
+    </div>
+
+    <div class="col-md-offset-5">
+        <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group" style="border-color:blue">
+            {% for key,value in comments.items reversed %}
+                <button type="button" class="btn btn-info" onclick="change_page({{ key }})">{{ key }}</button>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+<br><br>
+    <footer class="footer grey-bg">
+           <div class="container">
+                  {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+
+                   <!-- SOCIAL ICONS -->
+                   <ul class="social-icons">
+                       <li><a href="https:/twitter.com/drscratchtool">
+                           <span class="icon-social-twitter transparent-text-dark"></span></a>
+                       </li>
+                       <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+                       </li>
+
+                   </ul>
+           </div>
+       </footer>
+
+
+
+       <!-- Modal -->
+       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">{% trans "Hi " %}{{ user.username }}</h4>
+             </div>
+             <div class="modal-body">
+                 <form accept-charset="UTF-8" action="/discuss/" method="post">
+                   {% csrf_token %}
+                       <div class="form-group">
+                         <label class="col-md-4 control-label" for="textarea">{% trans "Message" %}</label>
+                         <div class="col-md-8">
+                           <textarea class="form-control" id="textarea" name="comment"></textarea>
+                         </div>
+                       </div>
+                       <br>
+                       <br>
+                       <br>
+                       <button type="submit" class="btn btn-primary">{% trans "Send" %}</button>
+
+
+                 </form>
+             </div>
+
+           </div>
+         </div>
+       </div>
+<script>
+        var active = ".0";
+        $(document).ready(function(){
+            $(active).show();
+        });
+        function change_page(page){  
+             $(active).hide("fast");
+             active = "."+page;
+             $(active).show("slow");
+             
+        }
+</script>
+
+</body>
+</html>

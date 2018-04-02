@@ -1,0 +1,274 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+
+    <title>Dr. Scratch</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
+    <script src="../../static/app/scripts/jquery.min.js"></script>
+    <script src="../../static/app/scripts/highcharts.js"></script>
+    <script src="../../static/app/scripts/exporting.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/data.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT
+    ============================== -->
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <!-- =========================
+     STYLESHEETS
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap-main.css">
+    <link rel="stylesheet" href="../../static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
+    <link rel="stylesheet" href="../../static/app/content/contest.css">
+
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="../../static/app/content/styles.css">
+    <link href="../../static/app/content//dashboard.css" rel="stylesheet">
+
+
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+    <script src="../../static/app/scripts/googleAnalytics.js"></script>
+
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="Dashboard%20Template%20for%20Bootstrap_files/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+    <!-- =========================
+     PRE LOADER
+    ============================== -->
+    <div id="mywrapper">
+
+    <div style="display: none;" class="preloader">
+        <div style="display: none;" class="status">
+            &nbsp;
+        </div>
+    </div>
+    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+        <div class="container">
+            <!-- TOP BAR -->
+            <div class="navbar-collapse collapse" id="stamp-navigation">
+            <!-- NAVIGATION LINK -->
+              <a class="navbar-brand" href="/">
+                <img src="../../static/app/images/logo_main.png" alt="">
+              </a>
+
+            <!-- LOGIN REGISTER -->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                        <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
+                        <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li> <a href='/changePwd'>{% trans "Change password" %}</a> </li>
+                            <li>
+                                <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
+                            </li>
+
+                        </ul>
+                </li>
+            </ul>
+            </div>
+            <!-- /END TOP BAR -->
+        </div>
+        <!-- /END CONTAINER -->
+    </div>
+
+    <div class="container-fluid">
+      <div class="background-contest">
+        <br><br>
+        <h1> Dr. Scratch Contest! </h1>
+        <div class="row">
+
+            <!-- SINGLE SERVICE -->
+            <div style="visibility: visible; animation-duration: 1.75s; animation-name: fadeInLeft;" class="col-md-10 col-md-offset-1 wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.75s">
+                <div class="single-service border-bottom-hover">
+                    <div class="service-icon colored-text">
+                        <span class="icon-basic-cup"></span>
+                    </div>
+                    <h3 class="colored-text">¡Bienvenidos al concurso de Dr.Scratch!</h3>
+                    <p>
+                        <h4>¿Se te da genial programar en Scratch? ¿Quieres poner a prueba tu pensamiento computacional? ¡Apúntate! </h4>
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="container">
+      <div class="row">
+
+          <!-- SINGLE SERVICE -->
+          <div style="visibility: visible; animation-duration: 1.75s; animation-name: fadeInLeft;" class="col-md-4 wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.75s">
+              <div class="single-service border-bottom-hover">
+                  <div class="service-icon colored-text">
+                      <span class="icon-man-people-streamline-user"></span>
+                  </div>
+                  <h3 class="colored-text">¿Quién puede participar?</h3>
+                  <p>
+                      <h4>Va dirigido a personas de todas las edades, desde los más pequeños hasta los no tan pequeños. Tendrás que rellenar éste formulario y subir tu proyecto a éste estudio.</h4>
+                  </p>
+              </div>
+          </div>
+
+          <!-- SINGLE SERVICE -->
+          <div style="visibility: visible; animation-duration: 1s; animation-name: flipInY;" class="col-md-4 wow flipInY animated" data-wow-offset="10" data-wow-duration="1s">
+              <div class="single-service border-bottom-hover">
+                  <div class="service-icon colored-text">
+                      <span class="icon-basic-laptop"></span>
+                  </div>
+                  <h3 class="colored-text">¿En qué consistirá?</h3>
+                  <p>
+                      <h4>Tendrás que realizar un proyecto en Scratch que explique algún concepto matemático, físico, químico o tecnológico.
+                        Por ejemplo: un proyecto que explique la gravedad, un proyecto que explique la electricidad...
+                      </h4>
+                  </p>
+              </div>
+          </div>
+
+          <!-- SINGLE SERVICE -->
+          <div style="visibility: visible; animation-duration: 1.75s; animation-name: fadeInRight;" class="col-md-4 wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.75s">
+              <div class="single-service border-bottom-hover">
+                  <div class="service-icon colored-text">
+                      <span class="icon-ecommerce-gift"></span>
+                  </div>
+                  <h3 class="colored-text">Premio</h3>
+                  <p>
+                     <h4>La entrega de premios se realizará en Madrid, en <a href="https://www.campus.co/madrid/es">Campus Madrid</a></h4>
+                  </p>
+              </div>
+          </div>
+        </div>
+      <div>
+      <div class="container">
+        <div class="row">
+
+            <!-- SINGLE SERVICE -->
+            <div style="visibility: visible; animation-duration: 1.75s; animation-name: fadeInLeft;" class="col-md-12 wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.75s">
+                <div class="single-service border-bottom-hover">
+                    <div class="service-icon colored-text">
+                        <span class="icon-icon-desktop"></span>
+                    </div>
+                    <h3 class="colored-text">Proyectos de ejemplo</h3>
+                      <iframe allowtransparency="true" width="485" height="402" src="//scratch.mit.edu/projects/embed/81527800/?autostart=false" frameborder="0" allowfullscreen></iframe>
+                      <iframe allowtransparency="true" width="485" height="402" src="//scratch.mit.edu/projects/embed/81527800/?autostart=false" frameborder="0" allowfullscreen></iframe>
+                      <iframe allowtransparency="true" width="485" height="402" src="//scratch.mit.edu/projects/embed/81527800/?autostart=false" frameborder="0" allowfullscreen></iframe>
+
+                </div>
+            </div>
+        </div>
+      </div>
+      </div>
+        <footer class="footer grey-bg f">
+               <div class="container" style="padding-top: 60px;">
+                      {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+
+                       <!-- SOCIAL ICONS -->
+                       <ul class="social-icons">
+                           <li><a href="https:/twitter.com/drscratchtool">
+                               <span class="icon-social-twitter transparent-text-dark"></span></a>
+                           </li>
+                           <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+                           </li>
+
+                       </ul>
+               </div>
+           </footer>
+
+         <!-- =========================
+               PROGRESS BAR
+       ============================== -->
+
+
+
+       <div id="pb" class="jumbotron">
+       <div class="container">
+             <p>
+                 <h2>
+                     {% trans "Wait a moment please" %}
+                 </h2>
+             </p>
+       </div>
+
+
+         <div class="container">
+             <img src="../../static/app/images/logo_main.png"/>
+         </div>
+
+
+
+         <div class = "container">
+
+             <div class="progress progress-striped active">
+                 <div class="progress-bar progress-bar-danger" role="progressbar"
+                     aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 99%">
+                     <span style="width: 99%">{% trans "loading..." %}</span>
+                 </div>
+             </div>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
+
+
+         </div>
+
+           <script>
+               /* PRE LOADER */
+               jQuery(window).load(function () {
+                   "use strict";
+                   jQuery(".status").fadeOut();
+                   jQuery(".preloader").delay(1000).fadeOut("slow");
+               })
+           </script>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src="../../static/app/scripts/bootstrap-filestyle.js"> </script>
+        <script src="../../static/app/scripts/smoothscroll.js"></script>
+        <script src="../../static/app/scripts/bootstrap.min.js"></script>
+        <script src="../../static/app/scripts/jquery.nav.js"></script>
+        <script src="../../static/app/scripts/ie-emulation-modes-warning.js"></script>
+        <script src="../../static/app/scripts/wow.js"></script>
+        <script src="../../static/app/scripts/nivo-lightbox.js"></script>
+        <script src="../../static/app/scripts/owl.js"></script>
+        <script src="../../static/app/scripts/progress-bar.js"></script>
+
+
+        </body></html>

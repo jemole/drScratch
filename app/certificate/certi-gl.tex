@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage[landscape,a4paper]{geometry}
+\geometry{verbose,tmargin=4cm,bmargin=0cm,lmargin=0cm,rmargin=0cm}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{background1.jpg}%
+\vfill
+}}}
+
+
+\begin{document}
+\AddToShipoutPicture{\BackgroundPic}
+~
+\vspace{1.2cm}
+~
+\begin{center}
+
+
+\LARGE{O equipo do Dr Raspadinha } \\
+\Large{é o orgullo de ofrecer esta}\\
+\vspace{1cm}
+\fontsize{50}{60}{\textbf{CERTIFICADO}}
+
+\vspace{0.4cm}
+
+\Huge{para o proxecto \textbf{%pointname
+}}
+
+\vspace{0.4cm}
+
+\Huge{obtiveron unha puntuación de
+% \textbf{%pointdni}
+}
+
+\vspace{0.3cm}
+
+\Huge{\textbf{%pointcalification
+}}
+
+\vspace{0.3cm}
+
+\Large{na análise na ferramenta Dr Scratch (www.dr.scratch.org).}
+
+\vspace{.2cm}
+
+%\Large{Y para que as\'i conste se expide el presente certificado}
+%
+\vspace{1cm}
+
+
+\scriptsize
+{A ferramenta Dr. Scratch ten por obxectivo proporcionar un medio de aprendizaxe e feedback sobre a calidade dos proxectos en perigo. \\
+}
+
+\ \\
+
+\end{center}
+\end{document}

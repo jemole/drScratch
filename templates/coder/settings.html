@@ -1,0 +1,31 @@
+{% extends 'coder/base.html' %}
+{% load i18n %}
+{% block content %}
+        <div class="col-sm-12 col-md-12 main">
+            <h2 class="page-header">{% trans "Settings" %}</h2>
+          <div class="panel panel-default col-sm-6 col-sm-offset-4">
+            <div class="panel-heading">
+              <h3 class="panel-title">{% trans "Password" %}</h3>
+            </div>
+            <div class="panel-body">
+                <a href="/change_pwd">{% trans "Change my password" %}</a>
+            </div>
+          </div>
+          <div class="panel panel-default col-sm-6 col-sm-offset-4">
+            <div class="panel-heading">
+              <h3 class="panel-title">{% trans "Photo" %}</h3>
+            </div>
+            <div class="panel-body">
+              <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/coder/settings/{{ username }}">
+                      {% csrf_token %}
+                      {% trans "<input  name='img' type='file' class='filestyle' data-buttonText='Choose img'>" %}
+                      <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Change my photo" %}</button>
+                      {% csrf_token %}
+              </form>
+
+            </div>
+          </div>
+          </div>
+        </div>
+    </div>
+    {% endblock %}

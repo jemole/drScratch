@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage[landscape,a4paper]{geometry}
+\geometry{verbose,tmargin=4cm,bmargin=0cm,lmargin=0cm,rmargin=0cm}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{background1.jpg}%
+\vfill
+}}}
+
+
+\begin{document}
+\AddToShipoutPicture{\BackgroundPic}
+~
+\vspace{1.2cm}
+~
+\begin{center}
+
+
+\LARGE{The Dr. Scratch team} \\
+\Large{has the honour of presenting this}\\
+\vspace{1cm}
+\fontsize{50}{60}{\textbf{CERTIFICATE}}
+
+\vspace{0.4cm}
+
+\Huge{to the project \textbf{%pointname
+}}
+
+\vspace{0.4cm}
+
+\Huge{because it has obtained a score of
+% \textbf{%pointdni}
+}
+
+\vspace{0.3cm}
+
+\Huge{\textbf{%pointcalification
+}}
+
+\vspace{0.3cm}
+
+\Large{This project has been analyzed with Dr. Scratch (www.drscratch.org).}
+
+\vspace{.2cm}
+
+%\Large{Y para que as\'i conste se expide el presente certificado}
+%
+\vspace{1cm}
+
+
+\scriptsize
+{Dr. Scratch aims to provide a means of learning and feedback on the quality of the projects in Scratch. \\
+}
+
+\ \\
+
+\end{center}
+\end{document}

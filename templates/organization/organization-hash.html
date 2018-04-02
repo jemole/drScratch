@@ -1,0 +1,33 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html class="nivo-lightbox-notouch" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Analyze your Scratch projects to assess your Computational Thinking skills">
+    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="author" content="Programamos URJC Libresoft FECyT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>Dr. Scratch</title>
+    <script src="../../static/app/scripts/googleAnalytics.js"></script>
+
+    <html>
+<head><title>Form</title></head>
+<body>
+ 
+ 
+<form action="/organization_hash" method="post">
+  {% csrf_token %}
+  Hash: 
+ <input type="text" name="hashkey" value="" />
+ <!-- <br/>
+  Your class:
+  <input type="text" name="classroom" value="" /> -->
+  <br/>
+  <input type="submit" value="Send" />
+</form>
+ 
+</body>
+</html>

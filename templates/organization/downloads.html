@@ -1,0 +1,73 @@
+{% extends 'organization/base.html' %}
+{% load i18n %}
+{% block content %}
+        <div class="col-sm-12 col-md-12 main">
+            <h2 class="page-header">Descargas</h2>
+          <div class="panel panel-default col-sm-7 col-sm-offset-3">
+            <div class="panel-heading">{% trans "Download my CSV files." %}</div>
+            <div class="panel-body">
+              <p>{% trans "Here you can download the CSV files previously analyzed." %}</p>
+            </div>
+            {% if flag %}
+{% for key,value in csv.items %}
+           <div style="display:none;" class="{{ key }}">
+           <table class="table" >
+              <tr>
+              <thead>
+                <th>{% trans "Date" %}</th>
+                <th>{% trans "Downloads" %}</th>
+              </thead>
+            </tr>
+              
+              <tbody>  
+                {% for file in value %}
+                <tr>
+                <td>{{ file.date }}</td>
+                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/organization/downloads/{{ username }}">
+                {% csrf_token %}
+                <td><button value="{{ file.filename }}" name="csv"type="submit">{% trans "Download" %}</button></td>
+                </form>
+              </tr>
+{% endfor %}
+              </tbody>
+              
+            </table>
+            </div> 
+                 {% endfor %}
+                <div class="col-md-7 col-md-offset-4">
+                <div class="btn-toolbar" role="toolbar">
+                    <div class="btn-group">
+                        {% for key,value in csv.items reversed %}
+                        <button type="button" class="btn btn-default" onclick="change_page({{ key }})">{{ key }}</button>
+                        {% endfor %}
+                    </div>
+              </div>
+              </div>
+            {% else %} 
+            
+            <table class="table">
+              <tr>
+              <thead>
+                <th>{% trans "Date" %}</th>
+                <th>{% trans "Downloads" %}</th>
+              </thead>
+            </tr>
+              <tbody>
+                {% for file in csv %}
+                <tr>
+                <td>{{ file.date}}</td>
+                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/organization/downloads/{{ username }}">
+                {% csrf_token %}
+                <td><button value="{{ file.filename }}" name="csv"type="submit">{% trans "Download" %}</button></td>
+                </form>
+
+              </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            {% endif %}
+          </div>
+          </div>
+        </div>
+    </div>
+    {% endblock %}

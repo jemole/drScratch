@@ -451,7 +451,7 @@ strong,
 .white-line,
 .grey-line {
 	height: 2px;
-	width: 80px;
+	width: 245px;
 	display: block;
 }
 
@@ -470,6 +470,7 @@ strong,
 	display: block;
 	background: #eaebec;
 }
+
 
 .white-text {
 	color: #ffffff;

@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="description" content="Responsive Bootstrap 3 Startup and Multipurpose Template">
+    <meta name="description" content="Analyze your Scratch projects to assess your Computational Thinking skills">
     <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
     <meta name="author" content="Programamos URJC Libresoft FECyT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,14 +15,14 @@
 
     <link rel="stylesheet" href="static/app/content/style.css">
     <!-- =========================
-     FAV AND TOUCH ICONS AND FONT  
+     FAV AND TOUCH ICONS AND FONT
     ============================== -->
     <link rel="icon" href="static/app/images/favicon.ico">
-    <link rel="stylesheet" href="static/app/icons/icons.css">  
+    <link rel="stylesheet" href="static/app/icons/icons.css">
     <link type="text/css" rel="stylesheet" href="static/app/content/css_002.css">
     <link type="text/css" rel="stylesheet" href="static/app/content/css.css">
     <!-- =========================
-     STYLESHEETS   
+     STYLESHEETS
     ============================== -->
     <!-- BOOTSTRAP AND ANIMATION -->
     <link rel="stylesheet" href="static/app/content/bootstrap-main.css">
@@ -37,7 +37,7 @@
     <!-- CUSTOM STYLESHEETS -->
     <link rel="stylesheet" href="static/app/content/styles.css">
 
-    
+
     <!-- RESPONSIVE FIXES -->
     <link rel="stylesheet" href="static/app/content/responsive.css">
 
@@ -48,7 +48,7 @@
 <body>
     <div id="mywrapper">
     <!-- =========================
-     PRE LOADER       
+     PRE LOADER
     ============================== -->
     <div style="display: none;" class="preloader">
         <div style="display: none;" class="status">
@@ -57,14 +57,14 @@
     </div>
 
     <!-- =========================
-     SECTION: HOME / HEADER  
+     SECTION: HOME / HEADER
     ============================== -->
     <header id="home" style="background-position: 50% 40.5px;" class="header" data-stellar-background-ratio="0.3">
         <!-- COLOR OVER IMAGE -->
         <div class="overlay-layer">
             <!-- STICKY NAVIGATION -->
             <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
-                <div class="container">          
+                <div class="container">
                     <!-- TOP BAR -->
                     <div class="navbar-collapse collapse" id="stamp-navigation">
                     <!-- NAVIGATION LINK -->
@@ -76,22 +76,106 @@
                         <li class="navbar-brand"><a href="#section2"><em>{% trans "How?" %}</em></a></li>
                         <li class="navbar-brand"><a href="#section3"><em>{% trans "Working on" %}</em></a></li>
                         <li class="navbar-brand"><a href="#section4"><em>{% trans "Contact us" %}</em></a></li>
-                        <li class="navbar-brand"><a href="/organization"><em class="colored-text">{% trans "Organizations" %}</em></a></li>
+                        {% if not flagUser %}
+                        <li class="navbar-brand"><a href="/sign_up_organization"><em class="colored-text">{% trans "Organizations" %}</em></a></li>
+                        {% endif %}
                       </ul>
 
-                    <!-- LOGIN REGISTER -->
-                    <ul class="nav navbar-nav navbar-right login-register small-text">                
-                            <li style="display: none;" class="register-button js-register inpage-scroll">
-                                <a href="#home" class="navbar-register-button">{% trans "Get Started" %}</a>
-                            </li>
+
+
+                 {% if flagUser %}
+                         <!-- NAVIGATION LINK -->
+                         <ul class="nav navbar-nav navbar-left main-navigation ">
+                             <li class="navbar-brand"><a class="navbar-brand pull-left" href="/{{page}}/{{username}}"><span class="icon-basic-home colored-text"></span><em>{{ username }}</em></a></li>
                         </ul>
 
-                    </div>
-                    <!-- /END TOP BAR -->
-                </div>
-                <!-- /END CONTAINER -->
-            </div>
-            <!-- /END STICKY NAVIGATION -->
+
+
+                     {% else %}
+                    <!-- LOGIN REGISTER -->
+
+
+                    <ul class="nav navbar-nav navbar-right login-register small-text">
+                      <ul class="nav navbar-nav navbar-left main-navigation ">
+
+                        <li style="display: block;" class="login js-login dropdown">
+                          <a aria-expanded="false" type="button" data-toggle="dropdown" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                            <span class="glyphicon glyphicon-book"><span class="icon-basic-world"></span></span>
+                          </a>
+                          <ul role="menu" class="dropdown-menu">
+                            <li>
+                            <div style="padding: 15px; padding-bottom: 10px;">
+                            <form action="/i18n/setlang/" method="post" type="hidden">
+                              {% csrf_token %}
+                              <input name="next" type="hidden" value="{{ redirect_to }}" />
+                              <select name="language" type="hidden">
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                             <option style="padding: 15px;" type="submit" class='btn-group btn-group-justified colored-text' value="{{ language.code }}">{{ language.name }} ({{ language.code }})</option>
+                            {% endfor %}
+                          </select>
+                          <input type="submit" value="Change language" class='btn-group btn-group-justified colored-text'/>
+                          </form>
+                        </div>
+                      </li>
+                    </ul>
+                      </li>
+                      <li style="display: block;" class="login js-login dropdown">
+                        <a aria-expanded="false" role="button" class="dropdown-toggle" data-toggle='modal' href='#modalSignUp'>{% trans "Sign up" %}</a>
+
+                        </a>
+                        <ul role="menu" class="dropdown-menu">
+                          <li>
+                          <div style="padding: 15px; padding-bottom: 10px;">
+                            <form accept-charset="UTF-8" action="/sign_up_coder" method="post">
+                            {% csrf_token %}
+                              {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
+                              {% trans "<input type='text' name='email' id='email' placeholder='Email' style='margin-bottom: 15px;'>" %}
+                              {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
+                              {% trans "<input class='form-control' type='password' name='hashkey' id='hashkey' placeholder='Hashkey' style='margin-bottom: 15px;'>" %}
+                              {% trans "<input type='submit' value='Sign up' id='sign-up' class='btn-group btn-group-justified colored-text'>" %}
+                            </form>
+                          </div>
+                          </li>
+                          </ul>
+                        </li>
+
+
+
+                      <li style="display: block;" class="login js-login dropdown">
+                        <a aria-expanded="false" role="button" href="#" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign in" %}
+                          <span class="caret"></span>
+                        </a>
+                        <ul role="menu" class="dropdown-menu">
+                          <li>
+                          <div style="padding: 15px; padding-bottom: 10px;">
+                            <form accept-charset="UTF-8" action="/login_coder" method="post">
+                                          {% csrf_token %}
+                              {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
+                              {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
+                            <div>
+                                <a class="message" style="size: 5px;" href="/change_pwd">{% trans "I forgot my password" %}</a>
+                            </div>
+                              {% trans "<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-justified colored-text'>" %}
+                            </form>
+                          </div>
+                          </li>
+                          </ul>
+                        </li>
+
+                        {% endif %}
+
+                        <li style="display: none;" class="register-button js-register inpage-scroll">
+                            <a href="#home" class="navbar-register-button">{% trans "Get Started" %}</a>
+                        </li>
+                    </ul>
+
+                  </div>
+                  <!-- /END TOP BAR -->
+              </div>
+              <!-- /END CONTAINER -->
+          </div>
+          <!-- /END STICKY NAVIGATION -->
 
 
             <!-- CONTAINER -->
@@ -106,44 +190,46 @@
 
                             <!-- WELCOM MESSAGE -->
                             <h1 class="intro white-text">{% trans "Analyze your Scratch projects" %}</h1>
-                            
+
                             <h4 align=justify class="transparent-text"><strong>{% trans "Welcome to the Dr. Scratch website, an analytical tool that evaluates your Scratch projects in a variety of computational areas. This analyzer is a helpful tool to evaluate your own projects, or those of your Scratch students." %} </strong></h4>
-                         
+
                             <!-- BUTTON -->
                             <div class="button hidden-xs">
-                                <a href="#section1" class="btn btn-primary secondary-button">{% trans "Learn More" %}</a>
+                                <a href="#section1" class="btn btn-primary secondary-button">{% trans "Learn more" %}</a>
                             </div>
                             <!-- /END BUTTON -->
-                            
+
                         </div>
 
                     </div>
+
                     <div class="container">
+                        <br></br>
                     <div class="col-md-5">
-                        
+
                         <!-- VERTICAL PROJECT FORM -->
 
                             <div class="vertical-project-form">
-                                
+
                                 <h5 class="dark-text form-heading"><strong>{% trans "There are two options to analyze your Scratch project now!" %}</strong></h5>
-                                
-                                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/selector">
-                                {% csrf_token %}   
-                                                            
+
+                                <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/show_dashboard">
+                                {% csrf_token %}
+
                                     {% trans "1. Introduce the <span class='colored-text'><a data-toggle='modal' href='#modalUrl'>url</a></span> of your Scratch project, you don't have to download it:" %}
                                     {% trans '<input name="urlProject" id="cf-name" class="form-control input-box placeholder" placeholder="http:/scratch.mit.edu/projects/your_number" type="text">' %}
                                     <button id="url" name='_url' type="submit" class="btn btn-primary standard-button">{% trans "Analyze by url" %}</button>
-                                    
-                              
+
+
                                     {% csrf_token %}
                                     <br></br>
                                     {% trans "2. If you have your <span class='colored-text'><a data-toggle='modal' href='#modalProject'>project</a></span> downloaded in the computer you can analyze it here:" %}
                                     {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose Project'>" %}
                                     <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my project" %}</button>
-                                    {% csrf_token %}                                    
-                                
+                                    {% csrf_token %}
+
                                 </form>
-                                
+
                                 <!-- FORM SUBMIT SUCCESS / ERROR MESSAGES -->
                                 <p class="file-error dark-text small-text">
                                 {% trans "Error! Please choose a .sb or .sb2 file or input an url" %}</p>
@@ -166,7 +252,7 @@
                 </div>
             </div>
         </div>
-    
+
 
     <!-- =========================
      SECTION: CLIENTS LOGOs
@@ -177,7 +263,7 @@
             <li>
                 <a href="http://programamos.es">
                 <img src="static/app/images/logoProgramamos.png" alt="">
-                </a>            
+                </a>
             </li>
             <li>
                 <a href="http://www.urjc.es">
@@ -204,7 +290,7 @@
      SECTION: Why
     ============================== -->
     <section id="section1" class="services grey-bg">
-      
+
         <div class="container">
             <!-- SECTION HEADER -->
             <div class="section-header">
@@ -277,16 +363,16 @@
                 <div style="visibility: visible; animation-duration: 1.75s; animation-name: fadeInLeft;" class="col-md-6 pull-right wow fadeInLeft animated" data-wow-offset="20" data-wow-duration="1.75s">
 
      <div class="brief-image-right">
-                         
+
                 <div class="text-left dark-text">
                     <br></br>
                     <h3></h3>
                     <br></br>
                 </div>
                         <div class="js-video [vimeo, widescreen]">
-      
+
                             <iframe src="http://player.vimeo.com/video/114430745" width="500" height="333" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen=""></iframe>
-                        </div> 
+                        </div>
                     </div>
                 </div>
 
@@ -322,12 +408,12 @@
                         <div class="col-md-6 col-sm-6">
                           <ul class="feature-list text-left">
                             <li><p>
-                              <span class="icon-basic-home colored-text"></span> 
+                              <span class="icon-basic-home colored-text"></span>
                               {% trans "You can keep on improving your programming skills by yourself even from home." %}
                             <p></li>
                             <li><p>
-                              <span class="icon-ecommerce-graph3 colored-text"></span> 
-                              {% trans "You can track your progress through charts and stats." %} 
+                              <span class="icon-ecommerce-graph3 colored-text"></span>
+                              {% trans "You can track your progress through charts and stats." %}
                             <p></li>
                           </ul>
                         </div>
@@ -339,7 +425,7 @@
 
 
     <!-- =========================
-     SECTION: BENEFITS   
+     SECTION: BENEFITS
     ============================== -->
     <section id="section3" class="unique-features white-bg">
         <div class="container">
@@ -352,7 +438,7 @@
                 <div class="colored-line">
                 </div>
                 <div class="sub-heading">
-                    <h3><em>{% trans "We are working on new features to improve Dr. Scratch" %}</em></h3>    
+                    <h3><em>{% trans "We are working on new features to improve Dr. Scratch" %}</em></h3>
                 </div>
             </div>
 
@@ -360,14 +446,14 @@
             <div class="row">
                 <div style="visibility: visible; animation-duration: 1.75s; animation-name: fadeInRight;" class="col-md-4 wow fadeInRight animated" data-wow-duration="1.75s" data-wow-offset="40">
 
-        
+
                     <!-- SINGLE FEATURE -->
                     <div class="feature">
                         <div class="icon-container">
                             <span class="icon-comment-alt colored-text"></span>
                         </div>
                         <div class="description text-left">
-                            <h4 class="dark-text">{% trans "Multilingual Website" %}</h4>
+                            <h4 class="dark-text">{% trans "Multilingual website" %}</h4>
                             <div class="grey-line-short pull-left">
                             </div>
                             <p class="text-left">
@@ -382,7 +468,7 @@
                             <span class="icon-icon-desktop colored-text"></span>
                         </div>
                         <div class="description text-left">
-                            <h4 class="dark-text">{% trans "Teacher Accounts" %}</h4>
+                            <h4 class="dark-text">{% trans "Teacher accounts" %}</h4>
                             <div class="grey-line-short pull-left">
                             </div>
                             <p class="text-left">
@@ -397,7 +483,7 @@
                             <span class="icon-cloud-alt colored-text"></span>
                         </div>
                         <div class="description text-left">
-                            <h4 class="dark-text">{% trans "Cloud Platform" %}</h4>
+                            <h4 class="dark-text">{% trans "Cloud platform" %}</h4>
                             <div class="grey-line-short pull-left">
                             </div>
                             <p class="text-left">
@@ -452,7 +538,7 @@
                             <span class="icon-chat-alt colored-text"></span>
                         </div>
                         <div class="description text-left">
-                            <h4 class="dark-text">{% trans "Social Network" %}</h4>
+                            <h4 class="dark-text">{% trans "Social network" %}</h4>
                             <div class="grey-line-short pull-left">
                             </div>
                             <p class="text-left">
@@ -466,10 +552,10 @@
         </div>
     </section>
 
-    
+
 
     <!-- =========================
-     SECTION: TEAM   
+     SECTION: TEAM
     ============================== -->
     <section id="section4" class="team grey-bg">
         <div class="container">
@@ -488,7 +574,7 @@
 
 
         <!-- =========================
-     SECTION: CONTACT INFO  
+     SECTION: CONTACT INFO
     ============================== -->
     <div class="contact-info white-bg">
         <div class="container">
@@ -524,16 +610,18 @@
                 <!-- {% trans "We would like to thank many people for their collaboration and we have done one special section." %} -->
                 </div>
                 <div class="jumbotron">
-                    <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/statistics" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Statistics" %}</a>
-                </div> 
-                
+                    <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/statistics" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated col-md-3 col-md-offset-1" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Statistics" %}</a>
+                    <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/collaborators" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated col-md-3 col-md-offset-1" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Collaborators" %}</a>
+                    <a style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" href="/blog" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated col-md-3 col-md-offset-1" data-wow-duration="2s" data-wow-offset="10" type="button">{% trans "Blog" %}</a>
+                </div>
+
         </div>
     </div>
     </section>
 
- 
+
     <!-- =========================
-     SECTION: CALL TO ACTION   
+     SECTION: CALL TO ACTION
     ============================== -->
     <section style="background-position: 40% 827.245px;" class="call-to-action" id="section7" data-stellar-background-ratio="0.1">
         <div class="overlay-layer-2">
@@ -556,7 +644,7 @@
             </div>
         </div>
     </section>
-  
+
     <!-- FOOTER -->
     <footer class="footer grey-bg">
        {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
@@ -567,11 +655,15 @@
             </li>
             <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
             </li>
-            
+
         </ul>
 
     </footer>
     </div>
+
+    <!-- =========================
+            MODALS
+    ============================== -->
 
     <!-- =========================
             MODALS
@@ -589,7 +681,7 @@
                 {% trans "What is an url?" %}
             </div>
             <h4 class="modal-title"><strong>{% trans "How I can know my Scratch project's url?" %}</strong></h4>
-            <div class="colored-line"></div> 
+            <div class="colored-line"></div>
           </div>
           <div class="modal-body">
             {% trans "<img class='framed' src='static/app/images/url-en.png' />" %}
@@ -602,7 +694,7 @@
     </div>
 
 
-         <!-- Modal Project -->
+    <!-- Modal Project -->
     <div id="modalProject" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
@@ -614,7 +706,7 @@
                 {% trans "I want to download my project from Scratch!" %}
             </div>
             <h4 class="modal-title"><strong>{% trans "How I can download my Scratch project to my computer?" %}</strong></h4>
-            <div class="colored-line"></div> 
+            <div class="colored-line"></div>
           </div>
           <div class="modal-body">
             {% trans "<img class='framed' src='static/app/images/project-en.png' />" %}
@@ -626,18 +718,701 @@
       </div>
     </div>
 
+   <!-- Modal Ask -->
+    <div id="modalAsk" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+            <div class="small-text-medium uppercase colored-text">
+                {% trans "I want to download my project from Scratch!" %}
+            </div>
+            <h4 class="modal-title"><strong>{% trans "How I can download my Scratch project to my computer?" %}</strong></h4>
+            <div class="colored-line"></div>
+          </div>
+          <div class="modal-body">
+            {% trans "<img class='framed' src='static/app/images/project-en.png' />" %}
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modal SignUp -->
+   <div id="modalSignUp" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+
+       <!-- Modal content-->
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+           <div class="small-text-medium uppercase colored-text">
+               {% trans "Sign up" %}
+           </div>
+         </div>
+         <div class="modal-body">
+           <div style="padding: 15px; padding-bottom: 10px;">
+             <form accept-charset="UTF-8" action="/sign_up_coder" method="post">
+               {% csrf_token %}
+               <div class="tabbable">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+
+                      <h4 class="modal-title"><strong>{% trans "It's easy -and free- sign up an account in Dr. Scratch" %}</strong></h4>
+                      <div class="colored-line"></div>
+                        <div class="jumbotron">
+                        <div class="container">
+
+                      <div class="row">
+                          <label class="col-md-6 text-left control-label">{% trans "Choose a Dr. Scratch Username" %}</label>
+                          <label class="col-md-2 text-left control-label">
+                          {% trans "<input type='text' name='username' id='username' placeholder='Username' />" %}</label>
+                      </div>
+{{ form.as_p }}
+                      <div class="row">
+                           <label class="col-md-6 text-left control-label">{% trans "Choose a Password" %}</label>
+                           <label class="col-md-2 text-left control-label">
+                          {% trans "<input type='password' name='password' id='password' placeholder='Password'/>" %}</label>
+                      </div>
+        {{ form.as_p }}
+                      <div class="row">
+                          <label class="col-md-6 text-left control-label">{% trans "Confirm Password" %}</label>
+                          <label class="col-md-1 text-left control-label">
+        
+                            {% trans "<input type='password' name='password_confirm' id='password_confirm' placeholder='Password'/>" %}</label>
+        {{ form.as_p }}
+                        </div>
+                    </div>
+                    </div>
+                      <h4 class="modal-title"><strong>{% trans "If you are minor of 16, enter your parent's or guardian's email address and we will send them an email to confirm this account." %}</strong></h4>
+                      <div class="colored-line"></div>
+                        <div class="jumbotron">
+                        <div class="container">
+
+
+                            <div class="row">
+                                  <label class="col-md-6 text-left control-label" for="email">{% trans "Email address" %}</label>
+                                  <label class="col-md-6 text-left control-label parents" for="email" style="display: none;">{% trans "Parent's or guardian's email address" %}</label>
+                                  <input class="col-md-6 email" name="email" maxlength="100" type="text">
+{{ form.as_p }}
+                                  <span data-control="error" data-content="email-error" class="hovertext"><span class="arrow"></span><span class="text"></span></span>
+                            </div>
+
+                            <div class="row">
+                                  <label class="col-md-6 text-left control-label" for="email-confirm">{% trans "Confirm email address" %}</label>
+                                  <input class="col-md-6 email-confirm" name="email_confirm" maxlength="100" type="text">
+{{ form.as_p }}
+                                  <span data-control="error" data-content="email-confirm-error" class="hovertext"><span class="arrow"></span><span class="text"></span></span>
+                            </div>
+                    </div>
+
+                  </div>
+
+
+                      <h4 class="modal-title" href="#" onMouseOver="hidden_information()"><strong>{% trans "Your responses to these questions will be kept private." %}</strong></h4>
+                      <div class="colored-line" href="#"></div>
+                        <div class="jumbotron">
+                          <a href="#" onMouseOver="show_information()">{% trans "Why do we ask for this info?" %}</a>
+                          <div id="information" style="position: absolute; width: 500;top: 800px;left: 300px; z-index: 1; visibility:hidden">
+                                <div class="panel panel-danger">
+                                  <h4 class="modal-title">{% trans "Birth Month and Year" %}</h4>
+                                  <h6 class="modal-title">
+                                      {% trans "We use this information to calculate the age range of people who use Dr. Scratch, and to confirm that you are the owner of the account if you contact us.  Your birth month and year will not be made public." %}
+                                  </h6>
+
+                                  <h4 class="modal-title">{% trans "Gender" %}</h4>
+                                  <h6 class="modal-title">
+                                      {% trans "This helps the Dr. Scratch design team understand who is using Dr. Scratch, and provides information that helps us broaden participation.  This information is not visible on your account, and is only used to describe overall participation." %}
+                                  </h6>
+                              </div>
+                          </div>
+
+                      <div class="row" href="#" onMouseOver="hidden_information()">
+                        <label class="col-md-6 text-left control-label" href="#" onMouseOver="hidden_information()" for="birthmonth">{% trans "Birth Month and Year" %}</label>
+                        <select class="birthmonth" name="birthmonth" selectedindex="" required="">
+                        <option value="0">{% trans "- Month -" %}</option>
+                        <option value="1">{% trans "January" %}</option>
+                        <option value="2">{% trans "February" %}</option>
+                        <option value="3">{% trans "March" %}</option>
+                        <option value="4">{% trans "April" %}</option>
+                        <option value="5">{% trans "May" %}</option>
+                        <option value="6">{% trans "June" %}</option>
+                        <option value="7">{% trans "July" %}</option>
+                        <option value="8">{% trans "August" %}</option>
+                        <option value="9">{% trans "September" %}</option>
+                        <option value="10">{% trans "October" %}</option>
+                        <option value="11">{% trans "November" %}</option>
+                        <option value="12">{% trans "December" %}</option>
+                        </select>
+{{ form.as_p }}
+                        <select class="birthyear" name="birthyear">
+                        <option value="0">{% trans "- Year -" %}</option>
+                        <option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option><option value="1906">1906</option><option value="1905">1905</option><option value="1904">1904</option><option value="1903">1903</option><option value="1902">1902</option><option value="1901">1901</option><option value="1900">1900</option><option value="1899">1899</option><option value="1898">1898</option><option value="1897">1897</option></select>
+{{ form.as_p }}
+                        <span data-control="error" data-content="birthday-error" class="hovertext"><span class="arrow"></span><span class="text"></span></span>
+                      </div>
+                      <div class="row" href="#" onMouseOver="hidden_information()">
+                        <label class="col-md-2 text-left control-label" for="gender">{% trans "Gender" %}</label>
+                           <input name="gender" value="male" type="radio">{% trans "Male" %}
+{{ form.as_p }}
+                           <input name="gender" value="female" type="radio">{% trans "Female" %}
+{{ form.as_p }}
+                           <input class="gender_other_radio" id="gender_other_radio" name="gender_other" value="" type="radio">
+{{ form.as_p }}
+                           <input class="gender_other_text" id="gender_other_text" name="gender_other" value=" " maxlength="20" type="text">
+{{ form.as_p }}
+                           <span data-control="error" data-content="gender-error" class="hovertext"><span class="arrow"></span><span class="text"></span></span>
+
+                      </div>
+                      <div class="row" href="#" onMouseOver="hidden_information()">
+                        <label class="col-md-6 text-left control-label" for="country">{% trans "Country" %}</label>
+                          <select class="col-md-6 text-left  country" name="country">
+                              <option value="0">{% trans "- Country -" %}</option>
+
+                              <option value="United States">United States</option>
+
+                              <option value="Afghanistan">Afghanistan</option>
+
+                              <option value="Aland Islands">Aland Islands</option>
+
+                              <option value="Albania">Albania</option>
+
+                              <option value="Algeria">Algeria</option>
+
+                              <option value="American Samoa">American Samoa</option>
+
+                              <option value="Andorra">Andorra</option>
+
+                              <option value="Angola">Angola</option>
+
+                              <option value="Anguilla">Anguilla</option>
+
+                              <option value="Antarctica">Antarctica</option>
+
+                              <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+
+                              <option value="Argentina">Argentina</option>
+
+                              <option value="Armenia">Armenia</option>
+
+                              <option value="Aruba">Aruba</option>
+
+                              <option value="Australia">Australia</option>
+
+                              <option value="Austria">Austria</option>
+
+                              <option value="Azerbaijan">Azerbaijan</option>
+
+                              <option value="Bahamas">Bahamas</option>
+
+                              <option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option>
+
+                              <option value="Bahrain">Bahrain</option>
+
+                              <option value="Bangladesh">Bangladesh</option>
+
+                              <option value="Barbados">Barbados</option>
+
+                              <option value="Belarus">Belarus</option>
+
+                              <option value="Belgium">Belgium</option>
+
+                              <option value="Belize">Belize</option>
+
+                              <option value="Benin">Benin</option>
+
+                              <option value="Bermuda">Bermuda</option>
+
+                              <option value="Bhutan">Bhutan</option>
+
+                              <option value="Bolivia">Bolivia</option>
+
+                              <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+
+                              <option value="Botswana">Botswana</option>
+
+                              <option value="Bouvet Island">Bouvet Island</option>
+
+                              <option value="Brazil">Brazil</option>
+
+                              <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+
+                              <option value="Brunei">Brunei</option>
+
+                              <option value="Bulgaria">Bulgaria</option>
+
+                              <option value="Burkina Faso">Burkina Faso</option>
+
+                              <option value="Burundi">Burundi</option>
+
+                              <option value="Cambodia">Cambodia</option>
+
+                              <option value="Cameroon">Cameroon</option>
+
+                              <option value="Canada">Canada</option>
+
+                              <option value="Cape Verde">Cape Verde</option>
+
+                              <option value="Cayman Islands">Cayman Islands</option>
+
+                              <option value="Central African Republic">Central African Republic</option>
+
+                              <option value="Chad">Chad</option>
+
+                              <option value="Chile">Chile</option>
+
+                              <option value="China">China</option>
+
+                              <option value="Christmas Island">Christmas Island</option>
+
+                              <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+
+                              <option value="Colombia">Colombia</option>
+
+                              <option value="Comoros">Comoros</option>
+
+                              <option value="Congo">Congo</option>
+
+                              <option value="Congo, The Democratic Republic of the">Congo, The Democratic Republic of the</option>
+
+                              <option value="Cook Islands">Cook Islands</option>
+
+                              <option value="Costa Rica">Costa Rica</option>
+
+                              <option value="Cote d'Ivoire">Cote d'Ivoire</option>
+
+                              <option value="Croatia">Croatia</option>
+
+                              <option value="Cuba">Cuba</option>
+
+                              <option value="Cyprus">Cyprus</option>
+
+                              <option value="Czech Republic">Czech Republic</option>
+
+                              <option value="Denmark">Denmark</option>
+
+                              <option value="Djibouti">Djibouti</option>
+
+                              <option value="Dominica">Dominica</option>
+
+                              <option value="Dominican Republic">Dominican Republic</option>
+
+                              <option value="Ecuador">Ecuador</option>
+
+                              <option value="Egypt">Egypt</option>
+
+                              <option value="El Salvador">El Salvador</option>
+
+                              <option value="Equatorial Guinea">Equatorial Guinea</option>
+
+                              <option value="Eritrea">Eritrea</option>
+
+                              <option value="Estonia">Estonia</option>
+
+                              <option value="Ethiopia">Ethiopia</option>
+
+                              <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+
+                              <option value="Faroe Islands">Faroe Islands</option>
+
+                              <option value="Fiji">Fiji</option>
+
+                              <option value="Finland">Finland</option>
+
+                              <option value="France">France</option>
+
+                              <option value="French Guiana">French Guiana</option>
+
+                              <option value="French Polynesia">French Polynesia</option>
+
+                              <option value="French Southern Territories">French Southern Territories</option>
+
+                              <option value="Gabon">Gabon</option>
+
+                              <option value="Gambia">Gambia</option>
+
+                              <option value="Georgia">Georgia</option>
+
+                              <option value="Germany">Germany</option>
+
+                              <option value="Ghana">Ghana</option>
+
+                              <option value="Gibraltar">Gibraltar</option>
+
+                              <option value="Greece">Greece</option>
+
+                              <option value="Greenland">Greenland</option>
+
+                              <option value="Grenada">Grenada</option>
+
+                              <option value="Guadeloupe">Guadeloupe</option>
+
+                              <option value="Guam">Guam</option>
+
+                              <option value="Guatemala">Guatemala</option>
+
+                              <option value="Guernsey">Guernsey</option>
+
+                              <option value="Guinea">Guinea</option>
+
+                              <option value="Guinea-Bissau">Guinea-Bissau</option>
+
+                              <option value="Guyana">Guyana</option>
+
+                              <option value="Haiti">Haiti</option>
+
+                              <option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option>
+
+                              <option value="Vatican City">Vatican City</option>
+
+                              <option value="Honduras">Honduras</option>
+
+                              <option value="Hong Kong">Hong Kong</option>
+
+                              <option value="Hungary">Hungary</option>
+
+                              <option value="Iceland">Iceland</option>
+
+                              <option value="India">India</option>
+
+                              <option value="Indonesia">Indonesia</option>
+
+                              <option value="Iran">Iran</option>
+
+                              <option value="Iraq">Iraq</option>
+
+                              <option value="Ireland">Ireland</option>
+
+                              <option value="Isle of Man">Isle of Man</option>
+
+                              <option value="Israel">Israel</option>
+
+                              <option value="Italy">Italy</option>
+
+                              <option value="Jamaica">Jamaica</option>
+
+                              <option value="Japan">Japan</option>
+
+                              <option value="Jersey">Jersey</option>
+
+                              <option value="Jordan">Jordan</option>
+
+                              <option value="Kazakhstan">Kazakhstan</option>
+
+                              <option value="Kenya">Kenya</option>
+
+                              <option value="Kiribati">Kiribati</option>
+
+                              <option value="North Korea">North Korea</option>
+
+                              <option value="South Korea">South Korea</option>
+
+                              <option value="Kuwait">Kuwait</option>
+
+                              <option value="Kyrgyzstan">Kyrgyzstan</option>
+
+                              <option value="Laos">Laos</option>
+
+                              <option value="Latvia">Latvia</option>
+
+                              <option value="Lebanon">Lebanon</option>
+
+                              <option value="Lesotho">Lesotho</option>
+
+                              <option value="Liberia">Liberia</option>
+
+                              <option value="Libya">Libya</option>
+
+                              <option value="Liechtenstein">Liechtenstein</option>
+
+                              <option value="Lithuania">Lithuania</option>
+
+                              <option value="Luxembourg">Luxembourg</option>
+
+                              <option value="Macao">Macao</option>
+
+                              <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+
+                              <option value="Madagascar">Madagascar</option>
+
+                              <option value="Malawi">Malawi</option>
+
+                              <option value="Malaysia">Malaysia</option>
+
+                              <option value="Maldives">Maldives</option>
+
+                              <option value="Mali">Mali</option>
+
+                              <option value="Malta">Malta</option>
+
+                              <option value="Marshall Islands">Marshall Islands</option>
+
+                              <option value="Martinique">Martinique</option>
+
+                              <option value="Mauritania">Mauritania</option>
+
+                              <option value="Mauritius">Mauritius</option>
+
+                              <option value="Mayotte">Mayotte</option>
+
+                              <option value="Mexico">Mexico</option>
+
+                              <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+
+                              <option value="Moldova">Moldova</option>
+
+                              <option value="Monaco">Monaco</option>
+
+                              <option value="Mongolia">Mongolia</option>
+
+                              <option value="Montenegro">Montenegro</option>
+
+                              <option value="Montserrat">Montserrat</option>
+
+                              <option value="Morocco">Morocco</option>
+
+                              <option value="Mozambique">Mozambique</option>
+
+                              <option value="Myanmar">Myanmar</option>
+
+                              <option value="Namibia">Namibia</option>
+
+                              <option value="Nauru">Nauru</option>
+
+                              <option value="Nepal">Nepal</option>
+
+                              <option value="Netherlands">Netherlands</option>
+
+                              <option value="Netherlands Antilles">Netherlands Antilles</option>
+
+                              <option value="New Caledonia">New Caledonia</option>
+
+                              <option value="New Zealand">New Zealand</option>
+
+                              <option value="Nicaragua">Nicaragua</option>
+
+                              <option value="Niger">Niger</option>
+
+                              <option value="Nigeria">Nigeria</option>
+
+                              <option value="Niue">Niue</option>
+
+                              <option value="Norfolk Island">Norfolk Island</option>
+
+                              <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+
+                              <option value="Norway">Norway</option>
+
+                              <option value="Oman">Oman</option>
+
+                              <option value="Pakistan">Pakistan</option>
+
+                              <option value="Palau">Palau</option>
+
+                              <option value="Palestine, State of">Palestine, State of</option>
+
+                              <option value="Panama">Panama</option>
+
+                              <option value="Papua New Guinea">Papua New Guinea</option>
+
+                              <option value="Paraguay">Paraguay</option>
+
+                              <option value="Peru">Peru</option>
+
+                              <option value="Philippines">Philippines</option>
+
+                              <option value="Pitcairn">Pitcairn</option>
+
+                              <option value="Poland">Poland</option>
+
+                              <option value="Portugal">Portugal</option>
+
+                              <option value="Puerto Rico">Puerto Rico</option>
+
+                              <option value="Qatar">Qatar</option>
+
+                              <option value="Reunion">Reunion</option>
+
+                              <option value="Romania">Romania</option>
+
+                              <option value="Russia">Russia</option>
+
+                              <option value="Rwanda">Rwanda</option>
+
+                              <option value="Saint Barthelemy">Saint Barthelemy</option>
+
+                              <option value="Saint Helena">Saint Helena</option>
+
+                              <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+
+                              <option value="Saint Lucia">Saint Lucia</option>
+
+                              <option value="Saint Martin">Saint Martin</option>
+
+                              <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+
+                              <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+
+                              <option value="Samoa">Samoa</option>
+
+                              <option value="San Marino">San Marino</option>
+
+                              <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+
+                              <option value="Saudi Arabia">Saudi Arabia</option>
+
+                              <option value="Senegal">Senegal</option>
+
+                              <option value="Serbia">Serbia</option>
+
+                              <option value="Seychelles">Seychelles</option>
+
+                              <option value="Sierra Leone">Sierra Leone</option>
+
+                              <option value="Singapore">Singapore</option>
+
+                              <option value="Slovakia">Slovakia</option>
+
+                              <option value="Slovenia">Slovenia</option>
+
+                              <option value="Solomon Islands">Solomon Islands</option>
+
+                              <option value="Somalia">Somalia</option>
+
+                              <option value="South Africa">South Africa</option>
+
+                              <option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
+
+                              <option value="Spain">Spain</option>
+
+                              <option value="Sri Lanka">Sri Lanka</option>
+
+                              <option value="Sudan">Sudan</option>
+
+                              <option value="Suriname">Suriname</option>
+
+                              <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+
+                              <option value="Swaziland">Swaziland</option>
+
+                              <option value="Sweden">Sweden</option>
+
+                              <option value="Switzerland">Switzerland</option>
+
+                              <option value="Syria">Syria</option>
+
+                              <option value="Taiwan">Taiwan</option>
+
+                              <option value="Tajikistan">Tajikistan</option>
+
+                              <option value="Tanzania">Tanzania</option>
+
+                              <option value="Thailand">Thailand</option>
+
+                              <option value="Timor-Leste">Timor-Leste</option>
+
+                              <option value="Togo">Togo</option>
+
+                              <option value="Tokelau">Tokelau</option>
+
+                              <option value="Tonga">Tonga</option>
+
+                              <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+
+                              <option value="Tunisia">Tunisia</option>
+
+                              <option value="Turkey">Turkey</option>
+
+                              <option value="Turkmenistan">Turkmenistan</option>
+
+                              <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+
+                              <option value="Tuvalu">Tuvalu</option>
+
+                              <option value="Uganda">Uganda</option>
+
+                              <option value="Ukraine">Ukraine</option>
+
+                              <option value="United Arab Emirates">United Arab Emirates</option>
+
+                              <option value="United Kingdom">United Kingdom</option>
+
+                              <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+
+                              <option value="Uruguay">Uruguay</option>
+
+                              <option value="Uzbekistan">Uzbekistan</option>
+
+                              <option value="Vanuatu">Vanuatu</option>
+
+                              <option value="Venezuela">Venezuela</option>
+
+                              <option value="Vietnam">Vietnam</option>
+
+                              <option value="Virgin Islands, British">Virgin Islands, British</option>
+
+                              <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+
+                              <option value="Wallis and Futuna">Wallis and Futuna</option>
+
+                              <option value="Western Sahara">Western Sahara</option>
+
+                              <option value="Yemen">Yemen</option>
+
+                              <option value="Zambia">Zambia</option>
+
+                              <option value="Zimbabwe">Zimbabwe</option>
+
+                          </select>
+{{ form.as_p }}
+                        <span data-control="error" data-content="country-error" class="hovertext"><span class="arrow"></span><span class="text"></span></span>
+                    </div>
+                    </div>
+                    </div>
+                        {% trans "<input type='submit' value='Sign up' id='sign-up' class='btn-group btn-group-justified colored-text'>" %}
+                      </div>
+
+
+
+
+                            
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                     </div>
+                    </div>
+
+                 </form>
+                </div>
+            </div>
+        </div>
+     </div>
+    </div>
+   
+
+
+
+
+
 
         <!-- =========================
-              PROGRESS BAR   
+              PROGRESS BAR
     ============================== -->
 
-    
 
-    <div id="pb" class="jumbotron"> 
+
+    <div id="pb" class="jumbotron">
     <div class="container">
             <p>
                 <h2>
-                    {% trans "Wait a moment please" %}
+                    {% trans "Wait a moment, please." %}
                 </h2>
             </p>
     </div>
@@ -663,12 +1438,12 @@
     </div>
     </div>
 </div>
-	
+
 
         </div>
 
     <!-- =========================
-     SCRIPTS   
+     SCRIPTS
     ============================== -->
     <script src="static/app/scripts/jquery.min.js"></script>
     <script>
@@ -690,6 +1465,8 @@
     <script src="static/app/scripts/jquery_main.js"></script>
     <script src="static/app/scripts/jquery.ajaxchimp.min.js"></script>
     <script src="static/app/scripts/progress-bar.js"></script>
+    <script src="../../static/app/scripts/googleAnalytics.js"></script>
+    <script src="../../static/app/scripts/question.js"></script>
 
     <!-- GOGLE MAP -->
     <!--

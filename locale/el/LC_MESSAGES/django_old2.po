@@ -1,0 +1,3253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-17 18:39+0000\n"
+"PO-Revision-Date: 2016-03-04 11:00+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7\n"
+
+#: drScratch/settings.py:113
+msgid "English"
+msgstr "Αγγλικά"
+
+#: drScratch/settings.py:114
+msgid "Spanish"
+msgstr "Ισπανικά"
+
+#: drScratch/settings.py:115 templates/main/collaborators.html:273
+msgid "Catalan"
+msgstr "Καταλανικά"
+
+#: drScratch/settings.py:116 templates/main/collaborators.html:295
+msgid "Galician"
+msgstr "Γλώσσα της Γαλικίας"
+
+#: drScratch/settings.py:117 templates/main/collaborators.html:228
+#: templates/main/collaborators.html:319
+msgid "Portuguese"
+msgstr "Πορτογαλικά (Βραζιλίας)"
+
+#: drScratch/settings.py:118 templates/main/collaborators.html:250
+msgid "Greek"
+msgstr "Ελληνικά"
+
+#: templates/coder/base.html:74 templates/main/statistics.html:66
+#: templates/organization/base.html:77
+msgid "Scores of 2015"
+msgstr "Στοιχεία του 2015"
+
+#: templates/coder/base.html:82 templates/main/statistics.html:74
+#: templates/organization/base.html:85
+msgid " points"
+msgstr "βαθμοί"
+
+#: templates/coder/base.html:91 templates/main/statistics.html:83
+#: templates/organization/base.html:94
+msgid "Total score"
+msgstr "Γενικό σύνολο"
+
+#: templates/coder/base.html:101 templates/main/statistics.html:93
+#: templates/organization/base.html:104
+msgid "Number of projects analyzed in 2015"
+msgstr "Αριθμός έργων που αναλύθηκαν το 2015"
+
+#: templates/coder/base.html:109 templates/main/statistics.html:101
+#: templates/organization/base.html:112
+msgid " projects"
+msgstr " έργα"
+
+#: templates/coder/base.html:118 templates/main/statistics.html:110
+#: templates/organization/base.html:121
+msgid "Total projects"
+msgstr "Συνολικά έργα"
+
+#: templates/coder/base.html:132 templates/main/statistics.html:124
+#: templates/organization/base.html:135
+msgid "Percent levels"
+msgstr "Επίπεδα επί τοις εκατό"
+
+#: templates/coder/base.html:151 templates/coder/dashboard-basic.html:181
+#: templates/coder/dashboard-developing.html:219
+#: templates/coder/dashboard-master.html:261
+#: templates/main/dashboard-basic.html:180
+#: templates/main/dashboard-developing.html:216
+#: templates/main/dashboard-master.html:259 templates/main/statistics.html:143
+#: templates/organization/base.html:154
+#: templates/organization/dashboard-basic.html:181
+#: templates/organization/dashboard-developing.html:219
+#: templates/organization/dashboard-master.html:266
+msgid "Level"
+msgstr "Επίπεδο"
+
+#: templates/coder/base.html:154 templates/main/statistics.html:146
+#: templates/organization/base.html:157
+msgid "Basic"
+msgstr "Basic"
+
+#: templates/coder/base.html:157 templates/main/statistics.html:149
+#: templates/organization/base.html:160
+msgid "Development"
+msgstr "Development"
+
+#: templates/coder/base.html:160 templates/main/statistics.html:152
+#: templates/organization/base.html:163
+msgid "Master"
+msgstr "Μετάφραση:"
+
+#: templates/coder/base.html:173 templates/coder/base.html.py:180
+#: templates/main/statistics.html:165 templates/main/statistics.html.py:172
+#: templates/organization/base.html:176 templates/organization/base.html:183
+msgid "Average rate by code smell"
+msgstr "Μέσος όρος με βάση την ανάλυση κώδικα"
+
+#: templates/coder/base.html:203 templates/main/statistics.html:195
+#: templates/organization/base.html:206
+msgid "Code smell"
+msgstr "Ανάλυση κώδικα"
+
+#: templates/coder/base.html:206 templates/coder/base.html.py:386
+#: templates/coder/dashboard-master.html:198 templates/learn/base.html:113
+#: templates/learn/deadCode.html:4 templates/main/dashboard-master.html:196
+#: templates/main/statistics.html:198 templates/organization/base.html:209
+#: templates/organization/base.html:389
+#: templates/organization/dashboard-master.html:203
+msgid "Dead code"
+msgstr "Κώδικας που δεν εκτελείται"
+
+#: templates/coder/base.html:209 templates/coder/base.html.py:384
+#: templates/coder/dashboard-master.html:192 templates/learn/base.html:111
+#: templates/learn/duplicatedScripts.html:4
+#: templates/main/dashboard-master.html:190 templates/main/statistics.html:201
+#: templates/organization/base.html:212 templates/organization/base.html:387
+#: templates/organization/dashboard-master.html:197
+msgid "Duplicated scripts"
+msgstr "Διπλασιασμένα προγράμματα"
+
+#: templates/coder/base.html:212 templates/coder/base.html.py:387
+#: templates/learn/base.html:114 templates/organization/base.html:215
+#: templates/organization/base.html:390
+msgid "Attribute initialization"
+msgstr "Αρχικοποίηση ιδιοτήτων"
+
+#: templates/coder/base.html:215 templates/coder/dashboard-developing.html:176
+#: templates/coder/dashboard-master.html:194
+#: templates/main/dashboard-developing.html:173
+#: templates/main/dashboard-master.html:192 templates/main/statistics.html:207
+#: templates/organization/base.html:218
+#: templates/organization/dashboard-developing.html:176
+#: templates/organization/dashboard-master.html:199
+msgid "Sprite naming"
+msgstr "Ονόματα αντικειμένων"
+
+#: templates/coder/base.html:230 templates/coder/base.html.py:237
+#: templates/main/statistics.html:222 templates/main/statistics.html.py:229
+#: templates/organization/base.html:233 templates/organization/base.html:240
+msgid "Average rate by programming skill"
+msgstr "Μέσος όρος με βάση την προγραμματιστική δεξιότητα"
+
+#: templates/coder/base.html:260 templates/main/statistics.html:252
+#: templates/organization/base.html:263
+msgid "Programming skill"
+msgstr "Προγραμματιστική δεξιότητα"
+
+#: templates/coder/base.html:263 templates/coder/base.html.py:378
+#: templates/learn/Parallelism.html:4 templates/learn/base.html:104
+#: templates/main/statistics.html:255 templates/organization/base.html:266
+#: templates/organization/base.html:381
+msgid "Parallelism"
+msgstr "Παραλληλισμός"
+
+#: templates/coder/base.html:266 templates/coder/base.html.py:376
+#: templates/learn/Logic.html:4 templates/learn/base.html:102
+#: templates/main/statistics.html:258 templates/organization/base.html:269
+#: templates/organization/base.html:379
+msgid "Logic"
+msgstr "Λογική"
+
+#: templates/coder/base.html:269 templates/coder/base.html.py:381
+#: templates/learn/Flow.html:22 templates/learn/base.html:107
+#: templates/main/statistics.html:261 templates/organization/base.html:272
+#: templates/organization/base.html:384
+msgid "Flow control"
+msgstr "Έλεγχος ροής"
+
+#: templates/coder/base.html:272 templates/coder/base.html.py:380
+#: templates/learn/User.html:5 templates/learn/base.html:106
+#: templates/main/statistics.html:264 templates/organization/base.html:275
+#: templates/organization/base.html:383
+msgid "User interactivity"
+msgstr "Αλληλεπίδραση χρήστη"
+
+#: templates/coder/base.html:275 templates/coder/base.html.py:377
+#: templates/learn/base.html:103 templates/main/statistics.html:267
+#: templates/organization/base.html:278 templates/organization/base.html:380
+msgid "Data representation"
+msgstr "Αναπαράσταση δεδομένων"
+
+#: templates/coder/base.html:278 templates/coder/base.html.py:382
+#: templates/learn/Abstraction.html:4 templates/learn/base.html:108
+#: templates/main/statistics.html:270 templates/organization/base.html:281
+#: templates/organization/base.html:385
+msgid "Abstraction"
+msgstr "Αφαίρεση"
+
+#: templates/coder/base.html:281 templates/coder/base.html.py:379
+#: templates/learn/Synchronization.html:5 templates/learn/base.html:105
+#: templates/main/statistics.html:273 templates/organization/base.html:284
+#: templates/organization/base.html:382
+msgid "Synchronization"
+msgstr "Συγχρονισμός"
+
+#: templates/coder/base.html:330 templates/main/main_new.html:119
+#: templates/organization/base.html:333
+msgid ""
+"<input type='submit' value='Change language' class='btn-group btn-group-"
+"justified colored-text'/>"
+msgstr ""
+"<input type='submit' value='Change language' class='btn-group btn-group-"
+"justified colored-text' />"
+
+#: templates/coder/base.html:342 templates/contest.html:95
+#: templates/organization/base.html:345
+msgid "Logged in as "
+msgstr "Εισήλθατε ως"
+
+#: templates/coder/base.html:344 templates/contest.html:97
+#: templates/organization/base.html:347
+msgid "Change password"
+msgstr "Αλλάξτε κωδικό"
+
+#: templates/coder/base.html:346 templates/contest.html:99
+#: templates/organization/base.html:349
+msgid "Logout"
+msgstr "Έξοδος"
+
+#: templates/coder/base.html:371 templates/coder/main.html:6
+#: templates/organization/base.html:374 templates/organization/main.html:6
+msgid "Analysis"
+msgstr ""
+
+#: templates/coder/base.html:372 templates/organization/base.html:375
+msgid "Stats"
+msgstr "Στατιστικά"
+
+#: templates/coder/base.html:374 templates/main/main.html:198
+#: templates/main/main_new.html:202 templates/organization/base.html:377
+msgid "Learn more"
+msgstr "Μάθετε περισσότερα"
+
+#: templates/coder/base.html:385 templates/learn/base.html:112
+#: templates/learn/spriteNaming.html:5 templates/organization/base.html:388
+msgid "Incorrect names"
+msgstr "Λάθος ονόματα"
+
+#: templates/coder/base.html:390 templates/coder/settings.html:5
+#: templates/organization/base.html:394 templates/organization/settings.html:5
+msgid "Settings"
+msgstr ""
+
+#: templates/coder/base.html:398 templates/coder/dashboard-basic.html:248
+#: templates/coder/dashboard-developing.html:283
+#: templates/coder/dashboard-master.html:325 templates/contest.html:197
+#: templates/discuss.html:139 templates/error/404.html:68
+#: templates/error/500.html:68 templates/error/analyzing.html:71
+#: templates/error/base.html:105 templates/learn/base.html:124
+#: templates/main/collaborators.html:443
+#: templates/main/dashboard-basic.html:247
+#: templates/main/dashboard-developing.html:280
+#: templates/main/dashboard-master.html:323 templates/main/main.html:650
+#: templates/main/main_new.html:654 templates/main/statistics.html:351
+#: templates/organization/base.html:404
+#: templates/organization/dashboard-basic.html:248
+#: templates/organization/dashboard-developing.html:283
+#: templates/organization/dashboard-master.html:330
+#: templates/organization/organization.html:288
+#: templates/sign-password/base.html:105
+msgid "©2014 Dr. Scratch is powered by "
+msgstr "©2014 Το Dr. Scratch λειτουργεί από"
+
+#: templates/coder/base.html:425 templates/organization/base.html:432
+msgid "How is the file .csv?"
+msgstr "Πώς είναι ένα αρχείο .csv;"
+
+#: templates/coder/base.html:427 templates/organization/base.html:434
+msgid ""
+"You must to write only the number of your students' projects. Easy, isn't it?"
+msgstr "Πρέπει να γράψετε μόνο τους αριθμούς των μαθητών σας. Εύκολο, έτσι;"
+
+#: templates/coder/base.html:448 templates/main/main.html:681
+#: templates/main/main_new.html:681 templates/organization/base.html:455
+msgid "What is an url?"
+msgstr "Τι είναι το url;"
+
+#: templates/coder/base.html:450 templates/main/main.html:683
+#: templates/main/main_new.html:683 templates/organization/base.html:457
+msgid "How I can know my Scratch project's url?"
+msgstr "Πώς μπορώ να βρώ το url του έργου μου στο Scratch;"
+
+#: templates/coder/base.html:454 templates/organization/base.html:461
+msgid "<img class='framed' src='../static/app/images/url-en.png' />"
+msgstr "<img class='framed' src='../static/app/images/url-en.png' />"
+
+#: templates/coder/base.html:473 templates/main/main.html:706
+#: templates/main/main.html.py:730 templates/main/main_new.html:706
+#: templates/organization/base.html:480
+msgid "I want to download my project from Scratch!"
+msgstr "Θέλω να κατεβάσω το έργο μου από τον ιστότοπο του Scratch!"
+
+#: templates/coder/base.html:475 templates/main/main.html:708
+#: templates/main/main.html.py:732 templates/main/main_new.html:708
+#: templates/organization/base.html:482
+msgid "How I can download my Scratch project to my computer?"
+msgstr "Πώς μπορώ να κατεβάσω το έργο στον υπολογιστή μου;"
+
+#: templates/coder/base.html:479 templates/organization/base.html:486
+msgid "<img class='framed' src='../static/app/images/project-en.png' />"
+msgstr "<img class='framed' src='../static/app/images/project-en.png' />"
+
+#: templates/coder/base.html:499 templates/main/main.html:1415
+#: templates/main/main_new.html:1421 templates/organization/base.html:506
+msgid "Wait a moment, please."
+msgstr "Περιμένετε..."
+
+#: templates/coder/base.html:517 templates/contest.html:239
+#: templates/main/main.html:1433 templates/main/main_new.html:1439
+#: templates/organization/base.html:524
+msgid "loading..."
+msgstr "περιμένετε..."
+
+#: templates/coder/dashboard-basic.html:64
+#: templates/coder/dashboard-developing.html:59
+#: templates/coder/dashboard-master.html:65
+#: templates/main/dashboard-basic.html:64
+#: templates/main/dashboard-developing.html:59
+#: templates/main/dashboard-master.html:65
+#: templates/organization/dashboard-basic.html:64
+#: templates/organization/dashboard-developing.html:59
+#: templates/organization/dashboard-master.html:65
+msgid "Score"
+msgstr "Σκορ"
+
+#: templates/coder/dashboard-basic.html:65
+#: templates/coder/dashboard-developing.html:60
+#: templates/coder/dashboard-master.html:66
+#: templates/main/dashboard-basic.html:65
+#: templates/main/dashboard-developing.html:60
+#: templates/main/dashboard-master.html:66
+#: templates/organization/dashboard-basic.html:65
+#: templates/organization/dashboard-developing.html:60
+#: templates/organization/dashboard-master.html:66
+msgid "This section shows the total score."
+msgstr "Η ενότητα αυτή εμφανίζει το συνολικό σκορ"
+
+#: templates/coder/dashboard-basic.html:69
+#: templates/coder/dashboard-developing.html:69
+#: templates/coder/dashboard-master.html:75
+#: templates/main/dashboard-basic.html:69
+#: templates/main/dashboard-developing.html:69
+#: templates/main/dashboard-master.html:75
+#: templates/organization/dashboard-basic.html:69
+#: templates/organization/dashboard-developing.html:69
+#: templates/organization/dashboard-master.html:75
+msgid "Certificate"
+msgstr ""
+
+#: templates/coder/dashboard-basic.html:70
+#: templates/coder/dashboard-developing.html:70
+#: templates/coder/dashboard-master.html:76
+#: templates/main/dashboard-basic.html:70
+#: templates/main/dashboard-developing.html:70
+#: templates/main/dashboard-master.html:76
+#: templates/organization/dashboard-basic.html:70
+#: templates/organization/dashboard-developing.html:70
+#: templates/organization/dashboard-master.html:76
+msgid "Download your certificate!"
+msgstr ""
+
+#: templates/coder/dashboard-basic.html:74
+#: templates/coder/dashboard-developing.html:74
+#: templates/coder/dashboard-master.html:80
+#: templates/main/dashboard-basic.html:74
+#: templates/main/dashboard-developing.html:74
+#: templates/main/dashboard-master.html:80
+#: templates/organization/dashboard-basic.html:74
+#: templates/organization/dashboard-developing.html:74
+#: templates/organization/dashboard-master.html:80
+msgid "Score in detail"
+msgstr "Το σκορ αναλυτικά"
+
+#: templates/coder/dashboard-basic.html:75
+#: templates/coder/dashboard-developing.html:75
+#: templates/coder/dashboard-master.html:81
+#: templates/main/dashboard-basic.html:75
+#: templates/main/dashboard-developing.html:75
+#: templates/main/dashboard-master.html:81
+#: templates/organization/dashboard-basic.html:75
+#: templates/organization/dashboard-developing.html:75
+#: templates/organization/dashboard-master.html:81
+msgid ""
+"Here we show the score in each programming skill as well as links to sites "
+"that can help you to level up."
+msgstr "Δείτε το σκορ σας σε κάθε προγραμματιστική δεξιότητα."
+
+#: templates/coder/dashboard-basic.html:114
+#: templates/coder/dashboard-developing.html:123
+#: templates/coder/dashboard-master.html:147
+#: templates/main/dashboard-basic.html:111
+#: templates/main/dashboard-developing.html:120
+#: templates/main/dashboard-master.html:145
+#: templates/organization/dashboard-basic.html:114
+#: templates/organization/dashboard-developing.html:123
+#: templates/organization/dashboard-master.html:152
+msgid "HELP"
+msgstr ""
+
+#: templates/coder/dashboard-basic.html:115
+#: templates/coder/dashboard-developing.html:124
+#: templates/coder/dashboard-master.html:148 templates/discuss.html:71
+#: templates/error/base.html:89 templates/learn/base.html:89
+#: templates/main/dashboard-basic.html:112
+#: templates/main/dashboard-developing.html:121
+#: templates/main/dashboard-master.html:146 templates/main/statistics.html:297
+#: templates/organization/dashboard-basic.html:115
+#: templates/organization/dashboard-developing.html:124
+#: templates/organization/dashboard-master.html:153
+#: templates/sign-password/base.html:89
+msgid "Dr. Scratch(Beta Version)"
+msgstr "Dr. Scratch(Beta Version)"
+
+#: templates/coder/dashboard-basic.html:132
+#: templates/coder/dashboard-developing.html:139
+#: templates/coder/dashboard-master.html:164
+#: templates/main/dashboard-basic.html:129
+#: templates/main/dashboard-developing.html:136
+#: templates/main/dashboard-master.html:162
+#: templates/organization/dashboard-basic.html:132
+#: templates/organization/dashboard-developing.html:139
+#: templates/organization/dashboard-master.html:169
+msgid "Score:"
+msgstr "Σκορ:"
+
+#: templates/coder/dashboard-basic.html:133
+#: templates/coder/dashboard-developing.html:140
+#: templates/coder/dashboard-master.html:165
+#: templates/main/dashboard-basic.html:130
+#: templates/main/dashboard-developing.html:137
+#: templates/main/dashboard-master.html:163
+#: templates/organization/dashboard-basic.html:133
+#: templates/organization/dashboard-developing.html:140
+#: templates/organization/dashboard-master.html:170
+#, python-format
+msgid ""
+" I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
+"Beat it! @DrScratchTool "
+msgstr ""
+"Μόλις πήρα %(points)s αναλύοντας το έργο μου με το  Dr. Scratch! Μπορείτε να "
+"πάτε καλύτερα; @DrScratchTool "
+
+#: templates/coder/dashboard-basic.html:137
+#: templates/main/dashboard-basic.html:134
+#: templates/organization/dashboard-basic.html:137
+msgid ""
+"<h3 class='text-left dark-text'>The level of your project is... "
+"<strong>BASIC! </strong></h3>"
+msgstr ""
+
+
+#: templates/coder/dashboard-basic.html:138
+#: templates/main/dashboard-basic.html:135
+#: templates/organization/dashboard-basic.html:138
+msgid "You're at the beginning of a <br>great adventure . . . Keep it up!"
+msgstr "Είστε στην αρχή μιας <br>μεγάλης περιπέτειας .  .  . Συνεχίστε!"
+
+#: templates/coder/dashboard-basic.html:141
+#: templates/coder/dashboard-developing.html:148
+#: templates/coder/dashboard-master.html:174
+#: templates/main/dashboard-basic.html:138
+#: templates/main/dashboard-developing.html:145
+#: templates/main/dashboard-master.html:173
+#: templates/organization/dashboard-basic.html:141
+#: templates/organization/dashboard-developing.html:148
+#: templates/organization/dashboard-master.html:179
+msgid "Come back to your Scratch project."
+msgstr "Ελάτε να δούμε το έργο σας."
+
+#: templates/coder/dashboard-basic.html:152
+#: templates/coder/dashboard-developing.html:191
+#: templates/coder/dashboard-master.html:233
+#: templates/main/dashboard-basic.html:149
+#: templates/main/dashboard-developing.html:188
+#: templates/main/dashboard-master.html:231
+#: templates/organization/dashboard-basic.html:152
+#: templates/organization/dashboard-developing.html:191
+#: templates/organization/dashboard-master.html:238
+msgid "Project certificate"
+msgstr ""
+
+#: templates/coder/dashboard-basic.html:157
+#: templates/coder/dashboard-developing.html:196
+#: templates/coder/dashboard-master.html:238 templates/coder/downloads.html:24
+#: templates/main/dashboard-basic.html:156
+#: templates/main/dashboard-developing.html:193
+#: templates/main/dashboard-master.html:236
+#: templates/organization/dashboard-basic.html:157
+#: templates/organization/dashboard-developing.html:196
+#: templates/organization/dashboard-master.html:243
+#: templates/organization/downloads.html:28
+#: templates/organization/downloads.html:61
+msgid "Download"
+msgstr "Κατεβάστε"
+
+#: templates/coder/dashboard-basic.html:180
+#: templates/coder/dashboard-developing.html:218
+#: templates/coder/dashboard-master.html:260
+#: templates/main/dashboard-basic.html:179
+#: templates/main/dashboard-developing.html:215
+#: templates/main/dashboard-master.html:258
+#: templates/organization/dashboard-basic.html:180
+#: templates/organization/dashboard-developing.html:218
+#: templates/organization/dashboard-master.html:265
+msgid "Level up"
+msgstr "Επίπεδο"
+
+#: templates/coder/dashboard-basic.html:196
+#: templates/coder/dashboard-developing.html:234
+#: templates/coder/dashboard-master.html:276
+#: templates/main/dashboard-basic.html:195
+#: templates/main/dashboard-developing.html:231
+#: templates/main/dashboard-master.html:274
+#: templates/organization/dashboard-basic.html:196
+#: templates/organization/dashboard-developing.html:234
+#: templates/organization/dashboard-master.html:281                                      "
+msgid ""
+"\n"
+"                                        <a href=\"/learn/%(key)s/\">%(key)s</"
+"a>\n"
+"                                        "
+msgstr ""
+
+#: templates/coder/dashboard-developing.html:64
+#: templates/coder/dashboard-master.html:70
+#: templates/main/dashboard-developing.html:64
+#: templates/main/dashboard-master.html:70
+#: templates/organization/dashboard-developing.html:64
+#: templates/organization/dashboard-master.html:70
+msgid "Bad habits in programming"
+msgstr "Κακές προγραμματιστικές συνήθειες"
+
+#: templates/coder/dashboard-developing.html:65
+#: templates/coder/dashboard-master.html:71
+#: templates/main/dashboard-developing.html:65
+#: templates/main/dashboard-master.html:71
+#: templates/organization/dashboard-developing.html:65
+#: templates/organization/dashboard-master.html:71
+msgid ""
+"If you correct your bad habits in programming, you will avoid problems in "
+"the future."
+msgstr ""
+"Εάν διορθώσετε τις κακές προγραμματιστικές συνήθειες θα αποφύγετε προβλήματα "
+"στο μέλλον."
+
+#: templates/coder/dashboard-developing.html:144
+#: templates/main/dashboard-developing.html:141
+#: templates/organization/dashboard-developing.html:144
+msgid ""
+"<h3 class='text-left dark-text'>The level of your project is... "
+"<strong>DEVELOPING! </strong></h3>"
+msgstr ""
+
+
+#: templates/coder/dashboard-developing.html:145
+#: templates/main/dashboard-developing.html:142
+#: templates/organization/dashboard-developing.html:145
+msgid "You're doing a great job. Keep it up!!!"
+msgstr "Κάνετε καλή δουλειά. Συνεχίστε έτσι!!!!"
+
+#: templates/coder/dashboard-developing.html:160
+#: templates/coder/dashboard-master.html:189
+#: templates/main/dashboard-developing.html:157
+#: templates/main/dashboard-master.html:187
+#: templates/organization/dashboard-developing.html:160
+#: templates/organization/dashboard-master.html:194
+msgid "Best practice"
+msgstr ""
+
+#: templates/coder/dashboard-developing.html:163
+#: templates/coder/dashboard-master.html:211
+#: templates/main/dashboard-developing.html:160
+#: templates/main/dashboard-master.html:209
+#: templates/organization/dashboard-developing.html:163
+#: templates/organization/dashboard-master.html:216
+msgid "Sprites attributes"
+msgstr "Ιδιότητες αντικειμένων"
+
+#: templates/coder/dashboard-developing.html:167
+#: templates/coder/dashboard-master.html:215
+#: templates/main/dashboard-developing.html:164
+#: templates/main/dashboard-master.html:213
+#: templates/organization/dashboard-developing.html:167
+#: templates/organization/dashboard-master.html:220
+msgid "Your project does not have uninitialized attributes, good job!"
+msgstr "Στο έργο σας όλες οι ιδιότητες αρχικοποιούνται. Μπράβο!"
+
+#: templates/coder/dashboard-developing.html:173
+#: templates/coder/dashboard-master.html:221
+#: templates/main/dashboard-developing.html:170
+#: templates/main/dashboard-master.html:219
+#: templates/organization/dashboard-developing.html:173
+#: templates/organization/dashboard-master.html:226
+msgid " sprite attributes."
+msgstr "ιδιότητες αντικειμένων."
+
+#: templates/coder/dashboard-developing.html:178
+#: templates/coder/dashboard-master.html:196
+#: templates/main/dashboard-developing.html:175
+#: templates/main/dashboard-master.html:194
+#: templates/organization/dashboard-developing.html:178
+#: templates/organization/dashboard-master.html:201
+msgid " sprite naming."
+msgstr "ονόματα αντικειμένων."
+
+#: templates/coder/dashboard-master.html:169
+#: templates/main/dashboard-master.html:167
+msgid ""
+"<h3 class='text-left dark-text'>The level of your project is... <strong> "
+"MASTER! </strong></h3>"
+msgstr ""
+
+#: templates/coder/dashboard-master.html:170
+#: templates/main/dashboard-master.html:168
+#: templates/organization/dashboard-master.html:175
+msgid "You're the master of the universe!!! "
+msgstr "Είστε ο άρχοντας του σύμπαντος!"
+
+#: templates/coder/dashboard-master.html:192
+#: templates/main/dashboard-master.html:190
+#: templates/organization/dashboard-master.html:197
+msgid " duplicated scripts."
+msgstr " διπλασιασμένα προγράμματα"
+
+#: templates/coder/dashboard-master.html:202
+#: templates/main/dashboard-master.html:200
+#: templates/organization/dashboard-master.html:207
+msgid "Your project does not have dead code, good job!"
+msgstr "Το έργο σας δεν έχει κώδικα που δεν εκτελείτε, μπράβο!"
+
+#: templates/coder/dashboard-master.html:209
+#: templates/main/dashboard-master.html:207
+#: templates/organization/dashboard-master.html:214
+msgid " dead code."
+msgstr " κώδικας που δεν εκτελείται."
+
+#: templates/coder/downloads.html:7 templates/organization/downloads.html:7
+msgid "Download my CSV files."
+msgstr "Κατεβάστε το αρχείο .csv"
+
+#: templates/coder/downloads.html:9 templates/organization/downloads.html:9
+msgid "Here you can download the CSV files previously analyzed."
+msgstr ""
+
+#: templates/coder/downloads.html:14 templates/organization/downloads.html:17
+#: templates/organization/downloads.html:51
+msgid "Date"
+msgstr ""
+
+#: templates/coder/downloads.html:15 templates/organization/base.html:393
+#: templates/organization/downloads.html:18
+#: templates/organization/downloads.html:52
+msgid "Downloads"
+msgstr "Κατεβάστε"
+
+#: templates/coder/email-sign-up.html:5
+msgid "New coder in Dr. Scratch!"
+msgstr ""
+
+#: templates/coder/email-sign-up.html:7
+msgid ""
+"You're receiving this email because you have successfully signed up in Dr. "
+"Scratch."
+msgstr ""
+"Λαμβάνετε αυτό το email γιατί εγγραφήκατε επιτυχώς στο Dr. Scratch."
+
+#: templates/coder/email-sign-up.html:11
+#: templates/organization/email-sign-up.html:11
+#: templates/sign-password/email-reset-pwd.html:13
+msgid "Thanks for using our website!"
+msgstr "Ευχαριστούμε που χρησιμοποιείτε τον ιστότοπό μας!"
+
+#: templates/coder/email-sign-up.html:12
+#: templates/organization/email-sign-up.html:12
+#: templates/sign-password/email-reset-pwd.html:14
+msgid "The Dr. Scratch team"
+msgstr "Η ομάδα του Dr. Scratch"
+
+#: templates/coder/main.html:12 templates/organization/main.html:12
+msgid "Do you want to analyze one project?"
+msgstr ""
+
+#: templates/coder/main.html:14 templates/main/main.html:214
+#: templates/main/main_new.html:218 templates/organization/main.html:14
+msgid "There are two options to analyze your Scratch project now!"
+msgstr ""
+"Υπάρχουν δύο επιλογές για να αναλύσετε ένα έργο με το Dr. Scratch τώρα!"
+
+#: templates/coder/main.html:18 templates/main/main.html:219
+#: templates/main/main_new.html:223 templates/organization/main.html:19
+msgid ""
+"1. Introduce the <span class='colored-text'><a data-toggle='modal' "
+"href='#modalUrl'>url</a></span> of your Scratch project, you don't have to "
+"download it:"
+msgstr ""
+"1. Εισάγετε το <span class='colored-text'><a data-toggle='modal' "
+"href='#modalUrl'>url</a></span> του έργου σας, δεν χρειάζεται να το "
+"κατεβάσετε:"
+
+#: templates/coder/main.html:19 templates/main/main.html:220
+#: templates/main/main_new.html:224 templates/organization/main.html:20
+msgid ""
+"<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
+"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
+"type=\"text\">"
+msgstr ""
+"<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
+"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
+"type=\"text\">"
+
+#: templates/coder/main.html:20 templates/main/main.html:221
+#: templates/main/main_new.html:225 templates/organization/main.html:21
+msgid "Analyze by url"
+msgstr "Αναλύστε με βάση το url"
+
+#: templates/coder/main.html:25 templates/main/main.html:226
+#: templates/main/main_new.html:230 templates/organization/main.html:26
+msgid ""
+"2. If you have your <span class='colored-text'><a data-toggle='modal' "
+"href='#modalProject'>project</a></span> downloaded in the computer you can "
+"analyze it here:"
+msgstr ""
+"2. Εάν έχετε <span class='colored-text'><a data-toggle='modal' "
+"href='#modalProject'>το έργο σας </a></span> στον υπολογιστή σας αναλύστε το "
+"εδώ:"
+
+#: templates/coder/main.html:26 templates/main/main.html:227
+#: templates/main/main_new.html:231 templates/organization/main.html:27
+msgid ""
+"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
+"Project'>"
+msgstr ""
+"<input  name='zipFile' type='file' class='filestyle' data-"
+"buttonText='Επιλέξτε έργο'>"
+
+#: templates/coder/main.html:27 templates/main/main.html:228
+#: templates/main/main_new.html:232 templates/organization/main.html:28
+msgid "Analyze my project"
+msgstr "Ανάλυσε το έργο μου"
+
+#: templates/coder/main.html:34 templates/coder/main.html.py:37
+#: templates/main/main.html:235 templates/main/main.html.py:238
+#: templates/main/main_new.html:239 templates/main/main_new.html.py:242
+#: templates/organization/main.html:35 templates/organization/main.html:38
+#: templates/organization/main.html:67 templates/organization/main.html:70
+msgid "Error! Please choose a .sb or .sb2 file or input an url"
+msgstr "Σφάλμα! Επιλέξτε ή ένα αρχείο .sb ή ένα αρχείο .sb2 ή εισάγετε ένα url"
+
+#: templates/coder/main.html:41 templates/main/main.html:242
+#: templates/main/main_new.html:246 templates/organization/main.html:42
+#: templates/organization/main.html:74
+msgid "Error! Your project id is wrong"
+msgstr "Σφάλμα! Το id του έργου σας είναι λανθασμένο."
+
+#: templates/coder/main.html:45 templates/main/main.html:246
+#: templates/main/main_new.html:250 templates/organization/main.html:46
+#: templates/organization/main.html:78
+msgid "Error! Your project doesn't exist in Scratch's servers"
+msgstr "Σφάλμα! Το έργο σας δεν υπάρχει στον ιστότοπο του Scratch"
+
+#: templates/coder/settings.html:8
+#: templates/organization/organization.html:222
+#: templates/organization/settings.html:8
+msgid "Password"
+msgstr "Κωδικός"
+
+#: templates/coder/settings.html:11 templates/organization/settings.html:11
+msgid "Change my password"
+msgstr ""
+
+#: templates/coder/settings.html:16 templates/organization/settings.html:16
+msgid "Photo"
+msgstr ""
+
+#: templates/coder/settings.html:21 templates/organization/settings.html:21
+msgid ""
+"<input  name='img' type='file' class='filestyle' data-buttonText='Choose "
+"img'>"
+msgstr ""
+"<input  name='img' type='file' class='filestyle' data-"
+"buttonText='Επιλέξτε img'>"
+
+#: templates/coder/settings.html:22 templates/organization/settings.html:22
+msgid "Change my photo"
+msgstr ""
+
+#: templates/coder/stats.html:6 templates/main/main.html:613
+#: templates/main/main_new.html:617 templates/main/statistics.html:307
+#: templates/organization/stats.html:6
+msgid "Statistics"
+msgstr "Στατιστικά"
+
+#: templates/contest.html:221
+msgid "Wait a moment please"
+msgstr "Περιμένετε..."
+
+#: templates/discuss.html:78
+msgid "What do you think about Dr. Scratch?"
+msgstr ""
+
+#: templates/discuss.html:86
+msgid "Leave your comment"
+msgstr ""
+
+#: templates/discuss.html:90
+msgid "Sign up or sign in"
+msgstr ""
+
+#: templates/discuss.html:100
+msgid ""
+"Tell us what do you think about Dr. Scratch, your thoughts, suggestions,"
+"etc..."
+msgstr ""
+
+#: templates/discuss.html:112
+msgid "says.."
+msgstr ""
+
+#: templates/discuss.html:161
+msgid "Hi "
+msgstr ""
+
+#: templates/discuss.html:167
+msgid "Message"
+msgstr ""
+
+#: templates/discuss.html:175 templates/sign-password/new-password.html:25
+#: templates/sign-password/password.html:19
+msgid "Send"
+msgstr "Αποστολή"
+
+#: templates/error/404.html:9 templates/error/500.html:9
+#: templates/error/analyzing.html:9
+msgid "Error"
+msgstr "Σφάλμα"
+
+#: templates/error/404.html:37
+msgid "ERROR 404 - Page Not Found"
+msgstr "Σφάλμα 404 - Η σελίδα δεν βρέθηκε"
+
+#: templates/error/404.html:40
+msgid "Ops! This page doesn't exist"
+msgstr "Ώπα! Αυτή η σελίδα δεν υπάρχει"
+
+#: templates/error/404.html:60 templates/error/500.html:60
+#: templates/error/analyzing.html:63 templates/main/collaborators.html:84
+#: templates/main/main.html:169 templates/main/main.html.py:639
+#: templates/main/main_new.html:173 templates/main/main_new.html.py:643
+#: templates/organization/organization.html:106
+msgid "Get Started"
+msgstr "Ξεκίνα"
+
+#: templates/error/500.html:37
+msgid "500 - Internal Server Error"
+msgstr "500 - Εσωτερικό σφάλμα διακομιστή"
+
+#: templates/error/500.html:40 templates/error/analyzing.html:40
+msgid "We apologize for this inconvenience"
+msgstr "Ζητούμε συγγνώμη για την ταλαιπωρία"
+
+#: templates/error/analyzing.html:37
+msgid "There was an error analyzing your project"
+msgstr "Υπήρξε ένα σφάλμα κατά την ανάλυση του έργου σας"
+
+#: templates/error/analyzing.html:55
+msgid ""
+"Sometimes we have got problems analyzing some projects. We're working on "
+"this."
+msgstr ""
+"Μερικές φορές έχουμε προβλήματα αναλύοντας ορισμένα έργα. Δουλεύουμε ώστε να "
+"το διορθώσουμε."
+
+#: templates/error/sign-up.html:13
+msgid "This name already exists. Choose another, please."
+msgstr "Αυτό το όνομα υπάρχει ήδη. Παρακαλώ επιλέξτε άλλο."
+
+#: templates/error/sign-up.html:16
+#: templates/organization/organization.html:371
+msgid "This email already exists. Choose another, please."
+msgstr "Αυτό το email υπάρχει ήδη. Παρακαλώ επιλέξτε άλλο."
+
+#: templates/error/sign-up.html:19
+msgid "This hash doesn't exist."
+msgstr "Αυτό το κλειδί δεν υπάρχει."
+
+#: templates/error/sign-up.html:22
+msgid "You must to complete all fields."
+msgstr "Πρέπει να συμπληρώσετε όλα τα πεδία."
+
+#: templates/error/sign-up.html:25
+msgid "The password and the password confirmation must be the same."
+msgstr "Ο κωδικός και η επιβεβαίωση δεν συμφωνούν."
+
+#: templates/error/sign-up.html:28
+msgid "The email and the email confirmation must be the same.."
+msgstr ""
+
+#: templates/error/sign-up.html:32 templates/error/sign-up.html.py:35
+#: templates/sign-password/user-doesnt-exist.html:15
+#: templates/sign-password/user-doesnt-exist.html:20
+#: templates/sign-password/wrong-form.html:14
+msgid "Retry"
+msgstr "Ξαναπροσπαθήστε"
+
+#: templates/learn/Abstraction.html:10
+msgid ""
+"The ability of abstraction and decomposition of problems helps you to "
+"<b>break a problem into smaller parts that are easier to understand, program "
+"and debug.</b>"
+msgstr ""
+"Η ικανότητα αφαίρεσης και αποδόμησης προβλημάτων σας βοηθά να <b>χωρίζετε το "
+"πρόβλημα σε μικρότερα μέρη που είναι ευκολότερο να τα κατανοήσετε, να τα "
+"προγραμματίσετε και να κάνετε αποσφαλμάτωση.</b>"
+
+#: templates/learn/Abstraction.html:17 templates/learn/Data.html:19
+#: templates/learn/Flow.html:35 templates/learn/Logic.html:17
+#: templates/learn/Parallelism.html:17 templates/learn/Synchronization.html:18
+#: templates/learn/User.html:18
+msgid "If you get 0 points..."
+msgstr "Αν πήρατε 0 βαθμούς"
+
+#: templates/learn/Abstraction.html:19
+msgid ""
+"When you start programming with Scratch, sometimes it may seem that the "
+"simplest solution is to program all the behavior of a character in a single "
+"program. However, <b>ideally is that character behavior is controlled by "
+"different programs and each of these programs deal with a particular issue</"
+"b>. Here's an example:"
+msgstr ""
+"Όταν ξεκινάτε τον προγραμματισμό με το Scratch, μερικές φορές μπορεί να "
+"φαίνεται ότι η απλούστερη λύση είναι να προγραμματίσετε όλη τη συμπεριφορά "
+"ενός χαρακτήρα σε ένα μόνο πρόγραμμα. Όμως, <b>ιδανικά η συμπεριφορά ενός "
+"χαρακτήρα ελέγχεται από διαφορετικά προγράμματα και κάθε ένα από αυτά τα "
+"προγράμματα αντιμετωπίζει ένα συγκεκριμένο θέμα</b>. Να ένα παράδειγμα:"
+
+#: templates/learn/Abstraction.html:20 templates/learn/Abstraction.html:35
+#: templates/learn/Abstraction.html:41 templates/learn/Abstraction.html:61
+#: templates/learn/Abstraction.html:92 templates/learn/Abstraction.html:118
+#: templates/learn/Data.html:85 templates/learn/Data.html.py:104
+#: templates/learn/Data.html:117 templates/learn/Flow.html:39
+#: templates/learn/Flow.html.py:57 templates/learn/Flow.html:67
+#: templates/learn/Flow.html.py:85 templates/learn/Parallelism.html:21
+#: templates/learn/Synchronization.html:21
+#: templates/learn/Synchronization.html:27
+#: templates/learn/Synchronization.html:45 templates/learn/User.html:23
+#: templates/learn/attrInit.html:25
+msgid "when gf clicked"
+msgstr "Όταν στο πράσινη σημαία γίνει κλικ"
+
+#: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
+#: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
+msgid "clear"
+msgstr "καθάρισε"
+
+#: templates/learn/Abstraction.html:22 templates/learn/Abstraction.html:37
+msgid "go to x:(-100) y:(30)"
+msgstr "πήγαινε στη θέση x:(-100) και y:(30)"
+
+#: templates/learn/Abstraction.html:23 templates/learn/Abstraction.html:38
+#: templates/learn/Abstraction.html:65 templates/learn/Abstraction.html:71
+#: templates/learn/Abstraction.html:81
+msgid "pen down"
+msgstr "κατέβασε την πένα"
+
+#: templates/learn/Abstraction.html:24 templates/learn/Abstraction.html:39
+#: templates/learn/Abstraction.html:72
+msgid "move (200) steps"
+msgstr "κινήσου (200)  βήματα"
+
+#: templates/learn/Abstraction.html:25 templates/learn/Abstraction.html:30
+#: templates/learn/Abstraction.html:40 templates/learn/Abstraction.html:46
+#: templates/learn/Abstraction.html:67 templates/learn/Abstraction.html:73
+#: templates/learn/Abstraction.html:83
+msgid "pen up"
+msgstr "σήκωσε την πένα"
+
+#: templates/learn/Abstraction.html:26 templates/learn/Abstraction.html:42
+#: templates/learn/Abstraction.html:68 templates/learn/Abstraction.html:96
+#: templates/learn/Synchronization.html:25
+#: templates/learn/duplicatedScripts.html:20
+msgid "wait (1) secs"
+msgstr "περίμενε (1) δευτερόλεπτα"
+
+#: templates/learn/Abstraction.html:27 templates/learn/Abstraction.html:43
+msgid "go to x:(-44) y:(-24)"
+msgstr "πήγαινε στη θέση x:(-44) και y:(-24)"
+
+#: templates/learn/Abstraction.html:28 templates/learn/Abstraction.html:44
+#: templates/learn/Abstraction.html:64 templates/learn/Abstraction.html:70
+#: templates/learn/Abstraction.html:80
+msgid "set pen color to [#FFA500]"
+msgstr "όρισε το χρώμα πένας σε [#FFA500]"
+
+#: templates/learn/Abstraction.html:29 templates/learn/Abstraction.html:45
+#: templates/learn/Abstraction.html:66
+msgid "move (100) steps"
+msgstr "κινήσου (100) βήματα"
+
+#: templates/learn/Abstraction.html:33
+msgid ""
+"This project, which paints a picture on the screen, has been programmed in a "
+"single program that draws the two lines that make up the drawing. Although "
+"it is a valid option, a simpler option to program and maintain the program "
+"is divided into two parts, so that we have two different programs, one to "
+"paint the front and another to paint the second:"
+msgstr ""
+"Αυτό το έργο, που ζωγραφίζει μια εικόνα στην οθόνη, έχει προγραμματιστεί σε "
+"ένα πρόγραμμα που ζωγραφίζει τις δύο γραμμές που αποτελούν τη ζωγραφιά. Αν "
+"και αυτή είναι μια εναλλακτική, θα ήταν πιο απλό να προγραμματίσετε ένα "
+"πρόγραμμα που είναι χωρισμένο σε δύο μέρη, έτσι ώστε να έχουμε δύο "
+"διαφορετικά προγράμματα, ένα για να ζωγραφίζει την πρώτη γραμμή και ένα για "
+"να ζωγραφίζει την δεύτερη:"
+
+#: templates/learn/Abstraction.html:49
+msgid ""
+"Thus, if we make any changes eg in one of the lines drawn, it is much easier "
+"to know which part of the program we need to go to carry out the changes."
+msgstr ""
+"Έτσι, αν κάνουμε αλλαγές π.χ. σε μία από τις δυο γραμμές, θα είναι πολύ πιο "
+"εύκολο να γνωρίζουμε σε ποιο τμήμα του προγράμματος θα πρέπει να κάνουμε "
+"αυτές τις αλλαγές."
+
+#: templates/learn/Abstraction.html:59 templates/learn/Data.html:80
+#: templates/learn/Flow.html:55 templates/learn/Logic.html:32
+#: templates/learn/Parallelism.html:32 templates/learn/Synchronization.html:43
+#: templates/learn/User.html:36
+msgid "If you get 1 point..."
+msgstr "Αν πήρατε 1 βαθμό..."
+
+#: templates/learn/Abstraction.html:60
+msgid ""
+"Scratch allows new user-defined blocks that consist of a sequence of "
+"instructions. These abstractions allow you to create simple programs to "
+"read, program and maintain. Here's an example:"
+msgstr ""
+"Το Scratch σας επιτρέπει να δημιουργήσετε τις δικές σας εντολές που "
+"αποτελούνται από μια σειρά από οδηγίες. Τέτοιες αφαιρέσεις σας επιτρέπουν να "
+"δημιουργείτε προγράμματα που είναι απλά στον προγραμματισμό και την "
+"διατήρηση. Να ένα παράδειγμα:"
+
+#: templates/learn/Abstraction.html:63 templates/learn/Abstraction.html:94
+msgid "go to x:(-200) y:(40)"
+msgstr "πήγαινε στη θέση x:(-200) και y:(40)"
+
+#: templates/learn/Abstraction.html:69 templates/learn/Abstraction.html:97
+msgid "go to x:(-200) y:(0)"
+msgstr "πήγαινε στη θέση x:(-200) και y:(0)"
+
+#: templates/learn/Abstraction.html:76
+msgid ""
+"This Scratch project draws two orange lines of different length  on the "
+"screen. Rather than repeat the code 2 times, as shown in the example, you "
+"can define a <i>'DrawOrange'</i> block consisting of blocks that paint an "
+"orange line on the screen and that you can tell what is the length of the "
+"line. For this you go to the category 'More Blocks' and press the Create "
+"button a block:"
+msgstr ""
+"Αυτό το πρόγραμμα ζωγραφίζει δύο πορτοκαλί γραμμές διαφορετικού μήκους στην "
+"οθόνη. Αντί να επαναλάβουμε τον κώδικα 2 φορές, όπως φαίνεται στο "
+"παράδειγμα, μπορείτε να ορίσετε μια εντολή <i>'Ζωγράφισε πορτοκαλί'</i> που "
+"θα αποτελείται από εντολές που ζωγραφίζουν μια πορτοκαλί γραμμή στην οθόνη "
+"και που θα μπορούμε να ορίσουμε το μήκος της γραμμής. Για αυτό πηγαίνετε "
+"στην κατηγορία 'Άλλες Εντολές' και επιλέξτε 'Δημιουργήστε ένα τετράγωνο "
+"εντολών':"
+
+#: templates/learn/Abstraction.html:79
+msgid "define PaintedOrange(length)"
+msgstr "όρισε ΖωγράφισεΠορτοκαλί(μήκος)"
+
+#: templates/learn/Abstraction.html:82
+msgid "move (length) steps"
+msgstr "κινήσου (μήκος) βήματα"
+
+#: templates/learn/Abstraction.html:89
+msgid ""
+"Having defined the block <i>'DrawOrange'</i> it can be used in any program "
+"of the project, as we see below:"
+msgstr ""
+"Έχοντας ορίσει την εντολή <i>'ΖωγράφισεΠορτοκαλί'</i> μπορεί να "
+"χρησιμοποιηθεί στο πρόγραμμα, όπως φαίνεται παρακάτω:"
+
+#: templates/learn/Abstraction.html:95
+msgid "PaintedOrange(100):: looks stack"
+msgstr "ΖωγράφισεΠορτοκαλί(100):: looks stack"
+
+#: templates/learn/Abstraction.html:98
+msgid "PaintedOrange(200):: looks stack"
+msgstr "ΖωγράφισεΠορτοκαλί(200):: looks stack"
+
+#: templates/learn/Abstraction.html:102
+msgid ""
+"In this way, we avoid repeating code, which makes our projects easier to "
+"program and maintain. As can be seen, the first time the block is used "
+"<i>DrawOrange</i> prompted a length of 100 steps, whereas the second time "
+"length is 200 steps."
+msgstr ""
+"Με αυτόν τον τρόπο, αποφεύγουμε επαναλαμβανόμενο κώδικα, κάνοντας τα έργα "
+"μας ευκολότερα στον προγραμματισμό και την συντήρηση. Όπως είδατε, την πρώτη "
+"φορά που η εντολή <i>ΖωγράφισεΠορτοκαλί</i> καλείται το μήκος είναι 100 "
+"βήματα, ενώ την δεύτερη φορά το μήκος είναι 200 βήματα."
+
+#: templates/learn/Abstraction.html:111 templates/learn/Data.html:99
+#: templates/learn/Flow.html:83 templates/learn/Logic.html:47
+#: templates/learn/Parallelism.html:65 templates/learn/Synchronization.html:67
+#: templates/learn/User.html:66
+msgid "If you get 2 points..."
+msgstr "Αν πήρατε δύο βαθμούς..."
+
+#: templates/learn/Abstraction.html:113
+msgid ""
+"In some Scratch projects we have many identical characters that exactly "
+"perform the same actions. The first idea that comes to mind to do this is to "
+"create a character, schedule all his behavior and once you're ready, make as "
+"many copies as you need. Therefore, if we want 20 Martians, create 20 "
+"identical objects. However, what if I want to change the program? Would have "
+"to go object by object performing this modification."
+msgstr ""
+"Σε μερικά έργα Scratch έχουμε αρκετούς ίδιους χαρακτήρες που κάνουν ακριβώς "
+"τις ίδιες ενέργειες. Η πρώτη σκέψη που έρχεται στο μυαλό είναι να "
+"δημιουργήσουμε έναν χαρακτήρα, να τον προγραμματίσουμε και όταν είμαστε "
+"έτοιμοι, να κάνουμε όσα αντίγραφα μπορούμε. Επομένως αν χρειαζόμαστε 20 "
+"Αρειανούς, δημιουργούμε 20 αντίγραφα. Όμως, τι θα γίνει αν θελήσουμε μια "
+"αλλαγή στο πρόγραμμα. Θα πρέπει να πάμε σε κάθε ένα αντικείμενο να κάνουμε "
+"την αλλαγή."
+
+#: templates/learn/Abstraction.html:115
+msgid ""
+"For such situations it is preferable to use <b>clones</b>, a type of "
+"abstraction that helps us to program a single object, and dynamically "
+"<b>create exact copies with the same behavior.</b>"
+msgstr ""
+"Σε αυτές τις περιπτώσεις είναι προτιμότερο να χρησιμοποιήσουμε <b>κλώνους</"
+"b>, έναν τύπο αφαίρεσης που μας βοηθάει να προγραμματίσουμε ένα αντικείμενο "
+"και δυναμικά να <b>δημιουργήσουμε ακριβή αντίγραφα με την ίδια συμπεριφορά.</"
+"b>"
+
+#: templates/learn/Abstraction.html:116
+msgid ""
+"Let's see how it works with an example. Imagine you want to pretend that it "
+"is snowing on a project. We can draw an object that is a snowflake, and once "
+"you start implementing the project, constantly be creating clones appear at "
+"the top of the screen and they will fall to the bottom:"
+msgstr ""
+"Ας δούμε πώς δουλεύει με ένα παράδειγμα. Φανταστείτε ότι θέλετε να \"χιονίσει"
+"\" σε ένα έργο. Μπορούμε να σχεδιάσουμε μια χιονονιφάδα, και μόλις αρχίσουμε "
+"να υλοποιούμε το έργο, συνεχώς να δημιουργούμε κλώνους να εμφανίζονται στην "
+"οθόνη και να πέφτουν προς τα κάτω:"
+
+#: templates/learn/Abstraction.html:119 templates/learn/Flow.html:68
+#: templates/learn/Parallelism.html:41 templates/learn/Parallelism.html:46
+#: templates/learn/Synchronization.html:47
+msgid "forever"
+msgstr "για πάντα"
+
+#: templates/learn/Abstraction.html:120
+msgid "create clone of [myself v]"
+msgstr "δημιούργησε κλώνο [του εαυτού μου v]"
+
+#: templates/learn/Abstraction.html:121
+msgid "wait (0.2) secs"
+msgstr "περίμενε (0.2) δευτερόλεπτα"
+
+#: templates/learn/Abstraction.html:122
+msgid "go to x:(pick random(-200) to (200)) y:(200)"
+msgstr ""
+"πήγαινε στη θέση x:(επίλεξε έναν τυχαίο αριθμό από το (-200) μέχρι το (200)) "
+"και y:(200)"
+
+#: templates/learn/Abstraction.html:123
+msgid "glide (3) secs to x:(x position) y:(-180)"
+msgstr "πήγαινε αργά για (3) δευτ. στη θέση x:(θέση του x) y:(-180)"
+
+#: templates/learn/Abstraction.html:124
+msgid "delete this clone"
+msgstr "διάγραψε αυτόν τον κλώνο"
+
+#: templates/learn/Abstraction.html:127
+msgid ""
+"Thus, just by programming a character, we can have infinite clones  which "
+"are created at a particular time of project implementation and are deleted "
+"when they are no longer needed."
+msgstr ""
+"Έτσι, με το να προγραμματίζουμε μόνο έναν χαρακτήρα, μπορούμε να έχουμε "
+"άπειρους κλώνους που δημιουργούντα σε συγκεκριμένη χρονική στιγμή και "
+"διαγράφονται όταν δεν χρειάζονται."
+
+#: templates/learn/Data.html:5
+msgid "Data Representation"
+msgstr "Αναπαράσταση δεδομένων"
+
+#: templates/learn/Data.html:11
+msgid ""
+"Every Scratch project needs a set of information about the characters in "
+"order to run properly. For example, <b>we need to know the position of each "
+"character, the direction it is pointing, size, etc.</b> In addition, "
+"programmers can create new information repositories to store other data such "
+"as the level at which we find ourselves, elapsed time, the rating, the "
+"lives, the rewards collected ..."
+msgstr ""
+"Κάθε έργο Scratch χρειάζεται ένα σύνολο πληροφοριών σχετικά με τους "
+"χαρακτήρες για να τρέχει σωστά. Για παράδειγμα, <b>θα πρέπει να ξέρουμε τη "
+"θέση κάθε χαρακτήρα, την κατεύθυνσή του, το μέγεθός του κ.α.</b> Επιπλέον, "
+"οι προγραμματιστές δημιουργούν νέες σύνολα πληροφοριών για να αποθηκεύσουν "
+"άλλα δεδομένα όπως το επίπεδο του παιχνιδιού, τον χρόνο που έχει περάσει, το "
+"σκορ, τις ζωές, τα βραβεία που συλλέχθηκαν ..."
+
+#: templates/learn/Data.html:21
+msgid ""
+"Each character of a Scratch project has a number of features, or attributes, "
+"that every moment of the project have value, and can be modified by "
+"programs. For example, a character has a certain size that can be modified "
+"by block 'resize for 10', making the character appear slightly larger. "
+"Following is the list of attributes that each character and blocks that can "
+"be used to modify:"
+msgstr ""
+"Κάθε χαρακτήρας ενός έργου Scratch έχει έναν αριθμό από χαρακτηριστικά, που "
+"σε κάθε χρονική στιγμή έχουν μια τιμή που μπορεί να τροποποιηθεί από "
+"προγράμματα. Για παράδειγμα, ένας χαρακτήρας έχει συγκεκριμένο μέγεθος που "
+"μπορεί να τροποποιηθεί με την εντολή 'άλλαξε το μέγεθος του αντικειμένου "
+"κατά 10', κάνοντας τον χαρακτήρα να φαίνεται ελαφρώς μεγαλύτερος. Ακολουθεί "
+"η λίστα των χαρακτηριστικών του κάθε χαρακτήρα και των εντολών που μπορούν "
+"να χρησιμοποιηθούν για να τα τροποποιήσουν:"
+
+#: templates/learn/Data.html:25
+msgid "Position:"
+msgstr "Θέση:"
+
+#: templates/learn/Data.html:29 templates/learn/Flow.html:41
+#: templates/learn/Flow.html.py:60 templates/learn/Flow.html:69
+#: templates/learn/Parallelism.html:42 templates/learn/User.html:40
+msgid "move (10) steps"
+msgstr "κινήσου (10) βήματα"
+
+#: templates/learn/Data.html:30 templates/learn/attrInit.html:26
+msgid "go to x:(0) y:(0)"
+msgstr "πήγαινε στη θέση x:(0) και y:(0)"
+
+#: templates/learn/Data.html:31
+msgid "glide (1) secs to x:(0) y:(0)"
+msgstr "πήγαινε αργά για (1) δευτ. στη θέση x:(0) και y:(0)"
+
+#: templates/learn/Data.html:32
+msgid "set x to (0)"
+msgstr "όρισε το x ίσο με (0)"
+
+#: templates/learn/Data.html:33
+msgid "set y to (0)"
+msgstr "όρισε το y ίσο με (0)"
+
+#: templates/learn/Data.html:34 templates/learn/Data.html.py:35
+msgid "change x by (0)"
+msgstr "άλλαξε το x κατά (0)"
+
+#: templates/learn/Data.html:38
+msgid "Size:"
+msgstr "Μέγεθος:"
+
+#: templates/learn/Data.html:42
+msgid "change size by (10)"
+msgstr "άλλαξε το μέγεθος του αντικειμένου κατά (10)"
+
+#: templates/learn/Data.html:43
+msgid "set size to (120) &percnt;"
+msgstr ""
+
+#: templates/learn/Data.html:47
+msgid "Orientation:"
+msgstr "Κατεύθυνση:"
+
+#: templates/learn/Data.html:51
+msgid "point in direction (90 v)"
+msgstr "στρίψε προς την κατεύθυνση των (90 v) μοιρών"
+
+#: templates/learn/Data.html:52
+msgid "point towards [v]"
+msgstr "στρίψε προς το [v]"
+
+#: templates/learn/Data.html:53 templates/learn/Flow.html:42
+#: templates/learn/Flow.html.py:61
+msgid "turn cw (15) degrees"
+msgstr "στρίψε cw (15) μοίρες"
+
+#: templates/learn/Data.html:54 templates/learn/Flow.html:44
+#: templates/learn/Flow.html.py:63
+msgid "turn ccw (15) degrees"
+msgstr "στρίψε ccw (15) μοίρες"
+
+#: templates/learn/Data.html:58
+msgid "Costume:"
+msgstr "Ενδυμασία:"
+
+#: templates/learn/Data.html:61
+msgid "switch costume to [butterfly v]"
+msgstr "άλλαξε την ενδυμασία σε [πεταλούδα v]"
+
+#: templates/learn/Data.html:62 templates/learn/duplicatedScripts.html:18
+#: templates/learn/duplicatedScripts.html:26
+#: templates/learn/duplicatedScripts.html:40
+msgid "next costume"
+msgstr "άλλαξε στην επόμενη ενδυμασία"
+
+#: templates/learn/Data.html:63
+msgid "change [color v] effect by (25)"
+msgstr "άλλαξε το εφέ [χρώματος v] κατά (25)"
+
+#: templates/learn/Data.html:64
+msgid "set [color v] effect to (0)"
+msgstr "όρισε το εφέ [χρώματος v] σε (0)"
+
+#: templates/learn/Data.html:67
+msgid "Visibility:"
+msgstr "Ορατότητα:"
+
+#: templates/learn/Data.html:70 templates/learn/Synchronization.html:74
+msgid "show"
+msgstr "εμφανίσου"
+
+#: templates/learn/Data.html:71
+msgid "hide"
+msgstr "εξαφανίσου"
+
+#: templates/learn/Data.html:81
+msgid ""
+"In addition to modifying the attributes of the characters, programmers can "
+"use other mechanisms to store information on a Scratch project. <b>One of "
+"these mechanisms are variables that can store a value to store different "
+"types of data that may need: at what level we are</b>, how many lives you "
+"have left, how many points we, how is called the user ..."
+msgstr ""
+"Εκτός από το να τροποποιούν τα χαρακτηριστικά των αντικειμένων, οι "
+"προγραμματιστές μπορούν να χρησιμοποιούν και άλλους μηχανισμούς για να "
+"αποθηκεύουν πληροφορίες σε ένα έργο Scratch. <b>Ένας από τους μηχανισμούς "
+"είναι οι μεταβλητές οι οποίες μπορούν να αποθηκεύουν μια τιμή, ώστε να "
+"αποθηκεύουν διαφορετικούς τύπους δεδομένων που μπορεί να χρειάζονται: σε "
+"ποιο επίπεδο βρισκόμαστε</b>, πόσες ζωές έχουν απομείνει, πόσους βαθμούς "
+"έχουμε, ποιο είναι το όνομα του χρήστη κ.α."
+
+#: templates/learn/Data.html:83
+msgid ""
+"To create a variable you have to go to the category of data, click on "
+"'Create a variable' and give a name. In the example shown below we have "
+"given the name 'Points' as use it to store the number of points you get our "
+"character."
+msgstr ""
+"Για να δημιουργήσουμε μια μεταβλητή θα πρέπει να πάμε στην κατηγορία "
+"'Δεδομένα', και να κάνουμε κλικ στην εντολή 'Δημιουργήστε μια μεταβλητή' και "
+"να δώσουμε ένα όνομα. Στο παρακάτω παράδειγμα έχουμε δώσει το όνομα 'Πόντοι' "
+"για να αποθηκεύσουμε τους πόντους του χαρακτήρα μας."
+
+#: templates/learn/Data.html:86
+msgid "set [Points v] to [0]"
+msgstr "όρισε το [Πόντοι v] σε [0]"
+
+#: templates/learn/Data.html:87
+msgid "if &lt;touching color [#0000FF]&gt; then"
+msgstr "εάν &lt; αγγίζει το χρώμα[#00000FF]&gt; τότε"
+
+#: templates/learn/Data.html:88
+msgid "change [Points v] by (1)"
+msgstr "άλλαξε το [Πόντοι v] κατά (1)"
+
+#: templates/learn/Data.html:92
+msgid ""
+"In the program of the top, we assign the number of points that we want the "
+"character has to the beginning of the game, in this case 0, for which we use "
+"the block <i>'fixing points at 0'</i>.  However in the program of the right, "
+"what we do is that when the character touches the blue color, that could be "
+"a target, you will add a point, for which we use the block <i>'change Points "
+"by 1'</i>. In this case, the block <i>'change'</i> would check the current "
+"value of the variable points would add 1: If set to 0, I add 1 and is now "
+"worth 1; when set to 1, I add 1 and is now worth 2 ..."
+msgstr ""
+"Σε αυτό το πρόγραμμα, αναθέτουμε το πλήθος των πόντων που έχει ο χαρακτήρας "
+"στην αρχή του παιχνιδιού, σε αυτή την περίπτωση το 0, για το οποίο "
+"χρησιμοποιούμε την εντολή <i>'όρισε το Πόντοι σε 0'</i>. Στη συνέχεια αυτό "
+"που κάνουμε είναι όταν ο χαρακτήρας ακουμπήσει το μπλε χρώμα, που είναι ο "
+"στόχος, παίρνουμε έναν βαθμό για τον οποίο χρησιμοποιούμε την εντολή "
+"<i>'άλλαξε το Πόντοι κατά 1'</i>.Σε αυτή την περίπτωση η εντολή <i>'άλλαξε'</"
+"i>θα ελέγξει την τρέχουσα τιμή της μεταβλητής και θα προσθέσει 1: Αν είχε "
+"ορισθεί σε 0, βάζει άλλο 1 και είναι τώρα 1; όταν έχει ορισθεί σε 1 βάζει "
+"άλλο 1 και τώρα έχει την τιμή 2 κ.τ.λ."
+
+#: templates/learn/Data.html:100
+msgid ""
+"In addition to the variables, Scratch lets you use another data type to "
+"store project information: <b>The lists. The lists can store more than one "
+"value at the same time, so they are ideal for storing rewards have been "
+"recovered by a character or set of names, raise a couple of examples.</b>"
+msgstr ""
+"Εκτός από τις μεταβλητές, το Scratch επιτρέπει να χρησιμοποιούμε και άλλους "
+"τύπους δεδομένων για να αποθηκεύσουμε πληροφορία σε ένα έργο: <b>Τις λίστες. "
+"Οι λίστες μπορούν να αποθηκεύσουν παραπάνω από μία τιμές και είναι ιδανικές "
+"για να αποθηκεύουμε ας πούμε τα δώρα που μάζεψε ένας χαρακτήρας, ένα σύνολο "
+"ονομάτων κ.α.</b> "
+
+#: templates/learn/Data.html:102
+msgid ""
+"To create a list, you have to go to the data category, click on 'Create a "
+"List' and give a name. In the example, we have named our 'Students' list:"
+msgstr ""
+"Για να δημιουργήσετε μια λίστα θα πάτε στην κατηγορία 'Δεδομένα', και μετά "
+"'Δημιουργήστε μια λίστα' και δώστε ένα όνομα. Στο παράδειγμα, έχουμε "
+"ονομάσει τη λίστα 'Μαθητές':"
+
+#: templates/learn/Data.html:105 templates/learn/Data.html.py:118
+msgid "delete (all v) of [Students v]"
+msgstr "διάγραψε το (όλα v) από το [Μαθητές v]"
+
+#: templates/learn/Data.html:106 templates/learn/Data.html.py:119
+#: templates/learn/Flow.html:59
+msgid "repeat (3)"
+msgstr "επανάλαβε (3)"
+
+#: templates/learn/Data.html:107 templates/learn/Data.html.py:120
+msgid "ask [Introduce a student name] and wait"
+msgstr "ρώτησε [Βάλε ένα όνομα μαθητή] και περίμενε"
+
+#: templates/learn/Data.html:108 templates/learn/Data.html.py:121
+msgid "insert (answer) at (last v) of [Students v]"
+msgstr "βάλε το (απάντηση) στη θέση (τελευταίο v) της λίστας [Μαθητές v]"
+
+#: templates/learn/Data.html:112
+msgid ""
+"What have we done with this program? The first thing we do is, to start "
+"execution, <b>delete all items from the list Students</b>, to empty it "
+"completely and  not appear elements of an previous project implementation. "
+"Then we ask three times the user to enter a name, and each name entered "
+"insert it in the last position in the list Students."
+msgstr ""
+"Τι κάναμε σε αυτό το πρόγραμμα; Το πρώτο πράγμα που κάνουμε είναι να <b> "
+"διαγράφουμε όλα τα αντικείμενα από τη λίστα Μαθητές</b>, να την αδειάζουμε "
+"από όλα τα στοιχεία για να μην εμφανίζονται στοιχεία από προηγούμενες "
+"εκτελέσεις του έργου. Ύστερα ζητάμε τρεις φορές τον χρήστη να εισάγει "
+"ονόματα, και κάθε όνομα εισάγεται στην τελευταία θέση της λίστας 'Μαθητές'."
+
+#: templates/learn/Data.html:114
+msgid ""
+"What we do with the list? We could, for example, use it to get a volunteer "
+"to carry out an exercise to the whiteboard. Look at the new instructions "
+"added to the program:"
+msgstr ""
+"Τι μπορούμε να κάνουμε με τη λίστα; Θα μπορούσαμε, για παράδειγμα, να τη "
+"χρησιμοποιήσουμε για να βρούμε έναν εθελοντή για να γράψει μια άσκηση στον "
+"πίνακα. Οι νέες εντολές θα είναι οι εξής:"
+
+#: templates/learn/Data.html:122 templates/learn/Flow.html:66
+#: templates/learn/Flow.html.py:88 templates/learn/Logic.html:52
+#: templates/learn/Logic.html.py:55 templates/learn/Logic.html:58
+#: templates/learn/Parallelism.html:44 templates/learn/Parallelism.html:49
+#: templates/learn/Synchronization.html:50 templates/learn/User.html:50
+#: templates/learn/User.html.py:71
+msgid "end"
+msgstr "τέλος"
+
+#: templates/learn/Data.html:123
+msgid "say [Today's volunteer will be...] for (2) secs"
+msgstr "πες [Ο σημερινός εθελοντής θα είναι...] για (2) δευτερόλεπτα"
+
+#: templates/learn/Data.html:124
+msgid "say (item(pick random (1) to (3)) of [Students v]) for (2) secs"
+msgstr ""
+"πές (το στοιχείο (επίλεξε έναν τυχαίο αριθμό από το (1) μέχρι το (3)) της "
+"λίστας [Μαθητές v]) για (2) δευτερόλεπτα"
+
+#: templates/learn/Data.html:128
+msgid ""
+"We generated a random number between 1 and 3, which are the elements in the "
+"list, we selected the element that occupies that position in the list. "
+"Sometimes we take the name that is in position 1, others that it is in "
+"position 2 and the other at 3."
+msgstr ""
+"Δημιουργήσαμε έναν τυχαίο αριθμό από το 1 έως το 3, τα οποία είναι τα "
+"στοιχεία της λίστας, επιλέξαμε το στοιχείο που καταλαμβάνει αυτή την θέση "
+"στην λίστα. Μερικές φορές παίρνουμε το όνομα που είναι στη θέση 1 άλλες αυτό "
+"που είναι στη θέση 2 και τέλος αυτό που είναι στη θέση 3."
+
+#: templates/learn/Data.html:130
+msgid ""
+"Lists have many possibilities and many available operations ... you dare to "
+"investigate how they work?"
+msgstr ""
+"Οι λίστες έχουν πολλές δυνατότητες και αρκετές εντολές ... τολμήστε να τις "
+"διερευνήσετε..."
+
+#: templates/learn/Flow.html:28
+msgid ""
+"Instructions related to algorithmic notions of flow control can help you to "
+"<b>control the behavior of your characters</b>, making, for example, certain "
+"blocks that are repeated a number of times,  or until a situation arises."
+msgstr ""
+"Εντολές σχετικές με τους αλγόριθμους και τον έλεγχο ροής που μπορούν να "
+"βοηθήσουν στο <b>να ελεγχθεί η συμπεριφορά των χαρακτήρων</b>, φτιάχνοντας "
+"για παράδειγμα, συγκεκριμένες εντολές να εκτελεστούν συγκεκριμένο αριθμό "
+"φορών, ή μέχρι κάτι να συμβεί."
+
+#: templates/learn/Flow.html:37
+msgid ""
+"The most basic way to control the behavior of your characters is creating a "
+"<b>program composed of a set of blocks are executed one after another</b>, "
+"as we see in the picture:"
+msgstr ""
+"Ο πιο βασικές τρόπος ελέγχου της συμπεριφοράς ενός χαρακτήρα είναι να "
+"δημιουργηθεί ένα <b>πρόγραμμα που αποτελείται από εντολές που εκτελούνται "
+"στη σειρά η μία μετά την άλλη</b>, όπως βλέπουμε παρακάτω:"
+
+#: templates/learn/Flow.html:40 templates/learn/Flow.html.py:58
+msgid "say [I'm a dancer cat] for (2) secs"
+msgstr "πες [Είμαι μια γάτα που χορεύει] για (2) δευτερόλεπτα"
+
+#: templates/learn/Flow.html:43 templates/learn/Flow.html.py:62
+#: templates/learn/Flow.html:65 templates/learn/duplicatedScripts.html:28
+msgid "wait (0.5) secs"
+msgstr "περίμενε (0.5) δευτερόλεπτα"
+
+#: templates/learn/Flow.html:45 templates/learn/Flow.html.py:64
+msgid "move (-10) steps"
+msgstr "κινήσου (-10) βήματα"
+
+#: templates/learn/Flow.html:47
+msgid ""
+"How does this program works? When the user click on the green flag run "
+"behind one another all blocks that have been included in the program. Start "
+"with the first block <i>'say I'm a cat dancing for 2 seconds'</i>, then run "
+"<i>'move 10 steps'</i> then <i>'turn 15 degrees right'</i>, and so on to the "
+"last block of the program."
+msgstr ""
+"Πώς δουλεύει αυτό το πρόγραμμα; Όταν ο χρήστης πατήσει στην πράσινη σημαία "
+"εκτελούνται το ένα μετά το άλλο όλες οι εντολές που έχουν εισαχθεί στο "
+"πρόγραμμα. Ξεκινάει με την πρώτη εντολή <i>πες 'Είμαι μια γάτα που χορεύει' "
+"για 2 δευτερόλεπτα</i>, ύστερα εκτελείται η <i>κινήσου 10 βήματα</i> και "
+"τέλος η <i>κινήσου -10 βήματα</i> κ.τ.λ. μέχρι την τελευταία εντολή τουη "
+"προγράμματος."
+
+#: templates/learn/Flow.html:56
+msgid ""
+"Sometimes when we want a set of blocks is constantly repeated, instead of "
+"repeating the same blocks over and over again, you can use a repeat "
+"instruction allowing achieve the same effect, but more comfortable and "
+"manageable way. Consider a couple of examples:"
+msgstr ""
+"Μερικές φορές όταν θέλουμε ένα σύνολο εντολών να εκτελείται συνεχώς "
+"επαναλαμβανόμενα, αντί να εισάγουμε το ίδιο σετ εντολών ξανά και ξανά, "
+"μπορούμε να χρησιμοποιήσουμε μια εντολή επανάληψης για να καταφέρουμε το "
+"ίδιο αποτέλεσμα αλλά με πιο εύκολο αλλά και διαχειρίσιμο τρόπο. Σκεφτείτε τα "
+"παρακάτω παραδείγματα:"
+
+#: templates/learn/Flow.html:70 templates/learn/Parallelism.html:43
+#: templates/learn/duplicatedScripts.html:19
+#: templates/learn/duplicatedScripts.html:27
+#: templates/learn/duplicatedScripts.html:41
+msgid "if on edge, bounce"
+msgstr "εάν βρίσκεσαι στα όρια, αναπήδησε"
+
+#: templates/learn/Flow.html:72
+msgid "How these control blocks works?"
+msgstr "Πώς δουλεύουν αυτές οι εντολές ελέγχου;"
+
+#: templates/learn/Flow.html:74
+msgid ""
+"In the block <i>'repeat'</i> when execution reaches this point is repeated "
+"as often as has been indicated in the parameter block 'repeat', in the "
+"example would be 3 times, all blocks included within this block. We can see "
+"that the block 'repeat' has an arrow at the bottom indicating that <b>when "
+"they finish executing the blocks back again up</b>."
+msgstr ""
+"Στην εντολή <i>\"Επανάλαβε\"</i>, όταν η εκτέλεση φτάνει το σημείο αυτό "
+"επαναλαμβάνει τόσες φορές όσες υποδεικνύει η παράμετρος, στο παράδειγμα 3 "
+"φορές, όλα τα τετράγωνα που περιλαμβάνονται μέσα στην εντολή. Μπορούμε να "
+"δούμε ότι το μπλοκ επανάλαβε έχει ένα βέλος στο κάτω μέρος που δείχνει ότι "
+"<b>όταν τελειώσουν οι εντολές θα εκτελεστούν και πάλι</b>."
+
+#: templates/learn/Flow.html:76
+msgid ""
+"The block <i>'forever'</i> works like the 'repeat' but never finish "
+"executing the blocks containing in its interior."
+msgstr ""
+"Η εντολή <i>\"για πάντα\"</i>, λειτουργεί σαν την «επανάλαβε», αλλά η "
+"εκτέλεση των εντολών που περιέχει στο εσωτερικό του δεν τελειώνει ποτέ."
+
+#: templates/learn/Flow.html:84
+msgid ""
+"Sometimes we don't know previously  the number of times you want a set of "
+"blocks is executed, as this depends on a given situation. In these cases, "
+"the block 'repeat until ...' is really useful. Here's an example:"
+msgstr ""
+"Μερικές φορές δεν γνωρίζουμε από πριν τον αριθμό των φορών που θέλουμε να "
+"εκτελεστεί ένα σύνολο εντολών  καθώς αυτό μπορεί να εξαρτάται από μια "
+"δεδομένη κατάσταση. Σε αυτές τις περιπτώσεις, η εντολή «επανάλαβε ώσπου ...» "
+"είναι πραγματικά χρήσιμη. Δείτε το παράδειγμα:"
+
+#: templates/learn/Flow.html:86
+msgid "repeat until &lt; touching [Enemy v] ?&gt;"
+msgstr "επανάλαβε μέχρι &lt; αγγίζε [Αντίπαλο v];&gr;"
+
+#: templates/learn/Flow.html:87
+msgid "say [You don't catch me]"
+msgstr "Πες [Δεν με πιάνεις]"
+
+#: templates/learn/Flow.html:89
+msgid "say [You catch me]"
+msgstr "πες [Με έπιασες]"
+
+#: templates/learn/Flow.html:92
+msgid ""
+"In the example, the character will constantly repeat the instruction say "
+"'You don't caught me...' while he don't touch the enemy. At the time that "
+"the condition is met instruction <i>'repeat until ...'</i>, the contents "
+"inside will finish run and will jump to the next instruction, in this case "
+"say 'You caught me!'."
+msgstr ""
+"Στο παράδειγμα, ο χαρακτήρας θα επαναλαμβάνει συνεχώς την εντολή πες \"Δεν "
+"με πιάνεις\", όσο ο ίδιος δεν αγγίζει τον αντίπαλο. Κατά τη στιγμή που η "
+"συνθήκη αυτή ισχύσει η εντολή <i>\"επανάλαβε ώσπου...\"</i>, θα σταματήσει "
+"να εκτελεί τα τις περιεχόμενες εντολές και θα μεταβεί στην επόμενη εντολή, "
+"σε αυτή την περίπτωση θα πει \"Θα μ 'έπιασε!\"."
+
+#: templates/learn/Logic.html:10
+msgid ""
+"Instructions related to logical thinking can help your projects are dynamic, "
+"<b>so that they behave differently depending on the situation</b>. In the "
+"stories, for example, these instructions are not as important as they "
+"usually have a linear structure we always want to run the same way, but in "
+"other projects, such as video games are essential to perform different "
+"actions depending on the situation."
+msgstr ""
+"Οι εντολές που σχετίζονται με τη λογική μπορούν να βοηθήσουν τα έργα σας να "
+"είναι δυναμικά,, <b>δηλαδή να συμπεριφέρονται με διαφορετικό τρόπο ανάλογα "
+"με την κατάσταση.</b> Στις ιστορίες, για παράδειγμα, αυτές οι οδηγίες δεν "
+"είναι τόσο σημαντικές, δεδομένου ότι συνήθως έχουν μια γραμμική δομή και "
+"εκτελούνται με τον ίδιο τρόπο, αλλά σε άλλα έργα, όπως τα βιντεοπαιχνίδια "
+"είναι απαραίτητες για να εκτελεστούν διάφορες ενέργειες, ανάλογα με την "
+"κατάσταση."
+
+#: templates/learn/Logic.html:19
+msgid "The most basic block you can start working logical thinking is this:"
+msgstr ""
+"Η πιο βασική εντολή για να αρχίσετε να εργάζεστε στη λογική σκέψη είναι η "
+"εξής:"
+
+#: templates/learn/Logic.html:21
+msgid "if &lt; touching color [#0000FF]?  &gt;then"
+msgstr "εάν &lt; άγγιζει χρώμα [#0000FF]; &gt; τότε"
+
+#: templates/learn/Logic.html:22 templates/learn/Logic.html.py:35
+#: templates/learn/Logic.html:37
+msgid "say [I have reached the goal!] for (2) secs"
+msgstr "πες [Έφτασα στον στόχο!] για (2) δευτερόλεπτα"
+
+#: templates/learn/Logic.html:23
+msgid ""
+"How this block works? When execution reaches this point, the condition on "
+"the block is evaluated, and if this is true, the set of blocks that are "
+"within the if executed."
+msgstr ""
+"Πώς δουλεύει αυτή η εντολή; Όταν η εκτέλεση φτάνει αυτό το σημείο, η συνθήκη "
+"στην εντολή υπολογίζεται και αν ισχύει, το σύνολο τον εντολών που "
+"περιέχονται στην εάν εκτελούνται."
+
+#: templates/learn/Logic.html:24
+msgid ""
+"In the example, if the character is touching the blue color, he says 'I "
+"reached the goal.'"
+msgstr ""
+"Στο παράδειγμα, αν ο χαρακτήρας ακουμπάει το μπλέ χρώμα, λέει 'Έφτασα στον "
+"στόχο.'"
+
+#: templates/learn/Logic.html:33
+msgid ""
+"Now that you know the instructions <i>if</i>, perhaps you can start using "
+"blocks <i>if / else</i>, which can be very practical in many types of "
+"projects. The blocks <i>if / else</i> are very similar to the block <i>if</"
+"i>, but contain two sets of blocks inside."
+msgstr ""
+"Τώρα που γνωρίζετε την εντολή <i>εάν</i>, ίσως μπορείτε να ξεκινήσετε να "
+"χρησιμοποιείτε εντολές <i>εάν τότε / αλλιώς</i>, οι οποίες μπορεί να είναι "
+"πολύ πρακτικές σε διάφορα έργα. Οι εντολές <i>ένα τότε/ αλλιώς</i> είναι "
+"παρόμοιες με την εντολή <i>εάν</i>, αλλά περιέχουν δύο σύνολα εντολών."
+
+#: templates/learn/Logic.html:34
+msgid "if &lt; touching color [#0000FF]? &gt;then"
+msgstr "εάν &lt; άγγιζει χρώμα [#0000FF]; &gt; τότε"
+
+#: templates/learn/Logic.html:36
+msgid "else"
+msgstr "αλλιώς"
+
+#: templates/learn/Logic.html:38
+msgid ""
+"How this block works? When execution reaches this point, the condition on "
+"the block is evaluated, and if this is true, the set of blocks that are "
+"within the 'if' is executed, but if the condition is false, then the set of  "
+"blocks that are within the 'else' is executed."
+msgstr ""
+"Πώς δουλεύει αυτή η εντολή; Όταν η εκτέλεση φτάσει αυτό το σημείο, η συνθήκη "
+"στην εντολή υπολογίζεται, και αν ισχύει, το σύνολο εντολών που είναι μέσα "
+"στο 'εάν' εκτελείται, αλλά αν η συνθήκη είναι ψευδής, τότε το σύνολο εντολών "
+"που περιέχετε μέσα στο 'αλλιώς' εκτελείται."
+
+#: templates/learn/Logic.html:40
+msgid ""
+"In the example, if the character is touching the blue color, he says  'I "
+"reached the goal!', but ,if you are not touching the purple color, says 'I "
+"have not reached the goal'."
+msgstr ""
+"Στο παράδειγμα, αν ο χαρακτήρας αγγίζει το μπλε χρώμα, λέει 'Έφτασα στον "
+"στόχο!', αλλά, αν δεν αγγίζει το μπλε χρώμα, λέει 'Δεν έφτασα στον στόχο!'."
+
+#: templates/learn/Logic.html:48
+msgid ""
+"To make decisions on some projects sometimes is necessary to evaluate more "
+"than one condition at the same time to know what to execute. In these "
+"situations it is very helpful to use <b>logical operations</b> that combine "
+"the conditions. Logical operations are available in Scratch <i>AND, OR and "
+"No</i>."
+msgstr ""
+"Για να αποφασιστεί η πορεία εκτέλεσης ενός έργου μερικές φορές είναι "
+"απαραίτητο να υπολογιστούν παραπάνω από μία συνθήκες ταυτόχρονα. Σε αυτές "
+"τις περιπτώσεις βοηθούν πολύ οι <b>λογικοί τελεστές</b> που συνδυάζουν "
+"συνθήκες. Τρεις είναι οι λογικοί τελεστές στη Scratch <i>1. και 2.ή 3. δεν "
+"ισχύει ότι</i>"
+
+#: templates/learn/Logic.html:49
+msgid "if &lt;&lt; touching [Enemy v]? &gt; and &lt;(lives) = [0]&gt;&gt; then"
+msgstr ""
+"if &lt;&lt; αγγίζει [Αντίπαλος v]? &gt; και &lt;(ζωές) = [0]&gt;&gt; τότε"
+
+#: templates/learn/Logic.html:50
+msgid "say [Game over]"
+msgstr "πες [Τέλος παιχνιδιού]"
+
+#: templates/learn/Logic.html:51 templates/learn/Synchronization.html:71
+msgid "stop [all v]"
+msgstr "σταμάτησε [όλα v]"
+
+#: templates/learn/Logic.html:53
+msgid ""
+"if &lt;&lt; touching [edge v]? &gt; or &lt; touching [Enemy v]? &gt;&gt;then"
+msgstr ""
+"εάν &lt;&lt; αγγίζει το [όρια v]; &gt; ή &lt; αγγίζει [Αντίπαλος v]? &gt;&gt;"
+"τότε"
+
+#: templates/learn/Logic.html:54
+msgid "change [lives v] by (-1)"
+msgstr "άλλαξε το [lives v] κατά (-1)"
+
+#: templates/learn/Logic.html:56
+msgid "if &lt;not&lt; (level) = (5)&gt;&gt;then"
+msgstr "εάν &lt;δεν ισχύει ότι&lt; (επίπεδο) = (5)&gt;&gt;τότε"
+
+#: templates/learn/Logic.html:57
+msgid "say [You still have undiscovered levels] for (2) secs"
+msgstr "πες [Δεν έχεις ανακαλύψει όλα τα επίπεδα] για (2) δευτερόλεπτα"
+
+#: templates/learn/Logic.html:60
+msgid ""
+"The operation <i>AND</i> is true when both conditions are true evaluated. "
+"The <i>OR</i> operation is true when one of two conditions are true "
+"evaluated. And the operation otherwise not worth the condition, ie, if the "
+"condition is true, not returns false and vice versa."
+msgstr ""
+"Ο τελεστής <i>και</i> δίνει αληθές αποτέλεσμα όταν και οι δύο συνθήκες είναι "
+"αληθής. Ο τελεστής <i>ή</i> δίνει αληθές αποτέλεσμα αν τουλάχιστον μία από "
+"τις δύο συνθήκες είναι αληθής. Τέλος, ο τελεστής \"δεν ισχύει ότι\" ισχύει "
+"όταν δεν ισχύει η συνθήκη, και δεν ισχύει όταν ισχύει η συνθήκη."
+
+#: templates/learn/Parallelism.html:10
+msgid ""
+"In most Scratch creations a certain level of parallelism is required. But "
+"what means parallelism? <b>Parallelism is the possibility that several "
+"things occur simultaneously.</b> For example, two characters perform an "
+"action while a character or do several things at once."
+msgstr ""
+"Στις περισσότερες δημιουργίες με το Scratch, ένα επίπεδο παραλληλισμού είναι "
+"απαραίτητο. Αλλά τι σημαίνει παραλληλισμός; <b>Παραλληλισμός είναι η "
+"δυνατότητα πολλών πραγμάτων να συμβαίνουν στον ίδιο χρόνο.</b> Για "
+"παράδειγμα, δύο χαρακτήρες εκτελούν κάποια λειτουργία ταυτόχρονα, ή ένας "
+"χαρακτήρας κάνει διαφορετικά πράγματα την ίδια χρονική στιγμή."
+
+#: templates/learn/Parallelism.html:19
+msgid ""
+"The most basic and most obvious way to achieve parallelism is to have "
+"several programs that start with <i>'When green flag is clicked'</i>:"
+msgstr ""
+"Ο πιο βασικός τρόπος για την επίτευξη του παραλληλισμού είναι να έχετε "
+"αρκετά προγράμματα που ξεκινούν με το <i>'Όταν στο πράσινη σημαία γίνει "
+"κλικ'</i>:"
+
+#: templates/learn/Parallelism.html:24
+msgid ""
+"Thus, when the user clicking on the green flag, all programs that start with "
+"this block would begin to run simultaneously, or in parallel, as can also be "
+"said. You could have several programs that start with this block in the same "
+"character, if you want it to do several things at once, or in programs of "
+"different characters, if you want everyone to undertake an action at "
+"beginning of execution."
+msgstr ""
+"Έτσι, όταν ο χρήστης πατήσει στην πράσινη σημαία, όλα τα προγράμματα που "
+"ξεκινάν με αυτή την εντολή θα εκτελεστούν ταυτόχρονα, ή αλλιώς παράλληλα. Θα "
+"μπορούσατε να έχετε αρκετά προγράμματα που ξεκινούν με αυτή την εντολή στον "
+"ίδιο χαρακτήρα, αν θέλετε να γίνουν κάποια πράγματα στην ίδια χρονική "
+"στιγμή, ή σε προγράμματα σε διαφορετικούς χαρακτήρες αν θέλετε να γίνουν "
+"ενέργειες στην αρχή της εκτέλεσης."
+
+#: templates/learn/Parallelism.html:33
+msgid ""
+"Another way to achieve parallelism in your program is <b>doing several "
+"things occur when the user presses a key or clicks on an object</b>. "
+"Consider a couple of examples:"
+msgstr ""
+"Ένας άλλος τρόπος να επιτευχθεί η παραλληλία στα προγράμματά σας είναι <b>να "
+"γίνονται διάφορα πράγματα όταν ο χρήστης πατάει κουμπιά στο πληκτρολόγιο ή "
+"κάνει κλικ σε αντικείμενα στην οθόνη</b>. Δείτε τα παραδείγματα:"
+
+#: templates/learn/Parallelism.html:35 templates/learn/Parallelism.html:37
+msgid "when [a v] key pressed"
+msgstr "Όταν το πλήκτρο [a v] πατηθεί"
+
+#: templates/learn/Parallelism.html:36 templates/learn/Parallelism.html:38
+msgid "say [A] for (2) secs"
+msgstr "πες [A] για (2) δευτερόλεπτα"
+
+#: templates/learn/Parallelism.html:40 templates/learn/Parallelism.html:45
+#: templates/learn/User.html:42
+msgid "when this sprite clicked"
+msgstr "Όταν σε αυτό το αντικείμενο γίνει κλικ"
+
+#: templates/learn/Parallelism.html:47
+msgid "if &lt;touching [the mouse pointer v]? &gt;"
+msgstr "εάν &lt;αγγίζει [δείκτη του ποντικού v]; &gt;"
+
+#: templates/learn/Parallelism.html:48
+msgid "turn cw (30) degrees"
+msgstr "στρίψε cw (30) μοίρες"
+
+#: templates/learn/Parallelism.html:53
+msgid "How these blocks works?"
+msgstr "Πώς δουλεύουν αυτές οι εντολές;"
+
+#: templates/learn/Parallelism.html:55
+msgid ""
+"In the first example, we see two different characters that, when a key is "
+"pressed, perform a certain action. Therefore, when the user press the a key, "
+"in this case, both the cat and the child run at the same time <i>'say A for "
+"2 seconds'</i>"
+msgstr ""
+"Στο πρώτο παράδειγμα, βλέπουμε δύο διαφορετικούς χαρακτήρες που, όταν ένα "
+"πλήκτρο πατηθεί, εκτελούν μια λειτουργία. Επομένως, όταν ο χρήστης πατήσει "
+"το πλήκτρο a, σε αυτή την περίπτωση, τόσο η γάτα όσο και το παιδί εκτελούν "
+"την ίδια στιγμή το <i>'πες Α για 2 δευτερόλεπτα'</i>."
+
+#: templates/learn/Parallelism.html:57
+msgid ""
+"In the second example we see that a character has two programs that begin "
+"with <i>'when clicking this object'</i>. Therefore, when the user clicks on "
+"this character, both programs will begin to run simultaneously, in parallel."
+msgstr ""
+"Στο δεύτερο παράδειγμα βλέπετε ότι ένας χαρακτήρας έχει δύο προγράμματα που "
+"ξεκινούν με <i>'όταν σε αυτό το αντικείμενο γίνει κλικ'</i>. Επομένως όταν ο "
+"χρήστης κάνει κλικ σε αυτόν τον χαρακτήρα, και τα δύο προγράμματα θα "
+"λειτουργήσουν ταυτόχρονα."
+
+#: templates/learn/Parallelism.html:66
+msgid "There are several events more that can achieve parallelism:"
+msgstr ""
+"Υπάρχουν περισσότερα γεγονότα με τα οποία μπορούμε να επιτύχουμε "
+"παραλληλισμό:"
+
+#: templates/learn/Parallelism.html:67
+msgid "when backdrop switches to [backdrop1 v]"
+msgstr "Όταν το υπόβαθρο αλλάξει σε [backdrop1 v]"
+
+#: templates/learn/Parallelism.html:68
+#: templates/learn/duplicatedScripts.html:14
+msgid "when I receive [message1 v]"
+msgstr "Όταν λάβω το [message1 v]"
+
+#: templates/learn/Parallelism.html:69
+msgid "when [loudness v] &gt; (10)"
+msgstr "Όταν [ένταση v] &gt; (10)"
+
+#: templates/learn/Parallelism.html:70
+msgid "when [video motion v] &gt; (2)"
+msgstr "Όταν [κίνηση στην προβολή από κάμερα v] &gt; (2)"
+
+#: templates/learn/Parallelism.html:71
+msgid "when [timer v] &gt; (45)"
+msgstr "Όταν [χρονόμετρο v]&gt; (45)"
+
+#: templates/learn/Parallelism.html:73
+msgid ""
+"As you see, you could create several programs that begin to run when "
+"changing the background to a given scenario, or to receive a particular "
+"message, or when the room volume exceeds a certain threshold, when the video "
+"motion is greater than a number pixel concrete or when the timer has "
+"exceeded the value you want. Therefore, there are many possibilities to make "
+"things happen in your programs simultaneously. Do you dare to investigate "
+"how works?"
+msgstr ""
+"Όπως βλέπετε μπορούμε να δημιουργήσουμε διάφορα προγράμματα που ξεκινούν την "
+"εκτέλεσή τους όταν αλλάζει το υπόβαθρο, ή όταν λάβουν ένα συγκεκριμένο "
+"μήνυμα ή όταν η ένταση από το μικρόφωνο ξεπερνάει ένα κατώφλι ή όταν η "
+"κίνηση από την κάμερα είναι μεγαλύτερη από ένα σύνολο εικονοστοιχείων ή όταν "
+"το χρονόμετρο έχει ξεπεράσει την τιμή που θέλετε. Επομένως, υπάρχουν πολλές "
+"δυνατότητες να κάνετε πράγματα να συμβαίνουν ταυτόχρονα στα προγράμματά σας. "
+"Τολμήστε να δείτε πως δουλεύουν."
+
+#: templates/learn/Synchronization.html:11
+msgid ""
+"Instructions related to synchronization <b>allow our characters to organize "
+"things happen in the order we want</b>."
+msgstr ""
+"Οι εντολές συγχρονισμού <b>σας επιτρέπουν να προγραμματίζετε τους χαρακτήρες "
+"να εκτελούν εντολές με τη σειρά που θέλετε</b>."
+
+#: templates/learn/Synchronization.html:20
+msgid ""
+"The easiest way to synchronize the behavior of your characters is using a "
+"<i>'wait'</i> block, which makes the character waits the number of seconds "
+"you write as a parameter block. An example of how this block can be used to "
+"synchronize two characters:"
+msgstr ""
+"Ο ευκολότερος τρόπος να συγχρονίσετε τη συμπεριφορά των χαρακτήρων σας είναι "
+"χρησιμοποιώντας την εντολή <i>'περίμενε'</i>, η οποία κάνει τον χαρακτήρα να "
+"περιμένει τον αριθμό των δευτερολέπτων που θα δώσετε σαν παράμετρο. Ένα "
+"παράδειγμα του τρόπου με τον οποίο αυτές οι εντολές μπορούν να "
+"χρησιμοποιηθούν για να συγχρονιστούν δύο χαρακτήρες:"
+
+#: templates/learn/Synchronization.html:22
+#: templates/learn/Synchronization.html:46
+msgid "say [Hello, how are you?] for (2) secs"
+msgstr "πες [Γεια σου, τι κάνεις;] για (2) δευτερόλεπτα"
+
+#: templates/learn/Synchronization.html:23
+#: templates/learn/Synchronization.html:28
+msgid "wait (2) secs"
+msgstr "περίμενε (2) δευτερόλεπτα"
+
+#: templates/learn/Synchronization.html:24
+msgid "say [Well, do you want to play hide-and seek?] for (3) secs"
+msgstr "πες [Καλά, θες να παίξουμε κρυφτό;] για (3) δευτερόλεπτα"
+
+#: templates/learn/Synchronization.html:26
+msgid "say [Let's go] for (2) secs"
+msgstr "πες [Πάμε] για (2) δευτερόλεπτα"
+
+#: templates/learn/Synchronization.html:29
+msgid "say [I'm fine, thanks!] for (2) secs"
+msgstr "πες [Είμαι καλά, ευχαριστώ!] για (2) δευτερόλεπτα"
+
+#: templates/learn/Synchronization.html:30
+msgid "wait (3) secs"
+msgstr "περίμενε (3) δευτερόλεπτα"
+
+#: templates/learn/Synchronization.html:31
+msgid "say [Yes] for (1) secs"
+msgstr "πες [Ναι] για (1) δευτερόλεπτο"
+
+#: templates/learn/Synchronization.html:34
+msgid ""
+"In this case it uses blocks <i>'wait'</i> to synchronize these two "
+"characters to maintain a conversation, so that while one speaks, the other "
+"character waits, and vice versa. Note that the number of seconds that each "
+"character expected, are equal to the number of seconds that the other "
+"character speaks, so they never talk at the same time."
+msgstr ""
+"Σε αυτή την περίπτωση χρησιμοποιούμε την εντολή <i>'περίμενε'</i> για να "
+"συγχρονίσουμε δύο χαρακτήρες να διεξάγουν μια συζήτηση, έτσι ώστε καθώς ο "
+"ένας μιλάει, ο άλλος χαρακτήρας να περιμένει, και το αντίθετο. Σημειώστε πως "
+"ο αριθμός των δευτερολέπτων που ο κάθε χαρακτήρας περιμένει είναι ο αριθμός "
+"των δευτερολέπτων που ο άλλος χαρακτήρας μιλάει, έτσι ώστε να μη μιλάνε την "
+"ίδια στιγμή."
+
+#: templates/learn/Synchronization.html:44
+msgid ""
+"Synchronization using blocks <i>'wait'</i> is very simple when programs are "
+"small and have few characters, but when are larger, or when we have several "
+"characters, or when conditions to generate a reaction can not be measured "
+"previously, it is more efficient to use other modes of synchronization and "
+"messages. Here's an example:"
+msgstr ""
+"Ο συγχρονισμός χρησιμοποιώντας τις εντολές <i>'περίμενε'</i> είναι πολύ "
+"απλός όταν τα προγράμματα είναι μικρά και έχουν λίγους χαρακτήρες, αλλά όταν "
+"είναι μεγαλύτερα και έχουν πολλούς χαρακτήρες ή όταν αντιδρούν σε κάποια "
+"γεγονότα που δεν ξέρουμε πότε θα γίνουν, είναι πιο αποδοτικό να "
+"χρησιμοποιείστε άλλους τρόπους συγχρονισμού και τα μηνύματα. Δείτε ένα "
+"παράδειγμα:"
+
+#: templates/learn/Synchronization.html:48
+msgid "if &lt; touching [mouse pointer v]?&gt;then"
+msgstr "εάν &lt;αγγίζει [δείκτη του ποντικού v]; &gt; τότε"
+
+#: templates/learn/Synchronization.html:49
+msgid "broadcast [catched! v]"
+msgstr "μετάδωσε [πιάστηκε! v]"
+
+#: templates/learn/Synchronization.html:53
+msgid "when I receive [catched! v]"
+msgstr "Όταν λάβω το [πιάστηκε! v]"
+
+#: templates/learn/Synchronization.html:54
+msgid "say [You have catched my friend] for (2) secs"
+msgstr "πες [Έπιασες τον φίλο μου] για (2) δευτερόλεπτα"
+
+#: templates/learn/Synchronization.html:55
+msgid "say [Now, you have to catch me!] for (2) secs"
+msgstr "πες [Τώρα πρέπει να με πιάσεις!] για (2) δευτερόλεπτα"
+
+#: templates/learn/Synchronization.html:58
+msgid ""
+"How do these syncblocks work? When a situation occurs in a character we want "
+"to cause a reaction in another character, we can use <b>messaging</b>. In "
+"the example, when the mouse touches the cat, the message 'Caught!', which "
+"will be sent to all the characters of the project is sent. Thus, when the "
+"butterfly receives the message 'Caught!', the instructions on the block "
+"<i>'when receive 'caught!'</i>'. Therefore, when the user touches the cat "
+"whit the mouse, butterfly says, 'You caught my companion. Now you have to "
+"catch me!'."
+msgstr ""
+"Πώς δουλεύουν αυτές οι εντολές συγχρονισμού; Όταν ένα γεγονός συμβεί σε έναν "
+"χαρκατήρα και θέλουμε να αντιδράσει κάποιος άλλος χαρακτήρας, μπορούμε να "
+"χρησιμοποιήσουμε <b>τα μηνύματα.</b>. Στο παράδειγμα, αν γίνει κλικ στη "
+"γάτα, το μήνυμα 'πιάστηκε!' μεταδίδεται σε όλους τους χαρακτήρες του "
+"προγράμματος. Έτσι, όταν η πεταλούδα λάβει το μήνυμα 'πιάστηκε!', οι εντολές "
+"κάτω από την <i>'Όταν λάβω το 'πιάστηκε!'</i>. Επομένως, όταν ο χρήστης "
+"κάνει κλικ στη γάτα με το ποντίκι, <i>η πεταλούδα</i> λέει 'Έπιασες τον φίλο "
+"μου'."
+
+#: templates/learn/Synchronization.html:68
+msgid ""
+"In addition to sending messages, you can synchronize characters to make "
+"things happen in the order we want, using other blocks, such as <i>'wait "
+"until'</i> or <i>'when the background changes to ...'</i>."
+msgstr ""
+"Εκτός από τα μηνύματα, μπορείτε να συγχρονίσετε χαρακτήρες ώστε τα πράγματα "
+"να συμβαίνουν με τη σειρά που θέλουμε χρησιμοποιώντας και άλλες εντολές, "
+"όπως τη <i>'περίμενε ώσπου...'</i> ή την <i>'Όταν το υπόβαθρο αλλάξει "
+"σε...'</i>,"
+
+#: templates/learn/Synchronization.html:69
+msgid "wait until &lt;(lives) =[0]&gt;"
+msgstr "περίμενε μέχρι &lt;(ζωές) = [0]&gt;"
+
+#: templates/learn/Synchronization.html:70
+msgid "say [Game over] for (2) secs"
+msgstr "πες [Τέλος παιχνιδιού] για (2) δευτερόλεπτα"
+
+#: templates/learn/Synchronization.html:73
+msgid "when backdrop switches to [Spring v]"
+msgstr "Όταν το υπόβαθρο αλλάξει σε [Άνοιξη v]"
+
+#: templates/learn/Synchronization.html:75
+msgid "say [Spring has come!] for (2) secs"
+msgstr "πες [Ήρθε η άνοιξη!] για (2) δευτερόλεπτα"
+
+#: templates/learn/Synchronization.html:78
+msgid ""
+"In the first example, when program execution reaches that point will stop "
+"until the condition is met in this case, until life is equal to 0. When "
+"lives equal to 0, then continue execution of the remaining blocks, this "
+"case, <i>'said Game Over'</i> and <i>'stop all'</i>, which ends the "
+"execution of the project."
+msgstr ""
+"Στο πρώτο παράδειγμα, όταν η εκτέλεση του προγράμματος φτάσει σε αυτό το "
+"σημείο θα σταματήσει μέχρι η συνθήκη να ισχύσει, στην περίπτωσή μας μέχρι να "
+"τελειώσουν οι ζωές, τότε η εκτέλεση θα συνεχιστεί, στην περίπτωση μας θα "
+"εκτελεστεί η <i>'πες Τέλος παιχνιδιού'</i> και η <i>'σταμάτησε όλα'</i>, που "
+"σταματάει την εκτέλεση."
+
+#: templates/learn/Synchronization.html:80
+msgid ""
+"In the second example, the moment when the scene changes to the backdrop "
+"with the name 'Spring', the character will execute the blocks placed after "
+"the instruction 'when the backdrop changes to Spring', ie to be displayed "
+"and will say 'spring has come!'."
+msgstr ""
+"Στο δεύτερο παράδειγμα, τη στιγμή που το υπόβαθρο αλλάζει και γίνεται "
+"'Άνοιξη', ο χαρακτήρας θα εκτελέσει τις εντολές που είναι κάτω από το 'Όταν "
+"το υπόβαθρο αλλάξει σε Άνοιξη', δηλαδή να πει 'Ήρθε η άνοιξη!'΄."
+
+#: templates/learn/User.html:11
+msgid ""
+"The instructions related to user interactivity can <b>help your Scratch "
+"projects be more interactive</b>, ie the person who is running it can "
+"perform actions that provoke new situations in the project. For example, I "
+"can use the keyboard or mouse to move a character, you can answer questions "
+"or playing computer webcam, among many other possibilities."
+msgstr ""
+"Οι εντολές που σχετίζονται με την αλληλεπίδραση χρήστη <b>μπορούν να "
+"βοηθήσουν τα έργα σας να είναι πιο αλληλεπιδραστικά</b>, δηλαδή αυτός που "
+"εκτελεί το πρόγραμμά σας να μπορεί να κάνει ενέργειες στο έργο σας. Για "
+"παράδειγμα, να μπορεί να χρησιμοποιήσει το πληκτρολόγιο ή το ποντίκι του "
+"υπολογιστεί για να κινήσει έναν χαρακτήρα, να μπορεί να απαντήσει ερωτήσεις "
+"ή να παίξει το παιχνίδι σας με την κάμερα και το μικρόφωνο του υπολογιστή κ."
+"α."
+
+#: templates/learn/User.html:20
+msgid ""
+"The most basic block you can start working interactivity with the user is "
+"<i>'when green flag clicked'</i>."
+msgstr ""
+"Η πιο βασική εντολή με την οποία μπορείτε να ξεκινήσετε την αλληλεπίδραση "
+"χρήστη είναι η <i>'Όταν στο πράσινη σημαία γίνει κλικ'</i>"
+
+#: templates/learn/User.html:27
+msgid ""
+"How this block works? When the user who wants to run your project Scratch "
+"clicks on the green flag, all blocks were placed under the block <i>'when "
+"green flag clicked'</i> begin to run. You can have as many programs as you "
+"need to start with this block."
+msgstr ""
+"Πώς δουλεύει αυτή η εντολή; Όταν ο χρήστης που θέλει να εκτελέσει το "
+"πρόγραμμά σας πατήσει στην πράσινη σημαία, όλες οι εντολές που είναι κάτω "
+"από το <i>'Όταν στο πράσινη σημαία γίνει κλικ'</i> ξεκινούν να εκτελούνται. "
+"Μπορει΄τε να έχετε όσα προγράμματα θέλετε να ξεκινούν με αυτή την εντολή."
+
+#: templates/learn/User.html:37
+msgid ""
+"Now that you have begun to interact with the user running your Scratch "
+"project, perhaps you can try some of the following blocks:"
+msgstr ""
+"Τώρα που έχετε αρχίσει να αλληλεπιδράτε με τον χρήστη που τρέχει το έργο "
+"Scratch που φτιάχνετε, μπορείτε να δοκιμάσετε κάποιες από τις επόμενες "
+"εντολές:"
+
+#: templates/learn/User.html:39
+msgid " when [right arrow v] key pressed"
+msgstr "Όταν το πλήκτρο [αριστερό βέλος v] πατηθεί"
+
+#: templates/learn/User.html:43
+msgid "say [Hello] for (2) secs"
+msgstr "πες [Hello] για (2) δευτερόλεπτα"
+
+#: templates/learn/User.html:45
+msgid "ask [What's your name?] and wait"
+msgstr "ρώτησε [Βάλε ένα όνομα μαθητή] και περίμενε"
+
+#: templates/learn/User.html:46
+msgid "say &lt;join [Hello,]&lt;answer"
+msgstr ""
+
+#: templates/learn/User.html:48
+msgid "if &lt; touching [mouse-pointer v] &gt; then"
+msgstr "εάν &lt; αγγίζει [δείκτη του ποντικού v]; &gt; τότε"
+
+#: templates/learn/User.html:49
+msgid "say [You caught me!]"
+msgstr "πες [Με έπιασες]"
+
+#: templates/learn/User.html:52
+msgid "mouse down?"
+msgstr "κατέβασε την πένα"
+
+#: templates/learn/User.html:54
+msgid "go to [mouse-pointer v]"
+msgstr ""
+
+#: templates/learn/User.html:58
+msgid ""
+"As you see, you can allow users to interact with your characters by pressing "
+"keys to move, writing answers to questions and your characters use user "
+"responses, move characters with the mouse, or perform actions when the user "
+"clicks an object."
+msgstr ""
+"Όπως βλέπετε, μπορείτε να επιτρέψετε στους χρήστες να αλληλεπιδρούν με τους "
+"χαρακτήρες είτε πατώντας κουμπιά για να κινηθούν, ή γράφοντας απαντήσεις σε "
+"ερωτήσεις τις οποίες ο χαρακτήρας σας θα χρησιμοποιεί, ή κινώντας χαρακτήρες "
+"με το ποντίκι, ή εκτελώντας κάποιες ενέργειες όταν γίνει κλικ με το ποντίκι."
+
+#: templates/learn/User.html:67
+msgid ""
+"One of the funniest Scratch possibilities in terms of user interactivity is "
+"the possibility that <b>the user can use your webcam or microphone to "
+"interact with characters from Scratch or sound to trigger certain actions.</"
+"b>"
+msgstr ""
+"Μία από τις πιο ενδιαφέρουσες δυνατότητες που παρέχονται όσον αφορά την "
+"αλληλεπίδραση χρήστη είναι ότι <b>οι χρήστες μπορούν να χρησιμοποιήσουν την "
+"κάμερα ή το μικρόφωνο για να αλληλεπιδράσουν με χαρακτήρες του Scratch ή να "
+"εκτελέσουν κάποια ενέργεια.</b>"
+
+#: templates/learn/User.html:69
+msgid "if &lt;(loudness) >[30]&gt; then"
+msgstr ""
+
+#: templates/learn/User.html:70
+msgid "say [There is much noise...]"
+msgstr ""
+
+#: templates/learn/User.html:73
+msgid "video [motion v] on [this sprite v]"
+msgstr ""
+
+#: templates/learn/User.html:75
+msgid "video [direction v] on [this sprite v]"
+msgstr ""
+
+#: templates/learn/User.html:78
+msgid ""
+"As you can see in the examples, we can make certain sets of blocks are "
+"executed when the ambient sound captured by the microphone is greater than a "
+"certain threshold, or when video motion occurs over an object or background. "
+"The possibilities of these blocks are very large and allows your creations "
+"Scratch are fully interactive with users."
+msgstr ""
+"Όπως βλέπετε στα παραδείγματα, μπορούμε να κάνουμε ένα σύνολο εντολών να "
+"εκτελεστεί όταν ο ήχος από το μικρόφωνο είναι μεγαλύτερος από ένα κατώφλι, ή "
+"όταν η κίνηση του βίντεο συμβαίνει πίσω από ένα αντικείμενο. Αυτές οι "
+"δυνατότητες μπορούν να χρησιμοποιηθούν σε ευρεία γκάμα έργων και επιτρέπουν "
+"πλήρη αλληλεπίδραση με τους χρήστες."
+
+#: templates/learn/attrInit.html:4 templates/main/statistics.html:204
+msgid "Attribute Initialization"
+msgstr "Αρχικοποίηση ιδιοτήτων"
+
+#: templates/learn/attrInit.html:11
+msgid ""
+" One of the mistakes that many programmers repeat when they learn to program "
+"is not initialize correctly the objects's attributes. What are the "
+"attributes? They are character's features that can be modified in the "
+"execution of a project, like their position, their size, their color, their "
+"orientation..."
+msgstr ""
+"Ένα από τα λάθη που πολλοί προγραμματιστές επαναλαμβάνουν όταν μαθαίνουν "
+"προγραμματισμό είναι ότι δεν αρχικοποιούν σωστά τις ιδιότητες των "
+"αντικειμένων. Τι είναι οι ιδιότητες; Είναι τα χαρακτηριστικά των "
+"αντικειμένων που μπορούν να τροποποιηθούν κατά την εκτέλεση ενός "
+"προγράμματος, όπως η θέση, το μέγεθος, το χρώμα, η κατεύθυνση κ.α."
+
+#: templates/learn/attrInit.html:13
+msgid ""
+"When you have blocks than modify character's feature, you should always have "
+"a program which, when the program begins, asigns the value that we want to "
+"start. For example, if it modifies the position of a character, we should "
+"have the block 'go to' under the block 'when green flag clicked', in order "
+"to place the character in its initial position."
+msgstr ""
+"Όταν έχετε εντολές που τροποποιούν κάποια από τα χαρακτηριστικά των "
+"αντικειμένων, θα πρέπει πάντα να έχετε ένα πρόγραμμα που στην εκκίνηση θα "
+"θέτει τις τιμές με τις οποίες θέλουμε να ξεκινήσουμε. Για παράδειγμα, αν "
+"τροποποιούμε τη θέση του χαρακτήρα, θα πρέπει να έχουμε την εντολή 'πήγαινε "
+"στη θέση' κάτω από την εντολή 'Όταν στο πράσινη σημαία γίνει κλικ', για να "
+"τοποθετήσουμε τον χαρακτήρα στην αρχική του θέση."
+
+#: templates/learn/attrInit.html:15
+msgid "when [right arrow v] key pressed //Not initialized correctly."
+msgstr ""
+"Όταν το πλήκτρο [δεξί βέλος v] πατηθεί //Δεν υπάρχει σωστή αρχικοποίηση"
+
+#: templates/learn/attrInit.html:16 templates/learn/attrInit.html.py:22
+#: templates/learn/deadCode.html:16
+msgid "change x by (10)"
+msgstr "άλλαξε το x κατά (10)"
+
+#: templates/learn/attrInit.html:17 templates/learn/attrInit.html.py:23
+msgid "when [left arrow v] key pressed"
+msgstr "Όταν το πλήκτρο [αριστερό βέλος v] πατηθεί"
+
+#: templates/learn/attrInit.html:18 templates/learn/attrInit.html.py:24
+msgid "change x by (-10)"
+msgstr "άλλαξε το x κατά (-10)"
+
+#: templates/learn/attrInit.html:21
+msgid "when [right arrow v] key pressed  //Initialized correctly."
+msgstr "Όταν το πλήκτρο [δεξί βέλος v] πατηθεί //Σωστή αρχικοποίηση"
+
+#: templates/learn/deadCode.html:11
+msgid ""
+"Dead code are parts of programs that never are executed. How can it form? "
+"For example, when you have a program that isn't start with a hat block, or "
+"when there is a program that is waiting for a message that never is sent."
+msgstr ""
+"Πώς μπορεί να προκύψει κώδικας που δεν εκτελείται; Για παράδειγμα, όταν "
+"έχετε ένα πρόγραμμα που δεν ξεκινάει με ένα από τα Συμβάντα (εντολές "
+"καπέλα), ή όταν ένα πρόγραμμα περιμένει ένα μήνυμα που κανείς ποτέ δεν το "
+"μεταδίδει."
+
+#: templates/learn/deadCode.html:14
+msgid "forever //Blocks that dont's start with a hat block."
+msgstr "για πάντα //Εντολές που δεν ξεκινούν με συμβάν (εντολή καπέλο)"
+
+#: templates/learn/deadCode.html:15
+msgid "if &lt; key [left arrow v] pressed ? &gt; then"
+msgstr "εάν &lt; πατήθηκε το πλήκτρο [αριστερό βέλος v] &gt; τότε"
+
+#: templates/learn/deadCode.html:18
+msgid "when I receive [startcc v] //Blocks that start with a hat block."
+msgstr "Όταν λάβω [εκκίνηση v]//Εντολές που ξεκινάν με συμβάν"
+
+#: templates/learn/deadCode.html:19
+msgid "switch costume to [costume2 v]"
+msgstr "άλλαξε την ενδυμασία σε [costume2 v]"
+
+#: templates/learn/deadCode.html:20
+msgid "say [Let's start] for (2) secs"
+msgstr "πες [Ξεκίνα] για (2) δευτερόλεπτα"
+
+#: templates/learn/deadCode.html:24
+msgid ""
+"These situations usually causes that projects doesn't work as expected of "
+"them,so,try to avoid dead code in your programs!"
+msgstr ""
+"Αυτές οι καταστάσεις συνήθως δημιουργούν προγράμματα που δεν δουλεύουν με "
+"τον αναμενόμενο τρόπο και καλό είναι να αποφεύγονται."
+
+#: templates/learn/duplicatedScripts.html:11
+msgid ""
+"Imagine that in a project we have two programs formed by the same blocks and "
+"where only vary the parameters or values of the blocks."
+msgstr ""
+"Σκεφτείτε ότι σε ένα έργο έχουμε δύο προγράμματα κατασκευασμένα με τις ίδιες "
+"εντολές και η μόνη διαφορά είναι οι τιμές στις παραμέτρους των εντολών."
+
+#: templates/learn/duplicatedScripts.html:15
+#: templates/learn/duplicatedScripts.html:23
+#: templates/learn/duplicatedScripts.html:37
+msgid "set rotation style [left-rigt v]"
+msgstr "όρισε τον άξονα περιστροφής σε [οριζόντιο v]"
+
+#: templates/learn/duplicatedScripts.html:16
+msgid "repeat (10)"
+msgstr "επανάλαβε (10)"
+
+#: templates/learn/duplicatedScripts.html:17
+msgid "move (2) steps"
+msgstr "κινήσου (2) βήματα"
+
+#: templates/learn/duplicatedScripts.html:22
+msgid "when I receive [message2 v]"
+msgstr "Όταν λάβω [message2 v]"
+
+#: templates/learn/duplicatedScripts.html:24
+msgid "repeat (5)"
+msgstr "επανάλαβε (5)"
+
+#: templates/learn/duplicatedScripts.html:25
+msgid "move (4) steps"
+msgstr "κινήσου (4) βήματα"
+
+#: templates/learn/duplicatedScripts.html:33
+msgid ""
+"What would happen if we make a small change? We would have to modify both "
+"programs, complicating the maintenance of the code. In these situations is "
+"more appropriate that the programmer make his own block that defines this "
+"behaviour and use this new block in all programs where needed."
+msgstr ""
+"Τι θα συμβεί αν πρέπει να κάνουμε μια μικρή αλλαγή; Θα πρέπει να "
+"τροποποιήσουμε και τα δύο προγράμματα, δυσκολεύοντας έτσι την συντήρηση του "
+"κώδικα. Σε αυτές τις περιπτώσεις είναι κατάλληλο ο προγραμματιστής να "
+"δημιουργήσει τις δικές του εντολές ώστε να κωδικοποίηση τη συμπεριφορά που "
+"θέλει και να την χρησιμοποιεί όπου χρειάζεται."
+
+#: templates/learn/duplicatedScripts.html:36
+msgid "define walk (repetitions)(step)(pause)"
+msgstr "όρισε περπάτα(επαναλήψεις)(βήματα)(παύση)"
+
+#: templates/learn/duplicatedScripts.html:38
+msgid "repeat (repetitions)"
+msgstr "επανάλαβε (επαναλήψεις)"
+
+#: templates/learn/duplicatedScripts.html:39
+msgid "move (step) steps"
+msgstr "κινήσου (βήματα) βήματα"
+
+#: templates/learn/duplicatedScripts.html:42
+msgid "wait (pause) secs"
+msgstr "περίμενε (παύση) δευτερόλεπτα"
+
+#: templates/learn/duplicatedScripts.html:47
+msgid ""
+"Thus, if you want a change, you just have to go to the block defined by the "
+"programmer."
+msgstr "Έτσι, όταν χρειαστείτε μια αλλαγή, θα πάτε στην εντολή που ορίσατε."
+
+#: templates/learn/spriteNaming.html:12
+msgid ""
+"When you start to programming with Scratch, is very usually to leave the "
+"default name of the new characters(sprite 1, sprite2, ...). When we have few "
+"characters, is very easy to know what character have each name. However, "
+"when the number of characters increases, it's more complicated. So, is a "
+"good practice naming(to recognize easily) each character of our projects, "
+"because our programs can be read more fast. Avoid default names!"
+msgstr ""
+"Όταν ξεκινάτε να προγραμματίζετε με το Scratch, είναι πολύ συνηθισμένο να "
+"αφήνετε τα προκαθορισμένα ονόματα για τους νέους χαρακτήρες (Αντικείμενο 1, "
+"Αντικείμενο 2, ...) Όταν έχουμε πολλούς τέτοιους χαρακτήρες, είναι πιο "
+"εύκολο να αναγνωρίζουμε τον κάθε χαρακτήρα από το όνομά του. Έτσι, μια καλή "
+"πρακτική είναι να ονοματίζουμε τον χαρακτήρα του έργου μας με ένα όνομα που "
+"να έχει σημασία ώστε το πρόγραμμά μας να μπορεί να διαβάζεται πιο εύκολα. "
+"Αποφύγετε τα προκαθορισμένα ονόματα!"
+
+#: templates/main/collaborators.html:75 templates/main/collaborators.html:162
+msgid "Who we are"
+msgstr "Ποιοι είμαστε"
+
+#: templates/main/collaborators.html:76 templates/main/collaborators.html:207
+msgid "Translations"
+msgstr "Μεταφράσεις"
+
+#: templates/main/collaborators.html:77 templates/main/collaborators.html:341
+msgid "Workshops"
+msgstr "Εργαστήρια"
+
+#: templates/main/collaborators.html:78
+msgid "More thanks"
+msgstr "Περισσότερα ευχαριστώ"
+
+#: templates/main/collaborators.html:104
+msgid "Thanks all of you!"
+msgstr "Σας ευχαριστούμε όλους"
+
+#: templates/main/collaborators.html:106
+msgid ""
+"We are so pleased to receive so much help of you and we thought that the "
+"best way of show our appreciation is including your work in the website. In "
+"this space you can see who people help us to improve Dr. Scratch!"
+msgstr ""
+"Είμαστε στην ευχάριστη θέση να λαμβάνουμε τόση πολλή βοήθεια και σκεφτήκαμε "
+"ότι ο καλύτερος τρόπος για να δείξουμε την εκτίμησή μας είναι να "
+"συμπεριλάβουμε τη δουλειά σας στον ιστότοπό μας. Σε αυτόν τον χώρο δείτε "
+"ποιοι μας βοήθησαν να βελτιώσουμε το Dr .Scratch!"
+
+#: templates/main/collaborators.html:166
+msgid "Dr. Scratch's team likes to thank you for your contributions."
+msgstr "Η ομάδα του Dr. Scratch θέλει να σας ευχαριστήσει για τη συμβολή σας."
+
+#: templates/main/collaborators.html:182
+msgid " "
+msgstr " "
+
+#: templates/main/collaborators.html:211 templates/main/main.html:460
+#: templates/main/main_new.html:464
+msgid ""
+"We know the importance of receiving feedback on your own language to "
+"understand every little detail or hint, so we'll translate Dr. Scratch to "
+"facilitate coding learning to as many people as possible."
+msgstr ""
+"Αναγνωρίζουμε τη σπουδαιότητα του να λαμβάνετε ανατροφοδότηση στη γλώσσα σας "
+"ώστε να καταλαβαίνετε και τις πιο μικρές λεπτομέρειες και συμβουλές, έτσι θα "
+"μεταφράσουμε το Dr. Scratch για να διευκολύνουμε την εκμάθηση του "
+"προγραμματισμού σε όσους περισσότερους ανθρώπους μπορούμε."
+
+#: templates/main/collaborators.html:212
+msgid ""
+"Would you like help us to translate Dr. Scratch to your language? Many "
+"people have already helped us! "
+msgstr ""
+"Θέλετε να μας βοηθήσετε να μεταφράσουμε το Dr. Scratch στη δική σας γλώσσα; "
+"Πολλοί μας βοήθησαν ήδη!"
+
+#: templates/main/collaborators.html:270
+msgid "Pau Nin"
+msgstr ""
+
+#: templates/main/collaborators.html:271
+msgid ""
+"Pau Nin works as Elementary School teacher and Masters degree in Innovation "
+"Pedagogical and Education Leadership in the XXI century. He's an enthusiast "
+"of the Programmation and educational robotic. Also he loves sharing with "
+"other teachers the possibilities of both(programmation and robotic) as one "
+"of the most powerful motivational tools available today to teach in the "
+"classroom."
+msgstr ""
+
+#: templates/main/collaborators.html:293
+msgid "Gonzalo García Fernández"
+msgstr ""
+
+#: templates/main/collaborators.html:317
+msgid "Adelmo Eloy"
+msgstr ""
+
+#: templates/main/collaborators.html:345
+msgid ""
+"We are collaborating with several schools where we can prove the website "
+"with children and see which features they need."
+msgstr ""
+"Ευχαριστούμε τα σχολεία που μας φιλοξένησαν και είδαμε τον ιστότοπό μας με "
+"μαθητές και ποια χαρακτηριστικά χρειαζόντουσαν."
+
+#: templates/main/collaborators.html:346
+msgid "Thanks all of children and teachers who help us with the development!"
+msgstr ""
+"Ευχαριστούμε όλα τα παιδιά και τους εκπαιδευτικούς που μας βοήθησαν στην "
+"ανάπτυξη!"
+
+#: templates/main/collaborators.html:375
+msgid "CEIP Lope de Vega"
+msgstr "CEIP Lope de Vega"
+
+#: templates/main/collaborators.html:379
+msgid "Teacher: Jorge Lobo"
+msgstr "Teacher: Jorge Lobo"
+
+#: templates/main/collaborators.html:411
+msgid "CEIP Gonzalo Fernández de Córdoba"
+msgstr ""
+
+#: templates/main/collaborators.html:415
+msgid "Teacher: Chema Gonzalez"
+msgstr ""
+
+#: templates/main/collaborators.html:434
+msgid "<strong>More thanks</strong></h2>"
+msgstr "<strong>Περισσότερες ευχαριστίες</strong></h2>"
+
+#: templates/main/main.html:75 templates/main/main_new.html:76
+msgid "Why?"
+msgstr "Γιατί;"
+
+#: templates/main/main.html:76 templates/main/main_new.html:77
+msgid "How?"
+msgstr "Πώς;"
+
+#: templates/main/main.html:77 templates/main/main_new.html:78
+msgid "Working on"
+msgstr "Έρχονται σύντομα"
+
+#: templates/main/main.html:78 templates/main/main_new.html:79
+msgid "Contact us"
+msgstr "Επικοινωνία"
+
+#: templates/main/main.html:80 templates/main/main_new.html:81
+msgid "Organizations"
+msgstr "Οργανισμοί"
+
+#: templates/main/main.html:124 templates/main/main.html.py:754
+#: templates/main/main_new.html:128 templates/main/main_new.html.py:730
+msgid "Sign up"
+msgstr "Εγγραφείτε"
+
+#: templates/main/main.html:132 templates/main/main.html.py:154
+#: templates/main/main_new.html:136 templates/main/main_new.html.py:158
+#: templates/organization/organization.html:89
+msgid ""
+"<input type='text' name='username' id='username' placeholder='Username' "
+"style='margin-bottom: 15px;'>"
+msgstr ""
+"<input type='text' name='username' id='username' placeholder='Username' "
+"style='margin-bottom: 15px;'>"
+
+#: templates/main/main.html:133 templates/main/main_new.html:137
+msgid ""
+"<input type='text' name='email' id='email' placeholder='Email' style='margin-"
+"bottom: 15px;'>"
+msgstr ""
+"<input type='text' name='username' id='username' placeholder='Email' "
+"style='margin-bottom: 15px;'>"
+
+#: templates/main/main.html:134 templates/main/main.html.py:155
+#: templates/main/main_new.html:138 templates/main/main_new.html.py:159
+#: templates/organization/organization.html:90
+msgid ""
+"<input type='password' name='password' id='password' placeholder='Password' "
+"style='margin-bottom: 15px;'>"
+msgstr ""
+"<input type='password' name='password' id='password' placeholder='Password' "
+"style='margin-bottom: 15px;'>"
+
+#: templates/main/main.html:135 templates/main/main_new.html:139
+msgid ""
+"<input class='form-control' type='password' name='hashkey' id='hashkey' "
+"placeholder='Hashkey' style='margin-bottom: 15px;'>"
+msgstr ""
+"<input class='form-control' type='password' name='hashkey' id='hashkey' "
+"placeholder='Password' style='margin-bottom: 15px;'>"
+
+#: templates/main/main.html:136 templates/main/main.html.py:1376
+#: templates/main/main_new.html:140 templates/main/main_new.html.py:1391
+msgid ""
+"<input type='submit' value='Sign up' id='sign-up' class='btn-group btn-group-"
+"justified colored-text'>"
+msgstr ""
+"<input type='submit' value='Sign up' id='sign-up' class='btn-group btn-group-"
+"justified colored-text'>"
+
+#: templates/main/main.html:146 templates/main/main_new.html:150
+#: templates/organization/organization.html:79
+msgid "Sign in"
+msgstr "Είσοδος"
+
+#: templates/main/main.html:157 templates/main/main_new.html:161
+#: templates/organization/organization.html:94
+msgid "I forgot my password"
+msgstr "Ξέχασα τον κωδικό μου"
+
+#: templates/main/main.html:159 templates/main/main_new.html:163
+#: templates/organization/organization.html:97
+msgid ""
+"<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-"
+"justified colored-text'>"
+msgstr ""
+"<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-"
+"justified colored-text'>"
+
+#: templates/main/main.html:192 templates/main/main_new.html:196
+msgid "Analyze your Scratch projects"
+msgstr "Αναλύστε τα έργα Scratch"
+
+#: templates/main/main.html:194 templates/main/main_new.html:198
+msgid ""
+"Welcome to the Dr. Scratch website, an analytical tool that evaluates your "
+"Scratch projects in a variety of computational areas. This analyzer is a "
+"helpful tool to evaluate your own projects, or those of your Scratch "
+"students."
+msgstr ""
+"Καλωσήρθατε στον ιστότοπο του Dr. Scratch, ενός αναλυτικού εργαλείου που "
+"αξιολογεί τα έργα Scratch σε ένα πλήθος περιοχών υπολογιστικής σκέψης. Αυτό "
+"το εργαλείο βοηθάει στην αξιολόγηση των έργων σας και των έργων των μαθητών "
+"σας."
+
+#: templates/main/main.html:299 templates/main/main_new.html:303
+msgid "WHY?"
+msgstr "ΓΙΑΤΙ;"
+
+#: templates/main/main.html:301 templates/main/main_new.html:305
+msgid "Why "
+msgstr "Γιατί"
+
+#: templates/main/main.html:301 templates/main/main_new.html:305
+msgid "you’ll love Dr. Scratch"
+msgstr "θα αγαπήσετε το Dr. Scratch"
+
+#: templates/main/main.html:305 templates/main/main_new.html:309
+msgid "A powerful tool to analyze your Scratch projects"
+msgstr "Ένα εργαλείο ανάλυσης έργων Scratch"
+
+#: templates/main/main.html:317 templates/main/main_new.html:321
+msgid "Simple & Fun"
+msgstr "Απλό και Διασκεδαστικό"
+
+#: templates/main/main.html:319 templates/main/main_new.html:323
+msgid ""
+"Your students can easily learn how to improve their programming skills in a "
+"fun way."
+msgstr ""
+"Οι μαθητές σας μπορούν εύκολα να μάθουν πώς να βελτιώσουν τις "
+"προγραμματιστικές τους δεξιότητες με διασκεδαστικό τρόπο."
+
+#: templates/main/main.html:330 templates/main/main_new.html:334
+msgid "Improve your skills"
+msgstr "Βελτιώστε τις δεξιότητές σας"
+
+#: templates/main/main.html:332 templates/main/main_new.html:336
+msgid ""
+"We provide feedback on several aspects which are related to Computational "
+"Thinking."
+msgstr "Παρέχουμε ανατροφοδότηση σε διάφορες πτυχές της Υπολογιστικής Σκέψης."
+
+#: templates/main/main.html:343 templates/main/main_new.html:347
+msgid "Always improving"
+msgstr "Το εργαλείο βελτιώνεται συνεχώς"
+
+#: templates/main/main.html:345 templates/main/main_new.html:349
+msgid ""
+"We're continually enhancing the features of Dr. Scratch, and we'd love to "
+"hear your thoughts"
+msgstr ""
+"Συνεχώς αυξάνουμε τα χαρακτηριστικά του Dr. Scratch, και θα θέλαμε να "
+"ακούσουμε τις σκέψεις σας."
+
+#: templates/main/main.html:382 templates/main/main_new.html:386
+msgid "How"
+msgstr "Πώς"
+
+#: templates/main/main.html:384 templates/main/main_new.html:388
+#: templates/organization/organization.html:190
+msgid "How "
+msgstr "Πώς"
+
+#: templates/main/main.html:384 templates/main/main_new.html:388
+msgid "it works"
+msgstr "δουλεύει"
+
+#: templates/main/main.html:388 templates/main/main_new.html:392
+msgid "There are two options to analyze a Scratch project with Dr. Scratch"
+msgstr "Υπάρχουν δύο επιλογές για να αναλύσετε ένα έργο με το Dr. Scratch"
+
+#: templates/main/main.html:389 templates/main/main_new.html:393
+msgid "project.png"
+msgstr "project.png"
+
+#: templates/main/main.html:391 templates/main/main_new.html:395
+msgid ""
+"You can upload an sb2 file or just provide the project url, avoiding the "
+"need to previously download the project to your computer. By analyzing your "
+"projects with Dr. Scratch, you can easily check your Computational Thinking "
+"Score."
+msgstr ""
+"Μπορείτε να ανεβάσετε ένα sb2 αρχείο ή απλώς να δώσετε το url του έργου στην "
+"κοινότητα του Scratch, χωρίς προηγουμένως να κατεβάσετε το έργο στον "
+"υπολογιστή σας. Αναλύοντας τα έργα σας με το Dr. Scratch, μπορείτε νε δείτε "
+"το Σκορ σας στην Υπολογιστική Σκέψη."
+
+#: templates/main/main.html:400 templates/main/main_new.html:404
+msgid "It is extremely easy to use, both for begginers and expert programmers."
+msgstr ""
+"Είναι πολύ εύκολο στην χρήση, τόσο για αρχάριους όσο και για έμπειρους "
+"προγραμματιστές."
+
+#: templates/main/main.html:404 templates/main/main_new.html:408
+msgid "You receive feedback to improve your coding skills."
+msgstr ""
+"Λαμβάνετε ανατροφοδότηση για να βελτιώσετε τις προγραμματιστικές σας "
+"ικανότητες."
+
+#: templates/main/main.html:412 templates/main/main_new.html:416
+msgid ""
+"You can keep on improving your programming skills by yourself even from home."
+msgstr ""
+"Μπορείτε να βελτιώνετε τις προγραμματιστικές σας ικανότητες ακόμη και από το "
+"σπίτι."
+
+#: templates/main/main.html:416 templates/main/main_new.html:420
+msgid "You can track your progress through charts and stats."
+msgstr ""
+"Μπορείτε να παρακολουθείτε την πρόοδό σας μέσω γραφημάτων και στατιστικών."
+
+#: templates/main/main.html:435 templates/main/main_new.html:439
+msgid "NEW FEATURES"
+msgstr "ΝΕΑ ΧΑΡΑΚΤΗΡΙΣΤΙΚΑ"
+
+#: templates/main/main.html:437 templates/main/main_new.html:441
+msgid "Coming "
+msgstr "Έρχονται"
+
+#: templates/main/main.html:437 templates/main/main_new.html:441
+msgid "Soon"
+msgstr "Σύντομα"
+
+#: templates/main/main.html:441 templates/main/main_new.html:445
+msgid "We are working on new features to improve Dr. Scratch"
+msgstr "Δουλεύουμε σε νέα χαρακτηριστικά για να βελτιώσουμε το Dr. Scratch"
+
+#: templates/main/main.html:456 templates/main/main_new.html:460
+msgid "Multilingual website"
+msgstr "Ιστότοπος σε πολλές γλώσσες"
+
+#: templates/main/main.html:471 templates/main/main_new.html:475
+msgid "Teacher accounts"
+msgstr "Λογαριασμοί εκπαιδευτικών"
+
+#: templates/main/main.html:475 templates/main/main_new.html:479
+msgid ""
+"Teachers will be able to group (and follow) their students to keep track of "
+"their progress in a fast and simple way."
+msgstr ""
+"Οι εκπαιδευτικοί θα μπορούν να δημιουργήσουν και να παρακολουθούν ομάδες "
+"μαθητών ώστε να έχουν μια καταγραφή της προόδου τους με απλό και γρήγορο "
+"τρόπο."
+
+#: templates/main/main.html:486 templates/main/main_new.html:490
+msgid "Cloud platform"
+msgstr "Η πλατφόρμα στο σύννεφο"
+
+#: templates/main/main.html:490 templates/main/main_new.html:494
+msgid ""
+"We are in the process of migrating our servers to the Cloud with the aim of "
+"providing a better performance."
+msgstr ""
+"Είμαστε στην διαδικασία μεταφοράς των εξυπηρετητών μας στο Σύννεφο με σκοπό "
+"την καλύτερο απόδοση."
+
+#: templates/main/main.html:515 templates/main/main_new.html:519
+msgid ""
+"With Dr. Scratch plug-ins for Chrome and Firefox, students will analyze "
+"their project WHILE programming on the Scratch website."
+msgstr ""
+"Με τα πρόσθετα για τον Chrome και τον Firefox, οι μαθητές μπορούν να "
+"χρησιμοποιούν το Dr. Scratch για να αναλύουν τα έργα τους ΕΝΩ "
+"προγραμματίζουν στον ιστότοπο του Scratch."
+
+#: templates/main/main.html:526 templates/main/main_new.html:530
+msgid "Gamification"
+msgstr "Παιχνιδοποίηση"
+
+#: templates/main/main.html:530 templates/main/main_new.html:534
+msgid ""
+"We'd like to take learners curiosity one step further. Do you have cool "
+"ideas to gamify our platform?"
+msgstr ""
+"Θα θέλαμε να πάμε την περιέργεια των μαθητών ένα βήμα παραπέρα. Έχετε ιδέες "
+"για το πώς να μετατρέψουμε την πλατφόρμα μας σε ένα παιχνίδι;"
+
+#: templates/main/main.html:541 templates/main/main_new.html:545
+msgid "Social network"
+msgstr "Κοινωνική δικτύωση"
+
+#: templates/main/main.html:545 templates/main/main_new.html:549
+msgid ""
+"The new social network funcionalities will allow users to communicate with "
+"each other to exchange ideas and challenges."
+msgstr ""
+"Οι νέες δυνατότητες κοινωνικής δικτύωσης θα επιτρέψουν στους χρήστες να "
+"επικοινωνούν μεταξύ τους για να ανταλλάσσουν ιδέες και προκλήσεις."
+
+#: templates/main/main.html:565 templates/main/main_new.html:569
+msgid "Contact"
+msgstr "Επικοινωνία"
+
+#: templates/main/main.html:567 templates/main/main_new.html:571
+msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
+msgstr "<strong>Επικοινωνήστε</strong> με την ομάδα του Dr. Scratch </h2>"
+
+#: templates/main/main.html:571 templates/main/main_new.html:575
+msgid "We would be pleased to receive your feedback"
+msgstr "Στείλτε μας την γνώμη σας"
+
+#: templates/main/main.html:610 templates/main/main_new.html:614
+msgid ""
+"We would like to thank many people for their collaboration and we have done "
+"one special section."
+msgstr ""
+"Πολλοί συμμετείχαν στην προσπάθειά μας και κάναμε μια ενότητα για να τους "
+"ευχαριστήσουμε."
+
+#: templates/main/main.html:614 templates/main/main_new.html:618
+msgid "Collaborators"
+msgstr "Συνεργάτες"
+
+#: templates/main/main.html:615 templates/main/main_new.html:619
+msgid "Blog"
+msgstr ""
+
+#: templates/main/main.html:634 templates/main/main_new.html:638
+msgid "Are you a Dr. Scratch user?"
+msgstr "Είστε χρήστης του Dr. Scratch;"
+
+#: templates/main/main.html:637 templates/main/main_new.html:641
+msgid "Join now!"
+msgstr "Εγγραφείτε τώρα!"
+
+#: templates/main/main.html:687 templates/main/main_new.html:687
+msgid "<img class='framed' src='static/app/images/url-en.png' />"
+msgstr "<img class='framed' src='static/app/images/url-en.png' />"
+
+#: templates/main/main.html:712 templates/main/main.html.py:736
+#: templates/main/main_new.html:712
+msgid "<img class='framed' src='static/app/images/project-en.png' />"
+msgstr "<img class='framed' src='static/app/images/project-en.png' />"
+
+#: templates/main/main.html:765 templates/main/main_new.html:747
+msgid "It's easy -and free- sign up an account in Dr. Scratch"
+msgstr ""
+
+#: templates/main/main.html:771 templates/main/main_new.html:753
+msgid "Choose a Dr. Scratch Username"
+msgstr "Η ομάδα του Dr. Scratch"
+
+#: templates/main/main.html:773 templates/main/main_new.html:755
+msgid ""
+"<input type='text' name='username' id='username' placeholder='Username' />"
+msgstr ""
+"<input type='text' name='username' id='username' placeholder='Username' />"
+
+#: templates/main/main.html:777 templates/main/main_new.html:758
+msgid "Choose a Password"
+msgstr ""
+
+#: templates/main/main.html:779 templates/main/main_new.html:760
+#: templates/main/main_new.html.py:765
+msgid ""
+"<input type='password' name='password' id='password' placeholder='Password'/>"
+msgstr ""
+"<input type='password' name='password' id='password' placeholder='Password' /"
+">"
+
+#: templates/main/main.html:783 templates/main/main_new.html:763
+msgid "Confirm Password"
+msgstr "Επιβεβαιώστε τον κωδικό:"
+
+#: templates/main/main.html:786
+msgid ""
+"<input type='password' name='password_confirm' id='password_confirm' "
+"placeholder='Password'/>"
+msgstr ""
+"<input type='password' name='password_confirm' id='password_confirm' placeholder='Password' /"
+">"
+
+#: templates/main/main.html:791
+msgid ""
+"If you are minor of 16, enter your parent's or guardian's email address and "
+"we will send them an email to confirm this account."
+msgstr ""
+
+#: templates/main/main.html:798 templates/main/main_new.html:1354
+msgid "Email address"
+msgstr ""
+
+#: templates/main/main.html:799 templates/main/main_new.html:1355
+msgid "Parent's or guardian's email address"
+msgstr ""
+
+#: templates/main/main.html:806 templates/main/main_new.html:1361
+msgid "Confirm email address"
+msgstr ""
+
+#: templates/main/main.html:816 templates/main/main_new.html:782
+msgid "Your responses to these questions will be kept private."
+msgstr ""
+
+#: templates/main/main.html:819 templates/main/main_new.html:787
+msgid "Why do we ask for this info?"
+msgstr ""
+
+#: templates/main/main.html:822 templates/main/main.html.py:835
+msgid "Birth Month and Year"
+msgstr ""
+
+#: templates/main/main.html:824
+msgid ""
+"We use this information to calculate the age range of people who use Dr. "
+"Scratch, and to confirm that you are the owner of the account if you contact "
+"us.  Your birth month and year will not be made public."
+msgstr ""
+
+#: templates/main/main.html:827 templates/main/main.html.py:859
+msgid "Gender"
+msgstr ""
+
+#: templates/main/main.html:829
+msgid ""
+"This helps the Dr. Scratch design team understand who is using Dr. Scratch, "
+"and provides information that helps us broaden participation.  This "
+"information is not visible on your account, and is only used to describe "
+"overall participation."
+msgstr ""
+
+#: templates/main/main.html:837
+msgid "- Month -"
+msgstr ""
+
+#: templates/main/main.html:838
+msgid "January"
+msgstr ""
+
+#: templates/main/main.html:839
+msgid "February"
+msgstr ""
+
+#: templates/main/main.html:840
+msgid "March"
+msgstr ""
+
+#: templates/main/main.html:841
+msgid "April"
+msgstr ""
+
+#: templates/main/main.html:842
+msgid "May"
+msgstr ""
+
+#: templates/main/main.html:843
+msgid "June"
+msgstr ""
+
+#: templates/main/main.html:844
+msgid "July"
+msgstr ""
+
+#: templates/main/main.html:845
+msgid "August"
+msgstr ""
+
+#: templates/main/main.html:846
+msgid "September"
+msgstr ""
+
+#: templates/main/main.html:847
+msgid "October"
+msgstr ""
+
+#: templates/main/main.html:848
+msgid "November"
+msgstr ""
+
+#: templates/main/main.html:849
+msgid "December"
+msgstr ""
+
+#: templates/main/main.html:853
+msgid "- Year -"
+msgstr ""
+
+#: templates/main/main.html:860
+msgid "Male"
+msgstr ""
+
+#: templates/main/main.html:862
+msgid "Female"
+msgstr ""
+
+#: templates/main/main.html:872
+msgid "Country"
+msgstr ""
+
+#: templates/main/main.html:874
+msgid "- Country -"
+msgstr ""
+
+#: templates/main/main_new.html:739
+msgid "Step 1"
+msgstr ""
+
+#: templates/main/main_new.html:740
+msgid "Step 2"
+msgstr ""
+
+#: templates/main/main_new.html:741
+msgid "Step 3"
+msgstr ""
+
+#: templates/main/main_new.html:742
+msgid "Step 4"
+msgstr ""
+
+#: templates/main/main_new.html:770
+msgid ""
+"<img class='col-md-6 text-left control-label steps' src='static/app/images/"
+"step1.png' />"
+msgstr ""
+"<img class='col-md-6 text-left control-label steps' src='static/app/images/"
+"step1.png' />"
+
+#: templates/main/main_new.html:1339
+msgid ""
+"<img class='col-md-6 text-left control-label steps' src='static/app/images/"
+"step2.png' />"
+msgstr ""
+"<img class='col-md-6 text-left control-label steps' src='static/app/images/"
+"step2.png' />"
+
+#: templates/main/main_new.html:1367
+msgid ""
+"<img class='col-md-6 text-left control-label steps' src='static/app/images/"
+"step3.png' />"
+msgstr ""
+"<img class='col-md-6 text-left control-label steps' src='static/app/images/"
+"step3.png' />"
+
+#: templates/main/main_new.html:1389
+msgid ""
+"<img class='col-md-6 text-left control-label steps' src='static/app/images/"
+"step4.png' />"
+msgstr ""
+"<img class='col-md-6 text-left control-label steps' src='static/app/images/"
+"step4.png' />"
+
+#: templates/main/statistics.html:311
+msgid "These statistics are update every night at 00.00h CEST."
+msgstr ""
+
+#: templates/organization/dashboard-master.html:174
+msgid ""
+"<h3 class='text-left dark-text'>The level of your project is...  <strong> "
+"MASTER! </strong></h3>"
+msgstr ""
+
+#: templates/organization/email-sign-up.html:5
+msgid "New organization in Dr. Scratch!"
+msgstr "Νέος οργανισμός στο Dr. Scratch!"
+
+#: templates/organization/email-sign-up.html:7
+msgid ""
+"You're receiving this email because you have successfully signed up in Dr. "
+"Scratch for organizations."
+msgstr ""
+"Λαμβάνετε αυτό το email γιατί εγγραφήκατε επιτυχώς στο Dr. Scratch για "
+"οργανισμούς."
+
+#: templates/organization/main.html:55
+msgid "Do you want to analyze many projects?"
+msgstr ""
+
+#: templates/organization/main.html:57
+msgid ""
+"You can analyze at the same time all the Scratch proyects of your students!"
+msgstr "Μπορείτε να αναλύετε τα έργα των μαθητών σας και τα δικά σας!"
+
+#: templates/organization/main.html:60
+msgid "Only you have to put a "
+msgstr "Απλά εισάγετε ένα "
+
+#: templates/organization/main.html:60
+msgid "file CSV "
+msgstr "αρχείο CSV"
+
+#: templates/organization/main.html:60
+msgid " with the urls of the Scratch projects you want to analyze:"
+msgstr "με τα url των έργων που θέλετε να αναλύσετε:"
+
+#: templates/organization/main.html:61
+msgid ""
+"<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose "
+"File .csv'>"
+msgstr ""
+"<input  name='csvFile' type='file' class='filestyle' data-"
+"buttonText='Επιλέξτε .csv αρχείο'>"
+
+#: templates/organization/main.html:62
+msgid "Analyze my projects"
+msgstr "Ανάλυσε τα έργα μου"
+
+#: templates/organization/organization.html:92
+msgid "Remember me"
+msgstr "Θυμήσου με"
+
+#: templates/organization/organization.html:129
+#: templates/organization/organization.html:188
+msgid "Dr. Scratch for organizations"
+msgstr "Dr. Scratch για Οργανισμούς"
+
+#: templates/organization/organization.html:130
+msgid "Welcome to the organizations version of Dr. Scratch"
+msgstr "Καλωσήρθατε στην έκδοση του Dr. Scratch για οργανισμούς"
+
+#: templates/organization/organization.html:131
+msgid ""
+"Dr. Scratch for organizations is an analytical tool that can help you "
+"evaluate the Scratch projects of the students participating in your "
+"initiatives to asses their progression in terms of coding and computational "
+"thinking skills. "
+msgstr ""
+"Το Dr. Scratch για οργανισμούς είναι ένα αναλυτικό εργαλείο που βοηθάει την "
+"αξιολόγηση έργων Scratch μαθητών που συμμετέχουν στις δράσεις του οργανισμού "
+"και αξιολογεί την πρόοδό τους με βάση τις δεξιότητες προγραμματισμού και "
+"υπολογιστικές σκέψης που αναπτύσσουν."
+
+#: templates/organization/organization.html:135
+#: templates/organization/organization.html:241
+msgid "Sign up!"
+msgstr "Εγγραφείτε!"
+
+#: templates/organization/organization.html:190
+msgid "to join Dr. Scratch for organizations?"
+msgstr "να εγγραφείτε στο Dr. Scratch για οργανισμούς;"
+
+#: templates/organization/organization.html:193
+msgid ""
+"Would you like to be one of the 10 first organizations testing this new "
+"feature? Just drop us a line at "
+msgstr ""
+"Θα θέλατε να είστε ένας από τους δέκα πρώτους οργανισμούς που θα δοκιμάσουν "
+"αυτό το νέο χαρακτηριστικό; Ενημερώστε μας στο"
+
+#: templates/organization/organization.html:193
+msgid ""
+" and we'll send you a hash key that will allow you to sign up in the web"
+msgstr ""
+"και θα σας στείλουμε ένα κλειδί με το οποίο θα εγγραφείτε μέσω διαδικτύου"
+
+#: templates/organization/organization.html:207
+msgid "Organization's name"
+msgstr "Όνομα οργανισμού"
+
+#: templates/organization/organization.html:224
+msgid ""
+"<input type='password' class='form-control'  name='password' "
+"placeholder='Password'>"
+msgstr ""
+"<input type='password' class='form-control' name='password' "
+"placeholder='Password'>"
+
+#: templates/organization/organization.html:231
+msgid "Hashkey"
+msgstr "Κλειδί"
+
+#: templates/organization/organization.html:233
+msgid ""
+"<input type='password' class='form-control' name='hashkey' "
+"placeholder='Password'>"
+msgstr ""
+"<input type='password' class='form-control' name='hashkey' "
+"placeholder='Password'>"
+
+#: templates/organization/organization.html:376
+msgid "This username already exists. Choose another, please."
+msgstr "Αυτό το όνομα υπάρχει ήδη. Παρακαλώ επιλέξτε άλλο."
+
+#: templates/organization/organization.html:381
+msgid "This hashkey does not exist. Choose another, please."
+msgstr ""
+
+#: templates/sign-password/email-reset-pwd.html:4
+msgid "Reset password"
+msgstr "Επαναφορά κωδικού"
+
+#: templates/sign-password/email-reset-pwd.html:6
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at Dr. Scratch."
+msgstr ""
+"Λαμβάνετε αυτό το email επειδή ζητήσατε επαναφορά κωδικού του λογαριασμού "
+"σας στον ιστότοπο του Dr. Scratch."
+
+#: templates/sign-password/email-reset-pwd.html:7
+msgid "Please, go to the following page and choose a new password:"
+msgstr ""
+"Παρακαλώ, ακολουθήστε τον παρακάτω σύνδεσμο για να δημιουργήσετε έναν νέο "
+"κωδικό:"
+
+#: templates/sign-password/email-reset-pwd.html:9
+msgid "Your username is: "
+msgstr "Το όνομα χρήστη σας είναι:"
+
+#: templates/sign-password/email-sended.html:12
+msgid "We sended to you an email."
+msgstr "Σας στείλαμε ένα email."
+
+#: templates/sign-password/email-sended.html:13
+msgid "Check with your systems operator to see if the message was blocked."
+msgstr "Παρακαλώ ελέγξτε και στα Ανεπιθύμητα."
+
+#: templates/sign-password/new-password.html:14
+msgid "Type your new password:"
+msgstr "Πληκτρολογήστε τον νέο σας κωδικό:"
+
+#: templates/sign-password/new-password.html:19
+msgid "Confirm your password:"
+msgstr "Επιβεβαιώστε τον κωδικό:"
+
+#: templates/sign-password/new-password.html:31
+msgid "The Password and Confirm password fields are not identical."
+msgstr "Ο κωδικός και η επιβεβαίωση δεν συμφωνούν."
+
+#: templates/sign-password/password.html:13
+msgid "Have you forgotten your password? Please introduce your email:"
+msgstr "Ξεχάσατε το κωδικό σας; Παρακαλώ εισάγετε το email σας:"
+
+#: templates/sign-password/user-doesnt-exist.html:12
+msgid "User doesn't exist or the password is incorrect."
+msgstr "Ο χρήστης δεν υπάρχει ή ο κωδικός είναι λανθασμένος."
+
+#: templates/sign-password/wrong-form.html:12
+msgid "You must to complete all the fields."
+msgstr "Πρέπει να συμπληρώσετε όλα τα πεδία."
+

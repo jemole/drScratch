@@ -1,0 +1,393 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html class="nivo-lightbox-notouch" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Analyze your Scratch projects to assess your Computational Thinking skills">
+    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="author" content="Programamos URJC Libresoft FECyT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>Dr. Scratch</title>
+
+    <link rel="stylesheet" href="../../static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT
+    ============================== -->
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <!-- =========================
+     STYLESHEETS
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap-main.css">
+    <link rel="stylesheet" href="../../static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="../../static/app/content/styles_organizations.css">
+
+
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+    <script src="../../static/app/scripts/googleAnalytics.js"></script>
+</head>
+
+<body>
+  
+    <div id="mywrapper">
+    <!-- =========================
+     PRE LOADER
+    ============================== -->
+    <div style="display: none;" class="preloader">
+        <div style="display: none;" class="status">
+            &nbsp;
+        </div>
+    </div>
+
+    <!-- =========================
+     SECTION: HOME / HEADER
+    ============================== -->
+    <header id="home" style="background-position: 50% -40.5px;" class="header" data-stellar-background-ratio="0.5">
+        <!-- COLOR OVER IMAGE -->
+        <div class="overlay-layer">
+            <!-- STICKY NAVIGATION -->
+            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+                <div class="container">
+                    <!-- TOP BAR -->
+                    <div class="navbar-collapse collapse" id="stamp-navigation">
+                    <!-- NAVIGATION LINK -->
+                      <a class="navbar-brand" href="/">
+                        <img src="../../static/app/images/logo_main.png" alt="" />
+                      </a>
+
+                    <!-- LOGIN REGISTER -->
+                    <ul class="nav navbar-nav navbar-right login-register small-text">
+                        <li style="display: block;" class="login js-login dropdown">
+                          <a aria-expanded="false" role="button" href="#" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign in" %}
+                            <span class="caret"></span>
+                          </a>
+
+
+					                <ul role="menu" class="dropdown-menu">
+						                <li>
+						                <div style="padding: 15px; padding-bottom: 0px;">
+							                <form accept-charset="UTF-8" action="/login_organization" method="post">
+                                            {% csrf_token %}
+								                {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
+								                {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
+								                <!--<input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;"> -->
+								                <!-- <label for="sign-in" class="string optional">{% trans "Remember me" %}</label> -->
+                                                <div>
+                                                    <a class="message" href="/change_pwd">{% trans "I forgot my password" %}</a>
+                                                </div>
+                                                <div class="centre">
+								                    {% trans "<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-justified colored-text'>" %}
+                                                </div>
+                                            </form>
+						                </div>
+						                </li>
+						                </ul>
+					                </li>
+
+                            <li style="display: none;" class="register-button js-register inpage-scroll">
+                                <a href="#home" class="navbar-register-button">{% trans "Get Started" %}</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- /END TOP BAR -->
+                </div>
+                <!-- /END CONTAINER -->
+            </div>
+            <!-- /END STICKY NAVIGATION -->
+
+
+            <!-- CONTAINER -->
+            <div class="container">
+
+        <!-- ONLY LOGO ON HEADER -->
+                <div class="row">
+                    <div class="col-md-12 ">
+
+                        <!-- HEADING AND BUTTONS -->
+                        <div class="intro-section">
+
+                            <!-- WELCOM MESSAGE -->
+                            <h1 class="intro white-text">{% trans "Dr. Scratch for organizations" %}</h1>
+                            <h3 class="transparent-text"><b>{% trans "Welcome to the organizations version of Dr. Scratch" %}</b></h3>
+                            <h4 align=justify class="transparent-text"><strong>{% trans "Dr. Scratch for organizations is an analytical tool that can help you evaluate the Scratch projects of the students participating in your initiatives to asses their progression in terms of coding and computational thinking skills. " %} </strong></h4>
+                            <div class="intro-section">
+                                <!-- BUTTON -->
+                                <div class="button hidden-xs">
+                                    <a href="#section1" class="btn btn-primary secondary-button">{% trans "Sign up!" %}</a>
+                                </div>
+                                <!-- /END BUTTON -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    <!-- =========================
+     SECTION: CLIENTS LOGOs
+    ============================== -->
+    <section id="section6" class="services grey-bg">
+    <div class="clients white-bg">
+        <ul class="client-logos">
+            <li>
+                <a href="http://programamos.es">
+                <img src="../../static/app/images/logoProgramamos.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="http://www.urjc.es">
+                <img src="../../static/app/images/logoURJC.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="http://libresoft.es">
+                <img src="../../static/app/images/logoLibresoft.jpeg" alt="">
+                </a>
+            </li>
+
+            <li>
+                <a href="http://www.fecyt.es">
+                <img src="../../static/app/images/logoFECYT.jpg" alt="">
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    </section>
+    </header>
+    <!-- =========================
+     SECTION: Form
+    ============================== -->
+    <section id="section1" class="services grey-bg">
+        <div class="container">
+            <!-- SECTION HEADER -->
+            <div class="section-header">
+
+                <div class="small-text-medium uppercase colored-text">
+                    {% trans "Dr. Scratch for organizations" %}
+                </div>
+                <h2 class="dark-text"><strong>{% trans "How " %} </strong>{% trans "to join Dr. Scratch for organizations?" %}</h2>
+                <div class="colored-line"></div>
+                <div class="sub-heading">
+                    <h3><em>{% trans "Would you like to be one of the 10 first organizations testing this new feature? Just drop us a line at " %}<a href="mailto:team@drscratch.org" class="strong">team@drscratch.org</a>{% trans  " and we'll send you a hash key that will allow you to sign up in the web" %}</em></h3>
+
+
+        </div>
+        </div>
+    </section>
+
+    <!-- FORM -->
+
+        <div class="container">
+        <img src="../../static/app/images/drScratch.png" alt=""  width="200" height="200" />
+        <form action="/sign_up_organization" method="post" class="vertical-registration-form" role="form">
+       {% csrf_token %}
+       <div class="col-lg-8" id="user">
+        <label class="col-md-6 text-left control-label">{% trans "Organization's name" %}</label>
+          <input class='form-control' name='username' placeholder='ID'>
+        </div>
+        {{ form.as_p }}
+
+        <div class="col-lg-8" id="email">
+        <label for="ejemplo_email_3" class="col-md-6 text-left control-label">E-mail</label>
+
+          <input type="email" class="form-control" name="email" placeholder="E-mail">
+      </div>
+
+        {{ form.as_p }}
+
+      <div class="form-group">
+        <div class="col-lg-8">
+        <label class="col-lg-2 control-label">{% trans "Password" %}</label>
+
+        {% trans "<input type='password' class='form-control'  name='password' placeholder='Password'>" %}
+      </div>
+
+        {{ form.as_p }}
+
+     <div class="form-group">
+        <div class="col-lg-8" id="hashkey">
+        <label class="col-lg-2 control-label">{% trans "Hashkey" %}</label>
+
+        {% trans "<input type='password' class='form-control' name='hashkey' placeholder='Password'>" %}
+      </div>
+
+        {{ form.as_p }}
+    </div>
+
+
+            <div class="registration-buttom">
+            <button style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="submit">{% trans "Sign up!" %}</button>
+
+            </div>
+    </form>
+    </div>
+    </div>
+        <!-- ENDFORM -->
+
+
+
+
+        <!-- =========================
+     SECTION: CONTACT INFO
+    ============================== -->
+    <div class="contact-info white-bg">
+        <div class="container">
+
+            <!-- CONTACT INFO -->
+            <div class="row contact-links">
+
+                <div class="col-sm-4">
+                    <div class="icon-container">
+                        <span class="icon-basic-mail colored-text"></span>
+                    </div>
+                    <a href="mailto:drscratch@programamos.es" class="strong">team@drscratch.org</a>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="icon-container">
+                        <span class="icon-social-twitter colored-text"></span>
+                    </div>
+                    <a href="https:/twitter.com/drscratchtool" class="strong">@DrScratchTool</a>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="icon-container">
+                        <span class="icon-basic-tablet colored-text"></span>
+                    </div>
+                    <a href="https:/github.com/jemole/drScratch/issues" class="strong">GitHub(issues)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+ <!-- FOOTER -->
+    <footer class="footer grey-bg">
+       {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+
+        <!-- SOCIAL ICONS -->
+        <ul class="social-icons">
+            <li><a href="https:/twitter.com/drscratchtool"><span class="icon-social-twitter transparent-text-dark"></span></a>
+            </li>
+            <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+            </li>
+
+        </ul>
+
+    </footer>
+   <!-- =========================
+     SCRIPTS
+    ============================== -->
+    <script src="../../static/app/scripts/jquery.min.js"></script>
+    <script>
+        /* PRE LOADER */
+        jQuery(window).load(function () {
+            "use strict";
+            jQuery(".status").fadeOut();
+            jQuery(".preloader").delay(1000).fadeOut("slow");
+        })
+    </script>
+    <script type="text/javascript" src="../../static/app/scripts/bootstrap-filestyle.js"> </script>
+    <script src="../../static/app/scripts/smoothscroll.js"></script>
+    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+    <script src="../../static/app/scripts/jquery.nav.js"></script>
+    <script src="../../static/app/scripts/ie-emulation-modes-warning.js"></script>
+    <script src="../../static/app/scripts/wow.js"></script>
+    <script src="../../static/app/scripts/nivo-lightbox.js"></script>
+    <script src="../../static/app/scripts/owl.js"></script>
+    <script src="../../static/app/scripts/jquery_main.js"></script>
+    <script src="../../static/app/scripts/jquery.ajaxchimp.min.js"></script>
+    <script src="../../static/app/scripts/progress-bar.js"></script>
+      <script>
+$(document).ready(function(){
+    $('#searchemail').keyup(function(e){
+        query = $('#searchemail').val();
+       
+        $.ajax({
+            data:{'email':query},
+            url:'/searchemail/',
+            type: 'get',
+            success: function(data){
+                email_exists();
+                }
+                });
+    });
+});
+$(document).ready(function(){
+    $('#searchusername').keyup(function(e){
+        query = $('#searchusername').val();
+       
+        $.ajax({
+            data:{'username':query},
+            url:'/searchusername/',
+            type: 'get',
+            success: function(data){
+                console.log("User exists")
+                user_exists();
+                }
+                });
+    });
+});
+$(document).ready(function(){
+    $('#searchhashkey').keyup(function(e){
+        query = $('#searchhashkey').val();
+       
+        $.ajax({
+            data:{'hashkey':query},
+            url:'/searchhashkey/',
+            type: 'get',
+            success: function(data){
+                hashkey_exists();
+                }
+                });
+    });
+});
+    </script>
+    <script>
+    function email_exists(){
+
+        $("#email").append('<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{% trans "This email already exists. Choose another, please."%}</div>');
+    
+    }
+function user_exists(){
+        console.log("dentro de user_exists()");
+        $("#user").append('<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{% trans "This username already exists. Choose another, please."%}</div>');
+    
+    }
+function hashkey_exists(){
+
+        $("#hashkey").append('<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{% trans "This hashkey does not exist. Choose another, please."%}</div>');
+    
+    }
+    </script>
+
+    <!-- GOGLE MAP -->
+    <!--
+    <script src="https:/maps.googleapis.com/maps/api/js"></script><script src="https:/maps.gstatic.com/maps-api-v3/api/js/19/5/intl/es_ALL/main.js"></script>
+-->
+
+    <!-- CUSTOM JS  -->
+    <script src="../../static/app/scripts/custom.js"></script>
+</body></html>

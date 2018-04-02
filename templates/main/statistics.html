@@ -1,0 +1,365 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Analyze your Scratch projects to assess your Computational Thinking skills">
+    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="author" content="Programamos URJC Libresoft FECyT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script src="../../static/app/scripts/highcharts.js"></script>
+    <script src="../../static/app/scripts/exporting.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/data.js"></script>
+    <script src="../../static/app/scripts/googleAnalytics.js"></script>
+
+
+
+    <!-- SITE TITLE -->
+    <title>Dr. Scratch</title>
+
+
+    <link rel="stylesheet" href="../../static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT
+    ============================== -->
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <!-- =========================
+     STYLESHEETS
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="../../static/app/content/styles.css">
+    <link rel="stylesheet" href="../../static/app/content/cloud.css">
+
+
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+
+   <script>
+    $(document).ready(function(){
+        date_list = "{{ date }}".split(",")
+        for (n in date_list){
+            date_list[n] = date_list[n].slice(6,-5)
+        };
+        date_list[date_list.length-1] = date_list[date_list.length-1].slice(0,-1)
+    });
+$(function () {
+
+    $('#chart-panel').highcharts({
+        title: {
+            text: '{% trans "Scores of 2015" %}',
+            x: -20 //center
+        },
+        xAxis: {
+            categories: date_list
+        },
+
+        tooltip: {
+            valueSuffix: '{% trans " points"%}'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: '{% trans "Total score" %}',
+            data: {{ dailyRate }}
+        }]
+    });
+});
+
+$(function () {
+
+    $('#total-projects').highcharts({
+        title: {
+            text: '{% trans "Number of projects analyzed in 2015" %}',
+            x: -20 //center
+        },
+        xAxis: {
+            categories: date_list
+        },
+
+        tooltip: {
+            valueSuffix: '{% trans " projects" %}'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: '{% trans "Total projects" %}',
+            data: {{ totalProjects }}
+        }]
+    });
+});
+$(function () {
+    $('#pie-chart').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: '{% trans "Percent levels" %}'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: "{% trans 'Level' %}",
+            colorByPoint: true,
+            data: [{
+                name: '{% trans "Basic" %}',
+                y: parseInt("{{ levels.basic }}"),
+            }, {
+                name: '{% trans "Development" %}',
+                y: parseInt("{{ levels.development }}"),
+            }, {
+                name: '{% trans "Master" %}',
+                y: parseInt("{{ levels.master }}")
+            }]
+        }]
+    });
+});
+$(function () {
+    // Create the chart
+    $('#bars_codesmell').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '{% trans "Average rate by code smell" %}'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: '{% trans "Average rate by code smell" %}'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b><br/>'
+        },
+
+        series: [{
+            name: "{% trans 'Code smell' %}",
+            colorByPoint: true,
+            data: [{
+                name: "{% trans 'Dead code' %}",
+                y: {{ codeSmellRate.deadCode }},
+            }, {
+                name: "{% trans 'Duplicated scripts' %}",
+                y: {{ codeSmellRate.duplicateScript }},
+            }, {
+                name: "{% trans 'Attribute Initialization' %}",
+                y: {{ codeSmellRate.initialization }},
+            }, {
+                name: "{% trans 'Sprite naming' %}",
+                y: {{ codeSmellRate.spriteNaming}}
+            }]
+        }],
+    });
+});
+</script>
+<script>
+$(function () {
+    // Create the chart
+    $('#bars_skill').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: '{% trans "Average rate by programming skill" %}'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: '{% trans "Average rate by programming skill" %}'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> <br/>'
+        },
+
+        series: [{
+            name: "{% trans 'Programming skill' %}",
+            colorByPoint: true,
+            data: [{
+                name: "{% trans 'Parallelism' %}",
+                y: {{ skillRate.parallelism }},
+            }, {
+                name: "{% trans 'Logic' %}",
+                y: {{ skillRate.logic }},
+            }, {
+                name: "{% trans 'Flow control' %}",
+                y: {{ skillRate.flowControl }},
+            }, {
+                name: "{% trans 'User interactivity' %}",
+                y: {{ skillRate.userInteractivity }},
+            }, {
+                name: "{% trans 'Data representation' %}",
+                y: {{ skillRate.dataRepresentation }},
+            }, {
+                name: "{% trans 'Abstraction' %}",
+                y: {{ skillRate.abstraction }},
+            }, {
+                name: "{% trans 'Synchronization' %}",
+                y: {{ skillRate.synchronization }}
+            }]
+        }],
+    });
+});
+
+</script>
+
+</head>
+<body>
+
+   <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+        <div class="container">
+                    <!-- TOP BAR -->
+
+            <div class="navbar-collapse collapse" id="stamp-navigation">
+                    <!-- NAVIGATION LINK -->
+        <a class="navbar-brand" href="/">
+                    <img src="../../static/app/images/logo_main.png" alt="">
+                </a>
+                <ul class="nav navbar-nav navbar-right main-navigation ">
+                        <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
+                        <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
+                        <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr. Scratch(Beta Version)" %}</a></li>
+                      </ul>
+            </div>
+                    <!-- /END TOP BAR -->
+      </div>
+                <!-- /END CONTAINER -->
+      </div>
+            <!-- /END STICKY NAVIGATION -->
+    <!-- JUMBOTRON -->
+
+      <div id ="cloud"><h2>{% trans "Statistics" %}</h2><span class='shadow'></span></div>
+    <!-- /END JUMBOTRON -->
+    <!-- PANEL-->
+    <div class="container">
+    <div class="text-right">{% trans "These statistics are update every night at 00.00h CEST." %}</div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body" id ="chart-panel" style="height:350px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body" id ="pie-chart" style="height:350px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body" id ="total-projects" style="height:350px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body" id ="bars_skill"  style="min-width: 310px; height: 400px; margin: 0 auto">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body" id ="bars_codesmell" style="min-width: 310px; height: 400px; margin: 0 auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <footer class="footer grey-bg">
+        <div class="container">
+               {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+
+                <!-- SOCIAL ICONS -->
+                  <ul class="social-icons">
+                    <li><a href="https:/twitter.com/drscratchtool">
+                        <span class="icon-social-twitter transparent-text-dark"></span></a>
+                    </li>
+                    <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+                    </li>
+
+                </ul>
+        </div>
+    </footer>
+</body>
+</html>

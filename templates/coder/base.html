@@ -1,0 +1,553 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+
+    <title>Dr. Scratch</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
+    <script src="../../static/app/scripts/jquery.min.js"></script>
+    <script src="../../static/app/scripts/highcharts.js"></script>
+    <script src="../../static/app/scripts/exporting.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/data.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="../../static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT
+    ============================== -->
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <!-- =========================
+     STYLESHEETS
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap-main.css">
+    <link rel="stylesheet" href="../../static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="../../static/app/content/styles.css">
+    <link href="../../static/app/content/dashboard.css" rel="stylesheet">
+    <link href="../../static/app/content/dropdowns-enhancement.css" rel="stylesheet">
+
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+     $(document).ready(function(){
+         date_list = "{{ date }}".split(",")
+         for (n in date_list){
+             date_list[n] = date_list[n].slice(6,-5)
+         };
+         date_list[date_list.length-1] = date_list[date_list.length-1].slice(0,-1)
+     });
+ $(function () {
+
+     $('#chart-panel').highcharts({
+         title: {
+             text: '{% trans "Scores of 2015" %}',
+             x: -20 //center
+         },
+         xAxis: {
+             categories: date_list
+         },
+
+         tooltip: {
+             valueSuffix: '{% trans " points"%}'
+         },
+         legend: {
+             layout: 'vertical',
+             align: 'right',
+             verticalAlign: 'middle',
+             borderWidth: 0
+         },
+         series: [{
+             name: '{% trans "Total score" %}',
+             data: {{ daily_score }}
+         }]
+     });
+ });
+/*
+ $(function () {
+
+     $('#total-projects').highcharts({
+         title: {
+             text: '{% trans "Number of projects analyzed in 2015" %}',
+             x: -20 //center
+         },
+         xAxis: {
+             categories: date_list
+         },
+
+         tooltip: {
+             valueSuffix: '{% trans " projects" %}'
+         },
+         legend: {
+             layout: 'vertical',
+             align: 'right',
+             verticalAlign: 'middle',
+             borderWidth: 0
+         },
+         series: [{
+             name: '{% trans "Total projects" %}',
+             data: {{ totalProjects }}
+         }]
+     });
+ });*/
+ $(function () {
+     $('#pie-chart').highcharts({
+         chart: {
+             plotBackgroundColor: null,
+             plotBorderWidth: null,
+             plotShadow: false,
+             type: 'pie'
+         },
+         title: {
+             text: '{% trans "Percent levels" %}'
+         },
+         tooltip: {
+             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+         },
+         plotOptions: {
+             pie: {
+                 allowPointSelect: true,
+                 cursor: 'pointer',
+                 dataLabels: {
+                     enabled: true,
+                     format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                     style: {
+                         color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                     }
+                 }
+             }
+         },
+         series: [{
+             name: "{% trans 'Level' %}",
+             colorByPoint: true,
+             data: [{
+                 name: '{% trans "Basic" %}',
+                 y: parseInt("{{ levels.basic }}"),
+             }, {
+                 name: '{% trans "Development" %}',
+                 y: parseInt("{{ levels.development }}"),
+             }, {
+                 name: '{% trans "Master" %}',
+                 y: parseInt("{{ levels.master }}")
+             }]
+         }]
+     });
+ });
+ $(function () {
+     // Create the chart
+     $('#bars_codesmell').highcharts({
+         chart: {
+             type: 'column'
+         },
+         title: {
+             text: '{% trans "Average rate by code smell" %}'
+         },
+         xAxis: {
+             type: 'category'
+         },
+         yAxis: {
+             title: {
+                 text: '{% trans "Average rate by code smell" %}'
+             }
+
+         },
+         legend: {
+             enabled: false
+         },
+         plotOptions: {
+             series: {
+                 borderWidth: 0,
+                 dataLabels: {
+                     enabled: true,
+                     format: '{point.y:.1f}'
+                 }
+             }
+         },
+
+         tooltip: {
+             headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+             pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b><br/>'
+         },
+
+         series: [{
+             name: "{% trans 'Code smell' %}",
+             colorByPoint: true,
+             data: [{
+                 name: "{% trans 'Dead code' %}",
+                 y: {{ codeSmellRate.deadCode }},
+             }, {
+                 name: "{% trans 'Duplicated scripts' %}",
+                 y: {{ codeSmellRate.duplicateScript }},
+             }, {
+                 name: "{% trans 'Attribute initialization' %}",
+                 y: {{ codeSmellRate.initialization }},
+             }, {
+                 name: "{% trans 'Sprite naming' %}",
+                 y: {{ codeSmellRate.spriteNaming}}
+             }]
+         }],
+     });
+ });
+ </script>
+ <script>
+ $(function () {
+     // Create the chart
+     $('#bars_skill').highcharts({
+         chart: {
+             type: 'column'
+         },
+         title: {
+             text: '{% trans "Average rate by programming skill" %}'
+         },
+         xAxis: {
+             type: 'category'
+         },
+         yAxis: {
+             title: {
+                 text: '{% trans "Average rate by programming skill" %}'
+             }
+
+         },
+         legend: {
+             enabled: false
+         },
+         plotOptions: {
+             series: {
+                 borderWidth: 0,
+                 dataLabels: {
+                     enabled: true,
+                     format: '{point.y:.1f}'
+                 }
+             }
+         },
+
+         tooltip: {
+             headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+             pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> <br/>'
+         },
+
+         series: [{
+             name: "{% trans 'Programming skill' %}",
+             colorByPoint: true,
+             data: [{
+                 name: "{% trans 'Parallelism' %}",
+                 y: {{ skillRate.parallelism }},
+             }, {
+                 name: "{% trans 'Logic' %}",
+                 y: {{ skillRate.logic }},
+             }, {
+                 name: "{% trans 'Flow control' %}",
+                 y: {{ skillRate.flowControl }},
+             }, {
+                 name: "{% trans 'User interactivity' %}",
+                 y: {{ skillRate.userInteractivity }},
+             }, {
+                 name: "{% trans 'Data representation' %}",
+                 y: {{ skillRate.dataRepresentation }},
+             }, {
+                 name: "{% trans 'Abstraction' %}",
+                 y: {{ skillRate.abstraction }},
+             }, {
+                 name: "{% trans 'Synchronization' %}",
+                 y: {{ skillRate.synchronization }}
+             }]
+         }],
+     });
+ });
+
+ </script>
+
+  </head>
+
+  <body>
+    <!-- =========================
+     PRE LOADER
+    ============================== -->
+    <div id="mywrapper">
+
+    <div style="display: none;" class="preloader">
+        <div style="display: none;" class="status">
+            &nbsp;
+        </div>
+    </div>
+    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+        <div class="container">
+            <!-- TOP BAR -->
+            <div class="navbar-collapse collapse" id="stamp-navigation">
+            <!-- NAVIGATION LINK -->
+              <a class="navbar-brand" href="/">
+                <img src="../../static/app/images/logo_main.png" alt="">
+              </a>
+              <ul class="nav navbar-nav navbar-right login-register small-text">
+                <ul class="nav navbar-nav navbar-left main-navigation ">
+
+                  <li style="display: block;" class="login js-login dropdown">
+                    <a aria-expanded="false" type="button" data-toggle="dropdown" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                    <span class="icon-basic-world"></span></span>
+                    </a>
+                    <ul role="menu" class="dropdown-menu">
+                      <li>
+                      <div style="padding: 15px; padding-bottom: 10px;">
+                      <form action="/i18n/setlang/" method="post" type="hidden">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}" />
+                        <select name="language" type="hidden">
+                      {% get_language_info_list for LANGUAGES as languages %}
+                      {% for language in languages %}
+                       <option style="padding: 15px;" type="submit" class='btn-group btn-group-justified colored-text' value="{{ language.code }}">{{ language.name }} ({{ language.code }})</option>
+                      {% endfor %}
+                    </select>
+                    {% trans "<input type='submit' value='Change language' class='btn-group btn-group-justified colored-text'/>" %}
+                    </form>
+                  </div>
+                </li>
+                </ul>
+                </li>
+              </ul>
+            </ul>
+
+            <!-- LOGIN REGISTER -->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="navbar-brand dropdown">
+                        <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
+                        <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li> <a href='/change_pwd'>{% trans "Change password" %}</a> </li>
+                            <li>
+                                <a id="logout" type="submit" href="/logout_coder">{% trans "Logout" %}</a>
+                            </li>
+                        </li>
+                        </ul>
+                </li>
+            </ul>
+            </div>
+            <!-- /END TOP BAR -->
+        </div>
+        <!-- /END CONTAINER -->
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-sm-3 col-md-2 sidebar">
+          <br>
+          <div class="thumbnail">
+            {% if img == "app/images/drScratch.png" %}
+            <img src="../../static/{{ img }}">
+            {% else %}
+            <img src="../../static/{{ img }}">
+            {% endif %}
+          </div>
+          <ul class="nav nav-sidebar">
+            <li><a class="litext" href="/coder/{{ username }}"><span class="glyphicon glyphicon-dashboard"></span> {% trans "Analysis" %}</a></li>
+            <li><a class="litext" href="/coder/stats/{{ username }}"><span class="glyphicon glyphicon-stats"></span> {% trans "Stats"%}</a></li>
+            <li  data-toggle="collapse" data-target="#learn" class="collapsed">
+              <a href="#" class="litext"><span class="glyphicon glyphicon-book"></span> {% trans "Learn more" %} <span class="caret"></span></a>
+                 <ul class="sub-menu collapse" id="learn">
+                <li><a href="/learn/Logic/">{% trans "Logic" %}</a></li>
+                <li><a href="/learn/Data/">{% trans "Data representation" %}</a></li>
+                <li><a href="/learn/Parallelism/">{% trans "Parallelism" %}</a></li>
+                <li><a href="/learn/Synchronization/">{% trans "Synchronization" %}</a></li>
+                <li><a href="/learn/User/">{% trans "User interactivity" %}</a></li>
+                <li><a href="/learn/Flow/">{% trans "Flow control" %}</a></li>
+                <li><a href="/learn/Abstraction/">{% trans "Abstraction" %}</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/learn/duplicatedScripts/">{% trans "Duplicated scripts" %}</a></li>
+                <li><a href="/learn/spriteNaming/">{% trans "Incorrect names" %}</a></li>
+                <li><a href="/learn/deadCode/">{% trans "Dead code" %}</a></li>
+                <li><a href="/learn/attrInit/">{% trans "Attribute initialization" %}</a></li>
+              </ul>
+            </li>
+            <li><a class="litext" href="/coder/settings/{{ username }}"><span class="glyphicon glyphicon-cog"></span> {% trans "Settings" %}</a></li>
+          </ul>
+        </div>
+
+        {% block content %}
+         {% endblock %}
+        <footer class="footer grey-bg">
+               <div class="container">
+                      {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+
+                       <!-- SOCIAL ICONS -->
+                       <ul class="social-icons">
+                           <li><a href="https:/twitter.com/drscratchtool">
+                               <span class="icon-social-twitter transparent-text-dark"></span></a>
+                           </li>
+                           <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+                           </li>
+
+                       </ul>
+               </div>
+           </footer>
+
+           <!-- =========================
+                   MODALS
+           ============================== -->
+
+            <!-- Modal Url -->
+           <div id="modalCSV" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+
+               <!-- Modal content-->
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+                   <div class="small-text-medium uppercase colored-text">
+                       {% trans "How is the file .csv?" %}
+                   </div>
+                   <h4 class="modal-title"><strong>{% trans "You must to write only the number of your students' projects. Easy, isn't it?" %}</strong></h4>
+                   <div class="colored-line"></div>
+                 </div>
+                 <div class="modal-body">
+                   <img class='framed' src='../../static/app/images/csv.png' />
+                 </div>
+                 <div class="modal-footer">
+                 </div>
+               </div>
+
+             </div>
+           </div>
+           <!-- Modal Url -->
+           <div id="modalUrl" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+                  <div class="small-text-medium uppercase colored-text">
+                      {% trans "What is an url?" %}
+                  </div>
+                  <h4 class="modal-title"><strong>{% trans "How I can know my Scratch project's url?" %}</strong></h4>
+                  <div class="colored-line"></div>
+                </div>
+                <div class="modal-body">
+                  {% trans "<img class='framed' src='../static/app/images/url-en.png' />" %}
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+
+            </div>
+           </div>
+
+
+               <!-- Modal Project -->
+           <div id="modalProject" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+                  <div class="small-text-medium uppercase colored-text">
+                      {% trans "I want to download my project from Scratch!" %}
+                  </div>
+                  <h4 class="modal-title"><strong>{% trans "How I can download my Scratch project to my computer?" %}</strong></h4>
+                  <div class="colored-line"></div>
+                </div>
+                <div class="modal-body">
+                  {% trans "<img class='framed' src='../static/app/images/project-en.png' />" %}
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+
+            </div>
+           </div>
+
+         </div>
+         <!-- =========================
+               PROGRESS BAR
+       ============================== -->
+
+
+
+       <div id="pb" class="jumbotron">
+       <div class="container">
+             <p>
+                 <h2>
+                     {% trans "Wait a moment, please." %}
+                 </h2>
+             </p>
+       </div>
+
+
+         <div class="container">
+             <img src="../../static/app/images/logo_main.png"/>
+         </div>
+
+
+
+         <div class = "container">
+
+             <div class="progress progress-striped active">
+                 <div class="progress-bar progress-bar-danger" role="progressbar"
+                     aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 99%">
+                     <span style="width: 99%">{% trans "loading..." %}</span>
+                 </div>
+             </div>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
+
+
+         </div>
+
+           <script>
+               /* PRE LOADER */
+               jQuery(window).load(function () {
+                   "use strict";
+                   jQuery(".status").fadeOut();
+                   jQuery(".preloader").delay(1000).fadeOut("slow");
+               })
+           </script>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" src="../../static/app/scripts/bootstrap-filestyle.js"> </script>
+        <script src="../../static/app/scripts/smoothscroll.js"></script>
+        <script src="../../static/app/scripts/bootstrap.min.js"></script>
+        <script src="../../static/app/scripts/jquery.nav.js"></script>
+        <script src="../../static/app/scripts/ie-emulation-modes-warning.js"></script>
+        <script src="../../static/app/scripts/wow.js"></script>
+        <script src="../../static/app/scripts/nivo-lightbox.js"></script>
+        <script src="../../static/app/scripts/owl.js"></script>
+        <script src="../../static/app/scripts/progress-bar.js"></script>
+        <script src="../../static/app/scripts/dropdowns-enhancement.js"></script>
+        <script src="../../static/app/scripts/googleAnalytics.js"></script>
+
+        </body></html>

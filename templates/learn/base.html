@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="description" content="Responsive Bootstrap 3 Startup and Multipurpose Template">
+    <meta name="description" content="Analyze your Scratch projects to assess your Computational Thinking skills">
     <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
     <meta name="author" content="Programamos URJC Libresoft FECyT">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -46,21 +46,26 @@
 
     <!-- DEFAULT COLOR/ CURRENTLY USING -->
     <link rel="stylesheet" href="../../static/app/content/red.css">
+    <script src="../../static/app/scripts/googleAnalytics.js"></script>
 
-    <script>
-        $(document).ready(function() {
+    <script type="text/javascript">
+
+    $.ajax({
+            url: "http://www.drscratch.org/blocks",
+            dataType: 'jsonp',
+            success: function(headers) {
+                language = headers['Accept-Language'];
+                language = language.split(",")[0];
+                scratchblocks2.reset_languages();
+                if (language) var lang_dict = scratchblocks2._translations[language];
+                if (lang_dict) scratchblocks2.load_language(lang_dict);
+        $(document).ready(function () {
             scratchblocks2.parse();
         });
+            }
+        });
 
-        var choose_lang = x=window.navigator.language||navigator.browserLanguage;
-        choose_lang = choose_lang.split("-")[0];
-
-
-        scratchblocks2.reset_languages();
-        var lang_dict = scratchblocks2._translations[choose_lang];
-
-          if (lang_dict) scratchblocks2.load_language(lang_dict);
-        </script>
+    </script>
 </head>
 <body>
    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
@@ -75,7 +80,7 @@
                 {% if flagUser %}
                     <!-- NAVIGATION LINK -->
                     <ul class="nav navbar-nav navbar-left main-navigation ">
-                        <li class="navbar-brand"><a class="navbar-brand pull-left" href="/coder/{{user}}"><span class="icon-basic-home colored-text"></span><em>{{ user }}</em></a></li>
+                        <li class="navbar-brand"><a class="navbar-brand pull-left" href="/{{user}}/{{username}}"><span class="icon-basic-home colored-text"></span><em>{{ username }}</em></a></li>
                    </ul>
                 {% endif %}
                 <ul class="nav navbar-nav navbar-right main-navigation ">

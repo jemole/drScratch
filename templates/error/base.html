@@ -1,0 +1,119 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Analyze your Scratch projects to assess your Computational Thinking skills">
+    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="author" content="Programamos URJC Libresoft FECyT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <link rel="stylesheet" href="../../static/app/content/scratchblocks2.css">
+    <script src="../../static/app/scripts/scratchblocks2.js"></script>
+    <script src="../../static/app/scripts/translations.js"></script>
+
+    <!-- SITE TITLE -->
+    <title>Dr. Scratch</title>
+
+
+    <link rel="stylesheet" href="../../static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT  
+    ============================== -->
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">  
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <!-- =========================
+     STYLESHEETS   
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="../../static/app/content/styles.css">
+    <link rel="stylesheet" href="../../static/app/content/cloud.css">
+   
+    
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+    <script src="../../static/app/scripts/googleAnalytics.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            scratchblocks2.parse();
+        });
+
+        var choose_lang = x=window.navigator.language||navigator.browserLanguage;
+        choose_lang = choose_lang.split("-")[0];
+        
+
+        scratchblocks2.reset_languages();
+        var lang_dict = scratchblocks2._translations[choose_lang];
+         
+          if (lang_dict) scratchblocks2.load_language(lang_dict);
+        </script>
+</head>
+<body>
+    <div id="mywrapper">
+    <!-- =========================
+     PRE LOADER       
+    ============================== -->
+    <div style="display: none;" class="preloader">
+        <div style="display: none;" class="status">
+            &nbsp;
+        </div>
+    </div>
+    
+
+   <div class="navbar navbar-inverse bs-docs-nav  sticky-navigation" role="navigation">
+        <div class="container">          
+                    <!-- TOP BAR -->
+            <div class="navbar-collapse collapse" id="stamp-navigation">
+                    <!-- NAVIGATION LINK -->
+                <a class="navbar-brand" href="/">
+                    <img src="../../static/app/images/logo_main.png" alt="">
+                </a>
+                <ul class="nav navbar-nav navbar-right main-navigation ">
+                        <li class="navbar-brand"><a class="navbar-brand pull-right" href="https://twitter.com/DrScratchTool"><span class="icon-social-twitter colored-text"></span></a></li>
+                        <li class="navbar-brand"><a class="navbar-brand pull-right" href="mailto:drscratch@programamos.es"><span class="icon-basic-mail colored-text"></span></a></li>
+                        <li class="navbar-brand"><a class="navbar-brand pull-right">{% trans "Dr. Scratch(Beta Version)" %}</a></li>
+                      </ul>
+            </div>
+                    <!-- /END TOP BAR -->
+        </div>
+                <!-- /END CONTAINER -->
+    </div>
+            <!-- /END STICKY NAVIGATION -->
+    <!-- JUMBOTRON -->
+   
+    <!-- /END JUMBOTRON -->
+    <!-- PANEL-->
+   {% block content %}
+    {% endblock %}
+ <footer class="footer grey-bg navbar-fixed-bottom">
+        <div class="container">
+               {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+
+                <!-- SOCIAL ICONS -->
+                <ul class="social-icons">
+                    <li><a href="https:/twitter.com/drscratchtool">
+                        <span class="icon-social-twitter transparent-text-dark"></span></a>
+                    </li>
+                    <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+                    </li>
+                    
+                </ul>
+        </div>
+    </footer>
+</body>
+</html>

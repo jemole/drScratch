@@ -1,0 +1,54 @@
+{% extends 'coder/base.html' %}
+{% load i18n %}
+{% block content %}
+
+        <div class="col-sm-12 col-md-12 main">
+          <h2 class="page-header">{% trans "Analysis" %}</h2>
+            <div class="row">
+              <!-- VERTICAL PROJECT FORM -->
+                <div class="col-md-7 col-md-offset-2">
+
+                  <div class="vertical-project-form">
+                    <h4>  {% trans "Do you want to analyze one project?" %}</h4>
+
+                      <h5 class="dark-text form-heading"><strong>{% trans "There are two options to analyze your Scratch project now!" %}</strong></h5>
+                      <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/show_dashboard">
+                      {% csrf_token %}
+
+                          {% trans "1. Introduce the <span class='colored-text'><a data-toggle='modal' href='#modalUrl'>url</a></span> of your Scratch project, you don't have to download it:" %}
+                          {% trans '<input name="urlProject" id="cf-name" class="form-control input-box placeholder" placeholder="http:/scratch.mit.edu/projects/your_number" type="text">' %}
+                          <button id="url" name='_url' type="submit" class="btn btn-primary standard-button">{% trans "Analyze by url" %}</button>
+
+
+                          {% csrf_token %}
+                          <br></br>
+                          {% trans "2. If you have your <span class='colored-text'><a data-toggle='modal' href='#modalProject'>project</a></span> downloaded in the computer you can analyze it here:" %}
+                          {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose Project'>" %}
+                          <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my project" %}</button>
+                          {% csrf_token %}
+
+                      </form>
+
+                      <!-- FORM SUBMIT SUCCESS / ERROR MESSAGES -->
+                      <p class="file-error dark-text small-text">
+                      {% trans "Error! Please choose a .sb or .sb2 file or input an url" %}</p>
+                      {% if error %}
+                      <br></br>
+                      <p><span class="icon icon-close-alt2"></span> {% trans "Error! Please choose a .sb or .sb2 file or input an url" %}</p>
+                      {% endif %}
+                      {% if id_error %}
+                      <br></br>
+                      <p><span class="icon icon-close-alt2"></span> {% trans "Error! Your project id is wrong" %}</p>
+                      {% endif %}
+                      {% if no_exists %}
+                      <br></br>
+                      <p><span class="icon icon-close-alt2"></span> {% trans "Error! Your project doesn't exist in Scratch's servers" %}</p>
+                      {% endif %}
+                  </div>
+                </div>
+
+            </div>
+      </div>
+      </div>
+    </div>
+    {% endblock %}
