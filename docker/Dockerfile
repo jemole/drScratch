@@ -29,11 +29,5 @@ RUN git clone https://github.com/jemole/hairball.git /code/hairball \
 
 ADD . /code/
 
-CMD ["python", "manage.py"]
-
-# EXPOSE 8000
-
 # COPY ./docker-entrypoint.sh /
-# ENTRYPOINT ["/docker-entrypoint.sh"] 
-
-
+# ENTRYPOINT ["/docker-entrypoint.sh"]
